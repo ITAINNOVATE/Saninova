@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0B3C5D; /* Bleu médical premium */
+  --color-accent: #00A878; /* Vert santé moderne */
+  --color-dark: #1E1E1E; /* Gris anthracite */
+  --color-light: #F5F7FA; /* Gris clair professionnel */
+  
+  --font-sans: var(--font-inter);
+  --font-poppins: var(--font-poppins);
+  --font-montserrat: var(--font-montserrat);
+}
+
+:root {
+  --primary-glow: radial-gradient(rgba(11, 60, 93, 0.15), rgba(11, 60, 93, 0));
+  --accent-glow: radial-gradient(rgba(0, 168, 120, 0.15), rgba(0, 168, 120, 0));
+}
+
+html,
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  font-family: var(--font-inter), sans-serif;
+  background-color: #ffffff;
+  color: #1e1e1e;
+}
+
+/* Custom Premium Utilities */
+.glass {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-dark {
+  background: rgba(30, 30, 30, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glow-bg {
+  position: relative;
+}
+
+.glow-bg::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 140%;
+  height: 140%;
+  background: var(--primary-glow);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5F7FA;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1A5F8A;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0B3C5D;
+}
