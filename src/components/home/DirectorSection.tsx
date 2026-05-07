@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useLanguage } from "../../context/LanguageContext";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { Quote, Award, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
 
@@ -10,7 +10,7 @@ export const DirectorSection: React.FC = () => {
   const { t } = useLanguage();
   const dir = t.director;
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -18,12 +18,12 @@ export const DirectorSection: React.FC = () => {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: { duration: 0.6, ease: "easeOut" as const },
     },
   };
 
