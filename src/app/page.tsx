@@ -31,8 +31,8 @@ export default function Home() {
 
         {/* About Section */}
         <AboutSection />
-        <AboutDetails />
         <DirectorSection />
+        <AboutDetails />
 
         {/* Expertises Section */}
         <ExpertisesGrid />

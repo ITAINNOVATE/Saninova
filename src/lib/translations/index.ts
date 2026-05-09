@@ -253,7 +253,7 @@ export const translations = {
         ],
       },
       leadership: {
-        title: "Notre Comité de Direction",
+        title: "Notre Équipe",
         desc: "Des leaders d'opinion chevronnés alliant expérience dans la haute fonction publique, cabinets internationaux et recherche médicale.",
         members: [
           {
@@ -594,7 +594,7 @@ export const translations = {
         ],
       },
       leadership: {
-        title: "Our Leadership Team",
+        title: "Our Team",
         desc: "Seasoned thought-leaders combining high public service experience, international consulting background, and medical research.",
         members: [
           {
