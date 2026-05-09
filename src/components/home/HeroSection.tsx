@@ -65,7 +65,7 @@ export const HeroSection: React.FC = () => {
       </div>
 
       {/* Hero Content */}
-      <div className="relative max-w-5xl mx-auto px-6 text-center z-10 flex flex-col items-center">
+      <div className="relative max-w-5xl mx-auto px-6 text-center z-10 flex flex-col items-center pt-24 sm:pt-32 md:pt-36">
         <motion.div
           variants={containerVariants}
           initial="hidden"
