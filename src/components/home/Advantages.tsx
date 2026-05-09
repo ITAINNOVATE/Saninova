@@ -54,7 +54,7 @@ export const Advantages: React.FC = () => {
       <div className="absolute top-1/2 left-0 w-80 h-80 bg-primary/2 rounded-full filter blur-[100px] pointer-events-none -translate-x-1/2" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
           
           {/* Left Side: Premium Editorial Narrative Column */}
           <div className="lg:col-span-5 space-y-10 flex flex-col items-center lg:items-start text-center lg:text-left">
