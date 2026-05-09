@@ -123,6 +123,8 @@ export const AboutSection: React.FC = () => {
                 src="/images/about_section.png"
                 alt="SaniNova Board Meeting"
                 className="w-full object-cover rounded-3xl transition-transform duration-500 group-hover:scale-[1.02]"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent" />
             </div>

@@ -107,6 +107,8 @@ export const Publications: React.FC = () => {
                     src={article.image}
                     alt={article.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                    decoding="async"
                   />
                   {/* Category Tag overlay */}
                   <span className="absolute top-4 left-4 bg-accent text-white px-3 py-1 rounded-full text-[10px] font-extrabold uppercase font-poppins tracking-wider shadow-md">
