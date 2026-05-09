@@ -27,6 +27,15 @@ export const DirectorSection: React.FC = () => {
     },
   };
 
+  const leftToRightVariants: Variants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.8, ease: "easeOut" as const },
+    },
+  };
+
   return (
     <section id="director" className="py-20 bg-white overflow-hidden relative">
       {/* Decorative background elements */}
@@ -114,7 +123,7 @@ export const DirectorSection: React.FC = () => {
 
             {/* Quote Section (Glassmorphism) */}
             <motion.div
-              variants={itemVariants}
+              variants={leftToRightVariants}
               className="mt-10 relative bg-primary/5 backdrop-blur-sm border border-primary/10 p-8 rounded-3xl overflow-hidden group"
             >
               <div className="relative z-10 flex flex-col space-y-4">
