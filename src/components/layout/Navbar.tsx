@@ -178,7 +178,7 @@ export const Navbar: React.FC = () => {
             onClick={(e) => handleNavClick(e, "#contact")}
             className="flex items-center space-x-2 bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold font-poppins shadow-md shadow-primary/10 hover:bg-primary/95 hover:shadow-lg hover:shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
           >
-            <PhoneCall className="w-4 h-4 text-accent" />
+            <PhoneCall className="w-4 h-4 text-orange" />
             <span>{t.nav.cta}</span>
           </a>
         </div>
@@ -239,7 +239,7 @@ export const Navbar: React.FC = () => {
               onClick={(e) => handleNavClick(e, "#contact")}
               className="flex items-center justify-center space-x-2 bg-primary text-white py-3 rounded-full font-semibold font-poppins shadow-md"
             >
-              <PhoneCall className="w-4 h-4 text-accent" />
+              <PhoneCall className="w-4 h-4 text-orange" />
               <span>{t.nav.cta}</span>
             </a>
           </div>

@@ -76,7 +76,7 @@ export const Methodology: React.FC = () => {
               <div className="relative z-10 w-16 h-16 rounded-full bg-primary/40 border-2 border-accent/20 text-accent flex items-center justify-center p-4 mb-6 group-hover:bg-accent group-hover:text-white group-hover:border-accent transition-all duration-300 shadow-lg shadow-accent/5">
                 {stepIcons[index]}
                 {/* Micro numbering circle */}
-                <span className="absolute -top-1.5 -right-1.5 w-6 h-6 rounded-full bg-accent text-white text-[10px] font-extrabold flex items-center justify-center border-2 border-dark">
+                <span className="absolute -top-1.5 -right-1.5 w-6 h-6 rounded-full bg-orange text-white text-[10px] font-extrabold flex items-center justify-center border-2 border-dark">
                   {step.num}
                 </span>
               </div>

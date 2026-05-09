@@ -152,7 +152,7 @@ export const HeroSection: React.FC = () => {
           <span className="font-poppins text-xs font-medium tracking-widest uppercase">
             {t.hero.scrollText}
           </span>
-          <ChevronDown className="w-5 h-5 text-accent group-hover:scale-110 transition-transform" />
+          <ChevronDown className="w-5 h-5 text-orange group-hover:scale-110 transition-transform" />
         </motion.button>
       </div>
     </section>

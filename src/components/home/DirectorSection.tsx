@@ -73,7 +73,7 @@ export const DirectorSection: React.FC = () => {
 
               {/* Tag / Badge over image */}
               <div className="absolute bottom-6 left-6 z-10 flex items-center space-x-2 bg-white/90 backdrop-blur-md px-4 py-2 rounded-xl shadow-lg">
-                <Award className="w-5 h-5 text-accent" />
+                <Award className="w-5 h-5 text-orange" />
                 <span className="font-poppins font-bold text-primary text-sm">Leadership</span>
               </div>
             </div>
@@ -131,7 +131,7 @@ export const DirectorSection: React.FC = () => {
                   "{dir.quote}"
                 </p>
                 <div className="flex items-center justify-center lg:justify-start space-x-3">
-                  <div className="w-10 h-[2px] bg-accent rounded-full" />
+                  <div className="w-10 h-[2px] bg-orange rounded-full" />
                   <span className="font-poppins text-sm font-bold text-dark/80 uppercase tracking-wider">
                     {dir.name}
                   </span>
