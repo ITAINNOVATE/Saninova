@@ -2,18 +2,9 @@
 
 import React from "react";
 import { useLanguage } from "../../context/LanguageContext";
-import { Eye, Rocket, Heart, UserCheck } from "lucide-react";
 
 export const AboutDetails: React.FC = () => {
   const { t } = useLanguage();
-
-  const valueIcons = [
-    <Heart className="w-5 h-5 shrink-0" />,
-    <UserCheck className="w-5 h-5 shrink-0" />,
-    <Rocket className="w-5 h-5 shrink-0" />,
-    <Eye className="w-5 h-5 shrink-0" />,
-    <Heart className="w-5 h-5 shrink-0" />,
-  ];
 
   return (
     <section id="about-details" className="py-16 bg-light/30 border-t border-light overflow-hidden">
@@ -23,12 +14,9 @@ export const AboutDetails: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Vision */}
             <div className="bg-white p-8 rounded-3xl border border-dark/5 shadow-md space-y-4">
-              <div className="flex items-center space-x-3 text-accent">
-                <Eye className="w-6 h-6 shrink-0" />
-                <h3 className="font-poppins text-xl font-bold text-primary">
-                  {t.aboutPage.vision.title}
-                </h3>
-              </div>
+              <h3 className="font-poppins text-xl font-bold text-primary">
+                {t.aboutPage.vision.title}
+              </h3>
               <p className="font-inter text-base sm:text-lg text-dark/70 leading-relaxed">
                 {t.aboutPage.vision.desc}
               </p>
@@ -36,12 +24,9 @@ export const AboutDetails: React.FC = () => {
 
             {/* Mission */}
             <div className="bg-white p-8 rounded-3xl border border-dark/5 shadow-md space-y-4">
-              <div className="flex items-center space-x-3 text-accent">
-                <Rocket className="w-6 h-6 shrink-0" />
-                <h3 className="font-poppins text-xl font-bold text-primary">
-                  {t.aboutPage.mission.title}
-                </h3>
-              </div>
+              <h3 className="font-poppins text-xl font-bold text-primary">
+                {t.aboutPage.mission.title}
+              </h3>
               <p className="font-inter text-base sm:text-lg text-dark/70 leading-relaxed">
                 {t.aboutPage.mission.desc}
               </p>
@@ -59,9 +44,6 @@ export const AboutDetails: React.FC = () => {
                   key={index}
                   className="bg-white p-6 rounded-2xl border border-dark/5 shadow-sm space-y-3 hover:shadow-md transition-shadow"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-accent/10 text-accent flex items-center justify-center">
-                    {valueIcons[index] || <Heart className="w-5 h-5" />}
-                  </div>
                   <h4 className="font-poppins text-lg font-bold text-primary">
                     {val.title}
                   </h4>
