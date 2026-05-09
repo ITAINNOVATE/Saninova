@@ -6,7 +6,6 @@ import HeroSection from "../components/home/HeroSection";
 import AboutSection from "../components/home/AboutSection";
 import AboutDetails from "../components/home/AboutDetails";
 import DirectorSection from "../components/home/DirectorSection";
-import ExpertisesGrid from "../components/home/ExpertisesGrid";
 import ExpertisesDetails from "../components/home/ExpertisesDetails";
 import Methodology from "../components/home/Methodology";
 import Advantages from "../components/home/Advantages";
@@ -34,8 +33,6 @@ export default function Home() {
         <DirectorSection />
         <AboutDetails />
 
-        {/* Expertises Section */}
-        <ExpertisesGrid />
         <ExpertisesDetails />
 
         {/* Services Section */}
