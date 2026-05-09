@@ -58,18 +58,18 @@ export const Navbar: React.FC = () => {
       {/* Top Info Bar: Collapses on scroll */}
       <div
         className={`bg-[#00A878] text-white transition-all duration-300 overflow-hidden ${
-          isScrolled ? "max-h-0 opacity-0" : "max-h-12 py-2.5 border-b border-white/10 opacity-100"
+          isScrolled ? "max-h-0 opacity-0" : "max-h-28 py-2 sm:max-h-12 sm:py-2.5 border-b border-white/10 opacity-100"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between text-xs sm:text-sm font-poppins">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-2.5 text-xs sm:text-sm font-poppins">
           {/* Left: Contact Info */}
-          <div className="flex items-center space-x-6">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
             <a href="mailto:saninova@gmail.com" className="flex items-center space-x-2 hover:text-white/80 transition-colors">
-              <Mail className="w-4 h-4 text-white" />
+              <Mail className="w-3.5 h-3.5 text-white" />
               <span className="font-medium">saninova@gmail.com</span>
             </a>
             <a href="tel:+2290161015495" className="flex items-center space-x-2 hover:text-white/80 transition-colors">
-              <Phone className="w-4 h-4 text-white" />
+              <Phone className="w-3.5 h-3.5 text-white" />
               <span className="font-medium">+229 01 61 01 54 95</span>
             </a>
           </div>

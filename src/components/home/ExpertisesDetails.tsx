@@ -85,12 +85,12 @@ export const ExpertisesDetails: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Left Side: Tabs Navigation Menu */}
-          <div className="lg:col-span-4 flex flex-row lg:flex-col space-x-3 lg:space-x-0 space-y-0 lg:space-y-2 lg:max-h-[500px] overflow-x-auto lg:overflow-x-visible lg:overflow-y-auto pr-0 lg:pr-2 pb-4 lg:pb-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <div className="lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2.5 lg:max-h-[550px] lg:overflow-y-auto pr-0 lg:pr-2">
             {Object.keys(detailedData).map((tabKey) => (
               <button
                 key={tabKey}
                 onClick={() => setActiveTab(tabKey)}
-                className={`shrink-0 whitespace-nowrap lg:whitespace-normal px-5 py-4 rounded-2xl text-sm font-bold font-poppins text-left transition-all duration-200 ${
+                className={`px-4 py-3.5 rounded-2xl text-xs sm:text-sm font-bold font-poppins text-left transition-all duration-200 ${
                   activeTab === tabKey
                     ? "bg-primary text-white shadow-md"
                     : "bg-light text-dark/70 hover:bg-light/80 hover:text-primary"
