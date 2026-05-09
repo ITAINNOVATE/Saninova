@@ -117,9 +117,6 @@ export const DirectorSection: React.FC = () => {
               variants={itemVariants}
               className="mt-10 relative bg-primary/5 backdrop-blur-sm border border-primary/10 p-8 rounded-3xl overflow-hidden group"
             >
-              <div className="absolute top-4 left-4 opacity-10">
-                <Quote className="w-24 h-24 text-primary" />
-              </div>
               <div className="relative z-10 flex flex-col space-y-4">
                 <p className="font-montserrat text-lg sm:text-xl font-bold text-primary italic leading-relaxed text-center lg:text-left">
                   "{dir.quote}"
