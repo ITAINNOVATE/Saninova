@@ -18,6 +18,7 @@ export const Navbar: React.FC = () => {
         setIsScrolled(false);
       }
     };
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -55,19 +56,25 @@ export const Navbar: React.FC = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        {/* Logo */}
-        <a href="#home" onClick={(e) => handleNavClick(e, "#home")} className="flex items-center space-x-2 group">
-          <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-between p-2 shadow-lg shadow-primary/20 group-hover:scale-105 transition-transform duration-300">
-            {/* Custom stylized health cross / digital mesh logo */}
-            <svg viewBox="0 0 24 24" fill="none" className="w-full h-full text-white" stroke="currentColor" strokeWidth="2.5">
-              <path d="M12 5v14M5 12h14" strokeLinecap="round" strokeLinejoin="round" />
-              <circle cx="12" cy="12" r="3" fill="#00A878" stroke="none" />
-            </svg>
-          </div>
-          <span className="font-montserrat text-2xl font-extrabold tracking-tight">
-            <span className={`transition-colors duration-300 ${isScrolled ? "text-primary" : "text-white"}`}>Sani</span>
-            <span className="text-accent">Nova</span>
-          </span>
+        <a href="#home" onClick={(e) => handleNavClick(e, "#home")} className="flex items-center group">
+          {isScrolled ? (
+            <img
+              key="colored-logo"
+              src="/images/logo.png"
+              alt="SaniNova"
+              className="h-12 w-auto max-w-[180px] object-contain transition-all duration-300 group-hover:scale-105"
+            />
+          ) : (
+            <img
+              key="white-logo"
+              src="/images/logo.png"
+              alt="SaniNova"
+              className="h-12 w-auto max-w-[180px] object-contain transition-all duration-300 group-hover:scale-105"
+              style={{
+                filter: "brightness(0) invert(1)"
+              }}
+            />
+          )}
         </a>
 
         {/* Desktop Navigation */}

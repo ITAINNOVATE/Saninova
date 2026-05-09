@@ -37,17 +37,15 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Column 1: SaniNova Branding */}
           <div className="space-y-6">
-            <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center p-2 shadow-lg">
-                <svg viewBox="0 0 24 24" fill="none" className="w-full h-full text-primary" stroke="currentColor" strokeWidth="2.5">
-                  <path d="M12 5v14M5 12h14" strokeLinecap="round" strokeLinejoin="round" />
-                  <circle cx="12" cy="12" r="3" fill="#00A878" stroke="none" />
-                </svg>
-              </div>
-              <span className="font-montserrat text-2xl font-extrabold tracking-tight">
-                <span className="text-white">Sani</span>
-                <span className="text-accent">Nova</span>
-              </span>
+            <div className="flex items-center">
+              <img
+                src="/images/logo.png"
+                alt="SaniNova"
+                className="h-14 w-auto max-w-[200px] object-contain"
+                style={{
+                  filter: "brightness(0) invert(1)"
+                }}
+              />
             </div>
             <p className="font-inter text-base sm:text-lg text-white/70 leading-relaxed max-w-sm">
               {t.footer.slogan}
