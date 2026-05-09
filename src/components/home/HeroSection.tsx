@@ -72,14 +72,6 @@ export const HeroSection: React.FC = () => {
           animate="visible"
           className="space-y-8 flex flex-col items-center"
         >
-          {/* Accent Badge */}
-          <motion.div
-            variants={itemVariants}
-            className="inline-flex items-center space-x-2 bg-accent/20 text-accent border border-accent/20 px-4 py-1.5 rounded-full text-xs font-semibold font-poppins tracking-wider uppercase shadow-lg shadow-accent/5"
-          >
-            <Sparkles className="w-4 h-4 text-accent animate-pulse" />
-            <span>SaniNova Global Consulting</span>
-          </motion.div>
 
           {/* Title */}
           <motion.h1
