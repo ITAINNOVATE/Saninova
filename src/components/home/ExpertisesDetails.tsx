@@ -68,8 +68,21 @@ export const ExpertisesDetails: React.FC = () => {
   const currentDetails = detailedData[activeTab as keyof typeof detailedData];
 
   return (
-    <section id="expertises-details" className="py-16 bg-white border-t border-light overflow-hidden">
+    <section id="expertises" className="py-24 bg-white border-t border-light overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-6">
+          <span className="inline-block font-poppins text-xs font-bold text-accent tracking-widest uppercase border-b-2 border-accent pb-1">
+            {t.expertises.tag}
+          </span>
+          <h2 className="font-montserrat text-3xl sm:text-4xl font-extrabold text-primary tracking-tight">
+            {t.expertises.title}
+          </h2>
+          <p className="font-inter text-lg text-dark/70">
+            {t.expertises.subtitle}
+          </p>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Left Side: Tabs Navigation Menu */}
           <div className="lg:col-span-4 flex flex-row lg:flex-col space-x-3 lg:space-x-0 space-y-0 lg:space-y-2 lg:max-h-[500px] overflow-x-auto lg:overflow-x-visible lg:overflow-y-auto pr-0 lg:pr-2 pb-4 lg:pb-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
