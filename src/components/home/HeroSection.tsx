@@ -1,12 +1,27 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles, ChevronDown } from "lucide-react";
 
 export const HeroSection: React.FC = () => {
   const { t } = useLanguage();
+  const [currentBgIndex, setCurrentBgIndex] = useState(0);
+
+  const bgImages = [
+    "/images/hero_background.png",
+    "/images/hero_background2.png",
+    "/images/hero_background3.png"
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentBgIndex((prevIndex) => (prevIndex + 1) % bgImages.length);
+    }, 6000);
+
+    return () => clearInterval(timer);
+  }, [bgImages.length]);
 
   const handleScrollToNext = () => {
     const nextSection = document.querySelector("#about");
@@ -43,11 +58,16 @@ export const HeroSection: React.FC = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center bg-primary overflow-hidden py-24">
-      {/* Background Image with Dark Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-10000 hover:scale-105"
-        style={{ backgroundImage: "url('/images/hero_background.png')" }}
-      />
+      {/* Background Images with smooth fading loop */}
+      {bgImages.map((bg, idx) => (
+        <div 
+          key={bg}
+          className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-[1500ms] ease-in-out transform ${
+            idx === currentBgIndex ? "opacity-100 scale-100" : "opacity-0 scale-105 pointer-events-none"
+          }`}
+          style={{ backgroundImage: `url('${bg}')` }}
+        />
+      ))}
       
       {/* Sophisticated Dark Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary/95 via-primary/80 to-primary/95" />
