@@ -2,12 +2,10 @@
 
 import React, { useState } from "react";
 import { useLanguage } from "../../context/LanguageContext";
-import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, ChevronUp, AlertCircle, HelpCircle, CheckCircle } from "lucide-react";
+import { AlertCircle, HelpCircle, CheckCircle } from "lucide-react";
 
 export const ExpertisesDetails: React.FC = () => {
   const { t } = useLanguage();
-  const [isOpen, setIsOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("governance");
 
   const detailedData = {
@@ -33,7 +31,7 @@ export const ExpertisesDetails: React.FC = () => {
       title: t.expertises.list.digital.title,
       problem: "Dossiers médicaux papier éparpillés, manque d'interopérabilité des systèmes existants, et déserts médicaux privant les populations de spécialistes.",
       solution: "Conception de dossiers patients informatisés uniques et sécurisés, intégration de la télémédecine par satellite pour le diagnostic à distance, et formations au DHIS2.",
-      result: "Une prise en charge médicale instantanée et sécurisée, réduction des transferts coûteux grâce à la télé-expertise, et centralisation fiable des statistiques sanitaires nationales."
+      result: "Une prise en charge médicale instantanée et sécurisée, réduction des transferts coûteûx grâce à la télé-expertise, et centralisation fiable des statistiques sanitaires nationales."
     },
     quality: {
       title: t.expertises.list.quality.title,
@@ -70,101 +68,81 @@ export const ExpertisesDetails: React.FC = () => {
   const currentDetails = detailedData[activeTab as keyof typeof detailedData];
 
   return (
-    <section id="expertises-details" className="py-12 bg-white border-t border-light overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 text-center">
-        {/* Toggle Button */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="inline-flex items-center space-x-2 bg-primary hover:bg-primary/95 text-white font-poppins font-bold px-8 py-4 rounded-full text-sm shadow-lg transition-all duration-300"
-        >
-          <span>{isOpen ? "Réduire les fiches d'expertises" : t.expertises.ctaAll}</span>
-          {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
-        </button>
+    <section id="expertises-details" className="py-16 bg-white border-t border-light overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          {/* Left Side: Tabs Navigation Menu */}
+          <div className="lg:col-span-4 flex flex-row lg:flex-col space-x-3 lg:space-x-0 space-y-0 lg:space-y-2 lg:max-h-[500px] overflow-x-auto lg:overflow-x-visible lg:overflow-y-auto pr-0 lg:pr-2 pb-4 lg:pb-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {Object.keys(detailedData).map((tabKey) => (
+              <button
+                key={tabKey}
+                onClick={() => setActiveTab(tabKey)}
+                className={`shrink-0 whitespace-nowrap lg:whitespace-normal px-5 py-4 rounded-2xl text-sm font-bold font-poppins text-left transition-all duration-200 ${
+                  activeTab === tabKey
+                    ? "bg-primary text-white shadow-md"
+                    : "bg-light text-dark/70 hover:bg-light/80 hover:text-primary"
+                }`}
+              >
+                {detailedData[tabKey as keyof typeof detailedData].title}
+              </button>
+            ))}
+          </div>
 
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-              className="mt-16 text-left"
-            >
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-                {/* Left Side: Tabs Navigation Menu */}
-                <div className="lg:col-span-4 flex flex-row lg:flex-col space-x-3 lg:space-x-0 space-y-0 lg:space-y-2 lg:max-h-[500px] overflow-x-auto lg:overflow-x-visible lg:overflow-y-auto pr-0 lg:pr-2 pb-4 lg:pb-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-                  {Object.keys(detailedData).map((tabKey) => (
-                    <button
-                      key={tabKey}
-                      onClick={() => setActiveTab(tabKey)}
-                      className={`shrink-0 whitespace-nowrap lg:whitespace-normal px-5 py-4 rounded-2xl text-sm font-bold font-poppins text-left transition-all duration-200 ${
-                        activeTab === tabKey
-                          ? "bg-primary text-white shadow-md"
-                          : "bg-light text-dark/70 hover:bg-light/80 hover:text-primary"
-                      }`}
-                    >
-                      {detailedData[tabKey as keyof typeof detailedData].title}
-                    </button>
-                  ))}
+          {/* Right Side: Tab Details Sheet */}
+          <div className="lg:col-span-8 bg-light/50 p-8 sm:p-10 rounded-3xl border border-dark/5 shadow-sm space-y-8 min-h-[420px] flex flex-col justify-between">
+            <div className="space-y-6">
+              <h3 className="font-montserrat text-2xl font-extrabold text-primary border-b border-light pb-4">
+                {currentDetails.title}
+              </h3>
+
+              {/* Problem */}
+              <div className="flex items-start space-x-4">
+                <div className="p-2 bg-red-500/10 text-red-500 rounded-xl shrink-0">
+                  <AlertCircle className="w-5 h-5" />
                 </div>
-
-                {/* Right Side: Tab Details Sheet */}
-                <div className="lg:col-span-8 bg-light/50 p-8 sm:p-10 rounded-3xl border border-dark/5 shadow-sm space-y-8 min-h-[420px] flex flex-col justify-between">
-                  <div className="space-y-6">
-                    <h3 className="font-montserrat text-2xl font-extrabold text-primary border-b border-light pb-4">
-                      {currentDetails.title}
-                    </h3>
-
-                    {/* Problem */}
-                    <div className="flex items-start space-x-4">
-                      <div className="p-2 bg-red-500/10 text-red-500 rounded-xl shrink-0">
-                        <AlertCircle className="w-5 h-5" />
-                      </div>
-                      <div className="space-y-1">
-                        <h4 className="font-poppins text-lg font-bold text-primary">Problématiques Identifiées</h4>
-                        <p className="font-inter text-sm sm:text-base text-dark/70 leading-relaxed">{currentDetails.problem}</p>
-                      </div>
-                    </div>
-
-                    {/* Solution */}
-                    <div className="flex items-start space-x-4">
-                      <div className="p-2 bg-primary/10 text-primary rounded-xl shrink-0">
-                        <HelpCircle className="w-5 h-5" />
-                      </div>
-                      <div className="space-y-1">
-                        <h4 className="font-poppins text-lg font-bold text-primary">Notre Accompagnement Stratégique</h4>
-                        <p className="font-inter text-sm sm:text-base text-dark/70 leading-relaxed">{currentDetails.solution}</p>
-                      </div>
-                    </div>
-
-                    {/* Result */}
-                    <div className="flex items-start space-x-4">
-                      <div className="p-2 bg-accent/10 text-accent rounded-xl shrink-0">
-                        <CheckCircle className="w-5 h-5" />
-                      </div>
-                      <div className="space-y-1">
-                        <h4 className="font-poppins text-lg font-bold text-primary">Résultats Attendus & Impacts</h4>
-                        <p className="font-inter text-sm sm:text-base text-dark/70 leading-relaxed">{currentDetails.result}</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="pt-6 border-t border-light mt-6 text-right">
-                    <a
-                      href="#contact"
-                      className="inline-flex items-center space-x-2 bg-accent hover:bg-accent/90 text-white font-poppins font-semibold px-6 py-3 rounded-full text-xs shadow-md transition-all duration-300"
-                    >
-                      <span>Planifier une consultation sur ce volet</span>
-                      <span>→</span>
-                    </a>
-                  </div>
+                <div className="space-y-1">
+                  <h4 className="font-poppins text-lg font-bold text-primary">Problématiques Identifiées</h4>
+                  <p className="font-inter text-sm sm:text-base text-dark/70 leading-relaxed">{currentDetails.problem}</p>
                 </div>
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+
+              {/* Solution */}
+              <div className="flex items-start space-x-4">
+                <div className="p-2 bg-primary/10 text-primary rounded-xl shrink-0">
+                  <HelpCircle className="w-5 h-5" />
+                </div>
+                <div className="space-y-1">
+                  <h4 className="font-poppins text-lg font-bold text-primary">Notre Accompagnement Stratégique</h4>
+                  <p className="font-inter text-sm sm:text-base text-dark/70 leading-relaxed">{currentDetails.solution}</p>
+                </div>
+              </div>
+
+              {/* Result */}
+              <div className="flex items-start space-x-4">
+                <div className="p-2 bg-accent/10 text-accent rounded-xl shrink-0">
+                  <CheckCircle className="w-5 h-5" />
+                </div>
+                <div className="space-y-1">
+                  <h4 className="font-poppins text-lg font-bold text-primary">Résultats Attendus & Impacts</h4>
+                  <p className="font-inter text-sm sm:text-base text-dark/70 leading-relaxed">{currentDetails.result}</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-6 border-t border-light mt-6 text-right">
+              <a
+                href="#contact"
+                className="inline-flex items-center space-x-2 bg-accent hover:bg-accent/90 text-white font-poppins font-semibold px-6 py-3 rounded-full text-xs shadow-md transition-all duration-300"
+              >
+                <span>Planifier une consultation sur ce volet</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
 };
+
 export default ExpertisesDetails;
