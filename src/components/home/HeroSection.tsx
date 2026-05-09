@@ -121,7 +121,7 @@ export const HeroSection: React.FC = () => {
                 const target = document.querySelector("#expertises");
                 if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - 80, behavior: "smooth" });
               }}
-              className="flex items-center justify-center space-x-2 bg-accent hover:bg-accent/90 text-white font-poppins font-semibold px-8 py-4 rounded-full text-sm shadow-xl shadow-accent/20 hover:shadow-2xl hover:shadow-accent/30 hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 w-full sm:w-auto"
+              className="flex items-center justify-center space-x-2 bg-orange hover:bg-orange/95 text-white font-poppins font-semibold px-8 py-4 rounded-full text-sm shadow-xl shadow-orange/20 hover:shadow-2xl hover:shadow-orange/30 hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 w-full sm:w-auto"
             >
               <span>{t.hero.ctaPrimary}</span>
               <ArrowRight className="w-4 h-4" />

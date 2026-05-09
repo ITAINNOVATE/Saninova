@@ -9,12 +9,12 @@ export const ImpactStats: React.FC = () => {
   const { t } = useLanguage();
 
   const statIcons = [
-    <Target className="w-5 h-5 shrink-0 text-accent" />,
-    <Landmark className="w-5 h-5 shrink-0 text-accent" />,
-    <ShieldAlert className="w-5 h-5 shrink-0 text-accent" />,
-    <Award className="w-5 h-5 shrink-0 text-accent" />,
-    <Milestone className="w-5 h-5 shrink-0 text-accent" />,
-    <BarChart2 className="w-5 h-5 shrink-0 text-accent" />,
+    <Target className="w-5 h-5 shrink-0 text-orange" />,
+    <Landmark className="w-5 h-5 shrink-0 text-orange" />,
+    <ShieldAlert className="w-5 h-5 shrink-0 text-orange" />,
+    <Award className="w-5 h-5 shrink-0 text-orange" />,
+    <Milestone className="w-5 h-5 shrink-0 text-orange" />,
+    <BarChart2 className="w-5 h-5 shrink-0 text-orange" />,
   ];
 
   const containerVariants = {
@@ -49,7 +49,7 @@ export const ImpactStats: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-6">
-          <span className="inline-block font-poppins text-xs font-bold text-accent tracking-widest uppercase border-b-2 border-accent pb-1">
+          <span className="inline-block font-poppins text-xs font-bold text-orange tracking-widest uppercase border-b-2 border-orange pb-1">
             {t.impact.tag}
           </span>
           <h2 className="font-montserrat text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
@@ -69,7 +69,7 @@ export const ImpactStats: React.FC = () => {
             <motion.div
               key={index}
               variants={cardVariants}
-              className="bg-white/5 p-6 rounded-2xl border border-white/10 hover:bg-white/10 hover:border-accent/30 hover:scale-105 transition-all duration-300 flex flex-col items-center group"
+              className="bg-white/5 p-6 rounded-2xl border border-white/10 hover:bg-white/10 hover:border-orange/30 hover:scale-105 transition-all duration-300 flex flex-col items-center group"
             >
               {/* Micro Icon */}
               <div className="p-2 bg-white/5 rounded-full mb-3 group-hover:scale-110 transition-transform">
@@ -79,7 +79,7 @@ export const ImpactStats: React.FC = () => {
               {/* Number and suffix */}
               <span className="font-montserrat text-3xl sm:text-4xl font-extrabold text-white">
                 {stat.value}
-                <span className="text-accent ml-0.5">{stat.suffix}</span>
+                <span className="text-orange ml-0.5">{stat.suffix}</span>
               </span>
 
               {/* Label */}

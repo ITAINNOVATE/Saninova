@@ -44,7 +44,7 @@ export const Methodology: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-20 space-y-6">
-          <span className="inline-block font-poppins text-xs font-bold text-accent tracking-widest uppercase border-b-2 border-accent pb-1">
+          <span className="inline-block font-poppins text-xs font-bold text-orange tracking-widest uppercase border-b-2 border-orange pb-1">
             {t.methodology.tag}
           </span>
           <h2 className="font-montserrat text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">

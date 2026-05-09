@@ -34,7 +34,7 @@ export const ServicesSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-6">
-          <span className="inline-block font-poppins text-xs font-bold text-accent tracking-widest uppercase border-b-2 border-accent pb-1">
+          <span className="inline-block font-poppins text-xs font-bold text-orange tracking-widest uppercase border-b-2 border-orange pb-1">
             SERVICES
           </span>
           <h2 className="font-montserrat text-3xl sm:text-4xl font-extrabold text-primary tracking-tight">
@@ -79,7 +79,7 @@ export const ServicesSection: React.FC = () => {
               <div className="pt-6 border-t border-light mt-6 w-full">
                 <a
                   href="#contact"
-                  className="font-poppins text-xs font-bold text-accent hover:text-primary transition-colors flex items-center justify-center space-x-1"
+                  className="font-poppins text-xs font-bold text-orange hover:text-primary transition-colors flex items-center justify-center space-x-1"
                 >
                   <span>Prendre rendez-vous</span>
                   <span>→</span>

@@ -72,7 +72,7 @@ export const ExpertisesDetails: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-6">
-          <span className="inline-block font-poppins text-xs font-bold text-accent tracking-widest uppercase border-b-2 border-accent pb-1">
+          <span className="inline-block font-poppins text-xs font-bold text-orange tracking-widest uppercase border-b-2 border-orange pb-1">
             {t.expertises.tag}
           </span>
           <h2 className="font-montserrat text-3xl sm:text-4xl font-extrabold text-primary tracking-tight">
@@ -92,8 +92,8 @@ export const ExpertisesDetails: React.FC = () => {
                 onClick={() => setActiveTab(tabKey)}
                 className={`px-4 py-3.5 rounded-2xl text-xs sm:text-sm font-bold font-poppins text-left transition-all duration-200 ${
                   activeTab === tabKey
-                    ? "bg-primary text-white shadow-md"
-                    : "bg-light text-dark/70 hover:bg-light/80 hover:text-primary"
+                    ? "bg-primary text-white shadow-md border-l-4 border-orange pl-3"
+                    : "bg-light text-dark/70 hover:bg-light/80 hover:text-primary border-l-4 border-transparent pl-3"
                 }`}
               >
                 {detailedData[tabKey as keyof typeof detailedData].title}

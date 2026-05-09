@@ -75,7 +75,7 @@ export const ContactQuick: React.FC = () => {
       <div className="max-w-4xl mx-auto px-6">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-6">
-          <span className="inline-block font-poppins text-xs font-bold text-accent tracking-widest uppercase border-b-2 border-accent pb-1">
+          <span className="inline-block font-poppins text-xs font-bold text-orange tracking-widest uppercase border-b-2 border-orange pb-1">
             {t.contactQuick.tag}
           </span>
           <h2 className="font-montserrat text-3xl sm:text-4xl font-extrabold text-primary tracking-tight">
@@ -96,7 +96,7 @@ export const ContactQuick: React.FC = () => {
                 exit={{ opacity: 0, scale: 0.95 }}
                 className="absolute inset-0 bg-white rounded-3xl flex flex-col items-center justify-center text-center p-8 z-20"
               >
-                <div className="w-16 h-16 rounded-full bg-accent/10 text-accent flex items-center justify-center mb-6">
+                <div className="w-16 h-16 rounded-full bg-orange/10 text-orange flex items-center justify-center mb-6">
                   <CheckCircle className="w-10 h-10" />
                 </div>
                 <h3 className="font-montserrat text-2xl font-extrabold text-primary mb-3">
@@ -114,7 +114,7 @@ export const ContactQuick: React.FC = () => {
               {/* Full Name */}
               <div className="space-y-2">
                 <label className="font-poppins text-xs font-bold text-primary uppercase tracking-wide">
-                  {t.contactQuick.name} <span className="text-accent">*</span>
+                  {t.contactQuick.name} <span className="text-orange">*</span>
                 </label>
                 <input
                   type="text"
@@ -122,7 +122,7 @@ export const ContactQuick: React.FC = () => {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full bg-white text-dark text-sm px-4 py-3 rounded-xl border border-dark/5 focus:outline-none focus:border-accent transition-all duration-200"
+                  className="w-full bg-white text-dark text-sm px-4 py-3 rounded-xl border border-dark/5 focus:outline-none focus:border-orange transition-all duration-200"
                 />
               </div>
 
@@ -136,14 +136,14 @@ export const ContactQuick: React.FC = () => {
                   name="institution"
                   value={formData.institution}
                   onChange={handleChange}
-                  className="w-full bg-white text-dark text-sm px-4 py-3 rounded-xl border border-dark/5 focus:outline-none focus:border-accent transition-all duration-200"
+                  className="w-full bg-white text-dark text-sm px-4 py-3 rounded-xl border border-dark/5 focus:outline-none focus:border-orange transition-all duration-200"
                 />
               </div>
 
               {/* Country */}
               <div className="space-y-2">
                 <label className="font-poppins text-xs font-bold text-primary uppercase tracking-wide">
-                  {t.contactQuick.country} <span className="text-accent">*</span>
+                  {t.contactQuick.country} <span className="text-orange">*</span>
                 </label>
                 <input
                   type="text"
@@ -151,14 +151,14 @@ export const ContactQuick: React.FC = () => {
                   required
                   value={formData.country}
                   onChange={handleChange}
-                  className="w-full bg-white text-dark text-sm px-4 py-3 rounded-xl border border-dark/5 focus:outline-none focus:border-accent transition-all duration-200"
+                  className="w-full bg-white text-dark text-sm px-4 py-3 rounded-xl border border-dark/5 focus:outline-none focus:border-orange transition-all duration-200"
                 />
               </div>
 
               {/* Email */}
               <div className="space-y-2">
                 <label className="font-poppins text-xs font-bold text-primary uppercase tracking-wide">
-                  {t.contactQuick.email} <span className="text-accent">*</span>
+                  {t.contactQuick.email} <span className="text-orange">*</span>
                 </label>
                 <input
                   type="email"
@@ -166,7 +166,7 @@ export const ContactQuick: React.FC = () => {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full bg-white text-dark text-sm px-4 py-3 rounded-xl border border-dark/5 focus:outline-none focus:border-accent transition-all duration-200"
+                  className="w-full bg-white text-dark text-sm px-4 py-3 rounded-xl border border-dark/5 focus:outline-none focus:border-orange transition-all duration-200"
                 />
               </div>
             </div>
@@ -174,7 +174,7 @@ export const ContactQuick: React.FC = () => {
             {/* Subject */}
             <div className="space-y-2">
               <label className="font-poppins text-xs font-bold text-primary uppercase tracking-wide">
-                {t.contactQuick.subject} <span className="text-accent">*</span>
+                {t.contactQuick.subject} <span className="text-orange">*</span>
               </label>
               <input
                 type="text"
@@ -182,7 +182,7 @@ export const ContactQuick: React.FC = () => {
                 required
                 value={formData.subject}
                 onChange={handleChange}
-                className="w-full bg-white text-dark text-sm px-4 py-3 rounded-xl border border-dark/5 focus:outline-none focus:border-accent transition-all duration-200"
+                className="w-full bg-white text-dark text-sm px-4 py-3 rounded-xl border border-dark/5 focus:outline-none focus:border-orange transition-all duration-200"
               />
             </div>
 
@@ -196,7 +196,7 @@ export const ContactQuick: React.FC = () => {
                 rows={4}
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full bg-white text-dark text-sm px-4 py-3 rounded-xl border border-dark/5 focus:outline-none focus:border-accent transition-all duration-200 resize-none"
+                className="w-full bg-white text-dark text-sm px-4 py-3 rounded-xl border border-dark/5 focus:outline-none focus:border-orange transition-all duration-200 resize-none"
               />
             </div>
 
@@ -213,7 +213,7 @@ export const ContactQuick: React.FC = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`inline-flex items-center space-x-2 bg-accent hover:bg-accent/90 text-white font-poppins font-bold px-8 py-3.5 rounded-full text-sm shadow-lg shadow-accent/20 transition-all duration-300 w-full sm:w-auto ${
+                className={`inline-flex items-center space-x-2 bg-orange hover:bg-orange/95 text-white font-poppins font-bold px-8 py-3.5 rounded-full text-sm shadow-lg shadow-orange/20 transition-all duration-300 w-full sm:w-auto ${
                   isSubmitting ? "opacity-70 cursor-not-allowed" : "hover:scale-[1.02] active:scale-[0.98]"
                 }`}
               >

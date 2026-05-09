@@ -45,7 +45,7 @@ export const AboutSection: React.FC = () => {
             className="space-y-8"
           >
             <div className="space-y-5">
-              <span className="inline-block font-poppins text-xs font-bold text-accent tracking-widest uppercase border-b-2 border-accent pb-1">
+              <span className="inline-block font-poppins text-xs font-bold text-orange tracking-widest uppercase border-b-2 border-orange pb-1">
                 {t.aboutSection.tag}
               </span>
               <h2 className="font-montserrat text-3xl sm:text-4xl font-extrabold text-primary tracking-tight leading-tight">
