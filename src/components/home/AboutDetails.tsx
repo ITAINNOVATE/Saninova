@@ -12,7 +12,7 @@ export const AboutDetails: React.FC = () => {
   return (
     <div id="about-details" className="overflow-hidden">
       {/* Dark Banner: Vision, Mission & Values */}
-      <section className="bg-primary text-white py-24 relative border-b border-white/5">
+      <section className="bg-primary text-white py-16 md:py-24 relative border-b border-white/5">
         {/* Subtle Background grid */}
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -29,7 +29,7 @@ export const AboutDetails: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left Main Title */}
             <div className="lg:col-span-3">
-              <h2 className="font-montserrat text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight text-white">
+              <h2 className="font-montserrat text-3xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight text-white">
                 {locale === "en" ? (
                   <>Vision,<br />Mission &amp;<br />Values</>
                 ) : (

@@ -34,7 +34,7 @@ export const ImpactStats: React.FC = () => {
   };
 
   return (
-    <section className="py-24 bg-primary text-white relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-primary text-white relative overflow-hidden">
       {/* Decorative full size background patterns */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -64,13 +64,13 @@ export const ImpactStats: React.FC = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 text-center"
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-8 text-center"
         >
           {t.impact.stats.map((stat, index) => (
             <motion.div
               key={index}
               variants={cardVariants}
-              className="bg-white/5 p-6 rounded-2xl border border-white/10 hover:bg-white/10 hover:border-orange/30 hover:scale-105 transition-all duration-300 flex flex-col items-center group"
+              className="bg-white/5 p-4 sm:p-6 rounded-2xl border border-white/10 hover:bg-white/10 hover:border-orange/30 hover:scale-105 transition-all duration-300 flex flex-col items-center group"
             >
               {/* Micro Icon */}
               <div className="p-2 bg-white/5 rounded-full mb-3 group-hover:scale-110 transition-transform">

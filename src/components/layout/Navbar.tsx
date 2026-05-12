@@ -100,8 +100,8 @@ export const Navbar: React.FC = () => {
             </a>
           </div>
           
-          {/* Right: Social Media Icons */}
-          <div className="flex items-center space-x-3">
+          {/* Right: Social Media Icons - Visible only on sm+ to preserve vertical height on mobile */}
+          <div className="hidden sm:flex items-center space-x-3">
             {socialLinks.map((link, idx) => (
               <a
                 key={idx}
@@ -125,14 +125,14 @@ export const Navbar: React.FC = () => {
               key="colored-logo"
               src="/images/logo.png"
               alt="SaniNova"
-              className="h-12 w-auto max-w-[180px] object-contain transition-all duration-300 group-hover:scale-105"
+              className="h-10 sm:h-12 w-auto max-w-[140px] sm:max-w-[180px] object-contain transition-all duration-300 group-hover:scale-105"
             />
           ) : (
             <img
               key="white-logo"
               src="/images/logo.png"
               alt="SaniNova"
-              className="h-12 w-auto max-w-[180px] object-contain transition-all duration-300 group-hover:scale-105"
+              className="h-10 sm:h-12 w-auto max-w-[140px] sm:max-w-[180px] object-contain transition-all duration-300 group-hover:scale-105"
               style={{
                 filter: "brightness(0) invert(1)"
               }}

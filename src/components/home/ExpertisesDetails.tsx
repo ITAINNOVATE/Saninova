@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import { AlertCircle, HelpCircle, CheckCircle } from "lucide-react";
 
+import Link from "next/link";
+
 export const ExpertisesDetails: React.FC = () => {
   const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState("governance");
@@ -68,7 +70,7 @@ export const ExpertisesDetails: React.FC = () => {
   const currentDetails = detailedData[activeTab as keyof typeof detailedData];
 
   return (
-    <section id="expertises" className="py-24 bg-white border-t border-light overflow-hidden">
+    <section id="expertises" className="py-16 md:py-24 bg-white border-t border-light overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-6">
@@ -102,54 +104,54 @@ export const ExpertisesDetails: React.FC = () => {
           </div>
 
           {/* Right Side: Tab Details Sheet */}
-          <div className="lg:col-span-8 bg-light/50 p-8 sm:p-10 rounded-3xl border border-dark/5 shadow-sm space-y-8 min-h-[420px] flex flex-col justify-between">
+          <div className="lg:col-span-8 bg-light/50 p-6 sm:p-10 rounded-3xl border border-dark/5 shadow-sm space-y-8 min-h-[420px] flex flex-col justify-between">
             <div className="space-y-6">
-              <h3 className="font-montserrat text-2xl font-extrabold text-primary border-b border-light pb-4">
+              <h3 className="font-montserrat text-xl sm:text-2xl font-extrabold text-primary border-b border-light pb-4">
                 {currentDetails.title}
               </h3>
 
               {/* Problem */}
-              <div className="flex items-start space-x-4">
+              <div className="flex items-start space-x-3 sm:space-x-4">
                 <div className="p-2 bg-red-500/10 text-red-500 rounded-xl shrink-0">
                   <AlertCircle className="w-5 h-5" />
                 </div>
                 <div className="space-y-1">
-                  <h4 className="font-poppins text-lg font-bold text-primary">Problématiques Identifiées</h4>
+                  <h4 className="font-poppins text-base sm:text-lg font-bold text-primary">Problématiques Identifiées</h4>
                   <p className="font-inter text-sm sm:text-base text-dark/70 leading-relaxed">{currentDetails.problem}</p>
                 </div>
               </div>
 
               {/* Solution */}
-              <div className="flex items-start space-x-4">
+              <div className="flex items-start space-x-3 sm:space-x-4">
                 <div className="p-2 bg-primary/10 text-primary rounded-xl shrink-0">
                   <HelpCircle className="w-5 h-5" />
                 </div>
                 <div className="space-y-1">
-                  <h4 className="font-poppins text-lg font-bold text-primary">Notre Accompagnement Stratégique</h4>
+                  <h4 className="font-poppins text-base sm:text-lg font-bold text-primary">Notre Accompagnement Stratégique</h4>
                   <p className="font-inter text-sm sm:text-base text-dark/70 leading-relaxed">{currentDetails.solution}</p>
                 </div>
               </div>
 
               {/* Result */}
-              <div className="flex items-start space-x-4">
+              <div className="flex items-start space-x-3 sm:space-x-4">
                 <div className="p-2 bg-accent/10 text-accent rounded-xl shrink-0">
                   <CheckCircle className="w-5 h-5" />
                 </div>
                 <div className="space-y-1">
-                  <h4 className="font-poppins text-lg font-bold text-primary">Résultats Attendus & Impacts</h4>
+                  <h4 className="font-poppins text-base sm:text-lg font-bold text-primary">Résultats Attendus & Impacts</h4>
                   <p className="font-inter text-sm sm:text-base text-dark/70 leading-relaxed">{currentDetails.result}</p>
                 </div>
               </div>
             </div>
 
-            <div className="pt-6 border-t border-light mt-6 text-right">
-              <a
-                href="#contact"
+            <div className="pt-6 border-t border-light mt-6 flex justify-end">
+              <Link
+                href="/contact"
                 className="inline-flex items-center space-x-2 bg-accent hover:bg-accent/90 text-white font-poppins font-semibold px-6 py-3 rounded-full text-xs shadow-md transition-all duration-300"
               >
                 <span>Planifier une consultation sur ce volet</span>
                 <span>→</span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

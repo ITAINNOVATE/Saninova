@@ -47,7 +47,7 @@ export const Advantages: React.FC = () => {
   };
 
   return (
-    <section className="py-32 bg-white relative overflow-hidden">
+    <section className="py-16 md:py-32 bg-white relative overflow-hidden">
       {/* Luxurious Abstract Fluid Background Orbs */}
       <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-gradient-to-br from-primary/4 to-transparent rounded-full filter blur-[140px] pointer-events-none -translate-y-1/3" />
       <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-gradient-to-bl from-accent/4 to-transparent rounded-full filter blur-[120px] pointer-events-none translate-y-1/3" />

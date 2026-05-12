@@ -6,6 +6,8 @@ import { motion } from "framer-motion";
 import { Trophy, Users, Globe2, ArrowUpRight } from "lucide-react";
 import Counter from "../ui/Counter";
 
+import Link from "next/link";
+
 export const AboutSection: React.FC = () => {
   const { t } = useLanguage();
 
@@ -21,20 +23,6 @@ export const AboutSection: React.FC = () => {
     );
   };
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    const targetElement = document.querySelector(href);
-    if (targetElement) {
-      const offset = 80;
-      const elementPosition = targetElement.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-    }
-  };
-
   const textVariants = {
     hidden: { opacity: 0, x: -30 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
@@ -46,7 +34,7 @@ export const AboutSection: React.FC = () => {
   };
 
   return (
-    <section id="about" className="py-24 bg-white overflow-hidden">
+    <section id="about" className="py-16 md:py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Side: Brand presentation */}
@@ -76,15 +64,15 @@ export const AboutSection: React.FC = () => {
             </div>
 
             {/* Quick figures */}
-            <div className="grid grid-cols-3 gap-6 pt-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6 pt-4">
               <div className="space-y-1">
                 <div className="flex items-center space-x-2 text-accent">
                   <Globe2 className="w-5 h-5 shrink-0" />
-                  <span className="font-montserrat text-2xl sm:text-3xl font-extrabold">
+                  <span className="font-montserrat text-xl sm:text-3xl font-extrabold">
                     {renderAnimatedStat(t.aboutSection.stat1)}
                   </span>
                 </div>
-                <p className="font-poppins text-xs font-medium text-dark/60 uppercase tracking-wide">
+                <p className="font-poppins text-[10px] sm:text-xs font-medium text-dark/60 uppercase tracking-wide">
                   {t.aboutSection.stat1Label}
                 </p>
               </div>
@@ -92,37 +80,36 @@ export const AboutSection: React.FC = () => {
               <div className="space-y-1">
                 <div className="flex items-center space-x-2 text-primary">
                   <Trophy className="w-5 h-5 shrink-0" />
-                  <span className="font-montserrat text-2xl sm:text-3xl font-extrabold">
+                  <span className="font-montserrat text-xl sm:text-3xl font-extrabold">
                     {renderAnimatedStat(t.aboutSection.stat2)}
                   </span>
                 </div>
-                <p className="font-poppins text-xs font-medium text-dark/60 uppercase tracking-wide">
+                <p className="font-poppins text-[10px] sm:text-xs font-medium text-dark/60 uppercase tracking-wide">
                   {t.aboutSection.stat2Label}
                 </p>
               </div>
 
-              <div className="space-y-1">
+              <div className="space-y-1 col-span-2 sm:col-span-1">
                 <div className="flex items-center space-x-2 text-accent">
                   <Users className="w-5 h-5 shrink-0" />
-                  <span className="font-montserrat text-2xl sm:text-3xl font-extrabold">
+                  <span className="font-montserrat text-xl sm:text-3xl font-extrabold">
                     {renderAnimatedStat(t.aboutSection.stat3)}
                   </span>
                 </div>
-                <p className="font-poppins text-xs font-medium text-dark/60 uppercase tracking-wide">
+                <p className="font-poppins text-[10px] sm:text-xs font-medium text-dark/60 uppercase tracking-wide">
                   {t.aboutSection.stat3Label}
                 </p>
               </div>
             </div>
 
             <div className="pt-4">
-              <a
-                href="#about-details"
-                onClick={(e) => handleNavClick(e, "#about-details")}
+              <Link
+                href="/about"
                 className="inline-flex items-center space-x-2 text-primary font-poppins font-bold text-sm hover:text-accent group transition-colors"
               >
                 <span>{t.aboutSection.cta}</span>
                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-              </a>
+              </Link>
             </div>
           </motion.div>
 
