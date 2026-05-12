@@ -16,7 +16,7 @@ export default function AboutPage() {
       <PageHero 
         title={t.nav.about}
         subtitle={t.aboutSection.title}
-        backgroundImage="/images/bg_about.png"
+        backgroundImages={["/images/bg_about.png", "/images/bg_about2.png"]}
       />
       
       <div className="bg-white">

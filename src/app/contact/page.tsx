@@ -13,7 +13,7 @@ export default function ContactPage() {
       <PageHero 
         title={t.nav.contact}
         subtitle={t.contactPage.subtitle}
-        backgroundImage="/images/bg_contact.png"
+        backgroundImages={["/images/bg_contact.png", "/images/bg_contact2.png"]}
       />
       
       <div className="bg-white py-12">

@@ -1,7 +1,6 @@
 "use client";
 
-import React from "react";
-import Image from "next/image";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 import { ChevronDown } from "lucide-react";
@@ -9,10 +8,22 @@ import { ChevronDown } from "lucide-react";
 interface PageHeroProps {
   title: string;
   subtitle?: string;
-  backgroundImage: string;
+  backgroundImages: string[];
 }
 
-export const PageHero: React.FC<PageHeroProps> = ({ title, subtitle, backgroundImage }) => {
+export const PageHero: React.FC<PageHeroProps> = ({ title, subtitle, backgroundImages }) => {
+  const [currentBgIndex, setCurrentBgIndex] = useState(0);
+
+  useEffect(() => {
+    if (backgroundImages.length <= 1) return;
+    
+    const timer = setInterval(() => {
+      setCurrentBgIndex((prevIndex) => (prevIndex + 1) % backgroundImages.length);
+    }, 6000);
+
+    return () => clearInterval(timer);
+  }, [backgroundImages.length]);
+
   const handleScrollToNext = () => {
     window.scrollTo({
       top: window.innerHeight * 0.9,
@@ -22,19 +33,20 @@ export const PageHero: React.FC<PageHeroProps> = ({ title, subtitle, backgroundI
 
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden py-24">
-      {/* Dynamic Background Image with Professional Overlay */}
-      <div className="absolute inset-0 bg-primary/40 z-0">
-        <Image
-          src={backgroundImage}
-          alt={title}
-          fill
-          priority
-          className="object-cover object-center"
+      {/* Dynamic Sliding Background Images */}
+      {backgroundImages.map((bg, idx) => (
+        <div 
+          key={bg}
+          className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-[1500ms] ease-in-out transform ${
+            idx === currentBgIndex ? "opacity-100 scale-100" : "opacity-0 scale-105 pointer-events-none"
+          }`}
+          style={{ backgroundImage: `url('${bg}')` }}
         />
-        {/* Multi-layered gradient for content isolation */}
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/95 via-primary/70 to-primary/95 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-gradient-to-r from-dark/60 to-transparent" />
-      </div>
+      ))}
+
+      {/* Professional Overlays for content isolation */}
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/95 via-primary/70 to-primary/95 mix-blend-multiply pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-r from-dark/60 to-transparent pointer-events-none" />
 
       {/* Floating Design Accents */}
       <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent z-10" />

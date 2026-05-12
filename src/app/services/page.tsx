@@ -14,7 +14,7 @@ export default function ServicesPage() {
       <PageHero 
         title={t.nav.services}
         subtitle={t.servicesPage.subtitle}
-        backgroundImage="/images/bg_services.png"
+        backgroundImages={["/images/bg_services.png", "/images/bg_services2.png"]}
       />
       
       <div className="bg-white">

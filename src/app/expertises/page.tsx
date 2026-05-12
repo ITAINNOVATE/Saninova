@@ -13,7 +13,7 @@ export default function ExpertisesPage() {
       <PageHero 
         title={t.nav.expertises}
         subtitle={t.expertises.title}
-        backgroundImage="/images/bg_expertises.png"
+        backgroundImages={["/images/bg_expertises.png", "/images/bg_expertises2.png"]}
       />
       
       <div className="bg-white">
