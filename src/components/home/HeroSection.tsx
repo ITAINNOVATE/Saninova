@@ -3,7 +3,8 @@
 import React, { useState, useEffect } from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
+import Link from "next/link";
 
 export const HeroSection: React.FC = () => {
   const { t } = useLanguage();
@@ -24,15 +25,11 @@ export const HeroSection: React.FC = () => {
   }, [bgImages.length]);
 
   const handleScrollToNext = () => {
-    const nextSection = document.querySelector("#about");
-    if (nextSection) {
-      const offset = 80;
-      const elementPosition = nextSection.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
+    // The home page still contains AboutSection below, so internal scroll is fine here
+    const nextSection = document.getElementById("about-intro"); // Giving this specific tag in AboutSection is safer, but standard selector is fine
+    const genericSection = document.querySelector("section:nth-of-type(2)");
+    if (genericSection) {
+      genericSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -58,7 +55,7 @@ export const HeroSection: React.FC = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center bg-primary overflow-hidden py-24">
-      {/* Background Images with smooth fading loop */}
+      {/* Background Images */}
       {bgImages.map((bg, idx) => (
         <div 
           key={bg}
@@ -114,30 +111,20 @@ export const HeroSection: React.FC = () => {
             variants={itemVariants}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 w-full sm:w-auto"
           >
-            <a
-              href="#expertises"
-              onClick={(e) => {
-                e.preventDefault();
-                const target = document.querySelector("#expertises");
-                if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - 80, behavior: "smooth" });
-              }}
+            <Link
+              href="/expertises"
               className="flex items-center justify-center space-x-2 bg-orange hover:bg-orange/95 text-white font-poppins font-semibold px-8 py-4 rounded-full text-sm shadow-xl shadow-orange/20 hover:shadow-2xl hover:shadow-orange/30 hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 w-full sm:w-auto"
             >
               <span>{t.hero.ctaPrimary}</span>
               <ArrowRight className="w-4 h-4" />
-            </a>
+            </Link>
 
-            <a
-              href="#contact"
-              onClick={(e) => {
-                e.preventDefault();
-                const target = document.querySelector("#contact");
-                if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - 80, behavior: "smooth" });
-              }}
+            <Link
+              href="/contact"
               className="flex items-center justify-center space-x-2 bg-white/10 hover:bg-white/15 text-white font-poppins font-semibold px-8 py-4 rounded-full text-sm border border-white/15 backdrop-blur-md hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 w-full sm:w-auto"
             >
               <span>{t.hero.ctaSecondary}</span>
-            </a>
+            </Link>
           </motion.div>
         </motion.div>
 

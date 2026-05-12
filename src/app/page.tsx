@@ -1,69 +1,33 @@
 "use client";
 
 import React from "react";
-import Navbar from "../components/layout/Navbar";
 import HeroSection from "../components/home/HeroSection";
 import AboutSection from "../components/home/AboutSection";
-import AboutDetails from "../components/home/AboutDetails";
-import DirectorSection from "../components/home/DirectorSection";
-import TeamSection from "../components/home/TeamSection";
-import ExpertisesDetails from "../components/home/ExpertisesDetails";
-import Methodology from "../components/home/Methodology";
-import Advantages from "../components/home/Advantages";
 import ImpactStats from "../components/home/ImpactStats";
 import ServicesSection from "../components/home/ServicesSection";
-import Publications from "../components/home/Publications";
 import Partners from "../components/partners/Partners";
 import ContactQuick from "../components/home/ContactQuick";
-import Footer from "../components/layout/Footer";
-import WhatsAppButton from "../components/ui/WhatsAppButton";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* Navigation */}
-      <Navbar />
+    <>
+      {/* Hero Section */}
+      <HeroSection />
 
-      {/* Main Content Sections */}
-      <main className="flex-grow">
-        {/* Hero Section */}
-        <HeroSection />
+      {/* Quick About Intro */}
+      <AboutSection />
 
-        {/* About Section */}
-        <AboutSection />
-        <AboutDetails />
-        <DirectorSection />
-        <TeamSection />
+      {/* Services Preview Grid */}
+      <ServicesSection />
 
-        <ExpertisesDetails />
+      {/* Dynamic Impact Metrics */}
+      <ImpactStats />
 
-        {/* Services Section */}
-        <ServicesSection />
+      {/* Universal Scrolling Ribbon */}
+      <Partners />
 
-        {/* Methodology Timeline */}
-        <Methodology />
-
-        {/* Advantages Section */}
-        <Advantages />
-
-        {/* Impact Stats */}
-        <ImpactStats />
-
-        {/* Publications / Insights Section */}
-        <Publications />
-
-        {/* Partners Logos */}
-        <Partners />
-
-        {/* Contact Form Section */}
-        <ContactQuick />
-      </main>
-
-      {/* Floating Buttons */}
-      <WhatsAppButton />
-
-      {/* Footer */}
-      <Footer />
-    </div>
+      {/* Essential Outreach Form */}
+      <ContactQuick />
+    </>
   );
 }

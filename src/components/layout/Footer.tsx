@@ -34,6 +34,8 @@ const YoutubeIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
+import Link from "next/link";
+
 export const Footer: React.FC = () => {
   const { t } = useLanguage();
 
@@ -49,20 +51,6 @@ export const Footer: React.FC = () => {
       top: 0,
       behavior: "smooth",
     });
-  };
-
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    const targetElement = document.querySelector(href);
-    if (targetElement) {
-      const offset = 80;
-      const elementPosition = targetElement.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-    }
   };
 
   return (
@@ -111,29 +99,29 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-3 font-poppins text-lg text-white/70">
               <li>
-                <a href="#home" onClick={(e) => handleNavClick(e, "#home")} className="hover:text-accent transition-colors duration-200">
+                <Link href="/" className="hover:text-accent transition-colors duration-200">
                   {t.nav.home}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#about" onClick={(e) => handleNavClick(e, "#about")} className="hover:text-accent transition-colors duration-200">
+                <Link href="/about" className="hover:text-accent transition-colors duration-200">
                   {t.nav.about}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#expertises" onClick={(e) => handleNavClick(e, "#expertises")} className="hover:text-accent transition-colors duration-200">
+                <Link href="/expertises" className="hover:text-accent transition-colors duration-200">
                   {t.nav.expertises}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#services" onClick={(e) => handleNavClick(e, "#services")} className="hover:text-accent transition-colors duration-200">
+                <Link href="/services" className="hover:text-accent transition-colors duration-200">
                   {t.nav.services}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#publications" onClick={(e) => handleNavClick(e, "#publications")} className="hover:text-accent transition-colors duration-200">
+                <Link href="/publications" className="hover:text-accent transition-colors duration-200">
                   {t.nav.publications}
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

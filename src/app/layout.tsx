@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Inter, Poppins, Montserrat } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "../context/LanguageContext";
+import Navbar from "../components/layout/Navbar";
+import Footer from "../components/layout/Footer";
+import WhatsAppButton from "../components/ui/WhatsAppButton";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -48,7 +51,14 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-white text-dark font-sans">
         <LanguageProvider>
-          {children}
+          <div className="flex flex-col min-h-screen w-full overflow-x-hidden">
+            <Navbar />
+            <main className="flex-grow w-full">
+              {children}
+            </main>
+            <WhatsAppButton />
+            <Footer />
+          </div>
         </LanguageProvider>
       </body>
     </html>
