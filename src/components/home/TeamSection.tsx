@@ -3,14 +3,22 @@
 import React from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import { Users } from "lucide-react";
+import Image from "next/image";
 
 export const TeamSection: React.FC = () => {
   const { t } = useLanguage();
 
+  // Array mapping team photos to translated members by order
+  const memberImages = [
+    "/images/team/amadou.png",
+    "/images/team/sophie.png",
+    "/images/team/jean_marie.png"
+  ];
+
   return (
     <section className="py-24 bg-light/30 border-t border-light/20">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="space-y-12">
+        <div className="space-y-16">
           <div className="text-center max-w-2xl mx-auto space-y-3">
             <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/5 text-primary mb-2">
               <Users className="w-6 h-6" />
@@ -23,33 +31,40 @@ export const TeamSection: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* User requested layout style */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
             {t.aboutPage.leadership.members.map((member, index) => (
               <div
                 key={index}
-                className="bg-white p-8 rounded-3xl border border-dark/5 shadow-md flex flex-col items-center text-center space-y-4 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
+                className="bg-white border border-dark/5 shadow-md flex flex-col overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
               >
-                <div className="w-24 h-24 rounded-full bg-primary/5 text-primary flex items-center justify-center p-1 border-2 border-orange/20 group-hover:border-orange transition-all duration-300">
-                  <svg viewBox="0 0 24 24" fill="none" className="w-full h-full text-primary/60" stroke="currentColor" strokeWidth="1.5">
-                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
-                    <circle cx="12" cy="7" r="4" />
-                  </svg>
+                {/* Image Section */}
+                <div className="relative w-full aspect-[3/4] sm:aspect-[4/5] overflow-hidden bg-light/50">
+                  <Image
+                    src={memberImages[index]}
+                    alt={member.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                 </div>
 
-                <div className="space-y-1">
-                  <h4 className="font-poppins text-lg font-bold text-primary group-hover:text-orange transition-colors">
+                {/* Floating Identity Box - Overlapping */}
+                <div className="relative z-10 w-[85%] mx-auto -mt-12 bg-orange text-white text-center py-5 px-4 shadow-lg group-hover:bg-orange/95 transition-colors flex flex-col items-center justify-center min-h-[90px]">
+                  <h4 className="font-poppins text-base sm:text-lg font-bold uppercase tracking-wide mb-1">
                     {member.name}
                   </h4>
-                  <p className="font-poppins text-xs font-semibold text-accent uppercase tracking-wider">
+                  <p className="font-poppins text-[11px] sm:text-xs font-medium opacity-90 leading-tight uppercase tracking-wider">
                     {member.role}
                   </p>
                 </div>
 
-                <div className="w-8 h-1 bg-orange/20 rounded-full group-hover:w-16 group-hover:bg-orange transition-all duration-300" />
-
-                <p className="font-inter text-sm sm:text-base text-dark/60 leading-relaxed">
-                  {member.desc}
-                </p>
+                {/* Description Details */}
+                <div className="p-8 pt-6 text-center flex-grow flex flex-col items-center justify-start">
+                  <p className="font-inter text-sm sm:text-base text-dark/70 leading-relaxed">
+                    {member.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
