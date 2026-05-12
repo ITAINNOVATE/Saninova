@@ -36,9 +36,11 @@ const YoutubeIcon = ({ className }: { className?: string }) => (
 );
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export const Navbar: React.FC = () => {
   const { locale, setLocale, t } = useLanguage();
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -141,18 +143,25 @@ export const Navbar: React.FC = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center space-x-8">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`font-poppins text-lg font-medium transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:height-[2px] after:bg-accent after:transition-all after:duration-300 hover:after:w-full ${
-                isScrolled ? "text-dark/80 hover:text-primary" : "text-white/90 hover:text-white"
-              }`}
-            >
-              {item.label}
-            </Link>
-          ))}
+        <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+          {navItems.map((item) => {
+            const isActive = pathname === item.href;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`font-poppins text-base xl:text-lg font-medium transition-all duration-200 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-orange after:transition-all after:duration-300 hover:after:w-full ${
+                  isActive ? "after:w-full text-orange" : "after:w-0"
+                } ${
+                  isScrolled 
+                    ? (isActive ? "text-orange" : "text-dark/80 hover:text-orange") 
+                    : (isActive ? "text-orange" : "text-white/90 hover:text-orange")
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </div>
 
         {/* Right buttons */}
@@ -187,11 +196,21 @@ export const Navbar: React.FC = () => {
       {isMobileMenuOpen && (
         <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-b border-dark/5 shadow-xl p-6 transition-all duration-300">
           <div className="flex flex-col space-y-4">
-            {navItems.map((item) => (
-              <Link key={item.href} href={item.href} onClick={closeMobile} className="font-poppins text-lg font-semibold text-dark/80 hover:text-primary py-2 border-b border-light">
-                {item.label}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link 
+                  key={item.href} 
+                  href={item.href} 
+                  onClick={closeMobile} 
+                  className={`font-poppins text-lg font-semibold py-2 border-b border-light transition-colors ${
+                    isActive ? "text-orange" : "text-dark/80 hover:text-primary"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
             <Link href="/contact" onClick={closeMobile} className="flex items-center justify-center space-x-2 bg-primary text-white py-3 rounded-full font-semibold font-poppins shadow-md">
               <PhoneCall className="w-4 h-4 text-orange" />
               <span>{t.nav.cta}</span>
