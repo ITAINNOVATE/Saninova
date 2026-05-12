@@ -56,7 +56,7 @@ export const Partners: React.FC = () => {
                 alt={partner.name}
                 width={160}
                 height={64}
-                className="h-12 w-auto object-contain opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300 grayscale group-hover:grayscale-0"
+                className="h-12 w-auto object-contain transition-all duration-300 group-hover:scale-105"
               />
             </div>
           ))}
