@@ -6,6 +6,7 @@ import HeroSection from "../components/home/HeroSection";
 import AboutSection from "../components/home/AboutSection";
 import AboutDetails from "../components/home/AboutDetails";
 import DirectorSection from "../components/home/DirectorSection";
+import TeamSection from "../components/home/TeamSection";
 import ExpertisesDetails from "../components/home/ExpertisesDetails";
 import Methodology from "../components/home/Methodology";
 import Advantages from "../components/home/Advantages";
@@ -30,8 +31,9 @@ export default function Home() {
 
         {/* About Section */}
         <AboutSection />
-        <DirectorSection />
         <AboutDetails />
+        <DirectorSection />
+        <TeamSection />
 
         <ExpertisesDetails />
 

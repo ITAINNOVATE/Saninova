@@ -4,9 +4,22 @@ import React from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import { motion } from "framer-motion";
 import { Trophy, Users, Globe2, ArrowUpRight } from "lucide-react";
+import Counter from "../ui/Counter";
 
 export const AboutSection: React.FC = () => {
   const { t } = useLanguage();
+
+  // Helper function to automatically split number from symbols like '+'
+  const renderAnimatedStat = (val: string) => {
+    const numeric = val.replace(/[^\d.]/g, "");
+    const suffix = val.replace(/[\d.,]/g, "");
+    return (
+      <>
+        <Counter value={numeric} />
+        {suffix}
+      </>
+    );
+  };
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
@@ -67,7 +80,9 @@ export const AboutSection: React.FC = () => {
               <div className="space-y-1">
                 <div className="flex items-center space-x-2 text-accent">
                   <Globe2 className="w-5 h-5 shrink-0" />
-                  <span className="font-montserrat text-2xl sm:text-3xl font-extrabold">{t.aboutSection.stat1}</span>
+                  <span className="font-montserrat text-2xl sm:text-3xl font-extrabold">
+                    {renderAnimatedStat(t.aboutSection.stat1)}
+                  </span>
                 </div>
                 <p className="font-poppins text-xs font-medium text-dark/60 uppercase tracking-wide">
                   {t.aboutSection.stat1Label}
@@ -77,7 +92,9 @@ export const AboutSection: React.FC = () => {
               <div className="space-y-1">
                 <div className="flex items-center space-x-2 text-primary">
                   <Trophy className="w-5 h-5 shrink-0" />
-                  <span className="font-montserrat text-2xl sm:text-3xl font-extrabold">{t.aboutSection.stat2}</span>
+                  <span className="font-montserrat text-2xl sm:text-3xl font-extrabold">
+                    {renderAnimatedStat(t.aboutSection.stat2)}
+                  </span>
                 </div>
                 <p className="font-poppins text-xs font-medium text-dark/60 uppercase tracking-wide">
                   {t.aboutSection.stat2Label}
@@ -87,7 +104,9 @@ export const AboutSection: React.FC = () => {
               <div className="space-y-1">
                 <div className="flex items-center space-x-2 text-accent">
                   <Users className="w-5 h-5 shrink-0" />
-                  <span className="font-montserrat text-2xl sm:text-3xl font-extrabold">{t.aboutSection.stat3}</span>
+                  <span className="font-montserrat text-2xl sm:text-3xl font-extrabold">
+                    {renderAnimatedStat(t.aboutSection.stat3)}
+                  </span>
                 </div>
                 <p className="font-poppins text-xs font-medium text-dark/60 uppercase tracking-wide">
                   {t.aboutSection.stat3Label}

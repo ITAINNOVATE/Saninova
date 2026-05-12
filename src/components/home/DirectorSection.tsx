@@ -3,7 +3,7 @@
 import React from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import { motion, Variants } from "framer-motion";
-import { Quote, Award, CheckCircle2 } from "lucide-react";
+import { Quote, Award } from "lucide-react";
 import Image from "next/image";
 
 export const DirectorSection: React.FC = () => {
@@ -96,34 +96,19 @@ export const DirectorSection: React.FC = () => {
 
             {/* Description Paragraphs */}
             <div className="space-y-5 text-dark/70 font-inter text-base sm:text-lg leading-relaxed text-center lg:text-left">
-              <p>{dir.description1}</p>
-              <p>{dir.description2}</p>
-              <p>{dir.description3}</p>
+              {dir.description1 && <p>{dir.description1}</p>}
+              {dir.description2 && <p>{dir.description2}</p>}
+              {dir.description3 && <p>{dir.description3}</p>}
             </div>
 
-            {/* Expertise Badges Grid */}
-            <div className="pt-6 border-t border-light">
-              <h4 className="font-poppins text-lg font-bold text-primary mb-6 text-center lg:text-left">
-                {dir.expertiseTitle}
-              </h4>
-              <div className="flex flex-wrap justify-center lg:justify-start gap-3">
-                {dir.expertises.map((expertise, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center space-x-2 bg-light/50 border border-dark/5 hover:border-accent/30 px-4 py-2 rounded-lg shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group cursor-default"
-                  >
-                    <CheckCircle2 className="w-4 h-4 text-accent/70 group-hover:text-accent transition-colors" />
-                    <span className="font-poppins text-sm font-semibold text-dark/80 group-hover:text-primary transition-colors">
-                      {expertise}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
+
 
             {/* Quote Section (Glassmorphism) */}
             <motion.div
               variants={leftToRightVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
               className="mt-10 relative bg-primary/5 backdrop-blur-sm border border-primary/10 p-8 rounded-3xl overflow-hidden group"
             >
               <div className="relative z-10 flex flex-col space-y-4">

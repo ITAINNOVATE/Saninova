@@ -231,10 +231,6 @@ export const translations = {
         title: "Nos Valeurs Cardinales",
         list: [
           {
-            title: "Excellence",
-            desc: "Nous visons les standards de qualité internationaux les plus élevés dans chacune de nos livraisons de conseil stratégique.",
-          },
-          {
             title: "Intégrité",
             desc: "Nous agissons avec transparence, éthique professionnelle absolue et respect scrupuleux des engagements nationaux.",
           },
@@ -243,12 +239,16 @@ export const translations = {
             desc: "Nous croyons au potentiel de la santé digitale et de la data pour sauter les étapes du développement sanitaire classique.",
           },
           {
-            title: "Impact",
-            desc: "Nous mesurability-first : notre valeur ajoutée s'évalue uniquement par l'amélioration concrète des indicateurs de santé.",
+            title: "Excellence",
+            desc: "Nous visons les standards de qualité internationaux les plus élevés dans chacune de nos livraisons de conseil stratégique.",
           },
           {
             title: "Collaboration",
             desc: "Nous ne parachutons pas de solutions toutes faites ; nous co-concevons chaque projet avec les acteurs de terrain.",
+          },
+          {
+            title: "Impact",
+            desc: "Nous mesurability-first : notre valeur ajoutée s'évalue uniquement par l'amélioration concrète des indicateurs de santé.",
           },
         ],
       },
@@ -276,11 +276,11 @@ export const translations = {
     },
     director: {
       tag: "DIRECTION GÉNÉRALE",
-      name: "Dr. Hope AKOHOUVI AMOU",
-      role: "Directeur Général – Expert en systèmes de santé",
-      description1: "Dr. Hope AKOHOUVI AMOU dirige SaniNova avec une vision ambitieuse de transformation durable des systèmes de santé en Afrique. À travers une approche combinant gouvernance, innovation, digitalisation et excellence opérationnelle, il accompagne les institutions publiques, les partenaires techniques et les acteurs du secteur santé dans la conception et la mise en œuvre de réformes à fort impact.",
-      description2: "Son expertise couvre notamment la gouvernance sanitaire, la régulation pharmaceutique, la chaîne d'approvisionnement, la santé digitale, le financement de la santé, la qualité des soins, la sécurité sanitaire et le renforcement des capacités institutionnelles.",
-      description3: "À la tête de SaniNova, il porte une vision stratégique orientée vers des systèmes de santé plus performants, plus résilients, plus équitables et pleinement adaptés aux défis contemporains.",
+      name: "Dr. Hope Akohouvi Amou",
+      role: "Directeur Général & Expert en Systèmes de Santé",
+      description1: "Dr. Hope Akohouvi Amou est le Directeur Général de SaniNova, assurant un leadership stratégique pour la transformation des systèmes de santé à travers l'Afrique. Il conseille les gouvernements et les partenaires au développement sur la conception et la mise en œuvre de réformes à fort impact.",
+      description2: "Son expertise couvre la gouvernance sanitaire, la régulation pharmaceutique, la chaîne d'approvisionnement, la santé digitale, le financement de la santé et la sécurité sanitaire. Il dirige SaniNova avec une vision claire axée sur la promotion de systèmes de santé résilients, équitables et performants.",
+      description3: "",
       expertiseTitle: "Domaines d'expertise",
       expertises: [
         "Gouvernance sanitaire",
@@ -572,10 +572,6 @@ export const translations = {
         title: "Our Core Values",
         list: [
           {
-            title: "Excellence",
-            desc: "We target the highest international quality standards in every strategic consulting engagement we deliver.",
-          },
-          {
             title: "Integrity",
             desc: "We act with complete transparency, absolute professional ethics, and scrupulous respect for national commitments.",
           },
@@ -584,12 +580,16 @@ export const translations = {
             desc: "We believe in the power of digital health and data to leapfrog traditional sanitary development barriers.",
           },
           {
-            title: "Impact",
-            desc: "We are impact-first: our added value is only measured by the concrete improvement of health indicators on the ground.",
+            title: "Excellence",
+            desc: "We target the highest international quality standards in every strategic consulting engagement we deliver.",
           },
           {
             title: "Collaboration",
             desc: "We do not deploy pre-packaged answers; we co-design every project alongside field actors.",
+          },
+          {
+            title: "Impact",
+            desc: "We are impact-first: our added value is only measured by the concrete improvement of health indicators on the ground.",
           },
         ],
       },
@@ -617,11 +617,11 @@ export const translations = {
     },
     director: {
       tag: "EXECUTIVE LEADERSHIP",
-      name: "Dr. Hope AKOHOUVI AMOU",
-      role: "Managing Director – Health Systems Expert",
-      description1: "Dr. Hope AKOHOUVI AMOU leads SaniNova with an ambitious vision for the sustainable transformation of health systems in Africa. Through an approach combining governance, innovation, digitalization, and operational excellence, he supports public institutions, technical partners, and healthcare stakeholders in designing and implementing high-impact reforms.",
-      description2: "His expertise covers health governance, pharmaceutical regulation, supply chain management, digital health, health financing, quality of care, health security, and institutional capacity building.",
-      description3: "At the helm of SaniNova, he drives a strategic vision aimed at building healthcare systems that are higher performing, more resilient, more equitable, and fully adapted to contemporary challenges.",
+      name: "Dr. Hope Akohouvi Amou",
+      role: "Managing Director & Health Systems Expert",
+      description1: "Dr. Hope Akohouvi Amou is the Managing Director of SaniNova, providing strategic leadership on health systems transformation across Africa. He advises governments and development partners on the design and implementation of high-impact reforms.",
+      description2: "His expertise spans health governance, pharmaceutical regulation, supply chain management, digital health, health financing, and health security. He leads SaniNova with a clear focus on advancing resilient, equitable, and high-performing health systems.",
+      description3: "",
       expertiseTitle: "Areas of Expertise",
       expertises: [
         "Health Governance",

@@ -4,6 +4,7 @@ import React from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import { motion } from "framer-motion";
 import { Target, Landmark, ShieldAlert, Award, Milestone, BarChart2 } from "lucide-react";
+import Counter from "../ui/Counter";
 
 export const ImpactStats: React.FC = () => {
   const { t } = useLanguage();
@@ -78,7 +79,7 @@ export const ImpactStats: React.FC = () => {
 
               {/* Number and suffix */}
               <span className="font-montserrat text-3xl sm:text-4xl font-extrabold text-white">
-                {stat.value}
+                <Counter value={stat.value} />
                 <span className="text-orange ml-0.5">{stat.suffix}</span>
               </span>
 
