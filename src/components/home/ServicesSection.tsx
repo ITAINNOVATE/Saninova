@@ -51,13 +51,13 @@ export const ServicesSection: React.FC = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="flex flex-wrap justify-center gap-8"
         >
           {t.servicesPage.list.map((service, index) => (
             <motion.div
               key={index}
               variants={cardVariants}
-              className="bg-light/40 p-8 rounded-3xl border border-dark/2 hover:border-primary/10 hover:bg-white hover:shadow-xl hover:shadow-primary/5 hover:scale-[1.01] transition-all duration-300 flex flex-col items-center text-center justify-between"
+              className="w-full md:w-[calc((100%-32px)/2)] lg:w-[calc((100%-64px)/3)] flex-grow-0 flex-shrink-0 bg-light/40 p-8 rounded-3xl border border-dark/2 hover:border-primary/10 hover:bg-white hover:shadow-xl hover:shadow-primary/5 hover:scale-[1.01] transition-all duration-300 flex flex-col items-center text-center justify-between"
             >
               <div className="space-y-6">
                 {/* Round icon with ring */}
