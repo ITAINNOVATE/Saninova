@@ -1,14 +1,65 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import { motion } from "framer-motion";
-import { Search, Filter, Calendar, Clock, ArrowRight } from "lucide-react";
+import { Search, Filter, Calendar, Clock, ArrowRight, Loader2 } from "lucide-react";
+import { supabase } from "../../lib/supabase";
+
+interface Article {
+  id: string | number;
+  category: string;
+  title: string;
+  desc: string;
+  date: string;
+  readTime: string;
+  image: string;
+}
 
 export const Publications: React.FC = () => {
-  const { t } = useLanguage();
+  const { locale, t } = useLanguage();
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState("all");
+  const [articles, setArticles] = useState<Article[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const loadDynamicPublications = async () => {
+      try {
+        const { data, error } = await supabase
+          .from("saninova_publications")
+          .select("*")
+          .order("created_at", { ascending: false });
+
+        if (error) throw error;
+
+        if (data && data.length > 0) {
+          // Format dynamically fetched items based on locale
+          const mapped = data.map((item) => ({
+            id: item.id,
+            category: item.category,
+            title: locale === "fr" ? item.title_fr : item.title_en,
+            desc: locale === "fr" ? item.desc_fr : item.desc_en,
+            date: locale === "fr" ? item.date_fr : item.date_en,
+            readTime: locale === "fr" ? item.read_time_fr : item.read_time_en,
+            image: item.image_url,
+          }));
+          setArticles(mapped);
+        } else {
+          // Fallback to static content if DB table is empty
+          setArticles(t.publications.list);
+        }
+      } catch (err) {
+        console.error("Failed to load dynamic publications:", err);
+        // Graceful fallback on error
+        setArticles(t.publications.list);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadDynamicPublications();
+  }, [locale, t.publications.list]);
 
   const categories = [
     { id: "all", label: t.publications.categories.all },
@@ -17,10 +68,12 @@ export const Publications: React.FC = () => {
     { id: "supply", label: t.publications.categories.supply },
   ];
 
-  const filteredArticles = t.publications.list.filter((article) => {
+  const filteredArticles = articles.filter((article) => {
+    const title = article.title || "";
+    const desc = article.desc || "";
     const matchesSearch =
-      article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      article.desc.toLowerCase().includes(searchQuery.toLowerCase());
+      title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      desc.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesCategory = activeCategory === "all" || article.category === activeCategory;
     return matchesSearch && matchesCategory;
   });
@@ -87,7 +140,12 @@ export const Publications: React.FC = () => {
         </div>
 
         {/* Publications Grid */}
-        {filteredArticles.length > 0 ? (
+        {isLoading ? (
+          <div className="flex flex-col items-center justify-center py-20">
+            <Loader2 className="w-10 h-10 text-[#00A878] animate-spin mb-4" />
+            <p className="text-sm font-poppins text-dark/50">Chargement des articles...</p>
+          </div>
+        ) : filteredArticles.length > 0 ? (
           <motion.div
             variants={containerVariants}
             initial="hidden"

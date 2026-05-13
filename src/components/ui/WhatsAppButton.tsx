@@ -2,8 +2,14 @@
 
 import React from "react";
 import { MessageCircle } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 export const WhatsAppButton: React.FC = () => {
+  const pathname = usePathname();
+
+  if (pathname?.startsWith("/admin")) {
+    return null;
+  }
   return (
     <a
       href="https://wa.me/2290161015495"

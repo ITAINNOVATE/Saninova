@@ -41,6 +41,12 @@ import { usePathname } from "next/navigation";
 export const Navbar: React.FC = () => {
   const { locale, setLocale, t } = useLanguage();
   const pathname = usePathname();
+
+  // Hide navbar on admin pages
+  if (pathname?.startsWith("/admin")) {
+    return null;
+  }
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 

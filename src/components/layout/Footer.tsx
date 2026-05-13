@@ -35,9 +35,16 @@ const YoutubeIcon = ({ className }: { className?: string }) => (
 );
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export const Footer: React.FC = () => {
   const { t } = useLanguage();
+  const pathname = usePathname();
+
+  // Hide footer on admin pages
+  if (pathname?.startsWith("/admin")) {
+    return null;
+  }
 
   const socialLinks = [
     { icon: <LinkedinIcon className="w-5 h-5" />, href: "https://www.linkedin.com/company/saninova-global-consulting/" },
