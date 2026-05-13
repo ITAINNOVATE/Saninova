@@ -262,11 +262,6 @@ export const translations = {
             desc: "Directeur Général de SaniNova, expert international en transformation des systèmes de santé et réformes à fort impact en Afrique.",
           },
           {
-            name: "Dr. Amadou DIALLO",
-            role: "Directeur Général Associé",
-            desc: "Ancien conseiller ministériel en santé publique, 15 ans d'expérience dans la transformation des politiques sanitaires africaines.",
-          },
-          {
             name: "Sophie KABORE",
             role: "Directrice Associée, Santé Digitale",
             desc: "Ingénieure spécialisée dans les systèmes d'information en santé, pionnière des projets e-santé à l'échelle nationale.",
@@ -606,11 +601,6 @@ export const translations = {
             name: "Dr. Hope Akohouvi AMOU",
             role: "President & CEO",
             desc: "Managing Director of SaniNova, international expert in health systems transformation and high-impact reforms in Africa.",
-          },
-          {
-            name: "Dr. Amadou DIALLO",
-            role: "Managing Partner",
-            desc: "Former healthcare policy ministerial advisor, 15 years of experience in transforming African sanitary policies.",
           },
           {
             name: "Sophie KABORE",
