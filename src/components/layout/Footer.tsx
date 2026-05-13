@@ -35,11 +35,12 @@ const YoutubeIcon = ({ className }: { className?: string }) => (
 );
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 export const Footer: React.FC = () => {
   const { t } = useLanguage();
   const pathname = usePathname();
+  const router = useRouter();
 
   // Hide footer on admin pages
   if (pathname?.startsWith("/admin")) {
@@ -183,7 +184,7 @@ export const Footer: React.FC = () => {
         <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between text-xs text-white/40 font-poppins gap-4">
           <div className="flex flex-col md:flex-row items-center md:space-x-4 space-y-2 md:space-y-0 text-center md:text-left">
             <span>
-              © {new Date().getFullYear()} SaniNova. {t.footer.rights}
+              © <span onDoubleClick={() => router.push("/admin")} className="cursor-default select-none">{new Date().getFullYear()}</span> SaniNova. {t.footer.rights}
             </span>
             <span className="hidden md:inline">|</span>
             <span>
