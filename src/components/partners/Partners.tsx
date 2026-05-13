@@ -20,7 +20,7 @@ export const Partners: React.FC = () => {
   return (
     <section className="py-16 bg-white border-y border-light overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <h4 className="font-poppins text-xs font-bold text-dark/40 uppercase tracking-widest text-center mb-12">
+        <h4 className="font-poppins text-xs font-bold uppercase tracking-widest text-center mb-12" style={{ color: '#0B3C5D' }}>
           {t.partners.title}
         </h4>
       </div>
@@ -49,15 +49,15 @@ export const Partners: React.FC = () => {
           {duplicatedLogos.map((partner, index) => (
             <div
               key={index}
-              className="flex-shrink-0 h-20 w-64 px-12 relative flex items-center justify-center group"
+              className="flex-shrink-0 h-28 w-80 px-10 relative flex items-center justify-center group"
               title={partner.name}
             >
               <Image
                 src={partner.src}
                 alt={partner.name}
-                width={160}
-                height={64}
-                className="h-12 w-auto object-contain transition-all duration-300 group-hover:scale-105"
+                width={220}
+                height={100}
+                className="h-20 w-auto object-contain transition-all duration-300 group-hover:scale-105"
               />
             </div>
           ))}
