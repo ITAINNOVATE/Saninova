@@ -99,6 +99,11 @@ section.bg-white.border-y {
   border-color: rgba(0, 0, 0, 0.08) !important;
 }
 
+/* Partners title — force visible color on white background */
+section.bg-white.border-y h4 {
+  color: #0B3C5D !important;
+}
+
 /* Partners gradient edge fades must match white background */
 section.bg-white.border-y .bg-gradient-to-r,
 section.bg-white.border-y .bg-gradient-to-l {
