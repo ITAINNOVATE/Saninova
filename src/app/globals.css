@@ -210,3 +210,52 @@ label,
   border-color: rgba(255, 255, 255, 0.05) !important;
 }
 
+/* 7. Gradient and Shading Overrides (Crucial Fix for contrast) */
+
+/* PageHero bottom white fade */
+.bg-gradient-to-t.from-white.to-transparent {
+  background-image: linear-gradient(to top, #050B14, transparent) !important;
+}
+
+/* Partner Carousel Left/Right edge shading fades */
+.bg-gradient-to-r.from-white.via-white\/80 {
+  background-image: linear-gradient(to right, #050B14, rgba(5, 11, 20, 0.85), transparent) !important;
+}
+.bg-gradient-to-l.from-white.via-white\/80 {
+  background-image: linear-gradient(to left, #050B14, rgba(5, 11, 20, 0.85), transparent) !important;
+}
+
+/* Advantages Component Cards */
+.bg-gradient-to-b.from-white\/95.to-white\/70,
+[class*="from-white\/95"][class*="to-white\/70"] {
+  background-image: linear-gradient(to bottom, #0F1D33, #0A1324) !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+  box-shadow: 0 15px 40px -10px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Hover overrides for Advantage Cards */
+.hover\:bg-white:hover {
+  background-color: #13243D !important;
+  background-image: linear-gradient(to bottom, #13243D, #0F1D33) !important;
+}
+
+/* Elite Trust Emblem Card */
+.bg-gradient-to-br.from-light\/80.to-light\/30,
+[class*="from-light\/80"][class*="to-light\/30"] {
+  background-image: linear-gradient(to bottom right, #0F1D33, #0A1324) !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+/* Target nested primary titles in advantages card explicitly */
+.text-primary.group-hover\:text-accent {
+  color: #FFFFFF !important;
+}
+.group-hover\:text-accent:hover, .group:hover .text-primary {
+  color: #00A878 !important;
+}
+
+/* Separators and borders inside dark cards */
+.bg-dark\/5, .h-\[1px\].bg-dark\/5, .border-dark\/5 {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
