@@ -74,3 +74,137 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #0B3C5D;
 }
+
+/* =============================================
+   PREMIUM MIDNIGHT DARK THEME OVERLAY
+   Designed to instantly transform SaniNova into 
+   a high-end medical tech dark aesthetic.
+   ============================================= */
+
+/* 1. Core Page Backgrounds */
+html,
+body {
+  background-color: #050B14;
+  color: #F8FAFC;
+}
+
+/* Invert base div background targets */
+.bg-white {
+  background-color: #050B14 !important;
+}
+
+/* Convert light sections to deep sub-blocks */
+.bg-light,
+.bg-light\/30,
+.bg-light\/50,
+[class*="bg-light"] {
+  background-color: #0A1324 !important;
+}
+
+/* 2. Cards and Interactive Containers (Slightly lighter elevated slate) */
+.bg-white.shadow-md,
+.bg-white.shadow-lg,
+.bg-white.rounded-2xl,
+.bg-white.border-dark\/5,
+.bg-white.p-8,
+.bg-white.p-6,
+.bg-white.shadow-xl {
+  background-color: #0F1D33 !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+  box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Expertises dynamic cards */
+.hover\:shadow-xl:hover {
+  box-shadow: 0 20px 40px -15px rgba(0, 168, 120, 0.15) !important;
+}
+
+/* 3. Typography Inversion (Ensuring crisp, modern contrast) */
+.text-dark,
+.text-dark\/90,
+.text-dark\/80,
+.text-dark\/70,
+.text-dark\/60,
+[class*="text-dark"] {
+  color: #F1F5F9 !important;
+}
+
+/* Subtext tones for visual hierarchy */
+.text-dark\/70,
+.text-dark\/60 {
+  color: #94A3B8 !important;
+}
+
+/* Primary title exceptions to make them pop */
+h1, h2, h3, h4 {
+  color: #FFFFFF !important;
+}
+
+/* Keep primary text classes intact if they contain brand accents */
+.text-primary {
+  color: #0B3C5D !important;
+}
+/* Make primary text titles visible on dark if they have high contrast requirements */
+.text-primary:not(button):not(a) {
+  color: #F1F5F9 !important;
+}
+
+/* 4. Navbar Tuning */
+/* When scrolled, make it sleek glass midnight */
+nav.bg-white\/90 {
+  background-color: rgba(5, 11, 20, 0.9) !important;
+  backdrop-filter: blur(16px) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+/* Mobile nav drawer */
+.lg\:hidden.absolute.bg-white {
+  background-color: #0A1324 !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+/* 5. Forms and Inputs Tuning */
+input,
+textarea,
+select {
+  background-color: #0A1324 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  color: #FFFFFF !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #64748B !important;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #FF7A00 !important;
+  background-color: #0F1D33 !important;
+}
+
+/* Label Tuning */
+label,
+.font-semibold.text-dark {
+  color: #E2E8F0 !important;
+}
+
+/* 6. Brand Accents Continuity */
+.bg-orange {
+  background-color: #FF7A00 !important;
+}
+
+.text-orange {
+  color: #FF7A00 !important;
+}
+
+/* Bullet points / icons in lists */
+.text-accent {
+  color: #00A878 !important;
+}
+
+/* Advantages specific container tuning */
+.border-light, .border-light\/20 {
+  border-color: rgba(255, 255, 255, 0.05) !important;
+}
+
