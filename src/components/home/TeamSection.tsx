@@ -10,6 +10,7 @@ export const TeamSection: React.FC = () => {
 
   // Array mapping team photos to translated members by order
   const memberImages = [
+    "/images/director.png",
     "/images/team/amadou.png",
     "/images/team/sophie.png",
     "/images/team/jean_marie.png"
@@ -32,7 +33,7 @@ export const TeamSection: React.FC = () => {
           </div>
 
           {/* User requested layout style */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-6">
             {t.aboutPage.leadership.members.map((member, index) => (
               <div
                 key={index}
@@ -44,7 +45,7 @@ export const TeamSection: React.FC = () => {
                     src={memberImages[index]}
                     alt={member.name}
                     fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>

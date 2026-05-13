@@ -257,6 +257,11 @@ export const translations = {
         desc: "Des leaders d'opinion chevronnés alliant expérience dans la haute fonction publique, cabinets internationaux et recherche médicale.",
         members: [
           {
+            name: "Dr. Hope Akohouvi AMOU",
+            role: "Président & CEO",
+            desc: "Directeur Général de SaniNova, expert international en transformation des systèmes de santé et réformes à fort impact en Afrique.",
+          },
+          {
             name: "Dr. Amadou DIALLO",
             role: "Directeur Général Associé",
             desc: "Ancien conseiller ministériel en santé publique, 15 ans d'expérience dans la transformation des politiques sanitaires africaines.",
@@ -597,6 +602,11 @@ export const translations = {
         title: "Our Team",
         desc: "Seasoned thought-leaders combining high public service experience, international consulting background, and medical research.",
         members: [
+          {
+            name: "Dr. Hope Akohouvi AMOU",
+            role: "President & CEO",
+            desc: "Managing Director of SaniNova, international expert in health systems transformation and high-impact reforms in Africa.",
+          },
           {
             name: "Dr. Amadou DIALLO",
             role: "Managing Partner",
