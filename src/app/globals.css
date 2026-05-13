@@ -93,6 +93,18 @@ body {
   background-color: #050B14 !important;
 }
 
+/* Partners section exception — keep background white */
+section.bg-white.border-y {
+  background-color: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Partners gradient edge fades must match white background */
+section.bg-white.border-y .bg-gradient-to-r,
+section.bg-white.border-y .bg-gradient-to-l {
+  background-image: none !important;
+}
+
 /* Convert light sections to deep sub-blocks */
 .bg-light,
 .bg-light\/30,
@@ -223,6 +235,14 @@ label,
 }
 .bg-gradient-to-l.from-white.via-white\/80 {
   background-image: linear-gradient(to left, #050B14, rgba(5, 11, 20, 0.85), transparent) !important;
+}
+
+/* Partners section edge fades — override to match white background */
+section.bg-white.border-y .bg-gradient-to-r.from-white.via-white\/80 {
+  background-image: linear-gradient(to right, #ffffff, rgba(255, 255, 255, 0.8), transparent) !important;
+}
+section.bg-white.border-y .bg-gradient-to-l.from-white.via-white\/80 {
+  background-image: linear-gradient(to left, #ffffff, rgba(255, 255, 255, 0.8), transparent) !important;
 }
 
 /* Advantages Component Cards */
