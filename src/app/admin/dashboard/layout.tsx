@@ -13,7 +13,8 @@ import {
   Menu,
   X,
   ChevronRight,
-  User
+  User,
+  FileText
 } from "lucide-react";
 
 interface LayoutProps {
@@ -57,6 +58,11 @@ export default function DashboardLayout({ children }: LayoutProps) {
       label: "Vue d'ensemble",
       href: "/admin/dashboard",
       icon: LayoutDashboard,
+    },
+    {
+      label: "Gestion des Pages",
+      href: "/admin/dashboard/pages",
+      icon: FileText,
     },
     {
       label: "Messages / Contacts",
