@@ -151,10 +151,12 @@ h1, h2, h3, h4 {
 
 /* 4. Navbar Tuning */
 /* When scrolled, make it sleek glass midnight */
-nav.bg-white\/90 {
-  background-color: rgba(5, 11, 20, 0.9) !important;
+nav.bg-white\/95,
+nav.bg-white\/90,
+nav.shadow-md {
+  background-color: rgba(5, 11, 20, 0.95) !important;
   backdrop-filter: blur(16px) !important;
-  border-bottom-color: rgba(255, 255, 255, 0.06) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
 }
 
 /* Mobile nav drawer */
