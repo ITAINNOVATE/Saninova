@@ -5,7 +5,7 @@ import { supabase } from "../../../../lib/supabase";
 import { 
   GraduationCap, Users, Megaphone, Calendar, 
   Plus, ArrowRight, TrendingUp, DollarSign,
-  Briefcase, Clock, CheckCircle2, AlertCircle
+  Briefcase, Clock, CheckCircle2, AlertCircle, ArrowLeft
 } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -95,6 +95,9 @@ export default function AcademyDashboardOverview() {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
+          <Link href="/admin/dashboard" className="inline-flex items-center text-slate-500 hover:text-white transition-colors mb-2 text-xs font-bold uppercase tracking-widest gap-2">
+            <ArrowLeft className="w-4 h-4" /> Retour au Dashboard
+          </Link>
           <h1 className="text-3xl md:text-5xl font-montserrat font-black text-white">
             SaniNova Academy
           </h1>

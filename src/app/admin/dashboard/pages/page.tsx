@@ -5,8 +5,9 @@ import { supabase } from "../../../../lib/supabase";
 import { useLanguage } from "../../../../context/LanguageContext";
 import { 
   FileText, Save, Check, AlertCircle, Loader2, RefreshCcw, Globe, Code, 
-  Layout, Home, Server, Award, MessageSquare
+  Layout, Home, Server, Award, MessageSquare, ArrowLeft
 } from "lucide-react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 // Group editable fields dynamically to avoid writing 100 manual inputs
@@ -199,6 +200,9 @@ export default function PagesDashboardPage() {
       {/* Page Header */}
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
         <div>
+          <Link href="/admin/dashboard" className="inline-flex items-center text-slate-500 hover:text-white transition-colors mb-2 text-xs font-bold uppercase tracking-widest gap-2">
+            <ArrowLeft className="w-4 h-4" /> Retour au Dashboard
+          </Link>
           <h1 className="font-montserrat text-2xl sm:text-3xl font-extrabold text-white tracking-tight flex items-center gap-3">
             <FileText className="text-[#00A878]" />
             Gestion des Contenus (Pages)

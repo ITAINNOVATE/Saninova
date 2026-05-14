@@ -3,9 +3,10 @@
 import React, { useEffect, useState } from "react";
 import { supabase } from "../../../../lib/supabase";
 import { 
-  Search, Mail, Trash2, Calendar, Globe, Building, User, Eye, X, AlertCircle, ChevronLeft, ChevronRight, FileText 
+  Search, Mail, Trash2, Calendar, Globe, Building, User, Eye, X, AlertCircle, ChevronLeft, ChevronRight, FileText, ArrowLeft 
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 interface ContactMessage {
   id: string;
@@ -84,6 +85,9 @@ export default function ContactsDashboardPage() {
       {/* Header Area */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
+          <Link href="/admin/dashboard" className="inline-flex items-center text-slate-500 hover:text-white transition-colors mb-2 text-xs font-bold uppercase tracking-widest gap-2">
+            <ArrowLeft className="w-4 h-4" /> Retour au Dashboard
+          </Link>
           <h1 className="font-montserrat text-2xl sm:text-3xl font-extrabold text-white tracking-tight flex items-center gap-3">
             <Mail className="text-[#00A878]" />
             Boîte de Réception
