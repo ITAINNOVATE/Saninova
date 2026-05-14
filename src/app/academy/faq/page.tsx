@@ -4,28 +4,27 @@ import React from "react";
 import AcademyFAQ from "../../../components/academy/AcademyFAQ";
 import { MessageCircle, ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import PageHero from "../../../components/ui/PageHero";
 
 export default function AcademyFAQPage() {
   return (
-    <div className="pt-32 pb-24 min-h-screen bg-dark">
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Header */}
-        <div className="text-center mb-20">
-          <Link href="/academy" className="inline-flex items-center text-accent font-bold text-sm uppercase tracking-widest mb-6 hover:translate-x-[-4px] transition-transform">
-            <ArrowLeft className="w-4 h-4 mr-2" /> Retour à l'Académie
-          </Link>
-          <div className="w-20 h-20 bg-primary/20 rounded-3xl flex items-center justify-center text-primary mx-auto mb-8 shadow-xl">
-            <MessageCircle className="w-10 h-10" />
+    <>
+      <PageHero 
+        title="FAQ Academy"
+        subtitle="Tout ce que vous devez savoir sur SaniNova Academy."
+        backgroundImages={[
+          "https://images.unsplash.com/photo-1454165833767-027ffea7025c?auto=format&fit=crop&q=80",
+          "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80"
+        ]}
+      />
+      <div className="bg-dark pb-24">
+        <div className="max-w-7xl mx-auto px-6 -mt-16 relative z-20">
+          <div className="mb-12">
+            <Link href="/academy" className="inline-flex items-center text-accent font-bold text-sm uppercase tracking-widest mb-6 hover:translate-x-[-4px] transition-transform">
+              <ArrowLeft className="w-4 h-4 mr-2" /> Retour à l'Académie
+            </Link>
           </div>
-          <h1 className="text-4xl md:text-6xl font-montserrat font-black text-white mb-6">
-            Centre d'Aide Academy
-          </h1>
-          <p className="text-white/50 text-lg font-poppins max-w-2xl mx-auto">
-            Retrouvez ici toutes les réponses à vos questions concernant nos formations, les modalités de paiement et les certifications.
-          </p>
-        </div>
-
-        <AcademyFAQ />
+          <AcademyFAQ />
 
         {/* Support CTA */}
         <div className="mt-24 max-w-4xl mx-auto bg-white/5 rounded-[40px] border border-white/5 p-12 text-center">
@@ -42,7 +41,8 @@ export default function AcademyFAQPage() {
             Nous contacter <ArrowLeft className="w-5 h-5 rotate-180" />
           </Link>
         </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

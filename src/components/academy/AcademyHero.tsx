@@ -8,17 +8,35 @@ import Link from "next/link";
 
 const AcademyHero: React.FC = () => {
   const { t } = useLanguage();
+  const [currentBgIndex, setCurrentBgIndex] = React.useState(0);
+  
+  const backgroundImages = [
+    "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80"
+  ];
+
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentBgIndex((prevIndex) => (prevIndex + 1) % backgroundImages.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden py-20">
       {/* Background with gradient overlay */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-dark via-dark/90 to-transparent z-10" />
-        <img 
-          src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80" 
-          alt="Healthcare Education" 
-          className="w-full h-full object-cover"
-        />
+        {backgroundImages.map((bg, idx) => (
+          <div 
+            key={bg}
+            className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-[2000ms] ease-in-out transform ${
+              idx === currentBgIndex ? "opacity-100 scale-100" : "opacity-0 scale-110 pointer-events-none"
+            }`}
+            style={{ backgroundImage: `url('${bg}')` }}
+          />
+        ))}
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-dark to-transparent z-10" />
       </div>
 

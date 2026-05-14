@@ -4,8 +4,11 @@ import React, { useState } from "react";
 import { Megaphone, Calendar, Tag, ArrowRight, Search, Bell } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useLanguage } from "../../../context/LanguageContext";
+import PageHero from "../../../components/ui/PageHero";
 
 export default function AcademyAnnouncements() {
+  const { locale } = useLanguage();
   const [activeType, setActiveType] = useState("all");
 
   const announcements = [
@@ -46,26 +49,30 @@ export default function AcademyAnnouncements() {
   const filtered = activeType === "all" ? announcements : announcements.filter(a => a.type === activeType);
 
   return (
-    <div className="pt-32 pb-24 min-h-screen bg-dark">
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12">
-          <div className="max-w-2xl">
-            <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent font-bold text-xs tracking-widest uppercase mb-4">
-              <Megaphone className="w-4 h-4 mr-2" /> Actualités & Opportunités
-            </span>
-            <h1 className="text-4xl md:text-6xl font-montserrat font-black text-white mb-6">
-              Annonces
-            </h1>
-            <p className="text-white/60 text-lg font-poppins">
-              Restez informé des derniers appels à candidatures, événements gratuits et communiqués de la SaniNova Academy.
-            </p>
+    <>
+      <PageHero 
+        title={locale === "fr" ? "Actualités & Appels" : "News & Calls"}
+        subtitle={locale === "fr" ? "Restez informé des opportunités de la SaniNova Academy." : "Stay informed about SaniNova Academy opportunities."}
+        backgroundImages={[
+          "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80",
+          "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80",
+          "https://images.unsplash.com/photo-1454165833767-027ffea7025c?auto=format&fit=crop&q=80"
+        ]}
+      />
+      <div className="bg-dark pb-24">
+        <div className="max-w-7xl mx-auto px-6 -mt-12 relative z-20">
+          {/* Header (Simplified since PageHero handles title) */}
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12">
+            <div className="max-w-2xl">
+              <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent font-bold text-xs tracking-widest uppercase mb-4">
+                <Megaphone className="w-4 h-4 mr-2" /> Academy Insights
+              </span>
+            </div>
+            
+            <button className="flex items-center gap-3 px-6 py-4 bg-white/5 border border-white/10 rounded-2xl text-white font-bold hover:bg-white/10 transition-all">
+              <Bell className="w-5 h-5 text-orange" /> S'abonner aux alertes
+            </button>
           </div>
-          
-          <button className="flex items-center gap-3 px-6 py-4 bg-white/5 border border-white/10 rounded-2xl text-white font-bold hover:bg-white/10 transition-all">
-            <Bell className="w-5 h-5 text-orange" /> S'abonner aux alertes
-          </button>
-        </div>
 
         {/* Filter Bar */}
         <div className="flex flex-wrap gap-3 mb-12">
@@ -133,6 +140,6 @@ export default function AcademyAnnouncements() {
           ))}
         </div>
       </div>
-    </div>
+    </>
   );
 }

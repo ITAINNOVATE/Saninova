@@ -7,8 +7,11 @@ import {
   ChevronLeft, ChevronRight, Video
 } from "lucide-react";
 import { motion } from "framer-motion";
+import { useLanguage } from "../../../context/LanguageContext";
+import PageHero from "../../../components/ui/PageHero";
 
 export default function AcademyEvents() {
+  const { locale } = useLanguage();
   const [viewMode, setViewMode] = useState("grid");
 
   const events = [
@@ -42,34 +45,39 @@ export default function AcademyEvents() {
   ];
 
   return (
-    <div className="pt-32 pb-24 min-h-screen bg-dark">
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-16">
-          <div className="text-center md:text-left">
-            <h1 className="text-4xl md:text-6xl font-montserrat font-black text-white mb-6">
-              Événements
-            </h1>
-            <p className="text-white/60 text-lg font-poppins max-w-xl">
-              Rejoignez nos conférences, symposiums et ateliers networking pour échanger avec les acteurs du changement.
-            </p>
+    <>
+      <PageHero 
+        title={locale === "fr" ? "Événements" : "Events"}
+        subtitle={locale === "fr" ? "Rejoignez nos symposiums et ateliers pour échanger avec les leaders." : "Join our symposiums and workshops to connect with leaders."}
+        backgroundImages={[
+          "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80",
+          "https://images.unsplash.com/photo-1475721027187-4024733923f9?auto=format&fit=crop&q=80",
+          "https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?auto=format&fit=crop&q=80"
+        ]}
+      />
+      <div className="bg-dark pb-24">
+        <div className="max-w-7xl mx-auto px-6 -mt-12 relative z-20">
+          {/* Header */}
+          <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-16">
+            <div className="text-center md:text-left">
+              <span className="text-orange font-bold uppercase tracking-widest text-sm mb-2 block">SaniNova Academy Events</span>
+            </div>
+            
+            <div className="flex bg-white/5 p-1.5 rounded-2xl border border-white/10">
+              <button 
+                onClick={() => setViewMode("grid")}
+                className={`p-3 rounded-xl transition-all ${viewMode === "grid" ? "bg-orange text-white shadow-lg" : "text-white/40 hover:text-white"}`}
+              >
+                <LayoutGrid className="w-6 h-6" />
+              </button>
+              <button 
+                onClick={() => setViewMode("list")}
+                className={`p-3 rounded-xl transition-all ${viewMode === "list" ? "bg-orange text-white shadow-lg" : "text-white/40 hover:text-white"}`}
+              >
+                <List className="w-6 h-6" />
+              </button>
+            </div>
           </div>
-          
-          <div className="flex bg-white/5 p-1.5 rounded-2xl border border-white/10">
-            <button 
-              onClick={() => setViewMode("grid")}
-              className={`p-3 rounded-xl transition-all ${viewMode === "grid" ? "bg-orange text-white shadow-lg" : "text-white/40 hover:text-white"}`}
-            >
-              <LayoutGrid className="w-6 h-6" />
-            </button>
-            <button 
-              onClick={() => setViewMode("list")}
-              className={`p-3 rounded-xl transition-all ${viewMode === "list" ? "bg-orange text-white shadow-lg" : "text-white/40 hover:text-white"}`}
-            >
-              <List className="w-6 h-6" />
-            </button>
-          </div>
-        </div>
 
         {/* View Content */}
         {viewMode === "grid" ? (
@@ -152,5 +160,6 @@ export default function AcademyEvents() {
         )}
       </div>
     </div>
-  );
+  </>
+);
 }

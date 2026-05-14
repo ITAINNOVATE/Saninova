@@ -5,9 +5,10 @@ import { useLanguage } from "../../../context/LanguageContext";
 import { Search, Filter, Calendar, MapPin, ArrowRight, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import PageHero from "../../../components/ui/PageHero";
 
 export default function TrainingsCatalog() {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState("all");
   const [activeFormat, setActiveFormat] = useState("all");
@@ -93,19 +94,19 @@ export default function TrainingsCatalog() {
   });
 
   return (
-    <div className="pt-32 pb-24 min-h-screen bg-dark">
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Header */}
-        <div className="mb-12">
-          <h1 className="text-4xl md:text-6xl font-montserrat font-black text-white mb-6">
-            Catalogue des Formations
-          </h1>
-          <p className="text-white/60 text-lg max-w-2xl font-poppins">
-            Explorez nos programmes de formation continue conçus par des experts pour répondre aux défis actuels des systèmes de santé en Afrique.
-          </p>
-        </div>
-
-        {/* Filters and Search */}
+    <>
+      <PageHero 
+        title={locale === "fr" ? "Catalogue des Formations" : "Training Catalog"}
+        subtitle={locale === "fr" ? "Développez vos compétences avec nos programmes d'excellence." : "Develop your skills with our excellence programs."}
+        backgroundImages={[
+          "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80",
+          "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80",
+          "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80"
+        ]}
+      />
+      <div className="bg-dark pb-24">
+        <div className="max-w-7xl mx-auto px-6 -mt-20 relative z-20">
+          {/* Filters and Search */}
         <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-[32px] p-6 mb-12 relative z-20 shadow-2xl">
           <div className="flex flex-col lg:flex-row gap-6">
             {/* Search Bar */}
@@ -250,7 +251,8 @@ export default function TrainingsCatalog() {
             </button>
           </div>
         )}
+        </div>
       </div>
-    </div>
+    </>
   );
 }

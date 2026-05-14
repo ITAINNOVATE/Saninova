@@ -12,6 +12,7 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import PageHero from "../../../components/ui/PageHero";
 
 const registrationSchema = z.object({
   fullname: z.string().min(3, "Nom complet requis"),
@@ -61,20 +62,22 @@ export default function AcademyRegister() {
   const prevStep = () => setStep(prev => Math.max(prev - 1, 1));
 
   return (
-    <div className="pt-32 pb-24 min-h-screen bg-dark">
-      <div className="max-w-4xl mx-auto px-6">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <Link href="/academy" className="inline-flex items-center text-accent font-bold text-sm uppercase tracking-widest mb-6 hover:translate-x-[-4px] transition-transform">
-            <ArrowLeft className="w-4 h-4 mr-2" /> Retour à l'Académie
-          </Link>
-          <h1 className="text-4xl md:text-6xl font-montserrat font-black text-white mb-4">
-            Inscription
-          </h1>
-          <p className="text-white/50 text-lg font-poppins">
-            Rejoignez l'élite des professionnels de santé en Afrique.
-          </p>
-        </div>
+    <>
+      <PageHero 
+        title="Inscription"
+        subtitle="Rejoignez l'élite des professionnels de santé en Afrique."
+        backgroundImages={[
+          "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80",
+          "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80"
+        ]}
+      />
+      <div className="bg-dark pb-24">
+        <div className="max-w-4xl mx-auto px-6 -mt-12 relative z-20">
+          <div className="mb-12">
+            <Link href="/academy" className="inline-flex items-center text-accent font-bold text-sm uppercase tracking-widest mb-6 hover:translate-x-[-4px] transition-transform">
+              <ArrowLeft className="w-4 h-4 mr-2" /> Retour à l'Académie
+            </Link>
+          </div>
 
         {/* Multi-step Indicator */}
         <div className="flex items-center justify-center gap-4 mb-12">
@@ -267,7 +270,8 @@ export default function AcademyRegister() {
              <CreditCard className="w-4 h-4" /> Paiement Sécurisé
            </div>
         </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

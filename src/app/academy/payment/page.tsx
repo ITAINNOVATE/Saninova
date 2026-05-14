@@ -8,6 +8,7 @@ import {
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import PageHero from "../../../components/ui/PageHero";
 
 export default function AcademyPayment() {
   const router = useRouter();
@@ -30,17 +31,18 @@ export default function AcademyPayment() {
   };
 
   return (
-    <div className="pt-32 pb-24 min-h-screen bg-dark">
-      <div className="max-w-4xl mx-auto px-6">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-montserrat font-black text-white mb-4">
-            Paiement
-          </h1>
-          <p className="text-white/50 text-lg font-poppins">
-            Sélectionnez votre mode de paiement pour finaliser votre inscription.
-          </p>
-        </div>
+    <>
+      <PageHero 
+        title="Paiement Sécurisé"
+        subtitle="Finalisez votre inscription en toute simplicité."
+        backgroundImages={[
+          "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80",
+          "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80"
+        ]}
+      />
+      <div className="bg-dark pb-24">
+        <div className="max-w-7xl mx-auto px-6 -mt-12 relative z-20">
+          {/* Main Content */}
 
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Left: Summary */}
@@ -124,7 +126,8 @@ export default function AcademyPayment() {
             </div>
           </div>
         </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

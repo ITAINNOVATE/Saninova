@@ -170,6 +170,7 @@ export const Navbar: React.FC = () => {
         <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
           {navItems.map((item) => {
             const isActive = pathname === item.href || (item.isDropdown && pathname?.startsWith("/academy"));
+            const label = item.label || (item.href === "/academy" ? (locale === "fr" ? "Académie" : "Academy") : "");
             
             if (item.isDropdown) {
               return (
@@ -188,7 +189,7 @@ export const Navbar: React.FC = () => {
                         : (isActive ? "text-orange" : "text-white/90 hover:text-orange")
                     }`}
                   >
-                    <span>{item.label}</span>
+                    <span>{label}</span>
                     <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isAcademyOpen ? "rotate-180" : ""}`} />
                   </button>
 
@@ -222,7 +223,7 @@ export const Navbar: React.FC = () => {
                     : (isActive ? "text-orange" : "text-white/90 hover:text-orange")
                 }`}
               >
-                {item.label}
+                {label}
               </Link>
             );
           })}
@@ -235,12 +236,6 @@ export const Navbar: React.FC = () => {
             <button onClick={() => setLocale("fr")} className={`px-3 py-1 rounded-full text-xs font-semibold font-poppins transition-all duration-200 ${locale === "fr" ? "bg-primary text-white shadow-sm" : isScrolled ? "text-dark/60 hover:text-primary" : "text-white/70 hover:text-white"}`}>FR</button>
             <button onClick={() => setLocale("en")} className={`px-3 py-1 rounded-full text-xs font-semibold font-poppins transition-all duration-200 ${locale === "en" ? "bg-primary text-white shadow-sm" : isScrolled ? "text-dark/60 hover:text-primary" : "text-white/70 hover:text-white"}`}>EN</button>
           </div>
-
-          {/* CTA Button */}
-          <Link href="/contact" className="flex items-center space-x-2 bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold font-poppins shadow-md shadow-primary/10 hover:bg-primary/95 hover:shadow-lg hover:shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300">
-            <PhoneCall className="w-4 h-4 text-orange" />
-            <span>{t.nav.cta}</span>
-          </Link>
         </div>
 
         {/* Mobile trigger */}
@@ -262,6 +257,7 @@ export const Navbar: React.FC = () => {
           <div className="flex flex-col space-y-4">
             {navItems.map((item) => {
               const isActive = pathname === item.href || (item.isDropdown && pathname?.startsWith("/academy"));
+              const label = item.label || (item.href === "/academy" ? (locale === "fr" ? "Académie" : "Academy") : "");
               
               if (item.isDropdown) {
                 return (
@@ -272,7 +268,7 @@ export const Navbar: React.FC = () => {
                         isActive ? "text-orange" : "text-dark/80 hover:text-primary"
                       }`}
                     >
-                      <span>{item.label}</span>
+                      <span>{label}</span>
                       <ChevronDown className={`w-5 h-5 transition-transform ${isMobileAcademyOpen ? "rotate-180" : ""}`} />
                     </button>
                     
@@ -307,14 +303,10 @@ export const Navbar: React.FC = () => {
                     isActive ? "text-orange" : "text-dark/80 hover:text-primary"
                   }`}
                 >
-                  {item.label}
+                  {label}
                 </Link>
               );
             })}
-            <Link href="/contact" onClick={closeMobile} className="flex items-center justify-center space-x-2 bg-primary text-white py-3 rounded-full font-semibold font-poppins shadow-md">
-              <PhoneCall className="w-4 h-4 text-orange" />
-              <span>{t.nav.cta}</span>
-            </Link>
           </div>
         </div>
       )}
