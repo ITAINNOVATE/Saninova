@@ -6,7 +6,7 @@ import {
   Search, Filter, ArrowLeft, Loader2, 
   CheckCircle2, XCircle, MoreHorizontal, 
   Download, Mail, Phone, ExternalLink,
-  CreditCard, UserCheck, AlertCircle
+  CreditCard, UserCheck, AlertCircle, Clock
 } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
