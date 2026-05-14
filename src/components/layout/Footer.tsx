@@ -27,6 +27,12 @@ const InstagramIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
+const TiktokIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9.05a8.16 8.16 0 0 0 4.77 1.52V7.13a4.85 4.85 0 0 1-1-.44z" />
+  </svg>
+);
+
 const YoutubeIcon = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
@@ -52,6 +58,7 @@ export const Footer: React.FC = () => {
     { icon: <FacebookIcon className="w-5 h-5" />, href: "https://web.facebook.com/profile.php?id=61589394335585" },
     { icon: <InstagramIcon className="w-5 h-5" />, href: "https://www.instagram.com/saninovagc/" },
     { icon: <YoutubeIcon className="w-5 h-5" />, href: "https://www.youtube.com/@SaniNovaGlobalConsulting" },
+    { icon: <TiktokIcon className="w-5 h-5" />, href: "https://www.tiktok.com/@saninovagc" },
   ];
 
   const handleScrollToTop = () => {
