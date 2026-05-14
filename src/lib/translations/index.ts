@@ -9,7 +9,39 @@ export const translations = {
       services: "Services",
       publications: "Publications",
       contact: "Contact",
+      academy: "Académie",
       cta: "Demander une consultation",
+    },
+    academy: {
+      title: "Développez vos compétences. Transformez les systèmes de santé.",
+      subtitle: "SaniNova Academy accompagne les professionnels, institutions et organisations à travers des formations de haut niveau, programmes certifiants et événements spécialisés.",
+      ctaTrainings: "Voir les formations",
+      ctaRegister: "S’inscrire maintenant",
+      nav: {
+        home: "Accueil Académie",
+        trainings: "Formations",
+        announcements: "Annonces",
+        events: "Événements",
+        faq: "FAQ"
+      },
+      stats: {
+        trainings: "Formations",
+        participants: "Participants formés",
+        experts: "Experts",
+        countries: "Pays couverts"
+      },
+      why: {
+        tag: "POURQUOI SANINOVA ACADEMY ?",
+        title: "L'excellence au service de votre carrière",
+        points: [
+          { title: "Expertise reconnue", desc: "Un savoir-faire issu du terrain." },
+          { title: "Formateurs qualifiés", desc: "Des experts praticiens leaders." },
+          { title: "Certifications", desc: "Des programmes certifiants reconnus." },
+          { title: "Approche pratique", desc: "Pédagogie axée sur les cas concrets." },
+          { title: "Réseau professionnel", desc: "Une communauté d'élite en santé." },
+          { title: "Impact réel", desc: "Compétences immédiatement applicables." }
+        ]
+      }
     },
     hero: {
       title: "Transformer durablement les systèmes de santé en Afrique",
@@ -350,7 +382,39 @@ export const translations = {
       services: "Services",
       publications: "Publications",
       contact: "Contact",
+      academy: "Academy",
       cta: "Request Consultation",
+    },
+    academy: {
+      title: "Develop your skills. Transform health systems.",
+      subtitle: "SaniNova Academy supports professionals, institutions and organizations through high-level training, certification programs and specialized events.",
+      ctaTrainings: "View Trainings",
+      ctaRegister: "Register Now",
+      nav: {
+        home: "Academy Home",
+        trainings: "Trainings",
+        announcements: "Announcements",
+        events: "Events",
+        faq: "FAQ"
+      },
+      stats: {
+        trainings: "Trainings",
+        participants: "Trained Participants",
+        experts: "Experts",
+        countries: "Countries Covered"
+      },
+      why: {
+        tag: "WHY SANINOVA ACADEMY?",
+        title: "Excellence at the service of your career",
+        points: [
+          { title: "Recognized Expertise", desc: "Know-how from the field." },
+          { title: "Qualified Trainers", desc: "Leading practitioner experts." },
+          { title: "Certifications", desc: "Recognized certification programs." },
+          { title: "Practical Approach", desc: "Pedagogy focused on concrete cases." },
+          { title: "Professional Network", desc: "An elite health community." },
+          { title: "Real Impact", desc: "Immediately applicable skills." }
+        ]
+      }
     },
     hero: {
       title: "Sustainably Transforming Health Systems in Africa",

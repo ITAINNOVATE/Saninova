@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { useLanguage } from "../../context/LanguageContext";
 
-import { Menu, X, PhoneCall, Mail, Phone } from "lucide-react";
+import { Menu, X, PhoneCall, Mail, Phone, ChevronDown } from "lucide-react";
 
 // Custom SVG Components for Brands (since Lucide-React 1.x removed them to avoid bloat)
 const FacebookIcon = ({ className }: { className?: string }) => (
@@ -55,6 +55,8 @@ export const Navbar: React.FC = () => {
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isAcademyOpen, setIsAcademyOpen] = useState(false);
+  const [isMobileAcademyOpen, setIsMobileAcademyOpen] = useState(false);
 
   const socialLinks = [
     { icon: <FacebookIcon className="w-3.5 h-3.5" />, href: "https://web.facebook.com/profile.php?id=61589394335585" },
@@ -83,7 +85,16 @@ export const Navbar: React.FC = () => {
     { label: t.nav.expertises, href: "/expertises" },
     { label: t.nav.services, href: "/services" },
     { label: t.nav.publications, href: "/publications" },
+    { label: t.nav.academy, href: "/academy", isDropdown: true },
     { label: t.nav.contact, href: "/contact" },
+  ];
+
+  const academyItems = [
+    { label: t.academy.nav.home, href: "/academy" },
+    { label: t.academy.nav.trainings, href: "/academy/trainings" },
+    { label: t.academy.nav.announcements, href: "/academy/announcements" },
+    { label: t.academy.nav.events, href: "/academy/events" },
+    { label: t.academy.nav.faq, href: "/academy/faq" },
   ];
 
   const closeMobile = () => setIsMobileMenuOpen(false);
@@ -158,7 +169,47 @@ export const Navbar: React.FC = () => {
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
           {navItems.map((item) => {
-            const isActive = pathname === item.href;
+            const isActive = pathname === item.href || (item.isDropdown && pathname?.startsWith("/academy"));
+            
+            if (item.isDropdown) {
+              return (
+                <div 
+                  key={item.href} 
+                  className="relative group/dropdown"
+                  onMouseEnter={() => setIsAcademyOpen(true)}
+                  onMouseLeave={() => setIsAcademyOpen(false)}
+                >
+                  <button
+                    className={`flex items-center space-x-1 font-poppins text-base xl:text-lg font-medium transition-all duration-200 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-orange after:transition-all after:duration-300 hover:after:w-full ${
+                      isActive ? "after:w-full text-orange" : "after:w-0"
+                    } ${
+                      isScrolled 
+                        ? (isActive ? "text-orange" : "text-dark/80 hover:text-orange") 
+                        : (isActive ? "text-orange" : "text-white/90 hover:text-orange")
+                    }`}
+                  >
+                    <span>{item.label}</span>
+                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isAcademyOpen ? "rotate-180" : ""}`} />
+                  </button>
+
+                  {/* Dropdown Menu */}
+                  <div className={`absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-xl border border-dark/5 overflow-hidden transition-all duration-200 origin-top-left ${isAcademyOpen ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 -translate-y-2 pointer-events-none"}`}>
+                    <div className="py-2">
+                      {academyItems.map((subItem) => (
+                        <Link
+                          key={subItem.href}
+                          href={subItem.href}
+                          className={`block px-5 py-3 text-sm font-medium transition-colors hover:bg-light ${pathname === subItem.href ? "text-orange bg-light/50" : "text-dark/70 hover:text-primary"}`}
+                        >
+                          {subItem.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              );
+            }
+
             return (
               <Link
                 key={item.href}
@@ -210,7 +261,43 @@ export const Navbar: React.FC = () => {
         <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-b border-dark/5 shadow-xl p-6 transition-all duration-300">
           <div className="flex flex-col space-y-4">
             {navItems.map((item) => {
-              const isActive = pathname === item.href;
+              const isActive = pathname === item.href || (item.isDropdown && pathname?.startsWith("/academy"));
+              
+              if (item.isDropdown) {
+                return (
+                  <div key={item.href} className="flex flex-col">
+                    <button 
+                      onClick={() => setIsMobileAcademyOpen(!isMobileAcademyOpen)}
+                      className={`flex items-center justify-between font-poppins text-lg font-semibold py-2 border-b border-light transition-colors ${
+                        isActive ? "text-orange" : "text-dark/80 hover:text-primary"
+                      }`}
+                    >
+                      <span>{item.label}</span>
+                      <ChevronDown className={`w-5 h-5 transition-transform ${isMobileAcademyOpen ? "rotate-180" : ""}`} />
+                    </button>
+                    
+                    {isMobileAcademyOpen && (
+                      <div className="bg-light/30 rounded-lg mt-2 mb-2 ml-4 overflow-hidden">
+                        {academyItems.map((subItem) => (
+                          <Link
+                            key={subItem.href}
+                            href={subItem.href}
+                            onClick={closeMobile}
+                            className={`block py-3 px-4 border-l-2 text-base font-medium transition-all ${
+                              pathname === subItem.href 
+                                ? "border-orange text-orange bg-white" 
+                                : "border-transparent text-dark/60 hover:text-primary hover:bg-white/50"
+                            }`}
+                          >
+                            {subItem.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                );
+              }
+
               return (
                 <Link 
                   key={item.href} 
