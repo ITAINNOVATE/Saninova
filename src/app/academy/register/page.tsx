@@ -7,7 +7,7 @@ import * as z from "zod";
 import { 
   User, Mail, Phone, Globe, Building2, Briefcase, 
   Send, CheckCircle2, ChevronRight, ArrowLeft,
-  CreditCard, MessageSquare
+  CreditCard, MessageSquare, MapPin, ShieldCheck
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
