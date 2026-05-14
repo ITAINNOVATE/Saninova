@@ -9,6 +9,8 @@ import WhyAcademy from "../../components/academy/WhyAcademy";
 import AcademyTestimonials from "../../components/academy/AcademyTestimonials";
 import AcademyFAQ from "../../components/academy/AcademyFAQ";
 import { motion } from "framer-motion";
+import { Megaphone, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function AcademyLanding() {
   const { t } = useLanguage();
@@ -37,6 +39,17 @@ export default function AcademyLanding() {
             </a>
           </div>
           <FeaturedTrainings />
+          
+          <div className="mt-16 text-center">
+            <Link 
+              href="/academy/announcements"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-orange/10 border border-orange/20 text-orange rounded-full font-bold hover:bg-orange hover:text-white transition-all group"
+            >
+              <Megaphone className="w-5 h-5" />
+              Voir toutes les annonces & appels
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
         </div>
       </section>
 
