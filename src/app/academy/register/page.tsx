@@ -32,7 +32,7 @@ const registrationSchema = z.object({
 
 type RegistrationData = z.infer<typeof registrationSchema>;
 
-export default function AcademyRegister() {
+function RegisterContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const trainingSlug = searchParams.get("training");
@@ -308,5 +308,19 @@ export default function AcademyRegister() {
         </div>
       </div>
     </>
+  );
+}
+
+import { Suspense } from "react";
+
+export default function AcademyRegister() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-dark flex items-center justify-center">
+        <div className="text-white font-bold animate-pulse">Chargement...</div>
+      </div>
+    }>
+      <RegisterContent />
+    </Suspense>
   );
 }
