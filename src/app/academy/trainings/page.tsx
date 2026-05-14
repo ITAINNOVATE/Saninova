@@ -25,7 +25,7 @@ export default function TrainingsCatalog() {
       price: "250.000",
       currency: "XOF",
       format: "Hybride",
-      image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80",
+      image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80",
       category: "Gouvernance"
     },
     {
@@ -38,7 +38,7 @@ export default function TrainingsCatalog() {
       price: "150.000",
       currency: "XOF",
       format: "En ligne",
-      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80",
+      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80",
       category: "Digital"
     },
     {
@@ -51,7 +51,7 @@ export default function TrainingsCatalog() {
       price: "350.000",
       currency: "XOF",
       format: "Présentiel",
-      image: "https://images.unsplash.com/photo-1587854692152-cbe660dbbb88?auto=format&fit=crop&q=80",
+      image: "https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&q=80",
       category: "Pharma"
     },
     {
@@ -64,7 +64,7 @@ export default function TrainingsCatalog() {
       price: "200.000",
       currency: "XOF",
       format: "Présentiel",
-      image: "https://images.unsplash.com/photo-1566576721346-d4a3b4eaad5b?auto=format&fit=crop&q=80",
+      image: "https://images.unsplash.com/photo-1582921017967-79d1cb6702ee?auto=format&fit=crop&q=80",
       category: "Logistique"
     },
     {
@@ -77,7 +77,7 @@ export default function TrainingsCatalog() {
       price: "275.000",
       currency: "XOF",
       format: "Hybride",
-      image: "https://images.unsplash.com/photo-1454165833767-027ffea7025c?auto=format&fit=crop&q=80",
+      image: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80",
       category: "Economie"
     }
   ];
@@ -180,7 +180,7 @@ export default function TrainingsCatalog() {
                 className="group bg-[#0F1D33] rounded-[32px] overflow-hidden border border-white/5 flex flex-col h-full hover:border-orange/30 hover:shadow-2xl hover:shadow-orange/5 transition-all duration-500"
               >
                 {/* Image */}
-                <div className="relative aspect-video overflow-hidden">
+                <div className="relative aspect-square overflow-hidden">
                   <img 
                     src={training.image} 
                     alt={training.title} 

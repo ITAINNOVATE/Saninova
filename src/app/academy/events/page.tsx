@@ -31,7 +31,7 @@ export default function AcademyEvents() {
       time: "15:00 - 17:00",
       venue: "Plateforme Zoom Academy",
       type: "En ligne",
-      image: "https://images.unsplash.com/photo-1591115765373-520b7a0271d7?auto=format&fit=crop&q=80"
+      image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80"
     },
     {
       id: "3",
@@ -90,7 +90,7 @@ export default function AcademyEvents() {
                 transition={{ delay: i * 0.1 }}
                 className="group bg-[#0F1D33] rounded-[40px] overflow-hidden border border-white/5 hover:border-accent/30 transition-all duration-500"
               >
-                <div className="relative aspect-video overflow-hidden">
+                <div className="relative aspect-square overflow-hidden">
                   <img src={event.image} alt={event.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                   <div className="absolute top-4 left-4">
                     <span className={`px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest flex items-center gap-2 ${event.type === "En ligne" ? "bg-indigo-600 text-white" : "bg-accent text-white"}`}>

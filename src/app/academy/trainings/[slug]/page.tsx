@@ -68,7 +68,7 @@ export default function TrainingDetail({ params }: { params: Promise<{ slug: str
     certificate: "Oui (Certificat SaniNova Academy)",
     capacity: "30 participants",
     deadline: "01 Juin 2026",
-    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80",
     category: "Gouvernance"
   };
 

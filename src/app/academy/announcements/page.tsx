@@ -29,7 +29,7 @@ export default function AcademyAnnouncements() {
       date: "25 Mai 2026",
       deadline: "24 Mai 2026",
       content: "Rejoignez nos experts pour une session interactive sur les nouvelles frontières de l'intelligence artificielle appliquée au secteur pharma.",
-      image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80",
+      image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80",
       status: "Bientôt"
     },
     {
@@ -39,7 +39,7 @@ export default function AcademyAnnouncements() {
       date: "15 Mai 2026",
       deadline: "10 Juin 2026",
       content: "La conférence de référence sur la transformation des systèmes de santé se tiendra à Cotonou et en ligne.",
-      image: "https://images.unsplash.com/photo-1475721027187-4024733923f9?auto=format&fit=crop&q=80",
+      image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80",
       status: "Annonce"
     }
   ];
@@ -98,7 +98,7 @@ export default function AcademyAnnouncements() {
               className="group bg-[#0F1D33] rounded-[40px] overflow-hidden border border-white/5 flex flex-col h-full hover:shadow-2xl transition-all duration-500"
             >
               {/* Image */}
-              <div className="relative aspect-[16/10] overflow-hidden">
+              <div className="relative aspect-square overflow-hidden">
                 <img 
                   src={announcement.image} 
                   alt={announcement.title} 

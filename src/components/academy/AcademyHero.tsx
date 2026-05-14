@@ -11,9 +11,9 @@ const AcademyHero: React.FC = () => {
   const [currentBgIndex, setCurrentBgIndex] = React.useState(0);
   
   const backgroundImages = [
-    "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80"
+    "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1576765608535-5f04d1e3f2aa?auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80"
   ];
 
   React.useEffect(() => {

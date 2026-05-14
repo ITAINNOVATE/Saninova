@@ -13,7 +13,7 @@ const AcademyTestimonials: React.FC = () => {
       name: "Dr. Moussa Traoré",
       role: "Directeur de l'Innovation, Ministère de la Santé",
       text: "La formation sur la transformation digitale a radicalement changé notre approche du pilotage des données sanitaires. Une expertise concrète et immédiatement applicable.",
-      avatar: "https://i.pravatar.cc/150?u=traore",
+      avatar: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80",
       rating: 5
     },
     {
@@ -21,7 +21,7 @@ const AcademyTestimonials: React.FC = () => {
       name: "Awa Diop",
       role: "Pharmacienne Hospitalière",
       text: "Le programme certifiant en régulation pharmaceutique est d'un niveau exceptionnel. Les formateurs sont des leaders mondiaux qui connaissent les réalités africaines.",
-      avatar: "https://i.pravatar.cc/150?u=awa",
+      avatar: "https://images.unsplash.com/photo-1559839734-2b71f1e3c77c?auto=format&fit=crop&q=80",
       rating: 5
     },
     {
@@ -29,7 +29,7 @@ const AcademyTestimonials: React.FC = () => {
       name: "Koffi Mensah",
       role: "Consultant International en Santé Publique",
       text: "SaniNova Academy offre un réseau d'élite. Les échanges avec d'autres professionnels du continent ont été aussi riches que les cours eux-mêmes.",
-      avatar: "https://i.pravatar.cc/150?u=koffi",
+      avatar: "https://images.unsplash.com/photo-1576669801775-ff912ab76b88?auto=format&fit=crop&q=80",
       rating: 5
     }
   ];
