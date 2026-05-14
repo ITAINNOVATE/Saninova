@@ -5,6 +5,7 @@ import { useLanguage } from "../../context/LanguageContext";
 import { motion } from "framer-motion";
 import { Search, Filter, Calendar, Clock, ArrowRight, Loader2 } from "lucide-react";
 import { supabase } from "../../lib/supabase";
+import Link from "next/link";
 
 interface Article {
   id: string | number;
@@ -198,10 +199,13 @@ export const Publications: React.FC = () => {
                   </div>
 
                   <div className="pt-4 border-t border-light flex items-center justify-between mt-auto">
-                    <span className="font-poppins text-xs font-extrabold text-primary group-hover:text-accent flex items-center space-x-1 transition-colors">
+                    <Link 
+                      href={`/publications/${article.id}`}
+                      className="font-poppins text-xs font-extrabold text-primary group-hover:text-accent flex items-center space-x-1 transition-colors"
+                    >
                       <span>{t.publications.viewArticle}</span>
                       <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-                    </span>
+                    </Link>
                   </div>
                 </div>
               </motion.article>
