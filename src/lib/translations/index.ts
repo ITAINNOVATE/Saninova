@@ -12,6 +12,13 @@ export const translations = {
       academy: "Académie",
       cta: "Demander une consultation",
     },
+    common: {
+      back: "Retour",
+      loading: "Chargement...",
+      error: "Une erreur est survenue",
+      save: "Enregistrer",
+      cancel: "Annuler",
+    },
     academy: {
       title: "Développez vos compétences. Transformez les systèmes de santé.",
       subtitle: "SaniNova Academy accompagne les professionnels, institutions et organisations à travers des formations de haut niveau, programmes certifiants et événements spécialisés.",
@@ -384,6 +391,13 @@ export const translations = {
       contact: "Contact",
       academy: "Academy",
       cta: "Request Consultation",
+    },
+    common: {
+      back: "Back",
+      loading: "Loading...",
+      error: "An error occurred",
+      save: "Save",
+      cancel: "Cancel",
     },
     academy: {
       title: "Develop your skills. Transform health systems.",

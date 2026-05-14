@@ -68,7 +68,7 @@ export default function AcademyAnnouncements() {
               href="/academy"
               className="inline-flex items-center text-white/60 hover:text-orange font-bold text-sm uppercase tracking-widest transition-all gap-2"
             >
-              <ArrowLeft className="w-5 h-5" /> Retour à l'Académie
+              <ArrowLeft className="w-5 h-5" /> {t.common?.back || "Retour"}
             </Link>
           </div>
           {/* Header (Simplified since PageHero handles title) */}
