@@ -51,7 +51,7 @@ export default function AdminAcademyAnnouncements() {
     <div className="space-y-8 pb-20">
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-        <div>
+        <div className="pt-4">
           <Link href="/admin/dashboard/academy" className="inline-flex items-center text-slate-500 hover:text-white transition-colors mb-4 text-xs font-bold uppercase tracking-widest">
             <ArrowLeft className="w-4 h-4 mr-2" /> Retour Academy
           </Link>

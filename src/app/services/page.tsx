@@ -20,7 +20,7 @@ export default function ServicesPage() {
       />
       
       <div className="bg-white pb-20">
-        <div className="max-w-7xl mx-auto px-6 -mt-10 relative z-20 mb-8">
+        <div className="max-w-7xl mx-auto px-6 pt-12 relative z-20 mb-8">
           <Link 
             href="/"
             className="inline-flex items-center text-dark/40 hover:text-primary font-bold text-sm uppercase tracking-widest transition-all gap-2"
