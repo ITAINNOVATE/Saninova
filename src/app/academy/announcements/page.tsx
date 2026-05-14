@@ -10,7 +10,7 @@ import PageHero from "../../../components/ui/PageHero";
 
 export default function AcademyAnnouncements() {
   const router = useRouter();
-  const { locale } = useLanguage();
+  const { t, locale } = useLanguage();
   const [activeType, setActiveType] = useState("all");
 
   const announcements = [

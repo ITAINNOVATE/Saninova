@@ -14,7 +14,7 @@ import PageHero from "../../../components/ui/PageHero";
 
 export default function AcademyEvents() {
   const router = useRouter();
-  const { locale } = useLanguage();
+  const { t, locale } = useLanguage();
   const [viewMode, setViewMode] = useState("grid");
 
   const events = [
