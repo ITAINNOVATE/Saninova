@@ -15,10 +15,10 @@ export default function AcademyPayment() {
   const [isProcessing, setIsProcessing] = useState(false);
 
   const paymentMethods = [
-    { id: "mobile_money", name: "Mobile Money", provider: "MTN / Moov", icon: <Smartphone />, color: "bg-yellow-500" },
-    { id: "card", name: "Carte Bancaire", provider: "Visa / Mastercard", icon: <CreditCard />, color: "bg-blue-600" },
-    { id: "flutterwave", name: "Flutterwave", provider: "Paiement International", icon: <ShieldCheck />, color: "bg-orange" },
-    { id: "paypal", name: "PayPal", provider: "Compte PayPal", icon: <Lock />, color: "bg-indigo-600" },
+    { id: "mobile_money", name: "Mobile Money", provider: "MTN / Moov", icon: <Smartphone className="w-8 h-8" />, color: "bg-yellow-500" },
+    { id: "card", name: "Carte Bancaire", provider: "Visa / Mastercard", icon: <CreditCard className="w-8 h-8" />, color: "bg-blue-600" },
+    { id: "flutterwave", name: "Flutterwave", provider: "Paiement International", icon: <ShieldCheck className="w-8 h-8" />, color: "bg-orange" },
+    { id: "paypal", name: "PayPal", provider: "Compte PayPal", icon: <Lock className="w-8 h-8" />, color: "bg-indigo-600" },
   ];
 
   const handlePayment = async () => {
@@ -85,7 +85,7 @@ export default function AcademyPayment() {
               >
                 <div className="flex items-center gap-6">
                   <div className={`w-14 h-14 rounded-2xl ${method.color} text-white flex items-center justify-center shadow-lg`}>
-                    {React.cloneElement(method.icon as React.ReactElement, { className: "w-8 h-8" })}
+                    {method.icon}
                   </div>
                   <div className="text-left">
                     <p className="text-white font-black text-lg">{method.name}</p>
