@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import PageHero from "../../../components/ui/PageHero";
+import { supabase } from "../../../lib/supabase";
 
 export default function TrainingsCatalog() {
   const router = useRouter();
@@ -14,82 +15,30 @@ export default function TrainingsCatalog() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState("all");
   const [activeFormat, setActiveFormat] = useState("all");
+  const [trainings, setTrainings] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  // Mockup data for catalog
-  const trainings = [
-    {
-      id: "1",
-      slug: "gouvernance-sanitaire-afrique",
-      title: "Gouvernance Sanitaire et Leadership en Afrique",
-      short_description: "Un programme intensif pour les décideurs souhaitant transformer les politiques de santé publique.",
-      date: "15 Juin 2026",
-      location: "Cotonou / Hybride",
-      price: "250.000",
-      currency: "XOF",
-      format: "Hybride",
-      image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80",
-      category: "Gouvernance"
-    },
-    {
-      id: "2",
-      slug: "sante-digitale-interoperabilite",
-      title: "Santé Digitale et Interopérabilité des Systèmes",
-      short_description: "Maîtrisez les standards DHIS2 et l'intégration des dossiers patients informatisés.",
-      date: "02 Juillet 2026",
-      location: "En ligne",
-      price: "150.000",
-      currency: "XOF",
-      format: "En ligne",
-      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80",
-      category: "Digital"
-    },
-    {
-      id: "3",
-      slug: "regulation-pharmaceutique-avancee",
-      title: "Régulation Pharmaceutique et Assurance Qualité",
-      short_description: "Expertise sur les cadres réglementaires et l'homologation des produits de santé.",
-      date: "20 Juillet 2026",
-      location: "Dakar / Présentiel",
-      price: "350.000",
-      currency: "XOF",
-      format: "Présentiel",
-      image: "https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&q=80",
-      category: "Pharma"
-    },
-    {
-      id: "4",
-      slug: "logistique-medicale-dernier-kilometre",
-      title: "Logistique Médicale et Distribution du Dernier Kilomètre",
-      short_description: "Optimisation de la chaîne d'approvisionnement pour les produits de santé essentiels.",
-      date: "05 Août 2026",
-      location: "Abidjan / Présentiel",
-      price: "200.000",
-      currency: "XOF",
-      format: "Présentiel",
-      image: "https://images.unsplash.com/photo-1582921017967-79d1cb6702ee?auto=format&fit=crop&q=80",
-      category: "Logistique"
-    },
-    {
-      id: "5",
-      slug: "financement-innovant-sante",
-      title: "Financement Innovant et Assurance Maladie Universelle",
-      short_description: "Conception de mécanismes de financement durables pour la couverture santé universelle.",
-      date: "12 Septembre 2026",
-      location: "Lomé / Hybride",
-      price: "275.000",
-      currency: "XOF",
-      format: "Hybride",
-      image: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80",
-      category: "Economie"
-    }
-  ];
+  React.useEffect(() => {
+    const fetchTrainings = async () => {
+      setLoading(true);
+      const { data, error } = await supabase
+        .from("academy_trainings")
+        .select("*")
+        .eq("status", "published")
+        .order("created_at", { ascending: false });
+
+      if (data) setTrainings(data);
+      setLoading(false);
+    };
+    fetchTrainings();
+  }, []);
 
   const categories = ["all", "Gouvernance", "Digital", "Pharma", "Logistique", "Economie"];
   const formats = ["all", "Présentiel", "En ligne", "Hybride"];
 
   const filteredTrainings = trainings.filter(t => {
     const matchesSearch = t.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                         t.short_description.toLowerCase().includes(searchQuery.toLowerCase());
+                         (t.short_description || "").toLowerCase().includes(searchQuery.toLowerCase());
     const matchesCategory = activeCategory === "all" || t.category === activeCategory;
     const matchesFormat = activeFormat === "all" || t.format === activeFormat;
     return matchesSearch && matchesCategory && matchesFormat;
@@ -192,7 +141,7 @@ export default function TrainingsCatalog() {
                 {/* Image */}
                 <div className="relative aspect-square overflow-hidden">
                   <img 
-                    src={training.image} 
+                    src={training.image_url} 
                     alt={training.title} 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />

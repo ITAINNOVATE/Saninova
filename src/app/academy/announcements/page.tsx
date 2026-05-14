@@ -8,43 +8,29 @@ import { useRouter } from "next/navigation";
 import { useLanguage } from "../../../context/LanguageContext";
 import PageHero from "../../../components/ui/PageHero";
 
+import { supabase } from "../../../lib/supabase";
+
 export default function AcademyAnnouncements() {
   const router = useRouter();
   const { t, locale } = useLanguage();
   const [activeType, setActiveType] = useState("all");
+  const [announcements, setAnnouncements] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const announcements = [
-    {
-      id: "1",
-      title: "Appel à candidatures : Bourses d'excellence SaniNova 2026",
-      type: "Appel",
-      date: "10 Mai 2026",
-      deadline: "30 Mai 2026",
-      content: "SaniNova Academy offre 5 bourses complètes pour les jeunes professionnels de santé souhaitant se spécialiser en Santé Digitale.",
-      image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80",
-      status: "Ouvert"
-    },
-    {
-      id: "2",
-      title: "Webinaire Gratuit : L'IA dans la régulation pharmaceutique",
-      type: "Webinaire",
-      date: "25 Mai 2026",
-      deadline: "24 Mai 2026",
-      content: "Rejoignez nos experts pour une session interactive sur les nouvelles frontières de l'intelligence artificielle appliquée au secteur pharma.",
-      image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80",
-      status: "Bientôt"
-    },
-    {
-      id: "3",
-      title: "Conférence Annuelle SaniNova : Horizon Santé 2030",
-      type: "Conférence",
-      date: "15 Mai 2026",
-      deadline: "10 Juin 2026",
-      content: "La conférence de référence sur la transformation des systèmes de santé se tiendra à Cotonou et en ligne.",
-      image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80",
-      status: "Annonce"
-    }
-  ];
+  React.useEffect(() => {
+    const fetchAnnouncements = async () => {
+      setLoading(true);
+      const { data, error } = await supabase
+        .from("academy_announcements")
+        .select("*")
+        .eq("status", "published")
+        .order("created_at", { ascending: false });
+
+      if (data) setAnnouncements(data);
+      setLoading(false);
+    };
+    fetchAnnouncements();
+  }, []);
 
   const types = ["all", "Appel", "Webinaire", "Conférence", "Annonce"];
 
@@ -124,7 +110,7 @@ export default function AcademyAnnouncements() {
               {/* Content */}
               <div className="p-8 flex flex-col flex-grow">
                 <div className="flex items-center gap-3 text-white/30 text-xs font-bold uppercase tracking-wider mb-4">
-                  <Calendar className="w-4 h-4" /> {announcement.date}
+                  <Calendar className="w-4 h-4" /> {announcement.created_at ? new Date(announcement.created_at).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }) : "---"}
                 </div>
                 <h3 className="text-xl md:text-2xl font-montserrat font-bold text-white mb-4 line-clamp-2 leading-tight group-hover:text-accent transition-colors">
                   {announcement.title}
@@ -136,7 +122,9 @@ export default function AcademyAnnouncements() {
                 <div className="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
                   <div className="flex flex-col">
                     <span className="text-[10px] text-white/30 font-bold uppercase tracking-widest">Deadline</span>
-                    <span className="text-orange font-black text-sm">{announcement.deadline}</span>
+                    <span className="text-orange font-black text-sm">
+                      {announcement.deadline ? new Date(announcement.deadline).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }) : "N/A"}
+                    </span>
                   </div>
                   <Link 
                     href={`/academy/announcements/${announcement.id}`}

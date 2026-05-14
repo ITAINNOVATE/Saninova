@@ -11,66 +11,42 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
+import { supabase } from "../../../../lib/supabase";
+
 export default function TrainingDetail({ params }: { params: Promise<{ slug: string }> }) {
   const router = useRouter();
   const resolvedParams = use(params);
   const { slug } = resolvedParams;
   const { t } = useLanguage();
+  const [training, setTraining] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
 
-  // In a real app, fetch this from Supabase based on slug
-  const training = {
-    title: "Gouvernance Sanitaire et Leadership en Afrique",
-    slug: "gouvernance-sanitaire-afrique",
-    short_description: "Un programme de haut niveau pour transformer la gestion des systèmes de santé publique sur le continent africain.",
-    full_description: `Cette formation intensive est conçue pour doter les cadres supérieurs et les décideurs des compétences stratégiques nécessaires pour naviguer dans la complexité des systèmes de santé africains contemporains. 
+  React.useEffect(() => {
+    const fetchTraining = async () => {
+      setLoading(true);
+      const { data, error } = await supabase
+        .from("academy_trainings")
+        .select("*")
+        .eq("slug", slug)
+        .single();
 
-À travers une approche mêlant théorie, études de cas réels et ateliers de modélisation, les participants apprendront à concevoir des politiques de santé résilientes, à optimiser la gouvernance hospitalière et à exercer un leadership transformationnel au sein de leurs institutions.`,
-    objectives: [
-      "Maîtriser les cadres de gouvernance sanitaire internationale et leur adaptation locale",
-      "Développer des capacités d'analyse stratégique pour les réformes de santé",
-      "Optimiser la gestion des ressources et le financement institutionnel",
-      "Renforcer le leadership et la conduite du changement dans les organisations de santé",
-      "Établir des mécanismes de redevabilité et de suivi-évaluation performants"
-    ],
-    target_audience: [
-      "Cadres des Ministères de la Santé",
-      "Directeurs d'hôpitaux et de structures sanitaires",
-      "Responsables de programmes de santé publique",
-      "Consultants et experts en développement sanitaire",
-      "Dirigeants d'ONG et de partenaires au développement"
-    ],
-    program: [
-      { day: "Jour 1", title: "Fondations de la Gouvernance", details: "Analyse des systèmes de santé mondiaux vs africains. Cadres réglementaires et éthiques." },
-      { day: "Jour 2", title: "Leadership Stratégique", details: "Conduite du changement, management des équipes multidisciplinaires et vision 2030." },
-      { day: "Jour 3", title: "Financement et Ressources", details: "Modèles d'assurance maladie universelle et optimisation budgétaire." },
-      { day: "Jour 4", title: "Transformation Digitale", details: "Impact des technologies sur la gouvernance et la qualité des soins." },
-      { day: "Jour 5", title: "Atelier de Synthèse", details: "Projet final : Modélisation d'une réforme sanitaire pour son propre contexte." }
-    ],
-    trainers: [
-      {
-        name: "Dr. Hope Akohouvi Amou",
-        role: "Directeur Général SaniNova",
-        bio: "Expert international en transformation des systèmes de santé avec plus de 20 ans d'expérience.",
-        image: "https://i.pravatar.cc/150?u=hope"
-      },
-      {
-        name: "Sophie Kaboré",
-        role: "Directrice Associée",
-        bio: "Spécialiste en santé digitale et gouvernance des systèmes d'information.",
-        image: "https://i.pravatar.cc/150?u=sophie"
-      }
-    ],
-    date: "15 - 19 Juin 2026",
-    time: "09:00 - 17:00",
-    location: "Cotonou / Hybride",
-    price: "250.000",
-    currency: "XOF",
-    duration: "5 Jours (40h)",
-    language: "Français",
-    certificate: "Oui (Certificat SaniNova Academy)",
-    capacity: "30 participants",
-    deadline: "01 Juin 2026",
-    image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80",
+      if (data) setTraining(data);
+      setLoading(false);
+    };
+    fetchTraining();
+  }, [slug]);
+
+  if (loading) return (
+    <div className="min-h-screen bg-dark flex items-center justify-center">
+      <div className="text-white font-black animate-pulse">Chargement...</div>
+    </div>
+  );
+
+  if (!training) return (
+    <div className="min-h-screen bg-dark flex items-center justify-center">
+      <div className="text-white font-black">Formation non trouvée</div>
+    </div>
+  );3f?auto=format&fit=crop&q=80",
     category: "Gouvernance"
   };
 
@@ -80,7 +56,7 @@ export default function TrainingDetail({ params }: { params: Promise<{ slug: str
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/80 to-transparent z-10" />
-          <img src={training.image} alt={training.title} className="w-full h-full object-cover opacity-30" />
+          <img src={training.image_url} alt={training.title} className="w-full h-full object-cover opacity-30" />
         </div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-20">
@@ -117,7 +93,9 @@ export default function TrainingDetail({ params }: { params: Promise<{ slug: str
                   </div>
                   <div>
                     <p className="text-[10px] uppercase font-bold text-white/40 tracking-wider">Date</p>
-                    <p className="text-white font-bold text-sm">{training.date}</p>
+                    <p className="text-white font-bold text-sm">
+                      {training.date ? new Date(training.date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }) : "---"}
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
@@ -173,7 +151,9 @@ export default function TrainingDetail({ params }: { params: Promise<{ slug: str
                   </div>
                   <div className="flex items-center justify-between py-3 border-b border-dark/5 text-sm">
                     <span className="text-dark/50 font-medium">Date limite</span>
-                    <span className="text-orange font-black">{training.deadline}</span>
+                    <span className="text-orange font-black">
+                      {training.deadline ? new Date(training.deadline).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }) : "---"}
+                    </span>
                   </div>
                 </div>
 
@@ -224,7 +204,7 @@ export default function TrainingDetail({ params }: { params: Promise<{ slug: str
                   Objectifs
                 </h2>
                 <div className="grid md:grid-cols-2 gap-4">
-                  {training.objectives.map((obj, i) => (
+                  {(training.objectives || []).map((obj: string, i: number) => (
                     <div key={i} className="flex items-start gap-4 p-5 rounded-3xl bg-white/5 border border-white/5">
                       <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 text-accent">
                         <CheckCircle2 className="w-5 h-5" />
@@ -242,7 +222,7 @@ export default function TrainingDetail({ params }: { params: Promise<{ slug: str
                   Public Cible
                 </h2>
                 <div className="flex flex-wrap gap-3">
-                  {training.target_audience.map((audience, i) => (
+                  {(training.target_audience || []).map((audience: string, i: number) => (
                     <span key={i} className="px-6 py-3 rounded-2xl bg-white/5 text-white/70 font-bold border border-white/10">
                       {audience}
                     </span>
@@ -257,7 +237,7 @@ export default function TrainingDetail({ params }: { params: Promise<{ slug: str
                   Programme détaillé
                 </h2>
                 <div className="space-y-4">
-                  {training.program.map((item, i) => (
+                  {(training.program || []).map((item: any, i: number) => (
                     <div key={i} className="relative pl-12 pb-8 last:pb-0 group">
                       {/* Vertical line */}
                       <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-white/10 group-last:bottom-[90%]" />
@@ -282,7 +262,7 @@ export default function TrainingDetail({ params }: { params: Promise<{ slug: str
                   Intervenants
                 </h2>
                 <div className="grid md:grid-cols-2 gap-8">
-                  {training.trainers.map((trainer, i) => (
+                  {(training.trainers || []).map((trainer: any, i: number) => (
                     <div key={i} className="flex gap-6 p-6 rounded-[32px] bg-white/5 border border-white/5 items-center">
                       <div className="w-20 h-20 md:w-24 md:h-24 rounded-3xl overflow-hidden flex-shrink-0">
                         <img src={trainer.image} alt={trainer.name} className="w-full h-full object-cover" />

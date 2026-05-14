@@ -12,40 +12,28 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import PageHero from "../../../components/ui/PageHero";
 
+import { supabase } from "../../../lib/supabase";
+
 export default function AcademyEvents() {
   const router = useRouter();
   const { t, locale } = useLanguage();
   const [viewMode, setViewMode] = useState("grid");
+  const [events, setEvents] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const events = [
-    {
-      id: "1",
-      title: "Symposium Africain sur la Santé Digitale",
-      date: "12 Juin 2026",
-      time: "09:00 - 18:00",
-      venue: "Palais des Congrès, Cotonou",
-      type: "Présentiel",
-      image: "https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?auto=format&fit=crop&q=80"
-    },
-    {
-      id: "2",
-      title: "Masterclass : Financement Innovant de la Santé",
-      date: "22 Juin 2026",
-      time: "15:00 - 17:00",
-      venue: "Plateforme Zoom Academy",
-      type: "En ligne",
-      image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80"
-    },
-    {
-      id: "3",
-      title: "Dîner de Gala : Réseau des Leaders de Santé",
-      date: "05 Juillet 2026",
-      time: "19:00 - 22:00",
-      venue: "Novotel, Cotonou",
-      type: "Présentiel",
-      image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80"
-    }
-  ];
+  React.useEffect(() => {
+    const fetchEvents = async () => {
+      setLoading(true);
+      const { data, error } = await supabase
+        .from("academy_events")
+        .select("*")
+        .order("date", { ascending: true });
+
+      if (data) setEvents(data);
+      setLoading(false);
+    };
+    fetchEvents();
+  }, []);
 
   return (
     <>
@@ -113,8 +101,12 @@ export default function AcademyEvents() {
                 <div className="p-8 flex flex-col flex-grow">
                   <div className="flex items-center gap-4 mb-6">
                     <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex flex-col items-center justify-center">
-                      <span className="text-orange font-black text-xl leading-none">{event.date.split(' ')[0]}</span>
-                      <span className="text-white/40 text-[10px] font-bold uppercase">{event.date.split(' ')[1]}</span>
+                      <span className="text-orange font-black text-xl leading-none">
+                        {event.date ? new Date(event.date).getDate() : "--"}
+                      </span>
+                      <span className="text-white/40 text-[10px] font-bold uppercase">
+                        {event.date ? new Date(event.date).toLocaleDateString('fr-FR', { month: 'short' }) : "---"}
+                      </span>
                     </div>
                     <div>
                       <p className="text-white/30 text-xs font-bold uppercase tracking-widest flex items-center gap-2">
@@ -156,9 +148,11 @@ export default function AcademyEvents() {
                 </Link>
                 <div className="flex-grow">
                   <div className="flex items-center gap-3 mb-2">
-                    <span className="text-orange font-black text-sm uppercase tracking-widest">{event.date}</span>
+                    <span className="text-orange font-black text-sm uppercase tracking-widest">
+                      {event.date ? new Date(event.date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }) : "À définir"}
+                    </span>
                     <span className="w-1.5 h-1.5 rounded-full bg-white/20" />
-                    <span className="text-white/40 text-xs font-bold uppercase tracking-widest">{event.time}</span>
+                    <span className="text-white/40 text-xs font-bold uppercase tracking-widest">{event.time || "---"}</span>
                   </div>
                   <Link href={`/academy/events/${event.id}`}>
                     <h3 className="text-white font-montserrat font-black text-2xl mb-2">{event.title}</h3>
