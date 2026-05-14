@@ -2,12 +2,14 @@
 
 import React, { useState } from "react";
 import { useLanguage } from "../../../context/LanguageContext";
-import { Search, Filter, Calendar, MapPin, ArrowRight, X } from "lucide-react";
+import { Search, Filter, Calendar, MapPin, ArrowRight, X, ArrowLeft } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import PageHero from "../../../components/ui/PageHero";
 
 export default function TrainingsCatalog() {
+  const router = useRouter();
   const { t, locale } = useLanguage();
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState("all");
@@ -106,6 +108,14 @@ export default function TrainingsCatalog() {
       />
       <div className="bg-dark pb-24">
         <div className="max-w-7xl mx-auto px-6 -mt-20 relative z-20">
+          <div className="mb-8">
+            <Link 
+              href="/academy"
+              className="inline-flex items-center text-white/60 hover:text-orange font-bold text-sm uppercase tracking-widest transition-all gap-2"
+            >
+              <ArrowLeft className="w-5 h-5" /> Retour à l'Académie
+            </Link>
+          </div>
           {/* Filters and Search */}
         <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-[32px] p-6 mb-12 relative z-20 shadow-2xl">
           <div className="flex flex-col lg:flex-row gap-6">

@@ -11,7 +11,8 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect } from "react";
 import PageHero from "../../../components/ui/PageHero";
 
 const registrationSchema = z.object({
@@ -33,21 +34,39 @@ type RegistrationData = z.infer<typeof registrationSchema>;
 
 export default function AcademyRegister() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const trainingSlug = searchParams.get("training");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [step, setStep] = useState(1);
 
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
     watch
   } = useForm<RegistrationData>({
     resolver: zodResolver(registrationSchema) as any,
     defaultValues: {
       invoice_required: false,
-      training: ""
+      training: trainingSlug || ""
     }
   });
+
+  useEffect(() => {
+    if (trainingSlug) {
+      // Map slug to form value if necessary, but here the values in select match slug-like strings
+      // Let's ensure the mapping is correct
+      const mapping: Record<string, string> = {
+        "gouvernance-sanitaire-afrique": "gouvernance",
+        "sante-digitale-interoperabilite": "digital",
+        "regulation-pharmaceutique-avancee": "pharma"
+      };
+      
+      const formValue = mapping[trainingSlug] || trainingSlug;
+      setValue("training", formValue);
+    }
+  }, [trainingSlug, setValue]);
 
   const onSubmit = async (data: RegistrationData) => {
     setIsSubmitting(true);
@@ -200,13 +219,29 @@ export default function AcademyRegister() {
                   <div className="space-y-6">
                     <div className="space-y-2">
                       <label className="text-sm font-bold text-white/40 uppercase tracking-wider ml-1">Formation Choisie</label>
-                      <select {...register("training")} className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-4 text-white focus:border-orange/50 focus:bg-white/10 transition-all outline-none appearance-none">
-                        <option value="" className="bg-dark text-white/30">Choisir une formation...</option>
-                        <option value="gouvernance" className="bg-dark">Gouvernance Sanitaire et Leadership</option>
-                        <option value="digital" className="bg-dark">Santé Digitale et Interopérabilité</option>
-                        <option value="pharma" className="bg-dark">Régulation Pharmaceutique</option>
-                      </select>
-                      {errors.training && <p className="text-red-400 text-xs font-bold mt-1 ml-1">{errors.training.message}</p>}
+                      {trainingSlug ? (
+                        <div className="w-full bg-white/10 border border-orange/30 rounded-2xl py-4 px-6 text-white font-bold flex items-center justify-between">
+                          <span>
+                            {trainingSlug === "gouvernance-sanitaire-afrique" && "Gouvernance Sanitaire et Leadership"}
+                            {trainingSlug === "sante-digitale-interoperabilite" && "Santé Digitale et Interopérabilité"}
+                            {trainingSlug === "regulation-pharmaceutique-avancee" && "Régulation Pharmaceutique"}
+                            {!["gouvernance-sanitaire-afrique", "sante-digitale-interoperabilite", "regulation-pharmaceutique-avancee"].includes(trainingSlug) && trainingSlug}
+                          </span>
+                          <span className="text-[10px] bg-orange/20 text-orange px-2 py-1 rounded-md uppercase">Sélectionné</span>
+                          {/* Hidden input to keep react-hook-form happy if needed, but setValue already handled it */}
+                          <input type="hidden" {...register("training")} />
+                        </div>
+                      ) : (
+                        <>
+                          <select {...register("training")} className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-4 text-white focus:border-orange/50 focus:bg-white/10 transition-all outline-none appearance-none">
+                            <option value="" className="bg-dark text-white/30">Choisir une formation...</option>
+                            <option value="gouvernance" className="bg-dark">Gouvernance Sanitaire et Leadership</option>
+                            <option value="digital" className="bg-dark">Santé Digitale et Interopérabilité</option>
+                            <option value="pharma" className="bg-dark">Régulation Pharmaceutique</option>
+                          </select>
+                          {errors.training && <p className="text-red-400 text-xs font-bold mt-1 ml-1">{errors.training.message}</p>}
+                        </>
+                      )}
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-6">

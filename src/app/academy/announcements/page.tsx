@@ -1,13 +1,15 @@
 "use client";
 
 import React, { useState } from "react";
-import { Megaphone, Calendar, Tag, ArrowRight, Search, Bell } from "lucide-react";
+import { Megaphone, Calendar, Tag, ArrowRight, Search, Bell, ArrowLeft } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useLanguage } from "../../../context/LanguageContext";
 import PageHero from "../../../components/ui/PageHero";
 
 export default function AcademyAnnouncements() {
+  const router = useRouter();
   const { locale } = useLanguage();
   const [activeType, setActiveType] = useState("all");
 
@@ -61,6 +63,14 @@ export default function AcademyAnnouncements() {
       />
       <div className="bg-dark pb-24">
         <div className="max-w-7xl mx-auto px-6 -mt-12 relative z-20">
+          <div className="mb-8">
+            <Link 
+              href="/academy"
+              className="inline-flex items-center text-white/60 hover:text-orange font-bold text-sm uppercase tracking-widest transition-all gap-2"
+            >
+              <ArrowLeft className="w-5 h-5" /> Retour à l'Académie
+            </Link>
+          </div>
           {/* Header (Simplified since PageHero handles title) */}
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12">
             <div className="max-w-2xl">

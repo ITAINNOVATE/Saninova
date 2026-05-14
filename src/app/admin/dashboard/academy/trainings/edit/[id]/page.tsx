@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState, use } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { supabase } from "../../../../../../lib/supabase";
+import { supabase } from "../../../../../../../lib/supabase";
 import { 
   ArrowLeft, Save, Loader2, Image as ImageIcon, 
   Layout, Calendar, MapPin, Tag, DollarSign,
@@ -13,7 +13,7 @@ import {
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import ImageUpload from "../../../../../../components/admin/ImageUpload";
+import ImageUpload from "../../../../../../../components/admin/ImageUpload";
 
 const trainingSchema = z.object({
   title: z.string().min(5, "Titre trop court"),
@@ -37,8 +37,11 @@ const trainingSchema = z.object({
 
 type TrainingFormValues = z.infer<typeof trainingSchema>;
 
-export default function NewTrainingPage() {
+export default function EditTrainingPage({ params }: { params: Promise<{ id: string }> }) {
+  const resolvedParams = use(params);
+  const { id } = resolvedParams;
   const router = useRouter();
+  const [loading, setLoading] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -51,21 +54,40 @@ export default function NewTrainingPage() {
   } = useForm<TrainingFormValues>({
     resolver: zodResolver(trainingSchema) as any,
     defaultValues: {
-      format: "Hybride",
-      status: "draft",
-      certificate: true
+      format: "Hybride"
     }
   });
 
-  const title = watch("title");
-  React.useEffect(() => {
-    if (title) {
-      const slug = title.toLowerCase()
-        .replace(/ /g, "-")
-        .replace(/[^\w-]+/g, "");
-      setValue("slug", slug);
+  useEffect(() => {
+    fetchTraining();
+  }, [id]);
+
+  const fetchTraining = async () => {
+    try {
+      const { data, error } = await supabase
+        .from("academy_trainings")
+        .select("*")
+        .eq("id", id)
+        .single();
+
+      if (error) throw error;
+      if (data) {
+        Object.keys(data).forEach(key => {
+          if (key in trainingSchema.shape) {
+            let val = data[key];
+            if ((key === "objectives" || key === "target_audience") && Array.isArray(val)) {
+              val = val.join(", ");
+            }
+            setValue(key as any, val);
+          }
+        });
+      }
+    } catch (err: any) {
+      setError("Erreur lors du chargement: " + err.message);
+    } finally {
+      setLoading(false);
     }
-  }, [title, setValue]);
+  };
 
   const onSubmit = async (data: TrainingFormValues) => {
     setIsSubmitting(true);
@@ -78,20 +100,30 @@ export default function NewTrainingPage() {
       if (typeof formattedData.target_audience === "string") {
         formattedData.target_audience = formattedData.target_audience.split(",").map(s => s.trim()).filter(Boolean);
       }
-
-      const { error: insertError } = await supabase
+      
+      const { error: updateError } = await supabase
         .from("academy_trainings")
-        .insert([formattedData]);
+        .update(formattedData)
+        .eq("id", id);
 
-      if (insertError) throw insertError;
+      if (updateError) throw updateError;
       
       router.push("/admin/dashboard/academy/trainings");
     } catch (err: any) {
-      setError(err.message || "Erreur lors de la création");
+      setError(err.message || "Erreur lors de la mise à jour");
     } finally {
       setIsSubmitting(false);
     }
   };
+
+  if (loading) {
+    return (
+      <div className="py-32 flex flex-col items-center justify-center text-slate-500">
+        <Loader2 className="w-10 h-10 animate-spin mb-4 text-emerald-400" />
+        <p className="font-poppins">Chargement de la formation...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-8 pb-20">
@@ -102,8 +134,8 @@ export default function NewTrainingPage() {
       </div>
 
       <div className="max-w-4xl">
-        <h1 className="text-3xl font-montserrat font-black text-white mb-2">Ajouter une Formation</h1>
-        <p className="text-slate-500 font-inter">Créez un nouveau programme pour le catalogue Academy.</p>
+        <h1 className="text-3xl font-montserrat font-black text-white mb-2">Modifier la Formation</h1>
+        <p className="text-slate-500 font-inter">Mettez à jour les informations du programme.</p>
       </div>
 
       <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -111,33 +143,33 @@ export default function NewTrainingPage() {
           <div className="bg-slate-900/40 border border-slate-800 rounded-[32px] p-8 space-y-6">
             <div className="space-y-2">
               <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Titre de la formation</label>
-              <input {...register("title")} className="w-full bg-slate-950 border border-slate-800 rounded-2xl py-4 px-6 text-white focus:border-[#00A878] outline-none transition-all" placeholder="Ex: Gouvernance Sanitaire 2026" />
+              <input {...register("title")} className="w-full bg-slate-950 border border-slate-800 rounded-2xl py-4 px-6 text-white focus:border-[#00A878] outline-none transition-all" />
               {errors.title && <p className="text-red-400 text-xs mt-1">{errors.title.message}</p>}
             </div>
 
             <div className="space-y-2">
               <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Slug (URL)</label>
-              <input {...register("slug")} className="w-full bg-slate-950/50 border border-slate-800 rounded-2xl py-4 px-6 text-slate-400 focus:border-[#00A878] outline-none transition-all" placeholder="gouvernance-sanitaire-2026" />
+              <input {...register("slug")} className="w-full bg-slate-950/50 border border-slate-800 rounded-2xl py-4 px-6 text-slate-400 focus:border-[#00A878] outline-none transition-all" />
             </div>
 
             <div className="space-y-2">
               <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Description Courte</label>
-              <textarea {...register("short_description")} className="w-full bg-slate-950 border border-slate-800 rounded-2xl py-4 px-6 text-white focus:border-[#00A878] outline-none transition-all min-h-[100px]" placeholder="Résumé accrocheur pour la carte du catalogue..." />
+              <textarea {...register("short_description")} className="w-full bg-slate-950 border border-slate-800 rounded-2xl py-4 px-6 text-white focus:border-[#00A878] outline-none transition-all min-h-[100px]" />
             </div>
 
             <div className="space-y-2">
               <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Contenu Complet</label>
-              <textarea {...register("full_description")} className="w-full bg-slate-950 border border-slate-800 rounded-2xl py-4 px-6 text-white focus:border-[#00A878] outline-none transition-all min-h-[300px]" placeholder="Objectifs, programme, détails..." />
+              <textarea {...register("full_description")} className="w-full bg-slate-950 border border-slate-800 rounded-2xl py-4 px-6 text-white focus:border-[#00A878] outline-none transition-all min-h-[300px]" />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Objectifs (séparés par des virgules)</label>
-                <textarea {...register("objectives")} className="w-full bg-slate-950 border border-slate-800 rounded-2xl py-4 px-6 text-white focus:border-[#00A878] outline-none transition-all min-h-[120px]" placeholder="Améliorer la gestion, Comprendre les enjeux..." />
+                <textarea {...register("objectives")} className="w-full bg-slate-950 border border-slate-800 rounded-2xl py-4 px-6 text-white focus:border-[#00A878] outline-none transition-all min-h-[120px]" />
               </div>
               <div className="space-y-2">
                 <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Public Cible (séparés par des virgules)</label>
-                <textarea {...register("target_audience")} className="w-full bg-slate-950 border border-slate-800 rounded-2xl py-4 px-6 text-white focus:border-[#00A878] outline-none transition-all min-h-[120px]" placeholder="Médecins, Directeurs d'hôpitaux, Pharmaciens..." />
+                <textarea {...register("target_audience")} className="w-full bg-slate-950 border border-slate-800 rounded-2xl py-4 px-6 text-white focus:border-[#00A878] outline-none transition-all min-h-[120px]" />
               </div>
             </div>
           </div>
@@ -222,10 +254,10 @@ export default function NewTrainingPage() {
           <button 
             type="submit" 
             disabled={isSubmitting}
-            className="w-full py-5 bg-[#00A878] text-white rounded-2xl font-black text-lg shadow-xl shadow-emerald-900/20 hover:scale-[1.02] disabled:opacity-50 transition-all flex items-center justify-center gap-3"
+            className="w-full py-5 bg-emerald-600 text-white rounded-2xl font-black text-lg shadow-xl shadow-emerald-900/20 hover:scale-[1.02] disabled:opacity-50 transition-all flex items-center justify-center gap-3"
           >
             {isSubmitting ? <Loader2 className="w-6 h-6 animate-spin" /> : <Save className="w-6 h-6" />}
-            {isSubmitting ? "Création..." : "Enregistrer la formation"}
+            {isSubmitting ? "Mise à jour..." : "Mettre à jour"}
           </button>
           
           {error && (

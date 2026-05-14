@@ -5,12 +5,14 @@ import { useLanguage } from "../../../../context/LanguageContext";
 import { 
   Calendar, Clock, MapPin, CheckCircle2, Users, 
   Award, Globe, BookOpen, User, PhoneCall, 
-  ArrowRight, ShieldCheck, Share2, Heart
+  ArrowRight, ShieldCheck, Share2, Heart, ArrowLeft
 } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function TrainingDetail({ params }: { params: Promise<{ slug: string }> }) {
+  const router = useRouter();
   const resolvedParams = use(params);
   const { slug } = resolvedParams;
   const { t } = useLanguage();
@@ -82,6 +84,14 @@ export default function TrainingDetail({ params }: { params: Promise<{ slug: str
         </div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-20">
+          <div className="mb-8">
+            <button 
+              onClick={() => router.back()}
+              className="inline-flex items-center text-white/60 hover:text-orange font-bold text-sm uppercase tracking-widest transition-all gap-2"
+            >
+              <ArrowLeft className="w-5 h-5" /> {t.common?.back || "Retour"}
+            </button>
+          </div>
           <div className="flex flex-col lg:flex-row gap-12">
             {/* Left Column: Info */}
             <div className="lg:w-2/3">
@@ -169,7 +179,7 @@ export default function TrainingDetail({ params }: { params: Promise<{ slug: str
 
                 <div className="space-y-4">
                   <Link 
-                    href="/academy/register" 
+                    href={`/academy/register?training=${training.slug}`} 
                     className="w-full py-5 bg-primary text-white rounded-2xl font-black text-center block shadow-xl shadow-primary/20 hover:scale-[1.02] transition-all"
                   >
                     S'inscrire maintenant
@@ -295,7 +305,7 @@ export default function TrainingDetail({ params }: { params: Promise<{ slug: str
                     {training.price} <span className="text-lg font-bold opacity-40">{training.currency}</span>
                   </div>
                   <Link 
-                    href="/academy/register" 
+                    href={`/academy/register?training=${training.slug}`} 
                     className="w-full py-5 bg-primary text-white rounded-2xl font-black text-center block shadow-xl"
                   >
                     S'inscrire maintenant
