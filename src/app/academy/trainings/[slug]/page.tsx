@@ -46,9 +46,7 @@ export default function TrainingDetail({ params }: { params: Promise<{ slug: str
     <div className="min-h-screen bg-dark flex items-center justify-center">
       <div className="text-white font-black">Formation non trouvée</div>
     </div>
-  );3f?auto=format&fit=crop&q=80",
-    category: "Gouvernance"
-  };
+  );
 
   return (
     <div className="bg-dark min-h-screen">
