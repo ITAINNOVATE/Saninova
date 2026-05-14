@@ -41,7 +41,7 @@ export default function AcademyRegister() {
     formState: { errors },
     watch
   } = useForm<RegistrationData>({
-    resolver: zodResolver(registrationSchema),
+    resolver: zodResolver(registrationSchema) as any,
     defaultValues: {
       invoice_required: false,
       training: ""

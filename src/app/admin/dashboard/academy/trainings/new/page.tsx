@@ -41,7 +41,7 @@ export default function NewTrainingPage() {
     watch,
     formState: { errors }
   } = useForm<TrainingFormValues>({
-    resolver: zodResolver(trainingSchema),
+    resolver: zodResolver(trainingSchema) as any,
     defaultValues: {
       format: "Hybride"
     }
