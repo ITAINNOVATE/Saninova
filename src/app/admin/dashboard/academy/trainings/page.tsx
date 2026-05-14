@@ -5,7 +5,7 @@ import { supabase } from "../../../../../lib/supabase";
 import { 
   Plus, Search, Edit2, Trash2, Eye, 
   Filter, ArrowLeft, Loader2, CheckCircle2,
-  XCircle, MoreHorizontal, Calendar, MapPin
+  XCircle, MoreHorizontal, Calendar, MapPin, GraduationCap
 } from "lucide-react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
