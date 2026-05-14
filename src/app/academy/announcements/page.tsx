@@ -139,6 +139,7 @@ export default function AcademyAnnouncements() {
             </motion.div>
           ))}
         </div>
+        </div>
       </div>
     </>
   );
