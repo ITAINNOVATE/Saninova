@@ -5,8 +5,8 @@ import { useParams, useRouter } from "next/navigation";
 import { Calendar, MapPin, Clock, ArrowLeft, Share2, Users, Video } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import PageHero from "../../../components/ui/PageHero";
-import { useLanguage } from "../../../context/LanguageContext";
+import PageHero from "../../../../components/ui/PageHero";
+import { useLanguage } from "../../../../context/LanguageContext";
 
 export default function EventDetail() {
   const { id } = useParams();
