@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { 
   Truck, ShieldCheck, Cpu, Star, 
   Users, BarChart, ChevronRight, X, 
-  CheckCircle2, GraduationCap, Briefcase 
+  CheckCircle2, GraduationCap, Briefcase, Award
 } from "lucide-react";
 
 const iconsMap: { [key: string]: any } = {
