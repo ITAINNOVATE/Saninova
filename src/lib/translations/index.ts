@@ -27,6 +27,7 @@ export const translations = {
       nav: {
         home: "Accueil Académie",
         trainings: "Formations",
+        certifications: "Certifications",
         announcements: "Annonces",
         events: "Événements",
         faq: "FAQ"
@@ -536,6 +537,7 @@ export const translations = {
       nav: {
         home: "Academy Home",
         trainings: "Trainings",
+        certifications: "Certifications",
         announcements: "Announcements",
         events: "Events",
         faq: "FAQ"
