@@ -2,22 +2,39 @@
 
 import React from "react";
 import AcademyCertifications from "../../../components/academy/AcademyCertifications";
-import AcademyHero from "../../../components/academy/AcademyHero";
+import PageHero from "../../../components/ui/PageHero";
+import { useLanguage } from "../../../context/LanguageContext";
+import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
 
 export default function CertificationsPage() {
+  const { t, locale } = useLanguage();
+
   return (
-    <div className="pt-20">
-      <div className="bg-dark py-12">
-        <div className="max-w-7xl mx-auto px-6">
-          <h1 className="text-3xl md:text-5xl font-montserrat font-black text-white">
-            Nos Certifications
-          </h1>
-          <p className="text-white/60 mt-4 max-w-2xl">
-            Découvrez l'ensemble de nos programmes certifiants conçus pour booster votre carrière et valider vos compétences stratégiques en santé.
-          </p>
+    <>
+      <PageHero 
+        title={locale === "fr" ? "Nos Certifications" : "Our Certifications"}
+        subtitle={locale === "fr" 
+          ? "Découvrez l'ensemble de nos programmes certifiants conçus pour booster votre carrière." 
+          : "Discover all our certification programs designed to boost your career."}
+        backgroundImages={[
+          "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80",
+          "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80"
+        ]}
+      />
+      
+      <div className="bg-white">
+        <div className="max-w-7xl mx-auto px-6 py-12 -mt-12 relative z-20">
+          <Link 
+            href="/academy"
+            className="inline-flex items-center text-dark/60 hover:text-primary font-bold text-sm uppercase tracking-widest transition-all gap-2 bg-white px-6 py-3 rounded-full shadow-lg border border-primary/5"
+          >
+            <ArrowLeft className="w-5 h-5" /> {t.common?.back || "Retour"}
+          </Link>
         </div>
+        
+        <AcademyCertifications />
       </div>
-      <AcademyCertifications />
-    </div>
+    </>
   );
 }
