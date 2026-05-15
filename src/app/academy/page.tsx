@@ -4,6 +4,9 @@ import React from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import AcademyHero from "../../components/academy/AcademyHero";
 import AcademyStats from "../../components/academy/AcademyStats";
+import AcademyVision from "../../components/academy/AcademyVision";
+import AcademyOffer from "../../components/academy/AcademyOffer";
+import PedagogicalModel from "../../components/academy/PedagogicalModel";
 import FeaturedTrainings from "../../components/academy/FeaturedTrainings";
 import WhyAcademy from "../../components/academy/WhyAcademy";
 import AcademyTestimonials from "../../components/academy/AcademyTestimonials";
@@ -19,6 +22,11 @@ export default function AcademyLanding() {
     <div className="pt-20">
       <AcademyHero />
       <AcademyStats />
+      
+      {/* New Strategic Sections */}
+      <AcademyVision />
+      <AcademyOffer />
+      <PedagogicalModel />
       
       <section className="py-20 bg-dark/5">
         <div className="max-w-7xl mx-auto px-6">

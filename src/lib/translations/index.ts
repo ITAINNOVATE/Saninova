@@ -20,8 +20,8 @@ export const translations = {
       cancel: "Annuler",
     },
     academy: {
-      title: "Développez vos compétences. Transformez les systèmes de santé.",
-      subtitle: "SaniNova Academy accompagne les professionnels, institutions et organisations à travers des formations de haut niveau, programmes certifiants et événements spécialisés.",
+      title: "La référence du développement des compétences stratégiques en santé",
+      subtitle: "Formez vos leaders et transformez vos systèmes avec nos 6 académies spécialisées et nos programmes certifiants de haut niveau.",
       ctaTrainings: "Voir les formations",
       ctaRegister: "S’inscrire maintenant",
       nav: {
@@ -47,6 +47,135 @@ export const translations = {
           { title: "Approche pratique", desc: "Pédagogie axée sur les cas concrets." },
           { title: "Réseau professionnel", desc: "Une communauté d'élite en santé." },
           { title: "Impact réel", desc: "Compétences immédiatement applicables." }
+        ]
+      },
+      vision: {
+        tag: "NOTRE AMBITION",
+        title: "Devenir la référence du développement des compétences stratégiques en santé",
+        desc: "SaniNova Global Consulting ambitionne de devenir une référence dans le développement des compétences stratégiques en systèmes pharmaceutiques, supply chain santé, santé digitale, gouvernance sanitaire, leadership et transformation institutionnelle.",
+        targets: [
+          "Gouvernements", "Ministères", "Agences de régulation", "Programmes nationaux", 
+          "ONG", "Partenaires techniques et financiers", "Pharmaciens", "Établissements de santé", 
+          "Entreprises pharmaceutiques", "Consultants", "Universités", "Startups santé"
+        ]
+      },
+      subAcademies: [
+        {
+          id: "supply-chain",
+          title: "Académie de Supply Chain Santé",
+          mission: "Former des experts capables de sécuriser la disponibilité des produits de santé à travers des systèmes logistiques performants, résilients et digitalisés.",
+          disciplines: [
+            "Gestion des approvisionnements et des stocks", "Quantification et prévisions", 
+            "Distribution et dernier kilomètre", "Entreposage pharmaceutique", "Chaîne du froid", 
+            "LMIS & eSIGL", "Data analytics logistique", "Supply chain humanitaire", "Gestion des urgences sanitaires"
+          ],
+          certifications: [
+            "Certificat professionnel en Supply Chain Pharmaceutique", "Certification avancée en Quantification", 
+            "Certification en Gestion des Stocks", "Certification en eLMIS & Data Visibility", 
+            "Certification en Distribution Pharmaceutique", "Executive Program en Leadership Supply Chain"
+          ]
+        },
+        {
+          id: "regulation",
+          title: "Académie Réglementation Pharmaceutique",
+          mission: "Développer des compétences avancées en gouvernance pharmaceutique, conformité réglementaire et assurance qualité.",
+          disciplines: [
+            "Réglementation pharmaceutique", "Gouvernance pharmaceutique", "Assurance qualité", 
+            "Pharmacovigilance", "Importation et conformité", "Traçabilité pharmaceutique", 
+            "Inspection pharmaceutique", "Gestion réglementaire des produits de santé"
+          ],
+          certifications: [
+            "Certificat en Cadre Réglementaire Pharmaceutique", "Certification en Assurance Qualité", 
+            "Certification en Bonnes Pratiques Pharmaceutiques", "Certification en Pharmacovigilance", 
+            "Certification en Régulation Pharmaceutique"
+          ]
+        },
+        {
+          id: "digital",
+          title: "Académie Santé Digitale & Innovation",
+          mission: "Former les leaders de la transformation numérique des systèmes de santé africains.",
+          disciplines: [
+            "Santé numérique", "eLMIS", "Traçabilité des produits de santé", "Gouvernance des données", 
+            "Collecte et analyse digitale des données de santé", "Intelligence artificielle appliquée à la santé", 
+            "Cybersécurité santé", "Architecture des systèmes santé"
+          ],
+          certifications: [
+            "Certificat en Santé Digitale", "Certification en traçabilité", "Certification en Data Analytics Santé", 
+            "Certification Power BI Santé", "Executive Program en Transformation Digitale Santé"
+          ]
+        },
+        {
+          id: "leadership",
+          title: "Académie Leadership & Gouvernance Sanitaire",
+          mission: "Renforcer les capacités de leadership stratégique, gouvernance institutionnelle et pilotage des réformes sanitaires.",
+          disciplines: [
+            "Leadership exécutif", "Gouvernance sanitaire", "Gestion stratégique", "Gestion des projets santé", 
+            "Gestion du changement", "Coordination multisectorielle", "Planification stratégique", 
+            "Diplomatie sanitaire", "Gestion des financements de santé"
+          ],
+          certifications: [
+            "Executive Certificate in Health Leadership", "Certification en Gouvernance Sanitaire", 
+            "Certification en Gestion des Projets Santé", "Certification en Gestion des financements de Santé", 
+            "Certification en Leadership Institutionnel"
+          ]
+        },
+        {
+          id: "public-health",
+          title: "Académie Santé Publique & Programmes",
+          mission: "Former les professionnels à la gestion programmatique et opérationnelle des interventions de santé publique.",
+          disciplines: [
+            "VIH", "Paludisme", "Tuberculose", "Vaccination", "Santé maternelle", 
+            "Nutrition", "Santé communautaire", "Renforcement des systèmes de santé", "CSU"
+          ],
+          certifications: [
+            "Certification en Gestion des Programmes de Santé", "Certification en Santé Publique Opérationnelle", 
+            "Certification en Renforcement des Systèmes de Santé"
+          ]
+        },
+        {
+          id: "business",
+          title: "Académie Business Pharmaceutique & Entrepreneuriat Santé",
+          mission: "Développer les compétences entrepreneuriales et managériales du secteur pharmaceutique et santé.",
+          disciplines: [
+            "Gestion d’officine", "Entrepreneuriat pharmaceutique", "Finance pharmaceutique", 
+            "Marketing pharmaceutique", "Business développement santé", "Gestion des cliniques", 
+            "Gestion hospitalière", "Innovation santé"
+          ],
+          certifications: [
+            "Certification en Gestion Moderne d’Officine", "Certification en Entrepreneuriat Pharmaceutique", 
+            "Certification en Management des Structures de Santé"
+          ]
+        }
+      ],
+      pedagogy: {
+        tag: "MODÈLE PÉDAGOGIQUE",
+        title: "Une approche innovante et contextualisée",
+        approaches: [
+          {
+            title: "Formation pratique et stratégique",
+            points: ["Cas réels", "Simulations", "Ateliers", "Exercices terrain"]
+          },
+          {
+            title: "Approche africaine contextualisée",
+            points: ["Réalités institutionnelles", "Réglementation régionale", "Cas adaptés"]
+          },
+          {
+            title: "Approche hybride",
+            points: ["Présentiel", "Distanciel", "eLearning", "Coaching"]
+          }
+        ]
+      },
+      formats: {
+        tag: "FORMATS DE FORMATION",
+        title: "Des modalités adaptées à vos besoins",
+        list: [
+          { name: "Atelier court", duration: "1–2 jours" },
+          { name: "Certification professionnelle", duration: "5–10 jours" },
+          { name: "Executive Program", duration: "3–6 semaines" },
+          { name: "Bootcamp intensif", duration: "2–4 semaines" },
+          { name: "Masterclass", duration: "Quelques heures" },
+          { name: "Formation continue", duration: "Mensuelle" },
+          { name: "eLearning", duration: "Flexible" }
         ]
       }
     },
@@ -355,7 +484,7 @@ export const translations = {
         },
         {
           title: "Renforcement des capacités",
-          desc: "Conception de modules de formation de pointe en management hospitalier, leadership en santé publique, logistique médicale et régulation pharmaceutique pour cadres supérieurs et équipes de terrain.",
+          desc: "Développement des compétences stratégiques à travers nos 6 académies spécialisées : Supply Chain, Réglementation, Santé Digitale, Leadership & Gouvernance, Santé Publique, et Business Pharmaceutique.",
         },
         {
           title: "Études & évaluations",
@@ -400,8 +529,8 @@ export const translations = {
       cancel: "Cancel",
     },
     academy: {
-      title: "Develop your skills. Transform health systems.",
-      subtitle: "SaniNova Academy supports professionals, institutions and organizations through high-level training, certification programs and specialized events.",
+      title: "The benchmark for strategic health skills development",
+      subtitle: "Train your leaders and transform your systems with our 6 specialized academies and high-level certification programs.",
       ctaTrainings: "View Trainings",
       ctaRegister: "Register Now",
       nav: {
@@ -427,6 +556,135 @@ export const translations = {
           { title: "Practical Approach", desc: "Pedagogy focused on concrete cases." },
           { title: "Professional Network", desc: "An elite health community." },
           { title: "Real Impact", desc: "Immediately applicable skills." }
+        ]
+      },
+      vision: {
+        tag: "OUR AMBITION",
+        title: "Becoming the reference for strategic health skills development",
+        desc: "SaniNova Global Consulting aims to become a reference in the development of strategic skills in pharmaceutical systems, health supply chain, digital health, health governance, leadership, and institutional transformation.",
+        targets: [
+          "Governments", "Ministries", "Regulatory Agencies", "National Programs", 
+          "NGOs", "Technical and Financial Partners", "Pharmacists", "Health Facilities", 
+          "Pharmaceutical Companies", "Consultants", "Universities", "Health Startups"
+        ]
+      },
+      subAcademies: [
+        {
+          id: "supply-chain",
+          title: "Health Supply Chain Academy",
+          mission: "To train experts capable of securing the availability of health products through efficient, resilient, and digitalized logistics systems.",
+          disciplines: [
+            "Procurement and stock management", "Quantification and forecasting", 
+            "Distribution and last mile", "Pharmaceutical warehousing", "Cold chain", 
+            "LMIS & eSIGL", "Logistics data analytics", "Humanitarian supply chain", "Health emergency management"
+          ],
+          certifications: [
+            "Professional Certificate in Pharmaceutical Supply Chain", "Advanced Certification in Quantification", 
+            "Certification in Stock Management", "Certification in eLMIS & Data Visibility", 
+            "Certification in Pharmaceutical Distribution", "Executive Program in Supply Chain Leadership"
+          ]
+        },
+        {
+          id: "regulation",
+          title: "Pharmaceutical Regulation Academy",
+          mission: "To develop advanced skills in pharmaceutical governance, regulatory compliance, and quality assurance.",
+          disciplines: [
+            "Pharmaceutical regulation", "Pharmaceutical governance", "Quality assurance", 
+            "Pharmacovigilance", "Import and compliance", "Pharmaceutical traceability", 
+            "Pharmaceutical inspection", "Regulatory management of health products"
+          ],
+          certifications: [
+            "Certificate in Pharmaceutical Regulatory Framework", "Certification in Quality Assurance", 
+            "Certification in Good Pharmaceutical Practices", "Certification in Pharmacovigilance", 
+            "Certification in Pharmaceutical Regulation"
+          ]
+        },
+        {
+          id: "digital",
+          title: "Digital Health & Innovation Academy",
+          mission: "To train leaders of the digital transformation of African health systems.",
+          disciplines: [
+            "Digital health", "eLMIS", "Traceability of health products", "Data governance", 
+            "Digital health data collection and analysis", "Artificial Intelligence applied to health", 
+            "Health cybersecurity", "Health systems architecture"
+          ],
+          certifications: [
+            "Certificate in Digital Health", "Certification in Traceability", "Certification in Health Data Analytics", 
+            "Health Power BI Certification", "Executive Program in Health Digital Transformation"
+          ]
+        },
+        {
+          id: "leadership",
+          title: "Leadership & Health Governance Academy",
+          mission: "To strengthen strategic leadership, institutional governance, and health reform management capacities.",
+          disciplines: [
+            "Executive leadership", "Health governance", "Strategic management", "Health project management", 
+            "Change management", "Multisectoral coordination", "Strategic planning", 
+            "Health diplomacy", "Health financing management"
+          ],
+          certifications: [
+            "Executive Certificate in Health Leadership", "Certification in Health Governance", 
+            "Certification in Health Project Management", "Certification in Health Financing Management", 
+            "Certification in Institutional Leadership"
+          ]
+        },
+        {
+          id: "public-health",
+          title: "Public Health & Programs Academy",
+          mission: "To train professionals in programmatic and operational management of public health interventions.",
+          disciplines: [
+            "HIV", "Malaria", "Tuberculosis", "Vaccination", "Maternal health", 
+            "Nutrition", "Community health", "Health systems strengthening", "UHC"
+          ],
+          certifications: [
+            "Certification in Health Program Management", "Certification in Operational Public Health", 
+            "Certification in Health Systems Strengthening"
+          ]
+        },
+        {
+          id: "business",
+          title: "Pharmaceutical Business & Health Entrepreneurship Academy",
+          mission: "To develop entrepreneurial and managerial skills in the pharmaceutical and health sector.",
+          disciplines: [
+            "Pharmacy management", "Pharmaceutical entrepreneurship", "Pharmaceutical finance", 
+            "Pharmaceutical marketing", "Health business development", "Clinic management", 
+            "Hospital management", "Health innovation"
+          ],
+          certifications: [
+            "Certification in Modern Pharmacy Management", "Certification in Pharmaceutical Entrepreneurship", 
+            "Certification in Health Facility Management"
+          ]
+        }
+      ],
+      pedagogy: {
+        tag: "PEDAGOGICAL MODEL",
+        title: "An innovative and contextualized approach",
+        approaches: [
+          {
+            title: "Practical and strategic training",
+            points: ["Real cases", "Simulations", "Workshops", "Field exercises"]
+          },
+          {
+            title: "Contextualized African approach",
+            points: ["Institutional realities", "Regional regulation", "Adapted cases"]
+          },
+          {
+            title: "Hybrid approach",
+            points: ["Face-to-face", "Remote", "eLearning", "Coaching"]
+          }
+        ]
+      },
+      formats: {
+        tag: "TRAINING FORMATS",
+        title: "Methods adapted to your needs",
+        list: [
+          { name: "Short Workshop", duration: "1–2 days" },
+          { name: "Professional Certification", duration: "5–10 days" },
+          { name: "Executive Program", duration: "3–6 weeks" },
+          { name: "Intensive Bootcamp", duration: "2–4 weeks" },
+          { name: "Masterclass", duration: "A few hours" },
+          { name: "Continuing Education", duration: "Monthly" },
+          { name: "eLearning", duration: "Flexible" }
         ]
       }
     },
@@ -735,7 +993,7 @@ export const translations = {
         },
         {
           title: "Capacity Building",
-          desc: "Design of specialized training modules in hospital management, public health leadership, medical logistics, and pharmaceutical regulation for senior managers and field teams.",
+          desc: "Strategic skills development through our 6 specialized academies: Supply Chain, Regulation, Digital Health, Leadership & Governance, Public Health, and Pharmaceutical Business.",
         },
         {
           title: "Studies & Evaluations",
