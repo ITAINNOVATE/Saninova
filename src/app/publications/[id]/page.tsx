@@ -222,7 +222,7 @@ export default function PublicationDetailPage() {
   const renderArticleContent = (content: string) => {
     if (!content) return null;
 
-    const paragraphs = content.split(/\n\n/);
+    const lines = content.split('\n');
 
     const orangeHeadings = [
       "Des défis structurels qui persistent",
@@ -245,49 +245,49 @@ export default function PublicationDetailPage() {
 
     let isInBibliography = false;
 
-    return paragraphs.map((para, index) => {
-      const trimmedPara = para.trim();
+    return lines.map((line, index) => {
+      const trimmedLine = line.trim();
 
-      if (orangeHeadings.some(heading => heading.toLowerCase() === trimmedPara.toLowerCase())) {
+      // Preserve paragraph separations
+      if (!trimmedLine) {
+        return <div key={index} className="h-4" />;
+      }
+
+      if (orangeHeadings.some(heading => heading.toLowerCase() === trimmedLine.toLowerCase())) {
         return (
           <h3 
             key={index} 
             className="font-montserrat text-lg sm:text-xl font-extrabold text-orange mt-10 mb-4 tracking-tight leading-snug"
           >
-            {trimmedPara}
+            {trimmedLine}
           </h3>
         );
       }
 
-      if (trimmedPara.toLowerCase().includes("références bibliographiques") || trimmedPara.toLowerCase().includes("bibliographical references")) {
+      if (trimmedLine.toLowerCase().includes("références bibliographiques") || trimmedLine.toLowerCase().includes("bibliographical references")) {
         isInBibliography = true;
         return (
           <h4 
             key={index} 
             className="font-inter text-base font-bold text-dark/80 mt-10 mb-4 border-t border-light pt-6"
           >
-            {trimmedPara}
+            {trimmedLine}
           </h4>
         );
       }
 
-      if (isInBibliography || /^\s*\[\d+\]/.test(trimmedPara)) {
+      if (isInBibliography || /^\s*\[\d+\]/.test(trimmedLine)) {
         isInBibliography = true;
-        const refLines = trimmedPara.split('\n');
         return (
-          <div key={index} className="font-inter text-sm text-dark/60 space-y-2 mt-2">
-            {refLines.map((line, idx) => (
-              <p key={idx} className="leading-relaxed">
-                {line}
-              </p>
-            ))}
-          </div>
+          <p key={index} className="font-inter text-sm text-dark/60 leading-relaxed mt-2">
+            {trimmedLine}
+          </p>
         );
       }
 
       return (
-        <p key={index} className="font-inter text-dark/70 text-base sm:text-lg leading-relaxed whitespace-pre-line">
-          {trimmedPara}
+        <p key={index} className="font-inter text-dark/70 text-base sm:text-lg leading-relaxed">
+          {trimmedLine}
         </p>
       );
     });
