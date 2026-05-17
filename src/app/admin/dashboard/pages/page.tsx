@@ -5,7 +5,7 @@ import { supabase } from "../../../../lib/supabase";
 import { useLanguage } from "../../../../context/LanguageContext";
 import { 
   FileText, Save, Check, AlertCircle, Loader2, RefreshCcw, Globe, Code, 
-  Layout, Home, Server, Award, MessageSquare, ArrowLeft
+  Layout, Home, Server, Award, MessageSquare, ArrowLeft, HelpCircle, GraduationCap
 } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -44,6 +44,38 @@ const SECTIONS = [
       { key: "expertises.title", label: "Titre", type: "input" },
       { key: "expertises.subtitle", label: "Sous-titre", type: "textarea" },
       { key: "expertises.ctaAll", label: "Bouton tout explorer", type: "input" },
+    ]
+  },
+  {
+    id: "faq",
+    label: "Page FAQ",
+    icon: HelpCircle,
+    fields: [
+      { key: "faqPage.title", label: "Titre principal de la FAQ", type: "input" },
+      { key: "faqPage.subtitle", label: "Sous-titre explicatif", type: "textarea" },
+      { key: "faqPage.searchPlaceholder", label: "Placeholder de recherche", type: "input" },
+      { key: "faqPage.noResults", label: "Message 'Aucun résultat'", type: "input" },
+      { key: "faqPage.categories.all", label: "Catégorie: Toutes", type: "input" },
+      { key: "faqPage.categories.general", label: "Catégorie: SaniNova & Vision", type: "input" },
+      { key: "faqPage.categories.services", label: "Catégorie: Expertises & Services", type: "input" },
+      { key: "faqPage.categories.digital", label: "Catégorie: Digitalisation & Santé", type: "input" },
+      { key: "faqPage.categories.academy", label: "Catégorie: Formations & Inscriptions", type: "input" },
+    ]
+  },
+  {
+    id: "academy",
+    label: "Académie SaniNova",
+    icon: GraduationCap,
+    fields: [
+      { key: "academy.title", label: "Titre principal (Académie)", type: "textarea" },
+      { key: "academy.subtitle", label: "Sous-titre (Académie)", type: "textarea" },
+      { key: "academy.ctaTrainings", label: "Bouton: Voir les formations", type: "input" },
+      { key: "academy.ctaRegister", label: "Bouton: S’inscrire", type: "input" },
+      { key: "academy.why.tag", label: "Surtitre (Pourquoi l'Académie)", type: "input" },
+      { key: "academy.why.title", label: "Titre (Pourquoi l'Académie)", type: "textarea" },
+      { key: "academy.vision.tag", label: "Surtitre (Ambition)", type: "input" },
+      { key: "academy.vision.title", label: "Titre (Ambition)", type: "textarea" },
+      { key: "academy.vision.desc", label: "Description longue (Ambition)", type: "textarea" },
     ]
   },
   {
