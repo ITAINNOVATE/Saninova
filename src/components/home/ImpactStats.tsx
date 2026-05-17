@@ -70,7 +70,8 @@ export const ImpactStats: React.FC = () => {
             <motion.div
               key={index}
               variants={cardVariants}
-              className="bg-white/5 p-4 sm:p-6 rounded-2xl border border-white/10 hover:bg-white/10 hover:border-orange/30 hover:scale-105 transition-all duration-300 flex flex-col items-center group"
+              className="bg-white/5 p-4 sm:p-6 rounded-2xl border border-white/10 hover:bg-white/10 hover:border-orange/30 hover:scale-105 transition-all duration-300 flex flex-col items-center group transform-gpu"
+              style={{ backfaceVisibility: "hidden" }}
             >
               {/* Micro Icon */}
               <div className="p-2 bg-white/5 rounded-full mb-3 group-hover:scale-110 transition-transform">
@@ -78,10 +79,13 @@ export const ImpactStats: React.FC = () => {
               </div>
 
               {/* Number and suffix */}
-              <span className="font-montserrat text-3xl sm:text-4xl font-extrabold text-white">
+              <div 
+                className="font-montserrat text-3xl sm:text-4xl font-extrabold text-white flex items-baseline justify-center tabular-nums select-none transform-gpu"
+                style={{ backfaceVisibility: "hidden" }}
+              >
                 <Counter value={stat.value} />
-                <span className="text-orange ml-0.5">{stat.suffix}</span>
-              </span>
+                <span className="text-orange ml-0.5 shrink-0">{stat.suffix}</span>
+              </div>
 
               {/* Label */}
               <p className="font-poppins text-xs text-white/60 font-semibold uppercase tracking-wider mt-2 leading-relaxed">

@@ -29,7 +29,7 @@ export const Counter: React.FC<AnimatedCounterProps> = ({ value }) => {
     }
   }, [isInView, target]);
 
-  return <span ref={ref} className="tabular-nums inline-block select-none">{displayValue.toLocaleString()}</span>;
+  return <span ref={ref} className="tabular-nums inline-block select-none">{displayValue.toString()}</span>;
 };
 
 export default Counter;

@@ -16,10 +16,13 @@ export const AboutSection: React.FC = () => {
     const numeric = val.replace(/[^\d.]/g, "");
     const suffix = val.replace(/[\d.,]/g, "");
     return (
-      <>
+      <span 
+        className="inline-flex items-baseline tabular-nums select-none transform-gpu"
+        style={{ backfaceVisibility: "hidden" }}
+      >
         <Counter value={numeric} />
-        {suffix}
-      </>
+        {suffix && <span className="ml-0.5 shrink-0">{suffix}</span>}
+      </span>
     );
   };
 
