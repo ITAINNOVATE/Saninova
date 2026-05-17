@@ -117,7 +117,7 @@ export const ExpertisesDetails: React.FC = () => {
                 </div>
                 <div className="space-y-1">
                   <h4 className="font-poppins text-base sm:text-lg font-bold text-primary">Problématiques Identifiées</h4>
-                  <p className="font-inter text-sm sm:text-base text-dark/70 leading-relaxed">{currentDetails.problem}</p>
+                  <p className="font-inter text-sm sm:text-base text-dark/70 leading-relaxed text-justify">{currentDetails.problem}</p>
                 </div>
               </div>
 
@@ -128,7 +128,7 @@ export const ExpertisesDetails: React.FC = () => {
                 </div>
                 <div className="space-y-1">
                   <h4 className="font-poppins text-base sm:text-lg font-bold text-primary">Notre Accompagnement Stratégique</h4>
-                  <p className="font-inter text-sm sm:text-base text-dark/70 leading-relaxed">{currentDetails.solution}</p>
+                  <p className="font-inter text-sm sm:text-base text-dark/70 leading-relaxed text-justify">{currentDetails.solution}</p>
                 </div>
               </div>
 
@@ -139,7 +139,7 @@ export const ExpertisesDetails: React.FC = () => {
                 </div>
                 <div className="space-y-1">
                   <h4 className="font-poppins text-base sm:text-lg font-bold text-primary">Résultats Attendus & Impacts</h4>
-                  <p className="font-inter text-sm sm:text-base text-dark/70 leading-relaxed">{currentDetails.result}</p>
+                  <p className="font-inter text-sm sm:text-base text-dark/70 leading-relaxed text-justify">{currentDetails.result}</p>
                 </div>
               </div>
             </div>
