@@ -29,11 +29,9 @@ interface Publication {
 
 const CATEGORIES = [
   { value: "digital", label: "Santé Digitale" },
-  { value: "governance", label: "Gouvernance" },
-  { value: "supply", label: "Supply Chain" },
-  { value: "reforms", label: "Réformes Sanitaires" },
-  { value: "ai", label: "IA & Santé" },
-  { value: "security", label: "Sécurité Sanitaire" },
+  { value: "governance", label: "Gouvernance & Leadership" },
+  { value: "supply_chain", label: "Supply Chain & Logistique" },
+  { value: "regulation", label: "Réglementation & Pharmacie" },
 ];
 
 const INITIAL_FORM = {
