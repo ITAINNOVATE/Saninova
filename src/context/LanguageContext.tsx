@@ -14,6 +14,25 @@ interface LanguageContextProps {
 
 const LanguageContext = createContext<LanguageContextProps | undefined>(undefined);
 
+// Deep merge helper to merge database dynamic translations with static fallback
+const deepMerge = (target: any, source: any): any => {
+  if (!source) return target;
+  const output = { ...target };
+  
+  for (const key of Object.keys(source)) {
+    if (source[key] && typeof source[key] === 'object' && !Array.isArray(source[key])) {
+      if (target[key] && typeof target[key] === 'object' && !Array.isArray(target[key])) {
+        output[key] = deepMerge(target[key], source[key]);
+      } else {
+        output[key] = source[key];
+      }
+    } else {
+      output[key] = source[key];
+    }
+  }
+  return output;
+};
+
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [locale, setLocaleState] = useState<Locale>("fr");
   const [activeTranslations, setActiveTranslations] = useState(translations);
@@ -30,10 +49,10 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       if (error) throw error;
 
       if (data) {
-        // Merge with static fallback to avoid missing-key crashes
+        // Deep merge with static fallback to avoid missing-key crashes or label disappearances
         setActiveTranslations({
-          fr: { ...translations.fr, ...data.translations_fr },
-          en: { ...translations.en, ...data.translations_en },
+          fr: deepMerge(translations.fr, data.translations_fr),
+          en: deepMerge(translations.en, data.translations_en),
         });
       }
     } catch (err) {

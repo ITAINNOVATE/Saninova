@@ -11,7 +11,6 @@ import AcademyCertifications from "../../components/academy/AcademyCertification
 import FeaturedTrainings from "../../components/academy/FeaturedTrainings";
 import WhyAcademy from "../../components/academy/WhyAcademy";
 import AcademyTestimonials from "../../components/academy/AcademyTestimonials";
-import AcademyFAQ from "../../components/academy/AcademyFAQ";
 import { motion } from "framer-motion";
 import { Megaphone, ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -66,7 +65,6 @@ export default function AcademyLanding() {
 
       <WhyAcademy />
       <AcademyTestimonials />
-      <AcademyFAQ />
 
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-primary/20 pointer-events-none" />

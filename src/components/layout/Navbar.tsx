@@ -96,7 +96,7 @@ export const Navbar: React.FC = () => {
     { label: t.academy.nav.certifications, href: "/academy/certifications" },
     { label: t.academy.nav.announcements, href: "/academy/announcements" },
     { label: t.academy.nav.events, href: "/academy/events" },
-    { label: t.academy.nav.faq, href: "/academy/faq" },
+    { label: t.academy.nav.faq, href: "/faq?category=academy" },
   ];
 
   const closeMobile = () => setIsMobileMenuOpen(false);

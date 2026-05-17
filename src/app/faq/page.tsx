@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import PageHero from "../../components/ui/PageHero";
 import { Search, ChevronDown, MessageSquare, ArrowRight, X, HelpCircle } from "lucide-react";
@@ -11,6 +11,17 @@ export default function FAQPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState("all");
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  // Read URL query parameter for pre-filtering (e.g., /faq?category=academy)
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const cat = params.get("category");
+      if (cat && ["all", "general", "services", "digital", "academy"].includes(cat)) {
+        setActiveCategory(cat);
+      }
+    }
+  }, []);
 
   // Fallback translations if not yet loaded from supabase dynamically
   const faqData = useMemo(() => {
