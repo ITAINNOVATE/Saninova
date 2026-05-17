@@ -689,12 +689,12 @@ export default function PublicationDetailPage() {
             {/* Footer of article (Author bio) */}
             <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-6">
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
-                  SN
+                <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center border border-dark/10 shadow-sm overflow-hidden shrink-0">
+                  <img src="/images/logo.png" alt="SaniNova" className="w-full h-full object-contain p-1" />
                 </div>
                 <div>
-                  <p className="font-poppins font-bold text-dark m-0 leading-none">Rédaction SaniNova</p>
-                  <p className="font-inter text-xs text-dark/40 m-0">Think-Tank Innovation</p>
+                  <p className="font-poppins font-bold text-dark m-0 leading-none">Dr Hope AKOHOUVI AMOU</p>
+                  <p className="font-inter text-xs text-dark/40 m-0 mt-1 font-medium tracking-wide">#rédactionsaninovagc</p>
                 </div>
               </div>
             </div>
