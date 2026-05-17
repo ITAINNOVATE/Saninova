@@ -264,7 +264,7 @@ export default function PublicationDetailPage() {
         return (
           <h4 
             key={index} 
-            className="font-montserrat text-sm font-bold text-dark/80 mt-12 mb-4 border-t border-light pt-8 uppercase tracking-wider"
+            className="font-inter text-base font-bold text-dark/80 mt-10 mb-4 border-t border-light pt-6"
           >
             {trimmedPara}
           </h4>
@@ -275,7 +275,7 @@ export default function PublicationDetailPage() {
         isInBibliography = true;
         const refLines = trimmedPara.split('\n');
         return (
-          <div key={index} className="text-xs text-dark/50 font-poppins space-y-2 mt-2 pl-4 border-l-2 border-orange/20">
+          <div key={index} className="font-inter text-sm text-dark/60 space-y-2 mt-2">
             {refLines.map((line, idx) => (
               <p key={idx} className="leading-relaxed">
                 {line}
