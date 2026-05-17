@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { supabase } from "../../lib/supabase";
 import { Upload, X, Loader2, Image as ImageIcon, Folder, Check } from "lucide-react";
 
@@ -37,6 +37,15 @@ const GALLERY_IMAGES = [
 export default function ImageUpload({ value, onChange, bucket = "academy", label = "Image" }: ImageUploadProps) {
   const [isUploading, setIsUploading] = useState(false);
   const [activeTab, setActiveTab] = useState<"upload" | "gallery">("upload");
+
+  // Automatically switch tab based on initial value type (folder vs custom upload)
+  useEffect(() => {
+    if (value && value.startsWith("/images/")) {
+      setActiveTab("gallery");
+    } else if (value) {
+      setActiveTab("upload");
+    }
+  }, [value]);
 
   const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -90,67 +99,88 @@ export default function ImageUpload({ value, onChange, bucket = "academy", label
         </div>
       </div>
       
-      {value ? (
-        <div className="relative aspect-video rounded-2xl overflow-hidden border border-slate-800 bg-slate-950 group">
-          <img src={value} alt="Preview" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center gap-2">
-            <button 
-              type="button"
-              onClick={() => onChange("")}
-              className="p-3 bg-red-600 hover:bg-red-500 text-white rounded-xl transition-all shadow-lg font-poppins font-bold text-xs flex items-center gap-1"
-            >
-              <X className="w-4 h-4" /> Supprimer l'image
-            </button>
+      {activeTab === "upload" ? (
+        value ? (
+          /* Preview when value exists and upload tab is active */
+          <div className="relative aspect-video rounded-2xl overflow-hidden border border-slate-800 bg-slate-950 group">
+            <img src={value} alt="Preview" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center gap-2">
+              <button 
+                type="button"
+                onClick={() => onChange("")}
+                className="p-3 bg-red-600 hover:bg-red-500 text-white rounded-xl transition-all shadow-lg font-poppins font-bold text-xs flex items-center gap-1"
+              >
+                <X className="w-4 h-4" /> Supprimer l'image
+              </button>
+            </div>
           </div>
-        </div>
-      ) : activeTab === "upload" ? (
-        <label className="flex flex-col items-center justify-center aspect-video rounded-2xl border-2 border-dashed border-slate-800 bg-slate-950/50 hover:border-emerald-500/50 hover:bg-emerald-500/5 transition-all cursor-pointer group">
-          {isUploading ? (
-            <Loader2 className="w-10 h-10 animate-spin text-emerald-500" />
-          ) : (
-            <>
-              <div className="p-4 rounded-full bg-slate-900 mb-4 group-hover:scale-110 transition-transform">
-                <Upload className="w-8 h-8 text-slate-500 group-hover:text-emerald-500" />
-              </div>
-              <p className="text-sm font-bold text-slate-400 group-hover:text-emerald-500 font-poppins">Cliquez pour uploader</p>
-              <p className="text-[10px] text-slate-600 mt-2 font-medium">JPG, PNG, WebP (Max 5MB)</p>
-            </>
-          )}
-          <input 
-            type="file" 
-            className="hidden" 
-            accept="image/*" 
-            onChange={handleUpload}
-            disabled={isUploading}
-          />
-        </label>
+        ) : (
+          /* Drag and drop/click to upload area */
+          <label className="flex flex-col items-center justify-center aspect-video rounded-2xl border-2 border-dashed border-slate-800 bg-slate-950/50 hover:border-emerald-500/50 hover:bg-emerald-500/5 transition-all cursor-pointer group">
+            {isUploading ? (
+              <Loader2 className="w-10 h-10 animate-spin text-emerald-500" />
+            ) : (
+              <>
+                <div className="p-4 rounded-full bg-slate-900 mb-4 group-hover:scale-110 transition-transform">
+                  <Upload className="w-8 h-8 text-slate-500 group-hover:text-emerald-500" />
+                </div>
+                <p className="text-sm font-bold text-slate-400 group-hover:text-emerald-500 font-poppins">Cliquez pour uploader</p>
+                <p className="text-[10px] text-slate-600 mt-2 font-medium">JPG, PNG, WebP (Max 5MB)</p>
+              </>
+            )}
+            <input 
+              type="file" 
+              className="hidden" 
+              accept="image/*" 
+              onChange={handleUpload}
+              disabled={isUploading}
+            />
+          </label>
+        )
       ) : (
-        /* Folder selection grid */
-        <div className="border border-slate-800 rounded-2xl bg-slate-950/60 p-4 max-h-[280px] overflow-y-auto">
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-            {GALLERY_IMAGES.map((img, idx) => {
-              const isSelected = value === img.url;
-              return (
-                <button
-                  key={idx}
+        /* Gallery Tab: Always render gallery grid so user can select/deselect at any time! */
+        <div className="space-y-4 animate-fadeIn">
+          {value && (
+            <div className="relative aspect-video sm:h-28 rounded-xl overflow-hidden border border-slate-800 bg-slate-950 group">
+              <img src={value} alt="Preview" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center">
+                <button 
                   type="button"
-                  onClick={() => onChange(img.url)}
-                  className={`relative aspect-video rounded-xl overflow-hidden border transition-all text-left group ${isSelected ? "border-[#00A878] ring-1 ring-[#00A878]" : "border-slate-800 hover:border-slate-700"}`}
+                  onClick={() => onChange("")}
+                  className="px-3 py-1.5 bg-red-600 hover:bg-red-500 text-white rounded-lg transition-all text-[10px] font-bold font-poppins flex items-center gap-1"
                 >
-                  <img src={img.url} alt={img.name} className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-all" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-2 flex flex-col justify-between">
-                    <div className="flex justify-end">
-                      {isSelected && (
-                        <span className="p-1 bg-[#00A878] rounded-full text-white">
-                          <Check className="w-2.5 h-2.5" />
-                        </span>
-                      )}
-                    </div>
-                    <span className="text-[9px] font-bold text-white tracking-wide truncate">{img.name}</span>
-                  </div>
+                  <X className="w-3.5 h-3.5" /> Retirer la sélection
                 </button>
-              );
-            })}
+              </div>
+            </div>
+          )}
+          
+          <div className="border border-slate-800 rounded-2xl bg-slate-950/60 p-4 max-h-[240px] overflow-y-auto">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              {GALLERY_IMAGES.map((img, idx) => {
+                const isSelected = value === img.url;
+                return (
+                  <button
+                    key={idx}
+                    type="button"
+                    onClick={() => onChange(img.url)}
+                    className={`relative aspect-video rounded-xl overflow-hidden border transition-all text-left group ${isSelected ? "border-[#00A878] ring-1 ring-[#00A878]" : "border-slate-800 hover:border-slate-700"}`}
+                  >
+                    <img src={img.url} alt={img.name} className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-all" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-2 flex flex-col justify-between">
+                      <div className="flex justify-end">
+                        {isSelected && (
+                          <span className="p-1 bg-[#00A878] rounded-full text-white">
+                            <Check className="w-2.5 h-2.5" />
+                          </span>
+                        )}
+                      </div>
+                      <span className="text-[9px] font-bold text-white tracking-wide truncate">{img.name}</span>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </div>
       )}
