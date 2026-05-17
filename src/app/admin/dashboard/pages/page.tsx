@@ -5,7 +5,8 @@ import { supabase } from "../../../../lib/supabase";
 import { useLanguage } from "../../../../context/LanguageContext";
 import { 
   FileText, Save, Check, AlertCircle, Loader2, RefreshCcw, Globe, Code, 
-  Layout, Home, Server, Award, MessageSquare, ArrowLeft, HelpCircle, GraduationCap
+  Layout, Home, Server, Award, MessageSquare, ArrowLeft, HelpCircle, GraduationCap,
+  Phone, User, Briefcase
 } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -25,7 +26,7 @@ const SECTIONS = [
   },
   {
     id: "about",
-    label: "Section À Propos",
+    label: "Section À Propos (Home)",
     icon: Award,
     fields: [
       { key: "aboutSection.tag", label: "Tag (Surtitre)", type: "input" },
@@ -36,14 +37,53 @@ const SECTIONS = [
     ]
   },
   {
+    id: "about_page",
+    label: "Page À Propos (Détail)",
+    icon: FileText,
+    fields: [
+      { key: "aboutPage.hero.title", label: "Titre principal", type: "input" },
+      { key: "aboutPage.hero.subtitle", label: "Sous-titre", type: "textarea" },
+      { key: "aboutPage.vision.title", label: "Titre : Vision", type: "input" },
+      { key: "aboutPage.vision.desc", label: "Description : Vision", type: "textarea" },
+      { key: "aboutPage.mission.title", label: "Titre : Mission", type: "input" },
+      { key: "aboutPage.mission.desc", label: "Description : Mission", type: "textarea" },
+      { key: "aboutPage.values.title", label: "Titre : Valeurs", type: "input" },
+      { key: "aboutPage.leadership.title", label: "Titre : Équipe", type: "input" },
+      { key: "aboutPage.leadership.desc", label: "Description : Équipe", type: "textarea" },
+    ]
+  },
+  {
     id: "expertises",
-    label: "Expertises Section",
+    label: "Section Expertises",
     icon: Layout,
     fields: [
       { key: "expertises.tag", label: "Tag (Surtitre)", type: "input" },
       { key: "expertises.title", label: "Titre", type: "input" },
       { key: "expertises.subtitle", label: "Sous-titre", type: "textarea" },
       { key: "expertises.ctaAll", label: "Bouton tout explorer", type: "input" },
+    ]
+  },
+  {
+    id: "services",
+    label: "Page Services",
+    icon: Briefcase,
+    fields: [
+      { key: "servicesPage.title", label: "Titre principal", type: "input" },
+      { key: "servicesPage.subtitle", label: "Sous-titre explicatif", type: "textarea" },
+    ]
+  },
+  {
+    id: "director",
+    label: "Direction Générale",
+    icon: User,
+    fields: [
+      { key: "director.tag", label: "Tag (Surtitre)", type: "input" },
+      { key: "director.name", label: "Nom du Directeur", type: "input" },
+      { key: "director.role", label: "Poste / Rôle", type: "input" },
+      { key: "director.description1", label: "Description Partie 1", type: "textarea" },
+      { key: "director.description2", label: "Description Partie 2", type: "textarea" },
+      { key: "director.expertiseTitle", label: "Titre de la liste d'expertises", type: "input" },
+      { key: "director.quote", label: "Citation stratégique", type: "textarea" },
     ]
   },
   {
@@ -76,6 +116,33 @@ const SECTIONS = [
       { key: "academy.vision.tag", label: "Surtitre (Ambition)", type: "input" },
       { key: "academy.vision.title", label: "Titre (Ambition)", type: "textarea" },
       { key: "academy.vision.desc", label: "Description longue (Ambition)", type: "textarea" },
+    ]
+  },
+  {
+    id: "contact",
+    label: "Page Contact",
+    icon: Phone,
+    fields: [
+      { key: "contactPage.title", label: "Titre principal de la page", type: "input" },
+      { key: "contactPage.subtitle", label: "Sous-titre explicatif", type: "textarea" },
+      { key: "contactPage.phone", label: "Label Téléphone", type: "input" },
+      { key: "contactPage.email", label: "Label Email Address", type: "input" },
+      { key: "contactPage.address", label: "Label Adresse / Siège", type: "input" },
+      { key: "contactPage.followUs", label: "Label Réseaux Sociaux", type: "input" },
+      { key: "contactPage.mapTitle", label: "Titre de la carte", type: "input" },
+      { key: "contactPage.scheduleConsultation", label: "Titre du calendrier de réservation", type: "input" },
+      { key: "contactPage.calendarText", label: "Texte d'explication de réservation", type: "textarea" },
+      { key: "contactQuick.tag", label: "Formulaire : Surtitre", type: "input" },
+      { key: "contactQuick.title", label: "Formulaire : Titre", type: "input" },
+      { key: "contactQuick.subtitle", label: "Formulaire : Sous-titre", type: "textarea" },
+      { key: "contactQuick.name", label: "Formulaire : Label Nom complet", type: "input" },
+      { key: "contactQuick.institution", label: "Formulaire : Label Institution", type: "input" },
+      { key: "contactQuick.country", label: "Formulaire : Label Pays", type: "input" },
+      { key: "contactQuick.email", label: "Formulaire : Label Email", type: "input" },
+      { key: "contactQuick.subject", label: "Formulaire : Label Sujet", type: "input" },
+      { key: "contactQuick.message", label: "Formulaire : Label Message", type: "input" },
+      { key: "contactQuick.submit", label: "Formulaire : Bouton d'envoi", type: "input" },
+      { key: "contactQuick.success", label: "Formulaire : Message de succès", type: "textarea" },
     ]
   },
   {
