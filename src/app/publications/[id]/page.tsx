@@ -690,7 +690,7 @@ export default function PublicationDetailPage() {
             <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-6">
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center border border-dark/10 shadow-sm overflow-hidden shrink-0">
-                  <img src="/images/logo_wheel.png" alt="SaniNova" className="w-full h-full object-cover" />
+                  <img src="/images/logo_wheel.jpg" alt="SaniNova" className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <p className="font-poppins font-bold text-dark m-0 leading-none">Dr Hope AKOHOUVI AMOU</p>
