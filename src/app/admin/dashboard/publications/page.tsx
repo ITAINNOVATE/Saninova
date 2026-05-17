@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import ImageUpload from "../../../../components/admin/ImageUpload";
 
 interface Publication {
   id: string;
@@ -346,31 +347,16 @@ export default function PublicationsDashboardPage() {
                         ))}
                       </select>
                     </div>
-
-                    <div className="space-y-2">
-                      <label className="font-poppins text-xs font-bold text-slate-300 uppercase tracking-wider block flex items-center gap-1.5">
-                        <ImageIcon className="w-3.5 h-3.5 text-slate-500" /> Lien de l'image (URL)
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        placeholder="/images/publication_custom.png ou https://..."
-                        value={formData.image_url}
-                        onChange={(e) => setFormData({ ...formData, image_url: e.target.value })}
-                        className="w-full bg-slate-850 border border-slate-750 text-white px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-[#00A878]"
-                      />
-                    </div>
                   </div>
 
-                  {/* Image preview widget */}
-                  {formData.image_url && (
-                    <div className="relative w-full h-32 rounded-2xl overflow-hidden bg-slate-950 border border-slate-800">
-                      <img src={formData.image_url} alt="Prévisualisation" className="w-full h-full object-cover opacity-50" />
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="text-[10px] font-bold bg-slate-950/80 text-slate-400 border border-slate-800 px-3 py-1 rounded-full">Prévisualisation du média</span>
-                      </div>
-                    </div>
-                  )}
+                  <div className="space-y-2">
+                    <ImageUpload
+                      value={formData.image_url}
+                      onChange={(url) => setFormData({ ...formData, image_url: url })}
+                      label="Image de couverture"
+                      bucket="publications"
+                    />
+                  </div>
                 </div>
 
                 {/* Section 2: French Content */}
