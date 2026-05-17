@@ -203,22 +203,24 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom copyright & Scroll to top */}
-        <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between text-xs text-white/40 font-poppins gap-4">
-          <div className="flex flex-col md:flex-row items-center md:space-x-4 space-y-2 md:space-y-0 text-center md:text-left">
+        <div className="mt-16 pt-8 border-t border-white/5 flex flex-col items-center justify-center text-xs text-white/40 font-poppins gap-4 relative">
+          <div className="flex flex-col sm:flex-row items-center sm:space-x-4 space-y-2 sm:space-y-0 text-center">
             <span>
               © <span onDoubleClick={() => router.push("/admin")} className="cursor-default select-none">{new Date().getFullYear()}</span> SaniNova. {t.footer.rights}
             </span>
-            <span className="hidden md:inline">|</span>
+            <span className="hidden sm:inline">|</span>
             <span>
               Réalisé par <a href="https://www.itainnovate.com" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-white transition-colors font-semibold">ITA INNOVATE</a>
             </span>
           </div>
-          <button
-            onClick={handleScrollToTop}
-            className="flex items-center space-x-2 p-2 bg-white/5 hover:bg-accent hover:text-white rounded-full transition-all duration-300 group"
-          >
-            <ArrowUp className="w-4 h-4" />
-          </button>
+          <div className="sm:absolute sm:right-0">
+            <button
+              onClick={handleScrollToTop}
+              className="flex items-center space-x-2 p-2 bg-white/5 hover:bg-accent hover:text-white rounded-full transition-all duration-300 group"
+            >
+              <ArrowUp className="w-4 h-4" />
+            </button>
+          </div>
         </div>
       </div>
     </footer>
