@@ -71,7 +71,7 @@ export const ServicesSection: React.FC = () => {
                   <h3 className="font-poppins text-lg font-bold text-primary">
                     {service.title}
                   </h3>
-                  <p className="font-inter text-sm sm:text-base text-dark/70 leading-relaxed">
+                  <p className="font-inter text-sm sm:text-base text-dark/70 leading-relaxed text-justify hyphens-auto break-words">
                     {service.desc}
                   </p>
                 </div>

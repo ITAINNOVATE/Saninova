@@ -141,7 +141,7 @@ export const Advantages: React.FC = () => {
                       <h3 className="font-poppins text-lg sm:text-xl font-bold text-primary group-hover:text-accent transition-colors duration-300">
                         {pt.title}
                       </h3>
-                      <p className="font-inter text-sm sm:text-base text-dark/70 leading-relaxed max-w-[280px]">
+                      <p className="font-inter text-sm sm:text-base text-dark/70 leading-relaxed max-w-[280px] text-justify hyphens-auto break-words">
                         {pt.desc}
                       </p>
                     </div>

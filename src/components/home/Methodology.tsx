@@ -86,7 +86,7 @@ export const Methodology: React.FC = () => {
                 <h3 className="font-poppins text-lg font-bold text-white group-hover:text-accent transition-colors">
                   {step.title}
                 </h3>
-                <p className="font-inter text-sm text-white/70 leading-relaxed max-w-xs mx-auto">
+                <p className="font-inter text-sm text-white/70 leading-relaxed max-w-xs mx-auto text-justify hyphens-auto break-words">
                   {step.desc}
                 </p>
               </div>

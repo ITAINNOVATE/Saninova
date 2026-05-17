@@ -95,7 +95,7 @@ export const DirectorSection: React.FC = () => {
             </div>
 
             {/* Description Paragraphs */}
-            <div className="space-y-5 text-dark/70 font-inter text-base sm:text-lg leading-relaxed text-center lg:text-left">
+            <div className="space-y-5 text-dark/70 font-inter text-base sm:text-lg leading-relaxed text-justify hyphens-auto break-words">
               {dir.description1 && <p>{dir.description1}</p>}
               {dir.description2 && <p>{dir.description2}</p>}
               {dir.description3 && <p>{dir.description3}</p>}
