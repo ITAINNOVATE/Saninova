@@ -502,7 +502,7 @@ export default function PublicationDetailPage() {
               </span>
             </div>
 
-            <h1 className="font-montserrat text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-snug max-w-4xl tracking-tight">
+            <h1 className="font-montserrat text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-snug max-w-5xl tracking-tight">
               {article.title}
             </h1>
 
@@ -525,7 +525,7 @@ export default function PublicationDetailPage() {
       </div>
 
       {/* Content Container */}
-      <div className="max-w-4xl mx-auto px-6 -mt-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 -mt-12 relative z-10 w-full">
         
         {/* Main Article Card with lang="fr" to enable system-level syllables hyphenation rules */}
         <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-dark/5" lang="fr">
