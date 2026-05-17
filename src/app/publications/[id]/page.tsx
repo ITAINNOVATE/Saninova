@@ -219,6 +219,80 @@ export default function PublicationDetailPage() {
     whatsapp: () => `https://api.whatsapp.com/send?text=${encodeURIComponent((article?.title || "") + " - " + (typeof window !== "undefined" ? window.location.href : ""))}`,
   };
 
+  const renderArticleContent = (content: string) => {
+    if (!content) return null;
+
+    const paragraphs = content.split(/\n\n/);
+
+    const orangeHeadings = [
+      "Des défis structurels qui persistent",
+      "Une transformation qui ne peut plus attendre",
+      "Un coût humain et financier considérable",
+      "L’eLMIS : quand la donnée devient un outil de gouvernance",
+      "La donnée logistique, nouveau pilier de la souveraineté sanitaire",
+      "Ce que la transformation numérique rend possible",
+      "Une dynamique continentale en accélération",
+      "La donnée comme infrastructure stratégique",
+      "Structural challenges that persist",
+      "A transformation that can no longer wait",
+      "A considerable human and financial cost",
+      "eLMIS: when data becomes a governance tool",
+      "Logistics data, new pillar of health sovereignty",
+      "What digital transformation makes possible",
+      "An accelerating continental dynamic",
+      "Data as a strategic infrastructure"
+    ];
+
+    let isInBibliography = false;
+
+    return paragraphs.map((para, index) => {
+      const trimmedPara = para.trim();
+
+      if (orangeHeadings.some(heading => heading.toLowerCase() === trimmedPara.toLowerCase())) {
+        return (
+          <h3 
+            key={index} 
+            className="font-montserrat text-lg sm:text-xl font-extrabold text-orange mt-10 mb-4 tracking-tight leading-snug"
+          >
+            {trimmedPara}
+          </h3>
+        );
+      }
+
+      if (trimmedPara.toLowerCase().includes("références bibliographiques") || trimmedPara.toLowerCase().includes("bibliographical references")) {
+        isInBibliography = true;
+        return (
+          <h4 
+            key={index} 
+            className="font-montserrat text-sm font-bold text-dark/80 mt-12 mb-4 border-t border-light pt-8 uppercase tracking-wider"
+          >
+            {trimmedPara}
+          </h4>
+        );
+      }
+
+      if (isInBibliography || /^\s*\[\d+\]/.test(trimmedPara)) {
+        isInBibliography = true;
+        const refLines = trimmedPara.split('\n');
+        return (
+          <div key={index} className="text-xs text-dark/50 font-poppins space-y-2 mt-2 pl-4 border-l-2 border-orange/20">
+            {refLines.map((line, idx) => (
+              <p key={idx} className="leading-relaxed">
+                {line}
+              </p>
+            ))}
+          </div>
+        );
+      }
+
+      return (
+        <p key={index} className="font-inter text-dark/70 text-base sm:text-lg leading-relaxed whitespace-pre-line">
+          {trimmedPara}
+        </p>
+      );
+    });
+  };
+
   if (isLoading) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-white">
@@ -313,9 +387,9 @@ export default function PublicationDetailPage() {
             </p>
             
             {/* Dynamic Body Text */}
-            <div className="font-inter text-dark/70 space-y-6 leading-relaxed whitespace-pre-line mb-12">
+            <div className="font-inter text-dark/70 space-y-6 leading-relaxed mb-12">
               {article.content ? (
-                article.content
+                renderArticleContent(article.content)
               ) : (
                 <>
                   <p>
