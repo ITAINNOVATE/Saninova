@@ -324,16 +324,33 @@ export const Publications: React.FC = () => {
                     </div>
                   </Link>
 
-                  {/* Card Actions Footer (Like, Comment indicator, Share) */}
+                  {/* Share Floating Button overlay on image */}
+                  <button 
+                    onClick={(e) => handleShare(e, article)}
+                    className={`absolute top-4 right-4 p-2 rounded-full shadow-lg backdrop-blur-md transition-all duration-300 active:scale-95 z-20 ${
+                      isCopied 
+                        ? "bg-emerald-500 text-white" 
+                        : "bg-white/90 hover:bg-white text-dark/70 hover:text-primary border border-dark/5"
+                    }`}
+                    title="Partager l'article"
+                  >
+                    {isCopied ? (
+                      <Check className="w-3.5 h-3.5" />
+                    ) : (
+                      <Share2 className="w-3.5 h-3.5" />
+                    )}
+                  </button>
+
+                  {/* Card Actions Footer (Like, Comment, and Read More) */}
                   <div className="px-6 pb-6 pt-4 border-t border-light/60 flex items-center justify-between bg-slate-50/50 mt-auto">
                     
-                    {/* Interaction row */}
-                    <div className="flex items-center gap-3">
+                    {/* Interaction Row */}
+                    <div className="flex items-center gap-2">
                       
                       {/* Like button on card */}
                       <button 
                         onClick={(e) => handleLike(e, article.id, article.likesCount)}
-                        className={`flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-bold font-poppins transition-all duration-300 active:scale-95 ${
+                        className={`flex items-center gap-1 px-2.5 py-1.5 rounded-full text-xs font-bold font-poppins transition-all duration-300 active:scale-95 ${
                           isLiked 
                             ? "bg-red-50 text-red-500 border border-red-100" 
                             : "bg-white text-dark/50 hover:text-red-500 border border-dark/5"
@@ -347,7 +364,7 @@ export const Publications: React.FC = () => {
                       {/* Comment indicator on card */}
                       <Link 
                         href={`/publications/${article.id}#comments-section`}
-                        className="flex items-center gap-1 px-3 py-1.5 bg-white hover:bg-primary/5 text-dark/50 hover:text-primary border border-dark/5 rounded-full text-xs font-bold font-poppins transition-all"
+                        className="flex items-center gap-1 px-2.5 py-1.5 bg-white hover:bg-primary/5 text-dark/50 hover:text-primary border border-dark/5 rounded-full text-xs font-bold font-poppins transition-all"
                         title="Voir la discussion"
                       >
                         <MessageSquare className="w-3.5 h-3.5 text-[#00A878]" />
@@ -355,28 +372,14 @@ export const Publications: React.FC = () => {
                       </Link>
                     </div>
 
-                    {/* Share button on card */}
-                    <button 
-                      onClick={(e) => handleShare(e, article)}
-                      className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold font-poppins transition-all duration-300 active:scale-95 ${
-                        isCopied 
-                          ? "bg-emerald-50 text-emerald-600 border border-emerald-100"
-                          : "bg-white text-dark/50 hover:text-primary border border-dark/5"
-                      }`}
-                      title="Partager l'article"
+                    {/* View Article Link with Arrow */}
+                    <Link 
+                      href={`/publications/${article.id}`}
+                      className="font-poppins text-[11px] font-extrabold text-primary hover:text-accent flex items-center space-x-1 transition-colors group-hover:text-accent"
                     >
-                      {isCopied ? (
-                        <>
-                          <Check className="w-3.5 h-3.5 text-emerald-500" />
-                          <span>Copié !</span>
-                        </>
-                      ) : (
-                        <>
-                          <Share2 className="w-3.5 h-3.5" />
-                          <span>Partager</span>
-                        </>
-                      )}
-                    </button>
+                      <span>{t.publications.viewArticle || "Lire l'article"}</span>
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1 text-accent" />
+                    </Link>
 
                   </div>
                 </motion.article>
