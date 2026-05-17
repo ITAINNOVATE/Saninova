@@ -372,10 +372,10 @@ export const Publications: React.FC = () => {
                       </Link>
                     </div>
 
-                    {/* View Article Link with Arrow */}
+                    {/* View Article Link with Arrow in a Solid White Rounded Pill Box */}
                     <Link 
                       href={`/publications/${article.id}`}
-                      className="font-poppins text-[11px] font-extrabold text-orange hover:text-orange/80 flex items-center space-x-1 transition-all shrink-0 animate-pulse"
+                      className="bg-white hover:bg-slate-50 text-orange hover:text-orange/80 px-3.5 py-1.5 rounded-full shadow-md border border-orange/10 flex items-center space-x-1.5 transition-all shrink-0 animate-pulse font-poppins text-[11px] font-extrabold"
                     >
                       <span>{t.publications.viewArticle || "Lire l'article"}</span>
                       <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1 text-orange" />
