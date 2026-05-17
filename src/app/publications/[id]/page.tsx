@@ -24,6 +24,8 @@ interface Comment {
   author_name: string;
   content: string;
   created_at: string;
+  likes_count?: number;
+  parent_id?: string | null;
 }
 
 export default function PublicationDetailPage() {
@@ -43,6 +45,12 @@ export default function PublicationDetailPage() {
   const [newCommentName, setNewCommentName] = useState("");
   const [newCommentText, setNewCommentText] = useState("");
   const [isSubmittingComment, setIsSubmittingComment] = useState(false);
+  
+  // Nested Replies State
+  const [replyingToId, setReplyingToId] = useState<string | null>(null);
+  const [replyName, setReplyName] = useState("");
+  const [replyText, setReplyText] = useState("");
+  const [isSubmittingReply, setIsSubmittingReply] = useState(false);
 
   const fetchComments = async (pubId: string) => {
     try {
@@ -177,6 +185,65 @@ export default function PublicationDetailPage() {
       }
     } catch (err) {
       console.error("Error setting like:", err);
+    }
+  };
+ 
+  const handleLikeComment = async (commentId: string) => {
+    try {
+      const likedKey = `saninova_comment_liked_${commentId}`;
+      const isAlreadyLiked = typeof window !== "undefined" && localStorage.getItem(likedKey);
+      
+      const comment = comments.find(c => c.id === commentId);
+      if (!comment) return;
+      
+      const currentLikes = comment.likes_count || 0;
+      let newLikes = currentLikes;
+      
+      if (isAlreadyLiked) {
+        newLikes = Math.max(0, currentLikes - 1);
+        if (typeof window !== "undefined") localStorage.removeItem(likedKey);
+      } else {
+        newLikes = currentLikes + 1;
+        if (typeof window !== "undefined") localStorage.setItem(likedKey, "true");
+      }
+      
+      // Optmistically update local comments state
+      setComments(prev => 
+        prev.map(c => c.id === commentId ? { ...c, likes_count: newLikes } : c)
+      );
+      
+      await supabase
+        .from("saninova_comments")
+        .update({ likes_count: newLikes })
+        .eq("id", commentId);
+    } catch (err) {
+      console.error("Error liking comment:", err);
+    }
+  };
+
+  const handlePostReply = async (e: React.FormEvent, parentId: string) => {
+    e.preventDefault();
+    if (!article || !replyName.trim() || !replyText.trim()) return;
+
+    setIsSubmittingReply(true);
+    try {
+      const { error } = await supabase
+        .from("saninova_comments")
+        .insert({
+          publication_id: article.id,
+          author_name: replyName.trim(),
+          content: replyText.trim(),
+          parent_id: parentId,
+        });
+
+      if (error) throw error;
+      setReplyText("");
+      setReplyingToId(null);
+    } catch (err) {
+      console.error("Error posting reply:", err);
+      alert("Impossible d'ajouter la réponse pour le moment.");
+    } finally {
+      setIsSubmittingReply(false);
     }
   };
 
@@ -645,39 +712,198 @@ export default function PublicationDetailPage() {
           {/* List of Comments */}
           <div className="space-y-6 mb-12">
             <AnimatePresence>
-              {comments.length > 0 ? (
-                comments.map((comment) => (
-                  <motion.div
-                    key={comment.id}
-                    initial={{ opacity: 0, y: 15 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -15 }}
-                    className="p-6 bg-light/35 rounded-2xl border border-dark/5 space-y-3"
-                  >
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-full bg-primary text-white text-xs font-black flex items-center justify-center font-poppins uppercase">
-                          {comment.author_name.substring(0, 2)}
-                        </div>
-                        <span className="font-poppins font-bold text-dark text-sm">{comment.author_name}</span>
-                      </div>
-                      
-                      <span className="text-[10px] font-bold text-dark/40 font-poppins uppercase tracking-wider">
-                        {new Date(comment.created_at).toLocaleDateString(locale === "fr" ? "fr-FR" : "en-US", {
-                          day: "numeric",
-                          month: "short",
-                          year: "numeric",
-                          hour: "2-digit",
-                          minute: "2-digit"
-                        })}
-                      </span>
-                    </div>
+              {comments.filter(c => !c.parent_id).length > 0 ? (
+                comments.filter(c => !c.parent_id).map((comment) => {
+                  const commentReplies = comments.filter(c => c.parent_id === comment.id);
+                  const isCommentLiked = typeof window !== "undefined" && !!localStorage.getItem(`saninova_comment_liked_${comment.id}`);
 
-                    <p className="font-inter text-sm text-dark/75 leading-relaxed pl-11 whitespace-pre-line">
-                      {comment.content}
-                    </p>
-                  </motion.div>
-                ))
+                  return (
+                    <motion.div
+                      key={comment.id}
+                      initial={{ opacity: 0, y: 15 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -15 }}
+                      className="space-y-4"
+                    >
+                      {/* Parent Comment */}
+                      <div className="p-6 bg-light/35 rounded-2xl border border-dark/5 space-y-3">
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-3">
+                            <div className="w-8 h-8 rounded-full bg-primary text-white text-xs font-black flex items-center justify-center font-poppins uppercase">
+                              {comment.author_name.substring(0, 2)}
+                            </div>
+                            <span className="font-poppins font-bold text-dark text-sm">{comment.author_name}</span>
+                          </div>
+                          
+                          <span className="text-[10px] font-bold text-dark/40 font-poppins uppercase tracking-wider">
+                            {new Date(comment.created_at).toLocaleDateString(locale === "fr" ? "fr-FR" : "en-US", {
+                              day: "numeric",
+                              month: "short",
+                              year: "numeric",
+                              hour: "2-digit",
+                              minute: "2-digit"
+                            })}
+                          </span>
+                        </div>
+
+                        <p className="font-inter text-sm text-dark/75 leading-relaxed pl-11 whitespace-pre-line text-justify hyphens-auto break-words">
+                          {comment.content}
+                        </p>
+
+                        {/* Comment Actions (Like, Reply) */}
+                        <div className="pl-11 pt-2 flex items-center gap-4 text-xs font-bold font-poppins">
+                          <button
+                            type="button"
+                            onClick={() => handleLikeComment(comment.id)}
+                            className={`flex items-center gap-1.5 transition-colors ${
+                              isCommentLiked ? "text-red-500" : "text-dark/50 hover:text-red-500"
+                            }`}
+                          >
+                            <Heart className={`w-4 h-4 ${isCommentLiked ? "fill-red-500" : ""}`} />
+                            <span>{comment.likes_count || 0} {locale === "fr" ? "J'aime" : "Likes"}</span>
+                          </button>
+
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setReplyingToId(comment.id);
+                              setReplyName("");
+                              setReplyText("");
+                            }}
+                            className="flex items-center gap-1.5 text-dark/50 hover:text-[#00A878] transition-colors"
+                          >
+                            <MessageSquare className="w-4 h-4" />
+                            <span>{locale === "fr" ? "Répondre" : "Reply"}</span>
+                          </button>
+                        </div>
+                      </div>
+
+                      {/* Reply Form */}
+                      {replyingToId === comment.id && (
+                        <motion.div 
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          className="ml-6 sm:ml-12 p-5 bg-[#00A878]/5 rounded-2xl border border-[#00A878]/10 space-y-4"
+                        >
+                          <h5 className="font-poppins text-xs font-bold text-primary uppercase tracking-wider flex items-center gap-2">
+                            <span>{locale === "fr" ? "Répondre à" : "Replying to"} {comment.author_name}</span>
+                          </h5>
+                          <form onSubmit={(e) => handlePostReply(e, comment.id)} className="space-y-4">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                              <div className="space-y-1">
+                                <label className="font-poppins text-[10px] font-bold text-dark/50 uppercase tracking-wider block">
+                                  {locale === "fr" ? "Nom complet" : "Full name"}
+                                </label>
+                                <input 
+                                  type="text"
+                                  required
+                                  placeholder="Jean Dupont"
+                                  value={replyName}
+                                  onChange={(e) => setReplyName(e.target.value)}
+                                  className="w-full bg-white text-dark text-xs px-3 py-2 rounded-lg border border-dark/10 focus:outline-none focus:border-[#00A878] transition-all duration-300 font-inter"
+                                />
+                              </div>
+                            </div>
+                            <div className="space-y-1">
+                              <label className="font-poppins text-[10px] font-bold text-dark/50 uppercase tracking-wider block">
+                                {locale === "fr" ? "Votre réponse" : "Your reply"}
+                              </label>
+                              <textarea 
+                                required
+                                rows={3}
+                                placeholder="Écrivez votre réponse..."
+                                value={replyText}
+                                onChange={(e) => setReplyText(e.target.value)}
+                                className="w-full bg-white text-dark text-xs px-3 py-2 rounded-lg border border-dark/10 focus:outline-none focus:border-[#00A878] transition-all duration-300 font-inter resize-none"
+                              />
+                            </div>
+                            <div className="flex justify-end gap-2 text-xs">
+                              <button
+                                type="button"
+                                onClick={() => setReplyingToId(null)}
+                                className="px-4 py-2 border border-dark/10 text-dark/60 rounded-lg hover:bg-dark/5 font-poppins font-bold transition-all"
+                              >
+                                {locale === "fr" ? "Annuler" : "Cancel"}
+                              </button>
+                              <button
+                                type="submit"
+                                disabled={isSubmittingReply}
+                                className="bg-[#00A878] hover:bg-primary text-white font-poppins font-bold px-4 py-2 rounded-lg transition-all disabled:opacity-70 flex items-center gap-1.5"
+                              >
+                                <span>{isSubmittingReply ? (locale === "fr" ? "Envoi..." : "Sending...") : (locale === "fr" ? "Envoyer" : "Send")}</span>
+                              </button>
+                            </div>
+                          </form>
+                        </motion.div>
+                      )}
+
+                      {/* Replies List */}
+                      {commentReplies.length > 0 && (
+                        <div className="ml-6 sm:ml-12 pl-4 sm:pl-6 border-l-2 border-[#00A878]/25 space-y-4 mt-2">
+                          {commentReplies.map((reply) => {
+                            const isReplyLiked = typeof window !== "undefined" && !!localStorage.getItem(`saninova_comment_liked_${reply.id}`);
+                            return (
+                              <div key={reply.id} className="p-5 bg-light/20 rounded-xl border border-dark/5 space-y-2">
+                                <div className="flex items-center justify-between">
+                                  <div className="flex items-center gap-2">
+                                    <div className="w-7 h-7 rounded-full bg-[#00A878] text-white text-[10px] font-black flex items-center justify-center font-poppins uppercase">
+                                      {reply.author_name.substring(0, 2)}
+                                    </div>
+                                    <span className="font-poppins font-bold text-dark text-xs">{reply.author_name}</span>
+                                    <span className="bg-[#00A878]/10 text-[#00A878] px-1.5 py-0.5 rounded text-[9px] font-bold tracking-wider">
+                                      {locale === "fr" ? "RÉPONSE" : "REPLY"}
+                                    </span>
+                                  </div>
+                                  
+                                  <span className="text-[9px] font-bold text-dark/40 font-poppins uppercase tracking-wider">
+                                    {new Date(reply.created_at).toLocaleDateString(locale === "fr" ? "fr-FR" : "en-US", {
+                                      day: "numeric",
+                                      month: "short",
+                                      year: "numeric",
+                                      hour: "2-digit",
+                                      minute: "2-digit"
+                                    })}
+                                  </span>
+                                </div>
+
+                                <p className="font-inter text-xs text-dark/75 leading-relaxed pl-9 whitespace-pre-line text-justify hyphens-auto break-words">
+                                  {reply.content}
+                                </p>
+
+                                {/* Reply Actions */}
+                                <div className="pl-9 pt-1 flex items-center gap-4 text-[10px] font-bold font-poppins">
+                                  <button
+                                    type="button"
+                                    onClick={() => handleLikeComment(reply.id)}
+                                    className={`flex items-center gap-1 transition-colors ${
+                                      isReplyLiked ? "text-red-500" : "text-dark/50 hover:text-red-500"
+                                    }`}
+                                  >
+                                    <Heart className={`w-3.5 h-3.5 ${isReplyLiked ? "fill-red-500" : ""}`} />
+                                    <span>{reply.likes_count || 0} {locale === "fr" ? "J'aime" : "Likes"}</span>
+                                  </button>
+
+                                  <button
+                                    type="button"
+                                    onClick={() => {
+                                      setReplyingToId(comment.id);
+                                      setReplyName("");
+                                      setReplyText(`@${reply.author_name} `);
+                                    }}
+                                    className="flex items-center gap-1 text-dark/50 hover:text-[#00A878] transition-colors"
+                                  >
+                                    <MessageSquare className="w-3.5 h-3.5" />
+                                    <span>{locale === "fr" ? "Répondre" : "Reply"}</span>
+                                  </button>
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      )}
+                    </motion.div>
+                  );
+                })
               ) : (
                 <div className="text-center py-10 bg-light/10 border border-dashed border-dark/10 rounded-2xl">
                   <MessageSquare className="w-8 h-8 text-dark/25 mx-auto mb-3" />
