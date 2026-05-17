@@ -48,7 +48,7 @@ export const AboutDetails: React.FC = () => {
                 <h3 className="font-montserrat text-lg font-extrabold uppercase tracking-wider text-white">
                   {t.aboutPage.vision.title}
                 </h3>
-                <p className="font-inter text-base text-white/80 leading-relaxed text-justify">
+                <p className="font-inter text-base text-white/80 leading-relaxed">
                   {t.aboutPage.vision.desc}
                 </p>
               </div>
@@ -61,7 +61,7 @@ export const AboutDetails: React.FC = () => {
                 <h3 className="font-montserrat text-lg font-extrabold uppercase tracking-wider text-white">
                   {t.aboutPage.mission.title}
                 </h3>
-                <p className="font-inter text-base text-white/80 leading-relaxed text-justify">
+                <p className="font-inter text-base text-white/80 leading-relaxed">
                   {t.aboutPage.mission.desc}
                 </p>
               </div>

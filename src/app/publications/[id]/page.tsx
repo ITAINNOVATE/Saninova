@@ -319,11 +319,11 @@ export default function PublicationDetailPage() {
           </h3>
         );
       } else {
-        // Normal paragraph with custom text-justify for beautiful editorial alignment and inline scroll links
+        // Normal paragraph with custom text-justify and browser syllable-hyphenation to prevent big gaps
         renderedElements.push(
           <p 
             key={`para-${i}`} 
-            className="font-inter text-dark/70 text-base sm:text-lg leading-relaxed text-justify"
+            className="font-inter text-dark/70 text-base sm:text-lg leading-relaxed text-justify hyphens-auto break-words"
           >
             {formatParagraphText(line)}
           </p>
@@ -340,7 +340,7 @@ export default function PublicationDetailPage() {
               {biblioHeader}
             </h4>
           )}
-          <div className="font-inter text-sm text-dark/60 space-y-3 text-justify">
+          <div className="font-inter text-sm text-dark/60 space-y-3 text-left">
             {biblioLines.map((line, idx) => {
               const match = line.match(/^(\[\d+\])\s*(.*)$/);
               if (match) {
@@ -460,12 +460,12 @@ export default function PublicationDetailPage() {
       {/* Content Container */}
       <div className="max-w-4xl mx-auto px-6 -mt-12 relative z-10">
         
-        {/* Main Article Card */}
-        <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-dark/5">
+        {/* Main Article Card with lang="fr" to enable system-level syllables hyphenation rules */}
+        <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-dark/5" lang="fr">
           <div className="prose prose-lg max-w-none prose-primary">
             
             {/* Description / Introduction */}
-            <p className="font-inter text-xl text-dark/80 leading-relaxed font-medium mb-8 border-l-4 border-accent pl-6 text-justify">
+            <p className="font-inter text-xl text-dark/80 leading-relaxed font-medium mb-8 border-l-4 border-accent pl-6 text-justify hyphens-auto break-words">
               {article.desc}
             </p>
             

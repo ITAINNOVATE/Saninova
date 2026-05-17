@@ -54,7 +54,7 @@ export const AboutSection: React.FC = () => {
               </h2>
             </div>
 
-            <div className="space-y-4 font-inter text-base sm:text-lg text-dark/70 leading-relaxed text-justify">
+            <div className="space-y-4 font-inter text-base sm:text-lg text-dark/70 leading-relaxed">
               <p>
                 {t.aboutSection.desc1}
               </p>

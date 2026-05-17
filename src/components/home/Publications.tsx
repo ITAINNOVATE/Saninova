@@ -317,7 +317,7 @@ export const Publications: React.FC = () => {
                         <h3 className="font-poppins text-lg font-bold text-primary group-hover:text-accent transition-colors leading-snug">
                           {article.title}
                         </h3>
-                        <p className="font-inter text-sm sm:text-base text-dark/70 leading-relaxed line-clamp-3 text-justify">
+                        <p className="font-inter text-sm sm:text-base text-dark/70 leading-relaxed line-clamp-3">
                           {article.desc}
                         </p>
                       </div>
