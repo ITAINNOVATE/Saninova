@@ -23,6 +23,8 @@ interface Publication {
   read_time_fr: string;
   read_time_en: string;
   image_url: string;
+  content_fr?: string;
+  content_en?: string;
 }
 
 const CATEGORIES = [
@@ -45,6 +47,8 @@ const INITIAL_FORM = {
   read_time_fr: "8 min",
   read_time_en: "8 min",
   image_url: "",
+  content_fr: "",
+  content_en: "",
 };
 
 export default function PublicationsDashboardPage() {
@@ -94,6 +98,8 @@ export default function PublicationsDashboardPage() {
         read_time_fr: pub.read_time_fr,
         read_time_en: pub.read_time_en,
         image_url: pub.image_url,
+        content_fr: pub.content_fr || "",
+        content_en: pub.content_en || "",
       });
     } else {
       setEditingPub(null);
@@ -389,6 +395,17 @@ export default function PublicationsDashboardPage() {
                     />
                   </div>
 
+                  <div className="space-y-2">
+                    <label className="font-poppins text-xs font-bold text-slate-300 uppercase">Contenu complet de l'article (FR)</label>
+                    <textarea
+                      rows={8}
+                      placeholder="Saisissez ou collez ici le contenu complet rédigé en français..."
+                      value={formData.content_fr || ""}
+                      onChange={(e) => setFormData({ ...formData, content_fr: e.target.value })}
+                      className="w-full bg-slate-850 border border-slate-750 text-white px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-[#00A878] font-mono whitespace-pre-wrap"
+                    />
+                  </div>
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div className="space-y-2">
                       <label className="font-poppins text-xs font-bold text-slate-300 uppercase flex items-center gap-1.5">
@@ -446,6 +463,17 @@ export default function PublicationsDashboardPage() {
                       value={formData.desc_en}
                       onChange={(e) => setFormData({ ...formData, desc_en: e.target.value })}
                       className="w-full bg-slate-850 border border-slate-750 text-white px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-[#00A878] resize-none"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="font-poppins text-xs font-bold text-slate-300 uppercase">Full article content (EN)</label>
+                    <textarea
+                      rows={8}
+                      placeholder="Enter or paste here the full article content in English..."
+                      value={formData.content_en || ""}
+                      onChange={(e) => setFormData({ ...formData, content_en: e.target.value })}
+                      className="w-full bg-slate-850 border border-slate-750 text-white px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-[#00A878] font-mono whitespace-pre-wrap"
                     />
                   </div>
 

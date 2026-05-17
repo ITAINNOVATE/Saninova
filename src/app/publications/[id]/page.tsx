@@ -16,6 +16,7 @@ interface Article {
   date: string;
   readTime: string;
   image: string;
+  content?: string;
 }
 
 export default function PublicationDetailPage() {
@@ -45,6 +46,7 @@ export default function PublicationDetailPage() {
             date: locale === "fr" ? data.date_fr : data.date_en,
             readTime: locale === "fr" ? data.read_time_fr : data.read_time_en,
             image: data.image_url,
+            content: locale === "fr" ? data.content_fr : data.content_en,
           });
         }
       } catch (err) {
@@ -146,38 +148,44 @@ export default function PublicationDetailPage() {
               {article.desc}
             </p>
             
-            <div className="font-inter text-dark/70 space-y-6 leading-relaxed">
-              <p>
-                L'Afrique de l'Ouest connaît une transformation sans précédent de ses structures de santé. 
-                SaniNova, à travers cette analyse, explore les leviers stratégiques qui permettront de pérenniser 
-                ces avancées technologiques et organisationnelles.
-              </p>
-              
-              <h2 className="text-2xl font-bold text-primary font-montserrat mt-10">Un contexte en pleine mutation</h2>
-              <p>
-                La transition vers des systèmes de santé plus résilients nécessite non seulement des investissements 
-                financiers massifs, mais surtout une refonte de la gouvernance et de l'approche logistique. 
-                Le "dernier kilomètre" reste le défi majeur pour l'accès aux soins de qualité.
-              </p>
+            <div className="font-inter text-dark/70 space-y-6 leading-relaxed whitespace-pre-line">
+              {article.content ? (
+                article.content
+              ) : (
+                <>
+                  <p>
+                    L'Afrique de l'Ouest connaît une transformation sans précédent de ses structures de santé. 
+                    SaniNova, à travers cette analyse, explore les leviers stratégiques qui permettront de pérenniser 
+                    ces avancées technologiques et organisationnelles.
+                  </p>
+                  
+                  <h2 className="text-2xl font-bold text-primary font-montserrat mt-10">Un contexte en pleine mutation</h2>
+                  <p>
+                    La transition vers des systèmes de santé plus résilients nécessite non seulement des investissements 
+                    financiers massifs, mais surtout une refonte de la gouvernance et de l'approche logistique. 
+                    Le "dernier kilomètre" reste le défi majeur pour l'accès aux soins de qualité.
+                  </p>
 
-              <div className="bg-light/50 p-8 rounded-2xl border border-primary/5 my-10">
-                <h3 className="text-xl font-bold text-primary mb-4 flex items-center">
-                  <Tag className="w-5 h-5 mr-2 text-accent" />
-                  Points Clés de l'Analyse
-                </h3>
-                <ul className="list-disc pl-6 space-y-2 text-dark/80">
-                  <li>Nécessité d'une interopérabilité des systèmes d'information.</li>
-                  <li>Formation continue des cadres de santé aux outils digitaux.</li>
-                  <li>Partenariats public-privé pour le financement des infrastructures critiques.</li>
-                  <li>Souveraineté pharmaceutique régionale comme pilier de la sécurité sanitaire.</li>
-                </ul>
-              </div>
+                  <div className="bg-light/50 p-8 rounded-2xl border border-primary/5 my-10">
+                    <h3 className="text-xl font-bold text-primary mb-4 flex items-center">
+                      <Tag className="w-5 h-5 mr-2 text-accent" />
+                      Points Clés de l'Analyse
+                    </h3>
+                    <ul className="list-disc pl-6 space-y-2 text-dark/80">
+                      <li>Nécessité d'une interopérabilité des systèmes d'information.</li>
+                      <li>Formation continue des cadres de santé aux outils digitaux.</li>
+                      <li>Partenariats public-privé pour le financement des infrastructures critiques.</li>
+                      <li>Souveraineté pharmaceutique régionale comme pilier de la sécurité sanitaire.</li>
+                    </ul>
+                  </div>
 
-              <p>
-                En conclusion, l'avenir de la santé en Afrique repose sur une vision holistique intégrant 
-                innovation technologique et expertise locale. SaniNova continue d'accompagner ces changements 
-                pour un impact durable sur les populations.
-              </p>
+                  <p>
+                    En conclusion, l'avenir de la santé en Afrique repose sur une vision holistique intégrant 
+                    innovation technologique et expertise locale. SaniNova continue d'accompagner ces changements 
+                    pour un impact durable sur les populations.
+                  </p>
+                </>
+              )}
             </div>
 
             {/* Footer of article */}
