@@ -3,18 +3,20 @@
 import React, { useState, useEffect } from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import { motion } from "framer-motion";
-import { Search, Filter, Calendar, Clock, ArrowRight, Loader2 } from "lucide-react";
+import { Search, Filter, Calendar, Clock, ArrowRight, Loader2, Heart, MessageSquare, Share2, Check } from "lucide-react";
 import { supabase } from "../../lib/supabase";
 import Link from "next/link";
 
 interface Article {
-  id: string | number;
+  id: string;
   category: string;
   title: string;
   desc: string;
   date: string;
   readTime: string;
   image: string;
+  likesCount: number;
+  commentsCount?: number;
 }
 
 export const Publications: React.FC = () => {
@@ -23,47 +25,72 @@ export const Publications: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState("all");
   const [articles, setArticles] = useState<Article[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [likedMap, setLikedMap] = useState<Record<string, boolean>>({});
+  const [copiedId, setCopiedId] = useState<string | null>(null);
+
+  const loadDynamicPublications = async () => {
+    try {
+      const { data, error } = await supabase
+        .from("saninova_publications")
+        .select(`
+          *,
+          saninova_comments (count)
+        `)
+        .order("created_at", { ascending: false });
+
+      if (error) throw error;
+
+      if (data && data.length > 0) {
+        const mapped = data.map((item) => ({
+          id: item.id,
+          category: item.category,
+          title: locale === "fr" ? item.title_fr : item.title_en,
+          desc: locale === "fr" ? item.desc_fr : item.desc_en,
+          date: locale === "fr" ? item.date_fr : item.date_en,
+          readTime: locale === "fr" ? item.read_time_fr : item.read_time_en,
+          image: item.image_url,
+          likesCount: item.likes_count || 0,
+          commentsCount: item.saninova_comments?.[0]?.count || 0,
+        }));
+        setArticles(mapped);
+
+        // Populate liked states from localStorage
+        const loadedLikes: Record<string, boolean> = {};
+        mapped.forEach((pub) => {
+          const key = `saninova_liked_${pub.id}`;
+          if (typeof window !== "undefined" && localStorage.getItem(key)) {
+            loadedLikes[pub.id] = true;
+          }
+        });
+        setLikedMap(loadedLikes);
+      } else {
+        // Fallback
+        const staticList = t.publications.list.map((item: any) => ({
+          ...item,
+          likesCount: 0,
+          commentsCount: 0,
+        }));
+        setArticles(staticList);
+      }
+    } catch (err) {
+      console.error("Failed to load dynamic publications:", err);
+      const staticList = t.publications.list.map((item: any) => ({
+        ...item,
+        likesCount: 0,
+        commentsCount: 0,
+      }));
+      setArticles(staticList);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   useEffect(() => {
-    const loadDynamicPublications = async () => {
-      try {
-        const { data, error } = await supabase
-          .from("saninova_publications")
-          .select("*")
-          .order("created_at", { ascending: false });
-
-        if (error) throw error;
-
-        if (data && data.length > 0) {
-          // Format dynamically fetched items based on locale
-          const mapped = data.map((item) => ({
-            id: item.id,
-            category: item.category,
-            title: locale === "fr" ? item.title_fr : item.title_en,
-            desc: locale === "fr" ? item.desc_fr : item.desc_en,
-            date: locale === "fr" ? item.date_fr : item.date_en,
-            readTime: locale === "fr" ? item.read_time_fr : item.read_time_en,
-            image: item.image_url,
-          }));
-          setArticles(mapped);
-        } else {
-          // Fallback to static content if DB table is empty
-          setArticles(t.publications.list);
-        }
-      } catch (err) {
-        console.error("Failed to load dynamic publications:", err);
-        // Graceful fallback on error
-        setArticles(t.publications.list);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
     loadDynamicPublications();
 
-    // Subscribe to real-time changes
-    const channel = supabase
-      .channel("saninova_publications_changes")
+    // Subscribe to real-time updates for both publications and comments
+    const pubChannel = supabase
+      .channel("publications_catalog_realtime")
       .on(
         "postgres_changes",
         {
@@ -77,10 +104,81 @@ export const Publications: React.FC = () => {
       )
       .subscribe();
 
+    const commentsChannel = supabase
+      .channel("comments_catalog_realtime")
+      .on(
+        "postgres_changes",
+        {
+          event: "*",
+          schema: "public",
+          table: "saninova_comments",
+        },
+        () => {
+          loadDynamicPublications();
+        }
+      )
+      .subscribe();
+
     return () => {
-      supabase.removeChannel(channel);
+      supabase.removeChannel(pubChannel);
+      supabase.removeChannel(commentsChannel);
     };
   }, [locale, t.publications.list]);
+
+  const handleLike = async (e: React.MouseEvent, articleId: string, currentLikes: number) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const key = `saninova_liked_${articleId}`;
+    const wasLiked = likedMap[articleId] || false;
+
+    try {
+      if (wasLiked) {
+        const newLikes = Math.max(0, currentLikes - 1);
+        setLikedMap((prev) => ({ ...prev, [articleId]: false }));
+        if (typeof window !== "undefined") {
+          localStorage.removeItem(key);
+        }
+        await supabase
+          .from("saninova_publications")
+          .update({ likes_count: newLikes })
+          .eq("id", articleId);
+      } else {
+        const newLikes = currentLikes + 1;
+        setLikedMap((prev) => ({ ...prev, [articleId]: true }));
+        if (typeof window !== "undefined") {
+          localStorage.setItem(key, "true");
+        }
+        await supabase
+          .from("saninova_publications")
+          .update({ likes_count: newLikes })
+          .eq("id", articleId);
+      }
+      loadDynamicPublications();
+    } catch (err) {
+      console.error("Error toggling like from catalog:", err);
+    }
+  };
+
+  const handleShare = (e: React.MouseEvent, article: Article) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const url = typeof window !== "undefined" ? `${window.location.origin}/publications/${article.id}` : "";
+    
+    if (typeof window !== "undefined" && navigator.share) {
+      navigator.share({
+        title: article.title,
+        text: article.desc,
+        url: url,
+      }).catch(console.error);
+    } else {
+      // Fallback copy to clipboard
+      navigator.clipboard.writeText(url);
+      setCopiedId(article.id);
+      setTimeout(() => setCopiedId(null), 2000);
+    }
+  };
 
   const categories = [
     { id: "all", label: t.publications.categories.all },
@@ -174,62 +272,116 @@ export const Publications: React.FC = () => {
             viewport={{ once: true, margin: "-50px" }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
-            {filteredArticles.map((article) => (
-              <motion.article
-                key={article.id}
-                variants={itemVariants}
-                className="group bg-white rounded-2xl overflow-hidden border border-dark/5 shadow-md hover:shadow-xl hover:scale-[1.01] transition-all duration-300 flex flex-col h-full"
-              >
-                {/* Image Cover */}
-                <div className="relative overflow-hidden aspect-video shrink-0 bg-primary/5">
-                  <img
-                    src={article.image}
-                    alt={article.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  {/* Category Tag overlay */}
-                  <span className="absolute top-4 left-4 bg-accent text-white px-3 py-1 rounded-full text-[10px] font-extrabold uppercase font-poppins tracking-wider shadow-md">
-                    {categories.find((c) => c.id === article.category)?.label || article.category}
-                  </span>
-                </div>
+            {filteredArticles.map((article) => {
+              const isLiked = likedMap[article.id] || false;
+              const isCopied = copiedId === article.id;
 
-                {/* Article Info */}
-                <div className="p-6 flex flex-col flex-grow justify-between space-y-6">
-                  <div className="space-y-3">
-                    {/* Date and read time */}
-                    <div className="flex items-center space-x-4 text-xs text-dark/40 font-poppins font-medium">
-                      <div className="flex items-center space-x-1">
-                        <Calendar className="w-3.5 h-3.5 text-accent" />
-                        <span>{article.date}</span>
-                      </div>
-                      <div className="flex items-center space-x-1">
-                        <Clock className="w-3.5 h-3.5 text-accent" />
-                        <span>{article.readTime}</span>
-                      </div>
+              return (
+                <motion.article
+                  key={article.id}
+                  variants={itemVariants}
+                  className="group bg-white rounded-2xl overflow-hidden border border-dark/5 shadow-md hover:shadow-xl hover:scale-[1.01] transition-all duration-300 flex flex-col h-full relative"
+                >
+                  {/* Link wrapper around card cover & title area to ensure access to detail page */}
+                  <Link href={`/publications/${article.id}`} className="flex flex-col flex-grow">
+                    {/* Image Cover */}
+                    <div className="relative overflow-hidden aspect-video shrink-0 bg-primary/5">
+                      <img
+                        src={article.image}
+                        alt={article.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      {/* Category Tag overlay */}
+                      <span className="absolute top-4 left-4 bg-accent text-white px-3 py-1 rounded-full text-[10px] font-extrabold uppercase font-poppins tracking-wider shadow-md">
+                        {categories.find((c) => c.id === article.category)?.label || article.category}
+                      </span>
                     </div>
 
-                    <h3 className="font-poppins text-lg font-bold text-primary group-hover:text-accent transition-colors leading-snug">
-                      {article.title}
-                    </h3>
-                    <p className="font-inter text-sm sm:text-base text-dark/70 leading-relaxed line-clamp-3">
-                      {article.desc}
-                    </p>
-                  </div>
+                    {/* Article Info */}
+                    <div className="p-6 flex flex-col flex-grow justify-between space-y-6">
+                      <div className="space-y-3">
+                        {/* Date and read time */}
+                        <div className="flex items-center space-x-4 text-xs text-dark/40 font-poppins font-medium">
+                          <div className="flex items-center space-x-1">
+                            <Calendar className="w-3.5 h-3.5 text-accent" />
+                            <span>{article.date}</span>
+                          </div>
+                          <div className="flex items-center space-x-1">
+                            <Clock className="w-3.5 h-3.5 text-accent" />
+                            <span>{article.readTime}</span>
+                          </div>
+                        </div>
 
-                  <div className="pt-4 border-t border-light flex items-center justify-between mt-auto">
-                    <Link 
-                      href={`/publications/${article.id}`}
-                      className="font-poppins text-xs font-extrabold text-primary group-hover:text-accent flex items-center space-x-1 transition-colors"
+                        <h3 className="font-poppins text-lg font-bold text-primary group-hover:text-accent transition-colors leading-snug">
+                          {article.title}
+                        </h3>
+                        <p className="font-inter text-sm sm:text-base text-dark/70 leading-relaxed line-clamp-3">
+                          {article.desc}
+                        </p>
+                      </div>
+                    </div>
+                  </Link>
+
+                  {/* Card Actions Footer (Like, Comment indicator, Share) */}
+                  <div className="px-6 pb-6 pt-4 border-t border-light/60 flex items-center justify-between bg-slate-50/50 mt-auto">
+                    
+                    {/* Interaction row */}
+                    <div className="flex items-center gap-3">
+                      
+                      {/* Like button on card */}
+                      <button 
+                        onClick={(e) => handleLike(e, article.id, article.likesCount)}
+                        className={`flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-bold font-poppins transition-all duration-300 active:scale-95 ${
+                          isLiked 
+                            ? "bg-red-50 text-red-500 border border-red-100" 
+                            : "bg-white text-dark/50 hover:text-red-500 border border-dark/5"
+                        }`}
+                        title={isLiked ? "Retirer votre j'aime" : "J'aime cet article"}
+                      >
+                        <Heart className={`w-3.5 h-3.5 transition-transform ${isLiked ? "fill-red-500 scale-110" : ""}`} />
+                        <span>{article.likesCount}</span>
+                      </button>
+
+                      {/* Comment indicator on card */}
+                      <Link 
+                        href={`/publications/${article.id}#comments-section`}
+                        className="flex items-center gap-1 px-3 py-1.5 bg-white hover:bg-primary/5 text-dark/50 hover:text-primary border border-dark/5 rounded-full text-xs font-bold font-poppins transition-all"
+                        title="Voir la discussion"
+                      >
+                        <MessageSquare className="w-3.5 h-3.5 text-[#00A878]" />
+                        <span>{article.commentsCount}</span>
+                      </Link>
+                    </div>
+
+                    {/* Share button on card */}
+                    <button 
+                      onClick={(e) => handleShare(e, article)}
+                      className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold font-poppins transition-all duration-300 active:scale-95 ${
+                        isCopied 
+                          ? "bg-emerald-50 text-emerald-600 border border-emerald-100"
+                          : "bg-white text-dark/50 hover:text-primary border border-dark/5"
+                      }`}
+                      title="Partager l'article"
                     >
-                      <span>{t.publications.viewArticle}</span>
-                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-                    </Link>
+                      {isCopied ? (
+                        <>
+                          <Check className="w-3.5 h-3.5 text-emerald-500" />
+                          <span>Copié !</span>
+                        </>
+                      ) : (
+                        <>
+                          <Share2 className="w-3.5 h-3.5" />
+                          <span>Partager</span>
+                        </>
+                      )}
+                    </button>
+
                   </div>
-                </div>
-              </motion.article>
-            ))}
+                </motion.article>
+              );
+            })}
           </motion.div>
         ) : (
           <div className="text-center py-12">
@@ -253,4 +405,5 @@ export const Publications: React.FC = () => {
     </section>
   );
 };
+
 export default Publications;
