@@ -222,6 +222,35 @@ export default function PublicationDetailPage() {
   const renderArticleContent = (content: string) => {
     if (!content) return null;
 
+    // Helper to format body text and replace [1], [2] with smooth scroll references to the bibliography
+    const formatParagraphText = (text: string) => {
+      const parts = text.split(/(\[\d+\])/g);
+      if (parts.length === 1) return text;
+
+      return parts.map((part, index) => {
+        const isRef = /^\[\d+\]$/.test(part);
+        if (isRef) {
+          return (
+            <a
+              key={index}
+              href="#bibliography-block"
+              className="text-accent hover:text-accent/80 font-bold hover:underline mx-0.5 cursor-pointer select-none inline-flex items-center align-baseline text-xs"
+              onClick={(e) => {
+                e.preventDefault();
+                const element = document.getElementById("bibliography-block");
+                if (element) {
+                  element.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+              }}
+            >
+              {part}
+            </a>
+          );
+        }
+        return part;
+      });
+    };
+
     // Split into lines, trim, and filter out any empty lines to prevent double spaces
     const lines = content
       .split('\n')
@@ -290,13 +319,13 @@ export default function PublicationDetailPage() {
           </h3>
         );
       } else {
-        // Normal paragraph with custom text-justify for beautiful editorial alignment
+        // Normal paragraph with custom text-justify for beautiful editorial alignment and inline scroll links
         renderedElements.push(
           <p 
             key={`para-${i}`} 
             className="font-inter text-dark/70 text-base sm:text-lg leading-relaxed text-justify"
           >
-            {line}
+            {formatParagraphText(line)}
           </p>
         );
       }
@@ -305,18 +334,40 @@ export default function PublicationDetailPage() {
     // If we have bibliography entries, render them grouped inside a single container with tight space-y-2
     if (biblioHeader || biblioLines.length > 0) {
       renderedElements.push(
-        <div key="bibliography-block" className="mt-10 pt-6 border-t border-light">
+        <div id="bibliography-block" key="bibliography-block" className="mt-10 pt-6 border-t border-light scroll-mt-20">
           {biblioHeader && (
             <h4 className="font-inter text-base font-bold text-dark/80 mb-4">
               {biblioHeader}
             </h4>
           )}
-          <div className="font-inter text-sm text-dark/60 space-y-2 text-justify">
-            {biblioLines.map((line, idx) => (
-              <p key={`bib-${idx}`} className="leading-relaxed">
-                {line}
-              </p>
-            ))}
+          <div className="font-inter text-sm text-dark/60 space-y-3 text-justify">
+            {biblioLines.map((line, idx) => {
+              const match = line.match(/^(\[\d+\])\s*(.*)$/);
+              if (match) {
+                const marker = match[1];
+                const text = match[2];
+                const searchUrl = `https://scholar.google.com/scholar?q=${encodeURIComponent(text)}`;
+
+                return (
+                  <p key={`bib-${idx}`} className="leading-relaxed">
+                    <span className="font-bold text-accent mr-2">{marker}</span>
+                    <a 
+                      href={searchUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="hover:text-accent hover:underline transition-all duration-200 cursor-pointer text-dark/70 hover:font-medium"
+                    >
+                      {text}
+                    </a>
+                  </p>
+                );
+              }
+              return (
+                <p key={`bib-${idx}`} className="leading-relaxed">
+                  {line}
+                </p>
+              );
+            })}
           </div>
         </div>
       );
