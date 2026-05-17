@@ -249,49 +249,49 @@ export default function PublicationDetailPage() {
   return (
     <div className="bg-white min-h-screen pb-24">
       {/* Header / Hero */}
-      <div className="relative h-[60vh] min-h-[400px] w-full">
+      <div className="relative min-h-[500px] w-full flex items-end pt-36 pb-20 sm:pb-28">
         <img 
           src={article.image} 
           alt={article.title}
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-dark/95 via-dark/60 to-dark/20" />
         
-        <div className="absolute bottom-0 left-0 right-0 p-8 sm:p-16 max-w-7xl mx-auto w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-8 sm:px-16 w-full">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="space-y-6"
+            className="space-y-4"
           >
             <Link 
               href="/publications"
-              className="inline-flex items-center space-x-2 text-white/80 hover:text-white transition-colors font-poppins text-sm mb-4"
+              className="inline-flex items-center space-x-2 text-white/80 hover:text-white transition-colors font-poppins text-xs font-bold uppercase tracking-wider mb-2"
             >
-              <ArrowLeft className="w-4 h-4" />
+              <ArrowLeft className="w-3.5 h-3.5 text-accent animate-pulse" />
               <span>{t.common?.back || "Retour"}</span>
             </Link>
 
-            <div className="flex items-center space-x-3">
-              <span className="bg-accent text-white px-4 py-1.5 rounded-full text-[10px] font-extrabold uppercase font-poppins tracking-widest">
+            <div className="flex items-center">
+              <span className="bg-accent text-white px-3.5 py-1 rounded-full text-[9px] font-extrabold uppercase font-poppins tracking-widest">
                 {article.category}
               </span>
             </div>
 
-            <h1 className="font-montserrat text-3xl sm:text-5xl font-extrabold text-white leading-tight max-w-4xl">
+            <h1 className="font-montserrat text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-snug max-w-4xl tracking-tight">
               {article.title}
             </h1>
 
-            <div className="flex flex-wrap items-center gap-6 text-white/70 font-poppins text-sm border-t border-white/10 pt-6">
-              <div className="flex items-center space-x-2">
+            <div className="flex flex-wrap items-center gap-6 text-white/70 font-poppins text-xs font-semibold border-t border-white/10 pt-4 mt-2">
+              <div className="flex items-center space-x-1.5">
                 <Calendar className="w-4 h-4 text-accent" />
                 <span>{article.date}</span>
               </div>
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-1.5">
                 <Clock className="w-4 h-4 text-accent" />
                 <span>{article.readTime}</span>
               </div>
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-1.5">
                 <Bookmark className="w-4 h-4 text-accent" />
                 <span>Analyse SaniNova</span>
               </div>
