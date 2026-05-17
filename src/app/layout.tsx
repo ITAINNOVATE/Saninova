@@ -49,7 +49,7 @@ export default function RootLayout({
       lang="fr"
       className={`${inter.variable} ${poppins.variable} ${montserrat.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-white text-dark font-sans">
+      <body className="min-h-full flex flex-col bg-white text-dark font-sans overflow-x-hidden">
         <LanguageProvider>
           <div className="flex flex-col min-h-screen w-full overflow-x-hidden">
             <Navbar />
