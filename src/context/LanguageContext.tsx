@@ -76,6 +76,32 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
     // 2. Load dynamic translations
     fetchDynamicTranslations();
+
+    // 3. Subscribe to Realtime changes on saninova_site_settings
+    const channel = supabase
+      .channel("saninova_site_settings_changes")
+      .on(
+        "postgres_changes",
+        {
+          event: "UPDATE",
+          schema: "public",
+          table: "saninova_site_settings",
+          filter: "id=eq.1",
+        },
+        (payload: any) => {
+          if (payload.new) {
+            setActiveTranslations({
+              fr: deepMerge(translations.fr, payload.new.translations_fr),
+              en: deepMerge(translations.en, payload.new.translations_en),
+            });
+          }
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
   }, []);
 
   const setLocale = (newLocale: Locale) => {

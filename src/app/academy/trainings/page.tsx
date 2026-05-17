@@ -31,6 +31,25 @@ export default function TrainingsCatalog() {
       setLoading(false);
     };
     fetchTrainings();
+
+    const channel = supabase
+      .channel("academy_trainings_changes")
+      .on(
+        "postgres_changes",
+        {
+          event: "*",
+          schema: "public",
+          table: "academy_trainings",
+        },
+        () => {
+          fetchTrainings();
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
   }, []);
 
   const categories = ["all", "Gouvernance", "Digital", "Pharma", "Logistique", "Economie"];

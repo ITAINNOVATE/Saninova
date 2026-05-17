@@ -60,6 +60,26 @@ export const Publications: React.FC = () => {
     };
 
     loadDynamicPublications();
+
+    // Subscribe to real-time changes
+    const channel = supabase
+      .channel("saninova_publications_changes")
+      .on(
+        "postgres_changes",
+        {
+          event: "*",
+          schema: "public",
+          table: "saninova_publications",
+        },
+        () => {
+          loadDynamicPublications();
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
   }, [locale, t.publications.list]);
 
   const categories = [
