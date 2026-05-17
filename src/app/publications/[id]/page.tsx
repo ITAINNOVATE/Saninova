@@ -222,7 +222,11 @@ export default function PublicationDetailPage() {
   const renderArticleContent = (content: string) => {
     if (!content) return null;
 
-    const lines = content.split('\n');
+    // Split into lines, trim, and filter out any empty lines to prevent double spaces
+    const lines = content
+      .split('\n')
+      .map(line => line.trim())
+      .filter(line => line.length > 0);
 
     const orangeHeadings = [
       "Des défis structurels qui persistent",
@@ -252,54 +256,73 @@ export default function PublicationDetailPage() {
       "Data as a strategic infrastructure"
     ];
 
+    const renderedElements: React.ReactNode[] = [];
+    const biblioLines: string[] = [];
     let isInBibliography = false;
+    let biblioHeader: string | null = null;
 
-    return lines.map((line, index) => {
-      const trimmedLine = line.trim();
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i];
 
-      // Preserve paragraph separations
-      if (!trimmedLine) {
-        return <div key={index} className="h-4" />;
+      // Check if it's the Bibliography Header
+      if (
+        line.toLowerCase().includes("références bibliographiques") || 
+        line.toLowerCase().includes("bibliographical references")
+      ) {
+        isInBibliography = true;
+        biblioHeader = line;
+        continue;
       }
 
-      if (orangeHeadings.some(heading => heading.toLowerCase() === trimmedLine.toLowerCase())) {
-        return (
+      if (isInBibliography) {
+        biblioLines.push(line);
+        continue;
+      }
+
+      // Check if it is an orange subheading
+      if (orangeHeadings.some(heading => heading.toLowerCase() === line.toLowerCase())) {
+        renderedElements.push(
           <h3 
-            key={index} 
+            key={`heading-${i}`} 
             className="font-montserrat text-lg sm:text-xl font-extrabold text-orange mt-10 mb-4 tracking-tight leading-snug"
           >
-            {trimmedLine}
+            {line}
           </h3>
         );
-      }
-
-      if (trimmedLine.toLowerCase().includes("références bibliographiques") || trimmedLine.toLowerCase().includes("bibliographical references")) {
-        isInBibliography = true;
-        return (
-          <h4 
-            key={index} 
-            className="font-inter text-base font-bold text-dark/80 mt-10 mb-4 border-t border-light pt-6"
+      } else {
+        // Normal paragraph with custom text-justify for beautiful editorial alignment
+        renderedElements.push(
+          <p 
+            key={`para-${i}`} 
+            className="font-inter text-dark/70 text-base sm:text-lg leading-relaxed text-justify"
           >
-            {trimmedLine}
-          </h4>
-        );
-      }
-
-      if (isInBibliography || /^\s*\[\d+\]/.test(trimmedLine)) {
-        isInBibliography = true;
-        return (
-          <p key={index} className="font-inter text-sm text-dark/60 leading-relaxed mt-2">
-            {trimmedLine}
+            {line}
           </p>
         );
       }
+    }
 
-      return (
-        <p key={index} className="font-inter text-dark/70 text-base sm:text-lg leading-relaxed">
-          {trimmedLine}
-        </p>
+    // If we have bibliography entries, render them grouped inside a single container with tight space-y-2
+    if (biblioHeader || biblioLines.length > 0) {
+      renderedElements.push(
+        <div key="bibliography-block" className="mt-10 pt-6 border-t border-light">
+          {biblioHeader && (
+            <h4 className="font-inter text-base font-bold text-dark/80 mb-4">
+              {biblioHeader}
+            </h4>
+          )}
+          <div className="font-inter text-sm text-dark/60 space-y-2 text-justify">
+            {biblioLines.map((line, idx) => (
+              <p key={`bib-${idx}`} className="leading-relaxed">
+                {line}
+              </p>
+            ))}
+          </div>
+        </div>
       );
-    });
+    }
+
+    return renderedElements;
   };
 
   if (isLoading) {
@@ -391,7 +414,7 @@ export default function PublicationDetailPage() {
           <div className="prose prose-lg max-w-none prose-primary">
             
             {/* Description / Introduction */}
-            <p className="font-inter text-xl text-dark/80 leading-relaxed font-medium mb-8 border-l-4 border-accent pl-6">
+            <p className="font-inter text-xl text-dark/80 leading-relaxed font-medium mb-8 border-l-4 border-accent pl-6 text-justify">
               {article.desc}
             </p>
             
