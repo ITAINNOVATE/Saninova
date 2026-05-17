@@ -87,6 +87,7 @@ export const Navbar: React.FC = () => {
     { label: t.nav.publications, href: "/publications" },
     { label: t.nav.academy, href: "/academy", isDropdown: true },
     { label: t.nav.contact, href: "/contact" },
+    { label: t.nav.faq, href: "/faq" },
   ];
 
   const academyItems = [

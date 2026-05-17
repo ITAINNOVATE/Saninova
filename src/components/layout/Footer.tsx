@@ -138,6 +138,21 @@ export const Footer: React.FC = () => {
                   {t.nav.publications}
                 </Link>
               </li>
+              <li>
+                <Link href="/academy" className="hover:text-accent transition-colors duration-200">
+                  {t.nav.academy}
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-accent transition-colors duration-200">
+                  {t.nav.contact}
+                </Link>
+              </li>
+              <li>
+                <Link href="/faq" className="hover:text-accent transition-colors duration-200">
+                  {t.nav.faq}
+                </Link>
+              </li>
             </ul>
           </div>
 

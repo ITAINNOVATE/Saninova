@@ -9,6 +9,7 @@ export const translations = {
       services: "Services",
       publications: "Publications",
       contact: "Contact",
+      faq: "FAQ",
       academy: "Académie",
       cta: "Demander une consultation",
     },
@@ -510,6 +511,166 @@ export const translations = {
       quickLinks: "Liens rapides",
       contactInfo: "Contact",
     },
+    faqPage: {
+      title: "FAQ SaniNova Global Consulting",
+      subtitle: "Trouvez des réponses à toutes vos questions sur nos expertises, services et formations.",
+      searchPlaceholder: "Rechercher une question...",
+      noResults: "Aucune question ne correspond à votre recherche.",
+      categories: {
+        all: "Toutes les questions",
+        general: "SaniNova & Vision",
+        services: "Expertises & Services",
+        digital: "Digitalisation & Santé",
+        academy: "Formations & Inscriptions",
+      },
+      items: [
+        {
+          category: "general",
+          q: "1. C’est quoi SaniNova ?",
+          a: "SaniNova est un cabinet international de conseil stratégique spécialisé dans le renforcement des systèmes de santé, la chaîne d’approvisionnement pharmaceutique et sanitaire, la transformation digitale des systèmes de santé, la réglementation pharmaceutique, la gouvernance sanitaire et le développement des capacités institutionnelles.\n\nLe cabinet accompagne les gouvernements, institutions publiques, organisations internationales, programmes de santé, centrales d’achats, agences réglementaires, ONG et entreprises privées dans la conception, l’implémentation et l’amélioration de solutions innovantes adaptées aux réalités locales.\n\nSaniNova intervient notamment dans :\n• la supply chain santé,\n• les systèmes d’information sanitaires,\n• les eLMIS,\n• la traçabilité pharmaceutique,\n• la digitalisation,\n• la réglementation pharmaceutique,\n• les réformes institutionnelles,\n• les formations stratégiques,\n• l’assistance technique,\n• le pilotage de projets complexes."
+        },
+        {
+          category: "general",
+          q: "2. Quelle est la vision de SaniNova ?",
+          a: "La vision de SaniNova est de contribuer durablement à la transformation et à la modernisation des systèmes de santé à travers des solutions stratégiques, innovantes et adaptées aux réalités locales.\n\nLe cabinet ambitionne de devenir une référence africaine et internationale dans le domaine du conseil en systèmes de santé, supply chain pharmaceutique et transformation digitale sanitaire."
+        },
+        {
+          category: "general",
+          q: "3. Quelle est la mission de SaniNova ?",
+          a: "La mission de SaniNova est d’accompagner les institutions dans le renforcement de leurs performances à travers :\n• le conseil stratégique,\n• l’assistance technique,\n• la formation,\n• la digitalisation,\n• l’innovation,\n• et le développement des compétences.\n\nL’objectif est d’aider les organisations à améliorer durablement l’accès aux produits et services de santé de qualité."
+        },
+        {
+          category: "services",
+          q: "4. Quels sont les domaines d’expertise de SaniNova ?",
+          a: "SaniNova intervient principalement dans les domaines suivants :\n\nSupply Chain Santé\n• Quantification et prévision des besoins\n• Planification des approvisionnements\n• Gestion des stocks\n• Distribution des produits de santé\n• Gestion des entrepôts\n• Last Mile Delivery\n• Pipeline monitoring\n• Optimisation des systèmes logistiques\n\nDigitalisation et systèmes d’information sanitaires\n• eLMIS / eSIGL\n• Interopérabilité des systèmes\n• DHIS2\n• Traçabilité pharmaceutique\n• Dashboards décisionnels\n• Business Intelligence\n• Transformation digitale\n• Architecture des systèmes de santé\n\nRéglementation pharmaceutique\n• Renforcement des autorités réglementaires\n• Conformité pharmaceutique\n• Cadres juridiques\n• Traçabilité et sérialisation\n• Gouvernance pharmaceutique\n\nRenforcement des capacités\n• Formations professionnelles\n• Certifications\n• Coaching stratégique\n• Développement des compétences techniques\n• Leadership en santé publique\n\nAssistance technique et conseil stratégique\n• Réformes institutionnelles\n• Gouvernance des systèmes de santé\n• Appui aux ministères\n• Coordination des partenaires\n• Élaboration de politiques et stratégies\n• Études et analyses stratégiques"
+        },
+        {
+          category: "general",
+          q: "5. Qui sont les clients cibles de SaniNova ?",
+          a: "Les services de SaniNova s’adressent principalement à :\n• Gouvernements\n• Ministères de la Santé\n• Agences réglementaires\n• Centrales d’achat pharmaceutiques\n• Programmes nationaux de santé\n• Organisations internationales\n• ONG internationales\n• Partenaires techniques et financiers\n• Hôpitaux publics et privés\n• Officines de Pharmacies\n• Industries pharmaceutiques\n• Professionnels de santé\n• Consultants et cadres du secteur sanitaire"
+        },
+        {
+          category: "general",
+          q: "6. Pourquoi choisir SaniNova ?",
+          a: "SaniNova se distingue par plusieurs avantages stratégiques :\n• Une forte expertise terrain dans les systèmes de santé africains\n• Une compréhension approfondie des réalités institutionnelles\n• Une approche orientée résultats\n• Une expertise combinant stratégie, technique et opérationnel\n• Une capacité à accompagner les réformes complexes\n• Une forte expérience dans les projets financés par les bailleurs internationaux\n• Une approche intégrée entre réglementation, digitalisation et supply chain\n• Un accompagnement personnalisé et durable"
+        },
+        {
+          category: "services",
+          q: "7. Quels types de services propose SaniNova ?",
+          a: "SaniNova propose plusieurs catégories de services :\n• Conseil stratégique\n• Assistance technique\n• Formations professionnelles\n• Certifications spécialisées\n• Études et évaluations\n• Audit organisationnel et opérationnel\n• Digitalisation des systèmes\n• Conception de solutions innovantes\n• Accompagnement des réformes\n• Renforcement institutionnel"
+        },
+        {
+          category: "academy",
+          q: "8. Les formations de SaniNova sont-elles certifiantes ?",
+          a: "Oui.\n\nSaniNova propose des formations professionnelles et des programmes certifiants spécialisés dans les systèmes de santé, la supply chain pharmaceutique, la réglementation pharmaceutique et la transformation digitale.\n\nLes programmes sont conçus pour répondre aux standards internationaux tout en restant adaptés aux réalités africaines."
+        },
+        {
+          category: "academy",
+          q: "9. Les formations sont-elles adaptées aux réalités locales ?",
+          a: "Absolument.\n\nToutes les formations de SaniNova intègrent :\n• les réalités institutionnelles locales,\n• les contraintes opérationnelles locales,\n• les réglementations nationales,\n• les enjeux de financement,\n• les défis logistiques,\n• ainsi que des cas pratiques issus du terrain."
+        },
+        {
+          category: "services",
+          q: "10. Quels problèmes SaniNova aide-t-il à résoudre ?",
+          a: "SaniNova aide les institutions à résoudre des problématiques telles que :\n• les ruptures de stocks,\n• la mauvaise visibilité des données,\n• les difficultés de coordination logistique,\n• les insuffisances réglementaires,\n• les faibles capacités institutionnelles,\n• les problèmes de traçabilité,\n• les difficultés de digitalisation,\n• les inefficacités opérationnelles,\n• les problèmes de gouvernance,\n• et les défis de transformation organisationnelle."
+        },
+        {
+          category: "digital",
+          q: "11. Pourquoi la digitalisation des systèmes de santé est-elle importante ?",
+          a: "La digitalisation permet :\n• une meilleure visibilité des données,\n• une prise de décision plus rapide,\n• une amélioration du suivi des stocks,\n• une réduction des pertes,\n• une meilleure traçabilité des produits,\n• une amélioration des performances institutionnelles,\n• et un renforcement de la transparence.\n\nAujourd’hui, les systèmes de santé performants reposent fortement sur les données et les outils numériques."
+        },
+        {
+          category: "digital",
+          q: "12. Qu’est-ce que la traçabilité pharmaceutique ?",
+          a: "La traçabilité pharmaceutique permet de suivre les produits de santé tout au long de la chaîne d’approvisionnement, depuis leur fabrication jusqu’au patient.\n\nElle contribue à :\n• lutter contre les faux médicaments,\n• améliorer la sécurité des patients,\n• renforcer le contrôle réglementaire,\n• améliorer la gestion des stocks,\n• et sécuriser les circuits pharmaceutiques."
+        },
+        {
+          category: "digital",
+          q: "13. SaniNova intervient-il dans les projets gouvernementaux ?",
+          a: "Oui.\n\nSaniNova accompagne les gouvernements et institutions publiques dans :\n• les réformes stratégiques,\n• les projets de digitalisation,\n• les systèmes de traçabilité,\n• les projets eLMIS,\n• les stratégies pharmaceutiques,\n• les plans de renforcement de capacités,\n• les évaluations institutionnelles,\n• et les projets financés par les partenaires techniques et financiers."
+        },
+        {
+          category: "digital",
+          q: "14. SaniNova peut-il accompagner des organisations internationales ?",
+          a: "Oui.\n\nLe cabinet peut intervenir comme :\n• consultant,\n• partenaire technique,\n• structure de mise en œuvre,\n• cabinet d’assistance technique,\n• organisme de formation,\n• ou expert en transformation des systèmes de santé."
+        },
+        {
+          category: "academy",
+          q: "15. Pourquoi investir dans le renforcement des capacités ?",
+          a: "Le renforcement des capacités permet :\n• d’améliorer les performances institutionnelles,\n• de réduire les erreurs opérationnelles,\n• d’augmenter l’efficacité,\n• de renforcer la gouvernance,\n• et de préparer les institutions aux standards internationaux.\n\nLes institutions performantes investissent continuellement dans les compétences de leurs équipes."
+        },
+        {
+          category: "services",
+          q: "16. Pourquoi les prestations de SaniNova sont-elles positionnées haut de gamme ?",
+          a: "Les prestations de SaniNova reposent sur une forte valeur ajoutée stratégique et technique.\n\nElles mobilisent :\n• des experts spécialisés,\n• une expertise internationale,\n• des méthodologies avancées,\n• un accompagnement personnalisé,\n• des outils techniques spécialisés,\n• et une forte implication opérationnelle.\n\nSaniNova ne vend pas uniquement une prestation. Le cabinet apporte :\n• des résultats,\n• de la transformation,\n• de la performance,\n• et une valeur stratégique durable."
+        },
+        {
+          category: "academy",
+          q: "17. Les formations peuvent-elles être organisées sur mesure ?",
+          a: "Oui.\n\nSaniNova développe des programmes personnalisés selon :\n• les besoins du client,\n• le niveau technique des participants,\n• les priorités institutionnelles,\n• les objectifs stratégiques,\n• et le contexte réglementaire du pays."
+        },
+        {
+          category: "academy",
+          q: "18. Les formations peuvent-elles être organisées en ligne ?",
+          a: "Oui.\n\nSaniNova propose :\n• des formations en présentiel,\n• des formations hybrides,\n• et des formations entièrement en ligne.\n\nLes programmes virtuels sont conçus pour offrir une forte interactivité et une expérience pédagogique de qualité."
+        },
+        {
+          category: "services",
+          q: "19. Quels sont les bénéfices concrets pour une institution ?",
+          a: "Les institutions accompagnées par SaniNova bénéficient notamment :\n• d’une amélioration des performances,\n• d’un renforcement des capacités techniques,\n• d’une meilleure gouvernance,\n• d’une meilleure visibilité des données,\n• d’une optimisation des processus,\n• d’une réduction des risques opérationnels,\n• et d’une amélioration de la disponibilité des produits de santé."
+        },
+        {
+          category: "general",
+          q: "20. Qu’est-ce qui différencie SaniNova des autres cabinets ?",
+          a: "SaniNova se distingue par :\n• son expertise spécialisée dans les systèmes de santé,\n• sa compréhension des réalités locales,\n• son approche stratégique et opérationnelle,\n• sa maîtrise des enjeux réglementaires,\n• son expertise digitale,\n• son réseau d’experts,\n• et sa capacité à accompagner les grandes réformes.\n\nLe cabinet privilégie des solutions pratiques, réalistes et durables."
+        },
+        {
+          category: "general",
+          q: "21. Les services de SaniNova sont-ils uniquement destinés au secteur public ?",
+          a: "Non.\n\nSaniNova accompagne également :\n• les structures privées,\n• les cliniques,\n• les industries pharmaceutiques,\n• les officines de pharmacies,\n• les ONG,\n• les cabinets de conseil,\n• et les entreprises intervenant dans le secteur santé."
+        },
+        {
+          category: "digital",
+          q: "22. Pourquoi investir maintenant dans la modernisation des systèmes de santé ?",
+          a: "Les systèmes de santé évoluent rapidement.\n\nLes institutions doivent aujourd’hui :\n• renforcer leurs capacités,\n• améliorer leurs données,\n• moderniser leurs outils,\n• digitaliser leurs processus,\n• renforcer leur conformité,\n• et améliorer leurs performances.\n\nLes organisations qui anticipent ces transformations prennent une avance stratégique importante."
+        },
+        {
+          category: "services",
+          q: "23. Comment se déroule une mission de conseil avec SaniNova ?",
+          a: "Une mission suit généralement plusieurs étapes :\n1. Analyse des besoins\n2. Diagnostic technique et institutionnel\n3. Élaboration des recommandations\n4. Mise en œuvre des solutions\n5. Accompagnement technique\n6. Suivi et évaluation\n\nL’approche est collaborative et fortement orientée résultats."
+        },
+        {
+          category: "services",
+          q: "24. SaniNova propose-t-il un accompagnement après les formations et missions ?",
+          a: "Oui.\n\nLe cabinet privilégie un accompagnement durable.\n\nLes clients et participants bénéficient notamment :\n• d’un suivi technique,\n• d’un accès aux experts,\n• de mises à jour,\n• de partage de ressources,\n• de conseils stratégiques,\n• et d’un réseau professionnel."
+        },
+        {
+          category: "services",
+          q: "25. Pourquoi les institutions ont-elles besoin d’assistance technique externe ?",
+          a: "Les projets complexes nécessitent souvent :\n• des expertises spécialisées,\n• des méthodologies avancées,\n• des expériences comparatives,\n• une vision stratégique,\n• et des ressources techniques additionnelles.\n\nL’assistance technique permet d’accélérer les résultats et de réduire les risques."
+        },
+        {
+          category: "general",
+          q: "26. Comment contacter SaniNova ?",
+          a: "Les prospects peuvent contacter SaniNova via :\n• email : saninovagc@gmail.com\n• telephone : +2290161015495\n• LinkedIn : SaniNova Global Consulting\n• site web : www.saninovagc.com\n• ou directement lors des événements professionnels.\n\nToutes les demandes sont prises en charge de manière professionnelle et confidentielle."
+        },
+        {
+          category: "academy",
+          q: "27. Comment s'inscrire à une formation ?",
+          a: "L'inscription se fait directement en ligne via notre plateforme. Choisissez votre formation, remplissez le formulaire d'inscription et procédez au paiement pour garantir votre place."
+        },
+        {
+          category: "academy",
+          q: "28. Quels sont les moyens de paiement acceptés ?",
+          a: "Nous acceptons les paiements via Mobile Money, Cartes Bancaires (Visa, Mastercard), PayPal et virement bancaire via nos passerelles sécurisées."
+        },
+        {
+          category: "academy",
+          q: "29. Quelle est la politique d'annulation et de remboursement ?",
+          a: "Toute annulation effectuée plus de 15 jours avant le début de la formation donne lieu à un remboursement intégral. Entre 15 et 7 jours, 50% sont remboursés. Aucun remboursement n'est possible à moins de 7 jours, mais un report sur une session future peut être envisagé."
+        }
+      ]
+    },
   },
   en: {
     nav: {
@@ -519,6 +680,7 @@ export const translations = {
       services: "Services",
       publications: "Publications",
       contact: "Contact",
+      faq: "FAQ",
       academy: "Academy",
       cta: "Request Consultation",
     },
@@ -1019,6 +1181,166 @@ export const translations = {
       rights: "All rights reserved.",
       quickLinks: "Quick links",
       contactInfo: "Contact",
+    },
+    faqPage: {
+      title: "SaniNova Global Consulting FAQ",
+      subtitle: "Find answers to all your questions about our expertise, services, and training programs.",
+      searchPlaceholder: "Search for a question...",
+      noResults: "No questions match your search.",
+      categories: {
+        all: "All Questions",
+        general: "SaniNova & Vision",
+        services: "Expertise & Services",
+        digital: "Digitalization & Health",
+        academy: "Training & Registration",
+      },
+      items: [
+        {
+          category: "general",
+          q: "1. What is SaniNova?",
+          a: "SaniNova is an international strategic consulting firm specializing in health systems strengthening, pharmaceutical and healthcare supply chains, digital health transformation, pharmaceutical regulation, health governance, and institutional capacity building.\n\nThe firm supports governments, public institutions, international organizations, health programs, central procurement agencies, regulatory bodies, NGOs, and private companies in the design, implementation, and improvement of innovative solutions tailored to local realities.\n\nSaniNova operates in:\n• health supply chains,\n• health information systems,\n• eLMIS,\n• pharmaceutical traceability,\n• digitalization,\n• pharmaceutical regulation,\n• institutional reforms,\n• strategic training,\n• technical assistance,\n• complex project management."
+        },
+        {
+          category: "general",
+          q: "2. What is SaniNova's vision?",
+          a: "SaniNova's vision is to contribute sustainably to the transformation and modernization of health systems through strategic, innovative, and locally adapted solutions.\n\nThe firm aims to become an African and international benchmark in health systems consulting, pharmaceutical supply chains, and digital health transformation."
+        },
+        {
+          category: "general",
+          q: "3. What is SaniNova's mission?",
+          a: "SaniNova's mission is to support institutions in strengthening their performance through:\n• strategic consulting,\n• technical assistance,\n• training,\n• digitalization,\n• innovation,\n• and skills development.\n\nThe ultimate goal is to help organizations sustainably improve access to high-quality health products and services."
+        },
+        {
+          category: "services",
+          q: "4. What are SaniNova's areas of expertise?",
+          a: "SaniNova operates mainly in the following areas:\n\nHealth Supply Chain\n• Quantification and forecasting\n• Procurement planning\n• Stock management\n• Distribution of health products\n• Warehouse management\n• Last Mile Delivery\n• Pipeline monitoring\n• Logistics systems optimization\n\nDigitalization and Health Information Systems\n• eLMIS / eSIGL\n• Systems interoperability\n• DHIS2\n• Pharmaceutical traceability\n• Decision dashboards\n• Business Intelligence\n• Digital transformation\n• Health systems architecture\n\nPharmaceutical Regulation\n• Strengthening regulatory authorities\n• Pharmaceutical compliance\n• Legal frameworks\n• Traceability and serialization\n• Pharmaceutical governance\n\nCapacity Building\n• Professional training\n• Certifications\n• Strategic coaching\n• Technical skills development\n• Public health leadership\n\nTechnical Assistance and Strategic Consulting\n• Institutional reforms\n• Health systems governance\n• Support to ministries\n• Partner coordination\n• Policy and strategy development\n• Strategic studies and analyses"
+        },
+        {
+          category: "general",
+          q: "5. Who are SaniNova's target clients?",
+          a: "SaniNova's services are primarily addressed to:\n• Governments\n• Ministries of Health\n• Regulatory agencies\n• Pharmaceutical central purchasing bodies\n• National health programs\n• International organizations\n• International NGOs\n• Technical and financial partners\n• Public and private hospitals\n• Pharmacies\n• Pharmaceutical industries\n• Health professionals\n• Health sector consultants and executives"
+        },
+        {
+          category: "general",
+          q: "6. Why choose SaniNova?",
+          a: "SaniNova stands out due to several strategic advantages:\n• Strong field expertise in African health systems\n• Deep understanding of institutional realities\n• A results-oriented approach\n• Expertise combining strategy, technique, and operations\n• An ability to support complex reforms\n• Solid experience in projects funded by international donors\n• An integrated approach between regulation, digitalization, and supply chain\n• Personalized and sustainable support"
+        },
+        {
+          category: "services",
+          q: "7. What types of services does SaniNova offer?",
+          a: "SaniNova offers several categories of services:\n• Strategic consulting\n• Technical assistance\n• Professional training\n• Specialized certifications\n• Studies and evaluations\n• Organizational and operational audits\n• Systems digitalization\n• Design of innovative solutions\n• Support for reforms\n• Institutional strengthening"
+        },
+        {
+          category: "academy",
+          q: "8. Are SaniNova's training programs certifiable?",
+          a: "Yes.\n\nSaniNova offers professional training and specialized certification programs in health systems, pharmaceutical supply chains, pharmaceutical regulation, and digital transformation.\n\nThese programs are designed to meet international standards while remaining adapted to African realities."
+        },
+        {
+          category: "academy",
+          q: "9. Are the training programs adapted to local realities?",
+          a: "Absolutely.\n\nAll of SaniNova's training programs integrate:\n• local institutional realities,\n• local operational constraints,\n• national regulations,\n• funding challenges,\n• logistics challenges,\n• and practical field-based case studies."
+        },
+        {
+          category: "services",
+          q: "10. What problems does SaniNova help resolve?",
+          a: "SaniNova helps institutions resolve issues such as:\n• stockouts,\n• poor data visibility,\n• logistical coordination difficulties,\n• regulatory gaps,\n• weak institutional capacities,\n• traceability issues,\n• digitalization challenges,\n• operational inefficiencies,\n• governance problems,\n• and organizational transformation challenges."
+        },
+        {
+          category: "digital",
+          q: "11. Why is the digitalization of health systems important?",
+          a: "Digitalization enables:\n• better data visibility,\n• faster decision-making,\n• improved stock monitoring,\n• reduction of losses,\n• better product traceability,\n• enhanced institutional performance,\n• and strengthened transparency.\n\nToday, high-performing health systems rely heavily on data and digital tools."
+        },
+        {
+          category: "digital",
+          q: "12. What is pharmaceutical traceability?",
+          a: "Pharmaceutical traceability allows health products to be tracked throughout the supply chain, from manufacturing to the patient.\n\nIt helps to:\n• combat counterfeit medicines,\n• improve patient safety,\n• strengthen regulatory control,\n• improve stock management,\n• and secure pharmaceutical distribution channels."
+        },
+        {
+          category: "digital",
+          q: "13. Does SaniNova intervene in government projects?",
+          a: "Yes.\n\nSaniNova supports governments and public institutions in:\n• strategic reforms,\n• digitalization projects,\n• traceability systems,\n• eLMIS projects,\n• pharmaceutical strategies,\n• capacity building plans,\n• institutional evaluations,\n• and projects funded by technical and financial partners."
+        },
+        {
+          category: "digital",
+          q: "14. Can SaniNova support international organizations?",
+          a: "Yes.\n\nThe firm can intervene as a:\n• consultant,\n• technical partner,\n• implementing agency,\n• technical assistance provider,\n• training organization,\n• or health systems transformation expert."
+        },
+        {
+          category: "academy",
+          q: "15. Why invest in capacity building?",
+          a: "Capacity building enables:\n• improving institutional performance,\n• reducing operational errors,\n• increasing efficiency,\n• strengthening governance,\n• and preparing institutions for international standards.\n\nHigh-performing institutions continuously invest in their teams' skills."
+        },
+        {
+          category: "services",
+          q: "16. Why are SaniNova's services positioned as high-end?",
+          a: "SaniNova's services are based on high strategic and technical added value.\n\nThey mobilize:\n• specialized experts,\n• international expertise,\n• advanced methodologies,\n• personalized support,\n• specialized technical tools,\n• and strong operational involvement.\n\nSaniNova does not just sell a service. The firm brings:\n• results,\n• transformation,\n• performance,\n• and long-term strategic value."
+        },
+        {
+          category: "academy",
+          q: "17. Can training programs be customized?",
+          a: "Yes.\n\nSaniNova develops customized programs based on:\n• the client's needs,\n• the participants' technical level,\n• institutional priorities,\n• strategic objectives,\n• and the country's regulatory context."
+        },
+        {
+          category: "academy",
+          q: "18. Can training programs be organized online?",
+          a: "Yes.\n\nSaniNova offers:\n• in-person training,\n• hybrid training,\n• and fully online training.\n\nVirtual programs are designed to offer high interactivity and a high-quality learning experience."
+        },
+        {
+          category: "services",
+          q: "19. What are the concrete benefits for an institution?",
+          a: "Institutions supported by SaniNova benefit from:\n• improved performance,\n• strengthened technical capacities,\n• better governance,\n• improved data visibility,\n• optimized processes,\n• reduced operational risks,\n• and enhanced availability of health products."
+        },
+        {
+          category: "general",
+          q: "20. What differentiates SaniNova from other consulting firms?",
+          a: "SaniNova stands out due to:\n• its specialized expertise in health systems,\n• its understanding of local realities,\n• its strategic and operational approach,\n• its mastery of regulatory challenges,\n• its digital expertise,\n• its network of experts,\n• and its capacity to support major reforms.\n\nThe firm prioritizes practical, realistic, and sustainable solutions."
+        },
+        {
+          category: "general",
+          q: "21. Are SaniNova's services intended solely for the public sector?",
+          a: "No.\n\nSaniNova also supports:\n• private organizations,\n• clinics,\n• pharmaceutical industries,\n• pharmacies,\n• NGOs,\n• consulting firms,\n• and companies operating in the healthcare sector."
+        },
+        {
+          category: "digital",
+          q: "22. Why invest now in modernizing health systems?",
+          a: "Health systems are evolving rapidly.\n\nInstitutions today must:\n• strengthen their capacities,\n• improve their data,\n• modernize their tools,\n• digitalize their processes,\n• strengthen compliance,\n• and improve performance.\n\nOrganizations that anticipate these transformations gain a major strategic advantage."
+        },
+        {
+          category: "services",
+          q: "23. How does a consulting mission with SaniNova proceed?",
+          a: "A mission generally follows several stages:\n1. Needs analysis\n2. Technical and institutional diagnosis\n3. Development of recommendations\n4. Implementation of solutions\n5. Technical support\n6. Monitoring and evaluation\n\nOur approach is collaborative and strongly results-oriented."
+        },
+        {
+          category: "services",
+          q: "24. Does SaniNova offer support after training and missions?",
+          a: "Yes.\n\nThe firm prioritizes long-term support.\n\nClients and participants benefit from:\n• technical follow-up,\n• access to experts,\n• updates,\n• resources sharing,\n• strategic advice,\n• and a professional network."
+        },
+        {
+          category: "services",
+          q: "25. Why do institutions need external technical assistance?",
+          a: "Complex projects often require:\n• specialized expertise,\n• advanced methodologies,\n• comparative experiences,\n• a strategic vision,\n• and additional technical resources.\n\nTechnical assistance accelerates results and reduces risks."
+        },
+        {
+          category: "general",
+          q: "26. How to contact SaniNova?",
+          a: "Prospects can contact SaniNova via:\n• email: saninovagc@gmail.com\n• telephone: +2290161015495\n• LinkedIn: SaniNova Global Consulting\n• website: www.saninovagc.com\n• or directly at professional events.\n\nAll requests are handled in a professional and confidential manner."
+        },
+        {
+          category: "academy",
+          q: "27. How to register for a training?",
+          a: "Registration is done directly online via our platform. Choose your training, fill out the registration form, and proceed with payment to guarantee your spot."
+        },
+        {
+          category: "academy",
+          q: "28. What payment methods are accepted?",
+          a: "We accept payments via Mobile Money, Bank Cards (Visa, Mastercard), PayPal, and bank transfers through our secure gateways."
+        },
+        {
+          category: "academy",
+          q: "29. What is the cancellation and refund policy?",
+          a: "Any cancellation made more than 15 days before the start of the training gives rise to a full refund. Between 15 and 7 days, 50% is refunded. No refund is possible less than 7 days, but a transfer to a future session may be considered."
+        }
+      ]
     },
   },
 };
