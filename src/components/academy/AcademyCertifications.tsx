@@ -199,7 +199,7 @@ const AcademyCertifications = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedCertName(null)}
-              className="fixed inset-0 z-50 bg-dark/60 backdrop-blur-sm"
+              className="fixed inset-0 z-50 bg-dark/80 backdrop-blur-sm"
             />
             
             {/* Drawer Container */}
@@ -208,51 +208,51 @@ const AcademyCertifications = () => {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              className="fixed top-0 right-0 h-full w-full max-w-2xl bg-white shadow-2xl z-50 overflow-y-auto flex flex-col border-l border-primary/5"
+              className="fixed top-0 right-0 h-full w-full max-w-2xl bg-slate-950 shadow-2xl z-50 overflow-y-auto flex flex-col border-l border-white/5"
             >
               {/* Header */}
-              <div className="p-8 border-b border-primary/5 flex items-start justify-between bg-primary/5 sticky top-0 backdrop-blur-md z-10">
+              <div className="p-8 border-b border-white/5 flex items-start justify-between bg-slate-900/60 sticky top-0 backdrop-blur-md z-10">
                 <div className="max-w-[85%]">
                   <span className="text-orange font-bold tracking-widest text-xs uppercase mb-2 block">
                     {details.academyTitle?.replace("ACADÉMIE ", "") || "Certification"}
                   </span>
-                  <h3 className="text-xl md:text-2xl font-montserrat font-black text-primary leading-tight">
+                  <h3 className="text-xl md:text-2xl font-montserrat font-black text-white leading-tight">
                     {selectedCertName}
                   </h3>
                 </div>
                 <button 
                   onClick={() => setSelectedCertName(null)}
-                  className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary border border-primary/10 hover:bg-primary hover:text-white transition-all shadow-sm shrink-0"
+                  className="w-10 h-10 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/10 transition-all border border-white/10 shrink-0 cursor-pointer"
                 >
                   <X className="w-5 h-5" />
                 </button>
               </div>
 
               {/* Body Content */}
-              <div className="flex-1 p-8 overflow-y-auto space-y-8">
+              <div className="flex-1 p-8 overflow-y-auto space-y-8 bg-slate-950">
                 {/* Stats Badges */}
                 <div className="grid grid-cols-3 gap-4">
-                  <div className="bg-primary/5 rounded-2xl p-4 flex flex-col items-center justify-center text-center border border-primary/5 shadow-sm">
-                    <Clock className="w-6 h-6 text-primary mb-2" />
-                    <span className="text-[10px] font-bold text-dark/40 uppercase tracking-wider">Durée</span>
-                    <span className="text-sm font-black text-primary mt-1">{details.duration || "N/A"}</span>
+                  <div className="bg-slate-900/50 rounded-2xl p-4 flex flex-col items-center justify-center text-center border border-white/5 shadow-sm">
+                    <Clock className="w-6 h-6 text-blue-400 mb-2" />
+                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Durée</span>
+                    <span className="text-sm font-black text-white mt-1">{details.duration || "N/A"}</span>
                   </div>
-                  <div className="bg-orange/5 rounded-2xl p-4 flex flex-col items-center justify-center text-center border border-orange/5 shadow-sm">
+                  <div className="bg-slate-900/50 rounded-2xl p-4 flex flex-col items-center justify-center text-center border border-white/5 shadow-sm">
                     <DollarSign className="w-6 h-6 text-orange mb-2" />
-                    <span className="text-[10px] font-bold text-dark/40 uppercase tracking-wider">Investissement</span>
+                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Investissement</span>
                     <span className="text-sm font-black text-orange mt-1">{details.cost || "N/A"}</span>
                   </div>
-                  <div className="bg-green-500/5 rounded-2xl p-4 flex flex-col items-center justify-center text-center border border-green-500/5 shadow-sm">
-                    <BookOpen className="w-6 h-6 text-green-600 mb-2" />
-                    <span className="text-[10px] font-bold text-dark/40 uppercase tracking-wider">Structure</span>
-                    <span className="text-sm font-black text-green-700 mt-1">{details.modules?.length || 0} Modules</span>
+                  <div className="bg-slate-900/50 rounded-2xl p-4 flex flex-col items-center justify-center text-center border border-white/5 shadow-sm">
+                    <BookOpen className="w-6 h-6 text-emerald-400 mb-2" />
+                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Structure</span>
+                    <span className="text-sm font-black text-emerald-400 mt-1">{details.modules?.length || 0} Modules</span>
                   </div>
                 </div>
 
                 {/* Bilingual Notice */}
                 {locale === "en" && (
-                  <div className="bg-blue-50 border border-blue-200 rounded-2xl p-4 flex gap-3 text-blue-800 text-sm shadow-sm">
-                    <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" />
+                  <div className="bg-slate-900/80 border border-white/10 rounded-2xl p-4 flex gap-3 text-slate-300 text-sm shadow-sm">
+                    <AlertCircle className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
                     <p>
                       <strong>Notice:</strong> The detailed curriculum is presented in French, matching the certified regional frameworks and training reference documents.
                     </p>
@@ -261,7 +261,7 @@ const AcademyCertifications = () => {
 
                 {/* Syllabus Curriculum */}
                 <div>
-                  <h4 className="text-base font-montserrat font-bold text-primary mb-6 flex items-center gap-2 border-b border-primary/5 pb-4">
+                  <h4 className="text-base font-montserrat font-bold text-white mb-6 flex items-center gap-2 border-b border-white/5 pb-4">
                     <Award className="w-5 h-5 text-orange" /> PROGRAMME PÉDAGOGIQUE
                   </h4>
                   
@@ -272,34 +272,34 @@ const AcademyCertifications = () => {
                         return (
                           <div 
                             key={mIdx} 
-                            className="border border-primary/5 rounded-3xl overflow-hidden transition-all bg-light/10 shadow-sm"
+                            className="border border-white/5 rounded-3xl overflow-hidden transition-all bg-slate-900/20 shadow-sm"
                           >
                             {/* Accordion Trigger */}
                             <button
                               onClick={() => toggleModule(mod.name)}
-                              className="w-full text-left p-6 flex items-center justify-between gap-4 bg-white hover:bg-primary/5 transition-all"
+                              className="w-full text-left p-6 flex items-center justify-between gap-4 bg-slate-900/30 hover:bg-slate-900/60 transition-all cursor-pointer"
                             >
                               <div className="flex-1">
                                 <span className="text-xs font-bold text-orange uppercase tracking-widest block mb-1">
                                   Module {mIdx + 1}
                                 </span>
-                                <h5 className="text-base font-bold text-primary leading-snug">
+                                <h5 className="text-base font-bold text-white leading-snug">
                                   {mod.name}
                                 </h5>
                                 <div className="flex gap-4 mt-2">
                                   {mod.duration && (
-                                    <span className="text-xs text-dark/40 font-medium flex items-center gap-1">
-                                      <Clock className="w-3.5 h-3.5 text-primary/60" /> {mod.duration}
+                                    <span className="text-xs text-slate-400 font-medium flex items-center gap-1">
+                                      <Clock className="w-3.5 h-3.5 text-blue-400" /> {mod.duration}
                                     </span>
                                   )}
                                   {mod.cost && (
-                                    <span className="text-xs text-dark/40 font-medium flex items-center gap-1">
-                                      <DollarSign className="w-3.5 h-3.5 text-orange/60" /> {mod.cost}
+                                    <span className="text-xs text-slate-400 font-medium flex items-center gap-1">
+                                      <DollarSign className="w-3.5 h-3.5 text-orange" /> {mod.cost}
                                     </span>
                                   )}
                                 </div>
                               </div>
-                              <div className="w-8 h-8 rounded-full bg-primary/5 flex items-center justify-center text-primary shrink-0">
+                              <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-slate-400 shrink-0">
                                 {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                               </div>
                             </button>
@@ -313,18 +313,18 @@ const AcademyCertifications = () => {
                                   exit={{ height: 0, opacity: 0 }}
                                   transition={{ duration: 0.2 }}
                                 >
-                                  <div className="p-6 bg-white/50 border-t border-primary/5 space-y-6">
+                                  <div className="p-6 bg-slate-950/40 border-t border-white/5 space-y-6">
                                     {mod.subModules && mod.subModules.length > 0 ? (
                                       mod.subModules.map((sub: any, sIdx: number) => (
-                                        <div key={sIdx} className="relative pl-6 border-l-2 border-primary/10">
-                                          <div className="absolute w-3 h-3 bg-orange rounded-full -left-[7px] top-1 border-2 border-white" />
-                                          <h6 className="text-sm font-bold text-primary leading-tight mb-2">
-                                            {sub.title} {sub.duration && <span className="text-[10px] font-bold text-orange ml-2 bg-orange/10 px-2.5 py-0.5 rounded-full">{sub.duration}</span>}
+                                        <div key={sIdx} className="relative pl-6 border-l-2 border-white/10">
+                                          <div className="absolute w-3 h-3 bg-orange rounded-full -left-[7px] top-1 border-2 border-slate-950" />
+                                          <h6 className="text-sm font-bold text-white leading-tight mb-2">
+                                            {sub.title} {sub.duration && <span className="text-[10px] font-bold text-orange ml-2 bg-orange/15 px-2.5 py-0.5 rounded-full border border-orange/10">{sub.duration}</span>}
                                           </h6>
                                           {sub.chapters && sub.chapters.length > 0 && (
                                             <ul className="space-y-1.5 mt-2 pl-2">
                                               {sub.chapters.map((chap: string, cIdx: number) => (
-                                                <li key={cIdx} className="text-xs text-dark/70 leading-relaxed flex items-start gap-2">
+                                                <li key={cIdx} className="text-xs text-slate-300 leading-relaxed flex items-start gap-2">
                                                   <span className="text-orange shrink-0 mt-0.5">▸</span>
                                                   <span>{chap}</span>
                                                 </li>
@@ -334,7 +334,7 @@ const AcademyCertifications = () => {
                                         </div>
                                       ))
                                     ) : (
-                                      <p className="text-xs text-dark/40 italic">Aucun sous-module détaillé.</p>
+                                      <p className="text-xs text-slate-400 italic">Aucun sous-module détaillé.</p>
                                     )}
                                   </div>
                                 </motion.div>
@@ -345,16 +345,16 @@ const AcademyCertifications = () => {
                       })}
                     </div>
                   ) : (
-                    <p className="text-sm text-dark/40 italic">Aucun module disponible pour cette certification.</p>
+                    <p className="text-sm text-slate-400 italic">Aucun module disponible pour cette certification.</p>
                   )}
                 </div>
               </div>
 
               {/* Sticky Footer */}
-              <div className="p-8 border-t border-primary/5 bg-white sticky bottom-0 z-10 flex flex-col gap-4 shadow-lg">
+              <div className="p-8 border-t border-white/5 bg-slate-950 sticky bottom-0 z-10 flex flex-col gap-4 shadow-lg">
                 <Link 
                   href={`/academy/register?certification=${encodeURIComponent(selectedCertName)}`}
-                  className="w-full py-4 bg-primary hover:bg-primary-dark text-white rounded-2xl font-bold transition-all text-center shadow-lg shadow-primary/20 text-sm flex items-center justify-center gap-2"
+                  className="w-full py-4 bg-orange hover:bg-orange/85 text-white rounded-2xl font-bold transition-all text-center shadow-lg shadow-orange/20 text-sm flex items-center justify-center gap-2"
                 >
                   S'inscrire à la certification complète <ArrowRight className="w-4 h-4" />
                 </Link>
