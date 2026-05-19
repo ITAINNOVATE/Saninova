@@ -14,6 +14,7 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import PageHero from "../../../components/ui/PageHero";
+import { certificationsData } from "../../../data/certificationsData";
 
 const registrationSchema = z.object({
   fullname: z.string().min(3, "Nom complet requis"),
@@ -36,6 +37,7 @@ function RegisterContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const trainingSlug = searchParams.get("training");
+  const certificationName = searchParams.get("certification");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [step, setStep] = useState(1);
 
@@ -49,12 +51,14 @@ function RegisterContent() {
     resolver: zodResolver(registrationSchema) as any,
     defaultValues: {
       invoice_required: false,
-      training: trainingSlug || ""
+      training: certificationName || trainingSlug || ""
     }
   });
 
   useEffect(() => {
-    if (trainingSlug) {
+    if (certificationName) {
+      setValue("training", certificationName);
+    } else if (trainingSlug) {
       // Map slug to form value if necessary, but here the values in select match slug-like strings
       // Let's ensure the mapping is correct
       const mapping: Record<string, string> = {
@@ -66,7 +70,7 @@ function RegisterContent() {
       const formValue = mapping[trainingSlug] || trainingSlug;
       setValue("training", formValue);
     }
-  }, [trainingSlug, setValue]);
+  }, [trainingSlug, certificationName, setValue]);
 
   const onSubmit = async (data: RegistrationData) => {
     setIsSubmitting(true);
@@ -219,25 +223,38 @@ function RegisterContent() {
                   <div className="space-y-6">
                     <div className="space-y-2">
                       <label className="text-sm font-bold text-white/40 uppercase tracking-wider ml-1">Formation Choisie</label>
-                      {trainingSlug ? (
-                        <div className="w-full bg-white/10 border border-orange/30 rounded-2xl py-4 px-6 text-white font-bold flex items-center justify-between">
+                      {certificationName ? (
+                        <div className="w-full bg-white/5 border border-orange/40 rounded-2xl py-4 px-6 text-white font-bold flex items-center justify-between shadow-sm">
+                          <span>
+                            {certificationName}
+                          </span>
+                          <span className="text-[10px] bg-orange/20 text-orange px-2.5 py-1 rounded-md uppercase font-black tracking-wider border border-orange/20">Sélectionné</span>
+                          <input type="hidden" value={certificationName} {...register("training")} />
+                        </div>
+                      ) : trainingSlug ? (
+                        <div className="w-full bg-white/5 border border-orange/40 rounded-2xl py-4 px-6 text-white font-bold flex items-center justify-between">
                           <span>
                             {trainingSlug === "gouvernance-sanitaire-afrique" && "Gouvernance Sanitaire et Leadership"}
                             {trainingSlug === "sante-digitale-interoperabilite" && "Santé Digitale et Interopérabilité"}
                             {trainingSlug === "regulation-pharmaceutique-avancee" && "Régulation Pharmaceutique"}
                             {!["gouvernance-sanitaire-afrique", "sante-digitale-interoperabilite", "regulation-pharmaceutique-avancee"].includes(trainingSlug) && trainingSlug}
                           </span>
-                          <span className="text-[10px] bg-orange/20 text-orange px-2 py-1 rounded-md uppercase">Sélectionné</span>
-                          {/* Hidden input to keep react-hook-form happy if needed, but setValue already handled it */}
+                          <span className="text-[10px] bg-orange/20 text-orange px-2 py-1 rounded-md uppercase font-black tracking-wider border border-orange/20">Sélectionné</span>
                           <input type="hidden" {...register("training")} />
                         </div>
                       ) : (
                         <>
-                          <select {...register("training")} className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-4 text-white focus:border-orange/50 focus:bg-white/10 transition-all outline-none appearance-none">
+                          <select {...register("training")} className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-4 text-white focus:border-orange/50 focus:bg-white/10 transition-all outline-none appearance-none cursor-pointer">
                             <option value="" className="bg-dark text-white/30">Choisir une formation...</option>
-                            <option value="gouvernance" className="bg-dark">Gouvernance Sanitaire et Leadership</option>
-                            <option value="digital" className="bg-dark">Santé Digitale et Interopérabilité</option>
-                            <option value="pharma" className="bg-dark">Régulation Pharmaceutique</option>
+                            {certificationsData.map((ac) => (
+                              <optgroup key={ac.id} label={ac.title} className="bg-dark text-orange font-bold uppercase tracking-widest text-[10px]">
+                                {ac.certifications.map((c) => (
+                                  <option key={c.name} value={c.name} className="bg-dark text-white font-medium normal-case text-sm">
+                                    {c.name}
+                                  </option>
+                                ))}
+                              </optgroup>
+                            ))}
                           </select>
                           {errors.training && <p className="text-red-400 text-xs font-bold mt-1 ml-1">{errors.training.message}</p>}
                         </>
