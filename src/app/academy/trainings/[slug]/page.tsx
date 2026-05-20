@@ -168,6 +168,12 @@ export default function TrainingDetail({ params }: { params: Promise<{ slug: str
                   >
                     Payer maintenant
                   </Link>
+                  <Link 
+                    href={`/academy/portal/course/${training.slug}`} 
+                    className="w-full py-5 bg-dark text-orange border border-orange/30 hover:border-orange hover:bg-orange/5 rounded-2xl font-black text-center flex items-center justify-center gap-2 hover:scale-[1.02] transition-all uppercase tracking-wider text-xs shadow-xl shadow-orange/5"
+                  >
+                    <BookOpen className="w-4 h-4 text-orange" /> Accéder en eLearning
+                  </Link>
                 </div>
 
                 <p className="mt-6 text-center text-xs font-medium text-dark/40">
@@ -278,15 +284,21 @@ export default function TrainingDetail({ params }: { params: Promise<{ slug: str
 
             {/* Sticky Card Mobile Spacer */}
             <div className="lg:hidden">
-               <div className="bg-white rounded-[40px] p-8 shadow-2xl">
-                 <div className="flex items-end gap-2 text-dark font-montserrat font-black text-4xl mb-8">
+               <div className="bg-white rounded-[40px] p-8 shadow-2xl space-y-4">
+                 <div className="flex items-end gap-2 text-dark font-montserrat font-black text-4xl mb-4">
                     {training.price} <span className="text-lg font-bold opacity-40">{training.currency}</span>
                   </div>
                   <Link 
                     href={`/academy/register?training=${training.slug}`} 
-                    className="w-full py-5 bg-primary text-white rounded-2xl font-black text-center block shadow-xl"
+                    className="w-full py-5 bg-primary text-white rounded-2xl font-black text-center block shadow-xl hover:scale-[1.02] transition-all"
                   >
                     S'inscrire maintenant
+                  </Link>
+                  <Link 
+                    href={`/academy/portal/course/${training.slug}`} 
+                    className="w-full py-5 bg-dark text-orange border border-orange/30 hover:border-orange hover:bg-orange/5 rounded-2xl font-black text-center flex items-center justify-center gap-2 hover:scale-[1.02] transition-all uppercase tracking-wider text-xs"
+                  >
+                    <BookOpen className="w-4 h-4 text-orange" /> Accéder en eLearning
                   </Link>
                </div>
             </div>
