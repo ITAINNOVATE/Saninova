@@ -8,6 +8,7 @@ import { ArrowLeft } from "lucide-react";
 import { supabase } from "../../../../../lib/supabase";
 import CertificateCard from "../../../../../components/academy/CertificateCard";
 import PageHero from "../../../../../components/ui/PageHero";
+import { staticModules } from "../../../../../lib/academyHelpers";
 
 export default function CertificatePage({ params }: { params: Promise<{ slug: string }> }) {
   const router = useRouter();
@@ -20,6 +21,14 @@ export default function CertificatePage({ params }: { params: Promise<{ slug: st
   useEffect(() => {
     const fetchCourse = async () => {
       setLoading(true);
+      
+      const staticMatch = staticModules.find(m => m.slug === slug);
+      if (staticMatch) {
+        setCourse(staticMatch);
+        setLoading(false);
+        return;
+      }
+
       const { data, error } = await supabase
         .from("academy_trainings")
         .select("*")

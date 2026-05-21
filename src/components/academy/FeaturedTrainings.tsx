@@ -4,53 +4,24 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Calendar, Clock, MapPin, ArrowRight, Tag } from "lucide-react";
 import Link from "next/link";
+import { staticModules } from "../../lib/academyHelpers";
 
 const FeaturedTrainings: React.FC = () => {
-  // Mockup data for trainings
-  const trainings = [
-    {
-      id: "1",
-      slug: "gouvernance-sanitaire-afrique",
-      title: "Gouvernance Sanitaire et Leadership en Afrique",
-      short_description: "Un programme intensif pour les décideurs souhaitant transformer les politiques de santé publique.",
-      date: "15 Juin 2026",
-      time: "09:00 - 17:00",
-      location: "Cotonou / Hybride",
-      price: "250.000",
-      currency: "XOF",
-      format: "Hybride",
-      image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80",
-      category: "Gouvernance"
-    },
-    {
-      id: "2",
-      slug: "sante-digitale-interoperabilite",
-      title: "Santé Digitale et Interopérabilité des Systèmes",
-      short_description: "Maîtrisez les standards DHIS2 et l'intégration des dossiers patients informatisés.",
-      date: "02 Juillet 2026",
-      time: "14:00 - 18:00",
-      location: "En ligne",
-      price: "150.000",
-      currency: "XOF",
-      format: "En ligne",
-      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80",
-      category: "Digital"
-    },
-    {
-      id: "3",
-      slug: "regulation-pharmaceutique-avancee",
-      title: "Régulation Pharmaceutique et Assurance Qualité",
-      short_description: "Expertise sur les cadres réglementaires et l'homologation des produits de santé.",
-      date: "20 Juillet 2026",
-      time: "09:00 - 16:00",
-      location: "Dakar / Présentiel",
-      price: "350.000",
-      currency: "XOF",
-      format: "Présentiel",
-      image: "https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&q=80",
-      category: "Pharma"
-    }
-  ];
+  // Select 3 premium modules from the staticModules catalogue
+  const trainings = staticModules.slice(0, 3).map((m) => ({
+    id: m.id,
+    slug: m.slug,
+    title: m.title,
+    short_description: m.short_description,
+    date: m.date,
+    time: "24h/7 Asynchrone",
+    location: m.location,
+    price: parseInt(m.price).toLocaleString('fr-FR'),
+    currency: m.currency,
+    format: "eLearning",
+    image: m.image_url,
+    category: m.category
+  }));
 
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

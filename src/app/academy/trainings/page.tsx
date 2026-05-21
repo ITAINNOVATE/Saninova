@@ -19,41 +19,8 @@ export default function TrainingsCatalog() {
   const [loading, setLoading] = useState(true);
 
   React.useEffect(() => {
-    const fetchTrainings = async () => {
-      setLoading(true);
-      const { data, error } = await supabase
-        .from("academy_trainings")
-        .select("*")
-        .eq("status", "published")
-        .order("created_at", { ascending: false });
-
-      const dbCourses = data || [];
-      
-      // Combine database courses and the 87 certification modules
-      setTrainings([...dbCourses, ...staticModules]);
-      setLoading(false);
-    };
-    
-    fetchTrainings();
-
-    const channel = supabase
-      .channel("academy_trainings_changes")
-      .on(
-        "postgres_changes",
-        {
-          event: "*",
-          schema: "public",
-          table: "academy_trainings",
-        },
-        () => {
-          fetchTrainings();
-        }
-      )
-      .subscribe();
-
-    return () => {
-      supabase.removeChannel(channel);
-    };
+    setTrainings(staticModules);
+    setLoading(false);
   }, []);
 
   const categories = [

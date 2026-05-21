@@ -32,21 +32,7 @@ export default function StudentPortal() {
 
     const fetchCourses = async () => {
       setLoading(true);
-      let dbCourses: any[] = [];
-      try {
-        const { data } = await supabase
-          .from("academy_trainings")
-          .select("*")
-          .eq("status", "published")
-          .order("created_at", { ascending: false });
-        if (data) {
-          dbCourses = data;
-        }
-      } catch (err) {
-        console.error("Error fetching courses:", err);
-      }
-
-      const allCourses = [...dbCourses, ...staticModules];
+      const allCourses = staticModules;
       setCourses(allCourses);
       
       // Fetch progress states and paid states from local storage for each course
@@ -63,12 +49,7 @@ export default function StudentPortal() {
             console.error(e);
           }
         } else {
-          // Set initial mock progress for presentation if empty
-          if (c.slug === "logistique-medicale-dernier-kilometre") {
-            loadedProgress[c.slug] = { percent: 50, completed: { "log-c1": true }, quizPassed: false };
-          } else {
-            loadedProgress[c.slug] = { percent: 0, completed: {}, quizPassed: false };
-          }
+          loadedProgress[c.slug] = { percent: 0, completed: {}, quizPassed: false };
         }
 
         // Payment status
