@@ -9,6 +9,17 @@ export function slugify(text: string): string {
     .replace(/(^-|-$)/g, "");
 }
 
+export function formatELearningDuration(durationText: string): string {
+  if (!durationText) return "10 heures de cours";
+  const match = durationText.match(/(\d+)\s*jour/i);
+  if (match) {
+    const days = parseInt(match[1], 10);
+    const hours = days * 5;
+    return `${hours} heures de cours`;
+  }
+  return durationText;
+}
+
 export const mapAcademyToCategory = (id: string): string => {
   switch (id) {
     case "supply-chain":
@@ -64,7 +75,7 @@ export const staticModules = certificationsData.flatMap((academy) => {
         image_url: getAcademyImage(academy.id),
         date: "Disponible immédiatement",
         location: "En ligne (eLearning)",
-        duration: mod.duration,
+        duration: formatELearningDuration(mod.duration),
         certificate: "Certificat de Module SaniNova",
         language: "Français",
         objectives: mod.subModules?.map(sub => sub.title) || ["Maîtriser les concepts clés du module", "Appliquer les meilleures pratiques professionnelles"],
