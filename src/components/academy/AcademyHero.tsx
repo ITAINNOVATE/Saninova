@@ -52,7 +52,7 @@ const AcademyHero: React.FC = () => {
               SaniNova Academy
             </span>
             
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-montserrat font-black text-white leading-[1.1] mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-black text-white leading-[1.1] mb-6">
               {t.academy.title}
             </h1>
             
