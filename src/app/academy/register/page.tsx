@@ -100,7 +100,6 @@ function RegisterContent() {
     } else {
       localStorage.removeItem("registered_training_slug");
     }
-    localStorage.setItem("logged_in", "true");
     
     setIsSubmitting(false);
     setIsSuccess(true);
@@ -138,36 +137,19 @@ function RegisterContent() {
                 <ShieldCheck className="w-10 h-10" />
               </div>
               <h2 className="text-3xl font-montserrat font-black text-white mb-4">
-                Compte Créé !
+                Félicitations !
               </h2>
-              {localStorage.getItem("registered_training_slug") ? (
-                <p className="text-white/60 text-sm max-w-md mx-auto mb-10 leading-relaxed font-poppins">
-                  Votre compte étudiant a été créé avec succès. Pour commencer à apprendre et déverrouiller l'accès complet au lecteur de cours, veuillez finaliser le règlement de la formation sélectionnée.
-                </p>
-              ) : (
-                <p className="text-white/60 text-sm max-w-md mx-auto mb-10 leading-relaxed font-poppins">
-                  Votre compte a été créé avec succès. Vous pouvez dès à présent accéder à votre portail d'apprentissage pour découvrir nos modules.
-                </p>
-              )}
+              <p className="text-white/60 text-sm max-w-md mx-auto mb-10 leading-relaxed font-poppins">
+                Votre compte a été créé avec succès. Nous sommes ravis de vous compter parmi nous. Veuillez cliquer sur le bouton ci-dessous pour vous connecter à l'aide de vos nouveaux identifiants.
+              </p>
 
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-                {localStorage.getItem("registered_training_slug") && (
-                  <button
-                    onClick={() => {
-                      const slug = localStorage.getItem("registered_training_slug") || "";
-                      router.push(`/academy/payment?training=${slug}`);
-                    }}
-                    className="px-8 py-4.5 bg-orange text-white rounded-2xl font-black text-sm shadow-xl shadow-orange/25 hover:scale-[1.03] transition-all flex items-center justify-center gap-2 cursor-pointer"
-                  >
-                    Procéder au paiement <CreditCard className="w-4.5 h-4.5" />
-                  </button>
-                )}
                 <button
-                  onClick={() => router.push("/academy/portal")}
-                  className="px-8 py-4.5 bg-white/5 text-white hover:bg-white/10 rounded-2xl font-black text-sm border border-white/5 transition-all flex items-center justify-center gap-2 cursor-pointer"
+                  onClick={() => router.push("/academy/login")}
+                  className="px-8 py-4.5 bg-orange text-white hover:scale-105 rounded-2xl font-black text-sm shadow-xl shadow-orange/20 transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  Accéder à mon espace <ChevronRight className="w-4 h-4" />
+                  Se connecter à mon compte <ChevronRight className="w-4 h-4" />
                 </button>
               </div>
             </motion.div>
