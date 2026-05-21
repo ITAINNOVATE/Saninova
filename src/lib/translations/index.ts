@@ -488,7 +488,7 @@ export const translations = {
           desc: "Développement des compétences stratégiques à travers nos 6 académies spécialisées : Supply Chain, Réglementation, Santé Digitale, Leadership & Gouvernance, Santé Publique, et Business Pharmaceutique.",
         },
         {
-          title: "Études & évaluations",
+          title: "Etude, Recherche & Evaluation",
           desc: "Évaluations externes de mi-parcours ou finales de programmes financés par les bailleurs internationaux, audits d'infrastructures de soins, enquêtes d'envergure nationale et modélisation de tendances de santé publique.",
         },
       ],
