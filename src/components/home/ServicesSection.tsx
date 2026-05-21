@@ -3,7 +3,7 @@
 import React from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import { motion } from "framer-motion";
-import { Briefcase, HelpCircle, Laptop, GraduationCap, BarChart } from "lucide-react";
+import { Briefcase, HelpCircle, Laptop, GraduationCap, BarChart, Megaphone } from "lucide-react";
 
 import Link from "next/link";
 
@@ -16,6 +16,7 @@ export const ServicesSection: React.FC = () => {
     <Laptop className="w-6 h-6" />,
     <GraduationCap className="w-6 h-6" />,
     <BarChart className="w-6 h-6" />,
+    <Megaphone className="w-6 h-6" />,
   ];
 
   const containerVariants = {
