@@ -491,6 +491,10 @@ export const translations = {
           title: "Etude, Recherche & Evaluation",
           desc: "Évaluations externes de mi-parcours ou finales de programmes financés par les bailleurs internationaux, audits d'infrastructures de soins, enquêtes d'envergure nationale et modélisation de tendances de santé publique.",
         },
+        {
+          title: "Gestion de Projets & Plaidoyer",
+          desc: "Recherche de financement, gestion des projets, représentation, plaidoyers institutionnels, communication institutionnelle et événementielle.",
+        },
       ],
     },
     contactPage: {
@@ -1158,8 +1162,12 @@ export const translations = {
           desc: "Strategic skills development through our 6 specialized academies: Supply Chain, Regulation, Digital Health, Leadership & Governance, Public Health, and Pharmaceutical Business.",
         },
         {
-          title: "Studies & Evaluations",
+          title: "Study, Research & Evaluation",
           desc: "External mid-term or final evaluations of donor-funded health programs, healthcare infrastructure audits, nationwide surveys, and public health trend modeling.",
+        },
+        {
+          title: "Project Management & Advocacy",
+          desc: "Funding research, project management, representation, institutional advocacy, and institutional & event communication.",
         },
       ],
     },
