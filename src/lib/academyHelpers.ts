@@ -58,8 +58,8 @@ export const getAcademyImage = (id: string): string => {
   }
 };
 
-// Flatten and map the 87 modules
-export const staticModules = certificationsData.flatMap((academy) => {
+// Flatten and map the modules
+const allModules = certificationsData.flatMap((academy) => {
   return academy.certifications.flatMap((cert) => {
     return cert.modules.map((mod, modIdx) => {
       const slug = slugify(mod.name);
@@ -100,3 +100,7 @@ export const staticModules = certificationsData.flatMap((academy) => {
     });
   });
 });
+
+export const staticModules = allModules.filter((mod, index, self) =>
+  index === self.findIndex((t) => t.slug === mod.slug)
+);
