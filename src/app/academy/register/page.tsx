@@ -26,7 +26,7 @@ const registrationSchema = z.object({
   role: z.string().min(2, "Fonction requise"),
   country: z.string().min(2, "Pays requis"),
   city: z.string().min(2, "Ville requise"),
-  training: z.string().min(1, "Veuillez choisir une formation"),
+  training: z.string().optional(),
   referral_source: z.string().optional(),
   invoice_required: z.boolean().default(false),
   notes: z.string().optional()
@@ -87,25 +87,31 @@ function RegisterContent() {
     
     // Find dynamic slug mapping
     let resolvedSlug = "";
-    const staticMatch = staticModules.find(m => m.title === data.training || m.slug === data.training);
-    if (staticMatch) {
-      resolvedSlug = staticMatch.slug;
-    } else {
-      const mapping: Record<string, string> = {
-        "gouvernance": "gouvernance-sanitaire-afrique",
-        "digital": "sante-digitale-interoperabilite",
-        "pharma": "regulation-pharmaceutique-avancee"
-      };
-      resolvedSlug = mapping[data.training] || data.training;
+    if (data.training) {
+      const staticMatch = staticModules.find(m => m.title === data.training || m.slug === data.training);
+      if (staticMatch) {
+        resolvedSlug = staticMatch.slug;
+      } else {
+        const mapping: Record<string, string> = {
+          "gouvernance": "gouvernance-sanitaire-afrique",
+          "digital": "sante-digitale-interoperabilite",
+          "pharma": "regulation-pharmaceutique-avancee"
+        };
+        resolvedSlug = mapping[data.training] || data.training;
+      }
     }
 
     // Save in localStorage
     localStorage.setItem("registered_fullname", data.fullname);
     localStorage.setItem("registered_email", data.email);
     localStorage.setItem("registered_password", tempPassword);
-    localStorage.setItem("registered_training_slug", resolvedSlug);
+    if (resolvedSlug) {
+      localStorage.setItem("registered_training_slug", resolvedSlug);
+      localStorage.setItem("enrolled_slugs", JSON.stringify([resolvedSlug]));
+    } else {
+      localStorage.removeItem("registered_training_slug");
+    }
     localStorage.setItem("logged_in", "true");
-    localStorage.setItem("enrolled_slugs", JSON.stringify([resolvedSlug]));
     
     setIsSubmitting(false);
     setCredentials({ email: data.email, pass: tempPassword });
@@ -160,9 +166,15 @@ function RegisterContent() {
               <h2 className="text-3xl font-montserrat font-black text-white mb-4">
                 Inscription Enregistrée !
               </h2>
-              <p className="text-white/60 text-sm max-w-md mx-auto mb-8 leading-relaxed font-poppins">
-                Votre compte étudiant a été créé avec succès. Pour commencer à apprendre et déverrouiller l'accès complet au lecteur de cours, veuillez finaliser le règlement de vos frais de formation.
-              </p>
+              {localStorage.getItem("registered_training_slug") ? (
+                <p className="text-white/60 text-sm max-w-md mx-auto mb-8 leading-relaxed font-poppins">
+                  Votre compte étudiant a été créé avec succès. Pour commencer à apprendre et déverrouiller l'accès complet au lecteur de cours, veuillez finaliser le règlement de vos frais de formation.
+                </p>
+              ) : (
+                <p className="text-white/60 text-sm max-w-md mx-auto mb-8 leading-relaxed font-poppins">
+                  Votre compte étudiant a été créé avec succès. Vous pouvez dès à présent accéder à votre portail d'apprentissage pour découvrir nos modules.
+                </p>
+              )}
 
               {/* Credentials Card */}
               <div className="max-w-md mx-auto bg-dark/50 border border-white/5 rounded-3xl p-6 mb-10 text-left relative overflow-hidden">
@@ -184,15 +196,17 @@ function RegisterContent() {
 
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-                <button
-                  onClick={() => {
-                    const slug = localStorage.getItem("registered_training_slug") || "";
-                    router.push(`/academy/payment?training=${slug}`);
-                  }}
-                  className="px-8 py-4.5 bg-orange text-white rounded-2xl font-black text-sm shadow-xl shadow-orange/25 hover:scale-[1.03] transition-all flex items-center justify-center gap-2 cursor-pointer"
-                >
-                  Procéder au paiement <CreditCard className="w-4.5 h-4.5" />
-                </button>
+                {localStorage.getItem("registered_training_slug") && (
+                  <button
+                    onClick={() => {
+                      const slug = localStorage.getItem("registered_training_slug") || "";
+                      router.push(`/academy/payment?training=${slug}`);
+                    }}
+                    className="px-8 py-4.5 bg-orange text-white rounded-2xl font-black text-sm shadow-xl shadow-orange/25 hover:scale-[1.03] transition-all flex items-center justify-center gap-2 cursor-pointer"
+                  >
+                    Procéder au paiement <CreditCard className="w-4.5 h-4.5" />
+                  </button>
+                )}
                 <button
                   onClick={() => router.push("/academy/portal")}
                   className="px-8 py-4.5 bg-white/5 text-white hover:bg-white/10 rounded-2xl font-black text-sm border border-white/5 transition-all flex items-center justify-center gap-2 cursor-pointer"
@@ -326,7 +340,7 @@ function RegisterContent() {
                         ) : (
                           <>
                             <select {...register("training")} className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-4 text-white focus:border-orange/50 focus:bg-white/10 transition-all outline-none appearance-none cursor-pointer">
-                              <option value="" className="bg-dark text-white/30">Choisir une formation...</option>
+                              <option value="" className="bg-dark text-white/30">Choisir une formation (Optionnel)...</option>
                               {certificationsData.map((ac) => (
                                 <optgroup key={ac.id} label={ac.title} className="bg-dark text-orange font-bold uppercase tracking-widest text-[10px]">
                                   {ac.certifications.flatMap(c => c.modules).map((mod, idx) => (
