@@ -104,6 +104,8 @@ function RegisterContent() {
     localStorage.setItem("registered_email", data.email);
     localStorage.setItem("registered_password", tempPassword);
     localStorage.setItem("registered_training_slug", resolvedSlug);
+    localStorage.setItem("logged_in", "true");
+    localStorage.setItem("enrolled_slugs", JSON.stringify([resolvedSlug]));
     
     setIsSubmitting(false);
     setCredentials({ email: data.email, pass: tempPassword });
@@ -316,13 +318,10 @@ function RegisterContent() {
                         ) : trainingSlug ? (
                           <div className="w-full bg-white/5 border border-orange/40 rounded-2xl py-4 px-6 text-white font-bold flex items-center justify-between">
                             <span>
-                              {trainingSlug === "gouvernance-sanitaire-afrique" && "Gouvernance Sanitaire et Leadership"}
-                              {trainingSlug === "sante-digitale-interoperabilite" && "Santé Digitale et Interopérabilité"}
-                              {trainingSlug === "regulation-pharmaceutique-avancee" && "Régulation Pharmaceutique"}
-                              {!["gouvernance-sanitaire-afrique", "sante-digitale-interoperabilite", "regulation-pharmaceutique-avancee"].includes(trainingSlug) && trainingSlug}
+                              {staticModules.find(m => m.slug === trainingSlug)?.title || trainingSlug}
                             </span>
                             <span className="text-[10px] bg-orange/20 text-orange px-2 py-1 rounded-md uppercase font-black tracking-wider border border-orange/20">Sélectionné</span>
-                            <input type="hidden" {...register("training")} />
+                            <input type="hidden" value={staticModules.find(m => m.slug === trainingSlug)?.title || trainingSlug} {...register("training")} />
                           </div>
                         ) : (
                           <>
@@ -330,9 +329,9 @@ function RegisterContent() {
                               <option value="" className="bg-dark text-white/30">Choisir une formation...</option>
                               {certificationsData.map((ac) => (
                                 <optgroup key={ac.id} label={ac.title} className="bg-dark text-orange font-bold uppercase tracking-widest text-[10px]">
-                                  {ac.certifications.map((c) => (
-                                    <option key={c.name} value={c.name} className="bg-dark text-white font-medium normal-case text-sm">
-                                      {c.name}
+                                  {ac.certifications.flatMap(c => c.modules).map((mod, idx) => (
+                                    <option key={`${ac.id}-mod-${idx}`} value={mod.name} className="bg-dark text-white font-medium normal-case text-sm">
+                                      {mod.name}
                                     </option>
                                   ))}
                                 </optgroup>
@@ -393,6 +392,11 @@ function RegisterContent() {
                 )}
               </div>
             </form>
+          )}
+          {!credentials && (
+            <p className="mt-8 text-center text-xs font-semibold text-white/30 font-poppins">
+              Déjà inscrit ? <Link href="/academy/login" className="text-orange hover:underline font-bold">Se connecter</Link>
+            </p>
           )}
         </div>
 
