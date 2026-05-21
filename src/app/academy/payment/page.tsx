@@ -16,7 +16,7 @@ function PaymentContent() {
   const searchParams = useSearchParams();
   const trainingSlug = searchParams.get("training") || "";
   
-  const [selectedMethod, setSelectedMethod] = useState("card");
+  const [selectedMethod, setSelectedMethod] = useState("fedapay");
   const [isProcessing, setIsProcessing] = useState(false);
   const [participantName, setParticipantName] = useState("Jean Dupont");
   const [courseDetails, setCourseDetails] = useState({
@@ -99,10 +99,8 @@ function PaymentContent() {
   };
 
   const paymentMethods = [
-    { id: "mobile_money", name: "Mobile Money", provider: "MTN / Moov", icon: <Smartphone className="w-8 h-8" />, color: "bg-yellow-500" },
-    { id: "card", name: "Carte Bancaire", provider: "Visa / Mastercard", icon: <CreditCard className="w-8 h-8" />, color: "bg-blue-600" },
-    { id: "flutterwave", name: "Flutterwave", provider: "Paiement International", icon: <ShieldCheck className="w-8 h-8" />, color: "bg-orange" },
-    { id: "paypal", name: "PayPal", provider: "Compte PayPal", icon: <Lock className="w-8 h-8" />, color: "bg-indigo-600" },
+    { id: "fedapay", name: "Fedapay", provider: "Avec Mobile Money", icon: <Smartphone className="w-8 h-8" />, color: "bg-blue-600" },
+    { id: "izichangepay", name: "Izichangepay", provider: "Par Cryptomonnaie", icon: <ShieldCheck className="w-8 h-8" />, color: "bg-orange" },
   ];
 
   return (
