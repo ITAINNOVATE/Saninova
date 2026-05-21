@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import QuizModule from "./QuizModule";
+import { staticModules, slugify } from "../../lib/academyHelpers";
 
 interface Chapter {
   id: string;
@@ -211,6 +212,77 @@ L'entreposage des produits de santé doit strictement respecter les directives d
   ]
 };
 
+const getDynamicSyllabus = (modSlug: string): Module[] => {
+  const match = staticModules.find(m => m.slug === modSlug);
+  if (!match) return [];
+
+  return match.program.map((subMod: any, subIdx: number) => {
+    const lessonNames = subMod.details.split(",").map((s: string) => s.trim());
+    
+    const chapters: Chapter[] = lessonNames.map((lessonName: string, lessonIdx: number) => {
+      const lessonId = `dynamic-c-${subIdx}-${lessonIdx}`;
+      const types: ("video" | "text" | "slides")[] = ["video", "text", "slides"];
+      const type = types[lessonIdx % 3];
+      
+      const content = `### ${lessonName}
+      
+Bienvenue dans ce cours interactif SaniNova sur la thématique : **${lessonName}**. Ce cours fait partie du programme officiel **${match.title}**, intégré au cursus d'excellence de la certification **${match.parentCertification}**.
+
+---
+
+#### 🎯 Objectifs pédagogiques de cette leçon :
+1. Assimiler les concepts fondamentaux de : *${lessonName}*.
+2. Comprendre les implications pratiques sur le système de santé.
+3. Maîtriser les outils et méthodologies recommandés pour une mise en œuvre efficace.
+4. Être capable d'identifier et de résoudre les goulots d'étranglement opérationnels.
+
+---
+
+#### 📖 Synthèse du cours & Concepts Clés :
+
+##### 1. Fondations Théoriques
+Chaque professionnel de santé doit comprendre que la performance globale de la chaîne d'approvisionnement ou du système digital dépend de la rigueur appliquée à ce niveau. La théorie nous enseigne que la standardisation des processus est le premier vecteur de la qualité.
+
+##### 2. Méthodologie et Application Pratique
+Pour implémenter efficacement ces notions sur le terrain :
+- **Analyse de situation** : cartographier les forces, faiblesses, opportunités et menaces (SWOT).
+- **Planification stratégique** : définir des indicateurs clés de performance (KPI) mesurables et réalistes.
+- **Exécution et contrôle** : instaurer des revues périodiques pour valider l'alignement avec les bonnes pratiques internationales.
+
+##### 3. Recommandations de SaniNova Academy
+> "L'excellence ne réside pas dans la complexité des outils, mais dans la constance et la rigueur de leur application quotidienne."
+Nous vous recommandons de concevoir des aides-mémoires simples (SOP) pour vos équipes opérationnelles afin de pérenniser les acquis de cette formation.
+
+---
+
+#### 🛠️ Exercice pratique & Réflexion :
+*Prenez 5 minutes pour réfléchir à la façon dont vous pouvez transposer les notions étudiées aujourd'hui au sein de votre établissement ou de votre département de santé.*
+`;
+
+      const resources = [
+        { name: `Guide_Pratique_${slugify(lessonName)}.pdf`, type: "PDF", size: "2.8 MB" },
+        { name: "Fiche_de_Synthese_SaniNova.docx", type: "DOCX", size: "1.2 MB" }
+      ];
+
+      return {
+        id: lessonId,
+        title: lessonName,
+        type: type,
+        duration: "10-15 min",
+        content: content,
+        videoUrl: type === "video" ? "https://www.w3schools.com/html/mov_bbb.mp4" : undefined,
+        resources: resources
+      };
+    });
+
+    return {
+      id: `dynamic-m-${subIdx}`,
+      title: `${subMod.day} : ${subMod.title}`,
+      chapters: chapters
+    };
+  });
+};
+
 export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onCourseCompleted }: LMSPlayerProps) {
   const [syllabus, setSyllabus] = useState<Module[]>([]);
   const [activeChapterId, setActiveChapterId] = useState("");
@@ -220,11 +292,19 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
 
   // Load syllabus based on slug
   useEffect(() => {
-    let key = "gouvernance-sanitaire-afrique";
-    if (courseSlug.includes("supply") || courseSlug.includes("logistique")) key = "logistique-medicale-dernier-kilometre";
-    else if (courseSlug.includes("digital") || courseSlug.includes("interoperabilite")) key = "sante-digitale-interoperabilite";
+    const dynamicSyllabus = getDynamicSyllabus(courseSlug);
     
-    const modules = mockCoursesSyllabus[key] || mockCoursesSyllabus["gouvernance-sanitaire-afrique"];
+    let modules: Module[] = [];
+    if (dynamicSyllabus.length > 0) {
+      modules = dynamicSyllabus;
+    } else {
+      let key = "gouvernance-sanitaire-afrique";
+      if (courseSlug.includes("supply") || courseSlug.includes("logistique")) key = "logistique-medicale-dernier-kilometre";
+      else if (courseSlug.includes("digital") || courseSlug.includes("interoperabilite")) key = "sante-digitale-interoperabilite";
+      
+      modules = mockCoursesSyllabus[key] || mockCoursesSyllabus["gouvernance-sanitaire-afrique"];
+    }
+    
     setSyllabus(modules);
 
     if (modules.length > 0 && modules[0].chapters.length > 0) {

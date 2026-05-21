@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { supabase } from "../../../../../lib/supabase";
 import LMSPlayer from "../../../../../components/academy/LMSPlayer";
 import PageHero from "../../../../../components/ui/PageHero";
+import { staticModules } from "../../../../../lib/academyHelpers";
 
 export default function CourseLMSPlayerPage({ params }: { params: Promise<{ slug: string }> }) {
   const router = useRouter();
@@ -19,6 +20,14 @@ export default function CourseLMSPlayerPage({ params }: { params: Promise<{ slug
   useEffect(() => {
     const fetchCourse = async () => {
       setLoading(true);
+
+      const staticMatch = staticModules.find(m => m.slug === slug);
+      if (staticMatch) {
+        setCourse(staticMatch);
+        setLoading(false);
+        return;
+      }
+
       const { data, error } = await supabase
         .from("academy_trainings")
         .select("*")

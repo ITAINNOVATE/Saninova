@@ -99,10 +99,9 @@ export const Navbar: React.FC = () => {
 
   const academyItems = [
     { label: t.academy.nav.home, href: "/academy" },
+    { label: t.academy.nav.announcements, href: "/academy/announcements" },
     { label: t.academy.nav.trainings, href: "/academy/trainings" },
     { label: t.academy.nav.certifications, href: "/academy/certifications" },
-    { label: t.academy.nav.announcements, href: "/academy/announcements" },
-    { label: t.academy.nav.events, href: "/academy/events" },
   ];
 
   const closeMobile = () => setIsMobileMenuOpen(false);

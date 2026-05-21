@@ -12,6 +12,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 import { supabase } from "../../../../lib/supabase";
+import { staticModules } from "../../../../lib/academyHelpers";
 
 export default function TrainingDetail({ params }: { params: Promise<{ slug: string }> }) {
   const router = useRouter();
@@ -24,6 +25,14 @@ export default function TrainingDetail({ params }: { params: Promise<{ slug: str
   React.useEffect(() => {
     const fetchTraining = async () => {
       setLoading(true);
+      
+      const staticMatch = staticModules.find(m => m.slug === slug);
+      if (staticMatch) {
+        setTraining(staticMatch);
+        setLoading(false);
+        return;
+      }
+
       const { data, error } = await supabase
         .from("academy_trainings")
         .select("*")
@@ -92,7 +101,9 @@ export default function TrainingDetail({ params }: { params: Promise<{ slug: str
                   <div>
                     <p className="text-[10px] uppercase font-bold text-white/40 tracking-wider">Date</p>
                     <p className="text-white font-bold text-sm">
-                      {training.date ? new Date(training.date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }) : "---"}
+                      {training.isStaticModule 
+                        ? training.date 
+                        : (training.date ? new Date(training.date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }) : "---")}
                     </p>
                   </div>
                 </div>
@@ -141,16 +152,16 @@ export default function TrainingDetail({ params }: { params: Promise<{ slug: str
                 <div className="space-y-4 mb-8">
                   <div className="flex items-center justify-between py-3 border-b border-dark/5 text-sm">
                     <span className="text-dark/50 font-medium">Format</span>
-                    <span className="text-dark font-bold">Hybride</span>
+                    <span className="text-dark font-bold">{training.isStaticModule ? "100% en ligne (eLearning)" : "Hybride"}</span>
                   </div>
                   <div className="flex items-center justify-between py-3 border-b border-dark/5 text-sm">
                     <span className="text-dark/50 font-medium">Durée</span>
                     <span className="text-dark font-bold">{training.duration}</span>
                   </div>
                   <div className="flex items-center justify-between py-3 border-b border-dark/5 text-sm">
-                    <span className="text-dark/50 font-medium">Date limite</span>
+                    <span className="text-dark/50 font-medium">{training.isStaticModule ? "Accès" : "Date limite"}</span>
                     <span className="text-orange font-black">
-                      {training.deadline ? new Date(training.deadline).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }) : "---"}
+                      {training.isStaticModule ? "À vie (24h/7)" : (training.deadline ? new Date(training.deadline).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }) : "---")}
                     </span>
                   </div>
                 </div>

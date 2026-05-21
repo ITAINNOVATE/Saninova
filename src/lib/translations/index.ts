@@ -27,10 +27,9 @@ export const translations = {
       ctaRegister: "S’inscrire maintenant",
       nav: {
         home: "Accueil Académie",
-        trainings: "Formations",
+        trainings: "eLearning",
         certifications: "Certifications",
         announcements: "Annonces",
-        events: "Événements",
         faq: "FAQ"
       },
       stats: {
@@ -698,10 +697,9 @@ export const translations = {
       ctaRegister: "Register Now",
       nav: {
         home: "Academy Home",
-        trainings: "Trainings",
+        trainings: "eLearning",
         certifications: "Certifications",
         announcements: "Announcements",
-        events: "Events",
         faq: "FAQ"
       },
       stats: {

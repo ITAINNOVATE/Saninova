@@ -1,180 +1,20 @@
 "use client";
 
-import React, { useState } from "react";
-import { 
-  Calendar as CalendarIcon, MapPin, 
-  Clock, LayoutGrid, List, Search,
-  ChevronLeft, ChevronRight, Video, ArrowLeft
-} from "lucide-react";
-import { motion } from "framer-motion";
-import { useLanguage } from "../../../context/LanguageContext";
-import Link from "next/link";
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import PageHero from "../../../components/ui/PageHero";
-
-import { supabase } from "../../../lib/supabase";
 
 export default function AcademyEvents() {
   const router = useRouter();
-  const { t, locale } = useLanguage();
-  const [viewMode, setViewMode] = useState("grid");
-  const [events, setEvents] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
 
-  React.useEffect(() => {
-    const fetchEvents = async () => {
-      setLoading(true);
-      const { data, error } = await supabase
-        .from("academy_events")
-        .select("*")
-        .order("date", { ascending: true });
-
-      if (data) setEvents(data);
-      setLoading(false);
-    };
-    fetchEvents();
-  }, []);
+  useEffect(() => {
+    router.replace("/academy/announcements");
+  }, [router]);
 
   return (
-    <>
-      <PageHero 
-        title={locale === "fr" ? "Événements" : "Events"}
-        subtitle={locale === "fr" ? "Rejoignez nos symposiums et ateliers pour échanger avec les leaders." : "Join our symposiums and workshops to connect with leaders."}
-        backgroundImages={[
-          "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80",
-          "https://images.unsplash.com/photo-1475721027187-4024733923f9?auto=format&fit=crop&q=80",
-          "https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?auto=format&fit=crop&q=80"
-        ]}
-      />
-      <div className="bg-dark pb-24">
-        <div className="max-w-7xl mx-auto px-6 -mt-12 relative z-20">
-          <div className="mb-8">
-            <Link 
-              href="/academy"
-              className="inline-flex items-center text-white/60 hover:text-orange font-bold text-sm uppercase tracking-widest transition-all gap-2"
-            >
-              <ArrowLeft className="w-5 h-5" /> {t.common?.back || "Retour"}
-            </Link>
-          </div>
-          {/* Header */}
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-16">
-            <div className="text-center md:text-left">
-              <span className="text-orange font-bold uppercase tracking-widest text-sm mb-2 block">SaniNova Academy Events</span>
-            </div>
-            
-            <div className="flex bg-white/5 p-1.5 rounded-2xl border border-white/10">
-              <button 
-                onClick={() => setViewMode("grid")}
-                className={`p-3 rounded-xl transition-all ${viewMode === "grid" ? "bg-orange text-white shadow-lg" : "text-white/40 hover:text-white"}`}
-              >
-                <LayoutGrid className="w-6 h-6" />
-              </button>
-              <button 
-                onClick={() => setViewMode("list")}
-                className={`p-3 rounded-xl transition-all ${viewMode === "list" ? "bg-orange text-white shadow-lg" : "text-white/40 hover:text-white"}`}
-              >
-                <List className="w-6 h-6" />
-              </button>
-            </div>
-          </div>
-
-        {/* View Content */}
-        {viewMode === "grid" ? (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {events.map((event, i) => (
-              <motion.div
-                key={event.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                className="group bg-[#0F1D33] rounded-[40px] overflow-hidden border border-white/5 hover:border-accent/30 transition-all duration-500 flex flex-col h-full"
-              >
-                <Link href={`/academy/events/${event.id}`} className="relative aspect-square overflow-hidden block">
-                  <img src={event.image} alt={event.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                  <div className="absolute top-4 left-4">
-                    <span className={`px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest flex items-center gap-2 ${event.type === "En ligne" ? "bg-indigo-600 text-white" : "bg-accent text-white"}`}>
-                      {event.type === "En ligne" ? <Video className="w-3 h-3" /> : <MapPin className="w-3 h-3" />}
-                      {event.type}
-                    </span>
-                  </div>
-                </Link>
-                <div className="p-8 flex flex-col flex-grow">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex flex-col items-center justify-center">
-                      <span className="text-orange font-black text-xl leading-none">
-                        {event.date ? new Date(event.date).getDate() : "--"}
-                      </span>
-                      <span className="text-white/40 text-[10px] font-bold uppercase">
-                        {event.date ? new Date(event.date).toLocaleDateString('fr-FR', { month: 'short' }) : "---"}
-                      </span>
-                    </div>
-                    <div>
-                      <p className="text-white/30 text-xs font-bold uppercase tracking-widest flex items-center gap-2">
-                        <Clock className="w-3.5 h-3.5" /> {event.time}
-                      </p>
-                      <Link href={`/academy/events/${event.id}`}>
-                        <h3 className="text-white font-bold text-xl line-clamp-1 group-hover:text-orange transition-colors">
-                          {event.title}
-                        </h3>
-                      </Link>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3 text-white/50 text-sm font-medium mb-8">
-                    <MapPin className="w-5 h-5 text-accent flex-shrink-0" />
-                    <span>{event.venue}</span>
-                  </div>
-                  <Link 
-                    href="/academy/register"
-                    className="mt-auto w-full py-4 bg-white/5 hover:bg-white text-white hover:text-dark rounded-2xl font-black transition-all border border-white/10 text-center"
-                  >
-                    S'inscrire
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        ) : (
-          <div className="space-y-6">
-            {events.map((event, i) => (
-              <motion.div
-                key={event.id}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: i * 0.1 }}
-                className="group bg-[#0F1D33] rounded-[32px] p-6 border border-white/5 flex flex-col md:flex-row items-center gap-8 hover:bg-white/10 transition-all"
-              >
-                <Link href={`/academy/events/${event.id}`} className="w-full md:w-48 h-32 rounded-2xl overflow-hidden flex-shrink-0 block">
-                  <img src={event.image} alt={event.title} className="w-full h-full object-cover" />
-                </Link>
-                <div className="flex-grow">
-                  <div className="flex items-center gap-3 mb-2">
-                    <span className="text-orange font-black text-sm uppercase tracking-widest">
-                      {event.date ? new Date(event.date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }) : "À définir"}
-                    </span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-white/20" />
-                    <span className="text-white/40 text-xs font-bold uppercase tracking-widest">{event.time || "---"}</span>
-                  </div>
-                  <Link href={`/academy/events/${event.id}`}>
-                    <h3 className="text-white font-montserrat font-black text-2xl mb-2">{event.title}</h3>
-                  </Link>
-                  <p className="text-white/50 text-sm flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-accent" /> {event.venue}
-                  </p>
-                </div>
-                <div className="flex-shrink-0 w-full md:w-auto">
-                  <Link 
-                    href="/academy/register"
-                    className="w-full md:w-auto px-8 py-4 bg-orange text-white rounded-2xl font-black shadow-lg shadow-orange/20 hover:scale-105 transition-all block text-center"
-                  >
-                    S'inscrire
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        )}
+    <div className="min-h-screen bg-dark flex items-center justify-center">
+      <div className="text-white font-black animate-pulse text-lg uppercase tracking-widest">
+        Redirection vers les Annonces...
       </div>
     </div>
-  </>
-);
+  );
 }
