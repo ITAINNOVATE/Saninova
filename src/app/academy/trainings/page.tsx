@@ -170,14 +170,8 @@ export default function TrainingsCatalog() {
 
                   {/* Course Card Content */}
                   <div className="p-8 flex flex-col flex-grow">
-                    {training.parentCertification && (
-                      <span className="text-[10px] font-bold text-orange uppercase tracking-wider mb-2 block line-clamp-1 bg-orange/10 px-3 py-1 rounded-lg border border-orange/15 w-fit">
-                        {training.parentCertification}
-                      </span>
-                    )}
-                    
-                    <h3 className="text-xl font-montserrat font-bold text-white mb-4 line-clamp-2 leading-tight group-hover:text-orange transition-colors">
-                      {training.title}
+                    <h3 className="text-xs md:text-sm font-bold text-orange uppercase tracking-wider mb-4 block bg-orange/10 px-4 py-2.5 rounded-xl border border-orange/15 leading-relaxed shadow-sm">
+                      Certificat en {training.title}
                     </h3>
                     
                     <p className="text-white/50 text-sm font-poppins mb-6 line-clamp-3 leading-relaxed">

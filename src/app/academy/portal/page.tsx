@@ -559,8 +559,8 @@ export default function StudentPortal() {
                                       </span>
                                     )}
                                   </div>
-                                  <h4 className="text-lg font-montserrat font-extrabold text-white mb-4 line-clamp-2 leading-tight">
-                                    {course.title}
+                                  <h4 className="text-xs md:text-sm font-bold text-orange uppercase tracking-wider mb-4 block bg-orange/10 px-4 py-2.5 rounded-xl border border-orange/15 leading-relaxed shadow-sm mt-3">
+                                    Certificat en {course.title}
                                   </h4>
                                   <p className="text-white/40 text-xs leading-relaxed mb-6 line-clamp-3">
                                     {course.short_description}
