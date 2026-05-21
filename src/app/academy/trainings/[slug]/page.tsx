@@ -21,6 +21,8 @@ export default function TrainingDetail({ params }: { params: Promise<{ slug: str
   const { t } = useLanguage();
   const [training, setTraining] = useState<any>(null);
   const [loading, setLoading] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isEnrolled, setIsEnrolled] = useState(false);
 
   React.useEffect(() => {
     const fetchTraining = async () => {
@@ -42,7 +44,24 @@ export default function TrainingDetail({ params }: { params: Promise<{ slug: str
       if (data) setTraining(data);
       setLoading(false);
     };
+
+    const checkStatus = () => {
+      const logged = localStorage.getItem("logged_in") === "true";
+      setIsLoggedIn(logged);
+      if (logged) {
+        try {
+          const enrolled = JSON.parse(localStorage.getItem("enrolled_slugs") || "[]");
+          if (enrolled.includes(slug)) {
+            setIsEnrolled(true);
+          }
+        } catch (e) {
+          console.error(e);
+        }
+      }
+    };
+
     fetchTraining();
+    checkStatus();
   }, [slug]);
 
   if (loading) return (
@@ -167,24 +186,28 @@ export default function TrainingDetail({ params }: { params: Promise<{ slug: str
                 </div>
 
                 <div className="space-y-4">
-                  <Link 
-                    href={`/academy/register?training=${training.slug}`} 
-                    className="w-full py-5 bg-primary text-white rounded-2xl font-black text-center block shadow-xl shadow-primary/20 hover:scale-[1.02] transition-all"
-                  >
-                    S'inscrire maintenant
-                  </Link>
-                  <Link 
-                    href="/academy/payment" 
-                    className="w-full py-5 bg-orange text-white rounded-2xl font-black text-center block shadow-xl shadow-orange/20 hover:scale-[1.02] transition-all"
-                  >
-                    Payer maintenant
-                  </Link>
-                  <Link 
-                    href={`/academy/portal/course/${training.slug}`} 
-                    className="w-full py-5 bg-dark text-orange border border-orange/30 hover:border-orange hover:bg-orange/5 rounded-2xl font-black text-center flex items-center justify-center gap-2 hover:scale-[1.02] transition-all uppercase tracking-wider text-xs shadow-xl shadow-orange/5"
-                  >
-                    <BookOpen className="w-4 h-4 text-orange" /> Accéder en eLearning
-                  </Link>
+                  {!isLoggedIn ? (
+                    <Link 
+                      href={`/academy/register?training=${training.slug}`} 
+                      className="w-full py-5 bg-primary text-white rounded-2xl font-black text-center block shadow-xl shadow-primary/20 hover:scale-[1.02] transition-all"
+                    >
+                      Créer un compte pour s'inscrire
+                    </Link>
+                  ) : !isEnrolled ? (
+                    <Link 
+                      href={`/academy/payment?training=${training.slug}`} 
+                      className="w-full py-5 bg-orange text-white rounded-2xl font-black text-center block shadow-xl shadow-orange/20 hover:scale-[1.02] transition-all"
+                    >
+                      Payer cette formation
+                    </Link>
+                  ) : (
+                    <Link 
+                      href={`/academy/portal/course/${training.slug}`} 
+                      className="w-full py-5 bg-dark text-orange border border-orange/30 hover:border-orange hover:bg-orange/5 rounded-2xl font-black text-center flex items-center justify-center gap-2 hover:scale-[1.02] transition-all uppercase tracking-wider text-xs shadow-xl shadow-orange/5"
+                    >
+                      <BookOpen className="w-4 h-4 text-orange" /> Accéder en eLearning
+                    </Link>
+                  )}
                 </div>
 
                 <p className="mt-6 text-center text-xs font-medium text-dark/40">
