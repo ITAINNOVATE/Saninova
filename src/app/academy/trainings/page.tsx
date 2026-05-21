@@ -45,7 +45,7 @@ export default function TrainingsCatalog() {
     <>
       <PageHero 
         title="Espace eLearning"
-        subtitle={locale === "fr" ? "Accédez à notre catalogue de 87 modules d'excellence à suivre à votre rythme." : "Access our catalog of 87 excellence modules to follow at your own pace."}
+        subtitle={locale === "fr" ? "Accédez à notre catalogue de 51 modules d'excellence à suivre à votre rythme." : "Access our catalog of 51 excellence modules to follow at your own pace."}
         backgroundImages={[
           "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80",
           "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80",
