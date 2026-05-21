@@ -161,7 +161,7 @@ const AcademyCertifications = () => {
                         </button>
                       )}
                       <Link 
-                        href={`/academy/register?certification=${encodeURIComponent(cert.name)}`}
+                        href={`/academy/certif-register?certification=${encodeURIComponent(cert.name)}`}
                         onClick={(e) => e.stopPropagation()}
                         className="flex items-center gap-1.5 text-primary font-bold text-xs uppercase tracking-wider hover:text-primary-dark transition-all ml-auto group/btn"
                       >
@@ -353,7 +353,7 @@ const AcademyCertifications = () => {
               {/* Sticky Footer */}
               <div className="p-8 border-t border-white/5 bg-slate-950 sticky bottom-0 z-10 flex flex-col gap-4 shadow-lg">
                 <Link 
-                  href={`/academy/register?certification=${encodeURIComponent(selectedCertName)}`}
+                  href={`/academy/certif-register?certification=${encodeURIComponent(selectedCertName)}`}
                   className="w-full py-4 bg-orange hover:bg-orange/85 text-white rounded-2xl font-bold transition-all text-center shadow-lg shadow-orange/20 text-sm flex items-center justify-center gap-2"
                 >
                   S'inscrire à la certification complète <ArrowRight className="w-4 h-4" />
