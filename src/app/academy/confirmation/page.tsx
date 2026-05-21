@@ -1,12 +1,73 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { CheckCircle2, Calendar, FileText, Mail, ArrowRight, Share2 } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+import { staticModules } from "../../../lib/academyHelpers";
 
-export default function AcademyConfirmation() {
-  const reference = "SN-AC-2026-8942";
+function ConfirmationContent() {
+  const searchParams = useSearchParams();
+  const trainingSlug = searchParams.get("training") || "";
+  const reference = "SN-AC-2026-" + Math.floor(1000 + Math.random() * 9000);
+
+  const [studentName, setStudentName] = useState("Cher Apprenant");
+  const [courseDetails, setCourseDetails] = useState({
+    title: "Formation Générale SaniNova",
+    price: "250.000",
+    currency: "XOF"
+  });
+
+  useEffect(() => {
+    // Load student name from localStorage
+    const savedName = localStorage.getItem("registered_fullname");
+    if (savedName) {
+      // Get first name
+      const firstName = savedName.trim().split(" ")[0];
+      setStudentName(firstName);
+    }
+
+    // Resolve course details
+    if (trainingSlug) {
+      const staticMatch = staticModules.find(m => m.slug === trainingSlug);
+      if (staticMatch) {
+        setCourseDetails({
+          title: staticMatch.title,
+          price: parseInt(staticMatch.price).toLocaleString('fr-FR'),
+          currency: staticMatch.currency
+        });
+      } else {
+        // Fallbacks for legacy/Supabase courses
+        const databaseCourses: Record<string, { title: string; price: string; currency: string }> = {
+          "gouvernance-sanitaire-afrique": {
+            title: "Gouvernance Sanitaire et Leadership en Afrique",
+            price: "250.000",
+            currency: "XOF"
+          },
+          "sante-digitale-interoperabilite": {
+            title: "Santé Digitale et Interopérabilité en Afrique",
+            price: "350.000",
+            currency: "XOF"
+          },
+          "regulation-pharmaceutique-avancee": {
+            title: "Régulation Pharmaceutique Avancée en Afrique",
+            price: "300.000",
+            currency: "XOF"
+          }
+        };
+
+        const match = databaseCourses[trainingSlug];
+        if (match) {
+          setCourseDetails({
+            title: match.title,
+            price: match.price,
+            currency: match.currency
+          });
+        }
+      }
+    }
+  }, [trainingSlug]);
 
   return (
     <div className="pt-32 pb-24 min-h-screen bg-dark flex items-center">
@@ -31,8 +92,8 @@ export default function AcademyConfirmation() {
             Inscription Confirmée !
           </h1>
           
-          <p className="text-white/60 text-lg font-poppins mb-12 max-w-xl mx-auto">
-            Félicitations Jean ! Votre place est réservée. Vous allez recevoir un email de confirmation contenant tous les détails logistiques et vos accès à la plateforme.
+          <p className="text-white/60 text-lg font-poppins mb-12 max-w-xl mx-auto leading-relaxed">
+            Félicitations {studentName} ! Votre place est réservée. Vos identifiants de connexion ont été activés. Vous pouvez dès à présent accéder à votre cours dans votre portail apprenant.
           </p>
 
           <div className="grid md:grid-cols-2 gap-4 mb-12">
@@ -42,29 +103,32 @@ export default function AcademyConfirmation() {
             </div>
             <div className="bg-white/5 rounded-3xl p-6 border border-white/5 text-left">
               <p className="text-white/30 text-[10px] uppercase font-bold tracking-widest mb-1">Montant Payé</p>
-              <p className="text-accent font-black text-lg">250.000 XOF</p>
+              <p className="text-accent font-black text-lg">{courseDetails.price} {courseDetails.currency}</p>
             </div>
           </div>
 
           <div className="space-y-6 mb-12">
             <div className="flex items-center gap-4 text-white/70 text-sm font-medium justify-center">
-              <Calendar className="w-5 h-5 text-orange" /> Prochaine étape : Session d'accueil le 14 Juin 2026
+              <Calendar className="w-5 h-5 text-orange" /> Accès immédiat et à vie sur la plateforme
             </div>
             <div className="flex items-center gap-4 text-white/70 text-sm font-medium justify-center">
-              <Mail className="w-5 h-5 text-orange" /> Vérifiez votre boîte mail (y compris les spams)
+              <Mail className="w-5 h-5 text-orange" /> Un reçu détaillé a été envoyé à votre adresse email
             </div>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
-              href="/academy/trainings" 
+              href={`/academy/portal/course/${trainingSlug}`} 
+              className="px-10 py-5 bg-orange text-white rounded-2xl font-black shadow-xl shadow-orange/25 hover:scale-105 transition-all flex items-center justify-center gap-2"
+            >
+              Accéder à mon cours <ArrowRight className="w-5 h-5" />
+            </Link>
+            <Link 
+              href="/academy/portal" 
               className="px-10 py-5 bg-white text-primary rounded-2xl font-black shadow-xl hover:scale-105 transition-all flex items-center justify-center gap-2"
             >
-              Retour aux formations
+              Mon Tableau de bord
             </Link>
-            <button className="px-10 py-5 bg-white/10 text-white rounded-2xl font-black border border-white/10 hover:bg-white/20 transition-all flex items-center justify-center gap-2">
-              <FileText className="w-5 h-5" /> Télécharger le reçu
-            </button>
           </div>
 
           <button className="mt-12 inline-flex items-center gap-2 text-white/30 hover:text-white font-bold text-xs uppercase tracking-widest transition-colors">
@@ -73,5 +137,17 @@ export default function AcademyConfirmation() {
         </motion.div>
       </div>
     </div>
+  );
+}
+
+export default function AcademyConfirmation() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-dark flex items-center justify-center">
+        <div className="text-white font-bold animate-pulse">Chargement de la confirmation...</div>
+      </div>
+    }>
+      <ConfirmationContent />
+    </Suspense>
   );
 }

@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { 
   BookOpen, Award, Clock, ArrowRight, CheckCircle2, 
-  ChevronRight, Bookmark, Sparkles, User, LogOut, ArrowLeft 
+  ChevronRight, Bookmark, Sparkles, User, LogOut, ArrowLeft, Lock 
 } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -11,49 +11,72 @@ import { supabase } from "../../../lib/supabase";
 import PageHero from "../../../components/ui/PageHero";
 import LMSPlayer from "../../../components/academy/LMSPlayer";
 import CertificateCard from "../../../components/academy/CertificateCard";
+import { staticModules } from "../../../lib/academyHelpers";
 
 export default function StudentPortal() {
   const [courses, setCourses] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
-  const [activeView, setActiveView] = useState<"dashboard" | "player" | "certificate">("dashboard");
+  const [activeView, setActiveView] = useState<"dashboard" | "player" | "certificate" | "lock-screen">("dashboard");
   const [selectedCourse, setSelectedCourse] = useState<any>(null);
   const [progresses, setProgresses] = useState<Record<string, { percent: number; completed: any; quizPassed: boolean }>>({});
+  const [paidCourses, setPaidCourses] = useState<Record<string, boolean>>({});
   const [studentName, setStudentName] = useState("Dr. Ambroise Gbaguidi");
 
-  // Fetch courses from Supabase & load local progress
+  // Fetch courses from Supabase & load local progress/payments
   useEffect(() => {
+    // Load student name from localstorage if exists
+    const savedName = localStorage.getItem("registered_fullname");
+    if (savedName) {
+      setStudentName(savedName);
+    }
+
     const fetchCourses = async () => {
       setLoading(true);
-      const { data, error } = await supabase
-        .from("academy_trainings")
-        .select("*")
-        .eq("status", "published")
-        .order("created_at", { ascending: false });
-
-      if (data) {
-        setCourses(data);
-        
-        // Fetch progress states from local storage for each course
-        const loadedProgress: any = {};
-        data.forEach(c => {
-          const saved = localStorage.getItem(`progress_${c.slug}`);
-          if (saved) {
-            try {
-              loadedProgress[c.slug] = JSON.parse(saved);
-            } catch (e) {
-              console.error(e);
-            }
-          } else {
-            // Set initial mock progress for presentation if empty
-            if (c.slug === "logistique-medicale-dernier-kilometre") {
-              loadedProgress[c.slug] = { percent: 50, completed: { "log-c1": true }, quizPassed: false };
-            } else {
-              loadedProgress[c.slug] = { percent: 0, completed: {}, quizPassed: false };
-            }
-          }
-        });
-        setProgresses(loadedProgress);
+      let dbCourses: any[] = [];
+      try {
+        const { data } = await supabase
+          .from("academy_trainings")
+          .select("*")
+          .eq("status", "published")
+          .order("created_at", { ascending: false });
+        if (data) {
+          dbCourses = data;
+        }
+      } catch (err) {
+        console.error("Error fetching courses:", err);
       }
+
+      const allCourses = [...dbCourses, ...staticModules];
+      setCourses(allCourses);
+      
+      // Fetch progress states and paid states from local storage for each course
+      const loadedProgress: any = {};
+      const loadedPaid: Record<string, boolean> = {};
+      
+      allCourses.forEach(c => {
+        // Progress
+        const savedProgress = localStorage.getItem(`progress_${c.slug}`);
+        if (savedProgress) {
+          try {
+            loadedProgress[c.slug] = JSON.parse(savedProgress);
+          } catch (e) {
+            console.error(e);
+          }
+        } else {
+          // Set initial mock progress for presentation if empty
+          if (c.slug === "logistique-medicale-dernier-kilometre") {
+            loadedProgress[c.slug] = { percent: 50, completed: { "log-c1": true }, quizPassed: false };
+          } else {
+            loadedProgress[c.slug] = { percent: 0, completed: {}, quizPassed: false };
+          }
+        }
+
+        // Payment status
+        loadedPaid[c.slug] = localStorage.getItem(`paid_${c.slug}`) === "true";
+      });
+
+      setProgresses(loadedProgress);
+      setPaidCourses(loadedPaid);
       setLoading(false);
     };
 
@@ -62,20 +85,32 @@ export default function StudentPortal() {
 
   const refreshProgress = () => {
     const loadedProgress: any = {};
+    const loadedPaid: Record<string, boolean> = {};
     courses.forEach(c => {
       const saved = localStorage.getItem(`progress_${c.slug}`);
       if (saved) {
-        loadedProgress[c.slug] = JSON.parse(saved);
+        try {
+          loadedProgress[c.slug] = JSON.parse(saved);
+        } catch (e) {
+          console.error(e);
+        }
       } else {
         loadedProgress[c.slug] = { percent: 0, completed: {}, quizPassed: false };
       }
+      loadedPaid[c.slug] = localStorage.getItem(`paid_${c.slug}`) === "true";
     });
     setProgresses(loadedProgress);
+    setPaidCourses(loadedPaid);
   };
 
   const handleStartCourse = (course: any) => {
     setSelectedCourse(course);
-    setActiveView("player");
+    const isPaid = paidCourses[course.slug];
+    if (isPaid) {
+      setActiveView("player");
+    } else {
+      setActiveView("lock-screen");
+    }
   };
 
   const handleShowCertificate = (course: any) => {
@@ -85,6 +120,23 @@ export default function StudentPortal() {
 
   const handleCourseCompleted = () => {
     refreshProgress();
+  };
+
+  const getCoursePriceDetails = (course: any) => {
+    if (!course) return { price: "250.000", currency: "XOF" };
+    if (course.isStaticModule || course.id?.startsWith("static-mod-")) {
+      const p = parseInt(course.price) || 150;
+      return {
+        price: p.toLocaleString('fr-FR'),
+        currency: course.currency || "USD"
+      };
+    }
+    const databasePrices: Record<string, { price: string; currency: string }> = {
+      "gouvernance-sanitaire-afrique": { price: "250.000", currency: "XOF" },
+      "sante-digitale-interoperabilite": { price: "350.000", currency: "XOF" },
+      "regulation-pharmaceutique-avancee": { price: "300.000", currency: "XOF" }
+    };
+    return databasePrices[course.slug] || { price: "250.000", currency: "XOF" };
   };
 
   const activeCoursesCount = Object.keys(progresses).filter(k => progresses[k]?.percent > 0 && progresses[k]?.percent < 100).length;
@@ -122,8 +174,8 @@ export default function StudentPortal() {
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
                   {/* Left: Greeting */}
                   <div className="flex items-center gap-6">
-                    <div className="w-16 h-16 rounded-2xl bg-orange/10 border border-orange/20 flex items-center justify-center text-orange text-2xl font-black">
-                      AG
+                    <div className="w-16 h-16 rounded-2xl bg-orange/10 border border-orange/20 flex items-center justify-center text-orange text-2xl font-black uppercase">
+                      {studentName ? studentName.split(" ").filter(Boolean).map(n => n[0]).join("").slice(0, 2) : "AG"}
                     </div>
                     <div>
                       <span className="text-orange font-bold text-xs uppercase tracking-widest block mb-1">
@@ -188,6 +240,7 @@ export default function StudentPortal() {
                     const prog = progresses[course.slug] || { percent: 0, completed: {}, quizPassed: false };
                     const isCompleted = prog.quizPassed;
                     const isStarted = prog.percent > 0;
+                    const isPaid = paidCourses[course.slug] || false;
 
                     return (
                       <motion.div
@@ -206,6 +259,19 @@ export default function StudentPortal() {
                             <span className="px-3 py-1 bg-dark/80 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-widest rounded-full border border-white/10">
                               {course.category}
                             </span>
+                          </div>
+
+                          {/* Payment status badge */}
+                          <div className="absolute top-4 right-4">
+                            {isPaid ? (
+                              <span className="px-3 py-1 bg-emerald-500/90 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-widest rounded-full border border-emerald-400/20 flex items-center gap-1.5 font-bold shadow-lg">
+                                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-300" /> Payé
+                              </span>
+                            ) : (
+                              <span className="px-3 py-1 bg-orange/90 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-widest rounded-full border border-orange-400/20 flex items-center gap-1.5 font-bold shadow-lg">
+                                <Lock className="w-3.5 h-3.5 text-orange-200" /> Verrouillé
+                              </span>
+                            )}
                           </div>
                         </div>
 
@@ -247,12 +313,19 @@ export default function StudentPortal() {
                                 >
                                   <Award className="w-4 h-4" /> Mon Certificat
                                 </button>
-                              ) : (
+                              ) : isPaid ? (
                                 <button
                                   onClick={() => handleStartCourse(course)}
                                   className="w-full py-4 bg-orange text-white hover:bg-orange/90 rounded-2xl font-black text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all cursor-pointer shadow-lg shadow-orange/10"
                                 >
                                   <BookOpen className="w-4 h-4" /> {isStarted ? "Reprendre" : "Commencer"}
+                                </button>
+                              ) : (
+                                <button
+                                  onClick={() => handleStartCourse(course)}
+                                  className="w-full py-4 bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-orange/20 rounded-2xl font-black text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all cursor-pointer shadow-lg"
+                                >
+                                  <Lock className="w-4 h-4 text-orange" /> S'inscrire & Payer
                                 </button>
                               )}
                             </div>
@@ -293,6 +366,66 @@ export default function StudentPortal() {
                 courseTitle={selectedCourse.title}
                 courseSlug={selectedCourse.slug}
               />
+            </div>
+          )}
+
+          {/* Lock Screen / Payment Gate View */}
+          {activeView === "lock-screen" && selectedCourse && (
+            <div className="space-y-6 max-w-2xl mx-auto py-12">
+              <button
+                onClick={() => setActiveView("dashboard")}
+                className="inline-flex items-center gap-2 text-white/60 hover:text-orange font-bold text-sm uppercase tracking-widest transition-all bg-white/5 border border-white/5 px-5 py-3 rounded-full hover:bg-white/10 cursor-pointer mb-4"
+              >
+                <ArrowLeft className="w-4 h-4" /> Retour au Tableau de bord
+              </button>
+
+              <div className="bg-[#0F1D33] rounded-[36px] border border-white/5 p-8 md:p-12 shadow-2xl relative overflow-hidden text-center backdrop-blur-xl">
+                {/* Visual Glow */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-72 h-72 bg-orange/10 rounded-full blur-[80px] pointer-events-none" />
+
+                {/* Locked Emblem */}
+                <div className="mx-auto w-24 h-24 rounded-3xl bg-orange/10 border border-orange/20 flex items-center justify-center text-orange mb-8 shadow-inner animate-pulse">
+                  <Lock className="w-10 h-10" />
+                </div>
+
+                <span className="text-orange font-black text-xs uppercase tracking-widest block mb-3">
+                  Accès Verrouillé • eLearning
+                </span>
+
+                <h2 className="text-2xl md:text-3xl font-montserrat font-black text-white leading-tight mb-4">
+                  {selectedCourse.title}
+                </h2>
+
+                <p className="text-white/60 text-sm leading-relaxed max-w-lg mx-auto mb-8 font-medium">
+                  Pour accéder à ce module interactif, participer aux quiz et recevoir votre certification officielle SaniNova, veuillez finaliser le règlement de vos frais de formation.
+                </p>
+
+                {/* Price Display */}
+                <div className="bg-[#0A1629] rounded-2xl p-6 border border-white/5 max-w-sm mx-auto mb-10">
+                  <span className="text-white/40 text-[10px] font-bold uppercase tracking-widest block mb-1">
+                    Tarif d'accès au module
+                  </span>
+                  <span className="text-orange font-black text-3xl">
+                    {getCoursePriceDetails(selectedCourse).price} <span className="text-sm font-bold opacity-60">{getCoursePriceDetails(selectedCourse).currency}</span>
+                  </span>
+                </div>
+
+                {/* CTA Buttons */}
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link
+                    href={`/academy/payment?training=${selectedCourse.slug}`}
+                    className="px-8 py-5 bg-orange text-white hover:bg-orange/90 rounded-2xl font-black text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition-all cursor-pointer shadow-lg shadow-orange/10 hover:scale-[1.02] active:scale-[0.98]"
+                  >
+                    Procéder au Paiement <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <button
+                    onClick={() => setActiveView("dashboard")}
+                    className="px-8 py-5 bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-2xl font-black text-xs uppercase tracking-widest transition-all cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
+                  >
+                    Retour au Catalogue
+                  </button>
+                </div>
+              </div>
             </div>
           )}
 
