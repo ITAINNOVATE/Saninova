@@ -492,8 +492,24 @@ export const translations = {
           desc: "Évaluations externes de mi-parcours ou finales de programmes financés par les bailleurs internationaux, audits d'infrastructures de soins, enquêtes d'envergure nationale et modélisation de tendances de santé publique.",
         },
         {
-          title: "Gestion de Projets & Plaidoyer",
-          desc: "Recherche de financement, gestion des projets, représentation, plaidoyers institutionnels, communication institutionnelle et événementielle.",
+          title: "Recherche de financement",
+          desc: "Identification et mobilisation de financements auprès des bailleurs de fonds internationaux, fonds multilatéraux, partenaires au développement et institutions philanthropiques pour soutenir les projets de santé.",
+        },
+        {
+          title: "Gestion des projets",
+          desc: "Pilotage opérationnel de projets de santé de bout en bout : planification, coordination des équipes multidisciplinaires, suivi des indicateurs de performance et reporting aux parties prenantes.",
+        },
+        {
+          title: "Représentation",
+          desc: "Représentation des organisations de santé auprès des institutions nationales, régionales et internationales pour défendre leurs intérêts et renforcer leur visibilité stratégique.",
+        },
+        {
+          title: "Plaidoyers institutionnels",
+          desc: "Conception et mise en œuvre de stratégies de plaidoyer ciblées pour influencer les décideurs politiques, les partenaires techniques et financiers en faveur de réformes sanitaires structurelles.",
+        },
+        {
+          title: "Communication institutionnelle & événementielle",
+          desc: "Élaboration de stratégies de communication institutionnelle, organisation d'événements à fort impact (conférences, forums, ateliers) et gestion de la réputation des organisations de santé.",
         },
       ],
     },
@@ -1166,8 +1182,24 @@ export const translations = {
           desc: "External mid-term or final evaluations of donor-funded health programs, healthcare infrastructure audits, nationwide surveys, and public health trend modeling.",
         },
         {
-          title: "Project Management & Advocacy",
-          desc: "Funding research, project management, representation, institutional advocacy, and institutional & event communication.",
+          title: "Funding Research",
+          desc: "Identification and mobilization of financing from international donors, multilateral funds, development partners and philanthropic institutions to support health projects.",
+        },
+        {
+          title: "Project Management",
+          desc: "End-to-end operational management of health projects: planning, multidisciplinary team coordination, performance indicator monitoring and stakeholder reporting.",
+        },
+        {
+          title: "Representation",
+          desc: "Representation of health organizations before national, regional and international institutions to defend their interests and strengthen their strategic visibility.",
+        },
+        {
+          title: "Institutional Advocacy",
+          desc: "Design and implementation of targeted advocacy strategies to influence policy makers and technical and financial partners in favor of structural health reforms.",
+        },
+        {
+          title: "Institutional & Event Communication",
+          desc: "Development of institutional communication strategies, organization of high-impact events (conferences, forums, workshops) and reputation management for health organizations.",
         },
       ],
     },

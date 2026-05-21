@@ -3,7 +3,7 @@
 import React from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import { motion } from "framer-motion";
-import { Briefcase, HelpCircle, Laptop, GraduationCap, BarChart, Megaphone } from "lucide-react";
+import { Briefcase, HelpCircle, Laptop, GraduationCap, BarChart, Search, FolderOpen, Users, Flag, Radio } from "lucide-react";
 
 import Link from "next/link";
 
@@ -11,12 +11,16 @@ export const ServicesSection: React.FC = () => {
   const { t } = useLanguage();
 
   const serviceIcons = [
-    <Briefcase className="w-6 h-6" />,
-    <HelpCircle className="w-6 h-6" />,
-    <Laptop className="w-6 h-6" />,
-    <GraduationCap className="w-6 h-6" />,
-    <BarChart className="w-6 h-6" />,
-    <Megaphone className="w-6 h-6" />,
+    <Briefcase className="w-6 h-6" />,      // Conseil stratégique
+    <HelpCircle className="w-6 h-6" />,     // Assistance technique
+    <Laptop className="w-6 h-6" />,         // Transformation digitale
+    <GraduationCap className="w-6 h-6" />,  // Renforcement des capacités
+    <BarChart className="w-6 h-6" />,       // Etude, Recherche & Evaluation
+    <Search className="w-6 h-6" />,         // Recherche de financement
+    <FolderOpen className="w-6 h-6" />,     // Gestion des projets
+    <Users className="w-6 h-6" />,          // Représentation
+    <Flag className="w-6 h-6" />,           // Plaidoyers institutionnels
+    <Radio className="w-6 h-6" />,          // Communication institutionnelle & événementielle
   ];
 
   const containerVariants = {
