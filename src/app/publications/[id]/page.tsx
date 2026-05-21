@@ -349,7 +349,13 @@ export default function PublicationDetailPage() {
       "Logistics data, new pillar of health sovereignty",
       "What digital transformation makes possible",
       "An accelerating continental dynamic",
-      "Data as a strategic infrastructure"
+      "Data as a strategic infrastructure",
+      // Article 7
+      "Le défi n°1 : transformer une vision politique en action opérationnelle",
+      "Le défi n°2 : gouverner avec des données fiables",
+      "Le défi n°3 : coordonner des acteurs aux intérêts multiples",
+      "Le défi n°4 : assurer la durabilité des réformes au-delà des mandats",
+      "Ce que SaniNova apporte aux ministères et gouvernements",
     ];
 
     const renderedElements: React.ReactNode[] = [];
