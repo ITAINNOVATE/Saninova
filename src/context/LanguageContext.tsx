@@ -20,7 +20,11 @@ const deepMerge = (target: any, source: any): any => {
   const output = { ...target };
   
   for (const key of Object.keys(source)) {
-    if (source[key] && typeof source[key] === 'object' && !Array.isArray(source[key])) {
+    // If the static (target) value is an array, always prefer the static version
+    // This prevents Supabase from overwriting lists (e.g. servicesPage.list)
+    if (Array.isArray(target[key])) {
+      output[key] = target[key];
+    } else if (source[key] && typeof source[key] === 'object' && !Array.isArray(source[key])) {
       if (target[key] && typeof target[key] === 'object' && !Array.isArray(target[key])) {
         output[key] = deepMerge(target[key], source[key]);
       } else {
