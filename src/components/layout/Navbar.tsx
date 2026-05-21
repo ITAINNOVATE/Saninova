@@ -238,24 +238,6 @@ export const Navbar: React.FC = () => {
 
         {/* Right buttons */}
         <div className="hidden lg:flex items-center space-x-6">
-          {/* Academy Buttons */}
-          {pathname?.startsWith("/academy") && (
-            <div className="flex items-center gap-2 mr-2">
-              <Link 
-                href="/academy/login" 
-                className={`px-4 py-2 rounded-full text-sm font-bold transition-all ${isScrolled ? "text-dark/80 hover:bg-dark/5" : "text-white hover:bg-white/10"}`}
-              >
-                Se connecter
-              </Link>
-              <Link 
-                href="/academy/register" 
-                className="px-5 py-2 bg-orange text-white rounded-full text-sm font-bold shadow-lg shadow-orange/20 hover:scale-105 transition-transform"
-              >
-                S'inscrire
-              </Link>
-            </div>
-          )}
-          
           {/* Language Selector */}
           <div className={`flex items-center p-1.5 rounded-full border transition-colors duration-300 ${isScrolled ? "bg-light/80 border-dark/5" : "bg-white/10 border-white/10"}`}>
             <button onClick={() => setLocale("fr")} className={`px-3 py-1 rounded-full text-xs font-semibold font-poppins transition-all duration-200 ${locale === "fr" ? "bg-primary text-white shadow-sm" : isScrolled ? "text-dark/60 hover:text-primary" : "text-white/70 hover:text-white"}`}>FR</button>
@@ -332,26 +314,6 @@ export const Navbar: React.FC = () => {
                 </Link>
               );
             })}
-            
-            {/* Mobile Academy Buttons */}
-            {pathname?.startsWith("/academy") && (
-              <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-light">
-                <Link 
-                  href="/academy/login" 
-                  onClick={closeMobile}
-                  className="w-full py-3 text-center rounded-xl font-bold text-dark/80 bg-light hover:bg-dark/5 transition-colors"
-                >
-                  Se connecter
-                </Link>
-                <Link 
-                  href="/academy/register" 
-                  onClick={closeMobile}
-                  className="w-full py-3 text-center rounded-xl font-bold text-white bg-orange shadow-lg shadow-orange/20 transition-colors"
-                >
-                  S'inscrire
-                </Link>
-              </div>
-            )}
           </div>
         </div>
       )}

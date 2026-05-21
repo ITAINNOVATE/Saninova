@@ -62,17 +62,17 @@ const AcademyHero: React.FC = () => {
 
             <div className="flex flex-wrap gap-4">
               <Link
-                href="/academy/trainings"
+                href="/academy/register"
                 className="px-8 py-4 bg-orange text-white rounded-full font-bold text-lg flex items-center group transition-all hover:shadow-[0_0_20px_rgba(255,122,0,0.4)] hover:scale-105 active:scale-95"
               >
-                {t.academy.ctaTrainings}
+                S'inscrire
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
-                href="/academy/register"
+                href="/academy/login"
                 className="px-8 py-4 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full font-bold text-lg transition-all hover:bg-white/20 hover:scale-105 active:scale-95"
               >
-                {t.academy.ctaRegister}
+                Se connecter
               </Link>
             </div>
           </motion.div>
