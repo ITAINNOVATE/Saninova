@@ -85,15 +85,21 @@ function PaymentContent() {
   }, [trainingSlug]);
 
   const handlePayment = async () => {
+    if (selectedMethod === "fedapay") {
+      // Redirect to Fedapay payment gateway
+      // In production: replace with actual Fedapay checkout URL with API key & order details
+      window.open("https://app.fedapay.com", "_blank");
+    } else if (selectedMethod === "izichangepay") {
+      // Redirect to Izichangepay crypto payment gateway
+      window.open("https://izichangepay.com", "_blank");
+    }
+
+    // After gateway interaction, simulate local confirmation for demo
     setIsProcessing(true);
-    // Simulate payment processing
-    await new Promise(resolve => setTimeout(resolve, 3000));
-    
-    // Persist payment in localStorage
+    await new Promise(resolve => setTimeout(resolve, 2000));
     if (trainingSlug) {
       localStorage.setItem(`paid_${trainingSlug}`, "true");
     }
-    
     setIsProcessing(false);
     router.push(`/academy/confirmation?training=${trainingSlug}`);
   };
@@ -191,20 +197,29 @@ function PaymentContent() {
                   {isProcessing ? (
                     <>
                       <div className="w-6 h-6 border-4 border-white/20 border-t-white rounded-full animate-spin" />
-                      Traitement sécurisé...
+                      Redirection vers {selectedMethod === "fedapay" ? "Fedapay" : "Izichangepay"}...
                     </>
                   ) : (
                     <>
-                      Procéder au paiement <ChevronRight />
+                      {selectedMethod === "fedapay" ? "Payer via Fedapay (Mobile Money)" : "Payer via Izichangepay (Crypto)"} <ChevronRight />
                     </>
                   )}
                 </button>
-                
-                <div className="flex items-center justify-center gap-6 mt-8 opacity-30 grayscale">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" className="h-4" />
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" className="h-6" />
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" className="h-5" />
+
+                <div className="flex items-center justify-center gap-8 mt-8">
+                  <div className={`flex items-center gap-2 transition-all ${selectedMethod === "fedapay" ? "opacity-100" : "opacity-20 grayscale"}`}>
+                    <div className="bg-blue-600 text-white text-xs font-black px-3 py-1.5 rounded-lg">FEDAPAY</div>
+                    <span className="text-white/40 text-xs font-bold">Mobile Money</span>
+                  </div>
+                  <div className={`flex items-center gap-2 transition-all ${selectedMethod === "izichangepay" ? "opacity-100" : "opacity-20 grayscale"}`}>
+                    <div className="bg-orange text-white text-xs font-black px-3 py-1.5 rounded-lg">IZICHANGEPAY</div>
+                    <span className="text-white/40 text-xs font-bold">Cryptomonnaie</span>
+                  </div>
                 </div>
+
+                <p className="text-center text-white/30 text-xs mt-6 font-medium">
+                  🔒 Paiement sécurisé — Vous serez redirigé vers la plateforme de paiement choisie
+                </p>
               </div>
             </div>
           </div>
