@@ -2,16 +2,17 @@
 
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-
-import { ChevronDown } from "lucide-react";
+import Link from "next/link";
+import { ChevronDown, ArrowRight } from "lucide-react";
 
 interface PageHeroProps {
   title: string;
   subtitle?: string;
   backgroundImages: string[];
+  showAcademyActions?: boolean;
 }
 
-export const PageHero: React.FC<PageHeroProps> = ({ title, subtitle, backgroundImages }) => {
+export const PageHero: React.FC<PageHeroProps> = ({ title, subtitle, backgroundImages, showAcademyActions }) => {
   const [currentBgIndex, setCurrentBgIndex] = useState(0);
 
   useEffect(() => {
@@ -79,6 +80,29 @@ export const PageHero: React.FC<PageHeroProps> = ({ title, subtitle, backgroundI
             >
               {subtitle}
             </motion.p>
+          )}
+
+          {showAcademyActions && (
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7, duration: 0.8 }}
+              className="mt-10 flex flex-wrap gap-4 justify-center"
+            >
+              <Link
+                href="/academy/register"
+                className="px-8 py-4 bg-orange text-white rounded-full font-bold text-sm uppercase tracking-widest flex items-center group transition-all hover:shadow-[0_0_20px_rgba(255,122,0,0.4)] hover:scale-105 active:scale-95 cursor-pointer"
+              >
+                S'inscrire
+                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <Link
+                href="/academy/login"
+                className="px-8 py-4 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full font-bold text-sm uppercase tracking-widest transition-all hover:bg-white/20 hover:scale-105 active:scale-95 cursor-pointer"
+              >
+                Se connecter
+              </Link>
+            </motion.div>
           )}
         </motion.div>
 

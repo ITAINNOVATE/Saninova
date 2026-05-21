@@ -51,6 +51,7 @@ export default function TrainingsCatalog() {
           "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80",
           "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80"
         ]}
+        showAcademyActions
       />
       
       <div className="bg-dark pb-24 min-h-screen relative z-10 -mt-20">
