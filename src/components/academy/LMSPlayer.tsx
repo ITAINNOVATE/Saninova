@@ -32,7 +32,10 @@ interface LMSPlayerProps {
   onCourseCompleted: () => void;
 }
 
+import { gestionApprovisionnementsCourse } from "../../data/courses/gestionApprovisionnements";
+
 const mockCoursesSyllabus: Record<string, Module[]> = {
+  "gestion-des-approvisionnements-et-des-stocks": gestionApprovisionnementsCourse,
   "gouvernance-sanitaire-afrique": [
     {
       id: "gov-m1",
