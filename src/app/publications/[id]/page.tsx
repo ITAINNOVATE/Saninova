@@ -356,6 +356,12 @@ export default function PublicationDetailPage() {
       "Le défi n°3 : coordonner des acteurs aux intérêts multiples",
       "Le défi n°4 : assurer la durabilité des réformes au-delà des mandats",
       "Ce que SaniNova apporte aux ministères et gouvernements",
+      // Article 8
+      "De la gestion des stocks à la maîtrise des flux",
+      "La gouvernance interne : condition préalable à toute performance",
+      "La coordination avec les programmes nationaux : un levier sous-exploité",
+      "La transformation digitale : accélérateur de performance et de transparence",
+      "Ce que SaniNova apporte aux centrales d'achat",
     ];
 
     const renderedElements: React.ReactNode[] = [];
