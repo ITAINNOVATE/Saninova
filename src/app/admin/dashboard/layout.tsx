@@ -76,6 +76,11 @@ export default function DashboardLayout({ children }: LayoutProps) {
       icon: BookOpen,
     },
     {
+      label: "Soumissions Publications",
+      href: "/admin/dashboard/publications-submissions",
+      icon: BookOpen,
+    },
+    {
       label: "Candidatures Experts",
       href: "/admin/dashboard/experts",
       icon: User,

@@ -6,6 +6,7 @@ import PageHero from "../../components/ui/PageHero";
 import Publications from "../../components/home/Publications";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import PublicationSubmissionForm from "../../components/publications/PublicationSubmissionForm";
 
 export default function PublicationsPage() {
   const { t } = useLanguage();
@@ -29,6 +30,7 @@ export default function PublicationsPage() {
         </div>
         <Publications />
       </div>
+      <PublicationSubmissionForm />
     </>
   );
 }
