@@ -159,7 +159,7 @@ export default function TrainingsCatalog() {
                           <CheckCircle2 className="w-3.5 h-3.5" /> Disponible
                         </span>
                       ) : (
-                        <span className="px-3.5 py-1.5 bg-slate-600/90 backdrop-blur-md text-white text-[9px] font-black uppercase tracking-widest rounded-full border border-slate-400/20 shadow-lg flex items-center gap-1.5">
+                        <span className="px-3.5 py-1.5 bg-red-600/90 backdrop-blur-md text-white text-[9px] font-black uppercase tracking-widest rounded-full border border-red-400/20 shadow-lg flex items-center gap-1.5">
                           <Lock className="w-3.5 h-3.5" /> En Maintenance
                         </span>
                       )}

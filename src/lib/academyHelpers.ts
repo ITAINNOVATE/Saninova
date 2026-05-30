@@ -87,9 +87,9 @@ const allModules = certificationsData.flatMap((academy) => {
         })) || [],
         trainers: [
           {
-            name: "Dr. Marc Dubois",
-            role: "Directeur Académique SaniNova",
-            bio: "Expert international en systèmes de santé avec plus de 20 ans d'expérience sur le terrain.",
+            name: "Dr Hope AKOHOUVI AMOU",
+            role: "Expert Formateur SaniNova",
+            bio: "Expert international en systèmes de santé avec une grande expérience sur le terrain.",
             image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80"
           }
         ],
