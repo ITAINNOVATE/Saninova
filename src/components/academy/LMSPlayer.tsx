@@ -592,9 +592,9 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                       return (
                         <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '2rem', marginBottom: '1rem' }}>
                           <div style={{ width: '4px', height: '32px', backgroundColor: '#f97316', borderRadius: '9999px', flexShrink: 0 }} />
-                          <h4 style={{ color: '#0F1D33', fontFamily: 'Montserrat, sans-serif', fontWeight: 800, fontSize: '1.25rem', lineHeight: 1.3, margin: 0 }}>
+                          <div style={{ color: '#0F1D33', fontFamily: 'Montserrat, sans-serif', fontWeight: 800, fontSize: '1.25rem', lineHeight: 1.3, margin: 0 }}>
                             {para.replace(/^#+\s*/, "")}
-                          </h4>
+                          </div>
                         </div>
                       );
                     }
