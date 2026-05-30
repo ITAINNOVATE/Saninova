@@ -413,22 +413,22 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 md:px-6 py-6 min-h-screen bg-slate-50">
+    <div className="max-w-7xl mx-auto px-4 md:px-6 py-6 min-h-screen">
       {/* Return button */}
       <div className="mb-6 flex items-center justify-between">
         <button 
           onClick={onBackToPortal}
-          className="inline-flex items-center gap-2 text-slate-500 hover:text-orange font-bold text-xs uppercase tracking-widest transition-all bg-white border border-slate-200 px-5 py-3 rounded-full hover:bg-orange/5 cursor-pointer shadow-sm"
+          className="inline-flex items-center gap-2 text-white/70 hover:text-orange font-bold text-xs uppercase tracking-widest transition-all bg-white/10 border border-white/15 px-5 py-3 rounded-full hover:bg-white/20 cursor-pointer"
         >
           <ArrowLeft className="w-4 h-4" /> Quitter le cours
         </button>
 
-        <div className="hidden sm:flex items-center gap-4 bg-white px-6 py-2.5 rounded-full border border-slate-200 shadow-sm">
+        <div className="hidden sm:flex items-center gap-4 bg-white/10 px-6 py-2.5 rounded-full border border-white/15">
           <div className="text-right">
-            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Progression</span>
-            <span className="text-xs font-black text-slate-800">{completedCount} / {totalChaptersCount} Chapitres</span>
+            <span className="text-[10px] font-bold text-white/50 uppercase tracking-wider block">Progression</span>
+            <span className="text-xs font-black text-white">{completedCount} / {totalChaptersCount} Chapitres</span>
           </div>
-          <div className="w-24 bg-slate-100 h-1.5 rounded-full overflow-hidden">
+          <div className="w-24 bg-white/20 h-1.5 rounded-full overflow-hidden">
             <div className="bg-orange h-full rounded-full" style={{ width: `${progressPercent}%` }} />
           </div>
         </div>
