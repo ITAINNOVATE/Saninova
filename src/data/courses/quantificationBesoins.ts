@@ -71,7 +71,7 @@ export const quantificationBesoinsCourse: any[] = [
         "title": "Résumé des méthodes de prévision",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Résumé des méthodes de prévision\n\nDémographiques\n\nPopulation\n\nPopulation du pays\n\nServices\n\n# de Tests/Visite\n\nServices\n\nConsommation\n\nProduits\n\n# d’unité\n\nPatients\n\n# de Patients\n\nMorbidité\n\nLes patients représentent quel pourcentage de la population?\n\nQuel est le nombre de services par patient?\n\nQuel est le nombre de produits requis par patient?\n\nQuel est le nombre de produits requis par service?\n"
+        "content": "#### Résumé des méthodes de prévision\n\nDémographiques\n\nPopulation\n\nPopulation du pays\n\nServices\n\nNombre de Tests/Visite\n\nServices\n\nConsommation\n\nProduits\n\nNombre d'unités\n\nPatients\n\nNombre de Patients\n\nMorbidité\n\nLes patients représentent quel pourcentage de la population?\n\nQuel est le nombre de services par patient?\n\nQuel est le nombre de produits requis par patient?\n\nQuel est le nombre de produits requis par service?\n"
       }
     ]
   },
@@ -265,7 +265,7 @@ export const quantificationBesoinsCourse: any[] = [
         "title": "Méthode basée sur la morbidité",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Méthode basée sur la morbidité\n\nDémographiques\n\nPopulation\n\nPopulation du pays\n\nServices\n\n# de Tests/Visite\n\nServices\n\nConsommation\n\nProduits\n\n# d’unité\n\nPatients\n\n# de Patients\n\nMorbidité\n\nLes patients représentent quel pourcentage de la population?\n\nQuel est le nombre de services par patient?\n\nQuel est le nombre de produits requis par patient?\n\nQuel est le nombre de produits requis par service?\n"
+        "content": "#### Méthode basée sur la morbidité\n\nDémographiques\n\nPopulation\n\nPopulation du pays\n\nServices\n\nNombre de Tests/Visite\n\nServices\n\nConsommation\n\nProduits\n\nNombre d'unités\n\nPatients\n\nNombre de Patients\n\nMorbidité\n\nLes patients représentent quel pourcentage de la population?\n\nQuel est le nombre de services par patient?\n\nQuel est le nombre de produits requis par patient?\n\nQuel est le nombre de produits requis par service?\n"
       },
       {
         "id": "qb-m4-c2",
