@@ -586,8 +586,8 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                 {/* Lesson Rich Content - PPT Style */}
                 <div className="max-w-none mb-10 space-y-5 text-sm md:text-base">
                   {currentChapter.content.split("\n\n").map((para, i) => {
-                    // ### Main section title — orange left bar style (like PPT section headers)
-                    if (para.startsWith("###")) {
+                    // #### Section breadcrumb (e.g. "Définitions et concepts clés") — orange bar + title
+                    if (para.startsWith("####")) {
                       return (
                         <div key={i} className="flex items-center gap-4 mt-8 mb-4">
                           <div className="w-1 h-8 bg-orange rounded-full shrink-0" />
@@ -597,10 +597,10 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                         </div>
                       );
                     }
-                    // #### Sub-concept title — green pill badge style (like "Le Stock" in PPT)
-                    if (para.startsWith("####")) {
+                    // ### Concept title (e.g. "Le Stock") — green pill badge like PPT
+                    if (para.startsWith("###")) {
                       return (
-                        <div key={i} className="mt-6 mb-2">
+                        <div key={i} className="mt-5 mb-2">
                           <span className="inline-block bg-emerald-600 text-white font-bold text-sm px-5 py-1.5 rounded-full shadow-sm">
                             {para.replace(/^#+\s*/, "")}
                           </span>
