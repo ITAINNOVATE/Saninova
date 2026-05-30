@@ -413,22 +413,22 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 md:px-6 py-6 min-h-screen">
+    <div className="max-w-7xl mx-auto px-4 md:px-6 py-6 min-h-screen bg-slate-50">
       {/* Return button */}
       <div className="mb-6 flex items-center justify-between">
         <button 
           onClick={onBackToPortal}
-          className="inline-flex items-center gap-2 text-white/60 hover:text-orange font-bold text-xs uppercase tracking-widest transition-all bg-white/5 border border-white/5 px-5 py-3 rounded-full hover:bg-white/10 cursor-pointer"
+          className="inline-flex items-center gap-2 text-slate-500 hover:text-orange font-bold text-xs uppercase tracking-widest transition-all bg-white border border-slate-200 px-5 py-3 rounded-full hover:bg-orange/5 cursor-pointer shadow-sm"
         >
           <ArrowLeft className="w-4 h-4" /> Quitter le cours
         </button>
 
-        <div className="hidden sm:flex items-center gap-4 bg-white/5 px-6 py-2.5 rounded-full border border-white/5">
+        <div className="hidden sm:flex items-center gap-4 bg-white px-6 py-2.5 rounded-full border border-slate-200 shadow-sm">
           <div className="text-right">
-            <span className="text-[10px] font-bold text-white/40 uppercase tracking-wider block">Progression</span>
-            <span className="text-xs font-black text-white">{completedCount} / {totalChaptersCount} Chapitres</span>
+            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Progression</span>
+            <span className="text-xs font-black text-slate-800">{completedCount} / {totalChaptersCount} Chapitres</span>
           </div>
-          <div className="w-24 bg-white/10 h-1.5 rounded-full overflow-hidden">
+          <div className="w-24 bg-slate-100 h-1.5 rounded-full overflow-hidden">
             <div className="bg-orange h-full rounded-full" style={{ width: `${progressPercent}%` }} />
           </div>
         </div>
@@ -436,8 +436,8 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
 
       <div className="grid lg:grid-cols-4 gap-8">
         {/* Course Index Sidebar */}
-        <div className="lg:col-span-1 bg-[#0F1D33] border border-white/5 rounded-[28px] p-6 h-fit shadow-xl">
-          <h4 className="text-orange font-montserrat font-black text-base uppercase tracking-wider mb-6 pb-4 border-b border-white/5">
+        <div className="lg:col-span-1 bg-white border border-slate-200 rounded-[28px] p-6 h-fit shadow-md">
+          <h4 className="text-[#0F1D33] font-montserrat font-black text-base uppercase tracking-wider mb-6 pb-4 border-b border-slate-200">
             Syllabus
           </h4>
 
@@ -447,7 +447,7 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                 <h5 className="text-[11px] font-extrabold text-orange uppercase tracking-wider line-clamp-2 leading-relaxed">
                   {mod.title}
                 </h5>
-                <div className="space-y-1.5 pl-1.5 border-l border-white/5 ml-1">
+                <div className="space-y-1.5 pl-1.5 border-l border-slate-200 ml-1">
                   {mod.chapters.map((chap) => {
                     const isActive = chap.id === activeChapterId && !showQuiz;
                     const isCompleted = !!completedChapters[chap.id];
@@ -461,15 +461,15 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                         }}
                         className={`w-full text-left py-2.5 px-3.5 rounded-xl text-xs transition-all flex items-start gap-2.5 cursor-pointer ${
                           isActive 
-                            ? "bg-orange text-white font-bold shadow-md shadow-orange/15" 
-                            : "text-white/60 hover:text-white hover:bg-white/5"
+                            ? "bg-orange text-white font-bold shadow-md shadow-orange/20" 
+                            : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
                         }`}
                       >
                         <div className="shrink-0 mt-0.5">
                           {isCompleted ? (
-                            <CheckCircle className={`w-3.5 h-3.5 ${isActive ? "text-white" : "text-emerald-400"}`} />
+                            <CheckCircle className={`w-3.5 h-3.5 ${isActive ? "text-white" : "text-emerald-500"}`} />
                           ) : (
-                            <Circle className="w-3.5 h-3.5 opacity-40" />
+                            <Circle className="w-3.5 h-3.5 text-slate-300" />
                           )}
                         </div>
                         <span className="leading-snug line-clamp-2">{chap.title}</span>
@@ -481,15 +481,15 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
             ))}
 
             {/* Final Quiz Navigation Tab */}
-            <div className="pt-4 border-t border-white/5">
+            <div className="pt-4 border-t border-slate-200">
               <button
                 onClick={() => setShowQuiz(true)}
                 className={`w-full py-4 px-4 rounded-xl text-xs font-black uppercase tracking-wider transition-all flex items-center justify-between cursor-pointer border ${
                   showQuiz 
                     ? "bg-orange border-orange text-white" 
                     : quizPassed 
-                    ? "bg-emerald-500/10 border-emerald-500/20 text-emerald-400" 
-                    : "bg-white/5 border-white/5 text-white/70 hover:bg-white/10"
+                    ? "bg-emerald-50 border-emerald-200 text-emerald-600" 
+                    : "bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100"
                 }`}
               >
                 <span className="flex items-center gap-2">
@@ -589,15 +589,15 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                     if (para.startsWith("####")) {
                       return (
                         <h5 key={i} className="text-orange font-bold text-sm md:text-base mt-4 mb-2 flex items-center gap-2">
-                          <span className="w-1.5 h-1.5 rounded-full bg-orange opacity-70"></span>
+                          <span className="w-1.5 h-1.5 rounded-full bg-orange"></span>
                           {para.replace(/^#+\s*/, "")}
                         </h5>
                       );
                     }
                     if (para.startsWith("###")) {
                       return (
-                        <h4 key={i} className="text-[#0F1D33] font-montserrat font-bold text-lg md:text-xl mt-6 mb-3 flex items-center gap-3">
-                          <span className="w-2 h-2 rounded-full bg-orange"></span>
+                        <h4 key={i} className="text-emerald-700 font-montserrat font-bold text-lg md:text-xl mt-6 mb-3 flex items-center gap-3">
+                          <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
                           {para.replace(/^#+\s*/, "")}
                         </h4>
                       );
