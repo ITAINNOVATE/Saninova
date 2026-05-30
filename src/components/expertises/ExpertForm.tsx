@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
-import { supabase } from "../../lib/supabase/client";
+import { supabase } from "../../lib/supabase";
 import { useLanguage } from "../../context/LanguageContext";
 
 export default function ExpertForm() {

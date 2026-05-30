@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { supabase } from "../../../../lib/supabase/client";
+import { supabase } from "../../../../lib/supabase";
 import { Loader2, Search, FileText, CheckCircle, Mail, Phone, ExternalLink } from "lucide-react";
 
 interface ExpertApplication {
