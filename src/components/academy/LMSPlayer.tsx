@@ -436,8 +436,8 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
 
       <div className="grid lg:grid-cols-4 gap-8">
         {/* Course Index Sidebar */}
-        <div className="lg:col-span-1 bg-white border border-slate-200 rounded-[28px] p-6 h-fit shadow-md">
-          <h4 className="text-[#0F1D33] font-montserrat font-black text-base uppercase tracking-wider mb-6 pb-4 border-b border-slate-200">
+        <div className="lg:col-span-1 rounded-[28px] p-6 h-fit shadow-md border border-slate-200" style={{ backgroundColor: '#ffffff' }}>
+          <h4 className="font-montserrat font-black text-base uppercase tracking-wider mb-6 pb-4 border-b border-slate-200" style={{ color: '#0F1D33' }}>
             Syllabus
           </h4>
 
@@ -524,7 +524,8 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
-                className="bg-white border border-slate-200 rounded-[32px] p-6 md:p-10 shadow-2xl overflow-hidden relative"
+                className="rounded-[32px] p-6 md:p-10 shadow-2xl overflow-hidden relative border border-slate-200"
+                style={{ backgroundColor: '#ffffff', color: '#1e293b' }}
               >
                 <div className="absolute top-0 right-0 w-64 h-64 bg-orange/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
@@ -534,7 +535,7 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                     <span className="text-orange font-bold text-xs uppercase tracking-widest block mb-1">
                       {currentChapter.type === "video" ? "Cours Vidéo" : "Support de Cours"} • {currentChapter.duration}
                     </span>
-                    <h3 className="text-[#0F1D33] font-montserrat font-extrabold text-xl md:text-2xl leading-tight mt-1">
+                    <h3 className="font-montserrat font-extrabold text-xl md:text-2xl leading-tight mt-1" style={{ color: '#0F1D33' }}>
                       {currentChapter.title}
                     </h3>
                   </div>
