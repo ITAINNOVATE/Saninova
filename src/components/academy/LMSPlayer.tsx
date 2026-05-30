@@ -294,20 +294,33 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
   const [quizPassed, setQuizPassed] = useState(false);
 
   // Load syllabus based on slug
+  // Priority: mockCoursesSyllabus (real PPTX content) > getDynamicSyllabus (generic)
   useEffect(() => {
-    const dynamicSyllabus = getDynamicSyllabus(courseSlug);
-    
     let modules: Module[] = [];
-    if (dynamicSyllabus.length > 0) {
-      modules = dynamicSyllabus;
+
+    // 1. Check mockCoursesSyllabus first — it contains real course content from uploaded documents
+    if (mockCoursesSyllabus[courseSlug]) {
+      modules = mockCoursesSyllabus[courseSlug];
     } else {
-      let key = "gouvernance-sanitaire-afrique";
-      if (courseSlug.includes("supply") || courseSlug.includes("logistique")) key = "logistique-medicale-dernier-kilometre";
-      else if (courseSlug.includes("digital") || courseSlug.includes("interoperabilite")) key = "sante-digitale-interoperabilite";
-      
-      modules = mockCoursesSyllabus[key] || mockCoursesSyllabus["gouvernance-sanitaire-afrique"];
+      // 2. Try to find a key match by partial slug
+      const matchedKey = Object.keys(mockCoursesSyllabus).find(k => courseSlug.includes(k) || k.includes(courseSlug));
+      if (matchedKey) {
+        modules = mockCoursesSyllabus[matchedKey];
+      } else {
+        // 3. Fall back to dynamic syllabus (generic content from certificationsData)
+        const dynamicSyllabus = getDynamicSyllabus(courseSlug);
+        if (dynamicSyllabus.length > 0) {
+          modules = dynamicSyllabus;
+        } else {
+          // 4. Last resort: use a default mock
+          let key = "gouvernance-sanitaire-afrique";
+          if (courseSlug.includes("supply") || courseSlug.includes("logistique")) key = "logistique-medicale-dernier-kilometre";
+          else if (courseSlug.includes("digital") || courseSlug.includes("interoperabilite")) key = "sante-digitale-interoperabilite";
+          modules = mockCoursesSyllabus[key] || mockCoursesSyllabus["gouvernance-sanitaire-afrique"];
+        }
+      }
     }
-    
+
     setSyllabus(modules);
 
     if (modules.length > 0 && modules[0].chapters.length > 0) {

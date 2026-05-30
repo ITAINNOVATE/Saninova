@@ -184,7 +184,9 @@ export const Publications: React.FC = () => {
     { id: "all", label: t.publications.categories.all },
     { id: "digital", label: t.publications.categories.digital },
     { id: "governance", label: t.publications.categories.governance },
+    { id: "reforms", label: t.publications.categories.reforms },
     { id: "supply", label: t.publications.categories.supply },
+    { id: "regulation", label: t.publications.categories.regulation },
   ];
 
   const filteredArticles = articles.filter((article) => {

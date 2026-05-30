@@ -355,13 +355,32 @@ export default function PublicationDetailPage() {
       "Le défi n°2 : gouverner avec des données fiables",
       "Le défi n°3 : coordonner des acteurs aux intérêts multiples",
       "Le défi n°4 : assurer la durabilité des réformes au-delà des mandats",
-      "Ce que SaniNova apporte aux ministères et gouvernements",
+      "Ce que SaniNova apporte aux organisations internationales et PTF",
       // Article 8
       "De la gestion des stocks à la maîtrise des flux",
       "La gouvernance interne : condition préalable à toute performance",
       "La coordination avec les programmes nationaux : un levier sous-exploité",
       "La transformation digitale : accélérateur de performance et de transparence",
-      "Ce que SaniNova apporte aux centrales d'achat",
+      "Ce que SaniNova apporte aux organisations internationales et PTF",
+      // Article 9: Medicines Regulatory Authorities in Africa
+      "Transformation 1 — Moderniser les processus d’enregistrement et d’homologation",
+      "Transformation 2 — Renforcer la surveillance du marché pharmaceutique",
+      "Transformation 3 — Déployer des systèmes de traçabilité pharmaceutique",
+      "Transformation 4 — S’intégrer dans les réseaux réglementaires continentaux et internationaux",
+      "Transformation 5 — Développer des ressources humaines spécialisées et stables",
+      "Ce que SaniNova apporte aux organisations internationales et PTF",
+      "Transformation 1 — Modernizing registration and marketing authorization processes",
+      "Transformation 2 — Strengthening pharmaceutical market surveillance",
+      "Transformation 3 — Deploying pharmaceutical traceability systems",
+      "Transformation 4 — Integrating into continental and international regulatory networks",
+      "Transformation 5 — Developing specialized and stable human resources",
+      "What SaniNova brings to regulatory authorities",
+      // Article 10: Technical and financial partners
+      "Le piège de l’approche projet : quand l’urgence éclipse la durabilité",
+      "L’alignement sur les priorités nationales : une condition non négociable",
+      "Le renforcement des capacités nationales : investissement central, pas activité transversale",
+      "La coordination entre PTF : éviter la fragmentation, amplifier les synergies",
+      "Ce que SaniNova apporte aux organisations internationales et PTF",
     ];
 
     const renderedElements: React.ReactNode[] = [];
@@ -388,7 +407,8 @@ export default function PublicationDetailPage() {
       }
 
       // Check if it is an orange subheading
-      if (orangeHeadings.some(heading => heading.toLowerCase() === line.toLowerCase())) {
+      const normalize = (str: string) => str.toLowerCase().replace(/[\s\u200B-\u200D\uFEFF]/g, '').replace(/['’]/g, "'");
+      if (orangeHeadings.some(heading => normalize(heading) === normalize(line))) {
         renderedElements.push(
           <h3 
             key={`heading-${i}`} 
