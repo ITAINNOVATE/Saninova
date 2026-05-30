@@ -583,54 +583,70 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                   </div>
                 )}
 
-                {/* Lesson Rich Content (Markdown layout) */}
-                <div className="prose prose-slate prose-orange max-w-none mb-10 text-slate-700 leading-relaxed text-sm md:text-base font-medium space-y-4">
+                {/* Lesson Rich Content - PPT Style */}
+                <div className="max-w-none mb-10 space-y-5 text-sm md:text-base">
                   {currentChapter.content.split("\n\n").map((para, i) => {
-                    if (para.startsWith("####")) {
-                      return (
-                        <h5 key={i} className="text-orange font-bold text-sm md:text-base mt-4 mb-2 flex items-center gap-2">
-                          <span className="w-1.5 h-1.5 rounded-full bg-orange"></span>
-                          {para.replace(/^#+\s*/, "")}
-                        </h5>
-                      );
-                    }
+                    // ### Main section title — orange left bar style (like PPT section headers)
                     if (para.startsWith("###")) {
                       return (
-                        <h4 key={i} className="text-emerald-700 font-montserrat font-bold text-lg md:text-xl mt-6 mb-3 flex items-center gap-3">
-                          <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-                          {para.replace(/^#+\s*/, "")}
-                        </h4>
+                        <div key={i} className="flex items-center gap-4 mt-8 mb-4">
+                          <div className="w-1 h-8 bg-orange rounded-full shrink-0" />
+                          <h4 className="text-[#0F1D33] font-montserrat font-extrabold text-xl md:text-2xl leading-tight">
+                            {para.replace(/^#+\s*/, "")}
+                          </h4>
+                        </div>
                       );
                     }
-                    if (para.startsWith("-") || para.startsWith("▸")) {
+                    // #### Sub-concept title — green pill badge style (like "Le Stock" in PPT)
+                    if (para.startsWith("####")) {
                       return (
-                        <ul key={i} className="space-y-2 pl-4 list-disc marker:text-orange my-4">
+                        <div key={i} className="mt-6 mb-2">
+                          <span className="inline-block bg-emerald-600 text-white font-bold text-sm px-5 py-1.5 rounded-full shadow-sm">
+                            {para.replace(/^#+\s*/, "")}
+                          </span>
+                        </div>
+                      );
+                    }
+                    // > blockquote — blue definition block (like the blue definition box in PPT)
+                    if (para.startsWith(">")) {
+                      return (
+                        <div key={i} className="bg-[#1a4ea0] text-white px-6 py-4 rounded-xl my-4 leading-relaxed">
+                          {para.replace(/^>\s*"?|"?$/g, "")}
+                        </div>
+                      );
+                    }
+                    // Bullet lists
+                    if (para.startsWith("-") || para.startsWith("\u25b8")) {
+                      return (
+                        <ul key={i} className="space-y-2 pl-5 list-disc marker:text-orange my-3">
                           {para.split("\n").map((li, j) => (
-                            <li key={j} className="text-slate-600">{li.replace(/^[\-▸]\s*/, "")}</li>
+                            <li key={j} className="text-slate-700 leading-relaxed">{li.replace(/^[\-\u25b8]\s*/, "")}</li>
                           ))}
                         </ul>
                       );
                     }
-                    if (para.startsWith(">")) {
+                    // Numbered lists
+                    if (/^\d+\./.test(para.trim())) {
                       return (
-                        <blockquote key={i} className="border-l-4 border-orange bg-slate-50 pl-4 py-3 rounded-r-xl italic text-slate-800 my-6">
-                          {para.replace(/^>\s*"?|"?$/g, "")}
-                        </blockquote>
+                        <ol key={i} className="space-y-2 pl-5 list-decimal marker:text-[#1a4ea0] marker:font-bold my-3">
+                          {para.split("\n").map((li, j) => (
+                            <li key={j} className="text-slate-700 leading-relaxed">{li.replace(/^\d+\.\s*/, "")}</li>
+                          ))}
+                        </ol>
                       );
                     }
-
+                    // Tables
                     if (para.trim().startsWith("|") && para.includes("\n")) {
                       const rows = para.trim().split("\n");
                       const hasSeparator = rows.length > 1 && rows[1].includes("---");
                       const bodyStartIndex = hasSeparator ? 2 : 1;
-                      
                       return (
-                        <div key={i} className="my-6 overflow-x-auto rounded-xl border border-slate-200">
+                        <div key={i} className="my-6 overflow-x-auto rounded-xl border border-slate-200 shadow-sm">
                           <table className="w-full text-left text-sm">
                             <thead>
-                              <tr className="bg-slate-100 border-b border-slate-200 text-[#0F1D33]">
+                              <tr className="bg-[#1a4ea0] text-white">
                                 {rows[0].split("|").filter(c => c.trim() !== "").map((cell, cIdx) => (
-                                  <th key={cIdx} className="px-4 py-3 font-bold border-r border-slate-200 last:border-0">{cell.trim()}</th>
+                                  <th key={cIdx} className="px-4 py-3 font-bold border-r border-blue-400/30 last:border-0">{cell.trim()}</th>
                                 ))}
                               </tr>
                             </thead>
@@ -638,9 +654,8 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                               {rows.slice(bodyStartIndex).map((row, rIdx) => {
                                 if (row.trim() === "") return null;
                                 return (
-                                  <tr key={rIdx} className="hover:bg-slate-50 transition-colors">
+                                  <tr key={rIdx} className={rIdx % 2 === 0 ? "bg-white" : "bg-slate-50"}>
                                     {row.split("|").filter((c, idx, arr) => {
-                                      // Remove empty first and last elements caused by leading/trailing pipes
                                       if ((idx === 0 || idx === arr.length - 1) && c.trim() === "") return false;
                                       return true;
                                     }).map((cell, cIdx) => (
@@ -654,26 +669,27 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                         </div>
                       );
                     }
-
-                    
+                    // Images
                     const imgMatch = para.match(/^!\[(.*?)\]\((.*?)\)$/);
                     if (imgMatch) {
                       return (
-                        <div key={i} className="my-8 rounded-2xl overflow-hidden border border-slate-200 shadow-lg">
+                        <div key={i} className="my-6 rounded-2xl overflow-hidden border border-slate-200 shadow">
                           {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img src={imgMatch[2]} alt={imgMatch[1]} className="w-full h-auto object-cover max-h-[400px]" />
                         </div>
                       );
                     }
+                    // Code blocks
                     if (para.startsWith("```")) {
                       const code = para.replace(/```[a-z]*\n|```/g, "");
                       return (
-                        <pre key={i} className="bg-slate-950 p-5 rounded-2xl border border-white/5 font-mono text-xs overflow-x-auto my-6 text-orange/95">
+                        <pre key={i} className="bg-slate-900 p-5 rounded-xl font-mono text-xs overflow-x-auto my-4 text-emerald-400">
                           <code>{code}</code>
                         </pre>
                       );
                     }
-                    return <p key={i} className="text-slate-600 leading-relaxed">{para}</p>;
+                    // Default paragraph
+                    return <p key={i} className="text-slate-700 leading-relaxed">{para}</p>;
                   })}
                 </div>
 
