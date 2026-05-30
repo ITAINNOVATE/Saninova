@@ -587,31 +587,31 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                 {/* Lesson Rich Content - PPT Style */}
                 <div className="max-w-none mb-10 space-y-5 text-sm md:text-base">
                   {currentChapter.content.split("\n\n").map((para, i) => {
-                    // #### Section breadcrumb (e.g. "Définitions et concepts clés") — orange bar + title
+                    // #### Section title (e.g. "Définitions et concepts clés") — orange bar + title
                     if (para.startsWith("####")) {
                       return (
-                        <div key={i} className="flex items-center gap-4 mt-8 mb-4">
-                          <div className="w-1 h-8 bg-orange rounded-full shrink-0" />
-                          <h4 className="text-[#0F1D33] font-montserrat font-extrabold text-xl md:text-2xl leading-tight">
+                        <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '2rem', marginBottom: '1rem' }}>
+                          <div style={{ width: '4px', height: '32px', backgroundColor: '#f97316', borderRadius: '9999px', flexShrink: 0 }} />
+                          <h4 style={{ color: '#0F1D33', fontFamily: 'Montserrat, sans-serif', fontWeight: 800, fontSize: '1.25rem', lineHeight: 1.3, margin: 0 }}>
                             {para.replace(/^#+\s*/, "")}
                           </h4>
                         </div>
                       );
                     }
-                    // ### Concept title (e.g. "Le Stock") — green pill badge like PPT
+                    // ### Concept title (e.g. "Le Stock") — green pill badge
                     if (para.startsWith("###")) {
                       return (
-                        <div key={i} className="mt-5 mb-2">
-                          <span className="inline-block bg-emerald-600 text-white font-bold text-sm px-5 py-1.5 rounded-full shadow-sm">
+                        <div key={i} style={{ marginTop: '1.25rem', marginBottom: '0.5rem' }}>
+                          <span style={{ display: 'inline-block', backgroundColor: '#16a34a', color: '#ffffff', fontWeight: 700, fontSize: '0.875rem', padding: '0.375rem 1.25rem', borderRadius: '9999px' }}>
                             {para.replace(/^#+\s*/, "")}
                           </span>
                         </div>
                       );
                     }
-                    // > blockquote — blue definition block (like the blue definition box in PPT)
+                    // > blockquote — blue definition block (like PPT blue box)
                     if (para.startsWith(">")) {
                       return (
-                        <div key={i} className="bg-[#1a4ea0] text-white px-6 py-4 rounded-xl my-4 leading-relaxed">
+                        <div key={i} style={{ backgroundColor: '#1a4ea0', color: '#ffffff', padding: '1rem 1.5rem', borderRadius: '12px', margin: '1rem 0', lineHeight: 1.7 }}>
                           {para.replace(/^>\s*"?|"?$/g, "")}
                         </div>
                       );
@@ -619,9 +619,9 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                     // Bullet lists
                     if (para.startsWith("-") || para.startsWith("\u25b8")) {
                       return (
-                        <ul key={i} className="space-y-2 pl-5 list-disc marker:text-orange my-3">
+                        <ul key={i} style={{ paddingLeft: '1.25rem', margin: '0.75rem 0', listStyleType: 'disc' }}>
                           {para.split("\n").map((li, j) => (
-                            <li key={j} className="text-slate-700 leading-relaxed">{li.replace(/^[\-\u25b8]\s*/, "")}</li>
+                            <li key={j} style={{ color: '#334155', lineHeight: 1.7, marginBottom: '0.375rem' }}>{li.replace(/^[\-\u25b8]\s*/, "")}</li>
                           ))}
                         </ul>
                       );
@@ -629,9 +629,9 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                     // Numbered lists
                     if (/^\d+\./.test(para.trim())) {
                       return (
-                        <ol key={i} className="space-y-2 pl-5 list-decimal marker:text-[#1a4ea0] marker:font-bold my-3">
+                        <ol key={i} style={{ paddingLeft: '1.25rem', margin: '0.75rem 0', listStyleType: 'decimal' }}>
                           {para.split("\n").map((li, j) => (
-                            <li key={j} className="text-slate-700 leading-relaxed">{li.replace(/^\d+\.\s*/, "")}</li>
+                            <li key={j} style={{ color: '#334155', lineHeight: 1.7, marginBottom: '0.375rem' }}>{li.replace(/^\d+\.\s*/, "")}</li>
                           ))}
                         </ol>
                       );
@@ -690,7 +690,7 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                       );
                     }
                     // Default paragraph
-                    return <p key={i} className="text-slate-700 leading-relaxed">{para}</p>;
+                    return <p key={i} style={{ color: '#334155', lineHeight: 1.75, margin: '0.5rem 0' }}>{para}</p>;
                   })}
                 </div>
 
