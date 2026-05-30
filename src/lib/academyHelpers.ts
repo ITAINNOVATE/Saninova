@@ -88,9 +88,9 @@ const allModules = certificationsData.flatMap((academy) => {
         trainers: [
           {
             name: "Dr Hope AKOHOUVI AMOU",
-            role: "Expert Formateur SaniNova",
+            role: "Directeur Général de SANINOVA",
             bio: "Expert international en systèmes de santé avec une grande expérience sur le terrain.",
-            image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80"
+            image: "/images/photo_hope.png"
           }
         ],
         isStaticModule: true,
