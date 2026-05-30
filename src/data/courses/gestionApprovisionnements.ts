@@ -1,273 +1,1642 @@
-export const gestionApprovisionnementsCourse: any = [
+// Fichier g+Æn+Ær+Æ automatiquement avec le contenu propre du PPTX
+export const gestionApprovisionnementsCourse: any[] = [
   {
     "id": "gas-m1",
-    "title": "Contenu de la formation",
+    "title": "Module 1 : Principes fondamentaux de la gestion des stocks",
     "chapters": [
       {
         "id": "gas-m1-c1",
-        "title": "Gestion des approvisionnements et des stocks",
+        "title": "Principes fondamentaux de la gestion des stocks",
         "type": "text",
-        "duration": "5 min",
-        "content": "### Gestion des approvisionnements et des stocks\n\nACADEMIE SUPPLY CHAIN SANTE\n\nChapitres\r\n\r\nPrincipes fondamentaux de la gestion des stocks \r\nM√©thodes de calcul des niveaux de stock \r\nProcessus de commande et suivi fournisseurs \r\nGestion des ruptures et des surstocks \r\nSyst√®mes d'inventaire et outils digitaux"
+        "duration": "10 min",
+        "content": "#### Principes fondamentaux de la gestion des stocks\n\n![Entrep+¶t de pharmacie moderne](/images/course/stock.png)\n\nGESTION DES APPROVISIONNEMENTS ET DES STOCKS\n"
       },
       {
         "id": "gas-m1-c2",
-        "title": "Principes fondamentaux de la gestion des stocks",
+        "title": "Plan",
         "type": "text",
-        "duration": "5 min",
-        "content": "### Principes fondamentaux de la gestion des stocks\n\nGESTION DES APPROVISIONNEMENTS ET DES STOCKS"
+        "duration": "10 min",
+        "content": "#### Plan\n\nD+Æfinitions et concepts cl+Æs\n\nTypes de stocks et leur r+¶le dans la cha+´ne pharmaceutique\n\nIndicateurs cl+Æs de performance\n\nIntroduction aux bonnes pratiques de gestion des stocks\n"
       },
       {
         "id": "gas-m1-c3",
-        "title": "Gestion des approvisionnements et des stocks",
+        "title": "Le Stock",
         "type": "text",
-        "duration": "5 min",
-        "content": "### Gestion des approvisionnements et des stocks\n\nPlan\r\n\r\nD√©finitions et concepts cl√©s \r\nTypes de stocks et leur r√¥le dans la cha√Æne pharmaceutique\r\nIndicateurs cl√©s de performance \r\nIntroduction aux bonnes pratiques de gestion des stocks"
+        "duration": "10 min",
+        "content": "#### D+Æfinitions et concepts cl+Æs\n\n### Le Stock\n\nEnsemble des produits (m+Ædicaments, consommables, r+Æactifs) d+Ætenus par une structure sanitaire +· un moment donn+Æ, en attente d'+¨tre utilis+Æs ou distribu+Æs.\n\nUne pharmacie hospitali+øre fait le contr+¶le un lundi matin et compte au total :\n\nAmoxicilline 500mg : 2 400 comprim+Æs\n\nParac+Ætamol 500mg : 5 800 comprim+Æs\n\nS+Ærum physiologique 500ml : 320 poches\n\nGants d'examen (bo+´tes) : 45 bo+´tes\n\nC'est le stock de cette pharmacie +· ce moment pr+Æcis.\n\nIl sera diff+Ærent le lendemain selon les sorties et les r+Æceptions.\n\n"
       },
       {
         "id": "gas-m1-c4",
-        "title": "D√©finitions et concepts cl√©s",
+        "title": "Stock de s+Æcurit+Æ (SS)",
         "type": "text",
-        "duration": "5 min",
-        "content": "### D√©finitions et concepts cl√©s\n\nEnsemble des produits (m√©dicaments, consommables, r√©actifs) d√©tenus par une structure sanitaire √† un moment donn√©, en attente d'√™tre utilis√©s ou distribu√©s.\r\n\r\nUne pharmacie hospitali√®re fait le contr√¥le un lundi matin et compte au total :\r\nAmoxicilline 500mg : 2 400 comprim√©s\r\nParac√©tamol 500mg : 5 800 comprim√©s\r\nS√©rum physiologique 500ml : 320 poches\r\nGants d'examen (bo√Ætes) : 45 bo√Ætes\r\n\r\nC'est le stock de cette pharmacie √† ce moment pr√©cis. \r\nIl sera diff√©rent le lendemain selon les sorties et les r√©ceptions.\r\n\r\nLe Stock\n\nQuantit√© minimale de produits conserv√©e en r√©serve pour faire face aux impr√©vus (retards de livraison, hausse soudaine de la demande, ou rupture chez le fournisseur).\r\n\r\nFormule : SS = CMM √ó Nombre de mois tampon\r\n\r\nStock de s√©curit√© (SS)\r\n\r\nLa pharmacie consomme en moyenne 200 comprim√©s d'Amoxicilline par mois (CMM = 200). \r\nElle choisit un tampon de 1,5 mois pour se prot√©ger des al√©as.\r\n\r\nSS = 200 √ó 1,5 = 300 comprim√©s\r\n\r\nCes 300 comprim√©s ne doivent jamais √™tre touch√©s en dehors d'une urgence. \r\nSi le stock descend √† ce niveau, la commande aurait d√©j√† d√ª √™tre pass√©e.\n\nNiveau de stock qui d√©clenche automatiquement une commande. Quand le stock descend √† ce niveau, il est temps de commander.\r\n\r\nFormule :Stock min = CMM √ó D√©lai de livraison + Stock de s√©curit√©\r\n\r\nStock minimum\r\n\r\nLe d√©lai de livraison de son fournisseur est de 2 mois. \r\nSon stock de s√©curit√© est de 300 comprim√©s.\r\n\r\nStock min = 200 √ó 2 + 300 = 700 comprim√©s\r\n\r\nD√®s que le stock d'Amoxicilline passe en dessous de 700 comprim√©s, la pharmacie doit imm√©diatement passer commande. Si elle attend plus longtemps, elle risque de tomber dans son stock de s√©curit√©, voire en rupture.\n\nNiveau de stock au-del√† duquel il ne faut pas aller, pour √©viter les surstocks, les p√©remptions et le gaspillage d'espace.\r\n\r\nFormule : Stock max = Stock min + Quantit√© √©conomique de commande\r\n\r\nStock maximum\r\n\r\nLa pharmacie commande en g√©n√©ral 3 mois de consommation \r\nQuantit√© √©conomique de commande = 200 √ó 3 = 600 comprim√©s\r\nSon stock min est de 700\r\n\r\nStock max = 700 + 600 = 1 300 comprim√©s\r\n\r\nLa pharmacie ne devrait jamais d√©passer 1 300 comprim√©s d'Amoxicilline en stock. \r\nAu-del√†, elle immobilise des fonds inutilement et risque des p√©remptions.\n\nQuantit√© r√©ellement utilisable √† un instant T, c'est-√†-dire le stock physique d√©duction faite des produits r√©serv√©s, p√©rim√©s ou endommag√©s.\r\n\r\nStock disponible = Stock physique ‚àí Produits non utilisables\r\n\r\nStock disponible\r\n\r\nLa pharmacie a physiquement 950 comprim√©s d'Amoxicilline. \r\nMais en faisant le contr√¥le qualit√©, elle constate que : 80 comprim√©s sont p√©rim√©s, 50 comprim√©s ont un conditionnement endommag√© (non distribuables)\r\n\r\nStock disponible = 950 ‚àí 80 ‚àí 50 = 820 comprim√©s\r\n\r\nLa pharmacie ne peut compter que sur 820 comprim√©s, et non 950. C'est ce chiffre qui doit figurer dans le syst√®me de gestion. Avec un stock min √† 700, elle est encore au-dessus du seuil, mais la marge est faible.\n\nEncore appel√© seuil de r√©approvisionnement : Niveau de stock auquel il faut passer commande pour recevoir la livraison avant d'atteindre le stock de s√©curit√©. \r\nC'est souvent confondu avec le stock min, mais il peut en diff√©rer selon le d√©lai de livraison variable.\r\n\r\nPoint de commande\r\n\r\nLa pharmacie consomme 200 comprim√©s/mois d'Amoxicilline. Son d√©lai de livraison habituel est de 2 mois, mais il peut varier. Son stock de s√©curit√© est de 300.\r\nPoint de commande = 200 √ó 2 + 300 = 700 comprim√©s\r\n\r\nSupposons que le d√©lai de livraison soit incertain et fluctue entre 1,5 et 2,5 mois. \r\nLa pharmacie choisit prudemment de travailler avec le d√©lai maximum (2,5 mois)\r\nPoint de commande = 200 √ó 2,5 + 300 = 800 comprim√©s\r\n\r\nLa pharmacie commande plus t√¥t pour se couvrir contre les retards variables de son fournisseur.\n\nTemps √©coul√© entre le moment o√π la commande est pass√©e et le moment o√π les produits sont effectivement disponibles en stock. Il inclut le temps de traitement, d'exp√©dition et de r√©ception.\r\n\r\nD√©lai de livraison\r\n\r\nLa pharmacie passe une commande de Parac√©tamol le 1er mars.\r\nLes produits arrivent le 28 mars.\r\n\r\nLe d√©lai de livraison est de 27 jours, soit environ 1 mois. \r\n\r\nLa pharmacie doit int√©grer ce d√©lai dans tous ses calculs de stock. \r\nSi elle attend d'√™tre √† z√©ro pour commander, elle sera en rupture pendant pr√®s d'un mois.\n\nQuantit√© moyenne de produits consomm√©s par mois sur une p√©riode de r√©f√©rence. C'est la base de tous les calculs de stock.\r\n\r\nCMM = Total consomm√© sur la p√©riode √∑ Nombre de mois de la p√©riode\r\n\r\nConsommation Moyenne Mensuelle\r\n\r\nLa pharmacie rel√®ve les sorties de Parac√©tamol sur 6 mois : 6 800 comprim√©s\r\n\r\nCalcul brut : CMM = 6 800 √∑ 6 = 1 133 comprim√©s/mois\r\n\r\nMais avril a √©t√© marqu√© par une rupture partielle. On exclut ce mois et on recalcule sur 5 mois :\r\n\r\nCMM ajust√©e = (6 800 ‚àí 800) √∑ 5 = 1 200 comprim√©s/mois\r\n\r\nUtiliser la CMM brute aurait conduit √† sous-commander et √† reproduire la rupture.\n\nIndicateur qui mesure la vitesse √† laquelle le stock est renouvel√© sur une p√©riode donn√©e. Un taux √©lev√© indique une bonne gestion ; un taux faible signale un surstock potentiel.\r\n\r\nTaux de rotation = Quantit√© consomm√©e √∑ Stock moyen\r\n\r\nTaux de rotation des stocks\r\n\r\nSur les 6 derniers mois, la pharmacie a consomm√© 7 200 comprim√©s de S√©rum de R√©hydratation Orale (SRO). Son stock moyen sur la p√©riode √©tait de 1 800 comprim√©s.\r\n\r\nTaux de rotation = 7 200 √∑ 1 800 = 4 fois en 6 mois\r\n\r\nCela signifie que le stock se renouvelle enti√®rement toutes les 6 semaines environ. \r\nLe SRO tourne bien (demande forte, gestion saine). \r\n\r\nUn taux de rotation inf√©rieur √† 1 sur 6 mois est un signal d'alerte.\n\nSituation o√π un produit est √©puis√© (stock = 0 ) et ne peut plus r√©pondre √† la demande. \r\n\r\nC'est l'un des risques les plus graves.\r\n\r\nRupture de stock\r\n\r\nLa pharmacie a 150 comprim√©s de M√©tronidazole en stock. Sa CMM est de 300 comprim√©s et son d√©lai de livraison est de 2 mois. \r\nElle n'a pas encore command√©.\r\nLa pharmacie est d√©j√† en situation de rupture imminente.\r\n\r\nD√©ficit = 600 ‚àí 150 = 450 comprim√©s\r\nElle doit d√©clencher une commande d'urgence imm√©diatement.\n\nSituation o√π le stock d√©passe le niveau maximum d√©fini. \r\nCela immobilise des fonds, occupe de l'espace et expose les produits au risque de p√©remption.\r\n\r\nSurstock ou surstockage\r\n\r\nLa pharmacie re√ßoit une livraison de 3 000 comprim√©s de Cotrimoxazole (200 d√©j√† en stock). \r\nSa CMM est de 400 comprim√©s et son stock max est de 1 600 comprim√©s (soit 4 mois).\r\n\r\nDur√©e de couverture = 3 200 √∑ 400 = 8 mois de stock\r\n\r\nSi la date de p√©remption de ce lot est dans 10 mois, elle dispose d'une marge.\r\nMais si elle est dans 6 mois, elle risque de perdre 800 comprim√©s p√©rim√©s. \r\n\r\nC'est une immobilisation ou perte financi√®re √©vitable.\n\nDate limite au-del√† de laquelle un produit ne doit plus √™tre utilis√© car son efficacit√© ou son innocuit√© ne peut plus √™tre garantie. \r\nLa gestion des p√©remptions est une priorit√© absolue.\r\n\r\nP√©remption (Date de p√©remption)\r\n\r\nLa pharmacie re√ßoit deux lots d'Amoxicilline :\r\nLot A : 500 comprim√©s ‚Äî p√©rime le 31 mars 2026\r\nLot B : 800 comprim√©s ‚Äî p√©rime le 30 septembre 2026\r\nSa CMM est de 200 comprim√©s/mois. Nous sommes en janvier 2026.\r\n\r\n100 comprim√©s seront perdus si aucune mesure n'est prise. \r\n\r\nIl ne faut jamais recevoir des produits dont la dur√©e de vie r√©siduelle est inf√©rieure √† la dur√©e de couverture du stock.\n\nPrincipe de gestion selon lequel les produits dont la date de p√©remption est la plus proche doivent √™tre distribu√©s en premier, ind√©pendamment de la date d'entr√©e en stock. \r\nC'est une r√®gle d'or en pharmacie.\r\n\r\nFEFO (First Expired, First Out)\r\n\r\nLa pharmacie a en rayon deux lots de vaccins anti-t√©taniques :\r\nLot X : 50 doses ‚Äî p√©rime le 15 f√©vrier 2026 (arriv√© en d√©cembre)\r\nLot Y : 80 doses ‚Äî p√©rime le 30 juin 2026 (arriv√© en janvier)\r\nUn agent de sant√© vient r√©cup√©rer 20 doses.\r\n\r\nBonne pratique (FEFO) ‚Üí il prend dans le Lot X, car il p√©rime en premier (15 f√©vrier), qu'importe l'ordre d'arriv√©e.\n\nPrincipe selon lequel les produits entr√©s en premier en stock doivent sortir en premier.\r\n\r\nUtilis√© quand les dates de p√©remption sont identiques.\r\n\r\nFIFO (First In, First Out)\r\n\r\nLa pharmacie re√ßoit deux livraisons de Parac√©tamol ayant la m√™me date de p√©remption : \r\nLivraison du 5 janvier : 200 bo√Ætes (rang√©es au fond)\r\nLivraison du 20 janvier : 150 bo√Ætes (rang√©es devant)\r\n\r\nUn infirmier vient prendre des bo√Ætes : il doit prendre celles du 5 janvier, qui sont entr√©es en premier, m√™me si elles sont au fond.\r\n\r\nAvec des dates de p√©remption identiques, FIFO et FEFO donnent le m√™me r√©sultat. \r\nMais l'organisation physique du stock doit faciliter ce geste : rangement par rotation.\n\nOp√©ration de comptage physique de tous les produits en stock √† un moment donn√©, permettant de v√©rifier la concordance entre le stock r√©el et le stock th√©orique enregistr√© dans le syst√®me.\r\n\r\nInventaire\r\n\r\nLa pharmacie utilise un registre manuel. Selon ce registre, le stock th√©orique de Parac√©tamol est de 4 200 comprim√©s. Le jour de l'inventaire, le comptage physique donne 3 850 comprim√©s.\r\n\r\n√âcart = 3 850 ‚àí 4 200 = ‚àí350 comprim√©s\r\nTaux de pr√©cision de l'inventaire = (3 850 √∑ 4 200) √ó 100 = 91,7 %\r\nInvestiguer sur les causes des √©carts.\r\n \r\nTaux de pr√©cision acceptable : Sup√©rieur ou √©gal √† 95%"
+        "duration": "10 min",
+        "content": "#### D+Æfinitions et concepts cl+Æs\n\n### Stock de s+Æcurit+Æ (SS)\n\nQuantit+Æ minimale de produits conserv+Æe en r+Æserve pour faire face aux impr+Ævus (retards de livraison, hausse soudaine de la demande, ou rupture chez le fournisseur).\n\nFormule : SS = CMM +˘ Nombre de mois tampon\n\nLa pharmacie consomme en moyenne 200 comprim+Æs d'Amoxicilline par mois (CMM = 200).\n\nElle choisit un tampon de 1,5 mois pour se prot+Æger des al+Æas.\n\nSS = 200 +˘ 1,5 = 300 comprim+Æs\n\nCes 300 comprim+Æs ne doivent jamais +¨tre touch+Æs en dehors d'une urgence.\n\nSi le stock descend +· ce niveau, la commande aurait d+Æj+· d++ +¨tre pass+Æe.\n"
       },
       {
         "id": "gas-m1-c5",
-        "title": "Gestion des approvisionnements et des stocks",
+        "title": "Stock minimum",
         "type": "text",
-        "duration": "5 min",
-        "content": "### Gestion des approvisionnements et des stocks\n\nTypes de stocks et leur r√¥le dans la cha√Æne pharmaceutique\r\n\r\nDans une cha√Æne pharmaceutique, les produits ne sont pas tous stock√©s pour la m√™me raison. \r\n\r\nChaque type de stock r√©pond √† une logique pr√©cise.\r\n\r\nLes conna√Ætre permet :\r\nde mieux dimensionner les quantit√©s, \r\nd'√©viter les gaspillages et \r\nd'assurer la continuit√© des soins.\n\nTypes de stocks et leur r√¥le dans la cha√Æne pharmaceutique\r\n\r\nD√©finition\r\n\r\nR√¥le\r\n\r\nIllustration\r\n\r\nStock de cycle\r\n\r\nC'est la quantit√© de produits consomm√©e entre deux commandes successives. \r\nIl repr√©sente le stock \"normal\" qui entre et sort r√©guli√®rement.\r\nOn parle aussi de stock d‚Äôactivit√© ou de stock de roulement\r\n\r\nCouvrir la demande courante entre deux livraisons.\r\n\r\nUne pharmacie commande du Parac√©tamol toutes les 2 mois. CMM =1 200 comprim√©s.\r\nStock de cycle = 1 200 √ó 2 = 2 400 comprim√©s\r\n\r\n√Ä la r√©ception d'une livraison, le stock remonte de 2 400. Il descend progressivement jusqu'√† la prochaine commande. \r\nC'est ce mouvement de \"mont√©e-descente\" qui caract√©rise le stock de cycle.\n\nTypes de stocks et leur r√¥le dans la cha√Æne pharmaceutique\r\n\r\nD√©finition\r\n\r\nR√¥le\r\n\r\nIllustration\r\n\r\nStock de s√©curit√©\r\n\r\nQuantit√© r√©serv√©e pour faire face aux al√©as : retard fournisseur, hausse impr√©vue de la demande, erreur de commande. \r\nIl ne doit √™tre utilis√© qu'en dernier recours.\r\n\r\nProt√©ger la continuit√© des soins contre les impr√©vus.\r\n\r\nLa m√™me pharmacie a un d√©lai de livraison qui peut varier de 1 √† 3 mois au lieu des 2 mois habituels. Elle choisit de couvrir 1 mois d'incertitude :\r\nStock de s√©curit√© = 1 200 √ó 1 = 1 200 comprim√©s\r\n\r\nCes 1 200 comprim√©s ne bougent pas en temps normal. Si la livraison attendue en f√©vrier n'arrive qu'en mars, c'est ce stock qui permet d'√©viter la rupture.\n\nTypes de stocks et leur r√¥le dans la cha√Æne pharmaceutique\r\n\r\nD√©finition\r\n\r\nR√¥le\r\n\r\nIllustration\r\n\r\nStock en transit\r\n\r\nProduits qui ont quitt√© le fournisseur ou le niveau sup√©rieur de la cha√Æne mais qui ne sont pas encore arriv√©s √† destination. \r\nIls existent physiquement mais ne sont pas encore disponibles √† l‚Äôentrep√¥t.\r\n\r\nRepr√©sente les ressources \"en route\" √† prendre en compte dans la planification pour ne pas passer de commandes redondantes.\r\n\r\nLa Direction R√©gionale de la Sant√© a command√© 5 000 bo√Ætes de Cotrimoxazole √† la centrale d'achat nationale. La commande a √©t√© exp√©di√©e il y a 10 jours, le d√©lai total est de 30 jours. Ces 5 000 bo√Ætes constituent son stock en transit.\r\n\r\nStock effectif = Stock physique + Stock en transit ‚àí Commandes en attente\n\nTypes de stocks et leur r√¥le dans la cha√Æne pharmaceutique\r\n\r\nD√©finition\r\n\r\nR√¥le\r\n\r\nIllustration\r\n\r\nStock sp√©culatif\r\n\r\nStock constitu√© volontairement en quantit√© sup√©rieure √† la normale, en anticipation d'une hausse des prix, d'une p√©nurie annonc√©e ou d'une rupture pr√©visible chez le fournisseur.\r\n\r\nProt√©ger la structure contre des risques externes connus √† l'avance.\r\n\r\nUn gestionnaire apprend que le seul fabricant mondial d‚ÄôAL va suspendre sa production pendant 3 mois pour maintenance. CMM = 800 bo√Ætes. \r\nStock sp√©culatif = 800 √ó 3 = 2 400 bo√Ætes suppl√©mentaires\r\n\r\nAttention : \t- Ce type de stock doit rester exceptionnel et justifi√©. \r\n\t\t- Mal g√©r√©, il g√©n√®re des surstocks co√ªteux.\n\nTypes de stocks et leur r√¥le dans la cha√Æne pharmaceutique\r\n\r\nD√©finition\r\n\r\nR√¥le\r\n\r\nIllustration\r\n\r\nStock mort (ou stock dormant)\r\n\r\nProduits qui ne bougent plus depuis une longue p√©riode, g√©n√©ralement parce qu'ils ne sont plus demand√©s, ont √©t√© remplac√©s par un autre produit, ou sont proches de la p√©remption.\r\n\r\nIl n'a aucun r√¥le utile ‚Äî c'est pr√©cis√©ment le probl√®me. \r\nIl immobilise de l'argent, de l'espace et du personnel.\r\n\r\nUne pharmacie d√©tient 3 000 comprim√©s de Chloroquine. \r\nDepuis l'abandon de ce m√©dicament comme traitement de premi√®re ligne du paludisme dans le pays, la consommation est tomb√©e √† 0 comprim√© par mois depuis 8 mois.\r\n\r\nIdentifier et traiter le stock mort est une priorit√© de bonne gestion.\n\nTypes de stocks et leur r√¥le dans la cha√Æne pharmaceutique\r\n\r\nD√©finition\r\n\r\nR√¥le\r\n\r\nIllustration\r\n\r\nStock de consignation\r\n\r\nProduits mis √† disposition par un fournisseur dans les locaux, mais qui restent la propri√©t√© du fournisseur jusqu'√† leur utilisation effective. \r\nL‚Äôentrep√¥t ou l‚Äô√©tablissement de sant√© ne paie que ce qu'elle consomme.\r\n\r\nR√©duire le besoin en tr√©sorerie tout en garantissant la disponibilit√© des produits.\r\n\r\nUn fournisseur de r√©actifs de laboratoire d√©pose 200 tests de d√©pistage rapide du VIH en consignation. La pharmacie en utilise 45 le premier mois.\r\nMontant factur√© = 45 √ó 3 500 FCFA = 157 500 FCFA\r\n\r\nLes 155 tests restants ne sont pas factur√©s et restent propri√©t√© du fournisseur. \r\nEn fin de contrat, ils sont repris ou factur√©s selon les termes convenus."
+        "duration": "10 min",
+        "content": "#### D+Æfinitions et concepts cl+Æs\n\n### Stock minimum\n\nNiveau de stock qui d+Æclenche automatiquement une commande. Quand le stock descend +· ce niveau, il est temps de commander.\n\nFormule :Stock min = CMM +˘ D+Ælai de livraison + Stock de s+Æcurit+Æ\n\nLe d+Ælai de livraison de son fournisseur est de 2 mois.\n\nSon stock de s+Æcurit+Æ est de 300 comprim+Æs.\n\nStock min = 200 +˘ 2 + 300 = 700 comprim+Æs\n\nD+øs que le stock d'Amoxicilline passe en dessous de 700 comprim+Æs, la pharmacie doit imm+Ædiatement passer commande. Si elle attend plus longtemps, elle risque de tomber dans son stock de s+Æcurit+Æ, voire en rupture.\n"
       },
       {
         "id": "gas-m1-c6",
-        "title": "Types de stocks et leur r√¥le dans la cha√Æne pharmaceutique",
+        "title": "Stock maximum",
         "type": "text",
-        "duration": "5 min",
-        "content": "### Types de stocks et leur r√¥le dans la cha√Æne pharmaceutique\n\n| Type de stock | R√¥le principal | Signal d'alerte |\r\n| --- | --- | --- |\r\n| Stock de cycle | Couvrir la demande entre deux commandes | Trop court ‚Üí rupture fr√©quente |\r\n| Stock de s√©curit√© | Absorber les impr√©vus | Trop faible ‚Üí exposition aux ruptures |\r\n| Stock de transit | Produits en acheminement | Non comptabilis√© ‚Üí commandes doubl√©es |\r\n| Stock sp√©culatif | Anticiper une p√©nurie connue | Mal g√©r√© ‚Üí surstock co√ªteux |\r\n| Stock mort | Aucun ‚Äî √† √©liminer | Pr√©sence prolong√©e ‚Üí perte financi√®re |\r\n| Stock de consignation | Disponibilit√© sans immobilisation de tr√©sorerie | Mauvais suivi ‚Üí d√©saccords fournisseur |\r\n\r\nSynth√®se"
+        "duration": "10 min",
+        "content": "#### D+Æfinitions et concepts cl+Æs\n\n### Stock maximum\n\nNiveau de stock au-del+· duquel il ne faut pas aller, pour +Æviter les surstocks, les p+Æremptions et le gaspillage d'espace.\n\nFormule : Stock max = Stock min + Quantit+Æ +Æconomique de commande\n\nLa pharmacie commande en g+Æn+Æral 3 mois de consommation\n\nQuantit+Æ +Æconomique de commande = 200 +˘ 3 = 600 comprim+Æs\n\nSon stock min est de 700\n\nStock max = 700 + 600 = 1 300 comprim+Æs\n\nLa pharmacie ne devrait jamais d+Æpasser 1 300 comprim+Æs d'Amoxicilline en stock.\n\nAu-del+·, elle immobilise des fonds inutilement et risque des p+Æremptions.\n"
       },
       {
         "id": "gas-m1-c7",
-        "title": "Indicateurs cl√©s de performance",
+        "title": "Stock disponible",
         "type": "text",
-        "duration": "5 min",
-        "content": "### Indicateurs cl√©s de performance\n\nUn indicateur cl√© de performance (KPI) est une mesure chiffr√©e qui permet d'√©valuer objectivement la qualit√© de la gestion des stocks. \r\n\r\nSans KPIs, un gestionnaire travaille √† l'aveugle : \r\nil ne sait pas si sa structure performe bien ou mal, \r\nni o√π concentrer ses efforts d'am√©lioration.\r\n\r\nLes KPIs r√©pondent √† des questions simples : \r\nAvons-nous des ruptures ? \r\nStockons-nous trop ? \r\nNos donn√©es sont-elles fiables ? \r\nNos produits sont-ils bien g√©r√©s ?\n\nD√©finition\r\n\r\nFormule\r\n\r\nInterpr√©tation\r\n\r\nTaux de disponibilit√© des produits\r\n\r\nPourcentage de produits disponibles en stock par rapport √† la liste des produits attendus, sur une p√©riode donn√©e.\r\n\r\n(Nombre de produits disponibles √∑ Nombre total de produits de la liste) √ó 100\r\n\r\n‚â• 95 % : Bonne performance\r\n80 % √† 94 % : Performance acceptable, des am√©liorations sont n√©cessaires\r\n< 80 % : Performance insuffisante, situation critique\n\nD√©finition\r\n\r\nFormule\r\n\r\nInterpr√©tation\r\n\r\nTaux de rupture de stock\r\n\r\nProportion de jours dans le mois (ou dans l'ann√©e) pendant lesquels un produit √©tait indisponible, alors qu'il aurait d√ª l'√™tre.\r\n\r\n(Nombre de jours en rupture √∑ Nombre de jours de la p√©riode) √ó 100\r\n\r\n0 % : Aucune rupture, situation id√©ale\r\n1 % √† 9 % : Ruptures occasionnelles, g√©rables\r\n‚â• 10 % : Situation pr√©occupante n√©cessitant une intervention\n\nD√©finition\r\n\r\nFormule\r\n\r\nInterpr√©tation\r\n\r\nTaux de surstockage\r\n\r\nProportion de produits dont le stock d√©passe le niveau maximum d√©fini, sur la liste totale des produits g√©r√©s.\r\n\r\n(Nombre de produits en surstock √∑ Nombre total de produits g√©r√©s) √ó 100\r\n\r\n0 % : Aucun surstockage, situation id√©ale\r\n‚â• 1 % : Finances immobilis√©s inutilement.\n\nD√©finition\r\n\r\nFormule\r\n\r\nInterpr√©tation\r\n\r\nTaux de p√©remption\r\n\r\nProportion de la valeur des produits p√©rim√©s par rapport √† la valeur totale des produits re√ßus sur une p√©riode.\r\n\r\n(Valeur des produits p√©rim√©s √∑ Valeur totale des produits re√ßus) √ó 100\r\n\r\n< 1 % : Excellente gestion des p√©remptions\r\n1 % √† 2 % : Acceptable\r\n‚â• 3 % : Probl√®me s√©rieux de gestion (surstocks, FEFO non respect√©, mauvaise pr√©vision)\n\nD√©finition\r\n\r\nFormule\r\n\r\nInterpr√©tation\r\n\r\nMois de stock disponible\r\n\r\nNombre de mois pendant lesquels le stock actuel peut couvrir la demande, sans nouvelle livraison.\r\n\r\nStock disponible √∑ CMM\r\n\r\n< Min : Sous stockage\r\nMin < MSD < Max : Stockage conforme au plan\r\n< Max : Surstockage\n\nD√©finition\r\n\r\nFormule\r\n\r\nInterpr√©tation\r\n\r\nTaux de satisfaction des besoins\r\n\r\nMesure la capacit√© √† livrer les besoins exprim√©s, dans les d√©lais convenus.\r\n\r\n(Quantit√© livr√©e dans les d√©lais √∑ Quantit√© demand√©e) √ó 100\r\n(Nombre de d√©signation satisfaite √∑ Nombre de d√©signation demand√©e) √ó 100\r\n\r\n‚â• 95 % : Satisfaction fiable\r\n80 % √† 94 % : Performance moyenne, √† am√©liorer\r\n< 80 % : Satisfaction peu fiable, prendre imm√©diatement des mesures correctrices\n\nD√©finition\r\n\r\nFormule\r\n\r\nInterpr√©tation\r\n\r\nValeur du stock immobilis√©\r\n\r\nMontant financier total des produits en surstock ou en stock mort, non utiles √† la demande courante.\r\n\r\nQuantit√© en exc√©dent √ó Prix unitaire \r\nPar produit, puis total\r\n\r\n< 5 % de la valeur totale du stock : Acceptable \r\n5‚Äì10 % de la valeur totale du stock : √Ä surveiller \r\n> 10 % de la valeur totale du stock : Perte financi√®re significative, Correction urgente\n\nD√©finition\r\n\r\nFormule\r\n\r\nInterpr√©tation\r\n\r\nTaux de rotation des stocks\r\n\r\nVitesse √† laquelle le stock est enti√®rement renouvel√© sur une p√©riode donn√©e\r\n\r\nQuantit√© consomm√©e sur la p√©riode √∑ Stock moyen de la p√©riode\r\n\r\n4‚Äì6 rotations/an : Gestion saine \r\n2‚Äì3 rotations/an : Stock lent, surveiller \r\n< 2 rotations/an : Stock dormant, action requise\n\nD√©finition\r\n\r\nFormule\r\n\r\nInterpr√©tation\r\n\r\nD√©lai moyen de livraison\r\n\r\nTemps moyen √©coul√© entre la date de commande et la date de livraison effective des produits\r\n\r\nSomme des d√©lais observ√©s √∑ Nombre de commandes sur la p√©riode\r\n\r\nConforme au contrat : Fournisseur ponctuel \r\nD√©passement < 20 % : Tol√©rable \r\nD√©passement > 20 % : Revoir le plan de distribution ou les m√©√©canismes de livraison\n\nSynth√®se\r\n\r\nCes indicateurs se lisent ensemble, pas isol√©ment. \r\n\r\nUn taux de disponibilit√© faible combin√© √† un taux de couverture √©lev√© indique par exemple que les mauvais produits sont stock√©s en exc√®s pendant que les produits essentiels manquent. \r\n\r\nC'est souvent plus r√©v√©lateur que chaque chiffre pris s√©par√©ment.\r\n\r\nLa fr√©quence de mesure recommand√©e est :\r\nMensuelle pour les indicateurs op√©rationnels (disponibilit√©, rupture, couverture) et \r\nTrimestrielle ou annuelle pour les indicateurs strat√©giques (p√©remption, valeur immobilis√©e, satisfaction)."
+        "duration": "10 min",
+        "content": "#### D+Æfinitions et concepts cl+Æs\n\n### Stock disponible\n\nQuantit+Æ r+Æellement utilisable +· un instant T, c'est-+·-dire le stock physique d+Æduction faite des produits r+Æserv+Æs, p+Ærim+Æs ou endommag+Æs.\n\nStock disponible = Stock physique ‘Í∆ Produits non utilisables\n\nLa pharmacie a physiquement 950 comprim+Æs d'Amoxicilline.\n\nMais en faisant le contr+¶le qualit+Æ, elle constate que : 80 comprim+Æs sont p+Ærim+Æs, 50 comprim+Æs ont un conditionnement endommag+Æ (non distribuables)\n\nStock disponible = 950 ‘Í∆ 80 ‘Í∆ 50 = 820 comprim+Æs\n\nLa pharmacie ne peut compter que sur 820 comprim+Æs, et non 950. C'est ce chiffre qui doit figurer dans le syst+øme de gestion. Avec un stock min +· 700, elle est encore au-dessus du seuil, mais la marge est faible.\n"
       },
       {
         "id": "gas-m1-c8",
-        "title": "Introduction aux bonnes pratiques de gestion des stocks",
+        "title": "Point de commande",
         "type": "text",
-        "duration": "5 min",
-        "content": "### Introduction aux bonnes pratiques de gestion des stocks\n\nLes bonnes pratiques de gestion des stocks ne sont pas des r√®gles abstraites. \r\n\r\nCe sont des habitudes concr√®tes, appliqu√©es au quotidien, qui font la diff√©rence entre une entrep√¥t qui fonctionne bien et un qui accumule les ruptures, les p√©remptions et les pertes financi√®res. \r\n\r\nElles couvrent quatre grands domaines : \r\nl'organisation physique du stock, \r\nla gestion des documents et des donn√©es, \r\nles proc√©dures de commande et de r√©ception et \r\nle suivi r√©gulier des indicateurs.\n\nPrincipe\r\n\r\nBonnes pratiques\r\n\r\nOrganiser correctement l'espace de stockage\r\n\r\nUn stock bien organis√© physiquement est la premi√®re condition d'une bonne gestion. \r\nSi on ne retrouve pas facilement un produit, on ne peut pas le g√©rer efficacement.\r\n\r\nS√©parer les zones fonctionnelles\r\nRespecter les conditions de conservation\r\nTemp√©rature ambiante (< 25¬∞C √† 30¬∞C selon le produit) : Comprim√©s, g√©lules\r\nCha√Æne du froid (+2¬∞C √† +8¬∞C) : Vaccins, insuline, certains r√©actifs\r\n√Ä l'abri de la lumi√®re : M√©tronidazole injectable, certains sirops\r\n√Ä l'abri de l'humidit√© (Hygrom√©trie < 60 %) : Poudres, comprim√©s effervescents\r\nRanger les produits de fa√ßon logique\r\nAssurer l'accessibilit√© pour la rotation FEFO.\n\nPrincipe\r\n\r\nDocuments\r\n\r\nTenir des documents de stock rigoureux et √† jour\r\n\r\nOn ne g√®re bien que ce que l'on mesure. Sans documentation fiable, toutes les d√©cisions de commande et de distribution reposent sur des estimations, et les erreurs s'accumulent.\r\n\r\nLa fiche de stock : chaque mouvement (entr√©e ou sortie) doit √™tre enregistr√© le jour m√™me, avec la r√©f√©rence du document justificatif. Pas d‚Äôenregistrement diff√©r√©.\r\n\r\nLe registre des commandes : Trace toutes les commandes : date, fournisseur, produits command√©s, quantit√©s, date de livraison attendue, date de r√©ception effective, √©carts.\r\n\r\nLe registre des p√©rim√©s et des destructions : Tout produit retir√© du stock pour p√©remption ou d√©t√©rioration doit √™tre enregistr√©, avec la quantit√©, la valeur, la raison et la signature du responsable. Cela permet le suivi du taux de p√©remption et prot√®ge le gestionnaire en cas de contr√¥le.\n\nPrincipe\r\n\r\nEn Pratique\r\n\r\nAppliquer rigoureusement les r√®gles FEFO et FIFO\r\n\r\nCes deux r√®gles simples, appliqu√©es syst√©matiquement, permettent d'√©liminer presque enti√®rement les p√©rim√©s √©vitables.\r\n\r\n√Ä chaque r√©ception de produits, v√©rifier les dates de p√©remption des nouveaux lots et les comparer √† ceux d√©j√† en stock. \r\n\r\nPlacer les lots √† p√©remption plus proche devant ou en haut. \r\n\r\nColler une √©tiquette visible avec la date de p√©remption sur chaque lot si l'emballage ne la mentionne pas clairement.\n\nPrincipe\r\n\r\nEtapes\r\n\r\nContr√¥ler rigoureusement chaque r√©ception\r\n\r\nTout ce qui entre dans le stock doit √™tre v√©rifi√© avant d'√™tre rang√©. Accepter un produit sans contr√¥le, c'est potentiellement introduire un probl√®me dans le stock.\r\n\r\n√âtape 1 ‚Äî V√©rification documentaire\r\n√âtape 2 ‚Äî V√©rification quantitative\r\n√âtape 3 ‚Äî V√©rification qualitative\r\n√âtape 4 ‚Äî Enregistrement imm√©diat\n\nPrincipe\r\n\r\nBonnes pratiques\r\n\r\nG√©rer les commandes de fa√ßon proactive\r\n\r\nUne bonne gestion des commandes anticipe les besoins, elle ne r√©agit pas √† la rupture. Commander dans l'urgence co√ªte plus cher, prend plus de temps et expose davantage aux ruptures.\r\n\r\nD√©finir un calendrier fixe de commande (mensuel, bimestriel) et s'y tenir. Les commandes r√©guli√®res permettent aux fournisseurs de planifier et d'am√©liorer leur taux de service.\r\n\r\nToujours calculer les quantit√©s √† commander sur la base de la CMM et des niveaux min/max, et non sur une estimation √† vue d'≈ìil.\r\n\r\nTenir √† jour la liste des fournisseurs alternatifs pour chaque produit critique. En cas de d√©faillance du fournisseur principal, le temps de trouver une alternative en urgence aggrave toujours la rupture.\n\nPrincipe\r\n\r\nFr√©quences\r\n\r\nR√©aliser des inventaires r√©guliers\r\n\r\nL'inventaire est le seul moyen de v√©rifier que les donn√©es dans le syst√®me correspondent √† la r√©alit√© physique. Sans inventaire r√©gulier, les √©carts s'accumulent et les d√©cisions deviennent de moins en moins fiables.\r\n\r\n| Type d'inventaire | Fr√©quence | Objectif |\r\n| --- | --- | --- |\r\n| Inventaire complet | 2 fois par an minimum | V√©rification globale de tous les produits |\r\n| Inventaire tournant | Mensuel, Par rotation de zones | Maintien continu de la pr√©cision |\r\n| Inventaire de contr√¥le | √Ä chaque changement de responsable | Passation de service propre |\r\n| Inventaire d'urgence | En cas de suspicion de vol ou d'erreur | V√©rification cibl√©e |"
+        "duration": "10 min",
+        "content": "#### D+Æfinitions et concepts cl+Æs\n\n### Point de commande\n\nEncore appel+Æ seuil de r+Æapprovisionnement : Niveau de stock auquel il faut passer commande pour recevoir la livraison avant d'atteindre le stock de s+Æcurit+Æ.\n\nC'est souvent confondu avec le stock min, mais il peut en diff+Ærer selon le d+Ælai de livraison variable.\n\nLa pharmacie consomme 200 comprim+Æs/mois d'Amoxicilline. Son d+Ælai de livraison habituel est de 2 mois, mais il peut varier. Son stock de s+Æcurit+Æ est de 300.\n\nPoint de commande = 200 +˘ 2 + 300 = 700 comprim+Æs\n\nSupposons que le d+Ælai de livraison soit incertain et fluctue entre 1,5 et 2,5 mois.\n\nLa pharmacie choisit prudemment de travailler avec le d+Ælai maximum (2,5 mois)\n\nPoint de commande = 200 +˘ 2,5 + 300 = 800 comprim+Æs\n\nLa pharmacie commande plus t+¶t pour se couvrir contre les retards variables de son fournisseur.\n"
       },
       {
         "id": "gas-m1-c9",
-        "title": "M√©thodes de calcul des niveaux de stock",
+        "title": "D+Ælai de livraison",
         "type": "text",
-        "duration": "5 min",
-        "content": "### M√©thodes de calcul des niveaux de stock\n\nGESTION DES APPROVISIONNEMENTS ET DES STOCKS"
+        "duration": "10 min",
+        "content": "#### D+Æfinitions et concepts cl+Æs\n\n### D+Ælai de livraison\n\nTemps +Æcoul+Æ entre le moment o+¶ la commande est pass+Æe et le moment o+¶ les produits sont effectivement disponibles en stock. Il inclut le temps de traitement, d'exp+Ædition et de r+Æception.\n\nLa pharmacie passe une commande de Parac+Ætamol le 1er mars.\n\nLes produits arrivent le 28 mars.\n\nLe d+Ælai de livraison est de 27 jours, soit environ 1 mois.\n\nLa pharmacie doit int+Ægrer ce d+Ælai dans tous ses calculs de stock.\n\nSi elle attend d'+¨tre +· z+Æro pour commander, elle sera en rupture pendant pr+øs d'un mois.\n"
       },
       {
         "id": "gas-m1-c10",
-        "title": "Gestion des approvisionnements et des stocks",
+        "title": "Consommation Moyenne Mensuelle",
         "type": "text",
-        "duration": "5 min",
-        "content": "### Gestion des approvisionnements et des stocks\n\nPlan\r\n\r\nCalcul de la consommation moyenne mensuelle (CMM)\r\nM√©thode min/max : formules et application\r\nCalcul du point de commande et du d√©lai de livraison\r\nExercices pratiques sur donn√©es r√©elles\n\nCalcul de la consommation moyenne mensuelle (CMM)\r\n\r\nLa CMM est le point de d√©part de tout calcul de stock. \r\n\r\nC'est elle qui r√©pond √† la question fondamentale : combien de ce produit consomme-t-on en moyenne par mois ? \r\n\r\nSans une CMM fiable, tous les autres calculs (stock min, stock max, quantit√© √† commander) seront faux, m√™me si les formules sont correctement appliqu√©es. \r\n\r\nUne bonne CMM repose sur des donn√©es de consommation : \r\nr√©elles, \r\ncollect√©es sur une p√©riode suffisamment longue et\r\n correctement ajust√©es."
+        "duration": "10 min",
+        "content": "#### D+Æfinitions et concepts cl+Æs\n\n### Consommation Moyenne Mensuelle\n\nQuantit+Æ moyenne de produits consomm+Æs par mois sur une p+Æriode de r+Æf+Ærence. C'est la base de tous les calculs de stock.\n\nCMM = Total consomm+Æ sur la p+Æriode +¿ Nombre de mois de la p+Æriode\n\nLa pharmacie rel+øve les sorties de Parac+Ætamol sur 6 mois : 6 800 comprim+Æs\n\nCalcul brut : CMM = 6 800 +¿ 6 = 1 133 comprim+Æs/mois\n\nMais avril a +Æt+Æ marqu+Æ par une rupture partielle. On exclut ce mois et on recalcule sur 5 mois :\n\nCMM ajust+Æe = (6 800 ‘Í∆ 800) +¿ 5 = 1 200 comprim+Æs/mois\n\nUtiliser la CMM brute aurait conduit +· sous-commander et +· reproduire la rupture.\n"
       },
       {
         "id": "gas-m1-c11",
-        "title": "Calcul de la consommation moyenne mensuelle (CMM)",
+        "title": "Taux de rotation des stocks",
         "type": "text",
-        "duration": "5 min",
-        "content": "### Calcul de la consommation moyenne mensuelle (CMM)\n\nLa formule de base\r\n\r\nQuantit√© totale consomm√©e sur la p√©riode √∑ Nombre de mois de la p√©riode\r\n\r\nExemple simple : \r\nSur 6 mois, une pharmacie a consomm√© 7 200 comprim√©s de Cotrimoxazole.\r\n\r\nCMM = 7 200 √∑ 6 = 1 200 comprim√©s/mois\r\n\r\nSimple en apparence, mais cette formule cache plusieurs pi√®ges qu'il faut savoir √©viter.\n\nLe probl√®me des mois de rupture\r\n\r\nQuand un produit est en rupture de stock, la consommation enregistr√©e est nulle ou r√©duite. \r\n\r\nSi on int√®gre ces mois dans le calcul, la CMM sera sous-estim√©e, ce qui conduira √† commander moins que n√©cessaire et √† reproduire la rupture.\r\n\r\n| Mois | Cons. | Remarque |\r\n| --- | --- | --- |\r\n| Janvier | 480 cp | Normal |\r\n| F√©vrier | 510 cp | Normal |\r\n| Mars | 120 cp | Rupture partielle (20 jours de rupture sur 30) |\r\n| Avril | 0 cp | Rupture totale |\r\n| Mai | 490 cp | Normal |\r\n| Juin | 500 cp | Normal |\r\n| Total | 2 100 cp |  |\r\n\r\nCalcul brut (mauvaise pratique) :\r\nCMM = 2 100 √∑ 6 = 350 cp/mois\r\n\r\nCalcul ajust√© (bonne pratique) :\r\nConsommation extrapol√©e mars = 120 √ó (30 √∑ 10) = 360 cp\r\n\r\nCMM ajust√©e = (480 + 510 + 360 + 490 + 500) √∑ 5 = 2 340 √∑ 5 = 468 cp/mois\r\n\r\nLa diff√©rence est √©norme : 350 cp/mois vs 468 cp/mois. \r\nCommander sur la base de 350 conduira in√©vitablement √† une nouvelle rupture. \r\nLa CMM ajust√©e de 468 refl√®te la demande r√©elle.\n\nLe probl√®me des mois atypiques\r\n\r\nCertains mois pr√©sentent des consommations anormalement √©lev√©es dues √† des √©v√©nements exceptionnels : √©pid√©mie, campagne de masse, afflux de r√©fugi√©s, erreur d'enregistrement. \r\n\r\nLes inclure gonflerait artificiellement la CMM et conduirait √† des surstocks.\r\n\r\n| Mois | Cons. | Remarque |\r\n| --- | --- | --- |\r\n| Janvier | 300 cp | Normal |\r\n| F√©vrier | 320 cp | Normal |\r\n| Mars | 310 cp | Normal |\r\n| Avril | 1850 cp | √âpid√©mie de chol√©ra |\r\n| Mai | 290 cp | Normal |\r\n| Juin | 300cp | Normal |\r\n| Total | 3 400 cp |  |\r\n\r\nCalcul brut (mauvaise pratique) :\r\nCMM = 3 400 √∑ 6 = 567 cp/mois\r\n\r\nCalcul ajust√© (bonne pratique) :\r\nExclusion du mois atypique\r\n\r\nCMM ajust√©e = (300 + 320 + 310 + 290 + 330) √∑ 5 = 1 550 √∑ 5 = 310 cp/mois\r\n\r\nCommander sur la base de 567 sachets/mois en p√©riode normale conduirait √† un surstock massif. \r\nLa CMM ajust√©e de 310 est repr√©sentative de la demande courante. \r\nLe mois d'√©pid√©mie doit √™tre g√©r√© s√©par√©ment via un stock de contingence.\n\nLa p√©riode de r√©f√©rence optimale\r\n\r\nLa longueur de la p√©riode utilis√©e pour calculer la CMM a un impact important sur sa fiabilit√©.\r\n\r\n| P√©riode | Avantage | Inconv√©nient |\r\n| --- | --- | --- |\r\n| 3 Mois | Refl√®te la tendance r√©cente | Trop sensible aux variations ponctuelles |\r\n| 6 Mois | Bon √©quilibre entre r√©cence et stabilit√© | Peut masquer une tendance √† la hausse ou √† la baisse |\r\n| 12 Mois | Int√®gre les variations saisonni√®res | Peut √™tre trop ancien si la demande a chang√© |\r\n\r\nLe choix se fait selon :\r\nSelon le niveau de la pyramide sanitaire\r\nSelon les cycles de r√©approvisionnement\r\nSelon les param√®tres min et max\r\nSelon le type de produits et de programme"
+        "duration": "10 min",
+        "content": "#### D+Æfinitions et concepts cl+Æs\n\n### Taux de rotation des stocks\n\nIndicateur qui mesure la vitesse +· laquelle le stock est renouvel+Æ sur une p+Æriode donn+Æe. Un taux +Ælev+Æ indique une bonne gestion ; un taux faible signale un surstock potentiel.\n\nTaux de rotation = Quantit+Æ consomm+Æe +¿ Stock moyen\n\nSur les 6 derniers mois, la pharmacie a consomm+Æ 7 200 comprim+Æs de S+Ærum de R+Æhydratation Orale (SRO). Son stock moyen sur la p+Æriode +Ætait de 1 800 comprim+Æs.\n\nTaux de rotation = 7 200 +¿ 1 800 = 4 fois en 6 mois\n\nCela signifie que le stock se renouvelle enti+ørement toutes les 6 semaines environ.\n\nLe SRO tourne bien (demande forte, gestion saine).\n\nUn taux de rotation inf+Ærieur +· 1 sur 6 mois est un signal d'alerte.\n"
       },
       {
         "id": "gas-m1-c12",
-        "title": "Gestion des approvisionnements et des stocks",
+        "title": "Rupture de stock",
         "type": "text",
-        "duration": "5 min",
-        "content": "### Gestion des approvisionnements et des stocks\n\nCalcul de la consommation moyenne mensuelle (CMM)\r\n\r\nCMM bas√©e sur la distribution (DMM) vs CMM bas√©e sur les consommations\r\n\r\nDans certains contextes, on distingue deux types de donn√©es :\r\nDonn√©es de distribution : quantit√©s effectivement remises aux structures inf√©rieures. C'est la mesure de la demande satisfaite vers les structures inf√©rieures dispensatrices ou non.\r\nDonn√©es de consommation: quantit√©s r√©ellement consomm√©es par les patients au niveau des points de dispensation\r\n\r\nRecommandation : \r\nUtiliser les donn√©es de consommation pour calculer la CMM, car elles refl√®tent mieux la demande r√©elle des patients. \r\nLes pertes, ajustements et transferts doivent √™tre enregistr√©s s√©par√©ment."
+        "duration": "10 min",
+        "content": "#### D+Æfinitions et concepts cl+Æs\n\n### Rupture de stock\n\n![Rupture de stock](/images/course/rupture.png)\n\nSituation o+¶ un produit est +Æpuis+Æ (stock = 0 ) et ne peut plus r+Æpondre +· la demande.\n\nC'est l'un des risques les plus graves.\n\nLa pharmacie a 150 comprim+Æs de M+Ætronidazole en stock. Sa CMM est de 300 comprim+Æs et son d+Ælai de livraison est de 2 mois.\n\nElle n'a pas encore command+Æ.\n\nLa pharmacie est d+Æj+· en situation de rupture imminente.\n\nD+Æficit = 600 ‘Í∆ 150 = 450 comprim+Æs\n\nElle doit d+Æclencher une commande d'urgence imm+Ædiatement.\n"
       },
       {
         "id": "gas-m1-c13",
-        "title": "Calcul de la consommation moyenne mensuelle (CMM)",
+        "title": "Surstock ou surstockage",
         "type": "text",
-        "duration": "5 min",
-        "content": "### Calcul de la consommation moyenne mensuelle (CMM)\n\nR√©capitulatif ‚Äî √âtapes de calcul d'une CMM fiable\r\n\r\n| √âtape | Action |\r\n| --- | --- |\r\n| 1 | Collecter les donn√©es de consommation sur 3, 6 ou 12 mois |\r\n| 2 | Identifier les mois de rupture totale et les exclure |\r\n| 3 | Identifier les mois de rupture partielle et extrapoler la consommation r√©elle |\r\n| 4 | Identifier les mois atypiques (√©pid√©mies, √©v√©nements exceptionnels) et les exclure |\r\n| 5 | Calculer la CMM sur les mois valides restants |\r\n| 6 | V√©rifier si le produit est saisonnier et calculer des CMM saisonni√®res si n√©cessaire |\r\n| 7 | R√©viser la CMM tous les trimestres ou semestres |"
+        "duration": "10 min",
+        "content": "#### D+Æfinitions et concepts cl+Æs\n\n### Surstock ou surstockage\n\nSituation o+¶ le stock d+Æpasse le niveau maximum d+Æfini.\n\nCela immobilise des fonds, occupe de l'espace et expose les produits au risque de p+Æremption.\n\nLa pharmacie re+∫oit une livraison de 3 000 comprim+Æs de Cotrimoxazole (200 d+Æj+· en stock).\n\nSa CMM est de 400 comprim+Æs et son stock max est de 1 600 comprim+Æs (soit 4 mois).\n\nDur+Æe de couverture = 3 200 +¿ 400 = 8 mois de stock\n\nSi la date de p+Æremption de ce lot est dans 10 mois, elle dispose d'une marge.\n\nMais si elle est dans 6 mois, elle risque de perdre 800 comprim+Æs p+Ærim+Æs.\n\nC'est une immobilisation ou perte financi+øre +Ævitable.\n"
       },
       {
         "id": "gas-m1-c14",
-        "title": "M√©thode min/max : formules et application",
+        "title": "P+Æremption (Date de p+Æremption)",
         "type": "text",
-        "duration": "5 min",
-        "content": "### M√©thode min/max : formules et application\n\nLa m√©thode min/max est la m√©thode de gestion des stocks la plus utilis√©e dans les syst√®mes de sant√© des pays en d√©veloppement.\r\n\r\nElle est simple, robuste et adapt√©e aux contextes o√π les ressources humaines et les outils informatiques sont limit√©s. \r\n\r\nSon principe est direct : d√©finir pour chaque produit un niveau minimum en dessous duquel le stock ne doit jamais descendre, et un niveau maximum au-del√† duquel il ne doit jamais monter.\r\n \r\nEntre ces deux bornes, le stock est consid√©r√© comme bien g√©r√©."
+        "duration": "10 min",
+        "content": "#### D+Æfinitions et concepts cl+Æs\n\n### P+Æremption (Date de p+Æremption)\n\nDate limite au-del+· de laquelle un produit ne doit plus +¨tre utilis+Æ car son efficacit+Æ ou son innocuit+Æ ne peut plus +¨tre garantie.\n\nLa gestion des p+Æremptions est une priorit+Æ absolue.\n\nLa pharmacie re+∫oit deux lots d'Amoxicilline :\n\nLot A : 500 comprim+Æs ‘«ˆ p+Ærime le 31 mars 2026\n\nLot B : 800 comprim+Æs ‘«ˆ p+Ærime le 30 septembre 2026\n\nSa CMM est de 200 comprim+Æs/mois. Nous sommes en janvier 2026.\n\n100 comprim+Æs seront perdus si aucune mesure n'est prise.\n\nIl ne faut jamais recevoir des produits dont la dur+Æe de vie r+Æsiduelle est inf+Ærieure +· la dur+Æe de couverture du stock.\n"
       },
       {
         "id": "gas-m1-c15",
-        "title": "Gestion des approvisionnements et des stocks",
+        "title": "FEFO (First Expired, First Out)",
         "type": "text",
-        "duration": "5 min",
-        "content": "### Gestion des approvisionnements et des stocks\n\nM√©thode min/max : formules et application\r\n\r\nLes param√®tres de base\r\n\r\nAvant de calculer le min et le max, trois param√®tres doivent √™tre connus avec pr√©cision pour chaque produit :\r\n\r\nLa CMM (Consommation Moyenne Mensuelle) : Calcul√©e selon la m√©thode vue au point pr√©c√©dent. C'est le moteur de tous les calculs.\r\n\r\nLe D√©lai de Livraison (DL) : Temps moyen entre la date de commande et la date de r√©ception effective. Il doit √™tre calcul√© sur l'historique r√©el des commandes, pas estim√© √† vue d'≈ìil.\r\n\r\nLa P√©riode de Commande (PC) : Intervalle de temps entre deux commandes successives. Si la pharmacie commande tous les 2 mois, PC = 2 mois.\n\nM√©thode min/max : formules et application\r\n\r\nCalcul du Stock de S√©curit√© (SS)\r\n\r\nLe stock de s√©curit√© est le socle sur lequel reposent tous les autres calculs. Il repr√©sente la protection contre les al√©as.\r\n\r\nSS = CMM √ó Nombre de mois de couverture de s√©curit√©\r\n\r\nLe nombre de mois de couverture de s√©curit√© est g√©n√©ralement fix√© par la politique nationale ou par le niveau hi√©rarchique sup√©rieur. \r\n\r\nEn l'absence de directive, on recommande :\r\n1 mois pour les produits avec un fournisseur fiable et un d√©lai court\r\n2 mois pour les produits critiques ou avec un fournisseur peu fiable\n\nM√©thode min/max : formules et application\r\n\r\nCalcul du Stock Minimum (Stock min)\r\n\r\nLe stock minimum est le niveau qui d√©clenche la commande. \r\nQuand le stock atteint ce niveau, il faut commander imm√©diatement.\r\n\r\nStock min = (CMM √ó D√©lai de livraison) + Stock de s√©curit√©\n\nM√©thode min/max : formules et application\r\n\r\nCalcul du Stock Maximum (Stock max)\r\n\r\nLe stock maximum est le niveau optimal √† atteindre apr√®s chaque livraison. \r\nIl ne doit pas √™tre d√©pass√©.\r\n\r\nStock max = Stock min + (CMM √ó P√©riode de commande)\r\n\r\nCalcul de la Quantit√© √† Commander (Q√†C)\r\n\r\nC'est la quantit√© qui doit √™tre command√©e pour ramener le stock au niveau maximum.\r\n\r\nQ√†C = Stock max ‚àí Stock disponible actuel\n\nM√©thode min/max : formules et application\r\n\r\nR√©capitulatif des formules min/max\r\n\r\n| Param√®tre | Formule |\r\n| --- | --- |\r\n| CMM | Quantit√© consomm√©e √∑ Nombre de mois valides |\r\n| D√©lai de livraison | Moyenne des d√©lais observ√©s |\r\n| P√©riode de commande | Fix√©e par le calendrier |\r\n| Stock de s√©curit√© | CMM √ó Mois de s√©curit√© |\r\n| Stock minimum | (CMM √ó DL) + SS |\r\n| Stock maximum | Stock min + (CMM √ó PC) |\r\n| Quantit√© √† commander | Stock max ‚àí Stock disponible |\n\nM√©thode min/max : formules et application\r\n\r\nLes limites de la m√©thode min/max et comment les contourner\r\n\r\n| Limite | Impact | Solution |\r\n| --- | --- | --- |\r\n| CMM mal calcul√©e | Tous les niveaux sont faux | R√©viser la CMM r√©guli√®rement (tous les trimestres) |\r\n| D√©lai de livraison variable | Le stock min ne prot√®ge pas suffisamment | Utiliser le d√©lai maximum observ√©, pas la moyenne |\r\n| Changement soudain de la demande | Stock min/max obsol√®tes rapidement | Recalculer d√®s qu'un changement est d√©tect√© |\r\n| Produits saisonniers | Un seul min/max inadapt√© toute l'ann√©e | Calculer des min/max saisonniers |\r\n| Non-respect du calendrier de commande | Commandes tardives, ruptures | Automatiser les alertes ou afficher les dates limites de commande |\n\nCalcul du point de commande et du d√©lai de livraison\r\n\r\nLe point de commande et le d√©lai de livraison sont deux concepts √©troitement li√©s. \r\n\r\nLe point de commande r√©pond √† la question : √† quel niveau de stock dois-je d√©clencher ma commande ?\r\n \r\nLe d√©lai de livraison r√©pond √† : combien de temps s'√©coule entre ma commande et la r√©ception des produits ? L'un ne va pas sans l'autre. \r\n\r\nUn point de commande mal calcul√© parce que le d√©lai de livraison est mal estim√© est l'une des causes les plus fr√©quentes de rupture de stock dans les syst√®mes pharmaceutiques."
+        "duration": "10 min",
+        "content": "#### D+Æfinitions et concepts cl+Æs\n\n### FEFO (First Expired, First Out)\n\n![R+øgle FEFO FIFO](/images/course/fefo.png)\n\nPrincipe de gestion selon lequel les produits dont la date de p+Æremption est la plus proche doivent +¨tre distribu+Æs en premier, ind+Æpendamment de la date d'entr+Æe en stock.\n\nC'est une r+øgle d'or en pharmacie.\n\nLa pharmacie a en rayon deux lots de vaccins anti-t+Ætaniques :\n\nLot X : 50 doses ‘«ˆ p+Ærime le 15 f+Ævrier 2026 (arriv+Æ en d+Æcembre)\n\nLot Y : 80 doses ‘«ˆ p+Ærime le 30 juin 2026 (arriv+Æ en janvier)\n\nUn agent de sant+Æ vient r+Æcup+Ærer 20 doses.\n\nBonne pratique (FEFO) ‘Â∆ il prend dans le Lot X, car il p+Ærime en premier (15 f+Ævrier), qu'importe l'ordre d'arriv+Æe.\n"
       },
       {
         "id": "gas-m1-c16",
-        "title": "Calcul du point de commande et du d√©lai de livraison",
+        "title": "FIFO (First In, First Out)",
         "type": "text",
-        "duration": "5 min",
-        "content": "### Calcul du point de commande et du d√©lai de livraison\n\nLe d√©lai de livraison ‚Äî Calcul pr√©cis\r\n\r\n| Composante | Description |\r\n| --- | --- |\r\n| D√©lai administratif interne | Pr√©paration et validation du bon de commande en interne |\r\n| D√©lai de traitement fournisseur | R√©ception, v√©rification et mise en pr√©paration par le fournisseur |\r\n| D√©lai de pr√©paration et conditionnement | Assemblage de la commande, emballage |\r\n| D√©lai de transport | Acheminement jusqu'√† la pharmacie |\r\n| D√©lai de d√©douanement | Pour les importations uniquement |\r\n| D√©lai de r√©ception et contr√¥le | V√©rification √† l'arriv√©e avant mise en stock |\r\n\r\nLe d√©lai de livraison n'est pas une donn√©e fixe. Il varie d'une commande √† l'autre selon les fournisseurs, les saisons, les proc√©dures administratives et les conditions de transport. \r\nIl faut donc le calculer sur l'historique r√©el et comprendre ses composantes.\n\nLe point de commande ‚Äî D√©finition et formule\r\n\r\nLe point de commande (PC) est le niveau de stock auquel il faut d√©clencher la commande pour recevoir les produits avant d'entamer le stock de s√©curit√©.\r\n\r\nPoint de commande = (CMM √ó D√©lai de livraison) + Stock de s√©curit√©\r\n\r\nCette formule est identique √† celle du stock minimum dans la m√©thode min/max simple. Mais dans une approche plus fine, les deux peuvent diff√©rer selon la variabilit√© du d√©lai de livraison et de la demande.\n\nLe point de commande avec d√©lai variable\r\n\r\nDans la r√©alit√©, le d√©lai de livraison n'est jamais parfaitement stable. Une approche plus rigoureuse int√®gre cette variabilit√©.\r\n\r\nPoint de commande = (CMM √ó DL moyen) + (Z √ó œÉ √ó ‚àöDL)\r\nZ = facteur de service (1,65 pour un taux de service de 95%)\r\nœÉ = √©cart-type de la consommation mensuelle\r\nDL = d√©lai de livraison en mois\r\n\r\nCette formule statistique est utilis√©e dans les syst√®mes informatis√©s. \r\n\r\nDans un contexte manuel, on simplifie en utilisant le d√©lai maximum observ√© plut√¥t que la moyenne.\n\nInteraction entre point de commande et fr√©quence de commande\r\n\r\nLe point de commande ne fonctionne pas isol√©ment. Il interagit avec la fr√©quence √† laquelle le gestionnaire v√©rifie son stock.\r\n\r\nSyst√®me √† r√©vision continue : Le stock est v√©rifi√© en permanence (ou tr√®s fr√©quemment). D√®s que le stock atteint le point de commande, la commande est d√©clench√©e automatiquement. C'est le syst√®me id√©al, possible avec un logiciel de gestion.\r\n\r\nSyst√®me √† r√©vision p√©riodique : Le stock est v√©rifi√© √† intervalles fixes (une fois par mois, par exemple). La commande est pass√©e √† chaque r√©vision si le stock est en dessous du point de commande. C'est le syst√®me le plus courant dans les pharmacies avec gestion manuelle.\n\nLe point de commande en contexte de livraison programm√©e\r\n\r\nDans certains syst√®mes (notamment les syst√®mes de distribution int√©gr√©e), les livraisons sont programm√©es √† dates fixes, ind√©pendamment du niveau de stock. \r\n\r\nDans ce cas, le point de commande classique est remplac√© par une quantit√© √† commander calcul√©e √† chaque date de livraison programm√©e.\r\n\r\nQuantit√© √† commander = (CMM √ó P√©riode jusqu'√† prochaine livraison) + Stock min ‚àí Stock disponible actuel\n\nTableau de synth√®se ‚Äî Point de commande selon les contextes\r\n\r\n| Contexte | Formule du point de commande | Remarque |\r\n| --- | --- | --- |\r\n| D√©lai stable, syst√®me continu | (CMM √ó DL moyen) + SS | Id√©al, peu de risque |\r\n| D√©lai variable, syst√®me continu | (CMM √ó DL max) + SS | Prudent, l√©g√®rement conservateur |\r\n| R√©vision p√©riodique mensuelle | (CMM √ó (DL + 0,5 PC)) + SS | Ajouter la moiti√© de la p√©riode de r√©vision |\r\n| Livraison programm√©e | (CMM √ó p√©riode suivante) + Stock min ‚àí Stock actuel | Calcul de la quantit√©, pas du niveau de d√©clenchement |"
+        "duration": "10 min",
+        "content": "#### D+Æfinitions et concepts cl+Æs\n\n### FIFO (First In, First Out)\n\nPrincipe selon lequel les produits entr+Æs en premier en stock doivent sortir en premier.\n\nUtilis+Æ quand les dates de p+Æremption sont identiques.\n\nLa pharmacie re+∫oit deux livraisons de Parac+Ætamol ayant la m+¨me date de p+Æremption :\n\nLivraison du 5 janvier : 200 bo+´tes (rang+Æes au fond)\n\nLivraison du 20 janvier : 150 bo+´tes (rang+Æes devant)\n\nUn infirmier vient prendre des bo+´tes : il doit prendre celles du 5 janvier, qui sont entr+Æes en premier, m+¨me si elles sont au fond.\n\nAvec des dates de p+Æremption identiques, FIFO et FEFO donnent le m+¨me r+Æsultat.\n\nMais l'organisation physique du stock doit faciliter ce geste : rangement par rotation.\n"
       },
       {
         "id": "gas-m1-c17",
-        "title": "Exercices pratiques sur donn√©es r√©elles",
+        "title": "Inventaire",
         "type": "text",
-        "duration": "5 min",
-        "content": "### Exercices pratiques sur donn√©es r√©elles\n\nEXERCICE 1 ‚Äî Calcul de la CMM\r\n\r\nDonn√©es\r\nLa Pharmacie du Centre de Sant√© de Bohicon enregistre les sorties de Parac√©tamol 500mg sur 6 mois :\r\n\r\n| Mois | Quantit√© sortie | Observations |\r\n| --- | --- | --- |\r\n| Janvier | 1 450 cp | Normal |\r\n| F√©vrier | 1 380 cp | Normal |\r\n| Mars | 1 510 cp | Normal |\r\n| Avril | 1 420 cp | Normal |\r\n| Mai | 1 390 cp | Normal |\r\n| Juin | 1 480 cp | Normal |\r\n\r\nQuestions : \r\n Calculez la CMM brute sur 6 mois.\r\n Y a-t-il des ajustements √† faire ? Justifiez.\r\n Quelle CMM retenez-vous pour les calculs suivants ?\n\nCorrection EXERCICE 1 ‚Äî Calcul de la CMM\r\n\r\nQuestion 1 ‚Äî CMM brute :\r\nTotal consomm√© = 1 450 + 1 380 + 1 510 + 1 420 + 1 390 + 1 480 = 8 630 cp\r\nCMM brute = 8 630 √∑ 6 = 1 438 cp/mois\r\n\r\nQuestion 2 ‚Äî Ajustements :\r\nAucun ajustement n'est n√©cessaire. \r\nTous les mois sont normaux, sans rupture ni √©v√©nement exceptionnel. \r\nLes consommations sont stables et coh√©rentes entre elles (√©cart maximum entre les mois : 130 cp, soit moins de 10%).\r\n\r\nQuestion 3 ‚Äî CMM retenue :\r\nCMM = 1 438 cp/mois, arrondie √† 1 440 cp/mois pour faciliter les calculs.\n\nEXERCICE 2 ‚Äî CMM avec mois de rupture\r\n\r\nDonn√©es\r\nLa Pharmacie du District Sanitaire de Glazou√© enregistre les sorties de Cotrimoxazole 480mg sur 8 mois :\r\n\r\nQuestions : \r\nIdentifiez les mois √† exclure ou √† ajuster et justifiez chaque d√©cision.\r\nCalculez la CMM ajust√©e.\r\nPourquoi est-il dangereux d'utiliser la CMM brute dans ce cas ?\r\n\r\n| Mois | Quantit√© sortie | Observations |\r\n| --- | --- | --- |\r\n| Janvier | 520 cp | Normal |\r\n| F√©vrier | 490 cp | Normal |\r\n| Mars | 210 cp | Rupture partielle ‚Äî produit disponible 12 jours sur 30 |\r\n| Avril | 0 cp | Rupture totale |\r\n| Mai | 0 cp | Rupture totale |\r\n| Juin | 530 cp | Normal |\r\n| Juillet | 4 200 cp | Campagne nationale de d√©parasitage |\r\n| Ao√ªt | 510 cp | Normal |\n\nCorrection EXERCICE 2 ‚Äî CMM avec mois de rupture\r\n\r\nQuestion 1 ‚Äî Identification des mois √† traiter :\r\nMars ‚Üí Ajustement : rupture partielle de 18 jours. Le produit n'√©tait disponible que 12 jours sur 30. La consommation enregistr√©e (210 cp) ne refl√®te que 12/30 de la demande r√©elle.\r\nConsommation extrapol√©e mars = 210 √ó (30 √∑ 12) = 525 cp\r\n\r\nAvril ‚Üí Exclusion : rupture totale, consommation nulle non repr√©sentative de la demande r√©elle.\r\n\r\nMai ‚Üí Exclusion : rupture totale, m√™me raison.\r\n\r\nJuillet ‚Üí Exclusion : consommation atypique li√©e √† une campagne exceptionnelle (4 200 cp vs une moyenne d'environ 510 cp en p√©riode normale). Inclure ce mois gonflerait artificiellement la CMM.\n\nCorrection EXERCICE 2 ‚Äî CMM avec mois de rupture\r\n\r\nQuestion 2 ‚Äî CMM ajust√©e :\r\nMois retenus : janvier, f√©vrier, mars ajust√©, juin, ao√ªt\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nCMM ajust√©e = 2 575 √∑ 5 = 515 cp/mois\r\n\r\n| Mois | Consommation retenue |\r\n| --- | --- |\r\n| Janvier | 520 cp |\r\n| F√©vrier | 490 cp |\r\n| Mars (ajust√©) | 525 cp |\r\n| Juin | 530 cp |\r\n| Ao√ªt | 510 cp |\r\n| Total | 2 575 cp |\n\nCorrection EXERCICE 2 ‚Äî CMM avec mois de rupture\r\n\r\nQuestion 3 ‚Äî Danger de la CMM brute :\r\n\r\nCMM brute = (520 + 490 + 210 + 0 + 0 + 530 + 4 200 + 510) √∑ 8 = 6 460 √∑ 8 = 808 cp/mois\r\n\r\nLa CMM brute de 808 cp est 57% plus √©lev√©e que la CMM ajust√©e de 515 cp. \r\nCommander sur cette base conduirait √† commander syst√©matiquement 293 cp de trop chaque mois, soit un surstock permanent et une immobilisation inutile de ressources financi√®res. \r\n√Ä l'inverse, si on avait calcul√© la CMM uniquement sur les mois de rupture, on aurait obtenu un chiffre bien trop bas et reproduit la rupture.\n\nEXERCICE 3 ‚Äî Calcul complet min/max et quantit√© √† commander\r\n\r\nDonn√©es\r\nPharmacie R√©gionale de Parakou ‚Äî Produit : Art√©m√©ther-Lum√©fantrine 20/120mg (bo√Ætes de 24 comprim√©s)\r\n\r\nQuestions : \r\nCalculez la CMM.\r\nCalculez le d√©lai de livraison ajust√©.\r\nCalculez le stock de s√©curit√©.\r\nCalculez le stock minimum.\r\nCalculez le stock maximum.\r\nLe stock actuel (520 bo√Ætes) est-il en dessous du point de commande ? Faut-il commander ?\r\nSi oui, calculez la quantit√© √† commander.\r\n\r\n| Mois | Consommation |\r\n| --- | --- |\r\n| Novembre | 185 boites |\r\n| D√©cembre | 170 boites |\r\n| Janvier | 195 boites |\r\n| F√©vrier | 180 boites |\r\n| Mars | 190 boites |\r\n| Avril | 175 boites |\r\n\r\nHistorique des d√©lais de livraison (en jours) : 32, 28, 45, 36, 29\r\n\r\nPolitique de la Direction R√©gionale : \r\nstock de s√©curit√© = 2 mois, \r\np√©riode de commande = 2 mois.\r\n\r\nStock disponible au moment du calcul : 520 bo√Ætes\n\nCorrection EXERCICE 3 ‚Äî Calcul complet min/max et quantit√© √† commander\r\n\r\nQuestion 1 ‚Äî CMM :\r\nTotal = 185 + 170 + 195 + 180 + 190 + 175 = 1 095 bo√Ætes\r\nAucun mois atypique ni rupture √† signaler.\r\nCMM = 1 095 √∑ 6 = 182,5 bo√Ætes/mois ‚âà 183 bo√Ætes/mois\r\n\r\nQuestion 2 ‚Äî D√©lai de livraison ajust√© :\r\nD√©lai moyen = (32 + 28 + 45 + 36 + 29) √∑ 5 = 170 √∑ 5 = 34 jours = 1,13 mois\r\nD√©lai ajust√© avec marge de 25% = 1,13 √ó 1,25 = 1,42 mois ‚âà 1,5 mois\r\n\r\nQuestion 3 ‚Äî Stock de s√©curit√© :\r\nSS = 183 √ó 2 = 366 bo√Ætes\r\n\r\nQuestion 4 ‚Äî Stock minimum :\r\nStock min = (183 √ó 1,5) + 366 = 274,5 + 366 = 641 bo√Ætes\n\nCorrection EXERCICE 3 ‚Äî Calcul complet min/max et quantit√© √† commander\r\n\r\nQuestion 5 ‚Äî Stock maximum :\r\nStock max = 641 + (183 √ó 2) = 641 + 366 = 1 007 bo√Ætes\r\n\r\nQuestion 6 ‚Äî Faut-il commander ?\r\nStock actuel = 520 bo√Ætes Stock minimum = 641 bo√Ætes\r\n520 < 641 ‚Üí Oui, le stock est en dessous du point de commande. Il faut commander imm√©diatement.\r\nLa pharmacie ne couvre que 520 √∑ 183 = 2,84 mois de consommation, ce qui semble confortable, mais le stock de s√©curit√© doit rester intact. Stock utilisable sans toucher au SS = 520 ‚àí 366 = 154 bo√Ætes, soit seulement 0,84 mois de consommation disponible hors stock de s√©curit√©. Or le d√©lai de livraison est de 1,5 mois. La rupture est imminente si on ne commande pas maintenant.\r\n\r\nQuestion 7 ‚Äî Quantit√© √† commander :\r\nQ√†C = Stock max ‚àí Stock actuel = 1 007 ‚àí 520 = 487 bo√Ætes\n\nEXERCICE 4 ‚Äî Cas complexe multiproduits\r\n\r\nDonn√©es\r\nD√©p√¥t de district de Savalou ‚Äî R√©vision mensuelle du stock\r\nParam√®tres fixes : \r\nd√©lai de livraison = 2 mois, \r\np√©riode de commande = 3 mois, \r\nstock de s√©curit√© = 2 mois.\r\n\r\nQuestions : \r\nCalculez le stock de s√©curit√©, le stock minimum et le stock maximum.\r\nD√©terminez le statut du stock (normal, surstock, rupture imminente, commander).\r\nCalculez la quantit√© √† commander si n√©cessaire.\r\nProposez une action concr√®te pour chaque produit.\r\n\r\n| Produit | CMM | Stock actuel | Obs. |\r\n| --- | --- | --- | --- |\r\n| Amoxicilline 250mg sirop | 85 flacons | 620 flacons | ‚Äî |\r\n| Fer acide folique 200/0,4mg | 430 cp | 280 cp | ‚Äî |\r\n| Vitamine A 200 000 UI | 310 capsules | 2 800 capsules | ‚Äî |\r\n| Misoprostol 200mcg | 95 cp | 410 cp | ‚Äî |\r\n| Gentamicine injectable 80mg | 40 ampoules | 55 ampoules | ‚Äî |\n\nCorrection EXERCICE 4 ‚Äî Cas complexe multiproduits\r\n\r\n| Param√®tre | Calcul | R√©sultat |\r\n| --- | --- | --- |\r\n| Stock de s√©curit√© | 85 √ó 2 | 170 flacons |\r\n| Stock minimum | (85 √ó 2) + 170 | 340 flacons |\r\n| Stock maximum | 340 + (85 √ó 3) | 595 flacons |\r\n| Stock actuel | ‚Äî | 620 flacons |\r\n\r\nProduit 1 ‚Äî Amoxicilline 250mg sirop (CMM = 85 flacons)\r\n\r\nStatut : stock actuel (620) > stock max (595) ‚Üí Surstock l√©ger (+25 flacons)\r\nCouverture = 620 √∑ 85 = 7,3 mois\r\nAction : \r\nNe pas commander lors de cette r√©vision. \r\nSurveiller la date de p√©remption des flacons en exc√®s. \r\nSi la p√©remption est proche, envisager une redistribution vers un autre centre de sant√©.\n\nCorrection EXERCICE 4 ‚Äî Cas complexe multiproduits\r\n\r\n| Param√®tre | Calcul | R√©sultat |\r\n| --- | --- | --- |\r\n| Stock de s√©curit√© | 430 √ó 2 | 860 cp |\r\n| Stock minimum | (430 √ó 2) + 860 | 1 720 cp |\r\n| Stock maximum | 1 720 + (430 √ó 3) | 3 010 cp |\r\n| Stock actuel | ‚Äî | 280 cp |\r\n\r\nProduit 2 ‚Äî Fer acide folique 200/0,4mg (CMM = 430 cp)\r\n\r\nStatut : stock actuel (280) << stock minimum (1 720) ‚Üí Rupture imminente critique\r\nCouverture = 280 √∑ 430 = 0,65 mois soit environ 19 jours. Or le d√©lai de livraison est de 2 mois. La pharmacie sera en rupture totale dans 19 jours et ne recevra pas de livraison avant 2 mois.\r\n\r\nQ√†C = 3 010 ‚àí 280 = 2 730 cp\r\n\r\nAction : commande d'urgence imm√©diate. Contacter simultan√©ment le niveau sup√©rieur pour une livraison partielle d'urgence. Identifier si un site voisin dispose d'un exc√©dent pouvant √™tre redistribu√© en attendant..\n\nCorrection EXERCICE 4 ‚Äî Cas complexe multiproduits\r\n\r\n| Param√®tre | Calcul | R√©sultat |\r\n| --- | --- | --- |\r\n| Stock de s√©curit√© | 310 √ó 2 | 620 cp |\r\n| Stock minimum | (310 √ó 2) + 620 | 1 240 cp |\r\n| Stock maximum | 1 240 + (310 √ó 3) | 2 170 cp |\r\n| Stock actuel | ‚Äî | 2 800 cp |\r\n\r\nProduit 3 ‚Äî Vitamine A 200 000 UI (CMM = 310 capsules)\r\n\r\nStatut : stock actuel (2 800) >> stock max (2 170) ‚Üí Surstock important (+630 capsules)\r\n\r\nCouverture = 2 800 √∑ 310 = 9 mois\r\n\r\nAction : ne pas commander. V√©rifier imp√©rativement les dates de p√©remption. Si les capsules p√©riment dans moins de 9 mois, une partie sera perdue. Informer le niveau sup√©rieur et proposer une redistribution vers les sites d√©ficitaires. Investiguer la cause du surstock (erreur de commande pr√©c√©dente ? baisse de la demande ?).\n\nCorrection EXERCICE 4 ‚Äî Cas complexe multiproduits\r\n\r\n| Param√®tre | Calcul | R√©sultat |\r\n| --- | --- | --- |\r\n| Stock de s√©curit√© | 95 √ó 2 | 190 cp |\r\n| Stock minimum | (95 √ó 2) + 190 | 380 cp |\r\n| Stock maximum | 380 + (95 √ó 3) | 665 cp |\r\n| Stock actuel | ‚Äî | 410 cp |\r\n\r\nProduit 4 ‚Äî Misoprostol 200mcg (CMM = 95 cp)\r\n\r\nStatut : stock actuel (410) > stock minimum (380) et < stock max (665) ‚Üí Situation normale\r\nCouverture = 410 √∑ 95 = 4,3 mois. Le stock est dans la zone normale. Pas de commande √† d√©clencher lors de cette r√©vision, mais √† surveiller lors de la prochaine. \r\nLe stock se rapprochera du minimum dans environ 2,3 mois (410 ‚àí 380 = 30 cp de marge, soit 30 √∑ 95 = 0,3 mois... ).\r\nRecalcul : marge au-dessus du stock min = 410 ‚àí 380 = 30 cp ‚Üí 30 √∑ 95 = 0,3 mois. La prochaine r√©vision est dans 1 mois. √Ä ce moment, le stock sera d'environ 410 ‚àí 95 = 315 cp, soit en dessous du stock min (380). Il faudra commander lors de la prochaine r√©vision.\r\nAction : noter dans le calendrier que le Misoprostol sera √† commander lors de la prochaine r√©vision mensuelle.\n\nCorrection EXERCICE 4 ‚Äî Cas complexe multiproduits\r\n\r\n| Param√®tre | Calcul | R√©sultat |\r\n| --- | --- | --- |\r\n| Stock de s√©curit√© | (40 √ó 2) | 80 ampoules |\r\n| Stock minimum | (40 √ó 2) + 80 | 160 ampoules |\r\n| Stock maximum | 160 + (40 √ó 3) | 280 ampoules |\r\n| Stock actuel | ‚Äî | 55 ampoules |\r\n\r\nProduit 5 ‚Äî Gentamicine injectable 80mg (CMM = 40 ampoules)\r\n\r\nStatut : stock actuel (55) << stock minimum (160) ‚Üí Rupture imminente\r\nCouverture = 55 √∑ 40 = 1,375 mois soit environ 41 jours\r\nLe d√©lai de livraison est de 2 mois (60 jours). La pharmacie sera en rupture dans 41 jours et n'aura pas de livraison avant 60 jours. D√©ficit de 19 jours sans produit.\r\nQ√†C = 280 ‚àí 55 = 225 ampoules\r\nAction : commande urgente imm√©diate. La Gentamicine √©tant un antibiotique injectable critique (infections n√©onatales, sepsis), la rupture peut avoir des cons√©quences graves. Contacter le niveau sup√©rieur pour une livraison partielle d'urgence et v√©rifier si des sites voisins peuvent partager temporairement leur stock.\n\nCorrection EXERCICE 4 ‚Äî Cas complexe multiproduits\r\n\r\nTableau de bord final ‚Äî D√©p√¥t de district de Savalou\r\n\r\n| Produit | Stock actuel | Stock min | Stock max | Couverture | Statut | Action |\r\n| --- | --- | --- | --- | --- | --- | --- |\r\n| Amoxicilline sirop | 620 fl | 340 fl | 595 fl | 7,3 mois | üü° Surstock l√©ger | Surveiller p√©remptions |\r\n| Fer acide folique | 280 cp | 1 720 cp | 3 010 cp | 0,65 mois | üî¥ Rupture critique | Commande urgente ‚Äî 2 730 cp |\r\n| Vitamine A | 2 800 caps | 1 240 caps | 2 170 caps | 9 mois | üü° Surstock important | Redistribuer ‚Äî ne pas commander |\r\n| Misoprostol | 410 cp | 380 cp | 665 cp | 4,3 mois | üü¢ Normal | Commander √† la prochaine r√©vision |\r\n| Gentamicine inj. | 55 amp | 160 amp | 280 amp | 1,4 mois | üî¥ Rupture imminente | Commande urgente ‚Äî 225 amp |"
+        "duration": "10 min",
+        "content": "#### D+Æfinitions et concepts cl+Æs\n\n### Inventaire\n\n![Inventaire en pharmacie](/images/course/inventaire.png)\n\nOp+Æration de comptage physique de tous les produits en stock +· un moment donn+Æ, permettant de v+Ærifier la concordance entre le stock r+Æel et le stock th+Æorique enregistr+Æ dans le syst+øme.\n\nLa pharmacie utilise un registre manuel. Selon ce registre, le stock th+Æorique de Parac+Ætamol est de 4 200 comprim+Æs. Le jour de l'inventaire, le comptage physique donne 3 850 comprim+Æs.\n\n+Îcart = 3 850 ‘Í∆ 4 200 = ‘Í∆350 comprim+Æs\n\nTaux de pr+Æcision de l'inventaire = (3 850 +¿ 4 200) +˘ 100 = 91,7 %\n\nInvestiguer sur les causes des +Æcarts.\n\nTaux de pr+Æcision acceptable : Sup+Ærieur ou +Ægal +· 95%\n"
       },
       {
         "id": "gas-m1-c18",
-        "title": "Processus de commande et suivi fournisseurs",
+        "title": "Types de stocks et leur r+¶le dans la cha+´ne pharmaceutique",
         "type": "text",
-        "duration": "5 min",
-        "content": "### Processus de commande et suivi fournisseurs\n\nGESTION DES APPROVISIONNEMENTS ET DES STOCKS"
+        "duration": "10 min",
+        "content": "#### Types de stocks et leur r+¶le dans la cha+´ne pharmaceutique\n\nDans une cha+´ne pharmaceutique, les produits ne sont pas tous stock+Æs pour la m+¨me raison.\n\nChaque type de stock r+Æpond +· une logique pr+Æcise.\n\nLes conna+´tre permet :\n\nde mieux dimensionner les quantit+Æs,\n\nd'+Æviter les gaspillages et\n\nd'assurer la continuit+Æ des soins.\n"
       },
       {
         "id": "gas-m1-c19",
-        "title": "Gestion des approvisionnements et des stocks",
+        "title": "Stock de cycle",
         "type": "text",
-        "duration": "5 min",
-        "content": "### Gestion des approvisionnements et des stocks\n\nPlan\r\n\r\nCycle de commande : de la quantification √† la r√©ception\r\nS√©lection et √©valuation des fournisseurs\r\nGestion des contrats et des termes de livraison (Incoterms)\r\nOutils de suivi des commandes et tableau de bord fournisseurs\n\nCycle de commande : de la quantification √† la r√©ception\r\n\r\nLe cycle de commande est l'ensemble des √©tapes qui s'encha√Ænent depuis le moment o√π un besoin en produits est identifi√© jusqu'au moment o√π ces produits sont disponibles en stock et pr√™ts √† √™tre distribu√©s. \r\n\r\nC'est un processus structur√©, document√© et impliquant plusieurs acteurs. \r\n\r\nUne d√©faillance √† n'importe quelle √©tape peut retarder la livraison, g√©n√©rer des erreurs de quantit√© ou introduire des produits de mauvaise qualit√© dans le stock. \r\n\r\nConna√Ætre et ma√Ætriser chaque √©tape est donc une comp√©tence fondamentale pour tout gestionnaire de pharmacie.\n\nCycle de commande : de la quantification √† la r√©ception\r\n\r\nVue d'ensemble du cycle de commande\r\n\r\n√âtape 1 : Quantification des besoins\r\n√âtape 2 : √âlaboration du bon de commande \r\n√âtape 3 : Validation et approbation \r\n√âtape 4 : Transmission au fournisseur \r\n√âtape 5 : Traitement par le fournisseur \r\n√âtape 6 : Exp√©dition et transport \r\n√âtape 7 : R√©ception et contr√¥le\r\n\r\nChaque √©tape a ses acteurs, ses documents et ses d√©lais."
+        "duration": "10 min",
+        "content": "#### Types de stocks et leur r+¶le dans la cha+´ne pharmaceutique\n\n### Stock de cycle\n\nD+Æfinition\n\nR+¶le\n\nIllustration\n\nC'est la quantit+Æ de produits consomm+Æe entre deux commandes successives.\n\nIl repr+Æsente le stock \"normal\" qui entre et sort r+Æguli+ørement.\n\nOn parle aussi de stock d‘«÷activit+Æ ou de stock de roulement\n\nCouvrir la demande courante entre deux livraisons.\n\nUne pharmacie commande du Parac+Ætamol toutes les 2 mois. CMM =1 200 comprim+Æs.\n\nStock de cycle = 1 200 +˘ 2 = 2 400 comprim+Æs\n\n+« la r+Æception d'une livraison, le stock remonte de 2 400. Il descend progressivement jusqu'+· la prochaine commande.\n\nC'est ce mouvement de \"mont+Æe-descente\" qui caract+Ærise le stock de cycle.\n"
       },
       {
         "id": "gas-m1-c20",
-        "title": "Cycle de commande : de la quantification √† la r√©ception",
+        "title": "Stock de s+Æcurit+Æ",
         "type": "text",
-        "duration": "5 min",
-        "content": "### Cycle de commande : de la quantification √† la r√©ception\n\nVue d'ensemble du cycle de commande\r\n\r\n√âtape 1 ‚Äî Quantification des besoins\r\n\r\nD√©finition : La quantification est le processus de calcul des quantit√©s de chaque produit √† commander pour couvrir les besoins jusqu'√† la prochaine livraison. \r\n\r\nQui la fait? : Le gestionnaire de la pharmacie ou du d√©p√¥t, assist√© si possible d'un responsable de programme (paludisme, VIH, CPN, etc.) pour les produits de programmes sp√©cifiques.\r\n\r\nComment ? En appliquant la formule : Q√†C = Stock max ‚àí Stock disponible actuel\r\n\r\nDocuments produits √† cette √©tape : Fiche de collecte des donn√©es de stock et tableau de quantification rempli et sign√©\r\n\r\nErreurs fr√©quentes √† √©viter :\r\nQuantifier sur la base du stock th√©orique sans v√©rifier le stock physique\r\nOublier d'int√©grer les commandes d√©j√† en transit\r\nNe pas ajuster la CMM depuis plusieurs mois malgr√© l'√©volution de la demande\n\nVue d'ensemble du cycle de commande\r\n\r\n√âtape 2 ‚Äî √âlaboration du bon de commande\r\n\r\nD√©finition : \r\nLe bon de commande (BC) est le document officiel qui formalise la demande d'approvisionnement. \r\n\r\nIl engage la pharmacie et le fournisseur. \r\n\r\nIl doit √™tre pr√©cis, complet et sans ambigu√Øt√©.\r\n\r\n| Champ | Description |\r\n| --- | --- |\r\n| Num√©ro de commande | R√©f√©rence unique pour le suivi |\r\n| Date d'√©mission | Date √† laquelle le BC est √©tabli |\r\n| Identit√© du commanditaire | Nom de la structure, adresse, contact |\r\n| Identit√© du fournisseur | Nom, adresse, contact |\r\n| D√©signation exacte des produits | D√©nomination Commune Internationale (DCI), dosage, forme, conditionnement |\r\n| Quantit√©s command√©es | En unit√©s clairement d√©finies (comprim√©s, flacons, bo√Ætes) |\r\n| Prix unitaire et prix total | Si connu au moment de la commande |\r\n| D√©lai de livraison souhait√© | Date limite de livraison attendue |\r\n| Conditions de livraison | Lieu de livraison, Incoterms applicables |\r\n| Signatures | Gestionnaire, responsable hi√©rarchique |\n\nVue d'ensemble du cycle de commande\r\n\r\n√âtape 3 ‚Äî Validation et approbation\r\n\r\nD√©finition : \r\nAvant d'√™tre transmis au fournisseur, le bon de commande doit √™tre valid√© par l'autorit√© comp√©tente. Cette √©tape garantit que la commande est justifi√©e, correctement calcul√©e et dans les limites budg√©taires disponibles.\r\n\r\nCe que le valideur v√©rifie :\r\nLes quantit√©s sont-elles coh√©rentes avec la CMM et les niveaux de stock ?\r\nLe budget disponible couvre-t-il le montant total de la commande ?\r\nLes produits command√©s figurent-ils sur la liste des m√©dicaments essentiels autoris√©s ?\r\nLa commande est-elle dans le calendrier pr√©vu ?\n\nVue d'ensemble du cycle de commande\r\n\r\n√âtape 4 ‚Äî Transmission au fournisseur\r\n\r\nD√©finition : \r\nUne fois valid√©, le bon de commande est transmis au fournisseur. Le mode de transmission doit garantir la tra√ßabilit√© et la confirmation de r√©ception.\r\n\r\nBonne pratique : Quelle que soit la m√©thode utilis√©e, toujours obtenir une confirmation √©crite de r√©ception de la commande par le fournisseur, avec le num√©ro de commande et la date de livraison confirm√©e. Sans cette confirmation, la commande peut ne pas avoir √©t√© enregistr√©e.\r\n\r\n| Mode | Avantage | Inconv√©nient |\r\n| --- | --- | --- |\r\n| Courrier physique | Trace officielle, signature | Lent, risque de perte |\r\n| Email avec accus√© de r√©ception | Rapide, tra√ßable | D√©pend de la connectivit√© |\r\n| Portail √©lectronique fournisseur | Tra√ßabilit√© automatique, confirmation instantan√©e | N√©cessite un syst√®me informatis√© |\r\n| T√©l√©phone + confirmation √©crite | Rapide en urgence | Risque d'erreur sans confirmation √©crite |\n\nVue d'ensemble du cycle de commande\r\n\r\n√âtape 5 ‚Äî Traitement par le fournisseur\r\n\r\nD√©finition : \r\nUne fois la commande re√ßue, le fournisseur la traite en interne : v√©rification de la disponibilit√© des produits, pr√©paration, contr√¥le qualit√©, conditionnement et √©dition des documents de livraison.\r\n\r\nRisques √† cette √©tape :\r\nLe fournisseur peut √™tre en rupture sur certains produits ‚Üí livraison partielle\r\nDes substitutions peuvent √™tre propos√©es (produit diff√©rent du command√©)\r\nDes erreurs de quantit√© peuvent survenir lors de la pr√©paration\r\n\r\nCe que le fournisseur produit √† cette √©tape : \r\nBon de livraison (BL) : liste des produits exp√©di√©s avec les quantit√©s r√©elles\r\nFacture : montant √† payer\r\nCertificat d'analyse (pour les produits pharmaceutiques) : preuve de contr√¥le qualit√©\r\nDocuments de transport : pour les livraisons longue distance\n\nVue d'ensemble du cycle de commande\r\n\r\n√âtape 5 ‚Äî Traitement par le fournisseur\r\n\r\nBonne pratique : \r\nSi la livraison sera partielle ou retard√©e :\r\nLe fournisseur doit en informer le commanditaire avant l'exp√©dition, pas au moment de la livraison. \r\nCela permet au gestionnaire d'anticiper et de prendre des mesures alternatives.\n\nVue d'ensemble du cycle de commande\r\n\r\n√âtape 6 ‚Äî Exp√©dition et transport\r\n\r\nD√©finition : \r\nLes produits sont charg√©s et achemin√©s vers la pharmacie destinataire. Cette √©tape est critique pour les produits thermosensibles (vaccins, insuline) qui exigent une cha√Æne du froid maintenue pendant tout le transport.\r\n\r\nDocuments accompagnant la livraison :\r\nBon de livraison sign√© par le transporteur\r\nBon de transport / bordereau d'exp√©dition\r\nCertificats d'analyse des lots\r\nFormulaire de suivi de temp√©rature (pour les produits de la cha√Æne du froid)\n\nVue d'ensemble du cycle de commande\r\n\r\n√âtape 6 ‚Äî Exp√©dition et transport\r\n\r\nBonnes pratiques pendant le transport : \r\nPour les produits standards :\r\nEmballages prot√©g√©s contre l'humidit√© et la chaleur excessive\r\nProduits non expos√©s au soleil direct pendant le transport\r\nProduits fragiles (ampoules) emball√©s avec protection anti-choc\r\n\r\nPour les produits de la cha√Æne du froid :\r\nTransport dans des glaci√®res ou v√©hicules r√©frig√©r√©s\r\nPacks de glace en quantit√© suffisante pour la dur√©e du trajet\r\nThermom√®tre enregistreur dans chaque contenant\r\nPastilles de contr√¥le du vaccin (VVM) v√©rifi√©es avant et apr√®s transport\n\nVue d'ensemble du cycle de commande\r\n\r\n√âtape 7 ‚Äî R√©ception et contr√¥le\r\n\r\nD√©finition : \r\nC'est l'√©tape finale du cycle. Les produits arrivent et doivent √™tre soigneusement v√©rifi√©s avant d'√™tre int√©gr√©s au stock. \r\nUne r√©ception b√¢cl√©e est la porte d'entr√©e de nombreux probl√®mes : produits manquants non d√©tect√©s, produits de mauvaise qualit√© accept√©s, erreurs d'enregistrement.\n\nVue d'ensemble du cycle de commande\r\n\r\n√âtape 7 ‚Äî R√©ception et contr√¥le\r\n\r\nLes 5 v√©rifications obligatoires √† la r√©ception : : \r\nV√©rification 1 ‚Äî Conformit√© documentaire\r\nComparer le bon de livraison du fournisseur avec le bon de commande initial.\r\n\r\n| Question | V√©rification |\r\n| --- | --- |\r\n| Les produits livr√©s sont-ils ceux command√©s ? | DCI, dosage, forme, conditionnement |\r\n| Les quantit√©s livr√©es correspondent-elles au BL ? | Compter physiquement |\r\n| Le num√©ro de commande correspond-il ? | R√©f√©rence crois√©e BC / BL |\r\n\r\nV√©rification 2 ‚Äî Contr√¥le quantitatif \r\nCompter physiquement chaque produit, bo√Æte par bo√Æte, flacon par flacon. \r\nNe jamais accepter le chiffre du bon de livraison sans v√©rification.\n\nVue d'ensemble du cycle de commande\r\n\r\n√âtape 7 ‚Äî R√©ception et contr√¥le\r\n\r\nLes 5 v√©rifications obligatoires √† la r√©ception : : \r\nV√©rification 3 ‚Äî Contr√¥le qualitatif\r\n\r\nV√©rification 4 ‚Äî Contr√¥le de la cha√Æne du froid (produits thermosensibles) \r\nV√©rifier le pastillage des vaccins (Vaccine Vial Monitor - VVM). \r\nSi le pastillage indique une rupture de la cha√Æne du froid, placer en quarantaine imm√©diatement.\r\n\r\n| Crit√®re | Ce qu'on v√©rifie |\r\n| --- | --- |\r\n| Int√©grit√© des emballages | Pas de bo√Ætes √©cras√©es, mouill√©es, d√©chir√©es |\r\n| Dates de p√©remption | Suffisamment √©loign√©es (r√®gle : DDP > dur√©e de couverture du stock) |\r\n| Aspect des produits | Pas de d√©coloration, pas de cristallisation anormale, pas d'odeur suspecte |\r\n| Num√©ros de lot | Correspondance avec les certificats d'analyse |\r\n| √âtiquetage | Lisible, en langue appropri√©e, mentions l√©gales pr√©sentes |\n\nVue d'ensemble du cycle de commande\r\n\r\n√âtape 7 ‚Äî R√©ception et contr√¥le\r\n\r\nLes 5 v√©rifications obligatoires √† la r√©ception : : \r\nV√©rification 5 ‚Äî Enregistrement imm√©diat\r\nD√®s que la r√©ception est valid√©e, enregistrer sur :\r\nLa fiche de stock de chaque produit re√ßu\r\nLe registre de r√©ceptions\r\nLe syst√®me informatis√© si disponible\r\n\r\nR√®gle absolue : aucun produit ne doit √™tre rang√© dans le stock sans avoir √©t√© enregistr√©."
+        "duration": "10 min",
+        "content": "#### Types de stocks et leur r+¶le dans la cha+´ne pharmaceutique\n\n### Stock de s+Æcurit+Æ\n\nD+Æfinition\n\nR+¶le\n\nIllustration\n\nQuantit+Æ r+Æserv+Æe pour faire face aux al+Æas : retard fournisseur, hausse impr+Ævue de la demande, erreur de commande.\n\nIl ne doit +¨tre utilis+Æ qu'en dernier recours.\n\nProt+Æger la continuit+Æ des soins contre les impr+Ævus.\n\nLa m+¨me pharmacie a un d+Ælai de livraison qui peut varier de 1 +· 3 mois au lieu des 2 mois habituels. Elle choisit de couvrir 1 mois d'incertitude :\n\nStock de s+Æcurit+Æ = 1 200 +˘ 1 = 1 200 comprim+Æs\n\nCes 1 200 comprim+Æs ne bougent pas en temps normal. Si la livraison attendue en f+Ævrier n'arrive qu'en mars, c'est ce stock qui permet d'+Æviter la rupture.\n"
       },
       {
         "id": "gas-m1-c21",
-        "title": "S√©lection et √©valuation des fournisseurs",
+        "title": "Stock en transit",
         "type": "text",
-        "duration": "5 min",
-        "content": "### S√©lection et √©valuation des fournisseurs\n\nLe fournisseur est un maillon critique de la cha√Æne pharmaceutique. \r\n\r\nUn bon produit mal livr√©, livr√© en retard, ou livr√© en quantit√© insuffisante a les m√™mes cons√©quences qu'une mauvaise gestion interne : \r\nRupture de stock, \r\nSoins interrompus, \r\nPertes financi√®res. \r\n\r\nChoisir ses fournisseurs avec rigueur et les √©valuer r√©guli√®rement n'est pas une option, c'est une n√©cessit√©. \r\n\r\nDans le secteur pharmaceutique, cette rigueur est d'autant plus importante que la qualit√© des produits a un impact direct sur la sant√© et la vie des patients.\n\nLes crit√®res de s√©lection d'un fournisseur\r\n\r\nCrit√®re 1 ‚Äî La qualit√© des produits\r\n\r\nC'est le crit√®re le plus important dans le secteur pharmaceutique. Un fournisseur peut √™tre moins cher que les autres, mais si ses produits sont de mauvaise qualit√©, il ne doit pas √™tre retenu.\r\n\r\nCe qu'on v√©rifie :\r\nLe fournisseur est-il homologu√© par l'autorit√© nationale de r√©glementation pharmaceutique ?\r\nSes produits disposent-ils d'une autorisation de mise sur le march√© (AMM) dans le pays ?\r\nProduit-il selon les Bonnes Pratiques de Fabrication (BPF/GMP) internationalement reconnues ?\r\nPeut-il fournir des certificats d'analyse pour chaque lot livr√© ?\r\nA-t-il d√©j√† eu des rappels de lots ou des alertes qualit√© ?\n\nLes crit√®res de s√©lection d'un fournisseur\r\n\r\nCrit√®re 2 ‚Äî Le prix et les conditions financi√®res\r\n\r\nLe prix est important mais ne doit jamais √™tre le seul crit√®re. Un produit moins cher qui g√©n√®re des ruptures fr√©quentes ou des probl√®mes de qualit√© co√ªte finalement plus cher qu'un produit bien g√©r√© √† prix l√©g√®rement sup√©rieur.\r\n\r\nCe qu'on √©value :\r\nPrix unitaire par produit\r\nRemises quantitatives (r√©ductions pour grandes commandes)\r\nConditions de paiement (d√©lai de paiement, acompte exig√©)\r\nPolitique de retour et d'avoir pour les produits non conformes\r\nFrais de livraison inclus ou non dans le prix\n\nLes crit√®res de s√©lection d'un fournisseur\r\n\r\nCrit√®re 3 ‚Äî La fiabilit√© des d√©lais de livraison\r\n\r\nUn fournisseur qui livre en retard est aussi dangereux qu'un fournisseur qui livre des produits de mauvaise qualit√©. Le respect des d√©lais est mesurable sur l'historique des commandes.\r\n\r\nCe qu'on √©value :\r\nD√©lai de livraison annonc√© vs d√©lai r√©ellement observ√©\r\nFr√©quence des retards\r\nAmplitude des retards (quelques jours vs plusieurs semaines)\r\nCapacit√© √† livrer en urgence si besoin\n\nLes crit√®res de s√©lection d'un fournisseur\r\n\r\nCrit√®re 4 ‚Äî La capacit√© et la disponibilit√© des produits\r\n\r\nUn fournisseur peut avoir de bons produits et de bons prix, mais s'il est r√©guli√®rement en rupture sur les produits command√©s, il ne peut pas √™tre consid√©r√© comme fiable.\r\n\r\nCe qu'on √©value :\r\nTaux de service (quantit√© livr√©e / quantit√© command√©e)\r\nFr√©quence des livraisons partielles\r\nCapacit√© √† absorber des commandes exceptionnelles (urgences, √©pid√©mies)\r\nDiversit√© du catalogue (peut-il fournir tous les produits dont on a besoin ?)\n\nLes crit√®res de s√©lection d'un fournisseur\r\n\r\nCrit√®re 5 ‚Äî Le service et le support\r\n\r\nAu-del√† des produits eux-m√™mes, la qualit√© de la relation commerciale et du support est un crit√®re diff√©renciant, particuli√®rement en situation de crise.\r\n\r\nCe qu'on √©value :\r\nR√©activit√© aux demandes d'information et aux r√©clamations\r\nQualit√© de la communication en cas de retard ou de rupture\r\nFlexibilit√© pour les commandes urgentes\r\nSupport technique (information sur les produits, gestion des effets ind√©sirables)\r\nPolitique de gestion des litiges\n\nLa pond√©ration des crit√®res ‚Äî Syst√®me de scoring\r\n\r\nPour comparer objectivement plusieurs fournisseurs, on utilise un syst√®me de scoring pond√©r√©. Chaque crit√®re re√ßoit un poids selon son importance, et chaque fournisseur est not√© sur chaque crit√®re.\r\n\r\n| Crit√®re | Poids |\r\n| --- | --- |\r\n| Qualit√© des produits | 30% |\r\n| Prix et conditions | 25% |\r\n| Fiabilit√© des d√©lais | 25% |\r\n| Disponibilit√© produits | 10% |\r\n| Service et support | 10% |\r\n| Total | 100% |\n\nL'√©valuation p√©riodique des fournisseurs\r\n\r\nS√©lectionner un fournisseur est une d√©cision ponctuelle. \r\nL'√©valuer r√©guli√®rement est une obligation continue. \r\nUn fournisseur qui performait bien il y a deux ans peut s'√™tre d√©grad√©.\r\n√Ä l'inverse, un fournisseur moyen peut s'√™tre am√©lior√© apr√®s des investissements.\r\n\r\n| Type d'√©valuation | Fr√©quence | Objectif |\r\n| --- | --- | --- |\r\n| √âvaluation de routine | Mensuelle | Suivi des KPIs (d√©lais, taux de service) |\r\n| √âvaluation formelle | Semestrielle ou annuelle | Revue compl√®te avec scoring |\r\n| √âvaluation d'urgence | Apr√®s tout incident majeur | D√©cision de maintien ou exclusion |\r\n| Audit fournisseur | Tous les 2 √† 3 ans | Visite sur site, v√©rification BPF |\n\nLa gestion des fournisseurs alternatifs\r\n\r\nD√©pendre d'un seul fournisseur pour un produit critique est un risque majeur. \r\nSi ce fournisseur est en rupture, en gr√®ve, ou en difficult√© financi√®re, toute la cha√Æne d'approvisionnement est bloqu√©e.\r\n\r\nBonne pratique ‚Äî La r√®gle des 3 fournisseurs : Pour chaque produit essentiel, identifier et qualifier au minimum :\r\n1 fournisseur principal : celui avec qui on travaille habituellement (meilleur score global)\r\n1 fournisseur secondaire : sollicit√© en cas de d√©faillance du principal\r\n1 fournisseur d'urgence : prix potentiellement plus √©lev√©, mais disponible rapidement en cas de crise\n\nLa gestion des litiges fournisseurs\r\n\r\nMalgr√© une bonne s√©lection et un suivi r√©gulier, des litiges surviennent. Il faut savoir les g√©rer de fa√ßon professionnelle et document√©e.\r\n\r\n| Type de litige | Description | Exemple |\r\n| --- | --- | --- |\r\n| √âcart de quantit√© | Livraison inf√©rieure √† la commande | 14 bo√Ætes re√ßues pour 15 command√©es |\r\n| Produit non conforme | Qualit√© insuffisante, emballage endommag√© | Ampoules fissur√©es |\r\n| Date de p√©remption insuffisante | DDP trop proche √† la r√©ception | Produit p√©rimant dans 2 mois pour une couverture de 4 mois |\r\n| Retard de livraison | Livraison apr√®s la date contractuelle | Livraison √† J+42 pour un d√©lai promis de J+21 |\r\n| Substitution non autoris√©e | Produit diff√©rent de celui command√© livr√© sans accord | Amoxicilline 250mg au lieu de 500mg |\n\nLa gestion des litiges fournisseurs\r\n\r\nProc√©dure de gestion d'un litige\r\n\r\n√âtape 1 ‚Äî Documentation imm√©diate : \r\nAu moment de la r√©ception, noter l'anomalie sur le bon de livraison avant de signer. \r\nFaire contresigner par le livreur. \r\nPrendre des photos si possible.\r\n\r\n√âtape 2 ‚Äî Notification formelle \r\nAdresser au fournisseur une r√©clamation √©crite dans les 48 √† 72 heures suivant la r√©ception, avec les √©l√©ments suivants :\r\nNum√©ro de commande et num√©ro de bon de livraison\r\nDescription pr√©cise de l'anomalie\r\nQuantit√© ou valeur concern√©e\r\nAction attendue (remplacement, avoir, remboursement)\r\nD√©lai de r√©ponse attendu\n\nLa gestion des litiges fournisseurs\r\n\r\nProc√©dure de gestion d'un litige\r\n\r\n√âtape 3 ‚Äî Suivi et escalade\r\nSi le fournisseur ne r√©pond pas dans le d√©lai imparti :\r\nEscalader au niveau hi√©rarchique sup√©rieur (direction r√©gionale, minist√®re) ou \r\nActiver les clauses contractuelles de p√©nalit√©.\r\n\r\n√âtape 4 ‚Äî Enregistrement dans le dossier fournisseur\r\nTout litige, m√™me r√©solu, doit √™tre enregistr√© dans le dossier du fournisseur. \r\nCes donn√©es alimentent l'√©valuation p√©riodique et peuvent justifier une d√©cision de changement de fournisseur si les incidents se r√©p√®tent.\n\nSynth√®se ‚Äî S√©lection et √©valuation des fournisseurs\r\n\r\n| √âtape | Action | Fr√©quence | Outil |\r\n| --- | --- | --- | --- |\r\n| S√©lection initiale | √âvaluer sur 5 crit√®res pond√©r√©s | √Ä chaque nouveau fournisseur | Grille de scoring |\r\n| Suivi op√©rationnel | Mesurer les KPIs √† chaque livraison | Mensuelle | Scorecard fournisseur |\r\n| √âvaluation formelle | Revue compl√®te avec scoring global | Semestrielle ou annuelle | Rapport d'√©valuation |\r\n| Gestion des litiges | Documenter et r√©clamation √©crite | √Ä chaque incident | Formulaire de r√©clamation |\r\n| Audit sur site | V√©rification BPF et capacit√©s | Tous les 2 √† 3 ans | Grille d'audit |\r\n| Mise √† jour panel | Maintenir 3 fournisseurs par produit critique | Continue | Liste des fournisseurs qualifi√©s |"
+        "duration": "10 min",
+        "content": "#### Types de stocks et leur r+¶le dans la cha+´ne pharmaceutique\n\n### Stock en transit\n\nD+Æfinition\n\nR+¶le\n\nIllustration\n\nProduits qui ont quitt+Æ le fournisseur ou le niveau sup+Ærieur de la cha+´ne mais qui ne sont pas encore arriv+Æs +· destination.\n\nIls existent physiquement mais ne sont pas encore disponibles +· l‘«÷entrep+¶t.\n\nRepr+Æsente les ressources \"en route\" +· prendre en compte dans la planification pour ne pas passer de commandes redondantes.\n\nLa Direction R+Ægionale de la Sant+Æ a command+Æ 5 000 bo+´tes de Cotrimoxazole +· la centrale d'achat nationale. La commande a +Æt+Æ exp+Ædi+Æe il y a 10 jours, le d+Ælai total est de 30 jours. Ces 5 000 bo+´tes constituent son stock en transit.\n\nStock effectif = Stock physique + Stock en transit ‘Í∆ Commandes en attente\n"
       },
       {
         "id": "gas-m1-c22",
-        "title": "Gestion des approvisionnements et des stocks",
+        "title": "Stock sp+Æculatif",
         "type": "text",
-        "duration": "5 min",
-        "content": "### Gestion des approvisionnements et des stocks\n\nGestion des contrats et des termes de livraison (Incoterms)\r\n\r\nUn contrat d'approvisionnement est le document juridique qui d√©finit les droits et obligations de chaque partie, prot√®ge la le client en cas de d√©faillance du fournisseur, et encadre toutes les conditions dans lesquelles les produits seront fournis. \r\n\r\nLes Incoterms, quant √† eux, sont des r√®gles internationales standardis√©es qui pr√©cisent √† quel moment la responsabilit√© des marchandises passe du vendeur √† l'acheteur pendant le transport. \r\n\r\nLes ma√Ætriser permet d'√©viter des litiges co√ªteux et des pertes de produits non couverts."
+        "duration": "10 min",
+        "content": "#### Types de stocks et leur r+¶le dans la cha+´ne pharmaceutique\n\n### Stock sp+Æculatif\n\nD+Æfinition\n\nR+¶le\n\nIllustration\n\nStock constitu+Æ volontairement en quantit+Æ sup+Ærieure +· la normale, en anticipation d'une hausse des prix, d'une p+Ænurie annonc+Æe ou d'une rupture pr+Ævisible chez le fournisseur.\n\nProt+Æger la structure contre des risques externes connus +· l'avance.\n\nUn gestionnaire apprend que le seul fabricant mondial d‘«÷AL va suspendre sa production pendant 3 mois pour maintenance. CMM = 800 bo+´tes.\n\nStock sp+Æculatif = 800 +˘ 3 = 2 400 bo+´tes suppl+Æmentaires\n\nAttention : \t- Ce type de stock doit rester exceptionnel et justifi+Æ.\n\n- Mal g+Ær+Æ, il g+Æn+øre des surstocks co++teux."
       },
       {
         "id": "gas-m1-c23",
-        "title": "Gestion des contrats et des termes de livraison (Incoterms)",
+        "title": "Stock mort (ou stock dormant)",
         "type": "text",
-        "duration": "5 min",
-        "content": "### Gestion des contrats et des termes de livraison (Incoterms)\n\nLe contrat d'approvisionnement pharmaceutique\r\n\r\nPourquoi un contrat est-il indispensable ?\r\n\r\nSans contrat formalis√©, chaque commande est une transaction isol√©e sans garanties. Le fournisseur peut modifier ses prix, ses d√©lais ou ses conditions √† tout moment. \r\n\r\nLe client ne dispose d'aucun recours juridique en cas de : \r\nlivraison non conforme, \r\nretard ou de \r\nrupture unilat√©rale. \r\n\r\nUn contrat bien r√©dig√© prot√®ge les deux parties et cr√©e un cadre stable pour une relation durable.\n\nLe contrat d'approvisionnement pharmaceutique\r\n\r\nLes clauses essentielles d'un contrat d'approvisionnement\r\n\r\nClause 1 ‚Äî Identification des parties\r\nNom complet, adresse, statut juridique, num√©ro d'enregistrement et repr√©sentant l√©gal de chaque partie. \r\nCette clause para√Æt √©vidente mais est souvent b√¢cl√©e, ce qui peut poser des probl√®mes juridiques en cas de litige.\r\n\r\nClause 2 ‚Äî Objet du contrat\r\nDescription pr√©cise des produits couverts par le contrat : \r\nd√©nomination commune internationale (DCI), \r\ndosage, \r\nforme pharmaceutique, \r\nconditionnement, \r\nnormes de qualit√© exig√©es.\n\nLe contrat d'approvisionnement pharmaceutique\r\n\r\nLes clauses essentielles d'un contrat d'approvisionnement\r\n\r\nClause 3 ‚Äî Prix et conditions de r√©vision\r\nPrix unitaire convenu, devise, modalit√©s de r√©vision du prix en cours de contrat.\r\n\r\nClause 4 ‚Äî Quantit√©s et modalit√©s de commande\r\nVolume minimum et maximum garanti sur la dur√©e du contrat, proc√©dure de passation des commandes, d√©lai de confirmation.\r\nLe volume minimum garanti prot√®ge le fournisseur (il peut planifier sa production). \r\nLe volume maximum prot√®ge la client (il n'est pas engag√©e au-del√† de ses besoins pr√©visionnels).\r\n\r\nClause 5 ‚Äî D√©lais de livraison et p√©nalit√©s de retard\r\nC'est l'une des clauses les plus importantes. \r\nElle fixe le d√©lai contractuel de livraison et les cons√©quences financi√®res de son non-respect.\n\nLe contrat d'approvisionnement pharmaceutique\r\n\r\nLes clauses essentielles d'un contrat d'approvisionnement\r\n\r\nClause 6 ‚Äî Qualit√© et conformit√© des produits\r\nNormes de qualit√© exig√©es, documents de conformit√© obligatoires, proc√©dure en cas de non-conformit√©.\r\nLa clause sur la dur√©e de vie r√©siduelle (18 mois) est particuli√®rement importante. Elle √©vite de recevoir des produits qui p√©rimeront avant d'√™tre consomm√©s.\r\n\r\nClause 7 ‚Äî Conditions de livraison (Incoterms)\r\nPr√©cise qui est responsable du transport, de l'assurance et des frais douaniers. \r\nNous d√©taillerons cette clause dans la section suivante.\r\n\r\nClause 8 ‚Äî Conditions de paiement\r\nD√©lai de paiement, mode de paiement accept√©, p√©nalit√©s de retard de paiement.\n\nLe contrat d'approvisionnement pharmaceutique\r\n\r\nLes clauses essentielles d'un contrat d'approvisionnement\r\n\r\nClause 9 ‚Äî Force majeure\r\nD√©finit les √©v√©nements exceptionnels (catastrophes naturelles, guerres, √©pid√©mies) qui exon√®rent temporairement une partie de ses obligations sans p√©nalit√©s. \r\nLa liste des √©v√©nements constituant un cas de force majeure doit √™tre explicitement d√©finie dans le contrat.\r\n\r\nClause 10 ‚Äî R√©siliation\r\nConditions dans lesquelles chaque partie peut mettre fin au contrat : pr√©avis requis, motifs de r√©siliation imm√©diate (faute grave, non-conformit√© r√©p√©t√©e), indemnit√©s √©ventuelles.\r\n\r\nClause 11 ‚Äî R√®glement des litiges\r\nD√©signe la juridiction comp√©tente en cas de litige non r√©solu √† l'amiable et pr√©voit √©ventuellement une proc√©dure d'arbitrage avant tout recours judiciaire.\n\nLe contrat d'approvisionnement pharmaceutique\r\n\r\nTableau r√©capitulatif des clauses essentielles\r\n\r\n| Clause | Objet | Risque si absente |\r\n| --- | --- | --- |\r\n| Identification des parties | Qui signe et engage qui | Contrat non opposable juridiquement |\r\n| Objet | Quels produits exactement | Substitutions non souhait√©es accept√©es |\r\n| Prix et r√©vision | Combien et comment √ßa √©volue | Hausses unilat√©rales non contestables |\r\n| Quantit√©s | Volumes engag√©s | Sur ou sous-commande sans recours |\r\n| D√©lais et p√©nalit√©s | Quand livrer et cons√©quences du retard | Retards r√©p√©t√©s sans sanctions |\r\n| Qualit√© et conformit√© | Standards exig√©s et recours | Produits non conformes sans rem√®de |\r\n| Incoterms | Qui supporte le transport et les risques | Litiges co√ªteux en cas de perte en transit |\r\n| Paiement | Quand et comment payer | Litiges financiers fr√©quents |\r\n| Force majeure | √âv√©nements exon√©ratoires | Litiges lors d'√©v√©nements exceptionnels |\r\n| R√©siliation | Comment et quand sortir | Engagement ind√©fini, sans issue |\r\n| R√®glement des litiges | Comment r√©soudre les conflits | Proc√©dures judiciaires longues et co√ªteuses |\n\nLes Incoterms ‚Äî R√®gles internationales de livraison\r\n\r\nQu'est-ce qu'un Incoterm ?\r\n\r\nIncoterm est la contraction de International Commercial Terms. \r\nCe sont des r√®gles standardis√©es publi√©es par la Chambre de Commerce Internationale (CCI) et r√©vis√©es p√©riodiquement (derni√®re version : Incoterms 2020). \r\nElles d√©finissent pr√©cis√©ment :\r\nQui (vendeur ou acheteur) organise et paie le transport\r\nQui organise et paie l'assurance des marchandises\r\nQui se charge des formalit√©s douani√®res (export et import)\r\n√Ä quel moment le risque de perte ou de dommage passe du vendeur √† l'acheteur\r\nCe dernier point est crucial : si des produits sont endommag√©s ou perdus pendant le transport, l'Incoterm d√©termine qui en supporte la perte financi√®re.\n\nLes Incoterms ‚Äî R√®gles internationales de livraison\r\n\r\nLes Incoterms les plus utilis√©s en approvisionnement pharmaceutique\r\n\r\nEXW ‚Äî Ex Works (√Ä l'usine)\r\nPrincipe : Le vendeur met les marchandises √† disposition dans ses locaux. L'acheteur prend en charge tout le reste : chargement, transport, assurance, formalit√©s douani√®res d'export et d'import, livraison finale.\n\nLes Incoterms ‚Äî R√®gles internationales de livraison\r\n\r\nLes Incoterms les plus utilis√©s en approvisionnement pharmaceutique\r\n\r\nFOB ‚Äî Free On Board (Franco √† bord)\r\nPrincipe : Le vendeur livre les marchandises √† bord du navire d√©sign√© par l'acheteur, dans le port d'embarquement convenu. Les formalit√©s douani√®res d'export sont √† la charge du vendeur. √Ä partir du moment o√π les marchandises sont √† bord, le risque et les co√ªts passent √† l'acheteur.\n\nLes Incoterms ‚Äî R√®gles internationales de livraison\r\n\r\nLes Incoterms les plus utilis√©s en approvisionnement pharmaceutique\r\n\r\nCIF ‚Äî Cost, Insurance and Freight (Co√ªt, assurance et fret)\r\nPrincipe : Le vendeur paie le transport et l'assurance jusqu'au port de destination d√©sign√©. Cependant, le risque passe √† l'acheteur d√®s que les marchandises sont √† bord du navire dans le port d'export (comme en FOB). C'est une distinction importante : le vendeur paie l'assurance mais c'est l'acheteur qui en b√©n√©ficie si un sinistre survient pendant le transport.\n\nLes Incoterms ‚Äî R√®gles internationales de livraison\r\n\r\nLes Incoterms les plus utilis√©s en approvisionnement pharmaceutique\r\n\r\nDDP ‚Äî Delivered Duty Paid (Rendu droits acquitt√©s)\r\nPrincipe : C'est l'Incoterm le plus favorable √† l'acheteur. Le vendeur supporte tous les co√ªts et tous les risques jusqu'√† la destination finale convenue, y compris les droits de douane √† l'importation. L'acheteur n'a qu'√† r√©ceptionner les marchandises.\n\nLes Incoterms ‚Äî R√®gles internationales de livraison\r\n\r\nLes Incoterms les plus utilis√©s en approvisionnement pharmaceutique\r\n\r\nDAP ‚Äî Delivered At Place (Rendu au lieu de destination)\r\nPrincipe : Similaire au DDP mais le vendeur ne prend pas en charge les droits de douane √† l'importation, qui restent √† la charge de l'acheteur. Le vendeur livre jusqu'au lieu de destination convenu, pr√™t √† √™tre d√©charg√©.\n\nLes Incoterms ‚Äî R√®gles internationales de livraison\r\n\r\nComparaison synth√©tique des principaux Incoterms\r\n\r\n| Incoterm | Transport | Assurance | Douane export | Douane import | Transfert de risque |\r\n| --- | --- | --- | --- | --- | --- |\r\n| EXW | Acheteur | Acheteur | Acheteur | Acheteur | Chez le vendeur |\r\n| FOB | Acheteur | Acheteur | Vendeur | Acheteur | √Ä bord du navire export |\r\n| CIF | Vendeur | Vendeur | Vendeur | Acheteur | √Ä bord du navire export |\r\n| DAP | Vendeur | Vendeur | Vendeur | Acheteur | √Ä destination (avant d√©chargement) |\r\n| DDP | Vendeur | Vendeur | Vendeur | Vendeur | √Ä destination (apr√®s d√©chargement) |\n\nLes Incoterms ‚Äî R√®gles internationales de livraison\r\n\r\nChoisir le bon Incoterm selon le contexte\r\n\r\n| Situation | Incoterm recommand√© | Raison |\r\n| --- | --- | --- |\r\n| Acheteur avec expertise logistique et bons contacts transporteurs | FOB | Peut n√©gocier de meilleurs tarifs de fret |\r\n| Acheteur sans expertise en logistique internationale | CIF ou DAP | Le vendeur g√®re le transport |\r\n| Produits tr√®s sensibles (vaccins, cha√Æne du froid) | DDP | Le vendeur, qui conna√Æt son produit, g√®re tout le transport |\r\n| Commandes urgentes | DDP ou DAP | Simplicit√© et rapidit√© |\r\n| Budget contraint, acheteur exp√©riment√© | FOB | Co√ªt total souvent inf√©rieur |\r\n| Pays avec proc√©dures douani√®res complexes | DDP | Le vendeur g√®re le d√©douanement dans les deux pays |"
+        "duration": "10 min",
+        "content": "#### Types de stocks et leur r+¶le dans la cha+´ne pharmaceutique\n\n### Stock mort (ou stock dormant)\n\nD+Æfinition\n\nR+¶le\n\nIllustration\n\nProduits qui ne bougent plus depuis une longue p+Æriode, g+Æn+Æralement parce qu'ils ne sont plus demand+Æs, ont +Æt+Æ remplac+Æs par un autre produit, ou sont proches de la p+Æremption.\n\nIl n'a aucun r+¶le utile ‘«ˆ c'est pr+Æcis+Æment le probl+øme.\n\nIl immobilise de l'argent, de l'espace et du personnel.\n\nUne pharmacie d+Ætient 3 000 comprim+Æs de Chloroquine.\n\nDepuis l'abandon de ce m+Ædicament comme traitement de premi+øre ligne du paludisme dans le pays, la consommation est tomb+Æe +· 0 comprim+Æ par mois depuis 8 mois.\n\nIdentifier et traiter le stock mort est une priorit+Æ de bonne gestion.\n"
       },
       {
         "id": "gas-m1-c24",
-        "title": "Gestion des approvisionnements et des stocks",
+        "title": "Stock de consignation",
         "type": "text",
-        "duration": "5 min",
-        "content": "### Gestion des approvisionnements et des stocks\n\nOutils de suivi des commandes et tableau de bord fournisseurs\r\n\r\nPasser une commande est une chose. Savoir √† tout moment o√π elle en est, si elle sera livr√©e √† temps, et si le fournisseur performe correctement en est une autre. \r\nSans outils de suivi structur√©s, le gestionnaire travaille dans l'incertitude : \r\nil ne sait pas si sa commande a bien √©t√© re√ßue par le fournisseur, \r\nsi l'exp√©dition a eu lieu,\r\nni quand la livraison est attendue. \r\nCette incertitude conduit √† des relances tardives, des ruptures non anticip√©es et des d√©cisions de commande mal calibr√©es. \r\nLes outils de suivi des commandes et le tableau de bord fournisseurs transforment cette incertitude en visibilit√© et cette r√©activit√© subie en anticipation ma√Ætris√©e."
+        "duration": "10 min",
+        "content": "#### Types de stocks et leur r+¶le dans la cha+´ne pharmaceutique\n\n### Stock de consignation\n\nD+Æfinition\n\nR+¶le\n\nIllustration\n\nProduits mis +· disposition par un fournisseur dans les locaux, mais qui restent la propri+Æt+Æ du fournisseur jusqu'+· leur utilisation effective.\n\nL‘«÷entrep+¶t ou l‘«÷+Ætablissement de sant+Æ ne paie que ce qu'elle consomme.\n\nR+Æduire le besoin en tr+Æsorerie tout en garantissant la disponibilit+Æ des produits.\n\nUn fournisseur de r+Æactifs de laboratoire d+Æpose 200 tests de d+Æpistage rapide du VIH en consignation. La pharmacie en utilise 45 le premier mois.\n\nMontant factur+Æ = 45 +˘ 3 500 FCFA = 157 500 FCFA\n\nLes 155 tests restants ne sont pas factur+Æs et restent propri+Æt+Æ du fournisseur.\n\nEn fin de contrat, ils sont repris ou factur+Æs selon les termes convenus.\n"
       },
       {
         "id": "gas-m1-c25",
-        "title": "Outils de suivi des commandes et tableau de bord fournisseurs",
+        "title": "Synth+øse",
         "type": "text",
-        "duration": "5 min",
-        "content": "### Outils de suivi des commandes et tableau de bord fournisseurs\n\nLe registre de suivi des commandes\r\n\r\nD√©finition et objectif\r\n\r\nLe registre de suivi des commandes est le document de base qui trace le cycle de vie de chaque commande depuis son √©mission jusqu'√† sa cl√¥ture apr√®s r√©ception et v√©rification.\r\n\r\nC'est l'outil minimal indispensable, utilisable m√™me sans informatique.\n\nLe registre de suivi des commandes\r\n\r\nStructure du registre\r\n\r\n| Champ | Description |\r\n| --- | --- |\r\n| Num√©ro de commande | R√©f√©rence unique du bon de commande |\r\n| Date d'√©mission | Date √† laquelle le BC a √©t√© √©tabli |\r\n| Date de transmission | Date √† laquelle le BC a √©t√© envoy√© au fournisseur |\r\n| Fournisseur | Nom du fournisseur concern√© |\r\n| Produits command√©s | Liste des produits avec quantit√©s |\r\n| Montant total | Valeur financi√®re de la commande |\r\n| Date de confirmation fournisseur | Date √† laquelle le fournisseur a confirm√© r√©ception |\r\n| Date de livraison promise | Date contractuelle de livraison |\r\n| Date de livraison r√©elle | Date effective de r√©ception |\r\n| Quantit√©s re√ßues | Ce qui a r√©ellement √©t√© livr√© |\r\n| √âcarts constat√©s | Diff√©rences entre command√© et re√ßu |\r\n| Statut | En attente / En transit / Re√ßu conforme / Litige |\r\n| Actions en cours | Relances, r√©clamations, suivi |\n\nLe tableau de bord des commandes en cours\r\n\r\nD√©finition\r\n\r\nLe tableau de bord des commandes en cours est une vue synth√©tique et visuelle de toutes les commandes actives √† un instant T. \r\n\r\nContrairement au registre (document historique complet), le tableau de bord ne montre que les commandes non encore cl√¥tur√©es. \r\n\r\nIl permet au gestionnaire d'identifier en un coup d'≈ìil les commandes √† risque.\n\nLe syst√®me d'alerte et de relance\r\n\r\nPrincipe\r\n\r\nUn bon syst√®me de suivi ne se contente pas d'enregistrer passivement les informations. \r\n\r\nIl g√©n√®re des alertes proactives qui d√©clenchent des actions avant que les probl√®mes ne surviennent. \r\n\r\nDans un syst√®me manuel, ces alertes sont des rappels inscrits dans un calendrier. Dans un syst√®me informatis√©, elles sont automatiques.\n\nLe syst√®me d'alerte et de relance\r\n\r\nLes 4 niveaux d'alerte\r\n\r\nAlerte niveau 1 ‚Äî Confirmation de r√©ception de commande (J+2 apr√®s transmission)*\r\n\r\nSi le fournisseur n'a pas confirm√© la r√©ception du bon de commande dans les 48 heures suivant sa transmission, le gestionnaire relance.\r\n\r\nPourquoi : une commande non confirm√©e peut ne pas avoir √©t√© enregistr√©e par le fournisseur. Plus on attend pour s'en apercevoir, plus le retard s'accumule.\r\n\r\n* : selon les termes du contrat\n\nLe syst√®me d'alerte et de relance\r\n\r\nLes 4 niveaux d'alerte\r\n\r\nAlerte niveau 2 ‚Äî Suivi d'exp√©dition (J‚àí7 avant la date de livraison promise)*\r\n\r\nSept jours avant la date de livraison promise, le gestionnaire v√©rifie que les produits ont bien √©t√© exp√©di√©s.\r\n\r\nPourquoi : si l'exp√©dition n'a pas encore eu lieu √† J‚àí7, la livraison sera tr√®s probablement en retard. C'est le moment d'anticiper et d'√©valuer l'impact sur le stock.\r\n\r\n* : selon les termes du contrat\n\nLe syst√®me d'alerte et de relance\r\n\r\nLes 4 niveaux d'alerte\r\n\r\nAlerte niveau 3 ‚Äî Retard av√©r√© (J+1 apr√®s la date de livraison promise)*\r\n\r\nSi la livraison n'est pas arriv√©e √† la date promise, le gestionnaire d√©clenche le niveau 3 : notification formelle de retard avec application des p√©nalit√©s contractuelles et √©valuation de l'impact sur le stock.\r\n\r\n* : selon les termes du contrat\n\nLe syst√®me d'alerte et de relance\r\n\r\nLes 4 niveaux d'alerte\r\n\r\nAlerte niveau 4 ‚Äî Retard critique (J+7 et au-del√†)*\r\n\r\nSi apr√®s 7 jours de retard le probl√®me n'est pas r√©solu, le gestionnaire escalade au niveau hi√©rarchique sup√©rieur, active le fournisseur alternatif si le stock est en danger, et documente formellement en vue d'une √©ventuelle r√©vision du contrat.\r\n\r\n* : selon les termes du contrat\n\nLe tableau de bord fournisseurs\r\n\r\nD√©finition et objectif\r\n\r\nLe tableau de bord fournisseurs est l'outil strat√©gique d'√©valuation continue de la performance des fournisseurs. \r\n\r\nIl consolide les donn√©es de toutes les commandes pass√©es aupr√®s d'un fournisseur sur une p√©riode donn√©e et calcule automatiquement ses KPIs. \r\n\r\nIl permet de prendre des d√©cisions objectives : \r\nmaintenir, \r\nr√©orienter ou \r\nexclure un fournisseur.\n\nLe tableau de bord fournisseurs\r\n\r\nLes indicateurs du tableau de bord fournisseurs\r\n\r\nIndicateur 1 ‚Äî Taux de service\r\n(Quantit√© livr√©e conforme √∑ Quantit√© command√©e) √ó 100\r\nIndicateur 2 ‚Äî Taux de respect des d√©lais\r\n(Nombre de livraisons dans les d√©lais √∑ Nombre total de livraisons) √ó 100\r\nIndicateur 3 ‚Äî Taux de conformit√© qualit√©\r\n(Nombre de lots conformes √∑ Nombre total de lots re√ßus) √ó 100\r\nIndicateur 4 ‚Äî D√©lai moyen de livraison\r\nMoyenne des d√©lais r√©els observ√©s sur la p√©riode\r\nIndicateur 5 ‚Äî Taux de r√©solution des r√©clamations\r\n(R√©clamations r√©solues dans les d√©lais √∑ Total des r√©clamations) √ó 100\n\nOutils digitaux de suivi\r\n\r\nNiveau 1 ‚Äî Manuel (registre papier)\r\nAdapt√© aux structures sans √©lectricit√© fiable ni informatique. \r\nEfficace si rigoureusement tenu. Limite : pas de calculs automatiques, risque d'erreurs de transcription.\r\n\r\nNiveau 2 ‚Äî Tableur (Excel, Google Sheets)\r\nLe niveau le plus r√©pandu et le plus accessible. \r\nPermet les calculs automatiques, les graphiques, le filtrage. Un fichier Excel bien construit peut g√©rer l'ensemble du suivi des commandes et des tableaux de bord fournisseurs d'un d√©p√¥t de district.\r\n\r\nNiveau 3 ‚Äî Logiciel de gestion (SAGE, Odoo, OpenLMIS)\r\nSyst√®mes int√©gr√©s qui automatisent le suivi des commandes, g√©n√®rent les alertes, calculent les KPIs en temps r√©el et permettent la consolidation des donn√©es entre plusieurs sites.\r\n\r\nNiveau 4 ‚Äî Syst√®me d'information logistique national (LMIS)\r\nNiveau le plus avanc√©, utilis√© par les centrales d'achat et les minist√®res. \r\nPermet une visibilit√© en temps r√©el sur l'ensemble de la cha√Æne d'approvisionnement nationale."
+        "duration": "10 min",
+        "content": "#### Types de stocks et leur r+¶le dans la cha+´ne pharmaceutique\n\n### Synth+øse\n\n"
       },
       {
         "id": "gas-m1-c26",
-        "title": "Gestion des ruptures et des surstocks",
+        "title": "Indicateurs cl+Æs de performance",
         "type": "text",
-        "duration": "5 min",
-        "content": "### Gestion des ruptures et des surstocks\n\nGESTION DES APPROVISIONNEMENTS ET DES STOCKS"
+        "duration": "10 min",
+        "content": "#### Indicateurs cl+Æs de performance\n\nUn indicateur cl+Æ de performance (KPI) est une mesure chiffr+Æe qui permet d'+Ævaluer objectivement la qualit+Æ de la gestion des stocks.\n\nSans KPIs, un gestionnaire travaille +· l'aveugle :\n\nil ne sait pas si sa structure performe bien ou mal,\n\nni o+¶ concentrer ses efforts d'am+Ælioration.\n\nLes KPIs r+Æpondent +· des questions simples :\n\nAvons-nous des ruptures ?\n\nStockons-nous trop ?\n\nNos donn+Æes sont-elles fiables ?\n\nNos produits sont-ils bien g+Ær+Æs ?\n"
       },
       {
         "id": "gas-m1-c27",
-        "title": "Gestion des approvisionnements et des stocks",
+        "title": "Taux de disponibilit+Æ des produits",
         "type": "text",
-        "duration": "5 min",
-        "content": "### Gestion des approvisionnements et des stocks\n\nPlan\r\n\r\nCauses et cons√©quences des ruptures de stock\r\nStrat√©gies de pr√©vention et de gestion des ruptures\r\nIdentification et traitement des surstocks (redistribution, retour)\r\nPlans de contingence et proc√©dures d'urgence\n\nCauses et cons√©quences des ruptures de stock\r\n\r\nLes causes des ruptures de stock\r\n\r\nUne rupture de stock pharmaceutique n'est jamais un simple probl√®me logistique. \r\n\r\nC'est une d√©faillance du syst√®me de sant√© qui a des cons√©quences directes sur les patients, les soignants et les finances de la structure. \r\n\r\nComprendre pourquoi les ruptures surviennent est la premi√®re √©tape pour les pr√©venir. \r\n\r\nLes causes sont multiples, souvent combin√©es, et peuvent se situer √† n'importe quel niveau de la cha√Æne pharmaceutique. \r\n\r\nLes ignorer ou les traiter superficiellement conduit in√©vitablement √† la r√©currence des ruptures."
+        "duration": "10 min",
+        "content": "#### Indicateurs cl+Æs de performance\n\n### Taux de disponibilit+Æ des produits\n\nD+Æfinition\n\nFormule\n\nInterpr+Ætation\n\nPourcentage de produits disponibles en stock par rapport +· la liste des produits attendus, sur une p+Æriode donn+Æe.\n\n(Nombre de produits disponibles +¿ Nombre total de produits de la liste) +˘ 100\n\n‘Î— 95 % : Bonne performance\n\n80 % +· 94 % : Performance acceptable, des am+Æliorations sont n+Æcessaires\n\n< 80 % : Performance insuffisante, situation critique\n"
       },
       {
         "id": "gas-m1-c28",
-        "title": "Causes et cons√©quences des ruptures de stock",
+        "title": "Taux de rupture de stock",
         "type": "text",
-        "duration": "5 min",
-        "content": "### Causes et cons√©quences des ruptures de stock\n\nLes causes des ruptures de stock\r\n\r\nCat√©gorie 1 ‚Äî Causes li√©es √† la pr√©vision et √† la quantification\r\n\r\nCMM mal calcul√©e\r\n\r\nNon prise en compte de la saisonnalit√©\r\n\r\nCat√©gorie 2 ‚Äî Causes li√©es au processus de commande\r\n\r\nCommande tardive\r\n\r\nCommande rejet√©e ou bloqu√©e administrativement\r\n\r\nBudget insuffisant\n\nLes causes des ruptures de stock\r\n\r\nCat√©gorie 3 ‚Äî Causes li√©es aux fournisseurs\r\n\r\nRupture chez le fournisseur\r\n\r\nRetard de livraison\r\n\r\nCat√©gorie 4 ‚Äî Causes li√©es √† la demande\r\n\r\nHausse soudaine et impr√©vue de la demande\r\n\r\nAugmentation structurelle de la demande non d√©tect√©e\r\n\r\nLivraison partielle\n\nLes causes des ruptures de stock\r\n\r\nCat√©gorie 5 ‚Äî Causes li√©es √† la gestion physique du stock\r\n\r\nPertes physiques non enregistr√©es\r\n\r\nMauvaise organisation physique\n\nLes cons√©quences des ruptures de stock\r\n\r\nNiveau 1 ‚Äî Cons√©quences sanitaires\r\n\r\nInterruption de traitements en cours\r\n\r\n√âchec th√©rapeutique et r√©sistances\r\n\r\nRecours √† des alternatives moins efficaces ou plus dangereuses\r\n\r\nMortalit√© √©vitable\r\n\r\nNiveau 2 ‚Äî Cons√©quences organisationnelles\r\n\r\nPerte de confiance des patients et des soignants\r\n\r\nSurcharge administrative li√©e aux commandes d'urgence\r\n\r\nD√©gradation des indicateurs de performance\n\nLes cons√©quences des ruptures de stock\r\n\r\nNiveau 3 ‚Äî Cons√©quences financi√®res\r\n\r\nSurco√ªt des commandes d'urgence\r\n\r\nPerte de recettes\r\n\r\nGaspillage li√© aux produits substitu√©s puis non utilis√©s"
+        "duration": "10 min",
+        "content": "#### Indicateurs cl+Æs de performance\n\n### Taux de rupture de stock\n\nD+Æfinition\n\nFormule\n\nInterpr+Ætation\n\nProportion de jours dans le mois (ou dans l'ann+Æe) pendant lesquels un produit +Ætait indisponible, alors qu'il aurait d++ l'+¨tre.\n\n(Nombre de jours en rupture +¿ Nombre de jours de la p+Æriode) +˘ 100\n\n0 % : Aucune rupture, situation id+Æale\n\n1 % +· 9 % : Ruptures occasionnelles, g+Ærables\n\n‘Î— 10 % : Situation pr+Æoccupante n+Æcessitant une intervention\n"
       },
       {
         "id": "gas-m1-c29",
-        "title": "Gestion des approvisionnements et des stocks",
+        "title": "Taux de surstockage",
         "type": "text",
-        "duration": "5 min",
-        "content": "### Gestion des approvisionnements et des stocks\n\nStrat√©gies de pr√©vention et de gestion des ruptures\r\n\r\nPr√©venir une rupture co√ªte toujours moins cher que la g√©rer. \r\n\r\nMais m√™me avec les meilleures mesures pr√©ventives, certaines ruptures surviennent malgr√© tout, souvent pour des raisons ext√©rieures au contr√¥le du gestionnaire. \r\n\r\nIl faut donc ma√Ætriser deux registres compl√©mentaires : \r\nles strat√©gies pr√©ventives, qui r√©duisent la probabilit√© et la fr√©quence des ruptures et \r\nles strat√©gies curatives, qui minimisent leur dur√©e et leur impact quand elles surviennent malgr√© tout. \r\n\r\nUn gestionnaire comp√©tent ne se contente pas de subir les ruptures. Il les anticipe, les d√©tecte t√¥t et r√©agit vite avec des mesures adapt√©es.\n\nStrat√©gies de pr√©vention et de gestion des ruptures\r\n\r\nStrat√©gies de pr√©vention des ruptures\r\n\r\nStrat√©gie 1 ‚Äî Maintenir une CMM fiable et √† jour\r\n\r\nC'est la base de tout. \r\n\r\nUne CMM fiable est le meilleur rempart contre les ruptures li√©es √† une mauvaise quantification.\r\n\r\nActions concr√®tes : \r\nR√©viser la CMM tous les trimestres sans exception. \r\nEnregistrer syst√©matiquement toutes les sorties de stock d√®s qu'elles ont lieu. \r\nAjuster la CMM d√®s qu'un changement structurel est d√©tect√© (nouveau service, nouveau protocole, √©volution de la population).\n\nStrat√©gies de pr√©vention et de gestion des ruptures\r\n\r\nStrat√©gies de pr√©vention des ruptures\r\n\r\nStrat√©gie 2 ‚Äî Dimensionner correctement le stock de s√©curit√©\r\n\r\nUn stock de s√©curit√© bien calibr√© est le filet de protection contre les al√©as. \r\n\r\nTrop faible, il ne prot√®ge pas. \r\n\r\nTrop √©lev√©, il immobilise des ressources inutilement.\n\nStrat√©gies de pr√©vention et de gestion des ruptures\r\n\r\nStrat√©gies de pr√©vention des ruptures\r\n\r\nStrat√©gie 3 ‚Äî Respecter rigoureusement le calendrier de commande\r\n\r\nLa commande tardive est une cause majeure de rupture √©vitable. \r\n\r\nElle doit √™tre √©limin√©e par la discipline et l'organisation.\r\n\r\nActions concr√®tes :\r\nD√©finir des dates fixes de commande dans un calendrier annuel affich√© et connu de tous. \r\nCr√©er des alertes visuelles dans le registre ou le syst√®me informatique. \r\nV√©rifier le stock de chaque produit critique au moins deux fois par mois.\n\nStrat√©gies de pr√©vention et de gestion des ruptures\r\n\r\nStrat√©gies de pr√©vention des ruptures\r\n\r\nStrat√©gie 4 ‚Äî Diversifier les sources d'approvisionnement\r\n\r\nD√©pendre d'un seul fournisseur pour un produit essentiel est un facteur de risque majeur. \r\n\r\nLa diversification r√©duit l'exposition aux d√©faillances d'un fournisseur unique.\r\n\r\nActions concr√®tes :\r\nIdentifier et qualifier au minimum deux fournisseurs pour chaque produit essentiel. \r\nR√©partir les commandes entre les fournisseurs pour maintenir la relation commerciale active avec chacun. \r\nNe jamais d√©passer 70 √† 80% des commandes chez un seul fournisseur pour les produits critiques.\n\nStrat√©gies de pr√©vention et de gestion des ruptures\r\n\r\nStrat√©gies de pr√©vention des ruptures\r\n\r\nStrat√©gie 5 ‚Äî Mettre en place un syst√®me de surveillance pr√©coce\r\n\r\nD√©tecter la tendance √† la rupture avant qu'elle ne se produise permet d'intervenir √† temps.\r\n\r\nActions concr√®tes :\r\nCalculer mensuellement le taux de couverture de chaque produit. \r\nD√©finir des seuils d'alerte √† deux niveaux : alerte jaune et alerte rouge."
+        "duration": "10 min",
+        "content": "#### Indicateurs cl+Æs de performance\n\n### Taux de surstockage\n\nD+Æfinition\n\nFormule\n\nInterpr+Ætation\n\nProportion de produits dont le stock d+Æpasse le niveau maximum d+Æfini, sur la liste totale des produits g+Ær+Æs.\n\n(Nombre de produits en surstock +¿ Nombre total de produits g+Ær+Æs) +˘ 100\n\n0 % : Aucun surstockage, situation id+Æale\n\n‘Î— 1 % : Finances immobilis+Æs inutilement.\n"
       },
       {
         "id": "gas-m1-c30",
-        "title": "Strat√©gies de pr√©vention et de gestion des ruptures",
+        "title": "Taux de p+Æremption",
         "type": "text",
-        "duration": "5 min",
-        "content": "### Strat√©gies de pr√©vention et de gestion des ruptures\n\nStrat√©gies de pr√©vention des ruptures\r\n\r\nStrat√©gie 6 ‚Äî Conduire des inventaires r√©guliers\r\n\r\nLes inventaires r√©guliers permettent de d√©tecter les √©carts entre stock th√©orique et stock r√©el avant qu'ils ne deviennent critiques.\n\nStrat√©gies de gestion des ruptures av√©r√©es\r\n\r\n√âtape 1 ‚Äî D√©clarer et √©valuer la rupture\r\n\r\n√âvaluer la criticit√© du produit :\r\n\r\n| Niveau | D√©finition | Exemples | D√©lai de r√©action |\r\n| --- | --- | --- | --- |\r\n| Critique | Traitement vital, pas de substitut | Insuline, anti√©pileptiques, ARV | Imm√©diat (< 24h) |\r\n| Majeur | M√©dicament essentiel, substitut possible mais moins efficace | Art√©m√©ther-Lum, Amoxicilline | Urgent (< 48h) |\r\n| Mod√©r√© | M√©dicament important, substitut disponible | Parac√©tamol, Cotrimoxazole | Rapide (< 1 semaine) |\r\n| Mineur | M√©dicament non vital, facilement substituable | Vitamines, compl√©ments | Normal (< 2 semaines) |\r\n\r\n√âvaluer la dur√©e pr√©visionnelle de la rupture :\r\n\r\nDur√©e de rupture estim√©e = D√©lai avant prochaine livraison ‚àí Couverture du stock r√©siduel\n\nStrat√©gies de gestion des ruptures av√©r√©es\r\n\r\n√âtape 2 ‚Äî Alerter la hi√©rarchie et les partenaires\r\n\r\nToute rupture av√©r√©e ou imminente sur un produit essentiel doit √™tre signal√©e imm√©diatement au niveau hi√©rarchique sup√©rieur. \r\n\r\nCe signalement doit √™tre :\r\n√âcrit (email, rapport, formulaire standardis√©)\r\nFactuel (produit concern√©, stock r√©siduel, dur√©e estim√©e, nombre de patients potentiellement affect√©s)\r\nAccompagn√© d'une proposition de solution\n\nStrat√©gies de gestion des ruptures av√©r√©es\r\n\r\n√âtape 3 ‚Äî Activer les sources d'approvisionnement d'urgence\r\n\r\nOption 1 ‚Äî Redistribution inter-sites (la plus rapide et la moins co√ªteuse)\r\n\r\nIdentifier les sites disposant d'un exc√©dent du produit manquant et organiser un transfert.\r\n\r\nOption 2 ‚Äî Commande urgente aupr√®s du fournisseur alternatif\r\n\r\nSi la redistribution inter-sites est insuffisante ou impossible.\r\n\r\nOption 3 ‚Äî Achat en pharmacie priv√©e (dernier recours)\r\n\r\nPour les cas extr√™mes o√π les autres options ne sont pas disponibles assez rapidement. \r\nLe co√ªt est g√©n√©ralement tr√®s √©lev√© mais peut √™tre justifi√© pour des produits vitaux.\n\nStrat√©gies de gestion des ruptures av√©r√©es\r\n\r\n√âtape 4 ‚Äî G√©rer la distribution pendant la rupture\r\n\r\nQuand le stock r√©siduel est limit√© et qu'une rupture partielle est in√©vitable, le gestionnaire doit rationner la distribution de fa√ßon √©quitable et m√©dicalement justifi√©e.\r\n\r\nPrincipes de rationnement :\r\nPrioriser les patients d√©j√† en cours de traitement sur les nouveaux cas. \r\nPrioriser les cas les plus s√©v√®res sur les cas l√©gers. \r\nInformer les prescripteurs imm√©diatement pour qu'ils adaptent leurs prescriptions (doses r√©duites si m√©dicalement acceptable, substituts th√©rapeutiques).\n\nStrat√©gies de gestion des ruptures av√©r√©es\r\n\r\n√âtape 5 ‚Äî Analyser les causes et mettre en place des mesures correctives\r\n\r\nUne fois la rupture r√©solue, une analyse des causes doit √™tre conduite pour √©viter la r√©currence. C'est l'√©tape la plus souvent n√©glig√©e mais la plus importante pour progresser.\n\nStrat√©gies de pr√©vention et de gestion des ruptures\r\n\r\nPr√©venir une rupture co√ªte toujours moins cher que la g√©rer. \r\n\r\nMais m√™me avec les meilleures mesures pr√©ventives, certaines ruptures surviennent malgr√© tout, souvent pour des raisons ext√©rieures au contr√¥le du gestionnaire. \r\n\r\nIl faut donc ma√Ætriser deux registres compl√©mentaires : \r\nles strat√©gies pr√©ventives, qui r√©duisent la probabilit√© et la fr√©quence des ruptures et \r\nles strat√©gies curatives, qui minimisent leur dur√©e et leur impact quand elles surviennent malgr√© tout. \r\n\r\nUn gestionnaire comp√©tent ne se contente pas de subir les ruptures. Il les anticipe, les d√©tecte t√¥t et r√©agit vite avec des mesures adapt√©es.\n\nStrat√©gies de pr√©vention et de gestion des ruptures\r\n\r\nStrat√©gies de pr√©vention des ruptures\r\n\r\nStrat√©gie 1 ‚Äî Maintenir une CMM fiable et √† jour\r\nC'est la base de tout. Une CMM fiable est le meilleur rempart contre les ruptures li√©es √† une mauvaise quantification.\r\n\r\nActions concr√®tes : \r\nR√©viser la CMM tous les trimestres sans exception. \r\nEnregistrer syst√©matiquement toutes les sorties de stock d√®s qu'elles ont lieu. \r\nAjuster la CMM d√®s qu'un changement structurel est d√©tect√© (nouveau service, nouveau protocole, √©volution de la population).\n\nStrat√©gies de pr√©vention et de gestion des ruptures\r\n\r\nStrat√©gies de pr√©vention des ruptures\r\n\r\nStrat√©gie 2 ‚Äî Dimensionner correctement le stock de s√©curit√©\r\nUn stock de s√©curit√© bien calibr√© est le filet de protection contre les al√©as. \r\nTrop faible, il ne prot√®ge pas. \r\nTrop √©lev√©, il immobilise des ressources inutilement.\n\nStrat√©gies de pr√©vention et de gestion des ruptures\r\n\r\nStrat√©gies de pr√©vention des ruptures\r\n\r\nStrat√©gie 3 ‚Äî Respecter rigoureusement le calendrier de commande\r\nLa commande tardive est une cause majeure de rupture √©vitable. Elle doit √™tre √©limin√©e par la discipline et l'organisation.\r\n\r\nActions concr√®tes :\r\nD√©finir des dates fixes de commande dans un calendrier annuel affich√© et connu de tous. \r\nCr√©er des alertes visuelles dans le registre ou le syst√®me informatique. \r\nV√©rifier le stock de chaque produit critique au moins deux fois par mois.\n\nStrat√©gies de pr√©vention et de gestion des ruptures\r\n\r\nStrat√©gies de pr√©vention des ruptures\r\n\r\nStrat√©gie 4 ‚Äî Diversifier les sources d'approvisionnement\r\nD√©pendre d'un seul fournisseur pour un produit essentiel est un facteur de risque majeur. La diversification r√©duit l'exposition aux d√©faillances d'un fournisseur unique.\r\n\r\nActions concr√®tes :\r\nIdentifier et qualifier au minimum deux fournisseurs pour chaque produit essentiel. \r\nR√©partir les commandes entre les fournisseurs pour maintenir la relation commerciale active avec chacun. \r\nNe jamais d√©passer 70 √† 80% des commandes chez un seul fournisseur pour les produits critiques.\n\nStrat√©gies de pr√©vention et de gestion des ruptures\r\n\r\nStrat√©gies de pr√©vention des ruptures\r\n\r\nStrat√©gie 5 ‚Äî Mettre en place un syst√®me de surveillance pr√©coce\r\nD√©tecter la tendance √† la rupture avant qu'elle ne se produise permet d'intervenir √† temps.\r\n\r\nActions concr√®tes :\r\nCalculer mensuellement le taux de couverture de chaque produit. \r\nD√©finir des seuils d'alerte √† deux niveaux : alerte jaune et alerte rouge.\n\nStrat√©gies de pr√©vention et de gestion des ruptures\r\n\r\nStrat√©gies de pr√©vention des ruptures\r\n\r\nStrat√©gie 6 ‚Äî Conduire des inventaires r√©guliers\r\nLes inventaires r√©guliers permettent de d√©tecter les √©carts entre stock th√©orique et stock r√©el avant qu'ils ne deviennent critiques.\n\nStrat√©gies de pr√©vention et de gestion des ruptures\r\n\r\nStrat√©gies de gestion des ruptures av√©r√©es\r\n\r\n√âtape 1 ‚Äî D√©clarer et √©valuer la rupture\r\nD√®s qu'une rupture est constat√©e ou imminente, le gestionnaire doit imm√©diatement :\r\n√âvaluer la criticit√© du produit\r\n√âvaluer la dur√©e pr√©visionnelle de la rupture\r\n\r\n√âtape 2 ‚Äî Alerter la hi√©rarchie et les partenaires\r\nToute rupture av√©r√©e ou imminente sur un produit essentiel doit √™tre signal√©e imm√©diatement au niveau hi√©rarchique sup√©rieur.\r\n \r\nCe signalement doit √™tre :\r\n√âcrit (email, rapport, formulaire standardis√©)\r\nFactuel (produit concern√©, stock r√©siduel, dur√©e estim√©e, nombre de patients potentiellement affect√©s)\r\nAccompagn√© d'une proposition de solution\n\nStrat√©gies de pr√©vention et de gestion des ruptures\r\n\r\nStrat√©gies de gestion des ruptures av√©r√©es\r\n\r\n√âtape 3 ‚Äî Activer les sources d'approvisionnement d'urgence\r\nOption 1 ‚Äî Redistribution inter-sites (la plus rapide et la moins co√ªteuse)\r\nOption 2 ‚Äî Commande urgente aupr√®s du fournisseur alternatif\r\nOption 3 ‚Äî Achat en pharmacie priv√©e (dernier recours)\n\nStrat√©gies de pr√©vention et de gestion des ruptures\r\n\r\nStrat√©gies de gestion des ruptures av√©r√©es\r\n\r\n√âtape 4 ‚Äî G√©rer la distribution pendant la rupture\r\nQuand le stock r√©siduel est limit√© et qu'une rupture partielle est in√©vitable, le gestionnaire doit rationner la distribution de fa√ßon √©quitable et m√©dicalement justifi√©e.\r\n\r\nPrincipes de rationnement :\r\nPrioriser les patients d√©j√† en cours de traitement sur les nouveaux cas. \r\nPrioriser les cas les plus s√©v√®res sur les cas l√©gers. \r\nInformer les prescripteurs imm√©diatement pour qu'ils adaptent leurs prescriptions (doses r√©duites si m√©dicalement acceptable, substituts th√©rapeutiques).\n\nStrat√©gies de pr√©vention et de gestion des ruptures\r\n\r\nStrat√©gies de gestion des ruptures av√©r√©es\r\n\r\n√âtape 5 ‚Äî Analyser les causes et mettre en place des mesures correctives\r\nUne fois la rupture r√©solue, une analyse des causes doit √™tre conduite pour √©viter la r√©currence. C'est l'√©tape la plus souvent n√©glig√©e mais la plus importante pour progresser."
+        "duration": "10 min",
+        "content": "#### Indicateurs cl+Æs de performance\n\n### Taux de p+Æremption\n\nD+Æfinition\n\nFormule\n\nInterpr+Ætation\n\nProportion de la valeur des produits p+Ærim+Æs par rapport +· la valeur totale des produits re+∫us sur une p+Æriode.\n\n(Valeur des produits p+Ærim+Æs +¿ Valeur totale des produits re+∫us) +˘ 100\n\n< 1 % : Excellente gestion des p+Æremptions\n\n1 % +· 2 % : Acceptable\n\n‘Î— 3 % : Probl+øme s+Ærieux de gestion (surstocks, FEFO non respect+Æ, mauvaise pr+Ævision)\n"
       },
       {
         "id": "gas-m1-c31",
-        "title": "Gestion des approvisionnements et des stocks",
+        "title": "Mois de stock disponible",
         "type": "text",
-        "duration": "5 min",
-        "content": "### Gestion des approvisionnements et des stocks\n\nIdentification et traitement des surstocks\r\n\r\nLe surstock est souvent per√ßu comme un probl√®me mineur compar√© √† la rupture. Cette perception est erron√©e. \r\n\r\nUn surstock non trait√© co√ªte de l'argent, occupe de l'espace, immobilise des ressources qui auraient pu financer d'autres produits, et finit fr√©quemment par se transformer en p√©remption, c'est-√†-dire en perte s√®che. \r\n\r\nDans certains syst√®mes de sant√©, jusqu'√† 10 √† 15% de la valeur des produits pharmaceutiques sont perdus chaque ann√©e par p√©remption, soit des dizaines de millions de francs CFA gaspill√©s. \r\n\r\nL'identification pr√©coce et le traitement rapide des surstocks sont donc des actes de gestion √† part enti√®re, aussi importants que la pr√©vention des ruptures.\n\nIdentification et traitement des surstocks\r\n\r\nStrat√©gies de pr√©vention et de gestion des ruptures\r\n\r\nD√©finition op√©rationnelle\r\n\r\nUn surstock existe quand le stock disponible d'un produit d√©passe le stock maximum d√©fini. Mais en pratique, on distingue plusieurs degr√©s de surstock selon leur urgence de traitement\r\n\r\n| Degr√© | D√©finition | Urgence |\r\n| --- | --- | --- |\r\n| Surstock l√©ger | Stock entre stock max et stock max + 25% | Surveillance, pas d'action imm√©diate |\r\n| Surstock mod√©r√© | Stock entre stock max + 25% et stock max + 100% | Action dans le mois |\r\n| Surstock s√©v√®re | Stock > stock max √ó 2 | Action imm√©diate |\r\n| Stock mort | CMM = 0 ou stock couvrant > 12 mois sans perspective de consommation | Action urgente, risque de perte totale |\n\nIdentification et traitement des surstocks\r\n\r\nStrat√©gies de pr√©vention et de gestion des ruptures\r\n\r\nLes outils d'identification des surstocks\r\n\r\nOutil 1 ‚Äî L'analyse mensuelle du taux de couverture\r\nLe taux de couverture est le premier signal d'alerte d'un surstock. Tout produit avec un taux de couverture sup√©rieur √† la dur√©e stock max doit √™tre examin√©.\n\nIdentification et traitement des surstocks\r\n\r\nStrat√©gies de pr√©vention et de gestion des ruptures\r\n\r\nLes outils d'identification des surstocks\r\n\r\nOutil 2 ‚Äî L'analyse ABC-VEN crois√©e\r\nL'analyse ABC classe les produits par valeur financi√®re. L'analyse VEN les classe par importance m√©dicale (Vital, Essentiel, Non essentiel). Crois√©es, elles permettent de prioriser les actions sur les surstocks.\r\n\r\nAnalyse ABC :\r\nCat√©gorie A : 20% des produits repr√©sentant 80% de la valeur totale du stock\r\nCat√©gorie B : 30% des produits repr√©sentant 15% de la valeur\r\nCat√©gorie C : 50% des produits repr√©sentant 5% de la valeur\r\n\r\nAnalyse VEN :\r\nV (Vital) : produit dont l'absence entra√Æne un risque imm√©diat pour la vie du patient\r\nE (Essentiel) : produit important mais dont l'absence n'est pas imm√©diatement mortelle\r\nN (Non essentiel) : produit dont l'absence ne met pas en danger la vie du patient\n\nIdentification et traitement des surstocks\r\n\r\nStrat√©gies de pr√©vention et de gestion des ruptures\r\n\r\nLes outils d'identification des surstocks\r\n\r\nOutil 2 ‚Äî L'analyse ABC-VEN crois√©e\r\n\r\n|  | Vital (V) | Essentiel (E) | Non essentiel (N) |\r\n| --- | --- | --- | --- |\r\n| Classe A (valeur √©lev√©e) | Traiter en priorit√© absolue | Traiter en priorit√© haute | Traiter rapidement |\r\n| Classe B (valeur moyenne) | Traiter en priorit√© haute | Traiter rapidement | Traiter dans le mois |\r\n| Classe C (valeur faible) | Traiter rapidement | Traiter dans le mois | Traiter selon disponibilit√© |\r\n\r\nMatrice de priorit√© pour le traitement des surstocks\n\nIdentification et traitement des surstocks\r\n\r\nStrat√©gies de pr√©vention et de gestion des ruptures\r\n\r\nLes outils d'identification des surstocks\r\n\r\nOutil 3 ‚Äî La liste des produits proches de p√©remption\r\nUn produit qui p√©rime dans moins de 6 mois doit automatiquement √™tre consid√©r√© comme un surstock √† traiter, m√™me si son niveau de stock ne d√©passe pas le stock max.\n\nIdentification et traitement des surstocks\r\n\r\nStrat√©gies de pr√©vention et de gestion des ruptures\r\n\r\nCauses des surstocks\r\n\r\n| Cause | Description | Exemple |\r\n| --- | --- | --- |\r\n| Surestimation de la CMM | CMM calcul√©e sur un mois atypique | CMM gonfl√©e par une √©pid√©mie incluse dans le calcul |\r\n| Sur-commande | Quantit√© command√©e sup√©rieure aux besoins r√©els | Arrondi excessif √† la hausse |\r\n| Chute soudaine de la demande | Changement de protocole, d√©part d'un m√©decin prescripteur | Arr√™t de la prescription d'un m√©dicament |\r\n| Livraison non sollicit√©e | Le niveau sup√©rieur livre sans commande pr√©alable (push system) | D√©p√¥t r√©gional qui impose une livraison |\r\n| Double commande | Commande pass√©e deux fois pour le m√™me produit | Commande en transit oubli√©e |\r\n| Produit remplac√© | Changement de liste des m√©dicaments essentiels | Ancien produit d√©list√© mais encore en stock |\r\n| Non-respect du FEFO | Produits anciens non distribu√©s en priorit√© | Accumulation de lots en fin de p√©remption |\n\nIdentification et traitement des surstocks\r\n\r\nStrat√©gies de pr√©vention et de gestion des ruptures\r\n\r\nOptions de traitement des surstocks\r\n\r\nOption 1 ‚Äî Suspension des commandes\r\nC'est la mesure la plus simple et la premi√®re √† appliquer. Elle ne r√©sout pas le surstock existant mais emp√™che son aggravation.\r\n\r\nR√®gle : ne jamais commander un produit dont la couverture d√©passe le stock max, sauf en cas de contexte exceptionnel document√©.\n\nIdentification et traitement des surstocks\r\n\r\nStrat√©gies de pr√©vention et de gestion des ruptures\r\n\r\nOptions de traitement des surstocks\r\n\r\nOption 2 ‚Äî Redistribution inter-sites\r\nTransf√©rer l'exc√©dent vers des sites en rupture ou √† stock bas sur le m√™me produit. C'est la solution la plus rapide, la moins co√ªteuse et la plus utile d'un point de vue sanitaire.\r\n\r\nProcessus de redistribution :\r\n√âtape 1 : Identifier les sites d√©ficitaires sur le m√™me produit via le rapport mensuel ou un contact direct.\r\n√âtape 2 : Calculer la quantit√© redistribuable sans mettre le site donneur en danger.\r\n√âtape 3 : Obtenir l'autorisation du niveau hi√©rarchique sup√©rieur.\r\n√âtape 4 : Pr√©parer les documents de transfert (bon de transfert, fiche de stock des deux sites).\r\n√âtape 5 : Assurer le transport dans de bonnes conditions.\r\n√âtape 6 : Mettre √† jour les fiches de stock des deux sites.\n\nIdentification et traitement des surstocks\r\n\r\nStrat√©gies de pr√©vention et de gestion des ruptures\r\n\r\nOptions de traitement des surstocks\r\n\r\nOption 3 ‚Äî Retour au fournisseur ou au niveau sup√©rieur\r\nQuand la redistribution inter-sites ne suffit pas, les produits exc√©dentaires peuvent √™tre retourn√©s au fournisseur ou au niveau hi√©rarchique sup√©rieur (d√©p√¥t r√©gional, centrale d'achat) qui peut les redistribuer √† plus grande √©chelle.\r\n\r\nConditions pour un retour fournisseur :\r\nLes produits sont encore dans leur emballage d'origine, non ouverts\r\nLa date de p√©remption est suffisamment √©loign√©e (g√©n√©ralement > 12 mois)\r\nLe contrat avec le fournisseur pr√©voit une clause de retour\r\nL'autorisation du niveau hi√©rarchique sup√©rieur est obtenue\n\nIdentification et traitement des surstocks\r\n\r\nStrat√©gies de pr√©vention et de gestion des ruptures\r\n\r\nOptions de traitement des surstocks\r\n\r\nOption 4 ‚Äî Acc√©l√©ration de la consommation\r\nPour certains produits non critiques disponibles en exc√®s, il est possible d'augmenter la vitesse d'√©coulement du stock en intensifiant les activit√©s qui consomment ce produit.\r\n\r\nActions possibles :\r\nIntensifier les activit√©s de pr√©vention (journ√©es de sensibilisation, distribution communautaire)\r\nPartager l'information avec les prescripteurs pour favoriser la prescription du produit en exc√®s quand il est m√©dicalement appropri√©\r\nOrganiser des s√©ances de distribution de masse pour les produits dont la distribution est possible (Vitamine A, moustiquaires, SRO)\n\nIdentification et traitement des surstocks\r\n\r\nStrat√©gies de pr√©vention et de gestion des ruptures\r\n\r\nOptions de traitement des surstocks\r\n\r\nOption 5 ‚Äî Don √† une autre structure\r\nQuand le retour au fournisseur est impossible et que la redistribution inter-sites dans le m√™me syst√®me ne suffit pas, un don √† une structure partenaire (ONG, structure priv√©e √† but non lucratif, camp de r√©fugi√©s) peut permettre d'utiliser les produits plut√¥t que de les d√©truire.\r\n\r\nConditions :\r\nAutorisation obligatoire du niveau hi√©rarchique sup√©rieur et de la direction de la pharmacie\r\nLa structure b√©n√©ficiaire doit √™tre habilit√©e √† recevoir et g√©rer des produits pharmaceutiques\r\nLes produits doivent √™tre en bon √©tat et avoir une date de p√©remption suffisante\r\nUn bon de don formalis√© doit √™tre √©tabli et sign√© par les deux parties\n\nIdentification et traitement des surstocks\r\n\r\nStrat√©gies de pr√©vention et de gestion des ruptures\r\n\r\nOptions de traitement des surstocks\r\n\r\nOption 6 ‚Äî Destruction r√©glementaire\r\nQuand aucune autre option n'est possible (produits p√©rim√©s, endommag√©s, non conformes, irr√©cup√©rables), la destruction est la seule solution. Elle doit √™tre r√©alis√©e selon des proc√©dures strictes pour prot√©ger l'environnement et la sant√© publique.\r\n\r\nProc√©dure de destruction :\r\n√âtape 1 ‚Äî Constitution du dossier de destruction\r\nListe compl√®te des produits √† d√©truire (d√©signation, lot, quantit√©, valeur, raison)\r\nAutorisation du niveau hi√©rarchique sup√©rieur\r\nPr√©sence d'au moins deux t√©moins (m√©decin chef, inspecteur de pharmacie)\n\nIdentification et traitement des surstocks\r\n\r\nStrat√©gies de pr√©vention et de gestion des ruptures\r\n\r\nOptions de traitement des surstocks\r\n\r\nOption 6 ‚Äî Destruction r√©glementaire\r\nProc√©dure de destruction :\r\n√âtape 2 ‚Äî M√©thode de destruction selon le type de produit\r\n\r\n| Type de produit | M√©thode de destruction recommand√©e |\r\n| --- | --- |\r\n| Comprim√©s, g√©lules | Incin√©ration √† haute temp√©rature (> 1 200¬∞C) ou encapsulation dans du ciment |\r\n| Liquides, sirops | Dilution forte puis √©limination dans un r√©seau d'√©gout approuv√© |\r\n| Injectables | Incin√©ration apr√®s neutralisation du contenu |\r\n| Produits cytotoxiques | Incin√©ration sp√©cialis√©e obligatoire |\r\n| Emballages vides | D√©formation + incin√©ration pour √©viter la r√©utilisation |\r\n\r\nJamais : jeter dans une d√©charge √† ciel ouvert, enterrer sans neutralisation, br√ªler √† l'air libre (risque toxique)\n\nIdentification et traitement des surstocks\r\n\r\nStrat√©gies de pr√©vention et de gestion des ruptures\r\n\r\nOptions de traitement des surstocks\r\n\r\nOption 6 ‚Äî Destruction r√©glementaire\r\nProc√©dure de destruction :\r\n√âtape 3 ‚Äî Documentation\r\nProc√®s-verbal de destruction sign√© par tous les t√©moins pr√©sents\r\nMise √† jour des fiches de stock (sortie pour destruction)\r\nConservation du PV pendant au moins 5 ans\n\nPlans de contingence et proc√©dures d'urgence\r\n\r\nUn plan de contingence est un dispositif pr√©par√© √† l'avance pour r√©pondre √† des situations exceptionnelles qui perturbent le fonctionnement normal de la cha√Æne d'approvisionnement. \r\n\r\nIl r√©pond √† une logique simple : \r\nles crises ne s'improvisent pas. \r\nUne pharmacie qui attend qu'une √©pid√©mie √©clate pour r√©fl√©chir √† comment s'approvisionner en urgence perdra un temps pr√©cieux, paiera des prix excessifs et mettra des vies en danger. \r\nUne pharmacie qui a anticip√© ces sc√©narios dispose de r√©ponses pr√™tes √† √™tre activ√©es imm√©diatement. \r\n\r\nLa diff√©rence entre les deux peut se mesurer en vies sauv√©es."
+        "duration": "10 min",
+        "content": "#### Indicateurs cl+Æs de performance\n\n### Mois de stock disponible\n\nD+Æfinition\n\nFormule\n\nInterpr+Ætation\n\nNombre de mois pendant lesquels le stock actuel peut couvrir la demande, sans nouvelle livraison.\n\nStock disponible +¿ CMM\n\n< Min : Sous stockage\n\nMin < MSD < Max : Stockage conforme au plan\n\n< Max : Surstockage\n"
       },
       {
         "id": "gas-m1-c32",
-        "title": "Plans de contingence et proc√©dures d'urgence",
+        "title": "Taux de satisfaction des besoins",
         "type": "text",
-        "duration": "5 min",
-        "content": "### Plans de contingence et proc√©dures d'urgence\n\nStrat√©gies de pr√©vention et de gestion des ruptures\r\n\r\nCat√©gorie 1 ‚Äî Crises li√©es √† la demande\r\n\r\n| Sc√©nario | Description | Produits impact√©s |\r\n| --- | --- | --- |\r\n| √âpid√©mie soudaine | Chol√©ra, m√©ningite, rougeole, paludisme s√©v√®re | SRO, antibiotiques, antipalud√©ens, vaccins |\r\n| Afflux de r√©fugi√©s ou d√©plac√©s | Population suppl√©mentaire non pr√©vue dans les calculs | Tous les produits essentiels |\r\n| √âv√©nement de masse | Accident, catastrophe naturelle avec nombreux bless√©s | Analg√©siques, antiseptiques, mat√©riel de suture |\r\n| Campagne nationale impr√©vue | Vaccination de masse d√©cid√©e en urgence | Vaccins, seringues, mat√©riel de cha√Æne du froid |\n\nStrat√©gies de pr√©vention et de gestion des ruptures\r\n\r\nCat√©gorie 2 ‚Äî Crises li√©es √† l'approvisionnement\r\n\r\n| Sc√©nario | Description | Impact |\r\n| --- | --- | --- |\r\n| Rupture chez le fabricant unique | Arr√™t de production mondial d'un principe actif | Indisponibilit√© totale et prolong√©e |\r\n| Perturbation logistique majeure | Gr√®ve des transports, route coup√©e, inondation | Blocage des livraisons |\r\n| D√©faillance financi√®re d'un fournisseur | Faillite ou cessation d'activit√© | Rupture de contrat sans pr√©avis |\r\n| Probl√®me qualit√© majeur | Rappel de lot √† l'√©chelle nationale ou internationale | Retrait urgent de produits du stock |\n\nStrat√©gies de pr√©vention et de gestion des ruptures\r\n\r\nCat√©gorie 3 ‚Äî Crises li√©es √† la structure elle-m√™me\r\n\r\n| Sc√©nario | Description | Impact |\r\n| --- | --- | --- |\r\n| Incendie ou inondation du d√©p√¥t | Destruction partielle ou totale du stock | Perte massive de produits |\r\n| Panne du syst√®me informatique | Perte d'acc√®s aux donn√©es de stock | Gestion √† l'aveugle |\r\n| D√©part soudain du gestionnaire | D√©c√®s, mutation d'urgence, maladie prolong√©e | Perte de savoir-faire et de continuit√© |\r\n| Vol massif | Disparition de quantit√©s importantes de produits | √âcart de stock critique |\n\nStructure d'un plan de contingence\r\n\r\nComposante 1 ‚Äî Identification des produits critiques\r\nTous les produits ne n√©cessitent pas le m√™me niveau de pr√©paration d'urgence. \r\nLe plan de contingence doit se concentrer en priorit√© sur les produits dont la rupture a les cons√©quences sanitaires les plus graves.\r\nM√©thode de priorisation ‚Äî Matrice de criticit√©\r\n\r\nComposante 2 ‚Äî Stock de contingence d√©di√©\r\nPour les produits critiques, un stock de contingence suppl√©mentaire est constitu√© et maintenu en dehors du stock de routine. \r\nIl ne doit √™tre utilis√© qu'en cas de d√©clenchement officiel du plan de contingence.\r\nStock de contingence = CMM √ó Dur√©e estim√©e de la crise la plus probable\n\nStructure d'un plan de contingence\r\n\r\nComposante 3 ‚Äî Liste des fournisseurs d'urgence\r\nPour chaque produit critique, une liste de fournisseurs d'urgence homologu√©s doit √™tre pr√©par√©e √† l'avance, avec toutes les informations n√©cessaires pour passer une commande imm√©diatement.\r\nR√®gle de mise √† jour : \r\nLes fiches fournisseurs d'urgence doivent √™tre v√©rifi√©es et mises √† jour tous les 6 mois minimum. \r\nUn contact t√©l√©phonique de v√©rification suffit. \r\nUn fournisseur d'urgence dont les informations sont obsol√®tes est un fournisseur inutilisable au moment de la crise.\n\nStructure d'un plan de contingence\r\n\r\nComposante 4 ‚Äî Proc√©dures d'activation du plan\r\nLe plan de contingence ne doit pas rester un document th√©orique. Il doit d√©finir pr√©cis√©ment les conditions de son d√©clenchement, les √©tapes √† suivre et les responsabilit√©s de chacun.\r\n\r\nCrit√®res de d√©clenchement du plan :\r\n\r\n| Crit√®re | Seuil de d√©clenchement |\r\n| --- | --- |\r\n| Niveau de stock | Stock d'un produit critique tombe sous 50% du stock de s√©curit√© |\r\n| Alerte √©pid√©mique | D√©claration officielle d'√©pid√©mie par les autorit√©s sanitaires |\r\n| Perturbation fournisseur | Rupture confirm√©e chez le fournisseur principal pour > 30 jours |\r\n| √âv√©nement exceptionnel | Catastrophe naturelle, afflux de r√©fugi√©s > 20% de la population habituelle |\r\n| Perte de stock | Incendie, inondation ou vol > 30% de la valeur totale du stock |\n\nProc√©dures d'urgence sp√©cifiques\r\n\r\nProc√©dure d'urgence 1 ‚Äî Rappel de lot (retrait de produits du march√©)\r\nUn rappel de lot survient quand l'autorit√© de r√©glementation pharmaceutique ou le fabricant ordonne le retrait d'un lot sp√©cifique de m√©dicaments en raison d'un probl√®me de qualit√© d√©tect√© (contamination, mauvais dosage, emballage d√©fectueux).\r\n\r\nProc√©dure :\r\n√âtape 1 ‚Äî R√©ception de l'alerte de rappel :\r\nL'alerte peut venir de la Direction de la Pharmacie, de la DRS, du fournisseur ou de l'OMS. \r\nElle pr√©cise le nom du produit, le num√©ro de lot concern√© et la raison du rappel.\r\n\r\n√âtape 2 ‚Äî Identification et mise en quarantaine imm√©diate :\r\nV√©rifier dans le stock si des unit√©s du lot concern√© sont pr√©sentes. \r\nToute unit√© identifi√©e doit √™tre imm√©diatement retir√©e du stock et plac√©e en quarantaine (zone s√©par√©e, √©tiquet√©e \"QUARANTAINE ‚Äî NE PAS UTILISER\").\n\nProc√©dures d'urgence sp√©cifiques\r\n\r\nProc√©dure d'urgence 1 ‚Äî Rappel de lot (retrait de produits du march√©)\r\nProc√©dure :\r\n√âtape 3 ‚Äî V√©rification des distributions pass√©es :\r\nV√©rifier dans le registre si des unit√©s du lot rappel√© ont d√©j√† √©t√© distribu√©es. \r\nSi oui, identifier les patients ou structures ayant re√ßu ces unit√©s et les notifier selon les instructions de l'alerte.\r\n√âtape 4 ‚Äî Notification et rapport :\r\nNotifier imm√©diatement la DRS et la Direction de la Pharmacie. \r\nEnvoyer un rapport pr√©cisant les quantit√©s identifi√©es, les quantit√©s d√©j√† distribu√©es, et les actions prises.\r\n√âtape 5 ‚Äî Retour ou destruction :\r\nSelon les instructions de l'alerte, retourner les produits au fournisseur ou √† la Direction de la Pharmacie, ou proc√©der √† la destruction selon le protocole r√©glementaire.\n\nProc√©dures d'urgence sp√©cifiques\r\n\r\nProc√©dure d'urgence 2 ‚Äî Incendie ou inondation du d√©p√¥t\r\nProc√©dure :\r\nImm√©diatement (dans l'heure) :\r\n‚òê Mettre le personnel en s√©curit√©\r\n‚òê Alerter les secours (pompiers, police)\r\n‚òê S√©curiser les documents (registres, fiches de stock) si possible sans danger\r\n‚òê Notifier le m√©decin chef et la DRS\r\nImm√©diatement (dans l'heure) :\r\n‚òê √âvaluer l'√©tendue des d√©g√¢ts (produits sauv√©s vs produits d√©truits)\r\n‚òê Trier les produits sauv√©s : conformes vs endommag√©s (chaleur, humidit√©) ‚Üí mise en quarantaine des produits douteux\r\n‚òê Constituer un stock d'urgence minimum √† partir des produits sauv√©s conformes\r\n‚òê Envoyer une demande d'approvisionnement d'urgence au niveau sup√©rieur\r\n‚òê √âtablir un rapport de pertes pour les assurances et la comptabilit√©\n\nProc√©dures d'urgence sp√©cifiques\r\n\r\nProc√©dure d'urgence 3 ‚Äî D√©part soudain du gestionnaire\r\nProc√©dure :\r\nPr√©paration (avant toute crise) :\r\n‚òê Identifier et former un gestionnaire rempla√ßant capable d'assurer les t√¢ches critiques\r\n‚òê Tenir les documents de stock √† jour et accessibles au rempla√ßant\r\n‚òê Documenter les contacts fournisseurs et les proc√©dures dans un manuel accessible\r\n‚òê Organiser un inventaire trimestriel cosign√© par le gestionnaire et son rempla√ßant\r\n\r\nEn cas de d√©part soudain :\r\n‚òê Passation de service avec inventaire complet dans les 48 heures\r\n‚òê Le rempla√ßant prend en charge les commandes en cours et les alertes de stock\r\n‚òê La hi√©rarchie est notifi√©e pour validation des premi√®res commandes du rempla√ßant"
+        "duration": "10 min",
+        "content": "#### Indicateurs cl+Æs de performance\n\n### Taux de satisfaction des besoins\n\nD+Æfinition\n\nFormule\n\nInterpr+Ætation\n\nMesure la capacit+Æ +· livrer les besoins exprim+Æs, dans les d+Ælais convenus.\n\n(Quantit+Æ livr+Æe dans les d+Ælais +¿ Quantit+Æ demand+Æe) +˘ 100\n\n(Nombre de d+Æsignation satisfaite +¿ Nombre de d+Æsignation demand+Æe) +˘ 100\n\n‘Î— 95 % : Satisfaction fiable\n\n80 % +· 94 % : Performance moyenne, +· am+Æliorer\n\n< 80 % : Satisfaction peu fiable, prendre imm+Ædiatement des mesures correctrices\n"
       },
       {
         "id": "gas-m1-c33",
-        "title": "Syst√®mes d'inventaire et outils digitaux",
+        "title": "Valeur du stock immobilis+Æ",
         "type": "text",
-        "duration": "5 min",
-        "content": "### Syst√®mes d'inventaire et outils digitaux\n\nGESTION DES APPROVISIONNEMENTS ET DES STOCKS"
+        "duration": "10 min",
+        "content": "#### Indicateurs cl+Æs de performance\n\n### Valeur du stock immobilis+Æ\n\nD+Æfinition\n\nFormule\n\nInterpr+Ætation\n\nMontant financier total des produits en surstock ou en stock mort, non utiles +· la demande courante.\n\nQuantit+Æ en exc+Ædent +˘ Prix unitaire\n\nPar produit, puis total\n\n< 5 % de la valeur totale du stock : Acceptable\n\n5‘«Ù10 % de la valeur totale du stock : +« surveiller\n\n> 10 % de la valeur totale du stock : Perte financi+øre significative, Correction urgente\n"
       },
       {
         "id": "gas-m1-c34",
-        "title": "Gestion des approvisionnements et des stocks",
+        "title": "Taux de rotation des stocks",
         "type": "text",
-        "duration": "5 min",
-        "content": "### Gestion des approvisionnements et des stocks\n\nPlan\r\n\r\nTypes d'inventaires (permanent, p√©riodique, tournant)\r\nProc√©dures de comptage et de r√©conciliation\r\nOutils digitaux de gestion des stocks (logiciels, applications mobiles)"
+        "duration": "10 min",
+        "content": "#### Indicateurs cl+Æs de performance\n\n### Taux de rotation des stocks\n\nD+Æfinition\n\nFormule\n\nInterpr+Ætation\n\nVitesse +· laquelle le stock est enti+ørement renouvel+Æ sur une p+Æriode donn+Æe\n\nQuantit+Æ consomm+Æe sur la p+Æriode +¿ Stock moyen de la p+Æriode\n\n4‘«Ù6 rotations/an : Gestion saine\n\n2‘«Ù3 rotations/an : Stock lent, surveiller\n\n< 2 rotations/an : Stock dormant, action requise\n"
       },
       {
         "id": "gas-m1-c35",
-        "title": "Types d'inventaires (permanent, p√©riodique, tournant)",
+        "title": "D+Ælai moyen de livraison",
         "type": "text",
-        "duration": "5 min",
-        "content": "### Types d'inventaires (permanent, p√©riodique, tournant)\n\nL'inventaire est l'acte par lequel on v√©rifie que ce qui est dans le registre ou le syst√®me informatique correspond √† ce qui est physiquement pr√©sent dans le d√©p√¥t. \r\n\r\nC'est une op√©ration de contr√¥le fondamentale qui conditionne la fiabilit√© de toutes les d√©cisions de gestion. \r\n\r\nUn gestionnaire qui ne fait pas d'inventaire r√©gulier travaille sur des donn√©es dont il ne peut pas garantir l'exactitude. Il commande peut-√™tre trop, peut-√™tre trop peu, distribue peut-√™tre des produits qui n'existent plus physiquement, ou ignore des produits qui dorment dans un coin du d√©p√¥t. \r\n\r\nLes trois types d'inventaires ‚Äî permanent, p√©riodique et tournant ‚Äî r√©pondent √† des logiques diff√©rentes et se compl√®tent. Les conna√Ætre permet de choisir le syst√®me le plus adapt√© au contexte de chaque structure.\n\nL'inventaire permanent\r\n\r\nD√©finition\r\nL'inventaire permanent, aussi appel√© inventaire continu, est un syst√®me dans lequel le stock th√©orique est mis √† jour en temps r√©el √† chaque mouvement de produit, entr√©e ou sortie. \r\n√Ä tout moment, le gestionnaire peut consulter le stock th√©orique sans avoir besoin de compter physiquement les produits.\r\n\r\nPrincipe de fonctionnement : Stock th√©orique au temps T = Stock initial + Total des entr√©es ‚àí Total des sorties (depuis le stock initial)\r\n\r\nChaque entr√©e (r√©ception de livraison) et chaque sortie (distribution, transfert, perte) est imm√©diatement enregistr√©e sur la fiche de stock ou dans le logiciel.\r\n\r\nLe stock th√©orique est donc toujours √† jour.\n\nL'inventaire permanent\r\n\r\nCe que l'inventaire permanent permet :\r\nConna√Ætre √† tout moment le stock th√©orique sans compter physiquement\r\nD√©tecter imm√©diatement toute anomalie (sortie sans justificatif)\r\nCalculer automatiquement la CMM √† partir des sorties enregistr√©es\r\nD√©clencher les alertes de stock min en temps r√©el\r\n\r\nLimites de l'inventaire permanent :\r\nExige un enregistrement rigoureux et imm√©diat de chaque mouvement\r\nSi un mouvement est oubli√© ou mal enregistr√©, l'√©cart s'accumule sans √™tre d√©tect√©\r\nNe remplace pas le comptage physique p√©riodique\n\nL'inventaire permanent\r\n\r\nConditions de r√©ussite de l'inventaire permanent\r\n\r\n| Condition | Description |\r\n| --- | --- |\r\n| Discipline d'enregistrement | Chaque mouvement enregistr√© le jour m√™me, sans exception |\r\n| Documents de r√©f√©rence | Bon de sortie ou bon de r√©ception pour chaque mouvement |\r\n| V√©rification r√©guli√®re | Comptage physique au moins mensuel pour d√©tecter les √©carts |\r\n| Formation du personnel | Tout agent manipulant les produits doit ma√Ætriser l'enregistrement |\r\n| Supervision | Contr√¥les inopin√©s r√©guliers par le responsable |\n\nL'inventaire p√©riodique\r\n\r\nD√©finition\r\nL'inventaire p√©riodique est un syst√®me dans lequel le stock n'est pas suivi en continu mais compt√© physiquement √† intervalles r√©guliers et pr√©d√©finis. \r\nEntre deux inventaires, le gestionnaire ne dispose pas n√©cessairement d'un stock th√©orique fiable. \r\nL'inventaire p√©riodique est souvent utilis√© dans les structures avec des ressources limit√©es ou un volume de produits important.\r\n\r\nFr√©quences habituelles :\r\n\r\n| Fr√©quence | Contexte recommand√© |\r\n| --- | --- |\r\n| Mensuelle | Structures avec peu de produits, gestionnaire seul |\r\n| Trimestrielle | D√©p√¥ts de district avec volume moyen |\r\n| Semestrielle | D√©p√¥ts r√©gionaux, structures bien informatis√©es |\r\n| Annuelle | Inventaire g√©n√©ral obligatoire pour toutes les structures |\n\nL'inventaire p√©riodique\r\n\r\nProc√©dure d'inventaire p√©riodique\r\n\r\nAvant l'inventaire :\r\n‚òê Fixer la date √† l'avance et la communiquer au personnel \r\n‚òê Suspendre tous les mouvements de stock 2 heures avant le d√©but \r\n‚òê Pr√©parer les formulaires de comptage (un formulaire par produit ou par zone) \r\n‚òê Constituer les √©quipes de comptage (2 personnes minimum par √©quipe : un qui compte, un qui enregistre) \r\n‚òê S'assurer que les registres et fiches de stock sont √† jour jusqu'√† la veille\n\nL'inventaire p√©riodique\r\n\r\nProc√©dure d'inventaire p√©riodique\r\n\r\nPendant l'inventaire :\r\n‚òê Chaque √©quipe compte sa zone sans conna√Ætre le stock th√©orique (pour √©viter les biais) \r\n‚òê Comptage physique unit√© par unit√©, bo√Æte par bo√Æte \r\n‚òê Enregistrement imm√©diat de chaque comptage sur le formulaire \r\n‚òê Double-comptage obligatoire pour les produits √† forte valeur ou les √©carts suspects \r\n‚òê Identification et s√©paration physique des produits p√©rim√©s, endommag√©s, en quarantaine\n\nL'inventaire p√©riodique\r\n\r\nProc√©dure d'inventaire p√©riodique\r\n\r\nApr√®s l'inventaire :\r\n‚òê Comparaison entre stock physique compt√© et stock th√©orique \r\n‚òê Calcul des √©carts \r\n‚òê Investigation des √©carts significatifs \r\n‚òê Mise √† jour des fiches de stock avec le stock physique r√©el \r\n‚òê R√©daction du rapport d'inventaire\n\nDiff√©rences entre inventaire permanent et p√©riodique\r\n\r\n| Crit√®re | Inventaire permanent | Inventaire p√©riodique |\r\n| --- | --- | --- |\r\n| Suivi du stock | En continu, en temps r√©el | Uniquement aux dates d'inventaire |\r\n| Connaissance du stock | √Ä tout moment | Seulement apr√®s chaque inventaire |\r\n| Charge de travail | Continue mais l√©g√®re | Concentr√©e aux dates d'inventaire |\r\n| Fiabilit√© des donn√©es | √âlev√©e si enregistrement rigoureux | Limit√©e entre deux inventaires |\r\n| D√©tection des √©carts | Imm√©diate si enregistrement complet | Seulement √† chaque inventaire |\r\n| Ressources n√©cessaires | Formation et discipline du personnel | Organisation et temps pour l'inventaire |\r\n| Adapt√© √† | Structures avec logiciel, faible volume de produits | Structures avec volume important, ressources limit√©es |\n\nL'inventaire tournant\r\n\r\nD√©finition\r\nL'inventaire tournant est un syst√®me dans lequel l'ensemble du stock est divis√© en segments (par zone, par famille de produits, ou par ordre alphab√©tique), et chaque segment est compt√© √† tour de r√¥le selon un calendrier pr√©d√©fini. \r\n√Ä tout moment de l'ann√©e, une partie du stock a √©t√© r√©cemment v√©rifi√©e. \r\nSur une p√©riode de 12 mois, l'int√©gralit√© du stock est pass√©e en revue plusieurs fois.\r\n\r\nPrincipe : Au lieu de tout compter en une seule fois (comme pour l'inventaire p√©riodique), on compte un peu chaque semaine ou chaque mois, de fa√ßon continue et rotative.\n\nL'inventaire tournant\r\n\r\nAvantages de l'inventaire tournant\r\n\r\nAvantage 1 ‚Äî D√©tection rapide des √©carts : Un √©cart sera d√©tect√© au plus tard 4 semaines apr√®s sa survenue (au prochain comptage du Groupe A), alors qu'avec un inventaire semestriel il pourrait rester invisible pendant 6 mois.\r\n\r\nAvantage 2 ‚Äî Charge de travail r√©partie : L'inventaire tournant ne mobilise jamais l'ensemble du personnel en m√™me temps. Chaque semaine, seulement peu de produits sont compt√©s, ce qui prend environ 1 √† 2 heures au lieu de la journ√©e enti√®re qu'exige un inventaire complet.\r\n\r\nAvantage 3 ‚Äî Maintien continu de la fiabilit√© des donn√©es : Avec l'inventaire tournant, les donn√©es de stock des produits r√©cemment compt√©s sont fiables √† tout moment.\n\nL'inventaire de passation de service\r\n\r\nUn type d'inventaire particulier m√©rite une mention sp√©ciale : l'inventaire de passation de service. Il est r√©alis√© √† chaque changement de gestionnaire et prot√®ge √† la fois le gestionnaire sortant (il n'est pas tenu responsable de pertes survenues apr√®s son d√©part) et le gestionnaire entrant (il sait exactement ce qu'il prend en charge).\r\n\r\nProc√©dure :\r\n‚òê Comptage physique complet de tous les produits en pr√©sence des deux gestionnaires\r\n‚òê V√©rification de tous les documents (registres, bons de commande en cours, fiches de stock)\r\n‚òê Inventaire des √©quipements et du mat√©riel\r\n‚òê R√©daction d'un proc√®s-verbal de passation cosign√© par les deux gestionnaires et le m√©decin chef\r\n‚òê Conservation d'une copie par chaque partie"
+        "duration": "10 min",
+        "content": "#### Indicateurs cl+Æs de performance\n\n### D+Ælai moyen de livraison\n\nD+Æfinition\n\nFormule\n\nInterpr+Ætation\n\nTemps moyen +Æcoul+Æ entre la date de commande et la date de livraison effective des produits\n\nSomme des d+Ælais observ+Æs +¿ Nombre de commandes sur la p+Æriode\n\nConforme au contrat : Fournisseur ponctuel\n\nD+Æpassement < 20 % : Tol+Ærable\n\nD+Æpassement > 20 % : Revoir le plan de distribution ou les m+Æ+Æcanismes de livraison\n"
       },
       {
         "id": "gas-m1-c36",
-        "title": "Proc√©dures de comptage et de r√©conciliation",
+        "title": "Synth+øse",
         "type": "text",
-        "duration": "5 min",
-        "content": "### Proc√©dures de comptage et de r√©conciliation\n\nCompter un stock semble √™tre une op√©ration simple. Dans la pratique, c'est une proc√©dure exigeante qui, mal conduite, produit des r√©sultats aussi peu fiables que l'absence de comptage. Un mauvais comptage donne l'illusion de la ma√Ætrise sans en avoir la r√©alit√©. \r\n\r\nLes erreurs de comptage ‚Äî produits oubli√©s, doubles comptages, mauvaise lecture des quantit√©s, influence du stock th√©orique sur le comptage ‚Äî sont nombreuses et courantes. \r\n\r\nLa r√©conciliation, quant √† elle, est l'√©tape qui suit le comptage et qui consiste √† comparer le stock physique obtenu avec le stock th√©orique, analyser les √©carts, en comprendre les causes et corriger les donn√©es. \r\n\r\nEnsemble, comptage et r√©conciliation forment le c≈ìur du processus d'inventaire.\n\nPr√©paration du comptage\r\n\r\nPrincipe : Le d√©p√¥t doit √™tre organis√© de fa√ßon √† rendre le comptage syst√©matique et exhaustif. Chaque produit doit avoir une place d√©finie et connue. Les produits de statuts diff√©rents doivent √™tre physiquement s√©par√©s avant le comptage.\r\n\r\nActions pr√©paratoires :\r\n‚òê Regrouper tous les produits de m√™me type au m√™me endroit (si ce n'est pas d√©j√† le cas) \r\n‚òê S√©parer physiquement les produits de statuts diff√©rents :\r\nZone de stock actif : produits disponibles √† la distribution\r\nZone de quarantaine : produits suspects, en attente de d√©cision\r\nZone de p√©rim√©s : produits hors d'usage, en attente de destruction\r\n‚òê √âtiqueter chaque zone clairement \r\n‚òê V√©rifier que tous les produits sont accessibles (rien derri√®re des palettes inaccessibles, rien sous des √©tag√®res sans visibilit√©)\r\n\r\nOrganisation de l'espace\n\nPrincipe du double comptage : Chaque produit doit √™tre compt√© par au moins deux personnes diff√©rentes, ind√©pendamment l'une de l'autre. Les r√©sultats sont compar√©s. En cas de divergence, un troisi√®me comptage est effectu√©..\r\n\r\nComposition recommand√©e des √©quipes :\r\n\r\n| R√¥le | Nombre | Responsabilit√© |\r\n| --- | --- | --- |\r\n| Compteur | 1 par √©quipe | Compte physiquement les produits |\r\n| Enregistreur | 1 par √©quipe | Note les r√©sultats sur le formulaire |\r\n| Superviseur | 1 pour plusieurs √©quipes | V√©rifie la m√©thode, r√©sout les ambigu√Øt√©s |\r\n| Validateur | 1 (responsable hi√©rarchique) | Signe les formulaires, valide les r√©sultats finaux |\r\n\r\nR√®gle absolue : Le compteur ne doit pas conna√Ætre le stock th√©orique avant de compter\r\n\r\nPr√©paration du comptage\r\n\r\nConstitution des √©quipes de comptage\n\nUn formulaire de comptage bien con√ßu facilite le travail et r√©duit les erreurs. Il doit √™tre pr√©par√© √† l'avance et distribu√© aux √©quipes avant le d√©but du comptage.\r\n\r\nPr√©paration du comptage\r\n\r\nPr√©paration des formulaires de comptage\n\nM√©thodes de comptage\r\n\r\nC'est la m√©thode la plus pr√©cise. Chaque unit√© (comprim√©, ampoule, flacon, sachet) est compt√©e individuellement.\r\n\r\nQuand l'utiliser :\r\nProduits √† forte valeur unitaire (insuline, vaccins, ARV)\r\nProduits avec des √©carts fr√©quents\r\nProduits en petite quantit√© (moins de 500 unit√©s)\r\n\r\nTechnique : Regrouper les unit√©s par paquets de 10 ou de 100 pour faciliter le comptage.\r\n\r\nComptage par unit√©s\n\nM√©thodes de comptage\r\n\r\nPour les produits en grandes quantit√©s et dont les conditionnements sont scell√©s et inviol√©s, on peut compter les bo√Ætes et multiplier par leur contenu.\r\n\r\nQuand l'utiliser :\r\nProduits en grandes quantit√©s (> 1 000 unit√©s)\r\nConditionnements scell√©s, non ouverts, avec contenu v√©rifi√© √† la r√©ception\r\n\r\nR√®gle de pr√©caution : \r\nOuvrir et v√©rifier un √©chantillon al√©atoire de bo√Ætes pour s'assurer que le contenu correspond bien √† la quantit√© indiqu√©e sur l'√©tiquette. \r\nNe jamais compter les bo√Ætes sans v√©rification d'un √©chantillon.\r\n\r\nComptage par conditionnements intacts\n\nM√©thodes de comptage\r\n\r\nCertains produits (poudres, coton, certains consommables) peuvent √™tre pes√©s et convertis en unit√©s sur la base d'un poids unitaire √©tabli.\r\n\r\nComptage par pes√©e (pour les produits en vrac)\r\n\r\nPour les produits pharmaceutiques, il est indispensable de comptabiliser s√©par√©ment chaque lot avec sa date de p√©remption. Cela permet de d√©tecter les produits proches de p√©remption et d'appliquer le FEFO lors de la distribution.\r\n\r\nComptage par lot et par date de p√©remption\n\nLa r√©conciliation des stocks\r\n\r\nFormule : √âcart = Stock physique ‚àí Stock th√©orique\r\n\r\nClassification des √©carts\r\n\r\nCalcul des √©carts\r\n\r\n| Niveau d'√©cart | Seuil | R√©ponse |\r\n| --- | --- | --- |\r\n| N√©gligeable | < 1% | Correction des donn√©es sans investigation |\r\n| Tol√©rable | 1 √† 2% | Correction des donn√©es + note explicative |\r\n| Significatif | 2 √† 5% | Correction + investigation document√©e |\r\n| Majeur | 5 √† 10% | Correction + investigation approfondie + rapport hi√©rarchique |\r\n| Critique | > 10% | Correction + investigation formelle + suspension possible du gestionnaire le temps de l'investigation |\n\nLa r√©conciliation des stocks\r\n\r\nInvestigation des √©carts\r\n√âtape 1 ‚Äî V√©rifier le comptage : Avant de conclure √† un √©cart r√©el, s'assurer que le comptage a √©t√© correctement effectu√©. Un recomptage s'impose pour tout √©cart significatif.\r\n\r\n√âtape 2 ‚Äî V√©rifier les documents de la p√©riode : Examiner tous les bons de sortie, bons de r√©ception, bons de transfert et documents de perte de la p√©riode couverte par l'inventaire.\r\n\r\n√âtape 3 ‚Äî Identifier les mouvements non document√©s : Interroger le personnel sur les mouvements de produits qui pourraient ne pas avoir √©t√© enregistr√©s.\r\n\r\n√âtape 4 ‚Äî Analyser l'√©cart r√©siduel inexpliqu√©\r\n\r\n√âtape 5 ‚Äî Mesures correctives : Sur la base de l'investigation, des mesures correctives sont d√©finies et document√©es.\r\n\r\nCalcul des √©carts\n\nLa r√©conciliation des stocks\r\n\r\nUne fois l'investigation termin√©e, les fiches de stock et le registre sont mis √† jour avec le stock physique r√©el issu du comptage.\r\n\r\nProc√©dure de correction :\r\nNe jamais rayer ou effacer l'ancienne valeur dans le registre. \r\nTirer un trait sur l'ancienne valeur et √©crire la nouvelle √† c√¥t√©, avec la date et la signature du gestionnaire.\r\nCr√©er une ligne de r√©gularisation dans la fiche de stock\r\n\r\nCorrection des donn√©es et mise √† jour des fiches de stock\r\n\r\nLe rapport d'inventaire est le document officiel qui synth√©tise les r√©sultats du comptage et de la r√©conciliation. Il est conserv√© dans les archives de la structure et transmis √† la hi√©rarchie.\r\n\r\nLe rapport d'inventaire"
+        "duration": "10 min",
+        "content": "#### Indicateurs cl+Æs de performance\n\n### Synth+øse\n\nCes indicateurs se lisent ensemble, pas isol+Æment.\n\nUn taux de disponibilit+Æ faible combin+Æ +· un taux de couverture +Ælev+Æ indique par exemple que les mauvais produits sont stock+Æs en exc+øs pendant que les produits essentiels manquent.\n\nC'est souvent plus r+Æv+Ælateur que chaque chiffre pris s+Æpar+Æment.\n\nLa fr+Æquence de mesure recommand+Æe est :\n\nMensuelle pour les indicateurs op+Ærationnels (disponibilit+Æ, rupture, couverture) et\n\nTrimestrielle ou annuelle pour les indicateurs strat+Ægiques (p+Æremption, valeur immobilis+Æe, satisfaction).\n"
       },
       {
         "id": "gas-m1-c37",
-        "title": "Outils digitaux de gestion des stocks",
+        "title": "Introduction aux bonnes pratiques de gestion des stocks",
         "type": "text",
-        "duration": "5 min",
-        "content": "### Outils digitaux de gestion des stocks\n\nLa gestion manuelle des stocks sur registres papier a longtemps √©t√© la norme dans les syst√®mes pharmaceutiques des pays √† ressources limit√©es. Elle reste valide et peut √™tre tr√®s efficace si elle est rigoureusement appliqu√©e. \r\n\r\nMais elle a des limites structurelles : \r\nelle est lente, \r\nexpos√©e aux erreurs humaines, \r\ndifficile √† consolider entre plusieurs sites et \r\nincapable de g√©n√©rer automatiquement des alertes ou des rapports. \r\n\r\nLes outils digitaux ne remplacent pas les bonnes pratiques de gestion. Ils les amplifient, les acc√©l√®rent et les rendent plus fiables. \r\n\r\nUn gestionnaire qui g√®re mal son stock sur papier ne g√®rera pas mieux avec un logiciel. Mais un gestionnaire qui ma√Ætrise les principes fondamentaux vus dans les modules pr√©c√©dents verra sa productivit√© et la fiabilit√© de ses donn√©es consid√©rablement am√©lior√©es par les outils digitaux adapt√©s √† son contexte.\n\nPanorama des outils digitaux disponibles\r\n\r\nCat√©gorie 1 ‚Äî Les tableurs (Excel, Google Sheets, LibreOffice Calc)\r\n\r\nDescription : \r\nLes tableurs sont le premier niveau d'outil digital. Ils ne sont pas des logiciels de gestion de stocks au sens strict, mais ils permettent d'automatiser les calculs, de structurer les donn√©es et de g√©n√©rer des tableaux de bord simples. \r\nIls sont disponibles sur presque tous les ordinateurs, ne n√©cessitent pas de connexion internet (pour Excel et LibreOffice), et sont ma√Ætris√©s par la plupart des gestionnaires ayant une formation de base en informatique.\r\n\r\nCe qu'un tableur bien con√ßu permet de faire :\r\nCalculer automatiquement la CMM, le stock min, le stock max et la quantit√© √† commander\r\nG√©n√©rer des alertes visuelles (code couleur) quand un stock passe sous le stock min\r\nCalculer le TPI apr√®s inventaire\r\nProduire des graphiques d'√©volution du stock dans le temps\r\nConsolider les donn√©es de plusieurs produits en un seul tableau de bord\n\nPanorama des outils digitaux disponibles\r\n\r\nCat√©gorie 1 ‚Äî Les tableurs (Excel, Google Sheets, LibreOffice Calc)\r\n\r\nLimites des tableurs :\r\nUn fichier par structure (pas de consolidation automatique entre sites)\r\nPas d'alertes automatiques envoy√©es par email ou SMS\r\nRisque d'erreur si les formules sont accidentellement modifi√©es\r\nPas de tra√ßabilit√© des modifications (qui a chang√© quoi et quand)Pas de gestion multi-utilisateurs simultan√©e\n\nPanorama des outils digitaux disponibles\r\n\r\nCat√©gorie 2 ‚Äî Les logiciels de gestion de stocks pharmaceutiques\r\n\r\nDescription : Ce sont des applications sp√©cialement con√ßues pour la gestion des stocks pharmaceutiques. Elles int√®grent nativement les concepts de CMM, min/max, point de commande, FEFO, gestion par lot, alertes automatiques et rapports standardis√©s. \r\n\r\nLes principaux logiciels utilis√©s en Afrique subsaharienne : OpenLMIS (Open Logistics Management Information System)\r\n\r\nCaract√©ristiques :\r\nLogiciel open source (gratuit) d√©velopp√© sp√©cifiquement pour les pays √† ressources limit√©es\r\nGestion multi-niveaux (centre de sant√© ‚Üí district ‚Üí r√©gion ‚Üí niveau central)\r\nAlertes automatiques de rupture et de surstock\r\nRapports standardis√©s conformes aux exigences des minist√®res de la sant√© et des bailleurs\r\nFonctionne sur navigateur web, accessible depuis tout ordinateur avec connexion internet\r\nUtilis√© dans de nombreux pays africains (Zambie, Mozambique, Tanzanie, B√©nin...)\n\nPanorama des outils digitaux disponibles\r\n\r\nCat√©gorie 2 ‚Äî Les logiciels de gestion de stocks pharmaceutiques\r\n\r\nFonctionnalit√©s cl√©s :\r\nSuivi des stocks en temps r√©el pour tous les produits et tous les niveaux\r\nG√©n√©ration automatique des quantit√©s √† commander\r\nTableaux de bord avec indicateurs (taux de disponibilit√©, taux de rupture, taux de couverture)Gestion des commandes de la quantification √† la r√©ception\r\nRapports exportables en Excel ou PDF\n\nPanorama des outils digitaux disponibles\r\n\r\nCat√©gorie 3 ‚Äî Les applications mobiles\r\n\r\nDescription : Les applications mobiles permettent de g√©rer les stocks directement depuis un smartphone ou une tablette. Elles sont particuli√®rement adapt√©es aux structures √©loign√©es o√π l'acc√®s √† un ordinateur est limit√©, et aux agents de terrain qui collectent des donn√©es lors de visites de supervision.\r\n\r\nLes principales applications mobiles utilis√©es :\r\nmSupply Mobile\r\nStockOut Notifier\r\nCommCare\r\nDHIS2 (District Health Information System version 2)\r\n‚Ä¶\n\nPanorama des outils digitaux disponibles\r\n\r\nCat√©gorie 4 ‚Äî Les syst√®mes de codes-barres et RFID\r\n\r\nDescription : Ces technologies permettent d'automatiser la saisie des donn√©es de stock en scannant des codes-barres ou des puces RFID (Radio Frequency Identification) plut√¥t qu'en tapant manuellement. Elles r√©duisent consid√©rablement les erreurs de saisie et acc√©l√®rent les op√©rations de r√©ception et d'inventaire.\r\n\r\nCode-barres : \r\nChaque produit pharmaceutique est identifi√© par un code-barres (EAN-13 ou DataMatrix) qui encode le num√©ro de lot, la date de p√©remption et la quantit√©. \r\nUn scanner (pistolet de scan ou application de scan sur smartphone) lit ce code et enregistre automatiquement les informations dans le logiciel.\n\nCrit√®res de choix d'un outil digital\r\n\r\n| Crit√®re | Questions √† se poser |\r\n| --- | --- |\r\n| Infrastructure informatique | Y a-t-il des ordinateurs disponibles et en √©tat de fonctionnement ? |\r\n| Connexion internet | La connexion est-elle fiable et permanente, ou intermittente ? |\r\n| √âlectricit√© | L'alimentation √©lectrique est-elle stable ? Dispose-t-on de groupes √©lectrog√®nes ou de panneaux solaires ? |\r\n| Comp√©tences du personnel | Le personnel a-t-il une formation informatique de base ? Peut-on former rapidement ? |\r\n| Volume de produits g√©r√©s | Combien de r√©f√©rences diff√©rentes le d√©p√¥t g√®re-t-il ? |\r\n| Budget disponible | Quel est le budget pour l'acquisition et la maintenance de l'outil ? |\r\n| Support technique local | Y a-t-il un support technique disponible localement en cas de panne ? |\r\n| Interop√©rabilit√© | L'outil doit-il s'interfacer avec le syst√®me national (DHIS2, OpenLMIS) ? |\n\nConditions de succ√®s de la digitalisation\r\n\r\nCondition 1 ‚Äî La formation du personnel\r\nPrincipe : Un outil non ma√Ætris√© est un outil abandonn√©. La formation doit √™tre pratique, progressive et r√©p√©t√©e.\r\n\r\nCondition 2 ‚Äî La qualit√© des donn√©es saisies\r\nPrincipe GIGO (Garbage In, Garbage Out) : Un logiciel ne peut produire des rapports fiables que si les donn√©es saisies sont correctes. Un logiciel avec de mauvaises donn√©es produit de mauvais rapports plus vite qu'un registre papier, mais les mauvais rapports restent des mauvais rapports.\r\n\r\nCondition 3 ‚Äî La maintenance et le support technique\r\nPrincipe : Un syst√®me informatique tombe en panne. La question n'est pas de savoir si √ßa arrivera, mais quand. Sans plan de maintenance et de support, une panne peut mettre le syst√®me hors service pendant des semaines.\n\nConditions de succ√®s de la digitalisation\r\n\r\nCondition 4 ‚Äî La proc√©dure de continuit√© en mode d√©grad√©\r\nQuand le syst√®me digital est en panne (√©lectricit√©, internet, ordinateur), la gestion ne doit pas s'arr√™ter. Une proc√©dure de continuit√© en mode d√©grad√© (retour temporaire au papier) doit √™tre document√©e et connue du personnel.\r\n\r\nProc√©dure de continuit√© :\r\n‚òê En cas de panne, imprimer les derni√®res fiches de stock disponibles (avant la panne) et les utiliser comme base de travail manuel\r\n‚òê Enregistrer tous les mouvements sur des fiches de stock papier pr√©-imprim√©es (toujours disponibles en r√©serve)\r\n‚òê Conserver tous les bons de sortie et de r√©ception papier pendant la panne\r\n‚òê D√®s le retour du syst√®me, saisir tous les mouvements enregistr√©s sur papier dans le logiciel\r\n‚òê V√©rifier la coh√©rence du stock th√©orique apr√®s la reprise de saisie"
+        "duration": "10 min",
+        "content": "#### Introduction aux bonnes pratiques de gestion des stocks\n\nLes bonnes pratiques de gestion des stocks ne sont pas des r+øgles abstraites.\n\nCe sont des habitudes concr+øtes, appliqu+Æes au quotidien, qui font la diff+Ærence entre une entrep+¶t qui fonctionne bien et un qui accumule les ruptures, les p+Æremptions et les pertes financi+øres.\n\nElles couvrent quatre grands domaines :\n\nl'organisation physique du stock,\n\nla gestion des documents et des donn+Æes,\n\nles proc+Ædures de commande et de r+Æception et\n\nle suivi r+Ægulier des indicateurs.\n"
       },
       {
         "id": "gas-m1-c38",
+        "title": "Introduction aux bonnes pratiques de gestion des stocks",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Introduction aux bonnes pratiques de gestion des stocks\n\nPrincipe\n\nBonnes pratiques\n\nOrganiser correctement l'espace de stockage\n\nUn stock bien organis+Æ physiquement est la premi+øre condition d'une bonne gestion.\n\nSi on ne retrouve pas facilement un produit, on ne peut pas le g+Ærer efficacement.\n\nS+Æparer les zones fonctionnelles\n\nRespecter les conditions de conservation\n\nTemp+Ærature ambiante (< 25-¶C +· 30-¶C selon le produit) : Comprim+Æs, g+Ælules\n\nCha+´ne du froid (+2-¶C +· +8-¶C) : Vaccins, insuline, certains r+Æactifs\n\n+« l'abri de la lumi+øre : M+Ætronidazole injectable, certains sirops\n\n+« l'abri de l'humidit+Æ (Hygrom+Ætrie < 60 %) : Poudres, comprim+Æs effervescents\n\nRanger les produits de fa+∫on logique\n\nAssurer l'accessibilit+Æ pour la rotation FEFO.\n"
+      },
+      {
+        "id": "gas-m1-c39",
+        "title": "Introduction aux bonnes pratiques de gestion des stocks",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Introduction aux bonnes pratiques de gestion des stocks\n\nPrincipe\n\nDocuments\n\nTenir des documents de stock rigoureux et +· jour\n\nOn ne g+øre bien que ce que l'on mesure. Sans documentation fiable, toutes les d+Æcisions de commande et de distribution reposent sur des estimations, et les erreurs s'accumulent.\n\nLa fiche de stock : chaque mouvement (entr+Æe ou sortie) doit +¨tre enregistr+Æ le jour m+¨me, avec la r+Æf+Ærence du document justificatif. Pas d‘«÷enregistrement diff+Ær+Æ.\n\nLe registre des commandes : Trace toutes les commandes : date, fournisseur, produits command+Æs, quantit+Æs, date de livraison attendue, date de r+Æception effective, +Æcarts.\n\nLe registre des p+Ærim+Æs et des destructions : Tout produit retir+Æ du stock pour p+Æremption ou d+Æt+Ærioration doit +¨tre enregistr+Æ, avec la quantit+Æ, la valeur, la raison et la signature du responsable. Cela permet le suivi du taux de p+Æremption et prot+øge le gestionnaire en cas de contr+¶le.\n"
+      },
+      {
+        "id": "gas-m1-c40",
+        "title": "Introduction aux bonnes pratiques de gestion des stocks",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Introduction aux bonnes pratiques de gestion des stocks\n\nPrincipe\n\nEn Pratique\n\nAppliquer rigoureusement les r+øgles FEFO et FIFO\n\nCes deux r+øgles simples, appliqu+Æes syst+Æmatiquement, permettent d'+Æliminer presque enti+ørement les p+Ærim+Æs +Ævitables.\n\n+« chaque r+Æception de produits, v+Ærifier les dates de p+Æremption des nouveaux lots et les comparer +· ceux d+Æj+· en stock.\n\nPlacer les lots +· p+Æremption plus proche devant ou en haut.\n\nColler une +Ætiquette visible avec la date de p+Æremption sur chaque lot si l'emballage ne la mentionne pas clairement.\n"
+      },
+      {
+        "id": "gas-m1-c41",
+        "title": "Introduction aux bonnes pratiques de gestion des stocks",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Introduction aux bonnes pratiques de gestion des stocks\n\nPrincipe\n\nEtapes\n\nContr+¶ler rigoureusement chaque r+Æception\n\nTout ce qui entre dans le stock doit +¨tre v+Ærifi+Æ avant d'+¨tre rang+Æ. Accepter un produit sans contr+¶le, c'est potentiellement introduire un probl+øme dans le stock.\n\n+Îtape 1 ‘«ˆ V+Ærification documentaire\n\n+Îtape 2 ‘«ˆ V+Ærification quantitative\n\n+Îtape 3 ‘«ˆ V+Ærification qualitative\n\n+Îtape 4 ‘«ˆ Enregistrement imm+Ædiat\n"
+      },
+      {
+        "id": "gas-m1-c42",
+        "title": "Introduction aux bonnes pratiques de gestion des stocks",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Introduction aux bonnes pratiques de gestion des stocks\n\nPrincipe\n\nBonnes pratiques\n\nG+Ærer les commandes de fa+∫on proactive\n\nUne bonne gestion des commandes anticipe les besoins, elle ne r+Æagit pas +· la rupture. Commander dans l'urgence co++te plus cher, prend plus de temps et expose davantage aux ruptures.\n\nD+Æfinir un calendrier fixe de commande (mensuel, bimestriel) et s'y tenir. Les commandes r+Æguli+øres permettent aux fournisseurs de planifier et d'am+Æliorer leur taux de service.\n\nToujours calculer les quantit+Æs +· commander sur la base de la CMM et des niveaux min/max, et non sur une estimation +· vue d'+Ùil.\n\nTenir +· jour la liste des fournisseurs alternatifs pour chaque produit critique. En cas de d+Æfaillance du fournisseur principal, le temps de trouver une alternative en urgence aggrave toujours la rupture.\n"
+      },
+      {
+        "id": "gas-m1-c43",
+        "title": "Introduction aux bonnes pratiques de gestion des stocks",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Introduction aux bonnes pratiques de gestion des stocks\n\nPrincipe\n\nFr+Æquences\n\nR+Æaliser des inventaires r+Æguliers\n\nL'inventaire est le seul moyen de v+Ærifier que les donn+Æes dans le syst+øme correspondent +· la r+Æalit+Æ physique. Sans inventaire r+Ægulier, les +Æcarts s'accumulent et les d+Æcisions deviennent de moins en moins fiables.\n"
+      }
+    ]
+  },
+  {
+    "id": "gas-m2",
+    "title": "Module 2 : M+Æthodes de calcul des niveaux de stock",
+    "chapters": [
+      {
+        "id": "gas-m2-c1",
+        "title": "M+Æthodes de calcul des niveaux de stock",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### M+Æthodes de calcul des niveaux de stock\n\nGESTION DES APPROVISIONNEMENTS ET DES STOCKS\n"
+      },
+      {
+        "id": "gas-m2-c2",
+        "title": "Plan",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Plan\n\nCalcul de la consommation moyenne mensuelle (CMM)\n\nM+Æthode min/max : formules et application\n\nCalcul du point de commande et du d+Ælai de livraison\n\nExercices pratiques sur donn+Æes r+Æelles\n"
+      },
+      {
+        "id": "gas-m2-c3",
+        "title": "Calcul de la consommation moyenne mensuelle (CMM)",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Calcul de la consommation moyenne mensuelle (CMM)\n\nLa CMM est le point de d+Æpart de tout calcul de stock.\n\nC'est elle qui r+Æpond +· la question fondamentale : combien de ce produit consomme-t-on en moyenne par mois ?\n\nSans une CMM fiable, tous les autres calculs (stock min, stock max, quantit+Æ +· commander) seront faux, m+¨me si les formules sont correctement appliqu+Æes.\n\nUne bonne CMM repose sur des donn+Æes de consommation :\n\nr+Æelles,\n\ncollect+Æes sur une p+Æriode suffisamment longue et\n\ncorrectement ajust+Æes.\n"
+      },
+      {
+        "id": "gas-m2-c4",
+        "title": "Calcul de la consommation moyenne mensuelle (CMM)",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Calcul de la consommation moyenne mensuelle (CMM)\n\nLa formule de base\n\nQuantit+Æ totale consomm+Æe sur la p+Æriode +¿ Nombre de mois de la p+Æriode\n\nExemple simple :\n\nSur 6 mois, une pharmacie a consomm+Æ 7 200 comprim+Æs de Cotrimoxazole.\n\nCMM = 7 200 +¿ 6 = 1 200 comprim+Æs/mois\n\nSimple en apparence, mais cette formule cache plusieurs pi+øges qu'il faut savoir +Æviter.\n"
+      },
+      {
+        "id": "gas-m2-c5",
+        "title": "Calcul de la consommation moyenne mensuelle (CMM)",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Calcul de la consommation moyenne mensuelle (CMM)\n\nLe probl+øme des mois de rupture\n\nQuand un produit est en rupture de stock, la consommation enregistr+Æe est nulle ou r+Æduite.\n\nSi on int+øgre ces mois dans le calcul, la CMM sera sous-estim+Æe, ce qui conduira +· commander moins que n+Æcessaire et +· reproduire la rupture.\n\nCalcul brut (mauvaise pratique) :\n\nCMM = 2 100 +¿ 6 = 350 cp/mois\n\nCalcul ajust+Æ (bonne pratique) :\n\nConsommation extrapol+Æe mars = 120 +˘ (30 +¿ 10) = 360 cp\n\nCMM ajust+Æe = (480 + 510 + 360 + 490 + 500) +¿ 5 = 2 340 +¿ 5 = 468 cp/mois\n\nLa diff+Ærence est +Ænorme : 350 cp/mois vs 468 cp/mois.\n\nCommander sur la base de 350 conduira in+Ævitablement +· une nouvelle rupture.\n\nLa CMM ajust+Æe de 468 refl+øte la demande r+Æelle.\n"
+      },
+      {
+        "id": "gas-m2-c6",
+        "title": "Calcul de la consommation moyenne mensuelle (CMM)",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Calcul de la consommation moyenne mensuelle (CMM)\n\nLe probl+øme des mois atypiques\n\nCertains mois pr+Æsentent des consommations anormalement +Ælev+Æes dues +· des +Æv+Ænements exceptionnels : +Æpid+Æmie, campagne de masse, afflux de r+Æfugi+Æs, erreur d'enregistrement.\n\nLes inclure gonflerait artificiellement la CMM et conduirait +· des surstocks.\n\nCalcul brut (mauvaise pratique) :\n\nCMM = 3 400 +¿ 6 = 567 cp/mois\n\nCalcul ajust+Æ (bonne pratique) :\n\nExclusion du mois atypique\n\nCMM ajust+Æe = (300 + 320 + 310 + 290 + 330) +¿ 5 = 1 550 +¿ 5 = 310 cp/mois\n\nCommander sur la base de 567 sachets/mois en p+Æriode normale conduirait +· un surstock massif.\n\nLa CMM ajust+Æe de 310 est repr+Æsentative de la demande courante.\n\nLe mois d'+Æpid+Æmie doit +¨tre g+Ær+Æ s+Æpar+Æment via un stock de contingence.\n"
+      },
+      {
+        "id": "gas-m2-c7",
+        "title": "Calcul de la consommation moyenne mensuelle (CMM)",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Calcul de la consommation moyenne mensuelle (CMM)\n\nLa p+Æriode de r+Æf+Ærence optimale\n\nLa longueur de la p+Æriode utilis+Æe pour calculer la CMM a un impact important sur sa fiabilit+Æ.\n\nLe choix se fait selon :\n\nSelon le niveau de la pyramide sanitaire\n\nSelon les cycles de r+Æapprovisionnement\n\nSelon les param+øtres min et max\n\nSelon le type de produits et de programme\n"
+      },
+      {
+        "id": "gas-m2-c8",
+        "title": "Calcul de la consommation moyenne mensuelle (CMM)",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Calcul de la consommation moyenne mensuelle (CMM)\n\nCMM bas+Æe sur la distribution (DMM) vs CMM bas+Æe sur les consommations\n\nDans certains contextes, on distingue deux types de donn+Æes :\n\nDonn+Æes de distribution : quantit+Æs effectivement remises aux structures inf+Ærieures. C'est la mesure de la demande satisfaite vers les structures inf+Ærieures dispensatrices ou non.\n\nDonn+Æes de consommation: quantit+Æs r+Æellement consomm+Æes par les patients au niveau des points de dispensation\n\nRecommandation :\n\nUtiliser les donn+Æes de consommation pour calculer la CMM, car elles refl+øtent mieux la demande r+Æelle des patients.\n\nLes pertes, ajustements et transferts doivent +¨tre enregistr+Æs s+Æpar+Æment.\n"
+      },
+      {
+        "id": "gas-m2-c9",
+        "title": "Calcul de la consommation moyenne mensuelle (CMM)",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Calcul de la consommation moyenne mensuelle (CMM)\n\nR+Æcapitulatif ‘«ˆ +Îtapes de calcul d'une CMM fiable\n"
+      },
+      {
+        "id": "gas-m2-c10",
+        "title": "M+Æthode min/max : formules et application",
+        "type": "text",
+        "duration": "10 min",
+        "content": "M+Æthode min/max : formules et application\n\nLa m+Æthode min/max est la m+Æthode de gestion des stocks la plus utilis+Æe dans les syst+ømes de sant+Æ des pays en d+Æveloppement.\n\nElle est simple, robuste et adapt+Æe aux contextes o+¶ les ressources humaines et les outils informatiques sont limit+Æs.\n\nSon principe est direct : d+Æfinir pour chaque produit un niveau minimum en dessous duquel le stock ne doit jamais descendre, et un niveau maximum au-del+· duquel il ne doit jamais monter.\n\nEntre ces deux bornes, le stock est consid+Ær+Æ comme bien g+Ær+Æ.\n"
+      },
+      {
+        "id": "gas-m2-c11",
+        "title": "M+Æthode min/max : formules et application",
+        "type": "text",
+        "duration": "10 min",
+        "content": "M+Æthode min/max : formules et application\n\nLes param+øtres de base\n\nAvant de calculer le min et le max, trois param+øtres doivent +¨tre connus avec pr+Æcision pour chaque produit :\n\nLa CMM (Consommation Moyenne Mensuelle) : Calcul+Æe selon la m+Æthode vue au point pr+Æc+Ædent. C'est le moteur de tous les calculs.\n\nLe D+Ælai de Livraison (DL) : Temps moyen entre la date de commande et la date de r+Æception effective. Il doit +¨tre calcul+Æ sur l'historique r+Æel des commandes, pas estim+Æ +· vue d'+Ùil.\n\nLa P+Æriode de Commande (PC) : Intervalle de temps entre deux commandes successives. Si la pharmacie commande tous les 2 mois, PC = 2 mois.\n"
+      },
+      {
+        "id": "gas-m2-c12",
+        "title": "M+Æthode min/max : formules et application",
+        "type": "text",
+        "duration": "10 min",
+        "content": "M+Æthode min/max : formules et application\n\nCalcul du Stock de S+Æcurit+Æ (SS)\n\nLe stock de s+Æcurit+Æ est le socle sur lequel reposent tous les autres calculs. Il repr+Æsente la protection contre les al+Æas.\n\nSS = CMM +˘ Nombre de mois de couverture de s+Æcurit+Æ\n\nLe nombre de mois de couverture de s+Æcurit+Æ est g+Æn+Æralement fix+Æ par la politique nationale ou par le niveau hi+Ærarchique sup+Ærieur.\n\nEn l'absence de directive, on recommande :\n\n1 mois pour les produits avec un fournisseur fiable et un d+Ælai court\n\n2 mois pour les produits critiques ou avec un fournisseur peu fiable\n"
+      },
+      {
+        "id": "gas-m2-c13",
+        "title": "M+Æthode min/max : formules et application",
+        "type": "text",
+        "duration": "10 min",
+        "content": "M+Æthode min/max : formules et application\n\nCalcul du Stock Minimum (Stock min)\n\nLe stock minimum est le niveau qui d+Æclenche la commande.\n\nQuand le stock atteint ce niveau, il faut commander imm+Ædiatement.\n\nStock min = (CMM +˘ D+Ælai de livraison) + Stock de s+Æcurit+Æ\n"
+      },
+      {
+        "id": "gas-m2-c14",
+        "title": "M+Æthode min/max : formules et application",
+        "type": "text",
+        "duration": "10 min",
+        "content": "M+Æthode min/max : formules et application\n\nCalcul du Stock Maximum (Stock max)\n\nLe stock maximum est le niveau optimal +· atteindre apr+øs chaque livraison.\n\nIl ne doit pas +¨tre d+Æpass+Æ.\n\nStock max = Stock min + (CMM +˘ P+Æriode de commande)\n\nCalcul de la Quantit+Æ +· Commander (Q+·C)\n\nC'est la quantit+Æ qui doit +¨tre command+Æe pour ramener le stock au niveau maximum.\n\nQ+·C = Stock max ‘Í∆ Stock disponible actuel\n"
+      },
+      {
+        "id": "gas-m2-c15",
+        "title": "M+Æthode min/max : formules et application",
+        "type": "text",
+        "duration": "10 min",
+        "content": "M+Æthode min/max : formules et application\n\nR+Æcapitulatif des formules min/max\n"
+      },
+      {
+        "id": "gas-m2-c16",
+        "title": "M+Æthode min/max : formules et application",
+        "type": "text",
+        "duration": "10 min",
+        "content": "M+Æthode min/max : formules et application\n\nLes limites de la m+Æthode min/max et comment les contourner\n"
+      },
+      {
+        "id": "gas-m2-c17",
+        "title": "Calcul du point de commande et du d+Ælai de livraison",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Calcul du point de commande et du d+Ælai de livraison\n\nLe point de commande et le d+Ælai de livraison sont deux concepts +Ætroitement li+Æs.\n\nLe point de commande r+Æpond +· la question : +· quel niveau de stock dois-je d+Æclencher ma commande ?\n\nLe d+Ælai de livraison r+Æpond +· : combien de temps s'+Æcoule entre ma commande et la r+Æception des produits ? L'un ne va pas sans l'autre.\n\nUn point de commande mal calcul+Æ parce que le d+Ælai de livraison est mal estim+Æ est l'une des causes les plus fr+Æquentes de rupture de stock dans les syst+ømes pharmaceutiques.\n"
+      },
+      {
+        "id": "gas-m2-c18",
+        "title": "Calcul du point de commande et du d+Ælai de livraison",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Calcul du point de commande et du d+Ælai de livraison\n\nLe d+Ælai de livraison ‘«ˆ Calcul pr+Æcis\n\nLe d+Ælai de livraison n'est pas une donn+Æe fixe. Il varie d'une commande +· l'autre selon les fournisseurs, les saisons, les proc+Ædures administratives et les conditions de transport.\n\nIl faut donc le calculer sur l'historique r+Æel et comprendre ses composantes.\n"
+      },
+      {
+        "id": "gas-m2-c19",
+        "title": "Calcul du point de commande et du d+Ælai de livraison",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Calcul du point de commande et du d+Ælai de livraison\n\nLe point de commande ‘«ˆ D+Æfinition et formule\n\nLe point de commande (PC) est le niveau de stock auquel il faut d+Æclencher la commande pour recevoir les produits avant d'entamer le stock de s+Æcurit+Æ.\n\nPoint de commande = (CMM +˘ D+Ælai de livraison) + Stock de s+Æcurit+Æ\n\nCette formule est identique +· celle du stock minimum dans la m+Æthode min/max simple. Mais dans une approche plus fine, les deux peuvent diff+Ærer selon la variabilit+Æ du d+Ælai de livraison et de la demande.\n"
+      },
+      {
+        "id": "gas-m2-c20",
+        "title": "Calcul du point de commande et du d+Ælai de livraison",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Calcul du point de commande et du d+Ælai de livraison\n\nLe point de commande avec d+Ælai variable\n\nDans la r+Æalit+Æ, le d+Ælai de livraison n'est jamais parfaitement stable. Une approche plus rigoureuse int+øgre cette variabilit+Æ.\n\nPoint de commande = (CMM +˘ DL moyen) + (Z +˘ §‚ +˘ ‘Í‹DL)\n\nZ = facteur de service (1,65 pour un taux de service de 95%)\n\n§‚ = +Æcart-type de la consommation mensuelle\n\nDL = d+Ælai de livraison en mois\n\nCette formule statistique est utilis+Æe dans les syst+ømes informatis+Æs.\n\nDans un contexte manuel, on simplifie en utilisant le d+Ælai maximum observ+Æ plut+¶t que la moyenne.\n"
+      },
+      {
+        "id": "gas-m2-c21",
+        "title": "Calcul du point de commande et du d+Ælai de livraison",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Calcul du point de commande et du d+Ælai de livraison\n\nInteraction entre point de commande et fr+Æquence de commande\n\nLe point de commande ne fonctionne pas isol+Æment. Il interagit avec la fr+Æquence +· laquelle le gestionnaire v+Ærifie son stock.\n\nSyst+øme +· r+Ævision continue : Le stock est v+Ærifi+Æ en permanence (ou tr+øs fr+Æquemment). D+øs que le stock atteint le point de commande, la commande est d+Æclench+Æe automatiquement. C'est le syst+øme id+Æal, possible avec un logiciel de gestion.\n\nSyst+øme +· r+Ævision p+Æriodique : Le stock est v+Ærifi+Æ +· intervalles fixes (une fois par mois, par exemple). La commande est pass+Æe +· chaque r+Ævision si le stock est en dessous du point de commande. C'est le syst+øme le plus courant dans les pharmacies avec gestion manuelle.\n"
+      },
+      {
+        "id": "gas-m2-c22",
+        "title": "Calcul du point de commande et du d+Ælai de livraison",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Calcul du point de commande et du d+Ælai de livraison\n\nLe point de commande en contexte de livraison programm+Æe\n\nDans certains syst+ømes (notamment les syst+ømes de distribution int+Ægr+Æe), les livraisons sont programm+Æes +· dates fixes, ind+Æpendamment du niveau de stock.\n\nDans ce cas, le point de commande classique est remplac+Æ par une quantit+Æ +· commander calcul+Æe +· chaque date de livraison programm+Æe.\n\nQuantit+Æ +· commander = (CMM +˘ P+Æriode jusqu'+· prochaine livraison) + Stock min ‘Í∆ Stock disponible actuel\n"
+      },
+      {
+        "id": "gas-m2-c23",
+        "title": "Calcul du point de commande et du d+Ælai de livraison",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Calcul du point de commande et du d+Ælai de livraison\n\nTableau de synth+øse ‘«ˆ Point de commande selon les contextes\n\n| Contexte de livraison | Formule du Point de Commande (PC) | Niveau de S+Æcurit+Æ |\n|---|---|---|\n| Livraison rapide et fiable | PC = (CMM +˘ D+Ælai) + Stock Min faible | Bas |\n| D+Ælai long (International) | PC = (CMM +˘ D+Ælai) + Stock Min +Ælev+Æ | Haut |\n| Demande tr+øs variable | PC = (CMM max +˘ D+Ælai) + Stock Min +Ælev+Æ | Tr+øs Haut |\n"
+      },
+      {
+        "id": "gas-m2-c24",
+        "title": "Exercices pratiques sur donn+Æes r+Æelles",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Exercices pratiques sur donn+Æes r+Æelles\n\nEXERCICE 1 ‘«ˆ Calcul de la CMM\n\nDonn+Æes\n\nLa Pharmacie du Centre de Sant+Æ de Bohicon enregistre les sorties de Parac+Ætamol 500mg sur 6 mois :\n\nQuestions :\n\nCalculez la CMM brute sur 6 mois.\n\nY a-t-il des ajustements +· faire ? Justifiez.\n\nQuelle CMM retenez-vous pour les calculs suivants ?\n"
+      },
+      {
+        "id": "gas-m2-c25",
+        "title": "Exercices pratiques sur donn+Æes r+Æelles",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Exercices pratiques sur donn+Æes r+Æelles\n\nCorrection EXERCICE 1 ‘«ˆ Calcul de la CMM\n\nQuestion 1 ‘«ˆ CMM brute :\n\nTotal consomm+Æ = 1 450 + 1 380 + 1 510 + 1 420 + 1 390 + 1 480 = 8 630 cp\n\nCMM brute = 8 630 +¿ 6 = 1 438 cp/mois\n\nQuestion 2 ‘«ˆ Ajustements :\n\nAucun ajustement n'est n+Æcessaire.\n\nTous les mois sont normaux, sans rupture ni +Æv+Ænement exceptionnel.\n\nLes consommations sont stables et coh+Ærentes entre elles (+Æcart maximum entre les mois : 130 cp, soit moins de 10%).\n\nQuestion 3 ‘«ˆ CMM retenue :\n\nCMM = 1 438 cp/mois, arrondie +· 1 440 cp/mois pour faciliter les calculs.\n"
+      },
+      {
+        "id": "gas-m2-c26",
+        "title": "Exercices pratiques sur donn+Æes r+Æelles",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Exercices pratiques sur donn+Æes r+Æelles\n\nEXERCICE 2 ‘«ˆ CMM avec mois de rupture\n\nDonn+Æes\n\nLa Pharmacie du District Sanitaire de Glazou+Æ enregistre les sorties de Cotrimoxazole 480mg sur 8 mois :\n\nQuestions :\n\nIdentifiez les mois +· exclure ou +· ajuster et justifiez chaque d+Æcision.\n\nCalculez la CMM ajust+Æe.\n\nPourquoi est-il dangereux d'utiliser la CMM brute dans ce cas ?\n"
+      },
+      {
+        "id": "gas-m2-c27",
+        "title": "Exercices pratiques sur donn+Æes r+Æelles",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Exercices pratiques sur donn+Æes r+Æelles\n\nCorrection EXERCICE 2 ‘«ˆ CMM avec mois de rupture\n\nQuestion 1 ‘«ˆ Identification des mois +· traiter :\n\nMars ‘Â∆ Ajustement : rupture partielle de 18 jours. Le produit n'+Ætait disponible que 12 jours sur 30. La consommation enregistr+Æe (210 cp) ne refl+øte que 12/30 de la demande r+Æelle.\n\nConsommation extrapol+Æe mars = 210 +˘ (30 +¿ 12) = 525 cp\n\nAvril ‘Â∆ Exclusion : rupture totale, consommation nulle non repr+Æsentative de la demande r+Æelle.\n\nMai ‘Â∆ Exclusion : rupture totale, m+¨me raison.\n\nJuillet ‘Â∆ Exclusion : consommation atypique li+Æe +· une campagne exceptionnelle (4 200 cp vs une moyenne d'environ 510 cp en p+Æriode normale). Inclure ce mois gonflerait artificiellement la CMM.\n"
+      },
+      {
+        "id": "gas-m2-c28",
+        "title": "Exercices pratiques sur donn+Æes r+Æelles",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Exercices pratiques sur donn+Æes r+Æelles\n\nCorrection EXERCICE 2 ‘«ˆ CMM avec mois de rupture\n\nQuestion 2 ‘«ˆ CMM ajust+Æe :\n\nMois retenus : janvier, f+Ævrier, mars ajust+Æ, juin, ao++t\n\nCMM ajust+Æe = 2 575 +¿ 5 = 515 cp/mois\n"
+      },
+      {
+        "id": "gas-m2-c29",
+        "title": "Exercices pratiques sur donn+Æes r+Æelles",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Exercices pratiques sur donn+Æes r+Æelles\n\nCorrection EXERCICE 2 ‘«ˆ CMM avec mois de rupture\n\nQuestion 3 ‘«ˆ Danger de la CMM brute :\n\nCMM brute = (520 + 490 + 210 + 0 + 0 + 530 + 4 200 + 510) +¿ 8 = 6 460 +¿ 8 = 808 cp/mois\n\nLa CMM brute de 808 cp est 57% plus +Ælev+Æe que la CMM ajust+Æe de 515 cp.\n\nCommander sur cette base conduirait +· commander syst+Æmatiquement 293 cp de trop chaque mois, soit un surstock permanent et une immobilisation inutile de ressources financi+øres.\n\n+« l'inverse, si on avait calcul+Æ la CMM uniquement sur les mois de rupture, on aurait obtenu un chiffre bien trop bas et reproduit la rupture.\n"
+      },
+      {
+        "id": "gas-m2-c30",
+        "title": "Exercices pratiques sur donn+Æes r+Æelles",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Exercices pratiques sur donn+Æes r+Æelles\n\nEXERCICE 3 ‘«ˆ Calcul complet min/max et quantit+Æ +· commander\n\nDonn+Æes\n\nPharmacie R+Ægionale de Parakou ‘«ˆ Produit : Art+Æm+Æther-Lum+Æfantrine 20/120mg (bo+´tes de 24 comprim+Æs)\n\nQuestions :\n\nCalculez la CMM.\n\nCalculez le d+Ælai de livraison ajust+Æ.\n\nCalculez le stock de s+Æcurit+Æ.\n\nCalculez le stock minimum.\n\nCalculez le stock maximum.\n\nLe stock actuel (520 bo+´tes) est-il en dessous du point de commande ? Faut-il commander ?\n\nSi oui, calculez la quantit+Æ +· commander.\n\nHistorique des d+Ælais de livraison (en jours) : 32, 28, 45, 36, 29\n\nPolitique de la Direction R+Ægionale :\n\nstock de s+Æcurit+Æ = 2 mois,\n\np+Æriode de commande = 2 mois.\n\nStock disponible au moment du calcul : 520 bo+´tes\n"
+      },
+      {
+        "id": "gas-m2-c31",
+        "title": "Exercices pratiques sur donn+Æes r+Æelles",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Exercices pratiques sur donn+Æes r+Æelles\n\nCorrection EXERCICE 3 ‘«ˆ Calcul complet min/max et quantit+Æ +· commander\n\nQuestion 1 ‘«ˆ CMM :\n\nTotal = 185 + 170 + 195 + 180 + 190 + 175 = 1 095 bo+´tes\n\nAucun mois atypique ni rupture +· signaler.\n\nCMM = 1 095 +¿ 6 = 182,5 bo+´tes/mois ‘ÎÍ 183 bo+´tes/mois\n\nQuestion 2 ‘«ˆ D+Ælai de livraison ajust+Æ :\n\nD+Ælai moyen = (32 + 28 + 45 + 36 + 29) +¿ 5 = 170 +¿ 5 = 34 jours = 1,13 mois\n\nD+Ælai ajust+Æ avec marge de 25% = 1,13 +˘ 1,25 = 1,42 mois ‘ÎÍ 1,5 mois\n\nQuestion 3 ‘«ˆ Stock de s+Æcurit+Æ :\n\nSS = 183 +˘ 2 = 366 bo+´tes\n\nQuestion 4 ‘«ˆ Stock minimum :\n\nStock min = (183 +˘ 1,5) + 366 = 274,5 + 366 = 641 bo+´tes\n"
+      },
+      {
+        "id": "gas-m2-c32",
+        "title": "Exercices pratiques sur donn+Æes r+Æelles",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Exercices pratiques sur donn+Æes r+Æelles\n\nCorrection EXERCICE 3 ‘«ˆ Calcul complet min/max et quantit+Æ +· commander\n\nQuestion 5 ‘«ˆ Stock maximum :\n\nStock max = 641 + (183 +˘ 2) = 641 + 366 = 1 007 bo+´tes\n\nQuestion 6 ‘«ˆ Faut-il commander ?\n\nStock actuel = 520 bo+´tes Stock minimum = 641 bo+´tes\n\n520 < 641 ‘Â∆ Oui, le stock est en dessous du point de commande. Il faut commander imm+Ædiatement.\n\nLa pharmacie ne couvre que 520 +¿ 183 = 2,84 mois de consommation, ce qui semble confortable, mais le stock de s+Æcurit+Æ doit rester intact. Stock utilisable sans toucher au SS = 520 ‘Í∆ 366 = 154 bo+´tes, soit seulement 0,84 mois de consommation disponible hors stock de s+Æcurit+Æ. Or le d+Ælai de livraison est de 1,5 mois. La rupture est imminente si on ne commande pas maintenant.\n\nQuestion 7 ‘«ˆ Quantit+Æ +· commander :\n\nQ+·C = Stock max ‘Í∆ Stock actuel = 1 007 ‘Í∆ 520 = 487 bo+´tes\n"
+      },
+      {
+        "id": "gas-m2-c33",
+        "title": "Exercices pratiques sur donn+Æes r+Æelles",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Exercices pratiques sur donn+Æes r+Æelles\n\nEXERCICE 4 ‘«ˆ Cas complexe multiproduits\n\nDonn+Æes\n\nD+Æp+¶t de district de Savalou ‘«ˆ R+Ævision mensuelle du stock\n\nParam+øtres fixes :\n\nd+Ælai de livraison = 2 mois,\n\np+Æriode de commande = 3 mois,\n\nstock de s+Æcurit+Æ = 2 mois.\n\nQuestions :\n\nCalculez le stock de s+Æcurit+Æ, le stock minimum et le stock maximum.\n\nD+Æterminez le statut du stock (normal, surstock, rupture imminente, commander).\n\nCalculez la quantit+Æ +· commander si n+Æcessaire.\n\nProposez une action concr+øte pour chaque produit.\n"
+      },
+      {
+        "id": "gas-m2-c34",
+        "title": "Exercices pratiques sur donn+Æes r+Æelles",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Exercices pratiques sur donn+Æes r+Æelles\n\nCorrection EXERCICE 4 ‘«ˆ Cas complexe multiproduits\n\nProduit 1 ‘«ˆ Amoxicilline 250mg sirop (CMM = 85 flacons)\n\nStatut : stock actuel (620) > stock max (595) ‘Â∆ Surstock l+Æger (+25 flacons)\n\nCouverture = 620 +¿ 85 = 7,3 mois\n\nAction :\n\nNe pas commander lors de cette r+Ævision.\n\nSurveiller la date de p+Æremption des flacons en exc+øs.\n\nSi la p+Æremption est proche, envisager une redistribution vers un autre centre de sant+Æ.\n"
+      },
+      {
+        "id": "gas-m2-c35",
+        "title": "Exercices pratiques sur donn+Æes r+Æelles",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Exercices pratiques sur donn+Æes r+Æelles\n\nCorrection EXERCICE 4 ‘«ˆ Cas complexe multiproduits\n\nProduit 2 ‘«ˆ Fer acide folique 200/0,4mg (CMM = 430 cp)\n\nStatut : stock actuel (280) << stock minimum (1 720) ‘Â∆ Rupture imminente critique\n\nCouverture = 280 +¿ 430 = 0,65 mois soit environ 19 jours. Or le d+Ælai de livraison est de 2 mois. La pharmacie sera en rupture totale dans 19 jours et ne recevra pas de livraison avant 2 mois.\n\nQ+·C = 3 010 ‘Í∆ 280 = 2 730 cp\n\nAction : commande d'urgence imm+Ædiate. Contacter simultan+Æment le niveau sup+Ærieur pour une livraison partielle d'urgence. Identifier si un site voisin dispose d'un exc+Ædent pouvant +¨tre redistribu+Æ en attendant..\n"
+      },
+      {
+        "id": "gas-m2-c36",
+        "title": "Exercices pratiques sur donn+Æes r+Æelles",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Exercices pratiques sur donn+Æes r+Æelles\n\nCorrection EXERCICE 4 ‘«ˆ Cas complexe multiproduits\n\nProduit 3 ‘«ˆ Vitamine A 200 000 UI (CMM = 310 capsules)\n\nStatut : stock actuel (2 800) >> stock max (2 170) ‘Â∆ Surstock important (+630 capsules)\n\nCouverture = 2 800 +¿ 310 = 9 mois\n\nAction : ne pas commander. V+Ærifier imp+Ærativement les dates de p+Æremption. Si les capsules p+Æriment dans moins de 9 mois, une partie sera perdue. Informer le niveau sup+Ærieur et proposer une redistribution vers les sites d+Æficitaires. Investiguer la cause du surstock (erreur de commande pr+Æc+Ædente ? baisse de la demande ?).\n"
+      },
+      {
+        "id": "gas-m2-c37",
+        "title": "Exercices pratiques sur donn+Æes r+Æelles",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Exercices pratiques sur donn+Æes r+Æelles\n\nCorrection EXERCICE 4 ‘«ˆ Cas complexe multiproduits\n\nProduit 4 ‘«ˆ Misoprostol 200mcg (CMM = 95 cp)\n\nStatut : stock actuel (410) > stock minimum (380) et < stock max (665) ‘Â∆ Situation normale\n\nCouverture = 410 +¿ 95 = 4,3 mois. Le stock est dans la zone normale. Pas de commande +· d+Æclencher lors de cette r+Ævision, mais +· surveiller lors de la prochaine.\n\nLe stock se rapprochera du minimum dans environ 2,3 mois (410 ‘Í∆ 380 = 30 cp de marge, soit 30 +¿ 95 = 0,3 mois... ).\n\nRecalcul : marge au-dessus du stock min = 410 ‘Í∆ 380 = 30 cp ‘Â∆ 30 +¿ 95 = 0,3 mois. La prochaine r+Ævision est dans 1 mois. +« ce moment, le stock sera d'environ 410 ‘Í∆ 95 = 315 cp, soit en dessous du stock min (380). Il faudra commander lors de la prochaine r+Ævision.\n\nAction : noter dans le calendrier que le Misoprostol sera +· commander lors de la prochaine r+Ævision mensuelle.\n"
+      },
+      {
+        "id": "gas-m2-c38",
+        "title": "Exercices pratiques sur donn+Æes r+Æelles",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Exercices pratiques sur donn+Æes r+Æelles\n\nCorrection EXERCICE 4 ‘«ˆ Cas complexe multiproduits\n\nProduit 5 ‘«ˆ Gentamicine injectable 80mg (CMM = 40 ampoules)\n\nStatut : stock actuel (55) << stock minimum (160) ‘Â∆ Rupture imminente\n\nCouverture = 55 +¿ 40 = 1,375 mois soit environ 41 jours\n\nLe d+Ælai de livraison est de 2 mois (60 jours). La pharmacie sera en rupture dans 41 jours et n'aura pas de livraison avant 60 jours. D+Æficit de 19 jours sans produit.\n\nQ+·C = 280 ‘Í∆ 55 = 225 ampoules\n\nAction : commande urgente imm+Ædiate. La Gentamicine +Ætant un antibiotique injectable critique (infections n+Æonatales, sepsis), la rupture peut avoir des cons+Æquences graves. Contacter le niveau sup+Ærieur pour une livraison partielle d'urgence et v+Ærifier si des sites voisins peuvent partager temporairement leur stock.\n"
+      },
+      {
+        "id": "gas-m2-c39",
+        "title": "Exercices pratiques sur donn+Æes r+Æelles",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Exercices pratiques sur donn+Æes r+Æelles\n\nCorrection EXERCICE 4 ‘«ˆ Cas complexe multiproduits\n\nTableau de bord final ‘«ˆ D+Æp+¶t de district de Savalou\n\n| Produit | CMM | Stock Dispo | Mois de Stock | Statut | Quantit+Æ +· Commander |\n|---|---|---|---|---|---|\n| Parac+Ætamol 500mg | 10 000 | 15 000 | 1,5 | Normal | 15 000 |\n| Amoxicilline 250mg | 5 000 | 2 500 | 0,5 | Rupture imminente | 12 500 |\n| CTA Adulte | 2 000 | 8 000 | 4,0 | Surstock | 0 |\n"
+      }
+    ]
+  },
+  {
+    "id": "gas-m3",
+    "title": "Module 3 : Processus de commande et suivi fournisseurs",
+    "chapters": [
+      {
+        "id": "gas-m3-c1",
+        "title": "Processus de commande et suivi fournisseurs",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Processus de commande et suivi fournisseurs\n\nGESTION DES APPROVISIONNEMENTS ET DES STOCKS\n"
+      },
+      {
+        "id": "gas-m3-c2",
+        "title": "Plan",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Plan\n\nCycle de commande : de la quantification +· la r+Æception\n\nS+Ælection et +Ævaluation des fournisseurs\n\nGestion des contrats et des termes de livraison (Incoterms)\n\nOutils de suivi des commandes et tableau de bord fournisseurs\n"
+      },
+      {
+        "id": "gas-m3-c3",
+        "title": "Cycle de commande : de la quantification +· la r+Æception",
+        "type": "text",
+        "duration": "10 min",
+        "content": "Cycle de commande : de la quantification +· la r+Æception\n\nLe cycle de commande est l'ensemble des +Ætapes qui s'encha+´nent depuis le moment o+¶ un besoin en produits est identifi+Æ jusqu'au moment o+¶ ces produits sont disponibles en stock et pr+¨ts +· +¨tre distribu+Æs.\n\nC'est un processus structur+Æ, document+Æ et impliquant plusieurs acteurs.\n\nUne d+Æfaillance +· n'importe quelle +Ætape peut retarder la livraison, g+Æn+Ærer des erreurs de quantit+Æ ou introduire des produits de mauvaise qualit+Æ dans le stock.\n\nConna+´tre et ma+´triser chaque +Ætape est donc une comp+Ætence fondamentale pour tout gestionnaire de pharmacie.\n"
+      },
+      {
+        "id": "gas-m3-c4",
+        "title": "Cycle de commande : de la quantification +· la r+Æception",
+        "type": "text",
+        "duration": "10 min",
+        "content": "Cycle de commande : de la quantification +· la r+Æception\n\nVue d'ensemble du cycle de commande\n\n+Îtape 1 : Quantification des besoins\n\n+Îtape 2 : +Îlaboration du bon de commande\n\n+Îtape 3 : Validation et approbation\n\n+Îtape 4 : Transmission au fournisseur\n\n+Îtape 5 : Traitement par le fournisseur\n\n+Îtape 6 : Exp+Ædition et transport\n\n+Îtape 7 : R+Æception et contr+¶le\n\nChaque +Ætape a ses acteurs, ses documents et ses d+Ælais.\n"
+      },
+      {
+        "id": "gas-m3-c5",
+        "title": "Cycle de commande : de la quantification +· la r+Æception",
+        "type": "text",
+        "duration": "10 min",
+        "content": "Cycle de commande : de la quantification +· la r+Æception\n\nVue d'ensemble du cycle de commande\n\n+Îtape 1 ‘«ˆ Quantification des besoins\n\nD+Æfinition : La quantification est le processus de calcul des quantit+Æs de chaque produit +· commander pour couvrir les besoins jusqu'+· la prochaine livraison.\n\nQui la fait? : Le gestionnaire de la pharmacie ou du d+Æp+¶t, assist+Æ si possible d'un responsable de programme (paludisme, VIH, CPN, etc.) pour les produits de programmes sp+Æcifiques.\n\nComment ? En appliquant la formule : Q+·C = Stock max ‘Í∆ Stock disponible actuel\n\nDocuments produits +· cette +Ætape : Fiche de collecte des donn+Æes de stock et tableau de quantification rempli et sign+Æ\n\nErreurs fr+Æquentes +· +Æviter :\n\nQuantifier sur la base du stock th+Æorique sans v+Ærifier le stock physique\n\nOublier d'int+Ægrer les commandes d+Æj+· en transit\n\nNe pas ajuster la CMM depuis plusieurs mois malgr+Æ l'+Ævolution de la demande\n"
+      },
+      {
+        "id": "gas-m3-c6",
+        "title": "Cycle de commande : de la quantification +· la r+Æception",
+        "type": "text",
+        "duration": "10 min",
+        "content": "Cycle de commande : de la quantification +· la r+Æception\n\nVue d'ensemble du cycle de commande\n\n+Îtape 2 ‘«ˆ +Îlaboration du bon de commande\n\nD+Æfinition :\n\nLe bon de commande (BC) est le document officiel qui formalise la demande d'approvisionnement.\n\nIl engage la pharmacie et le fournisseur.\n\nIl doit +¨tre pr+Æcis, complet et sans ambigu+ªt+Æ.\n"
+      },
+      {
+        "id": "gas-m3-c7",
+        "title": "Cycle de commande : de la quantification +· la r+Æception",
+        "type": "text",
+        "duration": "10 min",
+        "content": "Cycle de commande : de la quantification +· la r+Æception\n\nVue d'ensemble du cycle de commande\n\n+Îtape 3 ‘«ˆ Validation et approbation\n\nD+Æfinition :\n\nAvant d'+¨tre transmis au fournisseur, le bon de commande doit +¨tre valid+Æ par l'autorit+Æ comp+Ætente. Cette +Ætape garantit que la commande est justifi+Æe, correctement calcul+Æe et dans les limites budg+Ætaires disponibles.\n\nCe que le valideur v+Ærifie :\n\nLes quantit+Æs sont-elles coh+Ærentes avec la CMM et les niveaux de stock ?\n\nLe budget disponible couvre-t-il le montant total de la commande ?\n\nLes produits command+Æs figurent-ils sur la liste des m+Ædicaments essentiels autoris+Æs ?\n\nLa commande est-elle dans le calendrier pr+Ævu ?\n"
+      },
+      {
+        "id": "gas-m3-c8",
+        "title": "Cycle de commande : de la quantification +· la r+Æception",
+        "type": "text",
+        "duration": "10 min",
+        "content": "Cycle de commande : de la quantification +· la r+Æception\n\nVue d'ensemble du cycle de commande\n\n+Îtape 4 ‘«ˆ Transmission au fournisseur\n\nD+Æfinition :\n\nUne fois valid+Æ, le bon de commande est transmis au fournisseur. Le mode de transmission doit garantir la tra+∫abilit+Æ et la confirmation de r+Æception.\n\nBonne pratique : Quelle que soit la m+Æthode utilis+Æe, toujours obtenir une confirmation +Æcrite de r+Æception de la commande par le fournisseur, avec le num+Æro de commande et la date de livraison confirm+Æe. Sans cette confirmation, la commande peut ne pas avoir +Æt+Æ enregistr+Æe.\n"
+      },
+      {
+        "id": "gas-m3-c9",
+        "title": "Cycle de commande : de la quantification +· la r+Æception",
+        "type": "text",
+        "duration": "10 min",
+        "content": "Cycle de commande : de la quantification +· la r+Æception\n\nVue d'ensemble du cycle de commande\n\n+Îtape 5 ‘«ˆ Traitement par le fournisseur\n\nD+Æfinition :\n\nUne fois la commande re+∫ue, le fournisseur la traite en interne : v+Ærification de la disponibilit+Æ des produits, pr+Æparation, contr+¶le qualit+Æ, conditionnement et +Ædition des documents de livraison.\n\nRisques +· cette +Ætape :\n\nLe fournisseur peut +¨tre en rupture sur certains produits ‘Â∆ livraison partielle\n\nDes substitutions peuvent +¨tre propos+Æes (produit diff+Ærent du command+Æ)\n\nDes erreurs de quantit+Æ peuvent survenir lors de la pr+Æparation\n\nCe que le fournisseur produit +· cette +Ætape :\n\nBon de livraison (BL) : liste des produits exp+Ædi+Æs avec les quantit+Æs r+Æelles\n\nFacture : montant +· payer\n\nCertificat d'analyse (pour les produits pharmaceutiques) : preuve de contr+¶le qualit+Æ\n\nDocuments de transport : pour les livraisons longue distance\n"
+      },
+      {
+        "id": "gas-m3-c10",
+        "title": "Cycle de commande : de la quantification +· la r+Æception",
+        "type": "text",
+        "duration": "10 min",
+        "content": "Cycle de commande : de la quantification +· la r+Æception\n\nVue d'ensemble du cycle de commande\n\n+Îtape 5 ‘«ˆ Traitement par le fournisseur\n\nBonne pratique :\n\nSi la livraison sera partielle ou retard+Æe :\n\nLe fournisseur doit en informer le commanditaire avant l'exp+Ædition, pas au moment de la livraison.\n\nCela permet au gestionnaire d'anticiper et de prendre des mesures alternatives.\n"
+      },
+      {
+        "id": "gas-m3-c11",
+        "title": "Cycle de commande : de la quantification +· la r+Æception",
+        "type": "text",
+        "duration": "10 min",
+        "content": "Cycle de commande : de la quantification +· la r+Æception\n\nVue d'ensemble du cycle de commande\n\n+Îtape 6 ‘«ˆ Exp+Ædition et transport\n\nD+Æfinition :\n\nLes produits sont charg+Æs et achemin+Æs vers la pharmacie destinataire. Cette +Ætape est critique pour les produits thermosensibles (vaccins, insuline) qui exigent une cha+´ne du froid maintenue pendant tout le transport.\n\nDocuments accompagnant la livraison :\n\nBon de livraison sign+Æ par le transporteur\n\nBon de transport / bordereau d'exp+Ædition\n\nCertificats d'analyse des lots\n\nFormulaire de suivi de temp+Ærature (pour les produits de la cha+´ne du froid)\n"
+      },
+      {
+        "id": "gas-m3-c12",
+        "title": "Cycle de commande : de la quantification +· la r+Æception",
+        "type": "text",
+        "duration": "10 min",
+        "content": "Cycle de commande : de la quantification +· la r+Æception\n\nVue d'ensemble du cycle de commande\n\n+Îtape 6 ‘«ˆ Exp+Ædition et transport\n\nBonnes pratiques pendant le transport :\n\nPour les produits standards :\n\nEmballages prot+Æg+Æs contre l'humidit+Æ et la chaleur excessive\n\nProduits non expos+Æs au soleil direct pendant le transport\n\nProduits fragiles (ampoules) emball+Æs avec protection anti-choc\n\nPour les produits de la cha+´ne du froid :\n\nTransport dans des glaci+øres ou v+Æhicules r+Æfrig+Ær+Æs\n\nPacks de glace en quantit+Æ suffisante pour la dur+Æe du trajet\n\nThermom+øtre enregistreur dans chaque contenant\n\nPastilles de contr+¶le du vaccin (VVM) v+Ærifi+Æes avant et apr+øs transport\n"
+      },
+      {
+        "id": "gas-m3-c13",
+        "title": "Cycle de commande : de la quantification +· la r+Æception",
+        "type": "text",
+        "duration": "10 min",
+        "content": "Cycle de commande : de la quantification +· la r+Æception\n\nVue d'ensemble du cycle de commande\n\n+Îtape 7 ‘«ˆ R+Æception et contr+¶le\n\nD+Æfinition :\n\nC'est l'+Ætape finale du cycle. Les produits arrivent et doivent +¨tre soigneusement v+Ærifi+Æs avant d'+¨tre int+Ægr+Æs au stock.\n\nUne r+Æception b+Ûcl+Æe est la porte d'entr+Æe de nombreux probl+ømes : produits manquants non d+Ætect+Æs, produits de mauvaise qualit+Æ accept+Æs, erreurs d'enregistrement.\n"
+      },
+      {
+        "id": "gas-m3-c14",
+        "title": "Cycle de commande : de la quantification +· la r+Æception",
+        "type": "text",
+        "duration": "10 min",
+        "content": "Cycle de commande : de la quantification +· la r+Æception\n\nVue d'ensemble du cycle de commande\n\n+Îtape 7 ‘«ˆ R+Æception et contr+¶le\n\nLes 5 v+Ærifications obligatoires +· la r+Æception : :\n\nV+Ærification 1 ‘«ˆ Conformit+Æ documentaire\n\nComparer le bon de livraison du fournisseur avec le bon de commande initial.\n\nV+Ærification 2 ‘«ˆ Contr+¶le quantitatif\n\nCompter physiquement chaque produit, bo+´te par bo+´te, flacon par flacon.\n\nNe jamais accepter le chiffre du bon de livraison sans v+Ærification.\n"
+      },
+      {
+        "id": "gas-m3-c15",
+        "title": "Cycle de commande : de la quantification +· la r+Æception",
+        "type": "text",
+        "duration": "10 min",
+        "content": "Cycle de commande : de la quantification +· la r+Æception\n\nVue d'ensemble du cycle de commande\n\n+Îtape 7 ‘«ˆ R+Æception et contr+¶le\n\nLes 5 v+Ærifications obligatoires +· la r+Æception : :\n\nV+Ærification 3 ‘«ˆ Contr+¶le qualitatif\n\nV+Ærification 4 ‘«ˆ Contr+¶le de la cha+´ne du froid (produits thermosensibles)\n\nV+Ærifier le pastillage des vaccins (Vaccine Vial Monitor - VVM).\n\nSi le pastillage indique une rupture de la cha+´ne du froid, placer en quarantaine imm+Ædiatement.\n"
+      },
+      {
+        "id": "gas-m3-c16",
+        "title": "Cycle de commande : de la quantification +· la r+Æception",
+        "type": "text",
+        "duration": "10 min",
+        "content": "Cycle de commande : de la quantification +· la r+Æception\n\nVue d'ensemble du cycle de commande\n\n+Îtape 7 ‘«ˆ R+Æception et contr+¶le\n\nLes 5 v+Ærifications obligatoires +· la r+Æception : :\n\nV+Ærification 5 ‘«ˆ Enregistrement imm+Ædiat\n\nD+øs que la r+Æception est valid+Æe, enregistrer sur :\n\nLa fiche de stock de chaque produit re+∫u\n\nLe registre de r+Æceptions\n\nLe syst+øme informatis+Æ si disponible\n\nR+øgle absolue : aucun produit ne doit +¨tre rang+Æ dans le stock sans avoir +Æt+Æ enregistr+Æ.\n"
+      },
+      {
+        "id": "gas-m3-c17",
+        "title": "S+Ælection et +Ævaluation des fournisseurs",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### S+Ælection et +Ævaluation des fournisseurs\n\nLe fournisseur est un maillon critique de la cha+´ne pharmaceutique.\n\nUn bon produit mal livr+Æ, livr+Æ en retard, ou livr+Æ en quantit+Æ insuffisante a les m+¨mes cons+Æquences qu'une mauvaise gestion interne :\n\nRupture de stock,\n\nSoins interrompus,\n\nPertes financi+øres.\n\nChoisir ses fournisseurs avec rigueur et les +Ævaluer r+Æguli+ørement n'est pas une option, c'est une n+Æcessit+Æ.\n\nDans le secteur pharmaceutique, cette rigueur est d'autant plus importante que la qualit+Æ des produits a un impact direct sur la sant+Æ et la vie des patients.\n"
+      },
+      {
+        "id": "gas-m3-c18",
+        "title": "S+Ælection et +Ævaluation des fournisseurs",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### S+Ælection et +Ævaluation des fournisseurs\n\nLes crit+øres de s+Ælection d'un fournisseur\n\nCrit+øre 1 ‘«ˆ La qualit+Æ des produits\n\nC'est le crit+øre le plus important dans le secteur pharmaceutique. Un fournisseur peut +¨tre moins cher que les autres, mais si ses produits sont de mauvaise qualit+Æ, il ne doit pas +¨tre retenu.\n\nCe qu'on v+Ærifie :\n\nLe fournisseur est-il homologu+Æ par l'autorit+Æ nationale de r+Æglementation pharmaceutique ?\n\nSes produits disposent-ils d'une autorisation de mise sur le march+Æ (AMM) dans le pays ?\n\nProduit-il selon les Bonnes Pratiques de Fabrication (BPF/GMP) internationalement reconnues ?\n\nPeut-il fournir des certificats d'analyse pour chaque lot livr+Æ ?\n\nA-t-il d+Æj+· eu des rappels de lots ou des alertes qualit+Æ ?\n"
+      },
+      {
+        "id": "gas-m3-c19",
+        "title": "S+Ælection et +Ævaluation des fournisseurs",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### S+Ælection et +Ævaluation des fournisseurs\n\nLes crit+øres de s+Ælection d'un fournisseur\n\nCrit+øre 2 ‘«ˆ Le prix et les conditions financi+øres\n\nLe prix est important mais ne doit jamais +¨tre le seul crit+øre. Un produit moins cher qui g+Æn+øre des ruptures fr+Æquentes ou des probl+ømes de qualit+Æ co++te finalement plus cher qu'un produit bien g+Ær+Æ +· prix l+Æg+ørement sup+Ærieur.\n\nCe qu'on +Ævalue :\n\nPrix unitaire par produit\n\nRemises quantitatives (r+Æductions pour grandes commandes)\n\nConditions de paiement (d+Ælai de paiement, acompte exig+Æ)\n\nPolitique de retour et d'avoir pour les produits non conformes\n\nFrais de livraison inclus ou non dans le prix\n"
+      },
+      {
+        "id": "gas-m3-c20",
+        "title": "S+Ælection et +Ævaluation des fournisseurs",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### S+Ælection et +Ævaluation des fournisseurs\n\nLes crit+øres de s+Ælection d'un fournisseur\n\nCrit+øre 3 ‘«ˆ La fiabilit+Æ des d+Ælais de livraison\n\nUn fournisseur qui livre en retard est aussi dangereux qu'un fournisseur qui livre des produits de mauvaise qualit+Æ. Le respect des d+Ælais est mesurable sur l'historique des commandes.\n\nCe qu'on +Ævalue :\n\nD+Ælai de livraison annonc+Æ vs d+Ælai r+Æellement observ+Æ\n\nFr+Æquence des retards\n\nAmplitude des retards (quelques jours vs plusieurs semaines)\n\nCapacit+Æ +· livrer en urgence si besoin\n"
+      },
+      {
+        "id": "gas-m3-c21",
+        "title": "S+Ælection et +Ævaluation des fournisseurs",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### S+Ælection et +Ævaluation des fournisseurs\n\nLes crit+øres de s+Ælection d'un fournisseur\n\nCrit+øre 4 ‘«ˆ La capacit+Æ et la disponibilit+Æ des produits\n\nUn fournisseur peut avoir de bons produits et de bons prix, mais s'il est r+Æguli+ørement en rupture sur les produits command+Æs, il ne peut pas +¨tre consid+Ær+Æ comme fiable.\n\nCe qu'on +Ævalue :\n\nTaux de service (quantit+Æ livr+Æe / quantit+Æ command+Æe)\n\nFr+Æquence des livraisons partielles\n\nCapacit+Æ +· absorber des commandes exceptionnelles (urgences, +Æpid+Æmies)\n\nDiversit+Æ du catalogue (peut-il fournir tous les produits dont on a besoin ?)\n"
+      },
+      {
+        "id": "gas-m3-c22",
+        "title": "S+Ælection et +Ævaluation des fournisseurs",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### S+Ælection et +Ævaluation des fournisseurs\n\nLes crit+øres de s+Ælection d'un fournisseur\n\nCrit+øre 5 ‘«ˆ Le service et le support\n\nAu-del+· des produits eux-m+¨mes, la qualit+Æ de la relation commerciale et du support est un crit+øre diff+Ærenciant, particuli+ørement en situation de crise.\n\nCe qu'on +Ævalue :\n\nR+Æactivit+Æ aux demandes d'information et aux r+Æclamations\n\nQualit+Æ de la communication en cas de retard ou de rupture\n\nFlexibilit+Æ pour les commandes urgentes\n\nSupport technique (information sur les produits, gestion des effets ind+Æsirables)\n\nPolitique de gestion des litiges\n"
+      },
+      {
+        "id": "gas-m3-c23",
+        "title": "S+Ælection et +Ævaluation des fournisseurs",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### S+Ælection et +Ævaluation des fournisseurs\n\nLa pond+Æration des crit+øres ‘«ˆ Syst+øme de scoring\n\nPour comparer objectivement plusieurs fournisseurs, on utilise un syst+øme de scoring pond+Ær+Æ. Chaque crit+øre re+∫oit un poids selon son importance, et chaque fournisseur est not+Æ sur chaque crit+øre.\n"
+      },
+      {
+        "id": "gas-m3-c24",
+        "title": "S+Ælection et +Ævaluation des fournisseurs",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### S+Ælection et +Ævaluation des fournisseurs\n\nL'+Ævaluation p+Æriodique des fournisseurs\n\nS+Ælectionner un fournisseur est une d+Æcision ponctuelle.\n\nL'+Ævaluer r+Æguli+ørement est une obligation continue.\n\nUn fournisseur qui performait bien il y a deux ans peut s'+¨tre d+Ægrad+Æ.\n\n+« l'inverse, un fournisseur moyen peut s'+¨tre am+Ælior+Æ apr+øs des investissements.\n"
+      },
+      {
+        "id": "gas-m3-c25",
+        "title": "S+Ælection et +Ævaluation des fournisseurs",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### S+Ælection et +Ævaluation des fournisseurs\n\nLa gestion des fournisseurs alternatifs\n\nD+Æpendre d'un seul fournisseur pour un produit critique est un risque majeur.\n\nSi ce fournisseur est en rupture, en gr+øve, ou en difficult+Æ financi+øre, toute la cha+´ne d'approvisionnement est bloqu+Æe.\n\nBonne pratique ‘«ˆ La r+øgle des 3 fournisseurs : Pour chaque produit essentiel, identifier et qualifier au minimum :\n\n1 fournisseur principal : celui avec qui on travaille habituellement (meilleur score global)\n\n1 fournisseur secondaire : sollicit+Æ en cas de d+Æfaillance du principal\n\n1 fournisseur d'urgence : prix potentiellement plus +Ælev+Æ, mais disponible rapidement en cas de crise\n"
+      },
+      {
+        "id": "gas-m3-c26",
+        "title": "S+Ælection et +Ævaluation des fournisseurs",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### S+Ælection et +Ævaluation des fournisseurs\n\nLa gestion des litiges fournisseurs\n\nMalgr+Æ une bonne s+Ælection et un suivi r+Ægulier, des litiges surviennent. Il faut savoir les g+Ærer de fa+∫on professionnelle et document+Æe.\n"
+      },
+      {
+        "id": "gas-m3-c27",
+        "title": "S+Ælection et +Ævaluation des fournisseurs",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### S+Ælection et +Ævaluation des fournisseurs\n\nLa gestion des litiges fournisseurs\n\nProc+Ædure de gestion d'un litige\n\n+Îtape 1 ‘«ˆ Documentation imm+Ædiate :\n\nAu moment de la r+Æception, noter l'anomalie sur le bon de livraison avant de signer.\n\nFaire contresigner par le livreur.\n\nPrendre des photos si possible.\n\n+Îtape 2 ‘«ˆ Notification formelle\n\nAdresser au fournisseur une r+Æclamation +Æcrite dans les 48 +· 72 heures suivant la r+Æception, avec les +Æl+Æments suivants :\n\nNum+Æro de commande et num+Æro de bon de livraison\n\nDescription pr+Æcise de l'anomalie\n\nQuantit+Æ ou valeur concern+Æe\n\nAction attendue (remplacement, avoir, remboursement)\n\nD+Ælai de r+Æponse attendu\n"
+      },
+      {
+        "id": "gas-m3-c28",
+        "title": "S+Ælection et +Ævaluation des fournisseurs",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### S+Ælection et +Ævaluation des fournisseurs\n\nLa gestion des litiges fournisseurs\n\nProc+Ædure de gestion d'un litige\n\n+Îtape 3 ‘«ˆ Suivi et escalade\n\nSi le fournisseur ne r+Æpond pas dans le d+Ælai imparti :\n\nEscalader au niveau hi+Ærarchique sup+Ærieur (direction r+Ægionale, minist+øre) ou\n\nActiver les clauses contractuelles de p+Ænalit+Æ.\n\n+Îtape 4 ‘«ˆ Enregistrement dans le dossier fournisseur\n\nTout litige, m+¨me r+Æsolu, doit +¨tre enregistr+Æ dans le dossier du fournisseur.\n\nCes donn+Æes alimentent l'+Ævaluation p+Æriodique et peuvent justifier une d+Æcision de changement de fournisseur si les incidents se r+Æp+øtent.\n"
+      },
+      {
+        "id": "gas-m3-c29",
+        "title": "S+Ælection et +Ævaluation des fournisseurs",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### S+Ælection et +Ævaluation des fournisseurs\n\nSynth+øse ‘«ˆ S+Ælection et +Ævaluation des fournisseurs\n"
+      },
+      {
+        "id": "gas-m3-c30",
+        "title": "Gestion des contrats et des termes de livraison (Incoterms)",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\nUn contrat d'approvisionnement est le document juridique qui d+Æfinit les droits et obligations de chaque partie, prot+øge la le client en cas de d+Æfaillance du fournisseur, et encadre toutes les conditions dans lesquelles les produits seront fournis.\n\nLes Incoterms, quant +· eux, sont des r+øgles internationales standardis+Æes qui pr+Æcisent +· quel moment la responsabilit+Æ des marchandises passe du vendeur +· l'acheteur pendant le transport.\n\nLes ma+´triser permet d'+Æviter des litiges co++teux et des pertes de produits non couverts.\n"
+      },
+      {
+        "id": "gas-m3-c31",
+        "title": "Gestion des contrats et des termes de livraison (Incoterms)",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\nLe contrat d'approvisionnement pharmaceutique\n\nPourquoi un contrat est-il indispensable ?\n\nSans contrat formalis+Æ, chaque commande est une transaction isol+Æe sans garanties. Le fournisseur peut modifier ses prix, ses d+Ælais ou ses conditions +· tout moment.\n\nLe client ne dispose d'aucun recours juridique en cas de :\n\nlivraison non conforme,\n\nretard ou de\n\nrupture unilat+Ærale.\n\nUn contrat bien r+Ædig+Æ prot+øge les deux parties et cr+Æe un cadre stable pour une relation durable.\n"
+      },
+      {
+        "id": "gas-m3-c32",
+        "title": "Gestion des contrats et des termes de livraison (Incoterms)",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\nLe contrat d'approvisionnement pharmaceutique\n\nLes clauses essentielles d'un contrat d'approvisionnement\n\nClause 1 ‘«ˆ Identification des parties\n\nNom complet, adresse, statut juridique, num+Æro d'enregistrement et repr+Æsentant l+Ægal de chaque partie.\n\nCette clause para+´t +Ævidente mais est souvent b+Ûcl+Æe, ce qui peut poser des probl+ømes juridiques en cas de litige.\n\nClause 2 ‘«ˆ Objet du contrat\n\nDescription pr+Æcise des produits couverts par le contrat :\n\nd+Ænomination commune internationale (DCI),\n\ndosage,\n\nforme pharmaceutique,\n\nconditionnement,\n\nnormes de qualit+Æ exig+Æes.\n"
+      },
+      {
+        "id": "gas-m3-c33",
+        "title": "Gestion des contrats et des termes de livraison (Incoterms)",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\nLe contrat d'approvisionnement pharmaceutique\n\nLes clauses essentielles d'un contrat d'approvisionnement\n\nClause 3 ‘«ˆ Prix et conditions de r+Ævision\n\nPrix unitaire convenu, devise, modalit+Æs de r+Ævision du prix en cours de contrat.\n\nClause 4 ‘«ˆ Quantit+Æs et modalit+Æs de commande\n\nVolume minimum et maximum garanti sur la dur+Æe du contrat, proc+Ædure de passation des commandes, d+Ælai de confirmation.\n\nLe volume minimum garanti prot+øge le fournisseur (il peut planifier sa production).\n\nLe volume maximum prot+øge la client (il n'est pas engag+Æe au-del+· de ses besoins pr+Ævisionnels).\n\nClause 5 ‘«ˆ D+Ælais de livraison et p+Ænalit+Æs de retard\n\nC'est l'une des clauses les plus importantes.\n\nElle fixe le d+Ælai contractuel de livraison et les cons+Æquences financi+øres de son non-respect.\n"
+      },
+      {
+        "id": "gas-m3-c34",
+        "title": "Gestion des contrats et des termes de livraison (Incoterms)",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\nLe contrat d'approvisionnement pharmaceutique\n\nLes clauses essentielles d'un contrat d'approvisionnement\n\nClause 6 ‘«ˆ Qualit+Æ et conformit+Æ des produits\n\nNormes de qualit+Æ exig+Æes, documents de conformit+Æ obligatoires, proc+Ædure en cas de non-conformit+Æ.\n\nLa clause sur la dur+Æe de vie r+Æsiduelle (18 mois) est particuli+ørement importante. Elle +Ævite de recevoir des produits qui p+Ærimeront avant d'+¨tre consomm+Æs.\n\nClause 7 ‘«ˆ Conditions de livraison (Incoterms)\n\nPr+Æcise qui est responsable du transport, de l'assurance et des frais douaniers.\n\nNous d+Ætaillerons cette clause dans la section suivante.\n\nClause 8 ‘«ˆ Conditions de paiement\n\nD+Ælai de paiement, mode de paiement accept+Æ, p+Ænalit+Æs de retard de paiement.\n"
+      },
+      {
+        "id": "gas-m3-c35",
+        "title": "Gestion des contrats et des termes de livraison (Incoterms)",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\nLe contrat d'approvisionnement pharmaceutique\n\nLes clauses essentielles d'un contrat d'approvisionnement\n\nClause 9 ‘«ˆ Force majeure\n\nD+Æfinit les +Æv+Ænements exceptionnels (catastrophes naturelles, guerres, +Æpid+Æmies) qui exon+ørent temporairement une partie de ses obligations sans p+Ænalit+Æs.\n\nLa liste des +Æv+Ænements constituant un cas de force majeure doit +¨tre explicitement d+Æfinie dans le contrat.\n\nClause 10 ‘«ˆ R+Æsiliation\n\nConditions dans lesquelles chaque partie peut mettre fin au contrat : pr+Æavis requis, motifs de r+Æsiliation imm+Ædiate (faute grave, non-conformit+Æ r+Æp+Æt+Æe), indemnit+Æs +Æventuelles.\n\nClause 11 ‘«ˆ R+øglement des litiges\n\nD+Æsigne la juridiction comp+Ætente en cas de litige non r+Æsolu +· l'amiable et pr+Ævoit +Æventuellement une proc+Ædure d'arbitrage avant tout recours judiciaire.\n"
+      },
+      {
+        "id": "gas-m3-c36",
+        "title": "Gestion des contrats et des termes de livraison (Incoterms)",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\nLe contrat d'approvisionnement pharmaceutique\n\nTableau r+Æcapitulatif des clauses essentielles\n\n| Clause | Description | Impact en cas d'absence |\n|---|---|---|\n| Qualit+Æ et Sp+Æcifications | Normes exig+Æes (pharmacop+Æe, dur+Æe de vie) | R+Æception de produits p+Ærim+Æs ou non conformes |\n| D+Ælais de livraison | Date exacte ou p+Æriode maximale de livraison | Ruptures de stock dues aux retards |\n| P+Ænalit+Æs de retard | % de d+Æduction par jour/semaine de retard | Aucun moyen de pression sur le fournisseur |\n| Incoterms | R+Æpartition des co++ts et risques de transport | Litiges sur le paiement du fret et de l'assurance |\n"
+      },
+      {
+        "id": "gas-m3-c37",
+        "title": "Gestion des contrats et des termes de livraison (Incoterms)",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\nLes Incoterms ‘«ˆ R+øgles internationales de livraison\n\nQu'est-ce qu'un Incoterm ?\n\nIncoterm est la contraction de International Commercial Terms.\n\nCe sont des r+øgles standardis+Æes publi+Æes par la Chambre de Commerce Internationale (CCI) et r+Ævis+Æes p+Æriodiquement (derni+øre version : Incoterms 2020).\n\nElles d+Æfinissent pr+Æcis+Æment :\n\nQui (vendeur ou acheteur) organise et paie le transport\n\nQui organise et paie l'assurance des marchandises\n\nQui se charge des formalit+Æs douani+øres (export et import)\n\n+« quel moment le risque de perte ou de dommage passe du vendeur +· l'acheteur\n\nCe dernier point est crucial : si des produits sont endommag+Æs ou perdus pendant le transport, l'Incoterm d+Ætermine qui en supporte la perte financi+øre.\n"
+      },
+      {
+        "id": "gas-m3-c38",
+        "title": "Gestion des contrats et des termes de livraison (Incoterms)",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\nLes Incoterms ‘«ˆ R+øgles internationales de livraison\n\nLes Incoterms les plus utilis+Æs en approvisionnement pharmaceutique\n\nEXW ‘«ˆ Ex Works (+« l'usine)\n\nPrincipe : Le vendeur met les marchandises +· disposition dans ses locaux. L'acheteur prend en charge tout le reste : chargement, transport, assurance, formalit+Æs douani+øres d'export et d'import, livraison finale.\n"
+      },
+      {
+        "id": "gas-m3-c39",
+        "title": "Gestion des contrats et des termes de livraison (Incoterms)",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\nLes Incoterms ‘«ˆ R+øgles internationales de livraison\n\nLes Incoterms les plus utilis+Æs en approvisionnement pharmaceutique\n\nFOB ‘«ˆ Free On Board (Franco +· bord)\n\nPrincipe : Le vendeur livre les marchandises +· bord du navire d+Æsign+Æ par l'acheteur, dans le port d'embarquement convenu. Les formalit+Æs douani+øres d'export sont +· la charge du vendeur. +« partir du moment o+¶ les marchandises sont +· bord, le risque et les co++ts passent +· l'acheteur.\n"
+      },
+      {
+        "id": "gas-m3-c40",
+        "title": "Gestion des contrats et des termes de livraison (Incoterms)",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\nLes Incoterms ‘«ˆ R+øgles internationales de livraison\n\nLes Incoterms les plus utilis+Æs en approvisionnement pharmaceutique\n\nCIF ‘«ˆ Cost, Insurance and Freight (Co++t, assurance et fret)\n\nPrincipe : Le vendeur paie le transport et l'assurance jusqu'au port de destination d+Æsign+Æ. Cependant, le risque passe +· l'acheteur d+øs que les marchandises sont +· bord du navire dans le port d'export (comme en FOB). C'est une distinction importante : le vendeur paie l'assurance mais c'est l'acheteur qui en b+Æn+Æficie si un sinistre survient pendant le transport.\n"
+      },
+      {
+        "id": "gas-m3-c41",
+        "title": "Gestion des contrats et des termes de livraison (Incoterms)",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\nLes Incoterms ‘«ˆ R+øgles internationales de livraison\n\nLes Incoterms les plus utilis+Æs en approvisionnement pharmaceutique\n\nDDP ‘«ˆ Delivered Duty Paid (Rendu droits acquitt+Æs)\n\nPrincipe : C'est l'Incoterm le plus favorable +· l'acheteur. Le vendeur supporte tous les co++ts et tous les risques jusqu'+· la destination finale convenue, y compris les droits de douane +· l'importation. L'acheteur n'a qu'+· r+Æceptionner les marchandises.\n"
+      },
+      {
+        "id": "gas-m3-c42",
+        "title": "Gestion des contrats et des termes de livraison (Incoterms)",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\nLes Incoterms ‘«ˆ R+øgles internationales de livraison\n\nLes Incoterms les plus utilis+Æs en approvisionnement pharmaceutique\n\nDAP ‘«ˆ Delivered At Place (Rendu au lieu de destination)\n\nPrincipe : Similaire au DDP mais le vendeur ne prend pas en charge les droits de douane +· l'importation, qui restent +· la charge de l'acheteur. Le vendeur livre jusqu'au lieu de destination convenu, pr+¨t +· +¨tre d+Æcharg+Æ.\n"
+      },
+      {
+        "id": "gas-m3-c43",
+        "title": "Gestion des contrats et des termes de livraison (Incoterms)",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\nLes Incoterms ‘«ˆ R+øgles internationales de livraison\n\nComparaison synth+Ætique des principaux Incoterms\n"
+      },
+      {
+        "id": "gas-m3-c44",
+        "title": "Gestion des contrats et des termes de livraison (Incoterms)",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\nLes Incoterms ‘«ˆ R+øgles internationales de livraison\n\nChoisir le bon Incoterm selon le contexte\n"
+      },
+      {
+        "id": "gas-m3-c45",
+        "title": "Chapitre 1",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\nPasser une commande est une chose. Savoir +· tout moment o+¶ elle en est, si elle sera livr+Æe +· temps, et si le fournisseur performe correctement en est une autre.\n\nSans outils de suivi structur+Æs, le gestionnaire travaille dans l'incertitude :\n\nil ne sait pas si sa commande a bien +Æt+Æ re+∫ue par le fournisseur,\n\nsi l'exp+Ædition a eu lieu,\n\nni quand la livraison est attendue.\n\nCette incertitude conduit +· des relances tardives, des ruptures non anticip+Æes et des d+Æcisions de commande mal calibr+Æes.\n\nLes outils de suivi des commandes et le tableau de bord fournisseurs transforment cette incertitude en visibilit+Æ et cette r+Æactivit+Æ subie en anticipation ma+´tris+Æe.\n"
+      },
+      {
+        "id": "gas-m3-c46",
+        "title": "Chapitre 2",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\nLe registre de suivi des commandes\n\nD+Æfinition et objectif\n\nLe registre de suivi des commandes est le document de base qui trace le cycle de vie de chaque commande depuis son +Æmission jusqu'+· sa cl+¶ture apr+øs r+Æception et v+Ærification.\n\nC'est l'outil minimal indispensable, utilisable m+¨me sans informatique.\n"
+      },
+      {
+        "id": "gas-m3-c47",
+        "title": "Chapitre 3",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\nLe registre de suivi des commandes\n\nStructure du registre\n"
+      },
+      {
+        "id": "gas-m3-c48",
+        "title": "Chapitre 4",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\nLe tableau de bord des commandes en cours\n\nD+Æfinition\n\nLe tableau de bord des commandes en cours est une vue synth+Ætique et visuelle de toutes les commandes actives +· un instant T.\n\nContrairement au registre (document historique complet), le tableau de bord ne montre que les commandes non encore cl+¶tur+Æes.\n\nIl permet au gestionnaire d'identifier en un coup d'+Ùil les commandes +· risque.\n"
+      },
+      {
+        "id": "gas-m3-c49",
+        "title": "Chapitre 5",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\nLe syst+øme d'alerte et de relance\n\nPrincipe\n\nUn bon syst+øme de suivi ne se contente pas d'enregistrer passivement les informations.\n\nIl g+Æn+øre des alertes proactives qui d+Æclenchent des actions avant que les probl+ømes ne surviennent.\n\nDans un syst+øme manuel, ces alertes sont des rappels inscrits dans un calendrier. Dans un syst+øme informatis+Æ, elles sont automatiques.\n"
+      },
+      {
+        "id": "gas-m3-c50",
+        "title": "Chapitre 6",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\nLe syst+øme d'alerte et de relance\n\nLes 4 niveaux d'alerte\n\nAlerte niveau 1 ‘«ˆ Confirmation de r+Æception de commande (J+2 apr+øs transmission)*\n\nSi le fournisseur n'a pas confirm+Æ la r+Æception du bon de commande dans les 48 heures suivant sa transmission, le gestionnaire relance.\n\nPourquoi : une commande non confirm+Æe peut ne pas avoir +Æt+Æ enregistr+Æe par le fournisseur. Plus on attend pour s'en apercevoir, plus le retard s'accumule.\n\n* : selon les termes du contrat\n"
+      },
+      {
+        "id": "gas-m3-c51",
+        "title": "Chapitre 7",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\nLe syst+øme d'alerte et de relance\n\nLes 4 niveaux d'alerte\n\nAlerte niveau 2 ‘«ˆ Suivi d'exp+Ædition (J‘Í∆7 avant la date de livraison promise)*\n\nSept jours avant la date de livraison promise, le gestionnaire v+Ærifie que les produits ont bien +Æt+Æ exp+Ædi+Æs.\n\nPourquoi : si l'exp+Ædition n'a pas encore eu lieu +· J‘Í∆7, la livraison sera tr+øs probablement en retard. C'est le moment d'anticiper et d'+Ævaluer l'impact sur le stock.\n\n* : selon les termes du contrat\n"
+      },
+      {
+        "id": "gas-m3-c52",
+        "title": "Chapitre 8",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\nLe syst+øme d'alerte et de relance\n\nLes 4 niveaux d'alerte\n\nAlerte niveau 3 ‘«ˆ Retard av+Ær+Æ (J+1 apr+øs la date de livraison promise)*\n\nSi la livraison n'est pas arriv+Æe +· la date promise, le gestionnaire d+Æclenche le niveau 3 : notification formelle de retard avec application des p+Ænalit+Æs contractuelles et +Ævaluation de l'impact sur le stock.\n\n* : selon les termes du contrat\n"
+      },
+      {
+        "id": "gas-m3-c53",
+        "title": "Chapitre 9",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\nLe syst+øme d'alerte et de relance\n\nLes 4 niveaux d'alerte\n\nAlerte niveau 4 ‘«ˆ Retard critique (J+7 et au-del+·)*\n\nSi apr+øs 7 jours de retard le probl+øme n'est pas r+Æsolu, le gestionnaire escalade au niveau hi+Ærarchique sup+Ærieur, active le fournisseur alternatif si le stock est en danger, et documente formellement en vue d'une +Æventuelle r+Ævision du contrat.\n\n* : selon les termes du contrat\n"
+      },
+      {
+        "id": "gas-m3-c54",
+        "title": "Chapitre 10",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\nLe tableau de bord fournisseurs\n\nD+Æfinition et objectif\n\nLe tableau de bord fournisseurs est l'outil strat+Ægique d'+Ævaluation continue de la performance des fournisseurs.\n\nIl consolide les donn+Æes de toutes les commandes pass+Æes aupr+øs d'un fournisseur sur une p+Æriode donn+Æe et calcule automatiquement ses KPIs.\n\nIl permet de prendre des d+Æcisions objectives :\n\nmaintenir,\n\nr+Æorienter ou\n\nexclure un fournisseur.\n"
+      },
+      {
+        "id": "gas-m3-c55",
+        "title": "Chapitre 11",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\nLe tableau de bord fournisseurs\n\nLes indicateurs du tableau de bord fournisseurs\n\nIndicateur 1 ‘«ˆ Taux de service\n\n(Quantit+Æ livr+Æe conforme +¿ Quantit+Æ command+Æe) +˘ 100\n\nIndicateur 2 ‘«ˆ Taux de respect des d+Ælais\n\n(Nombre de livraisons dans les d+Ælais +¿ Nombre total de livraisons) +˘ 100\n\nIndicateur 3 ‘«ˆ Taux de conformit+Æ qualit+Æ\n\n(Nombre de lots conformes +¿ Nombre total de lots re+∫us) +˘ 100\n\nIndicateur 4 ‘«ˆ D+Ælai moyen de livraison\n\nMoyenne des d+Ælais r+Æels observ+Æs sur la p+Æriode\n\nIndicateur 5 ‘«ˆ Taux de r+Æsolution des r+Æclamations\n\n(R+Æclamations r+Æsolues dans les d+Ælais +¿ Total des r+Æclamations) +˘ 100\n"
+      },
+      {
+        "id": "gas-m3-c56",
+        "title": "Chapitre 12",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\nOutils digitaux de suivi\n\nNiveau 1 ‘«ˆ Manuel (registre papier)\n\nAdapt+Æ aux structures sans +Ælectricit+Æ fiable ni informatique.\n\nEfficace si rigoureusement tenu. Limite : pas de calculs automatiques, risque d'erreurs de transcription.\n\nNiveau 2 ‘«ˆ Tableur (Excel, Google Sheets)\n\nLe niveau le plus r+Æpandu et le plus accessible.\n\nPermet les calculs automatiques, les graphiques, le filtrage. Un fichier Excel bien construit peut g+Ærer l'ensemble du suivi des commandes et des tableaux de bord fournisseurs d'un d+Æp+¶t de district.\n\nNiveau 3 ‘«ˆ Logiciel de gestion (SAGE, Odoo, OpenLMIS)\n\nSyst+ømes int+Ægr+Æs qui automatisent le suivi des commandes, g+Æn+ørent les alertes, calculent les KPIs en temps r+Æel et permettent la consolidation des donn+Æes entre plusieurs sites.\n\nNiveau 4 ‘«ˆ Syst+øme d'information logistique national (LMIS)\n\nNiveau le plus avanc+Æ, utilis+Æ par les centrales d'achat et les minist+øres.\n\nPermet une visibilit+Æ en temps r+Æel sur l'ensemble de la cha+´ne d'approvisionnement nationale.\n"
+      }
+    ]
+  },
+  {
+    "id": "gas-m4",
+    "title": "Module 4 : Gestion des ruptures et des surstocks",
+    "chapters": [
+      {
+        "id": "gas-m4-c1",
+        "title": "Gestion des ruptures et des surstocks",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Gestion des ruptures et des surstocks\n\nGESTION DES APPROVISIONNEMENTS ET DES STOCKS\n"
+      },
+      {
+        "id": "gas-m4-c2",
+        "title": "Plan",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Plan\n\nCauses et cons+Æquences des ruptures de stock\n\nStrat+Ægies de pr+Ævention et de gestion des ruptures\n\nIdentification et traitement des surstocks (redistribution, retour)\n\nPlans de contingence et proc+Ædures d'urgence\n"
+      },
+      {
+        "id": "gas-m4-c3",
+        "title": "Causes et cons+Æquences des ruptures de stock",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Causes et cons+Æquences des ruptures de stock\n\nLes causes des ruptures de stock\n\nUne rupture de stock pharmaceutique n'est jamais un simple probl+øme logistique.\n\nC'est une d+Æfaillance du syst+øme de sant+Æ qui a des cons+Æquences directes sur les patients, les soignants et les finances de la structure.\n\nComprendre pourquoi les ruptures surviennent est la premi+øre +Ætape pour les pr+Ævenir.\n\nLes causes sont multiples, souvent combin+Æes, et peuvent se situer +· n'importe quel niveau de la cha+´ne pharmaceutique.\n\nLes ignorer ou les traiter superficiellement conduit in+Ævitablement +· la r+Æcurrence des ruptures.\n"
+      },
+      {
+        "id": "gas-m4-c4",
+        "title": "Causes et cons+Æquences des ruptures de stock",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Causes et cons+Æquences des ruptures de stock\n\nLes causes des ruptures de stock\n\nCat+Ægorie 1 ‘«ˆ Causes li+Æes +· la pr+Ævision et +· la quantification\n\nCMM mal calcul+Æe\n\nNon prise en compte de la saisonnalit+Æ\n\nCat+Ægorie 2 ‘«ˆ Causes li+Æes au processus de commande\n\nCommande tardive\n\nCommande rejet+Æe ou bloqu+Æe administrativement\n\nBudget insuffisant\n"
+      },
+      {
+        "id": "gas-m4-c5",
+        "title": "Causes et cons+Æquences des ruptures de stock",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Causes et cons+Æquences des ruptures de stock\n\nLes causes des ruptures de stock\n\nCat+Ægorie 3 ‘«ˆ Causes li+Æes aux fournisseurs\n\nRupture chez le fournisseur\n\nRetard de livraison\n\nCat+Ægorie 4 ‘«ˆ Causes li+Æes +· la demande\n\nHausse soudaine et impr+Ævue de la demande\n\nAugmentation structurelle de la demande non d+Ætect+Æe\n\nLivraison partielle\n"
+      },
+      {
+        "id": "gas-m4-c6",
+        "title": "Causes et cons+Æquences des ruptures de stock",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Causes et cons+Æquences des ruptures de stock\n\nLes causes des ruptures de stock\n\nCat+Ægorie 5 ‘«ˆ Causes li+Æes +· la gestion physique du stock\n\nPertes physiques non enregistr+Æes\n\nMauvaise organisation physique\n"
+      },
+      {
+        "id": "gas-m4-c7",
+        "title": "Causes et cons+Æquences des ruptures de stock",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Causes et cons+Æquences des ruptures de stock\n\nLes cons+Æquences des ruptures de stock\n\nNiveau 1 ‘«ˆ Cons+Æquences sanitaires\n\nInterruption de traitements en cours\n\n+Îchec th+Ærapeutique et r+Æsistances\n\nRecours +· des alternatives moins efficaces ou plus dangereuses\n\nMortalit+Æ +Ævitable\n\nNiveau 2 ‘«ˆ Cons+Æquences organisationnelles\n\nPerte de confiance des patients et des soignants\n\nSurcharge administrative li+Æe aux commandes d'urgence\n\nD+Ægradation des indicateurs de performance\n"
+      },
+      {
+        "id": "gas-m4-c8",
+        "title": "Causes et cons+Æquences des ruptures de stock",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Causes et cons+Æquences des ruptures de stock\n\nLes cons+Æquences des ruptures de stock\n\nNiveau 3 ‘«ˆ Cons+Æquences financi+øres\n\nSurco++t des commandes d'urgence\n\nPerte de recettes\n\nGaspillage li+Æ aux produits substitu+Æs puis non utilis+Æs\n"
+      },
+      {
+        "id": "gas-m4-c9",
+        "title": "Strat+Ægies de pr+Ævention et de gestion des ruptures",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Strat+Ægies de pr+Ævention et de gestion des ruptures\n\nPr+Ævenir une rupture co++te toujours moins cher que la g+Ærer.\n\nMais m+¨me avec les meilleures mesures pr+Æventives, certaines ruptures surviennent malgr+Æ tout, souvent pour des raisons ext+Ærieures au contr+¶le du gestionnaire.\n\nIl faut donc ma+´triser deux registres compl+Æmentaires :\n\nles strat+Ægies pr+Æventives, qui r+Æduisent la probabilit+Æ et la fr+Æquence des ruptures et\n\nles strat+Ægies curatives, qui minimisent leur dur+Æe et leur impact quand elles surviennent malgr+Æ tout.\n\nUn gestionnaire comp+Ætent ne se contente pas de subir les ruptures. Il les anticipe, les d+Ætecte t+¶t et r+Æagit vite avec des mesures adapt+Æes.\n"
+      },
+      {
+        "id": "gas-m4-c10",
+        "title": "Strat+Ægies de pr+Ævention et de gestion des ruptures",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Strat+Ægies de pr+Ævention et de gestion des ruptures\n\nStrat+Ægies de pr+Ævention des ruptures\n\nStrat+Ægie 1 ‘«ˆ Maintenir une CMM fiable et +· jour\n\nC'est la base de tout.\n\nUne CMM fiable est le meilleur rempart contre les ruptures li+Æes +· une mauvaise quantification.\n\nActions concr+øtes :\n\nR+Æviser la CMM tous les trimestres sans exception.\n\nEnregistrer syst+Æmatiquement toutes les sorties de stock d+øs qu'elles ont lieu.\n\nAjuster la CMM d+øs qu'un changement structurel est d+Ætect+Æ (nouveau service, nouveau protocole, +Ævolution de la population).\n"
+      },
+      {
+        "id": "gas-m4-c11",
+        "title": "Strat+Ægies de pr+Ævention et de gestion des ruptures",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Strat+Ægies de pr+Ævention et de gestion des ruptures\n\nStrat+Ægies de pr+Ævention des ruptures\n\nStrat+Ægie 2 ‘«ˆ Dimensionner correctement le stock de s+Æcurit+Æ\n\nUn stock de s+Æcurit+Æ bien calibr+Æ est le filet de protection contre les al+Æas.\n\nTrop faible, il ne prot+øge pas.\n\nTrop +Ælev+Æ, il immobilise des ressources inutilement.\n"
+      },
+      {
+        "id": "gas-m4-c12",
+        "title": "Strat+Ægies de pr+Ævention et de gestion des ruptures",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Strat+Ægies de pr+Ævention et de gestion des ruptures\n\nStrat+Ægies de pr+Ævention des ruptures\n\nStrat+Ægie 3 ‘«ˆ Respecter rigoureusement le calendrier de commande\n\nLa commande tardive est une cause majeure de rupture +Ævitable.\n\nElle doit +¨tre +Ælimin+Æe par la discipline et l'organisation.\n\nActions concr+øtes :\n\nD+Æfinir des dates fixes de commande dans un calendrier annuel affich+Æ et connu de tous.\n\nCr+Æer des alertes visuelles dans le registre ou le syst+øme informatique.\n\nV+Ærifier le stock de chaque produit critique au moins deux fois par mois.\n"
+      },
+      {
+        "id": "gas-m4-c13",
+        "title": "Strat+Ægies de pr+Ævention et de gestion des ruptures",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Strat+Ægies de pr+Ævention et de gestion des ruptures\n\nStrat+Ægies de pr+Ævention des ruptures\n\nStrat+Ægie 4 ‘«ˆ Diversifier les sources d'approvisionnement\n\nD+Æpendre d'un seul fournisseur pour un produit essentiel est un facteur de risque majeur.\n\nLa diversification r+Æduit l'exposition aux d+Æfaillances d'un fournisseur unique.\n\nActions concr+øtes :\n\nIdentifier et qualifier au minimum deux fournisseurs pour chaque produit essentiel.\n\nR+Æpartir les commandes entre les fournisseurs pour maintenir la relation commerciale active avec chacun.\n\nNe jamais d+Æpasser 70 +· 80% des commandes chez un seul fournisseur pour les produits critiques.\n"
+      },
+      {
+        "id": "gas-m4-c14",
+        "title": "Strat+Ægies de pr+Ævention et de gestion des ruptures",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Strat+Ægies de pr+Ævention et de gestion des ruptures\n\nStrat+Ægies de pr+Ævention des ruptures\n\nStrat+Ægie 5 ‘«ˆ Mettre en place un syst+øme de surveillance pr+Æcoce\n\nD+Ætecter la tendance +· la rupture avant qu'elle ne se produise permet d'intervenir +· temps.\n\nActions concr+øtes :\n\nCalculer mensuellement le taux de couverture de chaque produit.\n\nD+Æfinir des seuils d'alerte +· deux niveaux : alerte jaune et alerte rouge.\n"
+      },
+      {
+        "id": "gas-m4-c15",
+        "title": "Strat+Ægies de pr+Ævention et de gestion des ruptures",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Strat+Ægies de pr+Ævention et de gestion des ruptures\n\nStrat+Ægies de pr+Ævention des ruptures\n\nStrat+Ægie 6 ‘«ˆ Conduire des inventaires r+Æguliers\n\nLes inventaires r+Æguliers permettent de d+Ætecter les +Æcarts entre stock th+Æorique et stock r+Æel avant qu'ils ne deviennent critiques.\n"
+      },
+      {
+        "id": "gas-m4-c16",
+        "title": "Strat+Ægies de pr+Ævention et de gestion des ruptures",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Strat+Ægies de pr+Ævention et de gestion des ruptures\n\nStrat+Ægies de gestion des ruptures av+Ær+Æes\n\n+Îtape 1 ‘«ˆ D+Æclarer et +Ævaluer la rupture\n\n+Îvaluer la criticit+Æ du produit :\n\n+Îvaluer la dur+Æe pr+Ævisionnelle de la rupture :\n\nDur+Æe de rupture estim+Æe = D+Ælai avant prochaine livraison ‘Í∆ Couverture du stock r+Æsiduel\n"
+      },
+      {
+        "id": "gas-m4-c17",
+        "title": "Strat+Ægies de pr+Ævention et de gestion des ruptures",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Strat+Ægies de pr+Ævention et de gestion des ruptures\n\nStrat+Ægies de gestion des ruptures av+Ær+Æes\n\n+Îtape 2 ‘«ˆ Alerter la hi+Ærarchie et les partenaires\n\nToute rupture av+Ær+Æe ou imminente sur un produit essentiel doit +¨tre signal+Æe imm+Ædiatement au niveau hi+Ærarchique sup+Ærieur.\n\nCe signalement doit +¨tre :\n\n+Îcrit (email, rapport, formulaire standardis+Æ)\n\nFactuel (produit concern+Æ, stock r+Æsiduel, dur+Æe estim+Æe, nombre de patients potentiellement affect+Æs)\n\nAccompagn+Æ d'une proposition de solution\n"
+      },
+      {
+        "id": "gas-m4-c18",
+        "title": "Strat+Ægies de pr+Ævention et de gestion des ruptures",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Strat+Ægies de pr+Ævention et de gestion des ruptures\n\nStrat+Ægies de gestion des ruptures av+Ær+Æes\n\n+Îtape 3 ‘«ˆ Activer les sources d'approvisionnement d'urgence\n\nOption 1 ‘«ˆ Redistribution inter-sites (la plus rapide et la moins co++teuse)\n\nIdentifier les sites disposant d'un exc+Ædent du produit manquant et organiser un transfert.\n\nOption 2 ‘«ˆ Commande urgente aupr+øs du fournisseur alternatif\n\nSi la redistribution inter-sites est insuffisante ou impossible.\n\nOption 3 ‘«ˆ Achat en pharmacie priv+Æe (dernier recours)\n\nPour les cas extr+¨mes o+¶ les autres options ne sont pas disponibles assez rapidement.\n\nLe co++t est g+Æn+Æralement tr+øs +Ælev+Æ mais peut +¨tre justifi+Æ pour des produits vitaux.\n"
+      },
+      {
+        "id": "gas-m4-c19",
+        "title": "Strat+Ægies de pr+Ævention et de gestion des ruptures",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Strat+Ægies de pr+Ævention et de gestion des ruptures\n\nStrat+Ægies de gestion des ruptures av+Ær+Æes\n\n+Îtape 4 ‘«ˆ G+Ærer la distribution pendant la rupture\n\nQuand le stock r+Æsiduel est limit+Æ et qu'une rupture partielle est in+Ævitable, le gestionnaire doit rationner la distribution de fa+∫on +Æquitable et m+Ædicalement justifi+Æe.\n\nPrincipes de rationnement :\n\nPrioriser les patients d+Æj+· en cours de traitement sur les nouveaux cas.\n\nPrioriser les cas les plus s+Æv+øres sur les cas l+Ægers.\n\nInformer les prescripteurs imm+Ædiatement pour qu'ils adaptent leurs prescriptions (doses r+Æduites si m+Ædicalement acceptable, substituts th+Ærapeutiques).\n"
+      },
+      {
+        "id": "gas-m4-c20",
+        "title": "Strat+Ægies de pr+Ævention et de gestion des ruptures",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Strat+Ægies de pr+Ævention et de gestion des ruptures\n\nStrat+Ægies de gestion des ruptures av+Ær+Æes\n\n+Îtape 5 ‘«ˆ Analyser les causes et mettre en place des mesures correctives\n\nUne fois la rupture r+Æsolue, une analyse des causes doit +¨tre conduite pour +Æviter la r+Æcurrence. C'est l'+Ætape la plus souvent n+Æglig+Æe mais la plus importante pour progresser.\n"
+      },
+      {
+        "id": "gas-m4-c21",
+        "title": "Strat+Ægies de pr+Ævention et de gestion des ruptures",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Strat+Ægies de pr+Ævention et de gestion des ruptures\n\nStrat+Ægies de pr+Ævention et de gestion des ruptures\n\nPr+Ævenir une rupture co++te toujours moins cher que la g+Ærer.\n\nMais m+¨me avec les meilleures mesures pr+Æventives, certaines ruptures surviennent malgr+Æ tout, souvent pour des raisons ext+Ærieures au contr+¶le du gestionnaire.\n\nIl faut donc ma+´triser deux registres compl+Æmentaires :\n\nles strat+Ægies pr+Æventives, qui r+Æduisent la probabilit+Æ et la fr+Æquence des ruptures et\n\nles strat+Ægies curatives, qui minimisent leur dur+Æe et leur impact quand elles surviennent malgr+Æ tout.\n\nUn gestionnaire comp+Ætent ne se contente pas de subir les ruptures. Il les anticipe, les d+Ætecte t+¶t et r+Æagit vite avec des mesures adapt+Æes.\n"
+      },
+      {
+        "id": "gas-m4-c22",
+        "title": "Strat+Ægies de pr+Ævention et de gestion des ruptures",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Strat+Ægies de pr+Ævention et de gestion des ruptures\n\nStrat+Ægies de pr+Ævention et de gestion des ruptures\n\nStrat+Ægies de pr+Ævention des ruptures\n\nStrat+Ægie 1 ‘«ˆ Maintenir une CMM fiable et +· jour\n\nC'est la base de tout. Une CMM fiable est le meilleur rempart contre les ruptures li+Æes +· une mauvaise quantification.\n\nActions concr+øtes :\n\nR+Æviser la CMM tous les trimestres sans exception.\n\nEnregistrer syst+Æmatiquement toutes les sorties de stock d+øs qu'elles ont lieu.\n\nAjuster la CMM d+øs qu'un changement structurel est d+Ætect+Æ (nouveau service, nouveau protocole, +Ævolution de la population).\n"
+      },
+      {
+        "id": "gas-m4-c23",
+        "title": "Strat+Ægies de pr+Ævention et de gestion des ruptures",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Strat+Ægies de pr+Ævention et de gestion des ruptures\n\nStrat+Ægies de pr+Ævention et de gestion des ruptures\n\nStrat+Ægies de pr+Ævention des ruptures\n\nStrat+Ægie 2 ‘«ˆ Dimensionner correctement le stock de s+Æcurit+Æ\n\nUn stock de s+Æcurit+Æ bien calibr+Æ est le filet de protection contre les al+Æas.\n\nTrop faible, il ne prot+øge pas.\n\nTrop +Ælev+Æ, il immobilise des ressources inutilement.\n"
+      },
+      {
+        "id": "gas-m4-c24",
+        "title": "Strat+Ægies de pr+Ævention et de gestion des ruptures",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Strat+Ægies de pr+Ævention et de gestion des ruptures\n\nStrat+Ægies de pr+Ævention et de gestion des ruptures\n\nStrat+Ægies de pr+Ævention des ruptures\n\nStrat+Ægie 3 ‘«ˆ Respecter rigoureusement le calendrier de commande\n\nLa commande tardive est une cause majeure de rupture +Ævitable. Elle doit +¨tre +Ælimin+Æe par la discipline et l'organisation.\n\nActions concr+øtes :\n\nD+Æfinir des dates fixes de commande dans un calendrier annuel affich+Æ et connu de tous.\n\nCr+Æer des alertes visuelles dans le registre ou le syst+øme informatique.\n\nV+Ærifier le stock de chaque produit critique au moins deux fois par mois.\n"
+      },
+      {
+        "id": "gas-m4-c25",
+        "title": "Strat+Ægies de pr+Ævention et de gestion des ruptures",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Strat+Ægies de pr+Ævention et de gestion des ruptures\n\nStrat+Ægies de pr+Ævention et de gestion des ruptures\n\nStrat+Ægies de pr+Ævention des ruptures\n\nStrat+Ægie 4 ‘«ˆ Diversifier les sources d'approvisionnement\n\nD+Æpendre d'un seul fournisseur pour un produit essentiel est un facteur de risque majeur. La diversification r+Æduit l'exposition aux d+Æfaillances d'un fournisseur unique.\n\nActions concr+øtes :\n\nIdentifier et qualifier au minimum deux fournisseurs pour chaque produit essentiel.\n\nR+Æpartir les commandes entre les fournisseurs pour maintenir la relation commerciale active avec chacun.\n\nNe jamais d+Æpasser 70 +· 80% des commandes chez un seul fournisseur pour les produits critiques.\n"
+      },
+      {
+        "id": "gas-m4-c26",
+        "title": "Strat+Ægies de pr+Ævention et de gestion des ruptures",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Strat+Ægies de pr+Ævention et de gestion des ruptures\n\nStrat+Ægies de pr+Ævention et de gestion des ruptures\n\nStrat+Ægies de pr+Ævention des ruptures\n\nStrat+Ægie 5 ‘«ˆ Mettre en place un syst+øme de surveillance pr+Æcoce\n\nD+Ætecter la tendance +· la rupture avant qu'elle ne se produise permet d'intervenir +· temps.\n\nActions concr+øtes :\n\nCalculer mensuellement le taux de couverture de chaque produit.\n\nD+Æfinir des seuils d'alerte +· deux niveaux : alerte jaune et alerte rouge.\n"
+      },
+      {
+        "id": "gas-m4-c27",
+        "title": "Strat+Ægies de pr+Ævention et de gestion des ruptures",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Strat+Ægies de pr+Ævention et de gestion des ruptures\n\nStrat+Ægies de pr+Ævention et de gestion des ruptures\n\nStrat+Ægies de pr+Ævention des ruptures\n\nStrat+Ægie 6 ‘«ˆ Conduire des inventaires r+Æguliers\n\nLes inventaires r+Æguliers permettent de d+Ætecter les +Æcarts entre stock th+Æorique et stock r+Æel avant qu'ils ne deviennent critiques.\n"
+      },
+      {
+        "id": "gas-m4-c28",
+        "title": "Strat+Ægies de pr+Ævention et de gestion des ruptures",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Strat+Ægies de pr+Ævention et de gestion des ruptures\n\nStrat+Ægies de pr+Ævention et de gestion des ruptures\n\nStrat+Ægies de gestion des ruptures av+Ær+Æes\n\n+Îtape 1 ‘«ˆ D+Æclarer et +Ævaluer la rupture\n\nD+øs qu'une rupture est constat+Æe ou imminente, le gestionnaire doit imm+Ædiatement :\n\n+Îvaluer la criticit+Æ du produit\n\n+Îvaluer la dur+Æe pr+Ævisionnelle de la rupture\n\n+Îtape 2 ‘«ˆ Alerter la hi+Ærarchie et les partenaires\n\nToute rupture av+Ær+Æe ou imminente sur un produit essentiel doit +¨tre signal+Æe imm+Ædiatement au niveau hi+Ærarchique sup+Ærieur.\n\nCe signalement doit +¨tre :\n\n+Îcrit (email, rapport, formulaire standardis+Æ)\n\nFactuel (produit concern+Æ, stock r+Æsiduel, dur+Æe estim+Æe, nombre de patients potentiellement affect+Æs)\n\nAccompagn+Æ d'une proposition de solution\n"
+      },
+      {
+        "id": "gas-m4-c29",
+        "title": "Strat+Ægies de pr+Ævention et de gestion des ruptures",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Strat+Ægies de pr+Ævention et de gestion des ruptures\n\nStrat+Ægies de pr+Ævention et de gestion des ruptures\n\nStrat+Ægies de gestion des ruptures av+Ær+Æes\n\n+Îtape 3 ‘«ˆ Activer les sources d'approvisionnement d'urgence\n\nOption 1 ‘«ˆ Redistribution inter-sites (la plus rapide et la moins co++teuse)\n\nOption 2 ‘«ˆ Commande urgente aupr+øs du fournisseur alternatif\n\nOption 3 ‘«ˆ Achat en pharmacie priv+Æe (dernier recours)\n"
+      },
+      {
+        "id": "gas-m4-c30",
+        "title": "Strat+Ægies de pr+Ævention et de gestion des ruptures",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Strat+Ægies de pr+Ævention et de gestion des ruptures\n\nStrat+Ægies de pr+Ævention et de gestion des ruptures\n\nStrat+Ægies de gestion des ruptures av+Ær+Æes\n\n+Îtape 4 ‘«ˆ G+Ærer la distribution pendant la rupture\n\nQuand le stock r+Æsiduel est limit+Æ et qu'une rupture partielle est in+Ævitable, le gestionnaire doit rationner la distribution de fa+∫on +Æquitable et m+Ædicalement justifi+Æe.\n\nPrincipes de rationnement :\n\nPrioriser les patients d+Æj+· en cours de traitement sur les nouveaux cas.\n\nPrioriser les cas les plus s+Æv+øres sur les cas l+Ægers.\n\nInformer les prescripteurs imm+Ædiatement pour qu'ils adaptent leurs prescriptions (doses r+Æduites si m+Ædicalement acceptable, substituts th+Ærapeutiques).\n"
+      },
+      {
+        "id": "gas-m4-c31",
+        "title": "Strat+Ægies de pr+Ævention et de gestion des ruptures",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Strat+Ægies de pr+Ævention et de gestion des ruptures\n\nStrat+Ægies de pr+Ævention et de gestion des ruptures\n\nStrat+Ægies de gestion des ruptures av+Ær+Æes\n\n+Îtape 5 ‘«ˆ Analyser les causes et mettre en place des mesures correctives\n\nUne fois la rupture r+Æsolue, une analyse des causes doit +¨tre conduite pour +Æviter la r+Æcurrence. C'est l'+Ætape la plus souvent n+Æglig+Æe mais la plus importante pour progresser.\n"
+      },
+      {
+        "id": "gas-m4-c32",
+        "title": "Identification et traitement des surstocks",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Identification et traitement des surstocks\n\nLe surstock est souvent per+∫u comme un probl+øme mineur compar+Æ +· la rupture. Cette perception est erron+Æe.\n\nUn surstock non trait+Æ co++te de l'argent, occupe de l'espace, immobilise des ressources qui auraient pu financer d'autres produits, et finit fr+Æquemment par se transformer en p+Æremption, c'est-+·-dire en perte s+øche.\n\nDans certains syst+ømes de sant+Æ, jusqu'+· 10 +· 15% de la valeur des produits pharmaceutiques sont perdus chaque ann+Æe par p+Æremption, soit des dizaines de millions de francs CFA gaspill+Æs.\n\nL'identification pr+Æcoce et le traitement rapide des surstocks sont donc des actes de gestion +· part enti+øre, aussi importants que la pr+Ævention des ruptures.\n"
+      },
+      {
+        "id": "gas-m4-c33",
+        "title": "Identification et traitement des surstocks",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Identification et traitement des surstocks\n\nStrat+Ægies de pr+Ævention et de gestion des ruptures\n\nD+Æfinition op+Ærationnelle\n\nUn surstock existe quand le stock disponible d'un produit d+Æpasse le stock maximum d+Æfini. Mais en pratique, on distingue plusieurs degr+Æs de surstock selon leur urgence de traitement\n"
+      },
+      {
+        "id": "gas-m4-c34",
+        "title": "Identification et traitement des surstocks",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Identification et traitement des surstocks\n\nStrat+Ægies de pr+Ævention et de gestion des ruptures\n\nLes outils d'identification des surstocks\n\nOutil 1 ‘«ˆ L'analyse mensuelle du taux de couverture\n\nLe taux de couverture est le premier signal d'alerte d'un surstock. Tout produit avec un taux de couverture sup+Ærieur +· la dur+Æe stock max doit +¨tre examin+Æ.\n"
+      },
+      {
+        "id": "gas-m4-c35",
+        "title": "Identification et traitement des surstocks",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Identification et traitement des surstocks\n\nStrat+Ægies de pr+Ævention et de gestion des ruptures\n\nLes outils d'identification des surstocks\n\nOutil 2 ‘«ˆ L'analyse ABC-VEN crois+Æe\n\nL'analyse ABC classe les produits par valeur financi+øre. L'analyse VEN les classe par importance m+Ædicale (Vital, Essentiel, Non essentiel). Crois+Æes, elles permettent de prioriser les actions sur les surstocks.\n\nAnalyse ABC :\n\nCat+Ægorie A : 20% des produits repr+Æsentant 80% de la valeur totale du stock\n\nCat+Ægorie B : 30% des produits repr+Æsentant 15% de la valeur\n\nCat+Ægorie C : 50% des produits repr+Æsentant 5% de la valeur\n\nAnalyse VEN :\n\nV (Vital) : produit dont l'absence entra+´ne un risque imm+Ædiat pour la vie du patient\n\nE (Essentiel) : produit important mais dont l'absence n'est pas imm+Ædiatement mortelle\n\nN (Non essentiel) : produit dont l'absence ne met pas en danger la vie du patient\n"
+      },
+      {
+        "id": "gas-m4-c36",
+        "title": "Identification et traitement des surstocks",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Identification et traitement des surstocks\n\nStrat+Ægies de pr+Ævention et de gestion des ruptures\n\nLes outils d'identification des surstocks\n\nOutil 2 ‘«ˆ L'analyse ABC-VEN crois+Æe\n\nMatrice de priorit+Æ pour le traitement des surstocks\n"
+      },
+      {
+        "id": "gas-m4-c37",
+        "title": "Identification et traitement des surstocks",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Identification et traitement des surstocks\n\nStrat+Ægies de pr+Ævention et de gestion des ruptures\n\nLes outils d'identification des surstocks\n\nOutil 3 ‘«ˆ La liste des produits proches de p+Æremption\n\nUn produit qui p+Ærime dans moins de 6 mois doit automatiquement +¨tre consid+Ær+Æ comme un surstock +· traiter, m+¨me si son niveau de stock ne d+Æpasse pas le stock max.\n"
+      },
+      {
+        "id": "gas-m4-c38",
+        "title": "Identification et traitement des surstocks",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Identification et traitement des surstocks\n\nStrat+Ægies de pr+Ævention et de gestion des ruptures\n\nCauses des surstocks\n"
+      },
+      {
+        "id": "gas-m4-c39",
+        "title": "Identification et traitement des surstocks",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Identification et traitement des surstocks\n\nStrat+Ægies de pr+Ævention et de gestion des ruptures\n\nOptions de traitement des surstocks\n\nOption 1 ‘«ˆ Suspension des commandes\n\nC'est la mesure la plus simple et la premi+øre +· appliquer. Elle ne r+Æsout pas le surstock existant mais emp+¨che son aggravation.\n\nR+øgle : ne jamais commander un produit dont la couverture d+Æpasse le stock max, sauf en cas de contexte exceptionnel document+Æ.\n"
+      },
+      {
+        "id": "gas-m4-c40",
+        "title": "Identification et traitement des surstocks",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Identification et traitement des surstocks\n\nStrat+Ægies de pr+Ævention et de gestion des ruptures\n\nOptions de traitement des surstocks\n\nOption 2 ‘«ˆ Redistribution inter-sites\n\nTransf+Ærer l'exc+Ædent vers des sites en rupture ou +· stock bas sur le m+¨me produit. C'est la solution la plus rapide, la moins co++teuse et la plus utile d'un point de vue sanitaire.\n\nProcessus de redistribution :\n\n+Îtape 1 : Identifier les sites d+Æficitaires sur le m+¨me produit via le rapport mensuel ou un contact direct.\n\n+Îtape 2 : Calculer la quantit+Æ redistribuable sans mettre le site donneur en danger.\n\n+Îtape 3 : Obtenir l'autorisation du niveau hi+Ærarchique sup+Ærieur.\n\n+Îtape 4 : Pr+Æparer les documents de transfert (bon de transfert, fiche de stock des deux sites).\n\n+Îtape 5 : Assurer le transport dans de bonnes conditions.\n\n+Îtape 6 : Mettre +· jour les fiches de stock des deux sites.\n"
+      },
+      {
+        "id": "gas-m4-c41",
+        "title": "Identification et traitement des surstocks",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Identification et traitement des surstocks\n\nStrat+Ægies de pr+Ævention et de gestion des ruptures\n\nOptions de traitement des surstocks\n\nOption 3 ‘«ˆ Retour au fournisseur ou au niveau sup+Ærieur\n\nQuand la redistribution inter-sites ne suffit pas, les produits exc+Ædentaires peuvent +¨tre retourn+Æs au fournisseur ou au niveau hi+Ærarchique sup+Ærieur (d+Æp+¶t r+Ægional, centrale d'achat) qui peut les redistribuer +· plus grande +Æchelle.\n\nConditions pour un retour fournisseur :\n\nLes produits sont encore dans leur emballage d'origine, non ouverts\n\nLa date de p+Æremption est suffisamment +Æloign+Æe (g+Æn+Æralement > 12 mois)\n\nLe contrat avec le fournisseur pr+Ævoit une clause de retour\n\nL'autorisation du niveau hi+Ærarchique sup+Ærieur est obtenue\n"
+      },
+      {
+        "id": "gas-m4-c42",
+        "title": "Identification et traitement des surstocks",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Identification et traitement des surstocks\n\nStrat+Ægies de pr+Ævention et de gestion des ruptures\n\nOptions de traitement des surstocks\n\nOption 4 ‘«ˆ Acc+Æl+Æration de la consommation\n\nPour certains produits non critiques disponibles en exc+øs, il est possible d'augmenter la vitesse d'+Æcoulement du stock en intensifiant les activit+Æs qui consomment ce produit.\n\nActions possibles :\n\nIntensifier les activit+Æs de pr+Ævention (journ+Æes de sensibilisation, distribution communautaire)\n\nPartager l'information avec les prescripteurs pour favoriser la prescription du produit en exc+øs quand il est m+Ædicalement appropri+Æ\n\nOrganiser des s+Æances de distribution de masse pour les produits dont la distribution est possible (Vitamine A, moustiquaires, SRO)\n"
+      },
+      {
+        "id": "gas-m4-c43",
+        "title": "Identification et traitement des surstocks",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Identification et traitement des surstocks\n\nStrat+Ægies de pr+Ævention et de gestion des ruptures\n\nOptions de traitement des surstocks\n\nOption 5 ‘«ˆ Don +· une autre structure\n\nQuand le retour au fournisseur est impossible et que la redistribution inter-sites dans le m+¨me syst+øme ne suffit pas, un don +· une structure partenaire (ONG, structure priv+Æe +· but non lucratif, camp de r+Æfugi+Æs) peut permettre d'utiliser les produits plut+¶t que de les d+Ætruire.\n\nConditions :\n\nAutorisation obligatoire du niveau hi+Ærarchique sup+Ærieur et de la direction de la pharmacie\n\nLa structure b+Æn+Æficiaire doit +¨tre habilit+Æe +· recevoir et g+Ærer des produits pharmaceutiques\n\nLes produits doivent +¨tre en bon +Ætat et avoir une date de p+Æremption suffisante\n\nUn bon de don formalis+Æ doit +¨tre +Ætabli et sign+Æ par les deux parties\n"
+      },
+      {
+        "id": "gas-m4-c44",
+        "title": "Identification et traitement des surstocks",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Identification et traitement des surstocks\n\nStrat+Ægies de pr+Ævention et de gestion des ruptures\n\nOptions de traitement des surstocks\n\nOption 6 ‘«ˆ Destruction r+Æglementaire\n\nQuand aucune autre option n'est possible (produits p+Ærim+Æs, endommag+Æs, non conformes, irr+Æcup+Ærables), la destruction est la seule solution. Elle doit +¨tre r+Æalis+Æe selon des proc+Ædures strictes pour prot+Æger l'environnement et la sant+Æ publique.\n\nProc+Ædure de destruction :\n\n+Îtape 1 ‘«ˆ Constitution du dossier de destruction\n\nListe compl+øte des produits +· d+Ætruire (d+Æsignation, lot, quantit+Æ, valeur, raison)\n\nAutorisation du niveau hi+Ærarchique sup+Ærieur\n\nPr+Æsence d'au moins deux t+Æmoins (m+Ædecin chef, inspecteur de pharmacie)\n"
+      },
+      {
+        "id": "gas-m4-c45",
+        "title": "Identification et traitement des surstocks",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Identification et traitement des surstocks\n\nStrat+Ægies de pr+Ævention et de gestion des ruptures\n\nOptions de traitement des surstocks\n\nOption 6 ‘«ˆ Destruction r+Æglementaire\n\nProc+Ædure de destruction :\n\n+Îtape 2 ‘«ˆ M+Æthode de destruction selon le type de produit\n\nJamais : jeter dans une d+Æcharge +· ciel ouvert, enterrer sans neutralisation, br++ler +· l'air libre (risque toxique)\n"
+      },
+      {
+        "id": "gas-m4-c46",
+        "title": "Identification et traitement des surstocks",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Identification et traitement des surstocks\n\nStrat+Ægies de pr+Ævention et de gestion des ruptures\n\nOptions de traitement des surstocks\n\nOption 6 ‘«ˆ Destruction r+Æglementaire\n\nProc+Ædure de destruction :\n\n+Îtape 3 ‘«ˆ Documentation\n\nProc+øs-verbal de destruction sign+Æ par tous les t+Æmoins pr+Æsents\n\nMise +· jour des fiches de stock (sortie pour destruction)\n\nConservation du PV pendant au moins 5 ans\n"
+      },
+      {
+        "id": "gas-m4-c47",
+        "title": "Plans de contingence et proc+Ædures d'urgence",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Plans de contingence et proc+Ædures d'urgence\n\nUn plan de contingence est un dispositif pr+Æpar+Æ +· l'avance pour r+Æpondre +· des situations exceptionnelles qui perturbent le fonctionnement normal de la cha+´ne d'approvisionnement.\n\nIl r+Æpond +· une logique simple :\n\nles crises ne s'improvisent pas.\n\nUne pharmacie qui attend qu'une +Æpid+Æmie +Æclate pour r+Æfl+Æchir +· comment s'approvisionner en urgence perdra un temps pr+Æcieux, paiera des prix excessifs et mettra des vies en danger.\n\nUne pharmacie qui a anticip+Æ ces sc+Ænarios dispose de r+Æponses pr+¨tes +· +¨tre activ+Æes imm+Ædiatement.\n\nLa diff+Ærence entre les deux peut se mesurer en vies sauv+Æes.\n"
+      },
+      {
+        "id": "gas-m4-c48",
+        "title": "Plans de contingence et proc+Ædures d'urgence",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Plans de contingence et proc+Ædures d'urgence\n\nStrat+Ægies de pr+Ævention et de gestion des ruptures\n\nCat+Ægorie 1 ‘«ˆ Crises li+Æes +· la demande\n"
+      },
+      {
+        "id": "gas-m4-c49",
+        "title": "Plans de contingence et proc+Ædures d'urgence",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Plans de contingence et proc+Ædures d'urgence\n\nStrat+Ægies de pr+Ævention et de gestion des ruptures\n\nCat+Ægorie 2 ‘«ˆ Crises li+Æes +· l'approvisionnement\n"
+      },
+      {
+        "id": "gas-m4-c50",
+        "title": "Plans de contingence et proc+Ædures d'urgence",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Plans de contingence et proc+Ædures d'urgence\n\nStrat+Ægies de pr+Ævention et de gestion des ruptures\n\nCat+Ægorie 3 ‘«ˆ Crises li+Æes +· la structure elle-m+¨me\n"
+      },
+      {
+        "id": "gas-m4-c51",
+        "title": "Plans de contingence et proc+Ædures d'urgence",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Plans de contingence et proc+Ædures d'urgence\n\nStructure d'un plan de contingence\n\nComposante 1 ‘«ˆ Identification des produits critiques\n\nTous les produits ne n+Æcessitent pas le m+¨me niveau de pr+Æparation d'urgence.\n\nLe plan de contingence doit se concentrer en priorit+Æ sur les produits dont la rupture a les cons+Æquences sanitaires les plus graves.\n\nM+Æthode de priorisation ‘«ˆ Matrice de criticit+Æ\n\nComposante 2 ‘«ˆ Stock de contingence d+Ædi+Æ\n\nPour les produits critiques, un stock de contingence suppl+Æmentaire est constitu+Æ et maintenu en dehors du stock de routine.\n\nIl ne doit +¨tre utilis+Æ qu'en cas de d+Æclenchement officiel du plan de contingence.\n\nStock de contingence = CMM +˘ Dur+Æe estim+Æe de la crise la plus probable\n"
+      },
+      {
+        "id": "gas-m4-c52",
+        "title": "Plans de contingence et proc+Ædures d'urgence",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Plans de contingence et proc+Ædures d'urgence\n\nStructure d'un plan de contingence\n\nComposante 3 ‘«ˆ Liste des fournisseurs d'urgence\n\nPour chaque produit critique, une liste de fournisseurs d'urgence homologu+Æs doit +¨tre pr+Æpar+Æe +· l'avance, avec toutes les informations n+Æcessaires pour passer une commande imm+Ædiatement.\n\nR+øgle de mise +· jour :\n\nLes fiches fournisseurs d'urgence doivent +¨tre v+Ærifi+Æes et mises +· jour tous les 6 mois minimum.\n\nUn contact t+Æl+Æphonique de v+Ærification suffit.\n\nUn fournisseur d'urgence dont les informations sont obsol+øtes est un fournisseur inutilisable au moment de la crise.\n"
+      },
+      {
+        "id": "gas-m4-c53",
+        "title": "Plans de contingence et proc+Ædures d'urgence",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Plans de contingence et proc+Ædures d'urgence\n\nStructure d'un plan de contingence\n\nComposante 4 ‘«ˆ Proc+Ædures d'activation du plan\n\nLe plan de contingence ne doit pas rester un document th+Æorique. Il doit d+Æfinir pr+Æcis+Æment les conditions de son d+Æclenchement, les +Ætapes +· suivre et les responsabilit+Æs de chacun.\n\nCrit+øres de d+Æclenchement du plan :\n"
+      },
+      {
+        "id": "gas-m4-c54",
+        "title": "Plans de contingence et proc+Ædures d'urgence",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Plans de contingence et proc+Ædures d'urgence\n\nProc+Ædures d'urgence sp+Æcifiques\n\nProc+Ædure d'urgence 1 ‘«ˆ Rappel de lot (retrait de produits du march+Æ)\n\nUn rappel de lot survient quand l'autorit+Æ de r+Æglementation pharmaceutique ou le fabricant ordonne le retrait d'un lot sp+Æcifique de m+Ædicaments en raison d'un probl+øme de qualit+Æ d+Ætect+Æ (contamination, mauvais dosage, emballage d+Æfectueux).\n\nProc+Ædure :\n\n+Îtape 1 ‘«ˆ R+Æception de l'alerte de rappel :\n\nL'alerte peut venir de la Direction de la Pharmacie, de la DRS, du fournisseur ou de l'OMS.\n\nElle pr+Æcise le nom du produit, le num+Æro de lot concern+Æ et la raison du rappel.\n\n+Îtape 2 ‘«ˆ Identification et mise en quarantaine imm+Ædiate :\n\nV+Ærifier dans le stock si des unit+Æs du lot concern+Æ sont pr+Æsentes.\n\nToute unit+Æ identifi+Æe doit +¨tre imm+Ædiatement retir+Æe du stock et plac+Æe en quarantaine (zone s+Æpar+Æe, +Ætiquet+Æe \"QUARANTAINE ‘«ˆ NE PAS UTILISER\").\n"
+      },
+      {
+        "id": "gas-m4-c55",
+        "title": "Plans de contingence et proc+Ædures d'urgence",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Plans de contingence et proc+Ædures d'urgence\n\nProc+Ædures d'urgence sp+Æcifiques\n\nProc+Ædure d'urgence 1 ‘«ˆ Rappel de lot (retrait de produits du march+Æ)\n\nProc+Ædure :\n\n+Îtape 3 ‘«ˆ V+Ærification des distributions pass+Æes :\n\nV+Ærifier dans le registre si des unit+Æs du lot rappel+Æ ont d+Æj+· +Æt+Æ distribu+Æes.\n\nSi oui, identifier les patients ou structures ayant re+∫u ces unit+Æs et les notifier selon les instructions de l'alerte.\n\n+Îtape 4 ‘«ˆ Notification et rapport :\n\nNotifier imm+Ædiatement la DRS et la Direction de la Pharmacie.\n\nEnvoyer un rapport pr+Æcisant les quantit+Æs identifi+Æes, les quantit+Æs d+Æj+· distribu+Æes, et les actions prises.\n\n+Îtape 5 ‘«ˆ Retour ou destruction :\n\nSelon les instructions de l'alerte, retourner les produits au fournisseur ou +· la Direction de la Pharmacie, ou proc+Æder +· la destruction selon le protocole r+Æglementaire.\n"
+      },
+      {
+        "id": "gas-m4-c56",
+        "title": "Plans de contingence et proc+Ædures d'urgence",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Plans de contingence et proc+Ædures d'urgence\n\nProc+Ædures d'urgence sp+Æcifiques\n\nProc+Ædure d'urgence 2 ‘«ˆ Incendie ou inondation du d+Æp+¶t\n\nProc+Ædure :\n\nImm+Ædiatement (dans l'heure) :\n\n‘ˇ… Mettre le personnel en s+Æcurit+Æ\n\n‘ˇ… Alerter les secours (pompiers, police)\n\n‘ˇ… S+Æcuriser les documents (registres, fiches de stock) si possible sans danger\n\n‘ˇ… Notifier le m+Ædecin chef et la DRS\n\nImm+Ædiatement (dans l'heure) :\n\n‘ˇ… +Îvaluer l'+Ætendue des d+Æg+Ûts (produits sauv+Æs vs produits d+Ætruits)\n\n‘ˇ… Trier les produits sauv+Æs : conformes vs endommag+Æs (chaleur, humidit+Æ) ‘Â∆ mise en quarantaine des produits douteux\n\n‘ˇ… Constituer un stock d'urgence minimum +· partir des produits sauv+Æs conformes\n\n‘ˇ… Envoyer une demande d'approvisionnement d'urgence au niveau sup+Ærieur\n\n‘ˇ… +Îtablir un rapport de pertes pour les assurances et la comptabilit+Æ\n"
+      },
+      {
+        "id": "gas-m4-c57",
+        "title": "Plans de contingence et proc+Ædures d'urgence",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Plans de contingence et proc+Ædures d'urgence\n\nProc+Ædures d'urgence sp+Æcifiques\n\nProc+Ædure d'urgence 3 ‘«ˆ D+Æpart soudain du gestionnaire\n\nProc+Ædure :\n\nPr+Æparation (avant toute crise) :\n\n‘ˇ… Identifier et former un gestionnaire rempla+∫ant capable d'assurer les t+Ûches critiques\n\n‘ˇ… Tenir les documents de stock +· jour et accessibles au rempla+∫ant\n\n‘ˇ… Documenter les contacts fournisseurs et les proc+Ædures dans un manuel accessible\n\n‘ˇ… Organiser un inventaire trimestriel cosign+Æ par le gestionnaire et son rempla+∫ant\n\nEn cas de d+Æpart soudain :\n\n‘ˇ… Passation de service avec inventaire complet dans les 48 heures\n\n‘ˇ… Le rempla+∫ant prend en charge les commandes en cours et les alertes de stock\n\n‘ˇ… La hi+Ærarchie est notifi+Æe pour validation des premi+øres commandes du rempla+∫ant\n"
+      }
+    ]
+  },
+  {
+    "id": "gas-m5",
+    "title": "Module 5 : Syst+ømes d'inventaire et outils digitaux",
+    "chapters": [
+      {
+        "id": "gas-m5-c1",
+        "title": "Syst+ømes d'inventaire et outils digitaux",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Syst+ømes d'inventaire et outils digitaux\n\nGESTION DES APPROVISIONNEMENTS ET DES STOCKS\n"
+      },
+      {
+        "id": "gas-m5-c2",
+        "title": "Plan",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Plan\n\nTypes d'inventaires (permanent, p+Æriodique, tournant)\n\nProc+Ædures de comptage et de r+Æconciliation\n\nOutils digitaux de gestion des stocks (logiciels, applications mobiles)\n"
+      },
+      {
+        "id": "gas-m5-c3",
+        "title": "Types d'inventaires (permanent, p+Æriodique, tournant)",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Types d'inventaires (permanent, p+Æriodique, tournant)\n\nL'inventaire est l'acte par lequel on v+Ærifie que ce qui est dans le registre ou le syst+øme informatique correspond +· ce qui est physiquement pr+Æsent dans le d+Æp+¶t.\n\nC'est une op+Æration de contr+¶le fondamentale qui conditionne la fiabilit+Æ de toutes les d+Æcisions de gestion.\n\nUn gestionnaire qui ne fait pas d'inventaire r+Ægulier travaille sur des donn+Æes dont il ne peut pas garantir l'exactitude. Il commande peut-+¨tre trop, peut-+¨tre trop peu, distribue peut-+¨tre des produits qui n'existent plus physiquement, ou ignore des produits qui dorment dans un coin du d+Æp+¶t.\n\nLes trois types d'inventaires ‘«ˆ permanent, p+Æriodique et tournant ‘«ˆ r+Æpondent +· des logiques diff+Ærentes et se compl+øtent. Les conna+´tre permet de choisir le syst+øme le plus adapt+Æ au contexte de chaque structure.\n"
+      },
+      {
+        "id": "gas-m5-c4",
+        "title": "Types d'inventaires (permanent, p+Æriodique, tournant)",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Types d'inventaires (permanent, p+Æriodique, tournant)\n\nL'inventaire permanent\n\nD+Æfinition\n\nL'inventaire permanent, aussi appel+Æ inventaire continu, est un syst+øme dans lequel le stock th+Æorique est mis +· jour en temps r+Æel +· chaque mouvement de produit, entr+Æe ou sortie.\n\n+« tout moment, le gestionnaire peut consulter le stock th+Æorique sans avoir besoin de compter physiquement les produits.\n\nPrincipe de fonctionnement : Stock th+Æorique au temps T = Stock initial + Total des entr+Æes ‘Í∆ Total des sorties (depuis le stock initial)\n\nChaque entr+Æe (r+Æception de livraison) et chaque sortie (distribution, transfert, perte) est imm+Ædiatement enregistr+Æe sur la fiche de stock ou dans le logiciel.\n\nLe stock th+Æorique est donc toujours +· jour.\n"
+      },
+      {
+        "id": "gas-m5-c5",
+        "title": "Types d'inventaires (permanent, p+Æriodique, tournant)",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Types d'inventaires (permanent, p+Æriodique, tournant)\n\nL'inventaire permanent\n\nCe que l'inventaire permanent permet :\n\nConna+´tre +· tout moment le stock th+Æorique sans compter physiquement\n\nD+Ætecter imm+Ædiatement toute anomalie (sortie sans justificatif)\n\nCalculer automatiquement la CMM +· partir des sorties enregistr+Æes\n\nD+Æclencher les alertes de stock min en temps r+Æel\n\nLimites de l'inventaire permanent :\n\nExige un enregistrement rigoureux et imm+Ædiat de chaque mouvement\n\nSi un mouvement est oubli+Æ ou mal enregistr+Æ, l'+Æcart s'accumule sans +¨tre d+Ætect+Æ\n\nNe remplace pas le comptage physique p+Æriodique\n"
+      },
+      {
+        "id": "gas-m5-c6",
+        "title": "Types d'inventaires (permanent, p+Æriodique, tournant)",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Types d'inventaires (permanent, p+Æriodique, tournant)\n\nL'inventaire permanent\n\nConditions de r+Æussite de l'inventaire permanent\n"
+      },
+      {
+        "id": "gas-m5-c7",
+        "title": "Types d'inventaires (permanent, p+Æriodique, tournant)",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Types d'inventaires (permanent, p+Æriodique, tournant)\n\nL'inventaire p+Æriodique\n\nD+Æfinition\n\nL'inventaire p+Æriodique est un syst+øme dans lequel le stock n'est pas suivi en continu mais compt+Æ physiquement +· intervalles r+Æguliers et pr+Æd+Æfinis.\n\nEntre deux inventaires, le gestionnaire ne dispose pas n+Æcessairement d'un stock th+Æorique fiable.\n\nL'inventaire p+Æriodique est souvent utilis+Æ dans les structures avec des ressources limit+Æes ou un volume de produits important.\n\nFr+Æquences habituelles :\n"
+      },
+      {
+        "id": "gas-m5-c8",
+        "title": "Types d'inventaires (permanent, p+Æriodique, tournant)",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Types d'inventaires (permanent, p+Æriodique, tournant)\n\nL'inventaire p+Æriodique\n\nProc+Ædure d'inventaire p+Æriodique\n\nAvant l'inventaire :\n\n‘ˇ… Fixer la date +· l'avance et la communiquer au personnel\n\n‘ˇ… Suspendre tous les mouvements de stock 2 heures avant le d+Æbut\n\n‘ˇ… Pr+Æparer les formulaires de comptage (un formulaire par produit ou par zone)\n\n‘ˇ… Constituer les +Æquipes de comptage (2 personnes minimum par +Æquipe : un qui compte, un qui enregistre)\n\n‘ˇ… S'assurer que les registres et fiches de stock sont +· jour jusqu'+· la veille\n"
+      },
+      {
+        "id": "gas-m5-c9",
+        "title": "Types d'inventaires (permanent, p+Æriodique, tournant)",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Types d'inventaires (permanent, p+Æriodique, tournant)\n\nL'inventaire p+Æriodique\n\nProc+Ædure d'inventaire p+Æriodique\n\nPendant l'inventaire :\n\n‘ˇ… Chaque +Æquipe compte sa zone sans conna+´tre le stock th+Æorique (pour +Æviter les biais)\n\n‘ˇ… Comptage physique unit+Æ par unit+Æ, bo+´te par bo+´te\n\n‘ˇ… Enregistrement imm+Ædiat de chaque comptage sur le formulaire\n\n‘ˇ… Double-comptage obligatoire pour les produits +· forte valeur ou les +Æcarts suspects\n\n‘ˇ… Identification et s+Æparation physique des produits p+Ærim+Æs, endommag+Æs, en quarantaine\n"
+      },
+      {
+        "id": "gas-m5-c10",
+        "title": "Types d'inventaires (permanent, p+Æriodique, tournant)",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Types d'inventaires (permanent, p+Æriodique, tournant)\n\nL'inventaire p+Æriodique\n\nProc+Ædure d'inventaire p+Æriodique\n\nApr+øs l'inventaire :\n\n‘ˇ… Comparaison entre stock physique compt+Æ et stock th+Æorique\n\n‘ˇ… Calcul des +Æcarts\n\n‘ˇ… Investigation des +Æcarts significatifs\n\n‘ˇ… Mise +· jour des fiches de stock avec le stock physique r+Æel\n\n‘ˇ… R+Ædaction du rapport d'inventaire\n"
+      },
+      {
+        "id": "gas-m5-c11",
+        "title": "Types d'inventaires (permanent, p+Æriodique, tournant)",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Types d'inventaires (permanent, p+Æriodique, tournant)\n\nDiff+Ærences entre inventaire permanent et p+Æriodique\n"
+      },
+      {
+        "id": "gas-m5-c12",
+        "title": "Types d'inventaires (permanent, p+Æriodique, tournant)",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Types d'inventaires (permanent, p+Æriodique, tournant)\n\nL'inventaire tournant\n\nD+Æfinition\n\nL'inventaire tournant est un syst+øme dans lequel l'ensemble du stock est divis+Æ en segments (par zone, par famille de produits, ou par ordre alphab+Ætique), et chaque segment est compt+Æ +· tour de r+¶le selon un calendrier pr+Æd+Æfini.\n\n+« tout moment de l'ann+Æe, une partie du stock a +Æt+Æ r+Æcemment v+Ærifi+Æe.\n\nSur une p+Æriode de 12 mois, l'int+Ægralit+Æ du stock est pass+Æe en revue plusieurs fois.\n\nPrincipe : Au lieu de tout compter en une seule fois (comme pour l'inventaire p+Æriodique), on compte un peu chaque semaine ou chaque mois, de fa+∫on continue et rotative.\n"
+      },
+      {
+        "id": "gas-m5-c13",
+        "title": "Types d'inventaires (permanent, p+Æriodique, tournant)",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Types d'inventaires (permanent, p+Æriodique, tournant)\n\nL'inventaire tournant\n\nAvantages de l'inventaire tournant\n\nAvantage 1 ‘«ˆ D+Ætection rapide des +Æcarts : Un +Æcart sera d+Ætect+Æ au plus tard 4 semaines apr+øs sa survenue (au prochain comptage du Groupe A), alors qu'avec un inventaire semestriel il pourrait rester invisible pendant 6 mois.\n\nAvantage 2 ‘«ˆ Charge de travail r+Æpartie : L'inventaire tournant ne mobilise jamais l'ensemble du personnel en m+¨me temps. Chaque semaine, seulement peu de produits sont compt+Æs, ce qui prend environ 1 +· 2 heures au lieu de la journ+Æe enti+øre qu'exige un inventaire complet.\n\nAvantage 3 ‘«ˆ Maintien continu de la fiabilit+Æ des donn+Æes : Avec l'inventaire tournant, les donn+Æes de stock des produits r+Æcemment compt+Æs sont fiables +· tout moment.\n"
+      },
+      {
+        "id": "gas-m5-c14",
+        "title": "Types d'inventaires (permanent, p+Æriodique, tournant)",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Types d'inventaires (permanent, p+Æriodique, tournant)\n\nL'inventaire de passation de service\n\nUn type d'inventaire particulier m+Ærite une mention sp+Æciale : l'inventaire de passation de service. Il est r+Æalis+Æ +· chaque changement de gestionnaire et prot+øge +· la fois le gestionnaire sortant (il n'est pas tenu responsable de pertes survenues apr+øs son d+Æpart) et le gestionnaire entrant (il sait exactement ce qu'il prend en charge).\n\nProc+Ædure :\n\n‘ˇ… Comptage physique complet de tous les produits en pr+Æsence des deux gestionnaires\n\n‘ˇ… V+Ærification de tous les documents (registres, bons de commande en cours, fiches de stock)\n\n‘ˇ… Inventaire des +Æquipements et du mat+Æriel\n\n‘ˇ… R+Ædaction d'un proc+øs-verbal de passation cosign+Æ par les deux gestionnaires et le m+Ædecin chef\n\n‘ˇ… Conservation d'une copie par chaque partie\n"
+      },
+      {
+        "id": "gas-m5-c15",
+        "title": "Proc+Ædures de comptage et de r+Æconciliation",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Proc+Ædures de comptage et de r+Æconciliation\n\nCompter un stock semble +¨tre une op+Æration simple. Dans la pratique, c'est une proc+Ædure exigeante qui, mal conduite, produit des r+Æsultats aussi peu fiables que l'absence de comptage. Un mauvais comptage donne l'illusion de la ma+´trise sans en avoir la r+Æalit+Æ.\n\nLes erreurs de comptage ‘«ˆ produits oubli+Æs, doubles comptages, mauvaise lecture des quantit+Æs, influence du stock th+Æorique sur le comptage ‘«ˆ sont nombreuses et courantes.\n\nLa r+Æconciliation, quant +· elle, est l'+Ætape qui suit le comptage et qui consiste +· comparer le stock physique obtenu avec le stock th+Æorique, analyser les +Æcarts, en comprendre les causes et corriger les donn+Æes.\n\nEnsemble, comptage et r+Æconciliation forment le c+Ùur du processus d'inventaire.\n"
+      },
+      {
+        "id": "gas-m5-c16",
+        "title": "Proc+Ædures de comptage et de r+Æconciliation",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Proc+Ædures de comptage et de r+Æconciliation\n\nPr+Æparation du comptage\n\nPrincipe : Le d+Æp+¶t doit +¨tre organis+Æ de fa+∫on +· rendre le comptage syst+Æmatique et exhaustif. Chaque produit doit avoir une place d+Æfinie et connue. Les produits de statuts diff+Ærents doivent +¨tre physiquement s+Æpar+Æs avant le comptage.\n\nActions pr+Æparatoires :\n\n‘ˇ… Regrouper tous les produits de m+¨me type au m+¨me endroit (si ce n'est pas d+Æj+· le cas)\n\n‘ˇ… S+Æparer physiquement les produits de statuts diff+Ærents :\n\nZone de stock actif : produits disponibles +· la distribution\n\nZone de quarantaine : produits suspects, en attente de d+Æcision\n\nZone de p+Ærim+Æs : produits hors d'usage, en attente de destruction\n\n‘ˇ… +Îtiqueter chaque zone clairement\n\n‘ˇ… V+Ærifier que tous les produits sont accessibles (rien derri+øre des palettes inaccessibles, rien sous des +Ætag+øres sans visibilit+Æ)\n\nOrganisation de l'espace\n"
+      },
+      {
+        "id": "gas-m5-c17",
+        "title": "Proc+Ædures de comptage et de r+Æconciliation",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Proc+Ædures de comptage et de r+Æconciliation\n\nPrincipe du double comptage : Chaque produit doit +¨tre compt+Æ par au moins deux personnes diff+Ærentes, ind+Æpendamment l'une de l'autre. Les r+Æsultats sont compar+Æs. En cas de divergence, un troisi+øme comptage est effectu+Æ..\n\nComposition recommand+Æe des +Æquipes :\n\nR+øgle absolue : Le compteur ne doit pas conna+´tre le stock th+Æorique avant de compter\n\nPr+Æparation du comptage\n\nConstitution des +Æquipes de comptage\n"
+      },
+      {
+        "id": "gas-m5-c18",
+        "title": "Proc+Ædures de comptage et de r+Æconciliation",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Proc+Ædures de comptage et de r+Æconciliation\n\nUn formulaire de comptage bien con+∫u facilite le travail et r+Æduit les erreurs. Il doit +¨tre pr+Æpar+Æ +· l'avance et distribu+Æ aux +Æquipes avant le d+Æbut du comptage.\n\nPr+Æparation du comptage\n\nPr+Æparation des formulaires de comptage\n"
+      },
+      {
+        "id": "gas-m5-c19",
+        "title": "Proc+Ædures de comptage et de r+Æconciliation",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Proc+Ædures de comptage et de r+Æconciliation\n\nM+Æthodes de comptage\n\nC'est la m+Æthode la plus pr+Æcise. Chaque unit+Æ (comprim+Æ, ampoule, flacon, sachet) est compt+Æe individuellement.\n\nQuand l'utiliser :\n\nProduits +· forte valeur unitaire (insuline, vaccins, ARV)\n\nProduits avec des +Æcarts fr+Æquents\n\nProduits en petite quantit+Æ (moins de 500 unit+Æs)\n\nTechnique : Regrouper les unit+Æs par paquets de 10 ou de 100 pour faciliter le comptage.\n\nComptage par unit+Æs\n"
+      },
+      {
+        "id": "gas-m5-c20",
+        "title": "Proc+Ædures de comptage et de r+Æconciliation",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Proc+Ædures de comptage et de r+Æconciliation\n\nM+Æthodes de comptage\n\nPour les produits en grandes quantit+Æs et dont les conditionnements sont scell+Æs et inviol+Æs, on peut compter les bo+´tes et multiplier par leur contenu.\n\nQuand l'utiliser :\n\nProduits en grandes quantit+Æs (> 1 000 unit+Æs)\n\nConditionnements scell+Æs, non ouverts, avec contenu v+Ærifi+Æ +· la r+Æception\n\nR+øgle de pr+Æcaution :\n\nOuvrir et v+Ærifier un +Æchantillon al+Æatoire de bo+´tes pour s'assurer que le contenu correspond bien +· la quantit+Æ indiqu+Æe sur l'+Ætiquette.\n\nNe jamais compter les bo+´tes sans v+Ærification d'un +Æchantillon.\n\nComptage par conditionnements intacts\n"
+      },
+      {
+        "id": "gas-m5-c21",
+        "title": "Proc+Ædures de comptage et de r+Æconciliation",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Proc+Ædures de comptage et de r+Æconciliation\n\nM+Æthodes de comptage\n\nCertains produits (poudres, coton, certains consommables) peuvent +¨tre pes+Æs et convertis en unit+Æs sur la base d'un poids unitaire +Ætabli.\n\nComptage par pes+Æe (pour les produits en vrac)\n\nPour les produits pharmaceutiques, il est indispensable de comptabiliser s+Æpar+Æment chaque lot avec sa date de p+Æremption. Cela permet de d+Ætecter les produits proches de p+Æremption et d'appliquer le FEFO lors de la distribution.\n\nComptage par lot et par date de p+Æremption\n"
+      },
+      {
+        "id": "gas-m5-c22",
+        "title": "Proc+Ædures de comptage et de r+Æconciliation",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Proc+Ædures de comptage et de r+Æconciliation\n\nLa r+Æconciliation des stocks\n\nFormule : +Îcart = Stock physique ‘Í∆ Stock th+Æorique\n\nClassification des +Æcarts\n\nCalcul des +Æcarts\n"
+      },
+      {
+        "id": "gas-m5-c23",
+        "title": "Proc+Ædures de comptage et de r+Æconciliation",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Proc+Ædures de comptage et de r+Æconciliation\n\nLa r+Æconciliation des stocks\n\nInvestigation des +Æcarts\n\n+Îtape 1 ‘«ˆ V+Ærifier le comptage : Avant de conclure +· un +Æcart r+Æel, s'assurer que le comptage a +Æt+Æ correctement effectu+Æ. Un recomptage s'impose pour tout +Æcart significatif.\n\n+Îtape 2 ‘«ˆ V+Ærifier les documents de la p+Æriode : Examiner tous les bons de sortie, bons de r+Æception, bons de transfert et documents de perte de la p+Æriode couverte par l'inventaire.\n\n+Îtape 3 ‘«ˆ Identifier les mouvements non document+Æs : Interroger le personnel sur les mouvements de produits qui pourraient ne pas avoir +Æt+Æ enregistr+Æs.\n\n+Îtape 4 ‘«ˆ Analyser l'+Æcart r+Æsiduel inexpliqu+Æ\n\n+Îtape 5 ‘«ˆ Mesures correctives : Sur la base de l'investigation, des mesures correctives sont d+Æfinies et document+Æes.\n\nCalcul des +Æcarts\n"
+      },
+      {
+        "id": "gas-m5-c24",
+        "title": "Proc+Ædures de comptage et de r+Æconciliation",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Proc+Ædures de comptage et de r+Æconciliation\n\nLa r+Æconciliation des stocks\n\nUne fois l'investigation termin+Æe, les fiches de stock et le registre sont mis +· jour avec le stock physique r+Æel issu du comptage.\n\nProc+Ædure de correction :\n\nNe jamais rayer ou effacer l'ancienne valeur dans le registre.\n\nTirer un trait sur l'ancienne valeur et +Æcrire la nouvelle +· c+¶t+Æ, avec la date et la signature du gestionnaire.\n\nCr+Æer une ligne de r+Ægularisation dans la fiche de stock\n\nCorrection des donn+Æes et mise +· jour des fiches de stock\n\nLe rapport d'inventaire est le document officiel qui synth+Ætise les r+Æsultats du comptage et de la r+Æconciliation. Il est conserv+Æ dans les archives de la structure et transmis +· la hi+Ærarchie.\n\nLe rapport d'inventaire\n"
+      },
+      {
+        "id": "gas-m5-c25",
+        "title": "Outils digitaux de gestion des stocks",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Outils digitaux de gestion des stocks\n\nLa gestion manuelle des stocks sur registres papier a longtemps +Æt+Æ la norme dans les syst+ømes pharmaceutiques des pays +· ressources limit+Æes. Elle reste valide et peut +¨tre tr+øs efficace si elle est rigoureusement appliqu+Æe.\n\nMais elle a des limites structurelles :\n\nelle est lente,\n\nexpos+Æe aux erreurs humaines,\n\ndifficile +· consolider entre plusieurs sites et\n\nincapable de g+Æn+Ærer automatiquement des alertes ou des rapports.\n\nLes outils digitaux ne remplacent pas les bonnes pratiques de gestion. Ils les amplifient, les acc+Æl+ørent et les rendent plus fiables.\n\nUn gestionnaire qui g+øre mal son stock sur papier ne g+ørera pas mieux avec un logiciel. Mais un gestionnaire qui ma+´trise les principes fondamentaux vus dans les modules pr+Æc+Ædents verra sa productivit+Æ et la fiabilit+Æ de ses donn+Æes consid+Ærablement am+Ælior+Æes par les outils digitaux adapt+Æs +· son contexte.\n"
+      },
+      {
+        "id": "gas-m5-c26",
+        "title": "Outils digitaux de gestion des stocks",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Outils digitaux de gestion des stocks\n\nPanorama des outils digitaux disponibles\n\nCat+Ægorie 1 ‘«ˆ Les tableurs (Excel, Google Sheets, LibreOffice Calc)\n\nDescription :\n\nLes tableurs sont le premier niveau d'outil digital. Ils ne sont pas des logiciels de gestion de stocks au sens strict, mais ils permettent d'automatiser les calculs, de structurer les donn+Æes et de g+Æn+Ærer des tableaux de bord simples.\n\nIls sont disponibles sur presque tous les ordinateurs, ne n+Æcessitent pas de connexion internet (pour Excel et LibreOffice), et sont ma+´tris+Æs par la plupart des gestionnaires ayant une formation de base en informatique.\n\nCe qu'un tableur bien con+∫u permet de faire :\n\nCalculer automatiquement la CMM, le stock min, le stock max et la quantit+Æ +· commander\n\nG+Æn+Ærer des alertes visuelles (code couleur) quand un stock passe sous le stock min\n\nCalculer le TPI apr+øs inventaire\n\nProduire des graphiques d'+Ævolution du stock dans le temps\n\nConsolider les donn+Æes de plusieurs produits en un seul tableau de bord\n"
+      },
+      {
+        "id": "gas-m5-c27",
+        "title": "Outils digitaux de gestion des stocks",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Outils digitaux de gestion des stocks\n\nPanorama des outils digitaux disponibles\n\nCat+Ægorie 1 ‘«ˆ Les tableurs (Excel, Google Sheets, LibreOffice Calc)\n\nLimites des tableurs :\n\nUn fichier par structure (pas de consolidation automatique entre sites)\n\nPas d'alertes automatiques envoy+Æes par email ou SMS\n\nRisque d'erreur si les formules sont accidentellement modifi+Æes\n\nPas de tra+∫abilit+Æ des modifications (qui a chang+Æ quoi et quand)Pas de gestion multi-utilisateurs simultan+Æe\n"
+      },
+      {
+        "id": "gas-m5-c28",
+        "title": "Outils digitaux de gestion des stocks",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Outils digitaux de gestion des stocks\n\nPanorama des outils digitaux disponibles\n\nCat+Ægorie 2 ‘«ˆ Les logiciels de gestion de stocks pharmaceutiques\n\nDescription : Ce sont des applications sp+Æcialement con+∫ues pour la gestion des stocks pharmaceutiques. Elles int+øgrent nativement les concepts de CMM, min/max, point de commande, FEFO, gestion par lot, alertes automatiques et rapports standardis+Æs.\n\nLes principaux logiciels utilis+Æs en Afrique subsaharienne : OpenLMIS (Open Logistics Management Information System)\n\nCaract+Æristiques :\n\nLogiciel open source (gratuit) d+Ævelopp+Æ sp+Æcifiquement pour les pays +· ressources limit+Æes\n\nGestion multi-niveaux (centre de sant+Æ ‘Â∆ district ‘Â∆ r+Ægion ‘Â∆ niveau central)\n\nAlertes automatiques de rupture et de surstock\n\nRapports standardis+Æs conformes aux exigences des minist+øres de la sant+Æ et des bailleurs\n\nFonctionne sur navigateur web, accessible depuis tout ordinateur avec connexion internet\n\nUtilis+Æ dans de nombreux pays africains (Zambie, Mozambique, Tanzanie, B+Ænin...)\n"
+      },
+      {
+        "id": "gas-m5-c29",
+        "title": "Outils digitaux de gestion des stocks",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Outils digitaux de gestion des stocks\n\nPanorama des outils digitaux disponibles\n\nCat+Ægorie 2 ‘«ˆ Les logiciels de gestion de stocks pharmaceutiques\n\nFonctionnalit+Æs cl+Æs :\n\nSuivi des stocks en temps r+Æel pour tous les produits et tous les niveaux\n\nG+Æn+Æration automatique des quantit+Æs +· commander\n\nTableaux de bord avec indicateurs (taux de disponibilit+Æ, taux de rupture, taux de couverture)Gestion des commandes de la quantification +· la r+Æception\n\nRapports exportables en Excel ou PDF\n"
+      },
+      {
+        "id": "gas-m5-c30",
+        "title": "Outils digitaux de gestion des stocks",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Outils digitaux de gestion des stocks\n\nPanorama des outils digitaux disponibles\n\nCat+Ægorie 3 ‘«ˆ Les applications mobiles\n\nDescription : Les applications mobiles permettent de g+Ærer les stocks directement depuis un smartphone ou une tablette. Elles sont particuli+ørement adapt+Æes aux structures +Æloign+Æes o+¶ l'acc+øs +· un ordinateur est limit+Æ, et aux agents de terrain qui collectent des donn+Æes lors de visites de supervision.\n\nLes principales applications mobiles utilis+Æes :\n\nmSupply Mobile\n\nStockOut Notifier\n\nCommCare\n\nDHIS2 (District Health Information System version 2)\n\n‘«™\n"
+      },
+      {
+        "id": "gas-m5-c31",
+        "title": "Outils digitaux de gestion des stocks",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Outils digitaux de gestion des stocks\n\nPanorama des outils digitaux disponibles\n\nCat+Ægorie 4 ‘«ˆ Les syst+ømes de codes-barres et RFID\n\nDescription : Ces technologies permettent d'automatiser la saisie des donn+Æes de stock en scannant des codes-barres ou des puces RFID (Radio Frequency Identification) plut+¶t qu'en tapant manuellement. Elles r+Æduisent consid+Ærablement les erreurs de saisie et acc+Æl+ørent les op+Ærations de r+Æception et d'inventaire.\n\nCode-barres :\n\nChaque produit pharmaceutique est identifi+Æ par un code-barres (EAN-13 ou DataMatrix) qui encode le num+Æro de lot, la date de p+Æremption et la quantit+Æ.\n\nUn scanner (pistolet de scan ou application de scan sur smartphone) lit ce code et enregistre automatiquement les informations dans le logiciel.\n"
+      },
+      {
+        "id": "gas-m5-c32",
+        "title": "Outils digitaux de gestion des stocks",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Outils digitaux de gestion des stocks\n\nCrit+øres de choix d'un outil digital\n"
+      },
+      {
+        "id": "gas-m5-c33",
+        "title": "Outils digitaux de gestion des stocks",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Outils digitaux de gestion des stocks\n\nConditions de succ+øs de la digitalisation\n\nCondition 1 ‘«ˆ La formation du personnel\n\nPrincipe : Un outil non ma+´tris+Æ est un outil abandonn+Æ. La formation doit +¨tre pratique, progressive et r+Æp+Æt+Æe.\n\nCondition 2 ‘«ˆ La qualit+Æ des donn+Æes saisies\n\nPrincipe GIGO (Garbage In, Garbage Out) : Un logiciel ne peut produire des rapports fiables que si les donn+Æes saisies sont correctes. Un logiciel avec de mauvaises donn+Æes produit de mauvais rapports plus vite qu'un registre papier, mais les mauvais rapports restent des mauvais rapports.\n\nCondition 3 ‘«ˆ La maintenance et le support technique\n\nPrincipe : Un syst+øme informatique tombe en panne. La question n'est pas de savoir si +∫a arrivera, mais quand. Sans plan de maintenance et de support, une panne peut mettre le syst+øme hors service pendant des semaines.\n"
+      },
+      {
+        "id": "gas-m5-c34",
+        "title": "Outils digitaux de gestion des stocks",
+        "type": "text",
+        "duration": "10 min",
+        "content": "#### Outils digitaux de gestion des stocks\n\nConditions de succ+øs de la digitalisation\n\nCondition 4 ‘«ˆ La proc+Ædure de continuit+Æ en mode d+Ægrad+Æ\n\nQuand le syst+øme digital est en panne (+Ælectricit+Æ, internet, ordinateur), la gestion ne doit pas s'arr+¨ter. Une proc+Ædure de continuit+Æ en mode d+Ægrad+Æ (retour temporaire au papier) doit +¨tre document+Æe et connue du personnel.\n\nProc+Ædure de continuit+Æ :\n\n‘ˇ… En cas de panne, imprimer les derni+øres fiches de stock disponibles (avant la panne) et les utiliser comme base de travail manuel\n\n‘ˇ… Enregistrer tous les mouvements sur des fiches de stock papier pr+Æ-imprim+Æes (toujours disponibles en r+Æserve)\n\n‘ˇ… Conserver tous les bons de sortie et de r+Æception papier pendant la panne\n\n‘ˇ… D+øs le retour du syst+øme, saisir tous les mouvements enregistr+Æs sur papier dans le logiciel\n\n‘ˇ… V+Ærifier la coh+Ærence du stock th+Æorique apr+øs la reprise de saisie\n"
+      },
+      {
+        "id": "gas-m5-c35",
         "title": "Question?",
         "type": "text",
-        "duration": "5 min",
-        "content": "### Question?\n\nGESTION DES APPROVISIONNEMENTS ET DES STOCKS"
+        "duration": "10 min",
+        "content": "#### Question?\n\nGESTION DES APPROVISIONNEMENTS ET DES STOCKS\n"
       }
     ]
   }
