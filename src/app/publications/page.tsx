@@ -17,7 +17,16 @@ export default function PublicationsPage() {
         title={t.nav.publications}
         subtitle={t.publications.subtitle}
         backgroundImages={["/images/bg_publications.png", "/images/bg_publications2.png"]}
-      />
+      >
+        <button 
+          onClick={() => {
+            document.getElementById('soumettre-publication')?.scrollIntoView({ behavior: 'smooth' });
+          }}
+          className="px-8 py-4 bg-orange text-white rounded-full font-bold text-sm uppercase tracking-widest flex items-center group transition-all hover:shadow-[0_0_20px_rgba(255,122,0,0.4)] hover:scale-105 active:scale-95 cursor-pointer"
+        >
+          Soumettre une publication
+        </button>
+      </PageHero>
       
       <div className="bg-white pb-20">
         <div className="max-w-7xl mx-auto px-6 pt-12 relative z-20 mb-8">
