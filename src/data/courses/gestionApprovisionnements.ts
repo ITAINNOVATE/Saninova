@@ -209,7 +209,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Types de stocks et leur rôle dans la chaîne pharmaceutique",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Types de stocks et leur rôle dans la chaîne pharmaceutique\n\n| Type de stock | Rôle principal | Signal d'alerte |\n|---|---|---|\n| Stock de cycle | Couvrir la demande entre deux commandes | Trop court → rupture fréquente |\n| Stock de sécurité | Absorber les imprévus | Trop faible → exposition aux ruptures |\n| Stock de transit | Produits en acheminement | Non comptabilisé → commandes doublées |\n| Stock spéculatif | Anticiper une pénurie connue | Mal géré → surstock coûteux |\n| Stock mort | Aucun — à éliminer | Présence prolongée → perte financière |\n| Stock de consignation | Disponibilité sans immobilisation de trésorerie | Mauvais suivi → désaccords fournisseur |\n\nSynthèse"
+        "content": "#### Types de stocks et leur rôle dans la chaîne pharmaceutique\n\nSynthèse\n"
       }
     ]
   },
@@ -347,7 +347,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Introduction aux bonnes pratiques de gestion des stocks",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Introduction aux bonnes pratiques de gestion des stocks\n\nPrincipe\n\nFréquences\n\nRéaliser des inventaires réguliers\n\nL'inventaire est le seul moyen de vérifier que les données dans le système correspondent à la réalité physique. Sans inventaire régulier, les écarts s'accumulent et les décisions deviennent de moins en moins fiables.\n\n| Type d'inventaire | Fréquence | Objectif |\n|---|---|---|\n| Inventaire complet | 2 fois par an minimum | Vérification globale de tous les produits |\n| Inventaire tournant | Mensuel, Par rotation de zones | Maintien continu de la précision |\n| Inventaire de contrôle | À chaque changement de responsable | Passation de service propre |\n| Inventaire d'urgence | En cas de suspicion de vol ou d'erreur | Vérification ciblée |"
+        "content": "#### Introduction aux bonnes pratiques de gestion des stocks\n\nPrincipe\n\nFréquences\n\nRéaliser des inventaires réguliers\n\nL'inventaire est le seul moyen de vérifier que les données dans le système correspondent à la réalité physique. Sans inventaire régulier, les écarts s'accumulent et les décisions deviennent de moins en moins fiables.\n"
       },
       {
         "id": "gas-m6-c8",
@@ -382,21 +382,21 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Calcul de la consommation moyenne mensuelle (CMM)",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Calcul de la consommation moyenne mensuelle (CMM)\n\nLe problème des mois de rupture\n\nQuand un produit est en rupture de stock, la consommation enregistrée est nulle ou réduite.\n\nSi on intègre ces mois dans le calcul, la CMM sera sous-estimée, ce qui conduira à commander moins que nécessaire et à reproduire la rupture.\n\n| Mois | Cons. | Remarque |\n|---|---|---|\n| Janvier | 480 cp | Normal |\n| Février | 510 cp | Normal |\n| Mars | 120 cp | Rupture partielle (20 jours de rupture sur 30) |\n| Avril | 0 cp | Rupture totale |\n| Mai | 490 cp | Normal |\n| Juin | 500 cp | Normal |\n| Total | 2 100 cp |  |\n\nCalcul brut (mauvaise pratique) :\nCMM = 2 100 ÷ 6 = 350 cp/mois\n\nCalcul ajusté (bonne pratique) :\n\nConsommation extrapolée mars = 120 × (30 ÷ 10) = 360 cp\n\nCMM ajustée = (480 + 510 + 360 + 490 + 500) ÷ 5 = 2 340 ÷ 5 = 468 cp/mois\n\nLa différence est énorme : 350 cp/mois vs 468 cp/mois.\n\nCommander sur la base de 350 conduira inévitablement à une nouvelle rupture.\n\nLa CMM ajustée de 468 reflète la demande réelle.\n"
+        "content": "#### Calcul de la consommation moyenne mensuelle (CMM)\n\nLe problème des mois de rupture\n\nQuand un produit est en rupture de stock, la consommation enregistrée est nulle ou réduite.\n\nSi on intègre ces mois dans le calcul, la CMM sera sous-estimée, ce qui conduira à commander moins que nécessaire et à reproduire la rupture.\n\nCalcul brut (mauvaise pratique) :\n\nCMM = 2 100 ÷ 6 = 350 cp/mois\n\nCalcul ajusté (bonne pratique) :\n\nConsommation extrapolée mars = 120 × (30 ÷ 10) = 360 cp\n\nCMM ajustée = (480 + 510 + 360 + 490 + 500) ÷ 5 = 2 340 ÷ 5 = 468 cp/mois\n\nLa différence est énorme : 350 cp/mois vs 468 cp/mois.\n\nCommander sur la base de 350 conduira inévitablement à une nouvelle rupture.\n\nLa CMM ajustée de 468 reflète la demande réelle.\n"
       },
       {
         "id": "gas-m6-c13",
         "title": "Calcul de la consommation moyenne mensuelle (CMM)",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Calcul de la consommation moyenne mensuelle (CMM)\n\nLe problème des mois atypiques\n\nCertains mois présentent des consommations anormalement élevées dues à des événements exceptionnels : épidémie, campagne de masse, afflux de réfugiés, erreur d'enregistrement.\n\nLes inclure gonflerait artificiellement la CMM et conduirait à des surstocks.\n\n| Mois | Cons. | Remarque |\n|---|---|---|\n| Janvier | 300 cp | Normal |\n| Février | 320 cp | Normal |\n| Mars | 310 cp | Normal |\n| Avril | 1850 cp | Épidémie de choléra |\n| Mai | 290 cp | Normal |\n| Juin | 300cp | Normal |\n| Total | 3 400 cp |  |\n\nCalcul brut (mauvaise pratique) :\nCMM = 3 400 ÷ 6 = 567 cp/mois\n\nCalcul ajusté (bonne pratique) :\n\nExclusion du mois atypique\n\nCMM ajustée = (300 + 320 + 310 + 290 + 330) ÷ 5 = 1 550 ÷ 5 = 310 cp/mois\n\nCommander sur la base de 567 sachets/mois en période normale conduirait à un surstock massif.\n\nLa CMM ajustée de 310 est représentative de la demande courante.\n\nLe mois d'épidémie doit être géré séparément via un stock de contingence.\n"
+        "content": "#### Calcul de la consommation moyenne mensuelle (CMM)\n\nLe problème des mois atypiques\n\nCertains mois présentent des consommations anormalement élevées dues à des événements exceptionnels : épidémie, campagne de masse, afflux de réfugiés, erreur d'enregistrement.\n\nLes inclure gonflerait artificiellement la CMM et conduirait à des surstocks.\n\nCalcul brut (mauvaise pratique) :\n\nCMM = 3 400 ÷ 6 = 567 cp/mois\n\nCalcul ajusté (bonne pratique) :\n\nExclusion du mois atypique\n\nCMM ajustée = (300 + 320 + 310 + 290 + 330) ÷ 5 = 1 550 ÷ 5 = 310 cp/mois\n\nCommander sur la base de 567 sachets/mois en période normale conduirait à un surstock massif.\n\nLa CMM ajustée de 310 est représentative de la demande courante.\n\nLe mois d'épidémie doit être géré séparément via un stock de contingence.\n"
       },
       {
         "id": "gas-m6-c14",
         "title": "Calcul de la consommation moyenne mensuelle (CMM)",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Calcul de la consommation moyenne mensuelle (CMM)\n\nLa période de référence optimale\n\nLa longueur de la période utilisée pour calculer la CMM a un impact important sur sa fiabilité.\n\n| Période | Avantage | Inconvénient |\n|---|---|---|\n| 3 Mois | Reflète la tendance récente | Trop sensible aux variations ponctuelles |\n| 6 Mois | Bon équilibre entre récence et stabilité | Peut masquer une tendance à la hausse ou à la baisse |\n| 12 Mois | Intègre les variations saisonnières | Peut être trop ancien si la demande a changé |\n\nLe choix se fait selon :\nSelon le niveau de la pyramide sanitaire\n\nSelon les cycles de réapprovisionnement\n\nSelon les paramètres min et max\n\nSelon le type de produits et de programme\n"
+        "content": "#### Calcul de la consommation moyenne mensuelle (CMM)\n\nLa période de référence optimale\n\nLa longueur de la période utilisée pour calculer la CMM a un impact important sur sa fiabilité.\n\nLe choix se fait selon :\n\nSelon le niveau de la pyramide sanitaire\n\nSelon les cycles de réapprovisionnement\n\nSelon les paramètres min et max\n\nSelon le type de produits et de programme\n"
       },
       {
         "id": "gas-m6-c15",
@@ -410,7 +410,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Calcul de la consommation moyenne mensuelle (CMM)",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Calcul de la consommation moyenne mensuelle (CMM)\n\nRécapitulatif — Étapes de calcul d'une CMM fiable\n\n| Étape | Action |\n|---|---|\n| 1 | Collecter les données de consommation sur 3, 6 ou 12 mois |\n| 2 | Identifier les mois de rupture totale et les exclure |\n| 3 | Identifier les mois de rupture partielle et extrapoler la consommation réelle |\n| 4 | Identifier les mois atypiques (épidémies, événements exceptionnels) et les exclure |\n| 5 | Calculer la CMM sur les mois valides restants |\n| 6 | Vérifier si le produit est saisonnier et calculer des CMM saisonnières si nécessaire |\n| 7 | Réviser la CMM tous les trimestres ou semestres |"
+        "content": "#### Calcul de la consommation moyenne mensuelle (CMM)\n\nRécapitulatif — Étapes de calcul d'une CMM fiable\n"
       },
       {
         "id": "gas-m6-c17",
@@ -452,14 +452,14 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Méthode min/max : formules et application",
         "type": "text",
         "duration": "10 min",
-        "content": "Méthode min/max : formules et application\n\nRécapitulatif des formules min/max\n\n| Paramètre | Formule |\n|---|---|\n| CMM | Quantité consommée ÷ Nombre de mois valides |\n| Délai de livraison | Moyenne des délais observés |\n| Période de commande | Fixée par le calendrier |\n| Stock de sécurité | CMM × Mois de sécurité |\n| Stock minimum | (CMM × DL) + SS |\n| Stock maximum | Stock min + (CMM × PC) |\n| Quantité à commander | Stock max − Stock disponible |"
+        "content": "Méthode min/max : formules et application\n\nRécapitulatif des formules min/max\n"
       },
       {
         "id": "gas-m6-c23",
         "title": "Méthode min/max : formules et application",
         "type": "text",
         "duration": "10 min",
-        "content": "Méthode min/max : formules et application\n\nLes limites de la méthode min/max et comment les contourner\n\n| Limite | Impact | Solution |\n|---|---|---|\n| CMM mal calculée | Tous les niveaux sont faux | Réviser la CMM régulièrement (tous les trimestres) |\n| Délai de livraison variable | Le stock min ne protège pas suffisamment | Utiliser le délai maximum observé, pas la moyenne |\n| Changement soudain de la demande | Stock min/max obsolètes rapidement | Recalculer dès qu'un changement est détecté |\n| Produits saisonniers | Un seul min/max inadapté toute l'année | Calculer des min/max saisonniers |\n| Non-respect du calendrier de commande | Commandes tardives, ruptures | Automatiser les alertes ou afficher les dates limites de commande |"
+        "content": "Méthode min/max : formules et application\n\nLes limites de la méthode min/max et comment les contourner\n"
       },
       {
         "id": "gas-m6-c24",
@@ -473,7 +473,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Calcul du point de commande et du délai de livraison",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Calcul du point de commande et du délai de livraison\n\nLe délai de livraison — Calcul précis\n\n| Composante | Description |\n|---|---|\n| Délai administratif interne | Préparation et validation du bon de commande en interne |\n| Délai de traitement fournisseur | Réception, vérification et mise en préparation par le fournisseur |\n| Délai de préparation et conditionnement | Assemblage de la commande, emballage |\n| Délai de transport | Acheminement jusqu'à la pharmacie |\n| Délai de dédouanement | Pour les importations uniquement |\n| Délai de réception et contrôle | Vérification à l'arrivée avant mise en stock |\n\nLe délai de livraison n'est pas une donnée fixe. Il varie d'une commande à l'autre selon les fournisseurs, les saisons, les procédures administratives et les conditions de transport.\nIl faut donc le calculer sur l'historique réel et comprendre ses composantes.\n"
+        "content": "#### Calcul du point de commande et du délai de livraison\n\nLe délai de livraison — Calcul précis\n\nLe délai de livraison n'est pas une donnée fixe. Il varie d'une commande à l'autre selon les fournisseurs, les saisons, les procédures administratives et les conditions de transport.\n\nIl faut donc le calculer sur l'historique réel et comprendre ses composantes.\n"
       },
       {
         "id": "gas-m6-c26",
@@ -508,14 +508,14 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Calcul du point de commande et du délai de livraison",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Calcul du point de commande et du délai de livraison\n\nTableau de synthèse — Point de commande selon les contextes\n\n| Contexte | Formule du point de commande | Remarque |\n|---|---|---|\n| Délai stable, système continu | (CMM × DL moyen) + SS | Idéal, peu de risque |\n| Délai variable, système continu | (CMM × DL max) + SS | Prudent, légèrement conservateur |\n| Révision périodique mensuelle | (CMM × (DL + 0,5 PC)) + SS | Ajouter la moitié de la période de révision |\n| Livraison programmée | (CMM × période suivante) + Stock min − Stock actuel | Calcul de la quantité, pas du niveau de déclenchement |"
+        "content": "#### Calcul du point de commande et du délai de livraison\n\nTableau de synthèse — Point de commande selon les contextes\n"
       },
       {
         "id": "gas-m6-c31",
         "title": "Exercices pratiques sur données réelles",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Exercices pratiques sur données réelles\n\nEXERCICE 1 — Calcul de la CMM\n\nDonnées\n\nLa Pharmacie du Centre de Santé de Bohicon enregistre les sorties de Paracétamol 500mg sur 6 mois :\n\n| Mois | Quantité sortie | Observations |\n|---|---|---|\n| Janvier | 1 450 cp | Normal |\n| Février | 1 380 cp | Normal |\n| Mars | 1 510 cp | Normal |\n| Avril | 1 420 cp | Normal |\n| Mai | 1 390 cp | Normal |\n| Juin | 1 480 cp | Normal |\n\nQuestions :\nCalculez la CMM brute sur 6 mois.\n\nY a-t-il des ajustements à faire ? Justifiez.\n\nQuelle CMM retenez-vous pour les calculs suivants ?\n"
+        "content": "#### Exercices pratiques sur données réelles\n\nEXERCICE 1 — Calcul de la CMM\n\nDonnées\n\nLa Pharmacie du Centre de Santé de Bohicon enregistre les sorties de Paracétamol 500mg sur 6 mois :\n\nQuestions :\n\nCalculez la CMM brute sur 6 mois.\n\nY a-t-il des ajustements à faire ? Justifiez.\n\nQuelle CMM retenez-vous pour les calculs suivants ?\n"
       },
       {
         "id": "gas-m6-c32",
@@ -529,7 +529,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Exercices pratiques sur données réelles",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Exercices pratiques sur données réelles\n\nEXERCICE 2 — CMM avec mois de rupture\n\nDonnées\n\nLa Pharmacie du District Sanitaire de Glazoué enregistre les sorties de Cotrimoxazole 480mg sur 8 mois :\n\nQuestions :\n\nIdentifiez les mois à exclure ou à ajuster et justifiez chaque décision.\n\nCalculez la CMM ajustée.\n\nPourquoi est-il dangereux d'utiliser la CMM brute dans ce cas ?\n\n| Mois | Quantité sortie | Observations |\n|---|---|---|\n| Janvier | 520 cp | Normal |\n| Février | 490 cp | Normal |\n| Mars | 210 cp | Rupture partielle — produit disponible 12 jours sur 30 |\n| Avril | 0 cp | Rupture totale |\n| Mai | 0 cp | Rupture totale |\n| Juin | 530 cp | Normal |\n| Juillet | 4 200 cp | Campagne nationale de déparasitage |\n| Août | 510 cp | Normal |"
+        "content": "#### Exercices pratiques sur données réelles\n\nEXERCICE 2 — CMM avec mois de rupture\n\nDonnées\n\nLa Pharmacie du District Sanitaire de Glazoué enregistre les sorties de Cotrimoxazole 480mg sur 8 mois :\n\nQuestions :\n\nIdentifiez les mois à exclure ou à ajuster et justifiez chaque décision.\n\nCalculez la CMM ajustée.\n\nPourquoi est-il dangereux d'utiliser la CMM brute dans ce cas ?\n"
       },
       {
         "id": "gas-m6-c34",
@@ -543,7 +543,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Exercices pratiques sur données réelles",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Exercices pratiques sur données réelles\n\nCorrection EXERCICE 2 — CMM avec mois de rupture\n\nQuestion 2 — CMM ajustée :\n\nMois retenus : janvier, février, mars ajusté, juin, août\n\nCMM ajustée = 2 575 ÷ 5 = 515 cp/mois\n\n| Mois | Consommation retenue |\n|---|---|\n| Janvier | 520 cp |\n| Février | 490 cp |\n| Mars (ajusté) | 525 cp |\n| Juin | 530 cp |\n| Août | 510 cp |\n| Total | 2 575 cp |"
+        "content": "#### Exercices pratiques sur données réelles\n\nCorrection EXERCICE 2 — CMM avec mois de rupture\n\nQuestion 2 — CMM ajustée :\n\nMois retenus : janvier, février, mars ajusté, juin, août\n\nCMM ajustée = 2 575 ÷ 5 = 515 cp/mois\n"
       },
       {
         "id": "gas-m6-c36",
@@ -557,7 +557,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Exercices pratiques sur données réelles",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Exercices pratiques sur données réelles\n\nEXERCICE 3 — Calcul complet min/max et quantité à commander\n\nDonnées\n\nPharmacie Régionale de Parakou — Produit : Artéméther-Luméfantrine 20/120mg (boîtes de 24 comprimés)\n\nQuestions :\n\nCalculez la CMM.\n\nCalculez le délai de livraison ajusté.\n\nCalculez le stock de sécurité.\n\nCalculez le stock minimum.\n\nCalculez le stock maximum.\n\nLe stock actuel (520 boîtes) est-il en dessous du point de commande ? Faut-il commander ?\n\nSi oui, calculez la quantité à commander.\n\n| Mois | Consommation |\n|---|---|\n| Novembre | 185 boites |\n| Décembre | 170 boites |\n| Janvier | 195 boites |\n| Février | 180 boites |\n| Mars | 190 boites |\n| Avril | 175 boites |\n\nHistorique des délais de livraison (en jours) : 32, 28, 45, 36, 29\nPolitique de la Direction Régionale :\n\nstock de sécurité = 2 mois,\n\npériode de commande = 2 mois.\n\nStock disponible au moment du calcul : 520 boîtes\n"
+        "content": "#### Exercices pratiques sur données réelles\n\nEXERCICE 3 — Calcul complet min/max et quantité à commander\n\nDonnées\n\nPharmacie Régionale de Parakou — Produit : Artéméther-Luméfantrine 20/120mg (boîtes de 24 comprimés)\n\nQuestions :\n\nCalculez la CMM.\n\nCalculez le délai de livraison ajusté.\n\nCalculez le stock de sécurité.\n\nCalculez le stock minimum.\n\nCalculez le stock maximum.\n\nLe stock actuel (520 boîtes) est-il en dessous du point de commande ? Faut-il commander ?\n\nSi oui, calculez la quantité à commander.\n\nHistorique des délais de livraison (en jours) : 32, 28, 45, 36, 29\n\nPolitique de la Direction Régionale :\n\nstock de sécurité = 2 mois,\n\npériode de commande = 2 mois.\n\nStock disponible au moment du calcul : 520 boîtes\n"
       },
       {
         "id": "gas-m6-c38",
@@ -578,49 +578,49 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Exercices pratiques sur données réelles",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Exercices pratiques sur données réelles\n\nEXERCICE 4 — Cas complexe multiproduits\n\nDonnées\n\nDépôt de district de Savalou — Révision mensuelle du stock\n\nParamètres fixes :\n\ndélai de livraison = 2 mois,\n\npériode de commande = 3 mois,\n\nstock de sécurité = 2 mois.\n\nQuestions :\n\nCalculez le stock de sécurité, le stock minimum et le stock maximum.\n\nDéterminez le statut du stock (normal, surstock, rupture imminente, commander).\n\nCalculez la quantité à commander si nécessaire.\n\nProposez une action concrète pour chaque produit.\n\n| Produit | CMM | Stock actuel | Obs. |\n|---|---|---|---|\n| Amoxicilline 250mg sirop | 85 flacons | 620 flacons | — |\n| Fer acide folique 200/0,4mg | 430 cp | 280 cp | — |\n| Vitamine A 200 000 UI | 310 capsules | 2 800 capsules | — |\n| Misoprostol 200mcg | 95 cp | 410 cp | — |\n| Gentamicine injectable 80mg | 40 ampoules | 55 ampoules | — |"
+        "content": "#### Exercices pratiques sur données réelles\n\nEXERCICE 4 — Cas complexe multiproduits\n\nDonnées\n\nDépôt de district de Savalou — Révision mensuelle du stock\n\nParamètres fixes :\n\ndélai de livraison = 2 mois,\n\npériode de commande = 3 mois,\n\nstock de sécurité = 2 mois.\n\nQuestions :\n\nCalculez le stock de sécurité, le stock minimum et le stock maximum.\n\nDéterminez le statut du stock (normal, surstock, rupture imminente, commander).\n\nCalculez la quantité à commander si nécessaire.\n\nProposez une action concrète pour chaque produit.\n"
       },
       {
         "id": "gas-m6-c41",
         "title": "Exercices pratiques sur données réelles",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Exercices pratiques sur données réelles\n\nCorrection EXERCICE 4 — Cas complexe multiproduits\n\n| Paramètre | Calcul | Résultat |\n|---|---|---|\n| Stock de sécurité | 85 × 2 | 170 flacons |\n| Stock minimum | (85 × 2) + 170 | 340 flacons |\n| Stock maximum | 340 + (85 × 3) | 595 flacons |\n| Stock actuel | — | 620 flacons |\n\nProduit 1 — Amoxicilline 250mg sirop (CMM = 85 flacons)\nStatut : stock actuel (620) > stock max (595) → Surstock léger (+25 flacons)\n\nCouverture = 620 ÷ 85 = 7,3 mois\n\nAction :\n\nNe pas commander lors de cette révision.\n\nSurveiller la date de péremption des flacons en excès.\n\nSi la péremption est proche, envisager une redistribution vers un autre centre de santé.\n"
+        "content": "#### Exercices pratiques sur données réelles\n\nCorrection EXERCICE 4 — Cas complexe multiproduits\n\nProduit 1 — Amoxicilline 250mg sirop (CMM = 85 flacons)\n\nStatut : stock actuel (620) > stock max (595) → Surstock léger (+25 flacons)\n\nCouverture = 620 ÷ 85 = 7,3 mois\n\nAction :\n\nNe pas commander lors de cette révision.\n\nSurveiller la date de péremption des flacons en excès.\n\nSi la péremption est proche, envisager une redistribution vers un autre centre de santé.\n"
       },
       {
         "id": "gas-m6-c42",
         "title": "Exercices pratiques sur données réelles",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Exercices pratiques sur données réelles\n\nCorrection EXERCICE 4 — Cas complexe multiproduits\n\n| Paramètre | Calcul | Résultat |\n|---|---|---|\n| Stock de sécurité | 430 × 2 | 860 cp |\n| Stock minimum | (430 × 2) + 860 | 1 720 cp |\n| Stock maximum | 1 720 + (430 × 3) | 3 010 cp |\n| Stock actuel | — | 280 cp |\n\nProduit 2 — Fer acide folique 200/0,4mg (CMM = 430 cp)\nStatut : stock actuel (280) << stock minimum (1 720) → Rupture imminente critique\n\nCouverture = 280 ÷ 430 = 0,65 mois soit environ 19 jours. Or le délai de livraison est de 2 mois. La pharmacie sera en rupture totale dans 19 jours et ne recevra pas de livraison avant 2 mois.\n\nQàC = 3 010 − 280 = 2 730 cp\n\nAction : commande d'urgence immédiate. Contacter simultanément le niveau supérieur pour une livraison partielle d'urgence. Identifier si un site voisin dispose d'un excédent pouvant être redistribué en attendant..\n"
+        "content": "#### Exercices pratiques sur données réelles\n\nCorrection EXERCICE 4 — Cas complexe multiproduits\n\nProduit 2 — Fer acide folique 200/0,4mg (CMM = 430 cp)\n\nStatut : stock actuel (280) << stock minimum (1 720) → Rupture imminente critique\n\nCouverture = 280 ÷ 430 = 0,65 mois soit environ 19 jours. Or le délai de livraison est de 2 mois. La pharmacie sera en rupture totale dans 19 jours et ne recevra pas de livraison avant 2 mois.\n\nQàC = 3 010 − 280 = 2 730 cp\n\nAction : commande d'urgence immédiate. Contacter simultanément le niveau supérieur pour une livraison partielle d'urgence. Identifier si un site voisin dispose d'un excédent pouvant être redistribué en attendant..\n"
       },
       {
         "id": "gas-m6-c43",
         "title": "Exercices pratiques sur données réelles",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Exercices pratiques sur données réelles\n\nCorrection EXERCICE 4 — Cas complexe multiproduits\n\n| Paramètre | Calcul | Résultat |\n|---|---|---|\n| Stock de sécurité | 310 × 2 | 620 cp |\n| Stock minimum | (310 × 2) + 620 | 1 240 cp |\n| Stock maximum | 1 240 + (310 × 3) | 2 170 cp |\n| Stock actuel | — | 2 800 cp |\n\nProduit 3 — Vitamine A 200 000 UI (CMM = 310 capsules)\nStatut : stock actuel (2 800) >> stock max (2 170) → Surstock important (+630 capsules)\n\nCouverture = 2 800 ÷ 310 = 9 mois\n\nAction : ne pas commander. Vérifier impérativement les dates de péremption. Si les capsules périment dans moins de 9 mois, une partie sera perdue. Informer le niveau supérieur et proposer une redistribution vers les sites déficitaires. Investiguer la cause du surstock (erreur de commande précédente ? baisse de la demande ?).\n"
+        "content": "#### Exercices pratiques sur données réelles\n\nCorrection EXERCICE 4 — Cas complexe multiproduits\n\nProduit 3 — Vitamine A 200 000 UI (CMM = 310 capsules)\n\nStatut : stock actuel (2 800) >> stock max (2 170) → Surstock important (+630 capsules)\n\nCouverture = 2 800 ÷ 310 = 9 mois\n\nAction : ne pas commander. Vérifier impérativement les dates de péremption. Si les capsules périment dans moins de 9 mois, une partie sera perdue. Informer le niveau supérieur et proposer une redistribution vers les sites déficitaires. Investiguer la cause du surstock (erreur de commande précédente ? baisse de la demande ?).\n"
       },
       {
         "id": "gas-m6-c44",
         "title": "Exercices pratiques sur données réelles",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Exercices pratiques sur données réelles\n\nCorrection EXERCICE 4 — Cas complexe multiproduits\n\n| Paramètre | Calcul | Résultat |\n|---|---|---|\n| Stock de sécurité | 95 × 2 | 190 cp |\n| Stock minimum | (95 × 2) + 190 | 380 cp |\n| Stock maximum | 380 + (95 × 3) | 665 cp |\n| Stock actuel | — | 410 cp |\n\nProduit 4 — Misoprostol 200mcg (CMM = 95 cp)\nStatut : stock actuel (410) > stock minimum (380) et < stock max (665) → Situation normale\n\nCouverture = 410 ÷ 95 = 4,3 mois. Le stock est dans la zone normale. Pas de commande à déclencher lors de cette révision, mais à surveiller lors de la prochaine.\n\nLe stock se rapprochera du minimum dans environ 2,3 mois (410 − 380 = 30 cp de marge, soit 30 ÷ 95 = 0,3 mois... ).\n\nRecalcul : marge au-dessus du stock min = 410 − 380 = 30 cp → 30 ÷ 95 = 0,3 mois. La prochaine révision est dans 1 mois. À ce moment, le stock sera d'environ 410 − 95 = 315 cp, soit en dessous du stock min (380). Il faudra commander lors de la prochaine révision.\n\nAction : noter dans le calendrier que le Misoprostol sera à commander lors de la prochaine révision mensuelle.\n"
+        "content": "#### Exercices pratiques sur données réelles\n\nCorrection EXERCICE 4 — Cas complexe multiproduits\n\nProduit 4 — Misoprostol 200mcg (CMM = 95 cp)\n\nStatut : stock actuel (410) > stock minimum (380) et < stock max (665) → Situation normale\n\nCouverture = 410 ÷ 95 = 4,3 mois. Le stock est dans la zone normale. Pas de commande à déclencher lors de cette révision, mais à surveiller lors de la prochaine.\n\nLe stock se rapprochera du minimum dans environ 2,3 mois (410 − 380 = 30 cp de marge, soit 30 ÷ 95 = 0,3 mois... ).\n\nRecalcul : marge au-dessus du stock min = 410 − 380 = 30 cp → 30 ÷ 95 = 0,3 mois. La prochaine révision est dans 1 mois. À ce moment, le stock sera d'environ 410 − 95 = 315 cp, soit en dessous du stock min (380). Il faudra commander lors de la prochaine révision.\n\nAction : noter dans le calendrier que le Misoprostol sera à commander lors de la prochaine révision mensuelle.\n"
       },
       {
         "id": "gas-m6-c45",
         "title": "Exercices pratiques sur données réelles",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Exercices pratiques sur données réelles\n\nCorrection EXERCICE 4 — Cas complexe multiproduits\n\n| Paramètre | Calcul | Résultat |\n|---|---|---|\n| Stock de sécurité | (40 × 2) | 80 ampoules |\n| Stock minimum | (40 × 2) + 80 | 160 ampoules |\n| Stock maximum | 160 + (40 × 3) | 280 ampoules |\n| Stock actuel | — | 55 ampoules |\n\nProduit 5 — Gentamicine injectable 80mg (CMM = 40 ampoules)\nStatut : stock actuel (55) << stock minimum (160) → Rupture imminente\n\nCouverture = 55 ÷ 40 = 1,375 mois soit environ 41 jours\n\nLe délai de livraison est de 2 mois (60 jours). La pharmacie sera en rupture dans 41 jours et n'aura pas de livraison avant 60 jours. Déficit de 19 jours sans produit.\n\nQàC = 280 − 55 = 225 ampoules\n\nAction : commande urgente immédiate. La Gentamicine étant un antibiotique injectable critique (infections néonatales, sepsis), la rupture peut avoir des conséquences graves. Contacter le niveau supérieur pour une livraison partielle d'urgence et vérifier si des sites voisins peuvent partager temporairement leur stock.\n"
+        "content": "#### Exercices pratiques sur données réelles\n\nCorrection EXERCICE 4 — Cas complexe multiproduits\n\nProduit 5 — Gentamicine injectable 80mg (CMM = 40 ampoules)\n\nStatut : stock actuel (55) << stock minimum (160) → Rupture imminente\n\nCouverture = 55 ÷ 40 = 1,375 mois soit environ 41 jours\n\nLe délai de livraison est de 2 mois (60 jours). La pharmacie sera en rupture dans 41 jours et n'aura pas de livraison avant 60 jours. Déficit de 19 jours sans produit.\n\nQàC = 280 − 55 = 225 ampoules\n\nAction : commande urgente immédiate. La Gentamicine étant un antibiotique injectable critique (infections néonatales, sepsis), la rupture peut avoir des conséquences graves. Contacter le niveau supérieur pour une livraison partielle d'urgence et vérifier si des sites voisins peuvent partager temporairement leur stock.\n"
       },
       {
         "id": "gas-m6-c46",
         "title": "Exercices pratiques sur données réelles",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Exercices pratiques sur données réelles\n\nCorrection EXERCICE 4 — Cas complexe multiproduits\n\nTableau de bord final — Dépôt de district de Savalou\n\n| Produit | Stock actuel | Stock min | Stock max | Couverture | Statut | Action |\n|---|---|---|---|---|---|---|\n| Amoxicilline sirop | 620 fl | 340 fl | 595 fl | 7,3 mois | 🟡 Surstock léger | Surveiller péremptions |\n| Fer acide folique | 280 cp | 1 720 cp | 3 010 cp | 0,65 mois | 🔴 Rupture critique | Commande urgente — 2 730 cp |\n| Vitamine A | 2 800 caps | 1 240 caps | 2 170 caps | 9 mois | 🟡 Surstock important | Redistribuer — ne pas commander |\n| Misoprostol | 410 cp | 380 cp | 665 cp | 4,3 mois | 🟢 Normal | Commander à la prochaine révision |\n| Gentamicine inj. | 55 amp | 160 amp | 280 amp | 1,4 mois | 🔴 Rupture imminente | Commande urgente — 225 amp |"
+        "content": "#### Exercices pratiques sur données réelles\n\nCorrection EXERCICE 4 — Cas complexe multiproduits\n\nTableau de bord final — Dépôt de district de Savalou\n"
       },
       {
         "id": "gas-m6-c47",
@@ -668,7 +668,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Cycle de commande : de la quantification à la réception",
         "type": "text",
         "duration": "10 min",
-        "content": "Cycle de commande : de la quantification à la réception\n\nVue d'ensemble du cycle de commande\n\nÉtape 2 — Élaboration du bon de commande\n\nDéfinition :\n\nLe bon de commande (BC) est le document officiel qui formalise la demande d'approvisionnement.\n\nIl engage la pharmacie et le fournisseur.\n\nIl doit être précis, complet et sans ambiguïté.\n\n| Champ | Description |\n|---|---|\n| Numéro de commande | Référence unique pour le suivi |\n| Date d'émission | Date à laquelle le BC est établi |\n| Identité du commanditaire | Nom de la structure, adresse, contact |\n| Identité du fournisseur | Nom, adresse, contact |\n| Désignation exacte des produits | Dénomination Commune Internationale (DCI), dosage, forme, conditionnement |\n| Quantités commandées | En unités clairement définies (comprimés, flacons, boîtes) |\n| Prix unitaire et prix total | Si connu au moment de la commande |\n| Délai de livraison souhaité | Date limite de livraison attendue |\n| Conditions de livraison | Lieu de livraison, Incoterms applicables |\n| Signatures | Gestionnaire, responsable hiérarchique |"
+        "content": "Cycle de commande : de la quantification à la réception\n\nVue d'ensemble du cycle de commande\n\nÉtape 2 — Élaboration du bon de commande\n\nDéfinition :\n\nLe bon de commande (BC) est le document officiel qui formalise la demande d'approvisionnement.\n\nIl engage la pharmacie et le fournisseur.\n\nIl doit être précis, complet et sans ambiguïté.\n"
       },
       {
         "id": "gas-m7-c5",
@@ -682,7 +682,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Cycle de commande : de la quantification à la réception",
         "type": "text",
         "duration": "10 min",
-        "content": "Cycle de commande : de la quantification à la réception\n\nVue d'ensemble du cycle de commande\n\nÉtape 4 — Transmission au fournisseur\n\nDéfinition :\n\nUne fois validé, le bon de commande est transmis au fournisseur. Le mode de transmission doit garantir la traçabilité et la confirmation de réception.\n\nBonne pratique : Quelle que soit la méthode utilisée, toujours obtenir une confirmation écrite de réception de la commande par le fournisseur, avec le numéro de commande et la date de livraison confirmée. Sans cette confirmation, la commande peut ne pas avoir été enregistrée.\n\n| Mode | Avantage | Inconvénient |\n|---|---|---|\n| Courrier physique | Trace officielle, signature | Lent, risque de perte |\n| Email avec accusé de réception | Rapide, traçable | Dépend de la connectivité |\n| Portail électronique fournisseur | Traçabilité automatique, confirmation instantanée | Nécessite un système informatisé |\n| Téléphone + confirmation écrite | Rapide en urgence | Risque d'erreur sans confirmation écrite |"
+        "content": "Cycle de commande : de la quantification à la réception\n\nVue d'ensemble du cycle de commande\n\nÉtape 4 — Transmission au fournisseur\n\nDéfinition :\n\nUne fois validé, le bon de commande est transmis au fournisseur. Le mode de transmission doit garantir la traçabilité et la confirmation de réception.\n\nBonne pratique : Quelle que soit la méthode utilisée, toujours obtenir une confirmation écrite de réception de la commande par le fournisseur, avec le numéro de commande et la date de livraison confirmée. Sans cette confirmation, la commande peut ne pas avoir été enregistrée.\n"
       },
       {
         "id": "gas-m7-c7",
@@ -724,14 +724,14 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Cycle de commande : de la quantification à la réception",
         "type": "text",
         "duration": "10 min",
-        "content": "Cycle de commande : de la quantification à la réception\n\nVue d'ensemble du cycle de commande\n\nÉtape 7 — Réception et contrôle\n\nLes 5 vérifications obligatoires à la réception : :\n\nVérification 1 — Conformité documentaire\n\nComparer le bon de livraison du fournisseur avec le bon de commande initial.\n\n| Question | Vérification |\n|---|---|\n| Les produits livrés sont-ils ceux commandés ? | DCI, dosage, forme, conditionnement |\n| Les quantités livrées correspondent-elles au BL ? | Compter physiquement |\n| Le numéro de commande correspond-il ? | Référence croisée BC / BL |\n\nVérification 2 — Contrôle quantitatif\nCompter physiquement chaque produit, boîte par boîte, flacon par flacon.\n\nNe jamais accepter le chiffre du bon de livraison sans vérification.\n"
+        "content": "Cycle de commande : de la quantification à la réception\n\nVue d'ensemble du cycle de commande\n\nÉtape 7 — Réception et contrôle\n\nLes 5 vérifications obligatoires à la réception : :\n\nVérification 1 — Conformité documentaire\n\nComparer le bon de livraison du fournisseur avec le bon de commande initial.\n\nVérification 2 — Contrôle quantitatif\n\nCompter physiquement chaque produit, boîte par boîte, flacon par flacon.\n\nNe jamais accepter le chiffre du bon de livraison sans vérification.\n"
       },
       {
         "id": "gas-m7-c13",
         "title": "Cycle de commande : de la quantification à la réception",
         "type": "text",
         "duration": "10 min",
-        "content": "Cycle de commande : de la quantification à la réception\n\nVue d'ensemble du cycle de commande\n\nÉtape 7 — Réception et contrôle\n\nLes 5 vérifications obligatoires à la réception : :\n\nVérification 3 — Contrôle qualitatif\n\nVérification 4 — Contrôle de la chaîne du froid (produits thermosensibles)\n\nVérifier le pastillage des vaccins (Vaccine Vial Monitor - VVM).\n\nSi le pastillage indique une rupture de la chaîne du froid, placer en quarantaine immédiatement.\n\n| Critère | Ce qu'on vérifie |\n|---|---|\n| Intégrité des emballages | Pas de boîtes écrasées, mouillées, déchirées |\n| Dates de péremption | Suffisamment éloignées (règle : DDP > durée de couverture du stock) |\n| Aspect des produits | Pas de décoloration, pas de cristallisation anormale, pas d'odeur suspecte |\n| Numéros de lot | Correspondance avec les certificats d'analyse |\n| Étiquetage | Lisible, en langue appropriée, mentions légales présentes |"
+        "content": "Cycle de commande : de la quantification à la réception\n\nVue d'ensemble du cycle de commande\n\nÉtape 7 — Réception et contrôle\n\nLes 5 vérifications obligatoires à la réception : :\n\nVérification 3 — Contrôle qualitatif\n\nVérification 4 — Contrôle de la chaîne du froid (produits thermosensibles)\n\nVérifier le pastillage des vaccins (Vaccine Vial Monitor - VVM).\n\nSi le pastillage indique une rupture de la chaîne du froid, placer en quarantaine immédiatement.\n"
       },
       {
         "id": "gas-m7-c14",
@@ -793,14 +793,14 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Sélection et évaluation des fournisseurs",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Sélection et évaluation des fournisseurs\n\nLa pondération des critères — Système de scoring\n\nPour comparer objectivement plusieurs fournisseurs, on utilise un système de scoring pondéré. Chaque critère reçoit un poids selon son importance, et chaque fournisseur est noté sur chaque critère.\n\n| Critère | Poids |\n|---|---|\n| Qualité des produits | 30% |\n| Prix et conditions | 25% |\n| Fiabilité des délais | 25% |\n| Disponibilité produits | 10% |\n| Service et support | 10% |\n| Total | 100% |"
+        "content": "#### Sélection et évaluation des fournisseurs\n\nLa pondération des critères — Système de scoring\n\nPour comparer objectivement plusieurs fournisseurs, on utilise un système de scoring pondéré. Chaque critère reçoit un poids selon son importance, et chaque fournisseur est noté sur chaque critère.\n"
       },
       {
         "id": "gas-m8-c8",
         "title": "Sélection et évaluation des fournisseurs",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Sélection et évaluation des fournisseurs\n\nL'évaluation périodique des fournisseurs\n\nSélectionner un fournisseur est une décision ponctuelle.\n\nL'évaluer régulièrement est une obligation continue.\n\nUn fournisseur qui performait bien il y a deux ans peut s'être dégradé.\n\nÀ l'inverse, un fournisseur moyen peut s'être amélioré après des investissements.\n\n| Type d'évaluation | Fréquence | Objectif |\n|---|---|---|\n| Évaluation de routine | Mensuelle | Suivi des KPIs (délais, taux de service) |\n| Évaluation formelle | Semestrielle ou annuelle | Revue complète avec scoring |\n| Évaluation d'urgence | Après tout incident majeur | Décision de maintien ou exclusion |\n| Audit fournisseur | Tous les 2 à 3 ans | Visite sur site, vérification BPF |"
+        "content": "#### Sélection et évaluation des fournisseurs\n\nL'évaluation périodique des fournisseurs\n\nSélectionner un fournisseur est une décision ponctuelle.\n\nL'évaluer régulièrement est une obligation continue.\n\nUn fournisseur qui performait bien il y a deux ans peut s'être dégradé.\n\nÀ l'inverse, un fournisseur moyen peut s'être amélioré après des investissements.\n"
       },
       {
         "id": "gas-m8-c9",
@@ -814,7 +814,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Sélection et évaluation des fournisseurs",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Sélection et évaluation des fournisseurs\n\nLa gestion des litiges fournisseurs\n\nMalgré une bonne sélection et un suivi régulier, des litiges surviennent. Il faut savoir les gérer de façon professionnelle et documentée.\n\n| Type de litige | Description | Exemple |\n|---|---|---|\n| Écart de quantité | Livraison inférieure à la commande | 14 boîtes reçues pour 15 commandées |\n| Produit non conforme | Qualité insuffisante, emballage endommagé | Ampoules fissurées |\n| Date de péremption insuffisante | DDP trop proche à la réception | Produit périmant dans 2 mois pour une couverture de 4 mois |\n| Retard de livraison | Livraison après la date contractuelle | Livraison à J+42 pour un délai promis de J+21 |\n| Substitution non autorisée | Produit différent de celui commandé livré sans accord | Amoxicilline 250mg au lieu de 500mg |"
+        "content": "#### Sélection et évaluation des fournisseurs\n\nLa gestion des litiges fournisseurs\n\nMalgré une bonne sélection et un suivi régulier, des litiges surviennent. Il faut savoir les gérer de façon professionnelle et documentée.\n"
       },
       {
         "id": "gas-m8-c11",
@@ -835,7 +835,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Sélection et évaluation des fournisseurs",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Sélection et évaluation des fournisseurs\n\nSynthèse — Sélection et évaluation des fournisseurs\n\n| Étape | Action | Fréquence | Outil |\n|---|---|---|---|\n| Sélection initiale | Évaluer sur 5 critères pondérés | À chaque nouveau fournisseur | Grille de scoring |\n| Suivi opérationnel | Mesurer les KPIs à chaque livraison | Mensuelle | Scorecard fournisseur |\n| Évaluation formelle | Revue complète avec scoring global | Semestrielle ou annuelle | Rapport d'évaluation |\n| Gestion des litiges | Documenter et réclamation écrite | À chaque incident | Formulaire de réclamation |\n| Audit sur site | Vérification BPF et capacités | Tous les 2 à 3 ans | Grille d'audit |\n| Mise à jour panel | Maintenir 3 fournisseurs par produit critique | Continue | Liste des fournisseurs qualifiés |"
+        "content": "#### Sélection et évaluation des fournisseurs\n\nSynthèse — Sélection et évaluation des fournisseurs\n"
       }
     ]
   },
@@ -890,7 +890,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Gestion des contrats et des termes de livraison (Incoterms)",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\nLe contrat d'approvisionnement pharmaceutique\n\nTableau récapitulatif des clauses essentielles\n\n| Clause | Objet | Risque si absente |\n|---|---|---|\n| Identification des parties | Qui signe et engage qui | Contrat non opposable juridiquement |\n| Objet | Quels produits exactement | Substitutions non souhaitées acceptées |\n| Prix et révision | Combien et comment ça évolue | Hausses unilatérales non contestables |\n| Quantités | Volumes engagés | Sur ou sous-commande sans recours |\n| Délais et pénalités | Quand livrer et conséquences du retard | Retards répétés sans sanctions |\n| Qualité et conformité | Standards exigés et recours | Produits non conformes sans remède |\n| Incoterms | Qui supporte le transport et les risques | Litiges coûteux en cas de perte en transit |\n| Paiement | Quand et comment payer | Litiges financiers fréquents |\n| Force majeure | Événements exonératoires | Litiges lors d'événements exceptionnels |\n| Résiliation | Comment et quand sortir | Engagement indéfini, sans issue |\n| Règlement des litiges | Comment résoudre les conflits | Procédures judiciaires longues et coûteuses |"
+        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\nLe contrat d'approvisionnement pharmaceutique\n\nTableau récapitulatif des clauses essentielles\n"
       },
       {
         "id": "gas-m9-c8",
@@ -939,14 +939,14 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Gestion des contrats et des termes de livraison (Incoterms)",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\nLes Incoterms — Règles internationales de livraison\n\nComparaison synthétique des principaux Incoterms\n\n| Incoterm | Transport | Assurance | Douane export | Douane import | Transfert de risque |\n|---|---|---|---|---|---|\n| EXW | Acheteur | Acheteur | Acheteur | Acheteur | Chez le vendeur |\n| FOB | Acheteur | Acheteur | Vendeur | Acheteur | À bord du navire export |\n| CIF | Vendeur | Vendeur | Vendeur | Acheteur | À bord du navire export |\n| DAP | Vendeur | Vendeur | Vendeur | Acheteur | À destination (avant déchargement) |\n| DDP | Vendeur | Vendeur | Vendeur | Vendeur | À destination (après déchargement) |"
+        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\nLes Incoterms — Règles internationales de livraison\n\nComparaison synthétique des principaux Incoterms\n"
       },
       {
         "id": "gas-m9-c15",
         "title": "Gestion des contrats et des termes de livraison (Incoterms)",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\nLes Incoterms — Règles internationales de livraison\n\nChoisir le bon Incoterm selon le contexte\n\n| Situation | Incoterm recommandé | Raison |\n|---|---|---|\n| Acheteur avec expertise logistique et bons contacts transporteurs | FOB | Peut négocier de meilleurs tarifs de fret |\n| Acheteur sans expertise en logistique internationale | CIF ou DAP | Le vendeur gère le transport |\n| Produits très sensibles (vaccins, chaîne du froid) | DDP | Le vendeur, qui connaît son produit, gère tout le transport |\n| Commandes urgentes | DDP ou DAP | Simplicité et rapidité |\n| Budget contraint, acheteur expérimenté | FOB | Coût total souvent inférieur |\n| Pays avec procédures douanières complexes | DDP | Le vendeur gère le dédouanement dans les deux pays |"
+        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\nLes Incoterms — Règles internationales de livraison\n\nChoisir le bon Incoterm selon le contexte\n"
       }
     ]
   },
@@ -973,7 +973,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Chapitre 3",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\nLe registre de suivi des commandes\n\nStructure du registre\n\n| Champ | Description |\n|---|---|\n| Numéro de commande | Référence unique du bon de commande |\n| Date d'émission | Date à laquelle le BC a été établi |\n| Date de transmission | Date à laquelle le BC a été envoyé au fournisseur |\n| Fournisseur | Nom du fournisseur concerné |\n| Produits commandés | Liste des produits avec quantités |\n| Montant total | Valeur financière de la commande |\n| Date de confirmation fournisseur | Date à laquelle le fournisseur a confirmé réception |\n| Date de livraison promise | Date contractuelle de livraison |\n| Date de livraison réelle | Date effective de réception |\n| Quantités reçues | Ce qui a réellement été livré |\n| Écarts constatés | Différences entre commandé et reçu |\n| Statut | En attente / En transit / Reçu conforme / Litige |\n| Actions en cours | Relances, réclamations, suivi |"
+        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\nLe registre de suivi des commandes\n\nStructure du registre\n"
       },
       {
         "id": "gas-m10-c4",
@@ -1154,7 +1154,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Stratégies de prévention et de gestion des ruptures",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Stratégies de prévention et de gestion des ruptures\n\nStratégies de gestion des ruptures avérées\n\nÉtape 1 — Déclarer et évaluer la rupture\n\nÉvaluer la criticité du produit :\n\n| Niveau | Définition | Exemples | Délai de réaction |\n|---|---|---|---|\n| Critique | Traitement vital, pas de substitut | Insuline, antiépileptiques, ARV | Immédiat (< 24h) |\n| Majeur | Médicament essentiel, substitut possible mais moins efficace | Artéméther-Lum, Amoxicilline | Urgent (< 48h) |\n| Modéré | Médicament important, substitut disponible | Paracétamol, Cotrimoxazole | Rapide (< 1 semaine) |\n| Mineur | Médicament non vital, facilement substituable | Vitamines, compléments | Normal (< 2 semaines) |\n\nÉvaluer la durée prévisionnelle de la rupture :\n\nDurée de rupture estimée = Délai avant prochaine livraison − Couverture du stock résiduel\n"
+        "content": "#### Stratégies de prévention et de gestion des ruptures\n\nStratégies de gestion des ruptures avérées\n\nÉtape 1 — Déclarer et évaluer la rupture\n\nÉvaluer la criticité du produit :\n\nÉvaluer la durée prévisionnelle de la rupture :\n\nDurée de rupture estimée = Délai avant prochaine livraison − Couverture du stock résiduel\n"
       },
       {
         "id": "gas-m11-c17",
@@ -1273,7 +1273,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Identification et traitement des surstocks",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Identification et traitement des surstocks\n\nStratégies de prévention et de gestion des ruptures\n\nDéfinition opérationnelle\n\nUn surstock existe quand le stock disponible d'un produit dépasse le stock maximum défini. Mais en pratique, on distingue plusieurs degrés de surstock selon leur urgence de traitement\n\n| Degré | Définition | Urgence |\n|---|---|---|\n| Surstock léger | Stock entre stock max et stock max + 25% | Surveillance, pas d'action immédiate |\n| Surstock modéré | Stock entre stock max + 25% et stock max + 100% | Action dans le mois |\n| Surstock sévère | Stock > stock max × 2 | Action immédiate |\n| Stock mort | CMM = 0 ou stock couvrant > 12 mois sans perspective de consommation | Action urgente, risque de perte totale |"
+        "content": "#### Identification et traitement des surstocks\n\nStratégies de prévention et de gestion des ruptures\n\nDéfinition opérationnelle\n\nUn surstock existe quand le stock disponible d'un produit dépasse le stock maximum défini. Mais en pratique, on distingue plusieurs degrés de surstock selon leur urgence de traitement\n"
       },
       {
         "id": "gas-m11-c34",
@@ -1294,7 +1294,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Identification et traitement des surstocks",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Identification et traitement des surstocks\n\nStratégies de prévention et de gestion des ruptures\n\nLes outils d'identification des surstocks\n\nOutil 2 — L'analyse ABC-VEN croisée\n\n|  | Vital (V) | Essentiel (E) | Non essentiel (N) |\n|---|---|---|---|\n| Classe A (valeur élevée) | Traiter en priorité absolue | Traiter en priorité haute | Traiter rapidement |\n| Classe B (valeur moyenne) | Traiter en priorité haute | Traiter rapidement | Traiter dans le mois |\n| Classe C (valeur faible) | Traiter rapidement | Traiter dans le mois | Traiter selon disponibilité |\n\nMatrice de priorité pour le traitement des surstocks"
+        "content": "#### Identification et traitement des surstocks\n\nStratégies de prévention et de gestion des ruptures\n\nLes outils d'identification des surstocks\n\nOutil 2 — L'analyse ABC-VEN croisée\n\nMatrice de priorité pour le traitement des surstocks\n"
       },
       {
         "id": "gas-m11-c37",
@@ -1308,7 +1308,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Identification et traitement des surstocks",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Identification et traitement des surstocks\n\nStratégies de prévention et de gestion des ruptures\n\nCauses des surstocks\n\n| Cause | Description | Exemple |\n|---|---|---|\n| Surestimation de la CMM | CMM calculée sur un mois atypique | CMM gonflée par une épidémie incluse dans le calcul |\n| Sur-commande | Quantité commandée supérieure aux besoins réels | Arrondi excessif à la hausse |\n| Chute soudaine de la demande | Changement de protocole, départ d'un médecin prescripteur | Arrêt de la prescription d'un médicament |\n| Livraison non sollicitée | Le niveau supérieur livre sans commande préalable (push system) | Dépôt régional qui impose une livraison |\n| Double commande | Commande passée deux fois pour le même produit | Commande en transit oubliée |\n| Produit remplacé | Changement de liste des médicaments essentiels | Ancien produit délisté mais encore en stock |\n| Non-respect du FEFO | Produits anciens non distribués en priorité | Accumulation de lots en fin de péremption |"
+        "content": "#### Identification et traitement des surstocks\n\nStratégies de prévention et de gestion des ruptures\n\nCauses des surstocks\n"
       },
       {
         "id": "gas-m11-c39",
@@ -1357,7 +1357,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Identification et traitement des surstocks",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Identification et traitement des surstocks\n\nStratégies de prévention et de gestion des ruptures\n\nOptions de traitement des surstocks\n\nOption 6 — Destruction réglementaire\n\nProcédure de destruction :\n\nÉtape 2 — Méthode de destruction selon le type de produit\n\n| Type de produit | Méthode de destruction recommandée |\n|---|---|\n| Comprimés, gélules | Incinération à haute température (> 1 200°C) ou encapsulation dans du ciment |\n| Liquides, sirops | Dilution forte puis élimination dans un réseau d'égout approuvé |\n| Injectables | Incinération après neutralisation du contenu |\n| Produits cytotoxiques | Incinération spécialisée obligatoire |\n| Emballages vides | Déformation + incinération pour éviter la réutilisation |\n\nJamais : jeter dans une décharge à ciel ouvert, enterrer sans neutralisation, brûler à l'air libre (risque toxique)"
+        "content": "#### Identification et traitement des surstocks\n\nStratégies de prévention et de gestion des ruptures\n\nOptions de traitement des surstocks\n\nOption 6 — Destruction réglementaire\n\nProcédure de destruction :\n\nÉtape 2 — Méthode de destruction selon le type de produit\n\nJamais : jeter dans une décharge à ciel ouvert, enterrer sans neutralisation, brûler à l'air libre (risque toxique)\n"
       },
       {
         "id": "gas-m11-c46",
@@ -1378,21 +1378,21 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Plans de contingence et procédures d'urgence",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Plans de contingence et procédures d'urgence\n\nStratégies de prévention et de gestion des ruptures\n\nCatégorie 1 — Crises liées à la demande\n\n| Scénario | Description | Produits impactés |\n|---|---|---|\n| Épidémie soudaine | Choléra, méningite, rougeole, paludisme sévère | SRO, antibiotiques, antipaludéens, vaccins |\n| Afflux de réfugiés ou déplacés | Population supplémentaire non prévue dans les calculs | Tous les produits essentiels |\n| Événement de masse | Accident, catastrophe naturelle avec nombreux blessés | Analgésiques, antiseptiques, matériel de suture |\n| Campagne nationale imprévue | Vaccination de masse décidée en urgence | Vaccins, seringues, matériel de chaîne du froid |"
+        "content": "#### Plans de contingence et procédures d'urgence\n\nStratégies de prévention et de gestion des ruptures\n\nCatégorie 1 — Crises liées à la demande\n"
       },
       {
         "id": "gas-m11-c49",
         "title": "Plans de contingence et procédures d'urgence",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Plans de contingence et procédures d'urgence\n\nStratégies de prévention et de gestion des ruptures\n\nCatégorie 2 — Crises liées à l'approvisionnement\n\n| Scénario | Description | Impact |\n|---|---|---|\n| Rupture chez le fabricant unique | Arrêt de production mondial d'un principe actif | Indisponibilité totale et prolongée |\n| Perturbation logistique majeure | Grève des transports, route coupée, inondation | Blocage des livraisons |\n| Défaillance financière d'un fournisseur | Faillite ou cessation d'activité | Rupture de contrat sans préavis |\n| Problème qualité majeur | Rappel de lot à l'échelle nationale ou internationale | Retrait urgent de produits du stock |"
+        "content": "#### Plans de contingence et procédures d'urgence\n\nStratégies de prévention et de gestion des ruptures\n\nCatégorie 2 — Crises liées à l'approvisionnement\n"
       },
       {
         "id": "gas-m11-c50",
         "title": "Plans de contingence et procédures d'urgence",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Plans de contingence et procédures d'urgence\n\nStratégies de prévention et de gestion des ruptures\n\nCatégorie 3 — Crises liées à la structure elle-même\n\n| Scénario | Description | Impact |\n|---|---|---|\n| Incendie ou inondation du dépôt | Destruction partielle ou totale du stock | Perte massive de produits |\n| Panne du système informatique | Perte d'accès aux données de stock | Gestion à l'aveugle |\n| Départ soudain du gestionnaire | Décès, mutation d'urgence, maladie prolongée | Perte de savoir-faire et de continuité |\n| Vol massif | Disparition de quantités importantes de produits | Écart de stock critique |"
+        "content": "#### Plans de contingence et procédures d'urgence\n\nStratégies de prévention et de gestion des ruptures\n\nCatégorie 3 — Crises liées à la structure elle-même\n"
       },
       {
         "id": "gas-m11-c51",
@@ -1413,7 +1413,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Plans de contingence et procédures d'urgence",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Plans de contingence et procédures d'urgence\n\nStructure d'un plan de contingence\n\nComposante 4 — Procédures d'activation du plan\n\nLe plan de contingence ne doit pas rester un document théorique. Il doit définir précisément les conditions de son déclenchement, les étapes à suivre et les responsabilités de chacun.\n\nCritères de déclenchement du plan :\n\n| Critère | Seuil de déclenchement |\n|---|---|\n| Niveau de stock | Stock d'un produit critique tombe sous 50% du stock de sécurité |\n| Alerte épidémique | Déclaration officielle d'épidémie par les autorités sanitaires |\n| Perturbation fournisseur | Rupture confirmée chez le fournisseur principal pour > 30 jours |\n| Événement exceptionnel | Catastrophe naturelle, afflux de réfugiés > 20% de la population habituelle |\n| Perte de stock | Incendie, inondation ou vol > 30% de la valeur totale du stock |"
+        "content": "#### Plans de contingence et procédures d'urgence\n\nStructure d'un plan de contingence\n\nComposante 4 — Procédures d'activation du plan\n\nLe plan de contingence ne doit pas rester un document théorique. Il doit définir précisément les conditions de son déclenchement, les étapes à suivre et les responsabilités de chacun.\n\nCritères de déclenchement du plan :\n"
       },
       {
         "id": "gas-m11-c54",
@@ -1483,14 +1483,14 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Types d'inventaires (permanent, périodique, tournant)",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Types d'inventaires (permanent, périodique, tournant)\n\nL'inventaire permanent\n\nConditions de réussite de l'inventaire permanent\n\n| Condition | Description |\n|---|---|\n| Discipline d'enregistrement | Chaque mouvement enregistré le jour même, sans exception |\n| Documents de référence | Bon de sortie ou bon de réception pour chaque mouvement |\n| Vérification régulière | Comptage physique au moins mensuel pour détecter les écarts |\n| Formation du personnel | Tout agent manipulant les produits doit maîtriser l'enregistrement |\n| Supervision | Contrôles inopinés réguliers par le responsable |"
+        "content": "#### Types d'inventaires (permanent, périodique, tournant)\n\nL'inventaire permanent\n\nConditions de réussite de l'inventaire permanent\n"
       },
       {
         "id": "gas-m11-c64",
         "title": "Types d'inventaires (permanent, périodique, tournant)",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Types d'inventaires (permanent, périodique, tournant)\n\nL'inventaire périodique\n\nDéfinition\n\nL'inventaire périodique est un système dans lequel le stock n'est pas suivi en continu mais compté physiquement à intervalles réguliers et prédéfinis.\n\nEntre deux inventaires, le gestionnaire ne dispose pas nécessairement d'un stock théorique fiable.\n\nL'inventaire périodique est souvent utilisé dans les structures avec des ressources limitées ou un volume de produits important.\n\nFréquences habituelles :\n\n| Fréquence | Contexte recommandé |\n|---|---|\n| Mensuelle | Structures avec peu de produits, gestionnaire seul |\n| Trimestrielle | Dépôts de district avec volume moyen |\n| Semestrielle | Dépôts régionaux, structures bien informatisées |\n| Annuelle | Inventaire général obligatoire pour toutes les structures |"
+        "content": "#### Types d'inventaires (permanent, périodique, tournant)\n\nL'inventaire périodique\n\nDéfinition\n\nL'inventaire périodique est un système dans lequel le stock n'est pas suivi en continu mais compté physiquement à intervalles réguliers et prédéfinis.\n\nEntre deux inventaires, le gestionnaire ne dispose pas nécessairement d'un stock théorique fiable.\n\nL'inventaire périodique est souvent utilisé dans les structures avec des ressources limitées ou un volume de produits important.\n\nFréquences habituelles :\n"
       },
       {
         "id": "gas-m11-c65",
@@ -1518,7 +1518,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Types d'inventaires (permanent, périodique, tournant)",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Types d'inventaires (permanent, périodique, tournant)\n\nDifférences entre inventaire permanent et périodique\n\n| Critère | Inventaire permanent | Inventaire périodique |\n|---|---|---|\n| Suivi du stock | En continu, en temps réel | Uniquement aux dates d'inventaire |\n| Connaissance du stock | À tout moment | Seulement après chaque inventaire |\n| Charge de travail | Continue mais légère | Concentrée aux dates d'inventaire |\n| Fiabilité des données | Élevée si enregistrement rigoureux | Limitée entre deux inventaires |\n| Détection des écarts | Immédiate si enregistrement complet | Seulement à chaque inventaire |\n| Ressources nécessaires | Formation et discipline du personnel | Organisation et temps pour l'inventaire |\n| Adapté à | Structures avec logiciel, faible volume de produits | Structures avec volume important, ressources limitées |"
+        "content": "#### Types d'inventaires (permanent, périodique, tournant)\n\nDifférences entre inventaire permanent et périodique\n"
       },
       {
         "id": "gas-m11-c69",
@@ -1560,7 +1560,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Procédures de comptage et de réconciliation",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Procédures de comptage et de réconciliation\n\nPrincipe du double comptage : Chaque produit doit être compté par au moins deux personnes différentes, indépendamment l'une de l'autre. Les résultats sont comparés. En cas de divergence, un troisième comptage est effectué..\n\nComposition recommandée des équipes :\n\n| Rôle | Nombre | Responsabilité |\n|---|---|---|\n| Compteur | 1 par équipe | Compte physiquement les produits |\n| Enregistreur | 1 par équipe | Note les résultats sur le formulaire |\n| Superviseur | 1 pour plusieurs équipes | Vérifie la méthode, résout les ambiguïtés |\n| Validateur | 1 (responsable hiérarchique) | Signe les formulaires, valide les résultats finaux |\n\nRègle absolue : Le compteur ne doit pas connaître le stock théorique avant de compter\nPréparation du comptage\n\nConstitution des équipes de comptage\n"
+        "content": "#### Procédures de comptage et de réconciliation\n\nPrincipe du double comptage : Chaque produit doit être compté par au moins deux personnes différentes, indépendamment l'une de l'autre. Les résultats sont comparés. En cas de divergence, un troisième comptage est effectué..\n\nComposition recommandée des équipes :\n\nRègle absolue : Le compteur ne doit pas connaître le stock théorique avant de compter\n\nPréparation du comptage\n\nConstitution des équipes de comptage\n"
       },
       {
         "id": "gas-m11-c75",
@@ -1595,7 +1595,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Procédures de comptage et de réconciliation",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Procédures de comptage et de réconciliation\n\nLa réconciliation des stocks\n\nFormule : Écart = Stock physique − Stock théorique\n\nClassification des écarts\n\nCalcul des écarts\n\n| Niveau d'écart | Seuil | Réponse |\n|---|---|---|\n| Négligeable | < 1% | Correction des données sans investigation |\n| Tolérable | 1 à 2% | Correction des données + note explicative |\n| Significatif | 2 à 5% | Correction + investigation documentée |\n| Majeur | 5 à 10% | Correction + investigation approfondie + rapport hiérarchique |\n| Critique | > 10% | Correction + investigation formelle + suspension possible du gestionnaire le temps de l'investigation |"
+        "content": "#### Procédures de comptage et de réconciliation\n\nLa réconciliation des stocks\n\nFormule : Écart = Stock physique − Stock théorique\n\nClassification des écarts\n\nCalcul des écarts\n"
       },
       {
         "id": "gas-m11-c80",
@@ -1665,7 +1665,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Outils digitaux de gestion des stocks",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Outils digitaux de gestion des stocks\n\nCritères de choix d'un outil digital\n\n| Critère | Questions à se poser |\n|---|---|\n| Infrastructure informatique | Y a-t-il des ordinateurs disponibles et en état de fonctionnement ? |\n| Connexion internet | La connexion est-elle fiable et permanente, ou intermittente ? |\n| Électricité | L'alimentation électrique est-elle stable ? Dispose-t-on de groupes électrogènes ou de panneaux solaires ? |\n| Compétences du personnel | Le personnel a-t-il une formation informatique de base ? Peut-on former rapidement ? |\n| Volume de produits gérés | Combien de références différentes le dépôt gère-t-il ? |\n| Budget disponible | Quel est le budget pour l'acquisition et la maintenance de l'outil ? |\n| Support technique local | Y a-t-il un support technique disponible localement en cas de panne ? |\n| Interopérabilité | L'outil doit-il s'interfacer avec le système national (DHIS2, OpenLMIS) ? |"
+        "content": "#### Outils digitaux de gestion des stocks\n\nCritères de choix d'un outil digital\n"
       },
       {
         "id": "gas-m11-c90",
