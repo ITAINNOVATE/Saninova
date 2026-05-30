@@ -397,12 +397,19 @@ export const Publications: React.FC = () => {
         )}
 
         {/* Global Read More CTA */}
-        <div className="text-center mt-16">
+        <div className="flex flex-col sm:flex-row items-center justify-center mt-16 gap-4">
           <a
-            href="#publications"
+            href="/publications"
             className="inline-flex items-center space-x-2 bg-primary hover:bg-primary/95 text-white font-poppins font-semibold px-6 py-3 rounded-full text-sm shadow-md transition-all duration-300"
           >
             <span>{t.publications.allArticles}</span>
+            <ArrowRight className="w-4 h-4" />
+          </a>
+          <a
+            href="/publications#soumettre-publication"
+            className="inline-flex items-center space-x-2 bg-orange hover:bg-orange/95 text-white font-poppins font-semibold px-6 py-3 rounded-full text-sm shadow-md transition-all duration-300"
+          >
+            <span>Soumettre une publication</span>
             <ArrowRight className="w-4 h-4" />
           </a>
         </div>

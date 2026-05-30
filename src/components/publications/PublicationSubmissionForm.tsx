@@ -105,7 +105,7 @@ export default function PublicationSubmissionForm() {
   };
 
   return (
-    <section className="py-20 bg-light border-t border-light mt-16 relative glow-bg">
+    <section id="soumettre-publication" className="py-20 bg-light border-t border-light mt-16 relative glow-bg">
       <div className="max-w-4xl mx-auto px-6 relative z-10">
         <div className="text-center mb-12 space-y-4">
           <span className="inline-block font-poppins text-xs font-bold text-orange tracking-widest uppercase border-b-2 border-orange pb-1">
