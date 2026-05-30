@@ -140,7 +140,9 @@ export default function TrainingDetail({ params }: { params: Promise<{ slug: str
                     <Award className="w-6 h-6" />
                   </div>
                   <div>
-                    <p className="text-[10px] uppercase font-bold text-white/40 tracking-wider">Certificat</p>
+                    <p className="text-[10px] uppercase font-bold text-white/40 tracking-wider">
+                      {training.isStaticModule ? "Attestation" : "Certificat"}
+                    </p>
                     <p className="text-white font-bold text-sm">{training.certificate}</p>
                   </div>
                 </div>

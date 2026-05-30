@@ -76,7 +76,7 @@ const allModules = certificationsData.flatMap((academy) => {
         date: "Disponible immédiatement",
         location: "En ligne (eLearning)",
         duration: formatELearningDuration(mod.duration),
-        certificate: "Certificat de Module SaniNova",
+        certificate: "Attestation de Module SaniNova",
         language: "Français",
         objectives: mod.subModules?.map(sub => sub.title) || ["Maîtriser les concepts clés du module", "Appliquer les meilleures pratiques professionnelles"],
         target_audience: ["Professionnels de santé", "Pharmaciens", "Logisticiens", "Administrateurs de soins", "Étudiants en santé"],

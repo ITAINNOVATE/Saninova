@@ -45,7 +45,7 @@ export default function CertificateCard({ courseTitle, courseSlug }: Certificate
       <div className="bg-[#0F1D33] border border-white/5 p-6 rounded-3xl flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-xl max-w-5xl mx-auto">
         <div>
           <h4 className="text-white font-bold text-base mb-1">Félicitations pour votre réussite !</h4>
-          <p className="text-white/40 text-xs font-medium">Vous pouvez personnaliser le nom imprimé sur votre certificat ci-dessous.</p>
+          <p className="text-white/40 text-xs font-medium">Vous pouvez personnaliser le nom imprimé sur votre attestation ci-dessous.</p>
         </div>
 
         <div className="flex items-center gap-3">
@@ -108,14 +108,14 @@ export default function CertificateCard({ courseTitle, courseSlug }: Certificate
           {/* Certificate Main Title */}
           <div className="mb-10 relative z-10">
             <h2 className="text-3xl md:text-5xl font-montserrat font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-200 to-amber-500 uppercase tracking-wide leading-tight mb-4 print:text-amber-600 print:bg-none">
-              Certificat de Réussite
+              Attestation de Réussite
             </h2>
             <div className="w-40 h-0.5 bg-gradient-to-r from-transparent via-amber-500 to-transparent mx-auto" />
           </div>
 
           {/* Recipient Details */}
           <div className="mb-10 relative z-10">
-            <p className="text-white/50 text-sm italic font-medium mb-4 print:text-black/60">Ce certificat officiel est fièrement décerné à</p>
+            <p className="text-white/50 text-sm italic font-medium mb-4 print:text-black/60">Cette attestation officielle est fièrement décernée à</p>
             <h3 className="text-3xl md:text-4xl font-montserrat font-extrabold text-white underline decoration-amber-500/50 decoration-2 underline-offset-8 mb-6 print:text-black">
               {studentName}
             </h3>
