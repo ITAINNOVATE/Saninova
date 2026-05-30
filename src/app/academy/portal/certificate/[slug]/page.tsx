@@ -92,6 +92,7 @@ export default function CertificatePage({ params }: { params: Promise<{ slug: st
           <CertificateCard 
             courseTitle={course.title}
             courseSlug={course.slug}
+            chapters={course.program?.map((p: any) => p.title) || []}
           />
         </div>
       </div>

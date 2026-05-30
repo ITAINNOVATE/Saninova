@@ -685,6 +685,7 @@ export default function StudentPortal() {
               <CertificateCard 
                 courseTitle={selectedCourse.title}
                 courseSlug={selectedCourse.slug}
+                chapters={selectedCourse.program?.map((p: any) => p.title) || []}
               />
             </div>
           )}
