@@ -435,7 +435,7 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
       <div className="grid lg:grid-cols-4 gap-8">
         {/* Course Index Sidebar */}
         <div className="lg:col-span-1 bg-[#0F1D33] border border-white/5 rounded-[28px] p-6 h-fit shadow-xl">
-          <h4 className="text-white font-montserrat font-black text-base uppercase tracking-wider mb-6 pb-4 border-b border-white/5">
+          <h4 className="text-orange font-montserrat font-black text-base uppercase tracking-wider mb-6 pb-4 border-b border-white/5">
             Syllabus
           </h4>
 
@@ -532,7 +532,7 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                     <span className="text-orange font-bold text-xs uppercase tracking-widest block mb-1">
                       {currentChapter.type === "video" ? "Cours Vidéo" : "Support de Cours"} • {currentChapter.duration}
                     </span>
-                    <h3 className="text-white font-montserrat font-extrabold text-xl md:text-2xl leading-tight">
+                    <h3 className="text-orange font-montserrat font-extrabold text-xl md:text-2xl leading-tight">
                       {currentChapter.title}
                     </h3>
                   </div>
@@ -585,7 +585,7 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                 <div className="prose prose-invert prose-orange max-w-none mb-10 text-white/80 leading-relaxed text-sm md:text-base font-medium space-y-4">
                   {currentChapter.content.split("\n\n").map((para, i) => {
                     if (para.startsWith("###")) {
-                      return <h4 key={i} className="text-white font-montserrat font-bold text-lg md:text-xl mt-6 mb-3">{para.replace("### ", "")}</h4>;
+                      return <h4 key={i} className="text-orange font-montserrat font-bold text-lg md:text-xl mt-6 mb-3">{para.replace("### ", "")}</h4>;
                     }
                     if (para.startsWith("####")) {
                       return <h5 key={i} className="text-orange font-bold text-sm md:text-base mt-4 mb-2">{para.replace("#### ", "")}</h5>;

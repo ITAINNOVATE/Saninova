@@ -125,7 +125,7 @@ export default function CourseLMSPlayerPage({ params }: { params: Promise<{ slug
                 Accès Verrouillé • eLearning
               </span>
 
-              <h2 className="text-2xl md:text-3xl font-montserrat font-black text-white leading-tight mb-4">
+              <h2 className="text-2xl md:text-3xl font-montserrat font-black text-orange leading-tight mb-4">
                 {course.title}
               </h2>
 
