@@ -170,18 +170,18 @@ export default function TrainingDetail({ params }: { params: Promise<{ slug: str
                   </div>
                 </div>
 
-                <div className="space-y-4 mb-8">
-                  <div className="flex items-center justify-between py-3 border-b border-dark/5 text-sm">
-                    <span className="text-dark/50 font-medium">Format</span>
-                    <span className="text-dark font-bold">{training.isStaticModule ? "100% en ligne (eLearning)" : "Hybride"}</span>
+                <div className="space-y-3 mb-8">
+                  <div className="flex items-center justify-between py-3 px-4 bg-dark/5 rounded-xl text-sm">
+                    <span className="text-dark/60 font-medium">Format</span>
+                    <span className="text-dark font-bold text-right">{training.isStaticModule ? "100% en ligne (eLearning)" : "Hybride"}</span>
                   </div>
-                  <div className="flex items-center justify-between py-3 border-b border-dark/5 text-sm">
-                    <span className="text-dark/50 font-medium">Durée</span>
-                    <span className="text-dark font-bold">{training.duration}</span>
+                  <div className="flex items-center justify-between py-3 px-4 bg-dark/5 rounded-xl text-sm">
+                    <span className="text-dark/60 font-medium">Durée</span>
+                    <span className="text-dark font-bold text-right">{training.duration}</span>
                   </div>
-                  <div className="flex items-center justify-between py-3 border-b border-dark/5 text-sm">
-                    <span className="text-dark/50 font-medium">{training.isStaticModule ? "Accès" : "Date limite"}</span>
-                    <span className="text-orange font-black">
+                  <div className="flex items-center justify-between py-3 px-4 bg-dark/5 rounded-xl text-sm">
+                    <span className="text-dark/60 font-medium">{training.isStaticModule ? "Accès" : "Date limite"}</span>
+                    <span className="text-orange font-black text-right">
                       {training.isStaticModule ? "À vie (24h/7)" : (training.deadline ? new Date(training.deadline).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }) : "---")}
                     </span>
                   </div>
