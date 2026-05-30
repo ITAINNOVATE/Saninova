@@ -29,7 +29,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Principes fondamentaux de la gestion des stocks",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Principes fondamentaux de la gestion des stocks\n\nGESTION DES APPROVISIONNEMENTS ET DES STOCKS\n"
+        "content": "#### Principes fondamentaux de la gestion des stocks\n\n![Entrepôt de pharmacie moderne](/images/course/stock.png)\n\nGESTION DES APPROVISIONNEMENTS ET DES STOCKS\n"
       },
       {
         "id": "gas-m2-c2",
@@ -112,7 +112,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Définitions et concepts clés",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Définitions et concepts clés\n\nSituation où un produit est épuisé (stock = 0 ) et ne peut plus répondre à la demande.\n\nC'est l'un des risques les plus graves.\n\nRupture de stock\n\nLa pharmacie a 150 comprimés de Métronidazole en stock. Sa CMM est de 300 comprimés et son délai de livraison est de 2 mois.\n\nElle n'a pas encore commandé.\n\nLa pharmacie est déjà en situation de rupture imminente.\n\nDéficit = 600 − 150 = 450 comprimés\n\nElle doit déclencher une commande d'urgence immédiatement.\n"
+        "content": "#### Définitions et concepts clés\n\n![Rupture de stock](/images/course/rupture.png)\n\nSituation où un produit est épuisé (stock = 0 ) et ne peut plus répondre à la demande.\n\nC'est l'un des risques les plus graves.\n\nRupture de stock\n\nLa pharmacie a 150 comprimés de Métronidazole en stock. Sa CMM est de 300 comprimés et son délai de livraison est de 2 mois.\n\nElle n'a pas encore commandé.\n\nLa pharmacie est déjà en situation de rupture imminente.\n\nDéficit = 600 − 150 = 450 comprimés\n\nElle doit déclencher une commande d'urgence immédiatement.\n"
       },
       {
         "id": "gas-m3-c11",
@@ -133,7 +133,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Définitions et concepts clés",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Définitions et concepts clés\n\nPrincipe de gestion selon lequel les produits dont la date de péremption est la plus proche doivent être distribués en premier, indépendamment de la date d'entrée en stock.\n\nC'est une règle d'or en pharmacie.\n\nFEFO (First Expired, First Out)\n\nLa pharmacie a en rayon deux lots de vaccins anti-tétaniques :\n\nLot X : 50 doses — périme le 15 février 2026 (arrivé en décembre)\n\nLot Y : 80 doses — périme le 30 juin 2026 (arrivé en janvier)\n\nUn agent de santé vient récupérer 20 doses.\n\nBonne pratique (FEFO) → il prend dans le Lot X, car il périme en premier (15 février), qu'importe l'ordre d'arrivée.\n"
+        "content": "#### Définitions et concepts clés\n\n![Règle FEFO FIFO](/images/course/fefo.png)\n\nPrincipe de gestion selon lequel les produits dont la date de péremption est la plus proche doivent être distribués en premier, indépendamment de la date d'entrée en stock.\n\nC'est une règle d'or en pharmacie.\n\nFEFO (First Expired, First Out)\n\nLa pharmacie a en rayon deux lots de vaccins anti-tétaniques :\n\nLot X : 50 doses — périme le 15 février 2026 (arrivé en décembre)\n\nLot Y : 80 doses — périme le 30 juin 2026 (arrivé en janvier)\n\nUn agent de santé vient récupérer 20 doses.\n\nBonne pratique (FEFO) → il prend dans le Lot X, car il périme en premier (15 février), qu'importe l'ordre d'arrivée.\n"
       },
       {
         "id": "gas-m3-c14",
@@ -147,7 +147,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Définitions et concepts clés",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Définitions et concepts clés\n\nOpération de comptage physique de tous les produits en stock à un moment donné, permettant de vérifier la concordance entre le stock réel et le stock théorique enregistré dans le système.\n\nInventaire\n\nLa pharmacie utilise un registre manuel. Selon ce registre, le stock théorique de Paracétamol est de 4 200 comprimés. Le jour de l'inventaire, le comptage physique donne 3 850 comprimés.\n\nÉcart = 3 850 − 4 200 = −350 comprimés\n\nTaux de précision de l'inventaire = (3 850 ÷ 4 200) × 100 = 91,7 %\n\nInvestiguer sur les causes des écarts.\n\nTaux de précision acceptable : Supérieur ou égal à 95%\n"
+        "content": "#### Définitions et concepts clés\n\n![Inventaire en pharmacie](/images/course/inventaire.png)\n\nOpération de comptage physique de tous les produits en stock à un moment donné, permettant de vérifier la concordance entre le stock réel et le stock théorique enregistré dans le système.\n\nInventaire\n\nLa pharmacie utilise un registre manuel. Selon ce registre, le stock théorique de Paracétamol est de 4 200 comprimés. Le jour de l'inventaire, le comptage physique donne 3 850 comprimés.\n\nÉcart = 3 850 − 4 200 = −350 comprimés\n\nTaux de précision de l'inventaire = (3 850 ÷ 4 200) × 100 = 91,7 %\n\nInvestiguer sur les causes des écarts.\n\nTaux de précision acceptable : Supérieur ou égal à 95%\n"
       }
     ]
   },
