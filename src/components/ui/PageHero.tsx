@@ -10,9 +10,10 @@ interface PageHeroProps {
   subtitle?: string;
   backgroundImages: string[];
   showAcademyActions?: boolean;
+  children?: React.ReactNode;
 }
 
-export const PageHero: React.FC<PageHeroProps> = ({ title, subtitle, backgroundImages, showAcademyActions }) => {
+export const PageHero: React.FC<PageHeroProps> = ({ title, subtitle, backgroundImages, showAcademyActions, children }) => {
   const [currentBgIndex, setCurrentBgIndex] = useState(0);
 
   useEffect(() => {
@@ -102,6 +103,17 @@ export const PageHero: React.FC<PageHeroProps> = ({ title, subtitle, backgroundI
               >
                 Se connecter
               </Link>
+            </motion.div>
+          )}
+
+          {children && (
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.8 }}
+              className="mt-10"
+            >
+              {children}
             </motion.div>
           )}
         </motion.div>
