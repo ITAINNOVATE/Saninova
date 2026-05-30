@@ -70,7 +70,7 @@ const allModules = certificationsData.flatMap((academy) => {
         short_description: `Module de formation en eLearning issu de la certification: ${cert.name}. Apprentissage 100% en ligne et asynchrone avec ressources téléchargeables, quiz interactifs et certificats de réussite officiels.`,
         full_description: `Ce module de formation est conçu pour vous offrir des compétences pointues et immédiatement applicables. Faisant partie intégrante de la certification "${cert.name}", ce module couvre les domaines essentiels de l'Académie "${academy.title}".\n\nGrâce à notre plateforme eLearning innovante, vous pouvez progresser de manière asynchrone, à votre rythme, à travers plusieurs chapitres contenant des cours textuels enrichis, des simulations multimédias et des quiz pour valider vos acquis.`,
         category: mapAcademyToCategory(academy.id),
-        price: "35",
+        price: "120",
         currency: "USD",
         image_url: getAcademyImage(academy.id),
         date: "Disponible immédiatement",
