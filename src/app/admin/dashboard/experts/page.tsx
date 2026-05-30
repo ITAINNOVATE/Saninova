@@ -2,16 +2,27 @@
 
 import React, { useState, useEffect } from "react";
 import { supabase } from "../../../../lib/supabase";
-import { Loader2, Search, FileText, CheckCircle, Mail, Phone, ExternalLink } from "lucide-react";
+import { Loader2, Search, FileText, CheckCircle, Mail, Phone, ExternalLink, MapPin, Briefcase } from "lucide-react";
 
 interface ExpertApplication {
   id: string;
-  name: string;
+  last_name: string;
+  first_name: string;
   email: string;
   phone: string;
-  domain: string;
+  country: string;
+  city: string;
+  professional_status: string;
+  job_title: string;
+  institution: string;
+  experience_years: string;
+  education_level: string;
+  domains: string[];
+  collaboration_types: string[];
+  availability: string;
+  languages: string[];
+  biography: string;
   cv_link: string;
-  message: string;
   status: string;
   created_at: string;
 }
@@ -61,11 +72,10 @@ export default function ExpertsDashboard() {
     }
   };
 
-  const filteredApps = applications.filter(app => 
-    app.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    app.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    app.domain.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredApps = applications.filter(app => {
+    const searchString = `${app.first_name} ${app.last_name} ${app.email} ${app.domains?.join(' ')} ${app.country}`.toLowerCase();
+    return searchString.includes(searchTerm.toLowerCase());
+  });
 
   if (loading) {
     return (
@@ -80,7 +90,7 @@ export default function ExpertsDashboard() {
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
           <h1 className="text-2xl font-bold font-montserrat text-white">Candidatures d'Experts</h1>
-          <p className="text-slate-400 text-sm mt-1">Consultez et gérez les candidatures reçues via le formulaire d'expertise.</p>
+          <p className="text-slate-400 text-sm mt-1">Consultez et gérez les candidatures reçues via le formulaire d'expertise SaniNova 2026.</p>
         </div>
         
         <div className="relative w-full sm:w-64">
@@ -107,7 +117,7 @@ export default function ExpertsDashboard() {
                 <tr>
                   <th className="px-6 py-4 font-medium">Expert</th>
                   <th className="px-6 py-4 font-medium">Contact</th>
-                  <th className="px-6 py-4 font-medium">Domaine & Profil</th>
+                  <th className="px-6 py-4 font-medium">Profil & Domaines</th>
                   <th className="px-6 py-4 font-medium">Statut</th>
                   <th className="px-6 py-4 font-medium">Actions</th>
                 </tr>
@@ -116,7 +126,7 @@ export default function ExpertsDashboard() {
                 {filteredApps.map((app) => (
                   <tr key={app.id} className="hover:bg-slate-800/20 transition-colors">
                     <td className="px-6 py-4">
-                      <div className="font-medium text-white">{app.name}</div>
+                      <div className="font-medium text-white">{app.first_name} {app.last_name}</div>
                       <div className="text-xs text-slate-400 mt-1">
                         Reçu le {new Date(app.created_at).toLocaleDateString('fr-FR')}
                       </div>
@@ -126,24 +136,33 @@ export default function ExpertsDashboard() {
                         <Mail className="w-3.5 h-3.5" />
                         <a href={`mailto:${app.email}`} className="hover:text-emerald-400">{app.email}</a>
                       </div>
-                      {app.phone && (
-                        <div className="flex items-center text-slate-300 gap-2">
-                          <Phone className="w-3.5 h-3.5" />
-                          <span>{app.phone}</span>
-                        </div>
-                      )}
+                      <div className="flex items-center text-slate-300 gap-2 mb-1">
+                        <Phone className="w-3.5 h-3.5" />
+                        <span>{app.phone || 'Non renseigné'}</span>
+                      </div>
+                      <div className="flex items-center text-slate-400 gap-2 text-xs">
+                        <MapPin className="w-3 h-3" />
+                        <span>{app.city ? `${app.city}, ` : ''}{app.country}</span>
+                      </div>
                     </td>
                     <td className="px-6 py-4">
-                      <div className="inline-block px-2.5 py-1 bg-slate-800 text-slate-300 rounded text-xs mb-2">
-                        {app.domain}
+                      <div className="flex items-center text-slate-300 gap-2 mb-2 font-medium">
+                        <Briefcase className="w-3.5 h-3.5" />
+                        <span>{app.professional_status === 'En Poste' ? `${app.job_title} chez ${app.institution}` : 'Indépendant'}</span>
+                        <span className="text-slate-500 font-normal">({app.experience_years})</span>
                       </div>
-                      {app.cv_link && (
-                        <div>
-                          <a href={app.cv_link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-blue-400 hover:text-blue-300">
-                            Voir le CV/Profil <ExternalLink className="w-3 h-3" />
-                          </a>
-                        </div>
-                      )}
+                      <div className="flex flex-wrap gap-1 max-w-xs whitespace-normal">
+                        {app.domains?.slice(0, 2).map((d, i) => (
+                          <span key={i} className="px-2 py-0.5 bg-slate-800 text-slate-300 rounded text-[10px]">
+                            {d}
+                          </span>
+                        ))}
+                        {app.domains?.length > 2 && (
+                          <span className="px-2 py-0.5 bg-slate-800/50 text-slate-400 rounded text-[10px]">
+                            +{app.domains.length - 2}
+                          </span>
+                        )}
+                      </div>
                     </td>
                     <td className="px-6 py-4">
                       <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium border ${
@@ -158,14 +177,25 @@ export default function ExpertsDashboard() {
                       <div className="flex items-center gap-2">
                         <button
                           onClick={() => {
-                            const msg = `Motivation / Présentation:\n\n${app.message}`;
+                            const msg = `PRÉSENTATION:\n${app.biography || 'Non renseignée'}\n\nMODALITÉS:\nCollaborations: ${app.collaboration_types?.join(', ') || 'N/A'}\nDisponibilité: ${app.availability || 'N/A'}\nLangues: ${app.languages?.join(', ') || 'N/A'}\nNiveau: ${app.education_level || 'N/A'}`;
                             alert(msg);
                           }}
                           className="p-1.5 bg-slate-800 text-slate-300 hover:text-white rounded border border-slate-700 transition-colors"
-                          title="Lire le message"
+                          title="Voir les détails et modalités"
                         >
                           <FileText className="w-4 h-4" />
                         </button>
+                        {app.cv_link && (
+                          <a
+                            href={app.cv_link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-1.5 bg-slate-800 text-blue-400 hover:text-blue-300 rounded border border-slate-700 transition-colors"
+                            title="Voir le Profil / CV"
+                          >
+                            <ExternalLink className="w-4 h-4" />
+                          </a>
+                        )}
                         {app.status !== 'Examiné' && (
                           <button
                             onClick={() => updateStatus(app.id, 'Examiné')}
