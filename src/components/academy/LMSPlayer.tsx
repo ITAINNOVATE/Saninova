@@ -9,6 +9,18 @@ import { motion, AnimatePresence } from "framer-motion";
 import QuizModule from "./QuizModule";
 import { staticModules, slugify } from "../../lib/academyHelpers";
 
+const renderMarkdownText = (text: string) => {
+  if (!text || typeof text !== 'string') return text;
+  if (!text.includes('**')) return text;
+  const parts = text.split(/(\*\*.*?\*\*)/g);
+  return parts.map((part, index) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return <strong key={index} style={{ color: '#0F1D33', fontWeight: 800 }}>{part.slice(2, -2)}</strong>;
+    }
+    return part;
+  });
+};
+
 interface Chapter {
   id: string;
   title: string;
@@ -621,7 +633,7 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                       return (
                         <ul key={i} style={{ paddingLeft: '1.25rem', margin: '0.75rem 0', listStyleType: 'disc' }}>
                           {para.split("\n").map((li, j) => (
-                            <li key={j} style={{ color: '#334155', lineHeight: 1.7, marginBottom: '0.375rem' }}>{li.replace(/^[\-\u25b8]\s*/, "")}</li>
+                            <li key={j} style={{ color: '#334155', lineHeight: 1.7, marginBottom: '0.375rem' }}>{renderMarkdownText(li.replace(/^[\-\u25b8]\s*/, ""))}</li>
                           ))}
                         </ul>
                       );
@@ -631,7 +643,7 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                       return (
                         <ol key={i} style={{ paddingLeft: '1.25rem', margin: '0.75rem 0', listStyleType: 'decimal' }}>
                           {para.split("\n").map((li, j) => (
-                            <li key={j} style={{ color: '#334155', lineHeight: 1.7, marginBottom: '0.375rem' }}>{li.replace(/^\d+\.\s*/, "")}</li>
+                            <li key={j} style={{ color: '#334155', lineHeight: 1.7, marginBottom: '0.375rem' }}>{renderMarkdownText(li.replace(/^\d+\.\s*/, ""))}</li>
                           ))}
                         </ol>
                       );
@@ -660,7 +672,7 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                                       if ((idx === 0 || idx === arr.length - 1) && c.trim() === "") return false;
                                       return true;
                                     }).map((cell, cIdx) => (
-                                      <td key={cIdx} className="px-4 py-3 text-slate-700 border-r border-slate-200 last:border-0">{cell.trim()}</td>
+                                      <td key={cIdx} className="px-4 py-3 text-slate-700 border-r border-slate-200 last:border-0">{renderMarkdownText(cell.trim())}</td>
                                     ))}
                                   </tr>
                                 );
@@ -690,7 +702,7 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                       );
                     }
                     // Default paragraph
-                    return <p key={i} style={{ color: '#334155', lineHeight: 1.75, margin: '0.5rem 0' }}>{para}</p>;
+                    return <p key={i} style={{ color: '#334155', lineHeight: 1.75, margin: '0.5rem 0' }}>{renderMarkdownText(para)}</p>;
                   })}
                 </div>
 
