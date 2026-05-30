@@ -6,6 +6,7 @@ import PageHero from "../../components/ui/PageHero";
 import ExpertisesDetails from "../../components/home/ExpertisesDetails";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import ExpertForm from "../../components/expertises/ExpertForm";
 
 export default function ExpertisesPage() {
   const { t } = useLanguage();
@@ -28,6 +29,7 @@ export default function ExpertisesPage() {
           </Link>
         </div>
         <ExpertisesDetails />
+        <ExpertForm />
       </div>
     </>
   );

@@ -76,6 +76,11 @@ export default function DashboardLayout({ children }: LayoutProps) {
       icon: BookOpen,
     },
     {
+      label: "Candidatures Experts",
+      href: "/admin/dashboard/experts",
+      icon: User,
+    },
+    {
       label: "SaniNova Academy",
       href: "/admin/dashboard/academy",
       icon: GraduationCap,
