@@ -586,11 +586,21 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                 {/* Lesson Rich Content (Markdown layout) */}
                 <div className="prose prose-invert prose-orange max-w-none mb-10 text-white/80 leading-relaxed text-sm md:text-base font-medium space-y-4">
                   {currentChapter.content.split("\n\n").map((para, i) => {
-                    if (para.startsWith("###")) {
-                      return <h4 key={i} className="text-orange font-montserrat font-bold text-lg md:text-xl mt-6 mb-3">{para.replace("### ", "")}</h4>;
-                    }
                     if (para.startsWith("####")) {
-                      return <h5 key={i} className="text-orange font-bold text-sm md:text-base mt-4 mb-2">{para.replace("#### ", "")}</h5>;
+                      return (
+                        <h5 key={i} className="text-orange font-bold text-sm md:text-base mt-4 mb-2 flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-orange opacity-70"></span>
+                          {para.replace(/^#+\s*/, "")}
+                        </h5>
+                      );
+                    }
+                    if (para.startsWith("###")) {
+                      return (
+                        <h4 key={i} className="text-orange font-montserrat font-bold text-lg md:text-xl mt-6 mb-3 flex items-center gap-3">
+                          <span className="w-2 h-2 rounded-full bg-orange"></span>
+                          {para.replace(/^#+\s*/, "")}
+                        </h4>
+                      );
                     }
                     if (para.startsWith("-") || para.startsWith("▸")) {
                       return (
