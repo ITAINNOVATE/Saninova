@@ -44,24 +44,6 @@ export default function AcademyLogin() {
     }
   };
 
-  const handleDemoLogin = () => {
-    localStorage.setItem("registered_fullname", "Dr. Ambroise Gbaguidi");
-    localStorage.setItem("registered_email", "dr.gbaguidi@saninova.com");
-    localStorage.setItem("registered_password", "Ambroise@SaniNova2026");
-    localStorage.setItem("registered_training_slug", "gestion-des-approvisionnements-et-des-stocks");
-    localStorage.setItem("logged_in", "true");
-    
-    // Pre-enroll in a couple of courses
-    localStorage.setItem("enrolled_slugs", JSON.stringify([
-      "gestion-des-approvisionnements-et-des-stocks",
-      "quantification-et-previsions"
-    ]));
-    // Mark one as paid to allow testing LMS player
-    localStorage.setItem("paid_gestion-des-approvisionnements-et-des-stocks", "true");
-    
-    router.push("/academy/portal");
-  };
-
   return (
     <>
       <PageHero 
@@ -133,19 +115,6 @@ export default function AcademyLogin() {
                 {isSubmitting ? "Connexion..." : "Se connecter"} <ChevronRight className="w-5 h-5" />
               </button>
             </form>
-
-            <div className="relative flex py-8 items-center">
-              <div className="flex-grow border-t border-white/5"></div>
-              <span className="flex-shrink mx-4 text-white/20 text-[10px] font-black uppercase tracking-widest font-mono">OU TESTER SANS INSCRIPTION</span>
-              <div className="flex-grow border-t border-white/5"></div>
-            </div>
-
-            <button 
-              onClick={handleDemoLogin}
-              className="w-full py-4.5 bg-white/5 hover:bg-orange/10 text-orange rounded-2xl font-black text-sm border border-orange/20 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg"
-            >
-              <Sparkles className="w-4.5 h-4.5 text-orange" /> Connexion Mode Démo <ChevronRight className="w-4 h-4 text-orange" />
-            </button>
 
             <p className="mt-8 text-center text-xs font-semibold text-white/30 font-poppins">
               Pas encore inscrit ? <Link href="/academy/register" className="text-orange hover:underline font-bold">Créer un compte</Link>

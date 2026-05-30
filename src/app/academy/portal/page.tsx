@@ -63,10 +63,6 @@ export default function StudentPortal() {
         if (savedSlug) {
           slugs = [savedSlug];
           localStorage.setItem("enrolled_slugs", JSON.stringify(slugs));
-        } else {
-          // Default pre-enroll for demo
-          slugs = ["gestion-des-approvisionnements-et-des-stocks"];
-          localStorage.setItem("enrolled_slugs", JSON.stringify(slugs));
         }
       }
       setEnrolledSlugs(slugs);
