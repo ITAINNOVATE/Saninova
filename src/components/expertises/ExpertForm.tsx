@@ -156,7 +156,7 @@ export default function ExpertForm() {
           <h2 className="font-montserrat text-3xl font-extrabold text-primary">
             Répertoire d'experts SaniNova
           </h2>
-          <p className="font-inter text-dark/70 max-w-2xl mx-auto">
+          <p className="font-inter text-slate-600 max-w-2xl mx-auto">
             Ce formulaire vous permet de soumettre votre profil pour intégrer le répertoire d'experts de SaniNova. Vos informations resteront strictement confidentielles et ne seront utilisées qu'à des fins de mise en relation.
           </p>
         </div>
@@ -168,10 +168,10 @@ export default function ExpertForm() {
                 <CheckCircle className="w-8 h-8" />
               </div>
               <h3 className="font-montserrat text-2xl font-bold text-primary">Candidature envoyée !</h3>
-              <p className="text-dark/70">Nous avons bien reçu votre profil. Il sera conservé dans notre répertoire d'experts SaniNova Global Consulting.</p>
+              <p className="text-slate-600">Nous avons bien reçu votre profil. Il sera conservé dans notre répertoire d'experts SaniNova Global Consulting.</p>
               <button 
                 onClick={() => setSuccess(false)}
-                className="mt-6 px-6 py-2 bg-light text-dark font-medium rounded-full hover:bg-light/80 transition-colors"
+                className="mt-6 px-6 py-2 bg-light text-slate-800 font-medium rounded-full hover:bg-light/80 transition-colors"
               >
                 Soumettre une autre candidature
               </button>
@@ -225,11 +225,11 @@ export default function ExpertForm() {
                   <div className="flex gap-6">
                     <label className="flex items-center space-x-2 cursor-pointer">
                       <input type="radio" name="professional_status" value="Indépendant" required onChange={handleChange} checked={formData.professional_status === "Indépendant"} className="w-4 h-4 text-orange focus:ring-orange border-gray-300" />
-                      <span className="text-dark/80">Indépendant</span>
+                      <span className="text-slate-700">Indépendant</span>
                     </label>
                     <label className="flex items-center space-x-2 cursor-pointer">
                       <input type="radio" name="professional_status" value="En Poste" required onChange={handleChange} checked={formData.professional_status === "En Poste"} className="w-4 h-4 text-orange focus:ring-orange border-gray-300" />
-                      <span className="text-dark/80">En Poste</span>
+                      <span className="text-slate-700">En Poste</span>
                     </label>
                   </div>
                 </div>
@@ -253,7 +253,7 @@ export default function ExpertForm() {
                     {["Moins de 5 ans", "5 – 10 ans", "10 – 20 ans", "Plus de 20 ans"].map(opt => (
                       <label key={opt} className="flex items-center space-x-2 cursor-pointer">
                         <input type="radio" name="experience_years" value={opt} required onChange={handleChange} checked={formData.experience_years === opt} className="w-4 h-4 text-orange focus:ring-orange" />
-                        <span className="text-dark/80 text-sm">{opt}</span>
+                        <span className="text-slate-700 text-sm">{opt}</span>
                       </label>
                     ))}
                   </div>
@@ -265,7 +265,7 @@ export default function ExpertForm() {
                     {["Bac+3 / Licence", "Bac+5 / Master", "Doctorat / PhD", "Formation professionnelle", "Autre"].map(opt => (
                       <label key={opt} className="flex items-center space-x-2 cursor-pointer">
                         <input type="radio" name="education_level" value={opt} onChange={handleChange} checked={formData.education_level === opt} className="w-4 h-4 text-orange focus:ring-orange" />
-                        <span className="text-dark/80 text-sm">{opt}</span>
+                        <span className="text-slate-700 text-sm">{opt}</span>
                       </label>
                     ))}
                   </div>
@@ -281,7 +281,7 @@ export default function ExpertForm() {
                     {ALL_DOMAINS.map(domain => (
                       <label key={domain} className="flex items-center space-x-2 cursor-pointer">
                         <input type="checkbox" checked={formData.domains.includes(domain)} onChange={(e) => handleArrayCheckbox('domains', domain, e.target.checked)} className="w-4 h-4 rounded text-orange focus:ring-orange" />
-                        <span className="text-dark/80 text-sm">{domain}</span>
+                        <span className="text-slate-700 text-sm">{domain}</span>
                       </label>
                     ))}
                   </div>
@@ -304,7 +304,7 @@ export default function ExpertForm() {
                       {ALL_COLLAB_TYPES.map(type => (
                         <label key={type} className="flex items-center space-x-2 cursor-pointer">
                           <input type="checkbox" checked={formData.collaboration_types.includes(type)} onChange={(e) => handleArrayCheckbox('collaboration_types', type, e.target.checked)} className="w-4 h-4 rounded text-orange focus:ring-orange" />
-                          <span className="text-dark/80 text-sm">{type}</span>
+                          <span className="text-slate-700 text-sm">{type}</span>
                         </label>
                       ))}
                       <input type="text" placeholder="Autre (à préciser)" className="w-full px-4 py-2 rounded-xl border border-light focus:border-orange outline-none text-sm" onChange={(e) => {
@@ -321,7 +321,7 @@ export default function ExpertForm() {
                         {["Immédiate", "Sous 3 mois", "Selon les opportunités"].map(opt => (
                           <label key={opt} className="flex items-center space-x-2 cursor-pointer">
                             <input type="radio" name="availability" value={opt} onChange={handleChange} checked={formData.availability === opt} className="w-4 h-4 text-orange focus:ring-orange" />
-                            <span className="text-dark/80 text-sm">{opt}</span>
+                            <span className="text-slate-700 text-sm">{opt}</span>
                           </label>
                         ))}
                         <input type="text" placeholder="Autre (à préciser)" className="w-full px-4 py-2 rounded-xl border border-light focus:border-orange outline-none text-sm" onChange={(e) => setFormData(prev => ({...prev, availability: "Autre: " + e.target.value}))} />
@@ -334,7 +334,7 @@ export default function ExpertForm() {
                         {ALL_LANGUAGES.map(lang => (
                           <label key={lang} className="flex items-center space-x-2 cursor-pointer">
                             <input type="checkbox" checked={formData.languages.includes(lang)} onChange={(e) => handleArrayCheckbox('languages', lang, e.target.checked)} className="w-4 h-4 rounded text-orange focus:ring-orange" />
-                            <span className="text-dark/80 text-sm">{lang}</span>
+                            <span className="text-slate-700 text-sm">{lang}</span>
                           </label>
                         ))}
                       </div>
@@ -364,7 +364,7 @@ export default function ExpertForm() {
                 <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-2">
                   <label className="flex items-start space-x-3 cursor-pointer">
                     <input type="checkbox" name="consent" required checked={formData.consent} onChange={handleChange} className="w-5 h-5 mt-0.5 rounded text-orange focus:ring-orange shrink-0" />
-                    <span className="text-dark/80 text-sm leading-relaxed">
+                    <span className="text-slate-700 text-sm leading-relaxed">
                       <strong>Consentement au traitement des données</strong><br/>
                       J'accepte que les informations renseignées dans ce formulaire soient conservées et utilisées par SaniNova Global Consulting dans le cadre exclusif de la constitution de son répertoire d'experts. Ces données ne seront pas partagées avec des tiers sans mon accord préalable.
                     </span>
