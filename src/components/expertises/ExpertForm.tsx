@@ -75,7 +75,7 @@ export default function ExpertForm() {
   };
 
   return (
-    <section className="py-16 bg-slate-50 border-t border-light mt-16">
+    <section className="py-16 bg-light border-t border-light mt-16">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-10 space-y-4">
           <span className="inline-block font-poppins text-xs font-bold text-orange tracking-widest uppercase border-b-2 border-orange pb-1">
