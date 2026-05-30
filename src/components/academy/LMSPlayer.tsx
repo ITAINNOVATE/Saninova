@@ -524,17 +524,17 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
-                className="bg-[#0F1D33] border border-white/5 rounded-[32px] p-6 md:p-10 shadow-2xl overflow-hidden relative"
+                className="bg-white border border-slate-200 rounded-[32px] p-6 md:p-10 shadow-2xl overflow-hidden relative"
               >
-                <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+                <div className="absolute top-0 right-0 w-64 h-64 bg-orange/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
                 {/* Lesson Header */}
-                <div className="mb-8 flex flex-wrap gap-4 items-center justify-between border-b border-white/5 pb-6">
+                <div className="mb-8 flex flex-wrap gap-4 items-center justify-between border-b border-slate-200 pb-6">
                   <div>
                     <span className="text-orange font-bold text-xs uppercase tracking-widest block mb-1">
                       {currentChapter.type === "video" ? "Cours Vidéo" : "Support de Cours"} • {currentChapter.duration}
                     </span>
-                    <h3 className="text-orange font-montserrat font-extrabold text-xl md:text-2xl leading-tight">
+                    <h3 className="text-[#0F1D33] font-montserrat font-extrabold text-xl md:text-2xl leading-tight mt-1">
                       {currentChapter.title}
                     </h3>
                   </div>
@@ -543,13 +543,13 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                     onClick={() => toggleChapterCompleted(currentChapter.id)}
                     className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 border cursor-pointer ${
                       completedChapters[currentChapter.id]
-                        ? "bg-emerald-500/10 border-emerald-500/20 text-emerald-400"
-                        : "bg-white/5 border-white/10 text-white/60 hover:text-white hover:bg-white/10"
+                        ? "bg-emerald-50 text-emerald-600 border-emerald-200"
+                        : "bg-slate-50 border-slate-200 text-slate-500 hover:text-slate-800 hover:bg-slate-100"
                     }`}
                   >
                     {completedChapters[currentChapter.id] ? (
                       <>
-                        <CheckCircle className="w-4 h-4 text-emerald-400" /> Complété
+                        <CheckCircle className="w-4 h-4 text-emerald-500" /> Complété
                       </>
                     ) : (
                       <>
@@ -584,7 +584,7 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                 )}
 
                 {/* Lesson Rich Content (Markdown layout) */}
-                <div className="prose prose-invert prose-orange max-w-none mb-10 text-white/80 leading-relaxed text-sm md:text-base font-medium space-y-4">
+                <div className="prose prose-slate prose-orange max-w-none mb-10 text-slate-700 leading-relaxed text-sm md:text-base font-medium space-y-4">
                   {currentChapter.content.split("\n\n").map((para, i) => {
                     if (para.startsWith("####")) {
                       return (
@@ -596,7 +596,7 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                     }
                     if (para.startsWith("###")) {
                       return (
-                        <h4 key={i} className="text-orange font-montserrat font-bold text-lg md:text-xl mt-6 mb-3 flex items-center gap-3">
+                        <h4 key={i} className="text-[#0F1D33] font-montserrat font-bold text-lg md:text-xl mt-6 mb-3 flex items-center gap-3">
                           <span className="w-2 h-2 rounded-full bg-orange"></span>
                           {para.replace(/^#+\s*/, "")}
                         </h4>
@@ -606,14 +606,14 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                       return (
                         <ul key={i} className="space-y-2 pl-4 list-disc marker:text-orange my-4">
                           {para.split("\n").map((li, j) => (
-                            <li key={j} className="text-white/70">{li.replace(/^[\-▸]\s*/, "")}</li>
+                            <li key={j} className="text-slate-600">{li.replace(/^[\-▸]\s*/, "")}</li>
                           ))}
                         </ul>
                       );
                     }
                     if (para.startsWith(">")) {
                       return (
-                        <blockquote key={i} className="border-l-4 border-orange bg-white/5 pl-4 py-3 rounded-r-xl italic text-white/90 my-6">
+                        <blockquote key={i} className="border-l-4 border-orange bg-slate-50 pl-4 py-3 rounded-r-xl italic text-slate-800 my-6">
                           {para.replace(/^>\s*"?|"?$/g, "")}
                         </blockquote>
                       );
@@ -622,7 +622,7 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                     const imgMatch = para.match(/^!\[(.*?)\]\((.*?)\)$/);
                     if (imgMatch) {
                       return (
-                        <div key={i} className="my-8 rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                        <div key={i} className="my-8 rounded-2xl overflow-hidden border border-slate-200 shadow-lg">
                           {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img src={imgMatch[2]} alt={imgMatch[1]} className="w-full h-auto object-cover max-h-[400px]" />
                         </div>
@@ -636,29 +636,29 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                         </pre>
                       );
                     }
-                    return <p key={i} className="text-white/60 leading-relaxed">{para}</p>;
+                    return <p key={i} className="text-slate-600 leading-relaxed">{para}</p>;
                   })}
                 </div>
 
                 {/* Resources Panel */}
                 {currentChapter.resources && currentChapter.resources.length > 0 && (
-                  <div className="mb-10 bg-white/2 border border-white/5 rounded-2xl p-6">
-                    <h5 className="text-white font-bold text-xs uppercase tracking-wider mb-4 flex items-center gap-2">
+                  <div className="mb-10 bg-slate-50 border border-slate-200 rounded-2xl p-6">
+                    <h5 className="text-[#0F1D33] font-bold text-xs uppercase tracking-wider mb-4 flex items-center gap-2">
                       <Download className="w-4 h-4 text-orange" /> Ressources à télécharger
                     </h5>
                     <div className="grid md:grid-cols-2 gap-4">
                       {currentChapter.resources.map((res, rIdx) => (
-                        <div key={rIdx} className="bg-white/3 hover:bg-white/5 border border-white/5 p-4 rounded-xl flex items-center justify-between gap-4 transition-all">
+                        <div key={rIdx} className="bg-white hover:bg-slate-100 border border-slate-200 p-4 rounded-xl flex items-center justify-between gap-4 transition-all shadow-sm">
                           <div className="flex items-center gap-3">
                             <div className="w-10 h-10 rounded-xl bg-orange/10 flex items-center justify-center text-orange shrink-0">
                               <FileText className="w-5 h-5" />
                             </div>
                             <div className="min-w-0">
-                              <p className="text-xs font-bold text-white truncate">{res.name}</p>
-                              <p className="text-[10px] text-white/40 font-bold mt-0.5">{res.type} • {res.size}</p>
+                              <p className="text-xs font-bold text-slate-800 truncate">{res.name}</p>
+                              <p className="text-[10px] text-slate-500 font-bold mt-0.5">{res.type} • {res.size}</p>
                             </div>
                           </div>
-                          <button className="p-2 bg-white/5 hover:bg-orange rounded-lg text-white transition-all cursor-pointer">
+                          <button className="p-2 bg-slate-100 hover:bg-orange hover:text-white rounded-lg text-slate-600 transition-all cursor-pointer">
                             <Download className="w-4 h-4" />
                           </button>
                         </div>
@@ -668,18 +668,18 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                 )}
 
                 {/* Lesson Navigation footer */}
-                <div className="flex items-center justify-between pt-6 border-t border-white/5">
+                <div className="flex items-center justify-between pt-6 border-t border-slate-200">
                   <button
                     onClick={handlePrev}
                     disabled={currentChapterIndex === 0}
-                    className="px-6 py-3.5 text-white/60 hover:text-white disabled:opacity-30 disabled:hover:text-white/60 font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition-all cursor-pointer"
+                    className="px-6 py-3.5 text-slate-500 hover:text-slate-800 disabled:opacity-30 disabled:hover:text-slate-500 font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition-all cursor-pointer"
                   >
                     <ArrowLeft className="w-4 h-4" /> Précédent
                   </button>
 
                   <button
                     onClick={handleNext}
-                    className="px-8 py-3.5 bg-white text-dark font-black rounded-xl hover:scale-105 active:scale-95 transition-all text-xs uppercase tracking-wider flex items-center gap-2 cursor-pointer shadow-lg shadow-white/5"
+                    className="px-8 py-3.5 bg-orange text-white font-black rounded-xl hover:scale-105 active:scale-95 transition-all text-xs uppercase tracking-wider flex items-center gap-2 cursor-pointer shadow-lg shadow-orange/30 hover:bg-[#d95c00]"
                   >
                     {currentChapterIndex < totalChaptersCount - 1 ? (
                       <>
@@ -687,7 +687,7 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                       </>
                     ) : (
                       <>
-                        Lancer l'évaluation <HelpCircle className="w-4 h-4 text-dark" />
+                        Lancer l'évaluation <HelpCircle className="w-4 h-4" />
                       </>
                     )}
                   </button>
