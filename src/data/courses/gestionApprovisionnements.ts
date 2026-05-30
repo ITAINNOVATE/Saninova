@@ -1,4 +1,4 @@
-export const gestionApprovisionnementsCourse = [
+export const gestionApprovisionnementsCourse: any = [
   {
     "id": "gas-m1",
     "title": "Contenu de la formation",

@@ -1,4 +1,4 @@
-export const quantificationBesoinsCourse = [
+export const quantificationBesoinsCourse: any = [
   {
     "id": "qb-m1",
     "title": "Contenu de la formation",
