@@ -363,7 +363,7 @@ export const quantificationBesoinsCourse: any[] = [
         "title": "Méthode basée sur la morbidité",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Méthode basée sur la morbidité\n\nTableau synthèse — Méthode basée sur la morbidité\n"
+        "content": "#### Méthode basée sur la morbidité\n\nTableau synthèse — Méthode basée sur la morbidité\n\n| Avantages | Inconvénients |\n|---|---|\n| Très précise si les données épidémiologiques sont fiables | Nécessite des données très détaillées et à jour |\n| Utile pour les nouveaux programmes de santé | Ne tient pas compte des pertes et péremptions passées |\n| Basée sur les besoins cliniques réels | Calculs complexes, surtout pour des maladies à schémas thérapeutiques multiples |\n"
       }
     ]
   },
@@ -453,7 +453,7 @@ export const quantificationBesoinsCourse: any[] = [
         "title": "Méthode basée sur les services",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Méthode basée sur les services\n\nTableau synthèse — Méthode basée sur les services\n"
+        "content": "#### Méthode basée sur les services\n\nTableau synthèse — Méthode basée sur les services\n\n| Avantages | Inconvénients |\n|---|---|\n| Plus facile à appliquer que la méthode de morbidité | Moins précise sur la nature exacte des pathologies |\n| Adaptée aux contraintes budgétaires existantes | Ne prend pas en compte les cas non traités (demande non satisfaite) |\n| Basée sur la capacité réelle des services de santé | Peut masquer les conséquences de ruptures de stock antérieures |\n"
       }
     ]
   },
@@ -820,7 +820,7 @@ export const quantificationBesoinsCourse: any[] = [
         "title": "Utilisation de Quantimed, PipeLine, ForLAB, QAT",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Utilisation de Quantimed, PipeLine, ForLAB, QAT\n\nQuantimed\n\nArchitecture et modules de Quantimed\n\nModule 5 — Triangulation dans Quantimed\n\nQuantimed affiche les résultats des différentes méthodes dans un tableau comparatif et calcule automatiquement les écarts en pourcentage.\n\nExemple de sortie Quantimed — Tableau de triangulation ACT :\n"
+        "content": "#### Utilisation de Quantimed, PipeLine, ForLAB, QAT\n\nQuantimed\n\nArchitecture et modules de Quantimed\n\nModule 5 — Triangulation dans Quantimed\n\nQuantimed affiche les résultats des différentes méthodes dans un tableau comparatif et calcule automatiquement les écarts en pourcentage.\n\nExemple de sortie Quantimed — Tableau de triangulation ACT :\n\n| Méthode de prévision | Quantité Estimée | Écart vs Moyenne |\n|---|---|---|\n| Méthode de Morbidité | 150 000 | +5,2% |\n| Méthode des Services | 135 000 | -5,3% |\n| Méthode de Consommation | 142 500 | +0,0% |\n"
       },
       {
         "id": "qb-m9-c10",

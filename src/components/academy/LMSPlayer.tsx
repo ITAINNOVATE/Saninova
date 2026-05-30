@@ -618,6 +618,43 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                         </blockquote>
                       );
                     }
+
+                    if (para.trim().startsWith("|") && para.includes("\n")) {
+                      const rows = para.trim().split("\n");
+                      const hasSeparator = rows.length > 1 && rows[1].includes("---");
+                      const bodyStartIndex = hasSeparator ? 2 : 1;
+                      
+                      return (
+                        <div key={i} className="my-6 overflow-x-auto rounded-xl border border-slate-200">
+                          <table className="w-full text-left text-sm">
+                            <thead>
+                              <tr className="bg-slate-100 border-b border-slate-200 text-[#0F1D33]">
+                                {rows[0].split("|").filter(c => c.trim() !== "").map((cell, cIdx) => (
+                                  <th key={cIdx} className="px-4 py-3 font-bold border-r border-slate-200 last:border-0">{cell.trim()}</th>
+                                ))}
+                              </tr>
+                            </thead>
+                            <tbody className="divide-y divide-slate-100">
+                              {rows.slice(bodyStartIndex).map((row, rIdx) => {
+                                if (row.trim() === "") return null;
+                                return (
+                                  <tr key={rIdx} className="hover:bg-slate-50 transition-colors">
+                                    {row.split("|").filter((c, idx, arr) => {
+                                      // Remove empty first and last elements caused by leading/trailing pipes
+                                      if ((idx === 0 || idx === arr.length - 1) && c.trim() === "") return false;
+                                      return true;
+                                    }).map((cell, cIdx) => (
+                                      <td key={cIdx} className="px-4 py-3 text-slate-700 border-r border-slate-200 last:border-0">{cell.trim()}</td>
+                                    ))}
+                                  </tr>
+                                );
+                              })}
+                            </tbody>
+                          </table>
+                        </div>
+                      );
+                    }
+
                     
                     const imgMatch = para.match(/^!\[(.*?)\]\((.*?)\)$/);
                     if (imgMatch) {

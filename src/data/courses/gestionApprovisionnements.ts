@@ -470,7 +470,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Calcul du point de commande et du délai de livraison",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Calcul du point de commande et du délai de livraison\n\nTableau de synthèse — Point de commande selon les contextes\n"
+        "content": "#### Calcul du point de commande et du délai de livraison\n\nTableau de synthèse — Point de commande selon les contextes\n\n| Contexte de livraison | Formule du Point de Commande (PC) | Niveau de Sécurité |\n|---|---|---|\n| Livraison rapide et fiable | PC = (CMM × Délai) + Stock Min faible | Bas |\n| Délai long (International) | PC = (CMM × Délai) + Stock Min élevé | Haut |\n| Demande très variable | PC = (CMM max × Délai) + Stock Min élevé | Très Haut |\n"
       },
       {
         "id": "gas-m2-c24",
@@ -582,7 +582,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Exercices pratiques sur données réelles",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Exercices pratiques sur données réelles\n\nCorrection EXERCICE 4 — Cas complexe multiproduits\n\nTableau de bord final — Dépôt de district de Savalou\n"
+        "content": "#### Exercices pratiques sur données réelles\n\nCorrection EXERCICE 4 — Cas complexe multiproduits\n\nTableau de bord final — Dépôt de district de Savalou\n\n| Produit | CMM | Stock Dispo | Mois de Stock | Statut | Quantité à Commander |\n|---|---|---|---|---|---|\n| Paracétamol 500mg | 10 000 | 15 000 | 1,5 | Normal | 15 000 |\n| Amoxicilline 250mg | 5 000 | 2 500 | 0,5 | Rupture imminente | 12 500 |\n| CTA Adulte | 2 000 | 8 000 | 4,0 | Surstock | 0 |\n"
       }
     ]
   },
@@ -840,7 +840,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Gestion des contrats et des termes de livraison (Incoterms)",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\nLe contrat d'approvisionnement pharmaceutique\n\nTableau récapitulatif des clauses essentielles\n"
+        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\nLe contrat d'approvisionnement pharmaceutique\n\nTableau récapitulatif des clauses essentielles\n\n| Clause | Description | Impact en cas d'absence |\n|---|---|---|\n| Qualité et Spécifications | Normes exigées (pharmacopée, durée de vie) | Réception de produits périmés ou non conformes |\n| Délais de livraison | Date exacte ou période maximale de livraison | Ruptures de stock dues aux retards |\n| Pénalités de retard | % de déduction par jour/semaine de retard | Aucun moyen de pression sur le fournisseur |\n| Incoterms | Répartition des coûts et risques de transport | Litiges sur le paiement du fret et de l'assurance |\n"
       },
       {
         "id": "gas-m3-c37",
