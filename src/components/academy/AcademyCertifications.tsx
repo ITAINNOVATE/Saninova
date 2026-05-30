@@ -34,10 +34,12 @@ const AcademyCertifications = () => {
     return matchesSearch && matchesCategory;
   });
 
+  const normalizeText = (text: string) => text.toLowerCase().trim().replace(/['’]/g, "'");
+
   const getCertDetails = (certName: string) => {
     for (const ac of certificationsData) {
       const found = ac.certifications.find(
-        c => c.name.toLowerCase().trim() === certName.toLowerCase().trim()
+        c => normalizeText(c.name) === normalizeText(certName)
       );
       if (found) {
         return {
