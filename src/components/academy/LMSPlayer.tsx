@@ -11,6 +11,21 @@ import { staticModules, slugify } from "../../lib/academyHelpers";
 
 const renderMarkdownText = (text: string) => {
   if (!text || typeof text !== 'string') return text;
+  
+  // Auto-bold specific formula lines
+  const formulaKeywords = [
+    'Point de commande', 'Stock', 'SS', 'CMM', 'QàC', 'Taux', 'Déficit', 
+    'Durée', 'Écart', 'Montant', 'Délai', 'Consommation', 'Quantité', 'Formule',
+    'Z ', 'σ ', 'DL ', 'Total ', 'Couverture '
+  ];
+  
+  const trimmedText = text.trim();
+  const isEquationLine = trimmedText.includes('=') && formulaKeywords.some(kw => trimmedText.startsWith(kw));
+
+  if (isEquationLine) {
+    return <strong style={{ color: '#0F1D33', fontWeight: 800 }}>{text}</strong>;
+  }
+
   if (!text.includes('**')) return text;
   const parts = text.split(/(\*\*.*?\*\*)/g);
   return parts.map((part, index) => {
