@@ -1,1245 +1,154 @@
-// Fichier généré automatiquement avec le contenu propre du PPTX Quantification
-export const quantificationBesoinsCourse: any[] = [
+export const quantificationBesoinsCourse = [
   {
     "id": "qb-m1",
-    "title": "Module 1 : Introduction",
+    "title": "Contenu de la formation",
     "chapters": [
       {
         "id": "qb-m1-c1",
         "title": "Quantification  des besoins",
         "type": "text",
-        "duration": "10 min",
-        "content": "#### Quantification  des besoins\n\nACADEMIE SUPPLY CHAIN SANTE\n"
+        "duration": "5 min",
+        "content": "### Quantification  des besoins\n\nACADEMIE SUPPLY CHAIN SANTE"
       },
       {
         "id": "qb-m1-c2",
         "title": "Gestion des approvisionnements et des stocks",
         "type": "text",
-        "duration": "10 min",
-        "content": "#### Gestion des approvisionnements et des stocks\n\nChapitres\n\nIntroduction à la quantification\n\nMéthodes de prévision\n\nOutils de prévision et modélisation de la demande\n\nPlanification des approvisionnements\n\nAtelier pratique : exercices de quantification pays\n"
+        "duration": "5 min",
+        "content": "### Gestion des approvisionnements et des stocks\n\nChapitres\r\n\r\nIntroduction à la quantification\r\nMéthodes de prévision\r\nOutils de prévision et modélisation de la demande \r\nPlanification des approvisionnements\r\nAtelier pratique : exercices de quantification pays"
       },
       {
         "id": "qb-m1-c3",
         "title": "Introduction à la quantification",
         "type": "text",
-        "duration": "10 min",
-        "content": "#### Introduction à la quantification\n\nQUANTIFICATION DES BESOINS\n"
+        "duration": "5 min",
+        "content": "### Introduction à la quantification\n\nQUANTIFICATION DES BESOINS\n\nLa quantification est un processus de gestion de la chaîne d’approvisionnement qui consiste à estimer les besoins futurs en produits de santé et à déterminer les quantités ainsi que le calendrier des approvisionnements nécessaires pour garantir la disponibilité continue des produits (suivant les financements disponibles) au sein du système de santé.\r\n\r\nElle ne se limite plus à un simple exercice de calcul des besoins. \r\n\r\nElle devient :\r\nUn outil de gouvernance \r\nUn mécanisme d’aide à la décision\r\nUn instrument de coordination des bailleurs et \r\nUn levier de résilience des systèmes de santé.\n\nLa quantification repose généralement sur :\r\nles données de consommation \r\nles données morbidité/programme \r\nles niveaux de stock disponibles \r\nles commandes en cours \r\nles délais d’approvisionnement \r\nles pertes et ajustements \r\nles objectifs programmatiques \r\nles tendances épidémiologiques et \r\nles contraintes budgétaires.\n\nPréparation: \r\nElle consiste à organiser l’ensemble des données, des acteurs, des hypothèses, des outils et des paramètres nécessaires afin d’assurer un exercice de quantification fiable, coordonné et basé sur des données de qualité.\r\n\r\nPrévision des besoins : \r\nC’est une estimation/prédiction des quantités de produits qui seront consommées/utilisées par les patients/utilisateurs pour leur traitement ou reçues par les formations sanitaires sur une période de temps futur.\r\nElaboration du plan d’approvisionnement :\r\nC’est un calendrier des envois de produits pour un programme sur une période de temps futur afin de garantir des niveaux de stock suffisant pour satisfaire les besoins de la population. Les envois sont définis en terme de quantité et nécessitent une date de réception (au niveau central d’entreposage).\r\n\r\nPREPARATION\r\n\r\nPREVISION\r\n\r\nPLANIFICATION\r\n\r\nLes composantes de la quantification"
       },
       {
         "id": "qb-m1-c4",
-        "title": "Introduction à la quantification",
+        "title": "Méthodes de prévision",
         "type": "text",
-        "duration": "10 min",
-        "content": "#### Introduction à la quantification\n\nLa quantification est un processus de gestion de la chaîne d’approvisionnement qui consiste à estimer les besoins futurs en produits de santé et à déterminer les quantités ainsi que le calendrier des approvisionnements nécessaires pour garantir la disponibilité continue des produits (suivant les financements disponibles) au sein du système de santé.\n\nElle ne se limite plus à un simple exercice de calcul des besoins.\n\nElle devient :\n\nUn outil de gouvernance\n\nUn mécanisme d’aide à la décision\n\nUn instrument de coordination des bailleurs et\n\nUn levier de résilience des systèmes de santé.\n"
+        "duration": "5 min",
+        "content": "### Méthodes de prévision\n\nQUANTIFICATION DES BESOINS"
       },
       {
         "id": "qb-m1-c5",
-        "title": "Introduction à la quantification",
+        "title": "Gestion des approvisionnements et des stocks",
         "type": "text",
-        "duration": "10 min",
-        "content": "#### Introduction à la quantification\n\nLa quantification repose généralement sur :\n\nles données de consommation\n\nles données morbidité/programme\n\nles niveaux de stock disponibles\n\nles commandes en cours\n\nles délais d’approvisionnement\n\nles pertes et ajustements\n\nles objectifs programmatiques\n\nles tendances épidémiologiques et\n\nles contraintes budgétaires.\n"
+        "duration": "5 min",
+        "content": "### Gestion des approvisionnements et des stocks\n\nPlan\r\n\r\nRésumé des méthodes de prévision\r\nMéthode basée sur la consommation \r\nMéthode basée sur la morbidité \r\nMéthode basée sur les services\r\nMéthode basée sur les cibles de population\r\nTriangulation des méthodes"
       },
       {
         "id": "qb-m1-c6",
-        "title": "Introduction à la quantification",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Introduction à la quantification\n\nPréparation:\n\nElle consiste à organiser l’ensemble des données, des acteurs, des hypothèses, des outils et des paramètres nécessaires afin d’assurer un exercice de quantification fiable, coordonné et basé sur des données de qualité.\n\nPrévision des besoins :\n\nC’est une estimation/prédiction des quantités de produits qui seront consommées/utilisées par les patients/utilisateurs pour leur traitement ou reçues par les formations sanitaires sur une période de temps futur.\n\nElaboration du plan d’approvisionnement :\n\nC’est un calendrier des envois de produits pour un programme sur une période de temps futur afin de garantir des niveaux de stock suffisant pour satisfaire les besoins de la population. Les envois sont définis en terme de quantité et nécessitent une date de réception (au niveau central d’entreposage).\n\nPREPARATION\n\nPREVISION\n\nPLANIFICATION\n\nLes composantes de la quantification\n"
-      }
-    ]
-  },
-  {
-    "id": "qb-m2",
-    "title": "Module 2 : Méthodes de prévision",
-    "chapters": [
-      {
-        "id": "qb-m2-c1",
-        "title": "Méthodes de prévision",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthodes de prévision\n\nQUANTIFICATION DES BESOINS\n"
-      },
-      {
-        "id": "qb-m2-c2",
-        "title": "Gestion des approvisionnements et des stocks",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Gestion des approvisionnements et des stocks\n\nPlan\n\nRésumé des méthodes de prévision\n\nMéthode basée sur la consommation\n\nMéthode basée sur la morbidité\n\nMéthode basée sur les services\n\nMéthode basée sur les cibles de population\n\nTriangulation des méthodes\n"
-      },
-      {
-        "id": "qb-m2-c3",
         "title": "Résumé des méthodes de prévision",
         "type": "text",
-        "duration": "10 min",
-        "content": "#### Résumé des méthodes de prévision\n\nDémographiques\n\nPopulation\n\nPopulation du pays\n\nServices\n\nNombre de Tests/Visite\n\nServices\n\nConsommation\n\nProduits\n\nNombre d'unités\n\nPatients\n\nNombre de Patients\n\nMorbidité\n\nLes patients représentent quel pourcentage de la population?\n\nQuel est le nombre de services par patient?\n\nQuel est le nombre de produits requis par patient?\n\nQuel est le nombre de produits requis par service?\n"
-      }
-    ]
-  },
-  {
-    "id": "qb-m3",
-    "title": "Module 3 : Méthode basée sur la consommation",
-    "chapters": [
-      {
-        "id": "qb-m3-c1",
-        "title": "Méthode basée sur la consommation",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la consommation\n\nLa méthode basée sur la consommation est la plus utilisée dans les systèmes de santé disposant d'un historique de données fiable.\n\nElle part d'un principe simple : la meilleure estimation des besoins futurs est ce qui a été réellement consommé dans le passé, ajusté pour tenir compte des tendances, des ruptures et des évolutions prévisibles.\n\nC'est la méthode de référence pour les médicaments dont la consommation est stable et bien documentée.\n\nSa qualité dépend entièrement de la qualité des données collectées. Des données médiocres produiront une quantification médiocre, peu importe la sophistication de la formule appliquée.\n"
+        "duration": "5 min",
+        "content": "### Résumé des méthodes de prévision\n\nDémographiques\r\n\r\nPopulation\u000bPopulation du pays\r\n\r\nServices\u000b# de Tests/Visite\r\n\r\nServices\r\n\r\nConsommation\r\n\r\nProduits\u000b# d’unité\r\n\r\nPatients\u000b# de Patients\r\n\r\nMorbidité\r\n\r\nLes patients représentent quel pourcentage de la population?\r\n\r\nQuel est le nombre de services par patient?\r\n\r\nQuel est le nombre de produits requis par patient?\r\n\r\nQuel est le nombre de produits requis par service?"
       },
       {
-        "id": "qb-m3-c2",
+        "id": "qb-m1-c7",
         "title": "Méthode basée sur la consommation",
         "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la consommation\n\nPrincipe général de la méthode\n\nLa méthode basée sur la consommation utilise les données historiques de distribution ou de consommation pour projeter les besoins futurs.\n\nElle répond à la question :\n\nsi nous avons consommé X unités sur les 12 derniers mois,\n\ncombien nous faudra-t-il sur les 12 prochains mois ?\n\nFormule de base : Besoin prévisionnel = CMM ajustée × Nombre de mois de la période de planification × Facteur d'ajustement\n\nLe facteur d'ajustement tient compte des évolutions attendues : croissance de la population desservie, changement de protocole, amélioration de la couverture des services.\n"
+        "duration": "5 min",
+        "content": "### Méthode basée sur la consommation\n\nLa méthode basée sur la consommation est la plus utilisée dans les systèmes de santé disposant d'un historique de données fiable. \r\n\r\nElle part d'un principe simple : la meilleure estimation des besoins futurs est ce qui a été réellement consommé dans le passé, ajusté pour tenir compte des tendances, des ruptures et des évolutions prévisibles. \r\n\r\nC'est la méthode de référence pour les médicaments dont la consommation est stable et bien documentée. \r\n\r\nSa qualité dépend entièrement de la qualité des données collectées. Des données médiocres produiront une quantification médiocre, peu importe la sophistication de la formule appliquée.\n\nPrincipe général de la méthode\r\n\r\nLa méthode basée sur la consommation utilise les données historiques de distribution ou de consommation pour projeter les besoins futurs. \r\n\r\nElle répond à la question : \r\nsi nous avons consommé X unités sur les 12 derniers mois, \r\ncombien nous faudra-t-il sur les 12 prochains mois ?\r\n\r\nFormule de base : Besoin prévisionnel = CMM ajustée × Nombre de mois de la période de planification × Facteur d'ajustement\r\n\r\nLe facteur d'ajustement tient compte des évolutions attendues : croissance de la population desservie, changement de protocole, amélioration de la couverture des services.\n\nPrincipe général de la méthode\r\n\r\nExtrapolation à partir d’une série de données chronologiques –\r\nSérie de données chronologiques : nécessite une série de données au fil du temps – pas juste des données annuelles (c.-à-d. consommation réelle mensuelle ajustée)\r\nExtrapolation : utilise les données du passé pour prédire le futur.\r\n\r\nA n’utiliser que si le passé est un bon indicateur du futur! Plus utile pour des produits avec des données complètes et précises.\r\n\r\nEn théorie il existe 4 composantes de base: Prévision ≅𝐵𝑎𝑠𝑒+𝑇𝑒𝑛𝑑𝑎𝑛𝑐𝑒+𝑆𝑎𝑖𝑠𝑜𝑛𝑎𝑙𝑖𝑡é +𝐴𝑙é𝑎𝑡𝑜𝑖𝑟𝑒\r\n\r\nDifférentes méthodes d’extrapolation estiment ces composantes sur la base de séries de données chronologiques pour aboutir à la prévision\n\nLes sources de données de consommation\r\n\r\nLa première étape de la méthode est la collecte des données. \r\n\r\nLa qualité de ces données est le facteur le plus critique de toute la démarche.\n\nLes sources de données de consommation\r\n\r\nSource 1 — Les registres de dispensation des pharmacies\r\nC'est la source la plus directe. \r\nAvantages :\r\nDonnées proches de la consommation réelle au niveau patient\r\nGranularité élevée (par produit, par date, par service)\r\nDisponibles dans la plupart des structures\r\nLimites :\r\nQualité variable selon la rigueur d'enregistrement\r\nDonnées de consommation biaisées si des ruptures ont eu lieu (demande non satisfaite non visible)\r\nConsolidation difficile entre plusieurs sites\r\n\r\nLes principales sources de données\n\nLes sources de données de consommation\r\n\r\nSource 2 — Les rapports de consommation des programmes de santé\r\nLes programmes verticaux (VIH/SIDA, paludisme, tuberculose, vaccination) collectent leurs propres données de consommation via des rapports mensuels ou trimestriels standardisés. \r\nAvantages :\r\nDonnées agrégées à plusieurs niveaux (site, district, région, national)\r\nFormat standardisé facilitant la comparaison\r\nSouvent saisies dans des systèmes informatisés \r\nLimites :\r\nDélais de transmission (les données du mois M arrivent parfois au mois M+2 ou M+3)\r\nTaux de complétude parfois insuffisant (tous les sites ne rapportent pas)\r\nDonnées de dispensation ≠ données de consommation réelle si retours de stock non enregistrés\r\n\r\nLes principales sources de données\n\nLes sources de données de consommation\r\n\r\nSource 3 — Les données de sortie des dépôts centraux et régionaux\r\nLes quantités expédiées par les centrales d'achat vers les niveaux inférieurs constituent une source de données de consommation agrégée. \r\nAvantages :\r\nDonnées centralisées et généralement bien documentées\r\nReflètent les flux réels de produits dans le système \r\nLimites :\r\nReflètent les sorties du dépôt central, pas la consommation finale au patient\r\nBiaisées si des stocks s'accumulent aux niveaux intermédiaires ou si des redistributions ont eu lieu\r\nNe permettent pas de détecter les pertes et péremptions aux niveaux périphériques\r\n\r\nLes principales sources de données\n\nLes sources de données de consommation\r\n\r\nSource 4 — Les données des systèmes d'information de santé\r\nLes systèmes d'information nationaux consolident les données de plusieurs sources et permettent des analyses multi-niveaux. \r\nAvantages :\r\nVue d'ensemble nationale en temps réel (si les données sont saisies régulièrement)\r\nPermet la comparaison entre régions, districts et sites\r\nHistorique long terme accessible\r\nLimites :\r\nQualité dépendante de la rigueur de saisie à la base\r\nDélais de saisie parfois importants\r\nNécessite une formation pour l'extraction et l'analyse des données\r\n\r\nLes principales sources de données\n\nLes sources de données de consommation\r\n\r\nCritères de qualité des données de consommation\r\n\r\n| Critère | Description | Questions clés |\r\n| --- | --- | --- |\r\n| Complétude | Toutes les sources ont-elles rapporté ? | Quel est le taux de complétude des rapports ? |\r\n| Exactitude | Les données reflètent-elles la réalité ? | Y a-t-il eu des ruptures qui biaisent les données ? |\r\n| Cohérence | Les données sont-elles cohérentes dans le temps et entre sites ? | Y a-t-il des valeurs aberrantes inexpliquées ? |\r\n| Promptitude | Les données sont-elles disponibles à temps pour la quantification ? | Avec quel délai les données arrivent-elles ? |\r\n| Granularité | Le niveau de détail est-il suffisant ? | Peut-on distinguer les données par produit, site, période ? |\n\nCollecte des données — Procédure standardisée\r\n\r\nDéfinir la période de référence\r\n\r\n| Situation | Période recommandée | Justification |\r\n| --- | --- | --- |\r\n| Données stables et complètes | 12 mois | Capture la saisonnalité complète |\r\n| Données partiellement disponibles | 6 mois minimum | En dessous, la CMM est peu fiable |\r\n| Changement récent de protocole | Données post-changement uniquement | Les données antérieures ne sont plus pertinentes |\r\n| Programme en phase de montée en charge | 3 à 6 mois récents + projection | La tendance est plus importante que la moyenne historique |\n\nCollecte des données — Procédure standardisée\r\n\r\nFormulaire standardisé de collecte des données\r\n\r\nPour garantir la cohérence des données collectées auprès de plusieurs sites, un formulaire standardisé doit être utilisé.\n\nAnalyse des données — Ajustements nécessaires\r\n\r\nAjustement pour les ruptures de stock\r\n\r\nLes mois de rupture biaisent la CMM vers le bas. \r\n\r\nL'ajustement consiste à extrapoler la consommation réelle pendant les périodes de rupture.\r\n\r\nFormule d'ajustement : \r\nConsommation ajustée du mois = Consommation enregistrée × (Jours du mois ÷ Jours de disponibilité)\n\nAnalyse des données — Ajustements nécessaires\r\n\r\nAjustement des données de consommation par interpolation\r\n\r\nPour les champs vides , l’interpolation utilise les valeurs les plus proches des deux côtés du champ vide (avant ou après le vide) et calcule la ligne directe entre les deux pour renseigner le champ vide\r\n\r\nConsommations réelles\r\n\r\nMois\n\nAnalyse des données — Ajustements nécessaires\r\n\r\nAjustement pour la croissance du programme\r\n\r\nSi le nombre de patients ou d'utilisateurs du service augmente structurellement, la CMM historique sous-estime les besoins futurs. \r\n\r\nUn facteur de croissance doit être appliqué.\r\n\r\nFormule :\r\nCMM projetée = CMM ajustée × (1 + Taux de croissance annuel)\n\nAnalyse des données — Ajustements nécessaires\r\n\r\nAjustement pour les changements de protocole\r\n\r\nQuand un protocole de traitement change (nouveau médicament, nouvelle dose, nouveau schéma), les données historiques de l'ancien produit ne sont plus pertinentes pour quantifier le nouveau.\n\nAnalyse des données — Ajustements nécessaires\r\n\r\nDétection et traitement des valeurs aberrantes\r\n\r\nUne valeur aberrante est une donnée qui s'écarte significativement de la tendance générale sans explication documentée. \r\n\r\nElle peut résulter d'une erreur de saisie, d'un transfert non enregistré ou d'un événement exceptionnel.\r\n\r\nMéthode de détection : Calculer la moyenne et l'écart-type des données. Toute valeur à plus de 2 écarts-types de la moyenne est considérée comme aberrante et doit être vérifiée.\n\nAnalyse des données — Ajustements nécessaires\r\n\r\nAjustement pour la couverture attendue\r\n\r\nSi le programme prévoit d'étendre sa couverture géographique ou populationnelle, un facteur d'expansion doit être intégré.\r\n\r\nFormule : \r\nBesoin projeté = CMM actuelle × (Couverture cible ÷ Couverture actuelle)\n\nCalcul de la quantification par la méthode de consommation\r\n\r\nUne fois les données collectées, vérifiées et ajustées, la quantification peut être calculée.\r\n\r\nFormule complète : \r\nQuantité à approvisionner = (CMM ajustée × Mois de planification) + Stock de sécurité − Stock disponible − Commandes en transit\n\nModèles statistiques d’extrapolation\r\n\r\n5 modèles statistiques d’extrapolation\r\n Moyenne Mobile (Moving average)\r\n Semi-Moyennes (Semi-averages)\r\n Régression lineaire (Linear regression)\r\n Lissage Exponentiel Triple [Triple exponential smoothing (TES, Holt-Winter)]\r\n Moyenne Mobile intégrée autoregressive [Auto-Regressive Integrated Moving Average (ARIMA)]\n\nModèles statistiques d’extrapolation\r\n\r\nMoyenne Mobile (Moving average)\r\n\r\nUne moyenne qui évolue dans le temps, supprimant les données plus anciennes à mesure qu'elle intègre des données plus récentes (+ données = + facile)\r\n\r\nPossible avec <14 mois de données (pas de minimum) \r\nN’inclue pas : \r\nSaisonnalité, \r\nTendance, \r\nIntervalle de confiance\n\nModèles statistiques d’extrapolation\r\n\r\nSemi-Moyennes (Semi-averages)\r\n\r\nDivise les données réelles en deux parties égales (moitiés) et calcule la moyenne arithmétique des valeurs de chaque partie (moitié)\r\n\r\nPossible avec <14 mois de données (au moins 3 mois de données)\r\nN’inclue pas : \r\nSaisonnalité, \r\nDonnées non aléatoire\r\n\r\nY=mx+b\r\nm= Pente\r\nb= Y-interception avec l’axe des ordonnées\r\n\r\nm=(Y2-Y1)/(X2-X1)\n\nModèles statistiques d’extrapolation\r\n\r\nRégression lineaire (Linear regression)\r\n\r\nmodélise la relation entre deux variables en ajustant une équation linéaire aux données observées. Méthode très utilisée.\r\n\r\nPossible avec <14 mois de données (au moins 3 mois de données)\r\nN’inclue pas : \r\nSaisonnalité, \r\nDonnées non aléatoire\n\nModèles statistiques d’extrapolation\r\n\r\nLissage Exponentiel Triple [Triple exponential smoothing (TES, Holt-Winter)]\r\n\r\nUtilise des données plus anciennes à des poids décroissants de manière exponentielle au fil du temps (supérieur = Plus de poids aux données récentes)\r\nalpha, s’applique à la base\r\nbeta, s’applique à la tendance\r\ngamma, s’applique à la saisonnalité\r\n\r\nPossible qu’ avec >24 mois de données, \r\nInclue : \r\nsaisonalité, \r\ntendance, \r\nintervalle de confiance\n\nModèles statistiques d’extrapolation\r\n\r\nMoyenne Mobile intégrée autorégressive [Auto-Regressive Integrated Moving Average (ARIMA)]\r\n\r\n\"Auto-regressive\" (AR) Chaque point est influence par ses valeurs précédentes \r\n“Moyenne mobile\" (MA) Chaque point est une Moyenne d’un ou de plusieurs points adjacents. \r\nAR & MA sont \"intégrés\" pour ajuster un meilleur modèle pour la série par différenciation (en utilisant ma différence entre les points d’une série chronologique au lieu des valeurs brutes)\r\n\r\nPossible qu’ avec >14 mois de données, \r\nInclue : \r\nsaisonalité, \r\ntendance, \r\nintervalle de confiance\n\nPrévision basée sur les modèles de données\r\n\r\n✔ Tendance\r\nPas de saisonalité\r\n\r\n✔  Saisonalité \r\nPas de tendance\r\n\r\nPas de tendance ou de saisonalité\r\n\r\nMeilleures unites de mesure\r\n\r\n✔  Tendance\r\n✔ Saisonalité\r\n\r\nSemi-moyennes\r\nRégression linéaire\r\n\r\nARIMA\r\nLissage Exponential Triple\r\n\r\nNaïve, Simple Moyenne, or \r\nMoyenne mobile\r\n\r\nARIMA\r\nLissage Exponential Triple\r\n\r\nMAPE\r\nWAPE*\r\nRMSE\r\n\r\nWAPE*\r\nRMSE\r\nMAE\r\n\r\nMAPE\r\nWAPE*\r\nRMSE\r\nMAE\r\n\r\nWAPE*\r\nRMSE\r\nMAE\r\n\r\nMéthodes d’extrapolation\r\n\r\nModèles de données\r\n\r\nex. Faible dose, les progestatifs en comp, \r\nDTG-10 (stable, après introduction)\r\n\r\nex. Etonogestrel 4-year contraceptive Implant, TLD-90, \r\nsulfadoxine-pyrimethamine\r\n\r\nex. Artemether-Lumefantrine (Endemies)\r\n\r\nMAPE : Erreur Absolue Moyenne en Pourcentage\r\nWAPE : Pourcentage d’Erreur Absolu Pondéré\r\nRMSE : Erreur Quadratique Moyenne\r\nMAE : Erreur Absolue Moyenne"
       },
       {
-        "id": "qb-m3-c3",
-        "title": "Méthode basée sur la consommation",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la consommation\n\nPrincipe général de la méthode\n\nExtrapolation à partir d’une série de données chronologiques –\n\nSérie de données chronologiques : nécessite une série de données au fil du temps – pas juste des données annuelles (c.-à-d. consommation réelle mensuelle ajustée)\n\nExtrapolation : utilise les données du passé pour prédire le futur.\n\nA n’utiliser que si le passé est un bon indicateur du futur! Plus utile pour des produits avec des données complètes et précises.\n\nEn théorie il existe 4 composantes de base: Prévision ≅𝐵𝑎𝑠𝑒+𝑇𝑒𝑛𝑑𝑎𝑛𝑐𝑒+𝑆𝑎𝑖𝑠𝑜𝑛𝑎𝑙𝑖𝑡é +𝐴𝑙é𝑎𝑡𝑜𝑖𝑟𝑒\n\nDifférentes méthodes d’extrapolation estiment ces composantes sur la base de séries de données chronologiques pour aboutir à la prévision\n"
-      },
-      {
-        "id": "qb-m3-c4",
-        "title": "Méthode basée sur la consommation",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la consommation\n\nLes sources de données de consommation\n\nLa première étape de la méthode est la collecte des données.\n\nLa qualité de ces données est le facteur le plus critique de toute la démarche.\n"
-      },
-      {
-        "id": "qb-m3-c5",
-        "title": "Méthode basée sur la consommation",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la consommation\n\nLes sources de données de consommation\n\nSource 1 — Les registres de dispensation des pharmacies\n\nC'est la source la plus directe.\n\nAvantages :\n\nDonnées proches de la consommation réelle au niveau patient\n\nGranularité élevée (par produit, par date, par service)\n\nDisponibles dans la plupart des structures\n\nLimites :\n\nQualité variable selon la rigueur d'enregistrement\n\nDonnées de consommation biaisées si des ruptures ont eu lieu (demande non satisfaite non visible)\n\nConsolidation difficile entre plusieurs sites\n\nLes principales sources de données\n"
-      },
-      {
-        "id": "qb-m3-c6",
-        "title": "Méthode basée sur la consommation",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la consommation\n\nLes sources de données de consommation\n\nSource 2 — Les rapports de consommation des programmes de santé\n\nLes programmes verticaux (VIH/SIDA, paludisme, tuberculose, vaccination) collectent leurs propres données de consommation via des rapports mensuels ou trimestriels standardisés.\n\nAvantages :\n\nDonnées agrégées à plusieurs niveaux (site, district, région, national)\n\nFormat standardisé facilitant la comparaison\n\nSouvent saisies dans des systèmes informatisés\n\nLimites :\n\nDélais de transmission (les données du mois M arrivent parfois au mois M+2 ou M+3)\n\nTaux de complétude parfois insuffisant (tous les sites ne rapportent pas)\n\nDonnées de dispensation ≠ données de consommation réelle si retours de stock non enregistrés\n\nLes principales sources de données\n"
-      },
-      {
-        "id": "qb-m3-c7",
-        "title": "Méthode basée sur la consommation",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la consommation\n\nLes sources de données de consommation\n\nSource 3 — Les données de sortie des dépôts centraux et régionaux\n\nLes quantités expédiées par les centrales d'achat vers les niveaux inférieurs constituent une source de données de consommation agrégée.\n\nAvantages :\n\nDonnées centralisées et généralement bien documentées\n\nReflètent les flux réels de produits dans le système\n\nLimites :\n\nReflètent les sorties du dépôt central, pas la consommation finale au patient\n\nBiaisées si des stocks s'accumulent aux niveaux intermédiaires ou si des redistributions ont eu lieu\n\nNe permettent pas de détecter les pertes et péremptions aux niveaux périphériques\n\nLes principales sources de données\n"
-      },
-      {
-        "id": "qb-m3-c8",
-        "title": "Méthode basée sur la consommation",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la consommation\n\nLes sources de données de consommation\n\nSource 4 — Les données des systèmes d'information de santé\n\nLes systèmes d'information nationaux consolident les données de plusieurs sources et permettent des analyses multi-niveaux.\n\nAvantages :\n\nVue d'ensemble nationale en temps réel (si les données sont saisies régulièrement)\n\nPermet la comparaison entre régions, districts et sites\n\nHistorique long terme accessible\n\nLimites :\n\nQualité dépendante de la rigueur de saisie à la base\n\nDélais de saisie parfois importants\n\nNécessite une formation pour l'extraction et l'analyse des données\n\nLes principales sources de données\n"
-      },
-      {
-        "id": "qb-m3-c9",
-        "title": "Méthode basée sur la consommation",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la consommation\n\nLes sources de données de consommation\n\nCritères de qualité des données de consommation\n"
-      },
-      {
-        "id": "qb-m3-c10",
-        "title": "Méthode basée sur la consommation",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la consommation\n\nCollecte des données — Procédure standardisée\n\nDéfinir la période de référence\n"
-      },
-      {
-        "id": "qb-m3-c11",
-        "title": "Méthode basée sur la consommation",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la consommation\n\nCollecte des données — Procédure standardisée\n\nFormulaire standardisé de collecte des données\n\nPour garantir la cohérence des données collectées auprès de plusieurs sites, un formulaire standardisé doit être utilisé.\n"
-      },
-      {
-        "id": "qb-m3-c12",
-        "title": "Méthode basée sur la consommation",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la consommation\n\nAnalyse des données — Ajustements nécessaires\n\nAjustement pour les ruptures de stock\n\nLes mois de rupture biaisent la CMM vers le bas.\n\nL'ajustement consiste à extrapoler la consommation réelle pendant les périodes de rupture.\n\nFormule d'ajustement :\n\nConsommation ajustée du mois = Consommation enregistrée × (Jours du mois ÷ Jours de disponibilité)\n"
-      },
-      {
-        "id": "qb-m3-c13",
-        "title": "Méthode basée sur la consommation",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la consommation\n\nAnalyse des données — Ajustements nécessaires\n\nAjustement des données de consommation par interpolation\n\nPour les champs vides , l’interpolation utilise les valeurs les plus proches des deux côtés du champ vide (avant ou après le vide) et calcule la ligne directe entre les deux pour renseigner le champ vide\n\nConsommations réelles\n\nMois\n"
-      },
-      {
-        "id": "qb-m3-c14",
-        "title": "Méthode basée sur la consommation",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la consommation\n\nAnalyse des données — Ajustements nécessaires\n\nAjustement pour la croissance du programme\n\nSi le nombre de patients ou d'utilisateurs du service augmente structurellement, la CMM historique sous-estime les besoins futurs.\n\nUn facteur de croissance doit être appliqué.\n\nFormule :\n\nCMM projetée = CMM ajustée × (1 + Taux de croissance annuel)\n"
-      },
-      {
-        "id": "qb-m3-c15",
-        "title": "Méthode basée sur la consommation",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la consommation\n\nAnalyse des données — Ajustements nécessaires\n\nAjustement pour les changements de protocole\n\nQuand un protocole de traitement change (nouveau médicament, nouvelle dose, nouveau schéma), les données historiques de l'ancien produit ne sont plus pertinentes pour quantifier le nouveau.\n"
-      },
-      {
-        "id": "qb-m3-c16",
-        "title": "Méthode basée sur la consommation",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la consommation\n\nAnalyse des données — Ajustements nécessaires\n\nDétection et traitement des valeurs aberrantes\n\nUne valeur aberrante est une donnée qui s'écarte significativement de la tendance générale sans explication documentée.\n\nElle peut résulter d'une erreur de saisie, d'un transfert non enregistré ou d'un événement exceptionnel.\n\nMéthode de détection : Calculer la moyenne et l'écart-type des données. Toute valeur à plus de 2 écarts-types de la moyenne est considérée comme aberrante et doit être vérifiée.\n"
-      },
-      {
-        "id": "qb-m3-c17",
-        "title": "Méthode basée sur la consommation",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la consommation\n\nAnalyse des données — Ajustements nécessaires\n\nAjustement pour la couverture attendue\n\nSi le programme prévoit d'étendre sa couverture géographique ou populationnelle, un facteur d'expansion doit être intégré.\n\nFormule :\n\nBesoin projeté = CMM actuelle × (Couverture cible ÷ Couverture actuelle)\n"
-      },
-      {
-        "id": "qb-m3-c18",
-        "title": "Méthode basée sur la consommation",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la consommation\n\nCalcul de la quantification par la méthode de consommation\n\nUne fois les données collectées, vérifiées et ajustées, la quantification peut être calculée.\n\nFormule complète :\n\nQuantité à approvisionner = (CMM ajustée × Mois de planification) + Stock de sécurité − Stock disponible − Commandes en transit\n"
-      },
-      {
-        "id": "qb-m3-c19",
-        "title": "Méthode basée sur la consommation",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la consommation\n\nModèles statistiques d’extrapolation\n\n5 modèles statistiques d’extrapolation\n\nMoyenne Mobile (Moving average)\n\nSemi-Moyennes (Semi-averages)\n\nRégression lineaire (Linear regression)\n\nLissage Exponentiel Triple [Triple exponential smoothing (TES, Holt-Winter)]\n\nMoyenne Mobile intégrée autoregressive [Auto-Regressive Integrated Moving Average (ARIMA)]\n"
-      },
-      {
-        "id": "qb-m3-c20",
-        "title": "Méthode basée sur la consommation",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la consommation\n\nModèles statistiques d’extrapolation\n\nMoyenne Mobile (Moving average)\n\nUne moyenne qui évolue dans le temps, supprimant les données plus anciennes à mesure qu'elle intègre des données plus récentes (+ données = + facile)\n\nPossible avec <14 mois de données (pas de minimum)\n\nN’inclue pas :\n\nSaisonnalité,\n\nTendance,\n\nIntervalle de confiance\n"
-      },
-      {
-        "id": "qb-m3-c21",
-        "title": "Méthode basée sur la consommation",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la consommation\n\nModèles statistiques d’extrapolation\n\nSemi-Moyennes (Semi-averages)\n\nDivise les données réelles en deux parties égales (moitiés) et calcule la moyenne arithmétique des valeurs de chaque partie (moitié)\n\nPossible avec <14 mois de données (au moins 3 mois de données)\n\nN’inclue pas :\n\nSaisonnalité,\n\nDonnées non aléatoire\n\nY=mx+b\n\nm= Pente\n\nb= Y-interception avec l’axe des ordonnées\n\nm=(Y2-Y1)/(X2-X1)\n"
-      },
-      {
-        "id": "qb-m3-c22",
-        "title": "Méthode basée sur la consommation",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la consommation\n\nModèles statistiques d’extrapolation\n\nRégression lineaire (Linear regression)\n\nmodélise la relation entre deux variables en ajustant une équation linéaire aux données observées. Méthode très utilisée.\n\nPossible avec <14 mois de données (au moins 3 mois de données)\n\nN’inclue pas :\n\nSaisonnalité,\n\nDonnées non aléatoire\n"
-      },
-      {
-        "id": "qb-m3-c23",
-        "title": "Méthode basée sur la consommation",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la consommation\n\nModèles statistiques d’extrapolation\n\nLissage Exponentiel Triple [Triple exponential smoothing (TES, Holt-Winter)]\n\nUtilise des données plus anciennes à des poids décroissants de manière exponentielle au fil du temps (supérieur = Plus de poids aux données récentes)\n\nalpha, s’applique à la base\n\nbeta, s’applique à la tendance\n\ngamma, s’applique à la saisonnalité\n\nPossible qu’ avec >24 mois de données,\n\nInclue :\n\nsaisonalité,\n\ntendance,\n\nintervalle de confiance\n"
-      },
-      {
-        "id": "qb-m3-c24",
-        "title": "Méthode basée sur la consommation",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la consommation\n\nModèles statistiques d’extrapolation\n\nMoyenne Mobile intégrée autorégressive [Auto-Regressive Integrated Moving Average (ARIMA)]\n\n\"Auto-regressive\" (AR) Chaque point est influence par ses valeurs précédentes\n\n“Moyenne mobile\" (MA) Chaque point est une Moyenne d’un ou de plusieurs points adjacents.\n\nAR & MA sont \"intégrés\" pour ajuster un meilleur modèle pour la série par différenciation (en utilisant ma différence entre les points d’une série chronologique au lieu des valeurs brutes)\n\nPossible qu’ avec >14 mois de données,\n\nInclue :\n\nsaisonalité,\n\ntendance,\n\nintervalle de confiance\n"
-      },
-      {
-        "id": "qb-m3-c25",
-        "title": "Méthode basée sur la consommation",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la consommation\n\nPrévision basée sur les modèles de données\n\n✔ Tendance\n\nPas de saisonalité\n\n✔  Saisonalité\n\nPas de tendance\n\nPas de tendance ou de saisonalité\n\nMeilleures unites de mesure\n\n✔  Tendance\n\n✔ Saisonalité\n\nSemi-moyennes\n\nRégression linéaire\n\nARIMA\n\nLissage Exponential Triple\n\nNaïve, Simple Moyenne, or\n\nMoyenne mobile\n\nARIMA\n\nLissage Exponential Triple\n\nMAPE\n\nWAPE*\n\nRMSE\n\nWAPE*\n\nRMSE\n\nMAE\n\nMAPE\n\nWAPE*\n\nRMSE\n\nMAE\n\nWAPE*\n\nRMSE\n\nMAE\n\nMéthodes d’extrapolation\n\nModèles de données\n\nex. Faible dose, les progestatifs en comp,\n\nDTG-10 (stable, après introduction)\n\nex. Etonogestrel 4-year contraceptive Implant, TLD-90,\n\nsulfadoxine-pyrimethamine\n\nex. Artemether-Lumefantrine (Endemies)\n\nMAPE : Erreur Absolue Moyenne en Pourcentage\n\nWAPE : Pourcentage d’Erreur Absolu Pondéré\n\nRMSE : Erreur Quadratique Moyenne\n\nMAE : Erreur Absolue Moyenne\n"
-      }
-    ]
-  },
-  {
-    "id": "qb-m4",
-    "title": "Module 4 : Méthode basée sur la morbidité",
-    "chapters": [
-      {
-        "id": "qb-m4-c1",
+        "id": "qb-m1-c8",
         "title": "Méthode basée sur la morbidité",
         "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la morbidité\n\nDémographiques\n\nPopulation\n\nPopulation du pays\n\nServices\n\nNombre de Tests/Visite\n\nServices\n\nConsommation\n\nProduits\n\nNombre d'unités\n\nPatients\n\nNombre de Patients\n\nMorbidité\n\nLes patients représentent quel pourcentage de la population?\n\nQuel est le nombre de services par patient?\n\nQuel est le nombre de produits requis par patient?\n\nQuel est le nombre de produits requis par service?\n"
+        "duration": "5 min",
+        "content": "### Méthode basée sur la morbidité\n\nDémographiques\r\n\r\nPopulation\u000bPopulation du pays\r\n\r\nServices\u000b# de Tests/Visite\r\n\r\nServices\r\n\r\nConsommation\r\n\r\nProduits\u000b# d’unité\r\n\r\nPatients\u000b# de Patients\r\n\r\nMorbidité\r\n\r\nLes patients représentent quel pourcentage de la population?\r\n\r\nQuel est le nombre de services par patient?\r\n\r\nQuel est le nombre de produits requis par patient?\r\n\r\nQuel est le nombre de produits requis par service?\n\nLa méthode basée sur la morbidité part d'une logique radicalement différente de la méthode basée sur la consommation. \r\n\r\nAu lieu de regarder ce qui a été consommé dans le passé, elle part de ce qui devrait être consommé, compte tenu du nombre de cas de maladie attendus et des protocoles de traitement en vigueur. \r\n\r\nC'est une méthode de construction des besoins à partir de la demande théorique. \r\n\r\nElle est particulièrement utile quand les données historiques de consommation sont inexistantes, peu fiables, ou quand le contexte a changé significativement (nouveau programme, nouveau protocole, extension géographique).\r\n \r\nSa précision dépend de deux facteurs critiques : \r\nla fiabilité des données épidémiologiques (combien de cas sont attendus ?) et \r\nla rigueur de l'application des protocoles de traitement (quelle quantité de médicament par cas ?).\n\nPrincipe général de la méthode\r\n\r\nLa méthode basée sur la morbidité construit les besoins en médicaments à partir de trois composantes : \r\n\r\nBesoin = Nombre de cas attendus × Taux de traitement × Quantité de médicament par cas traité\r\n\r\nChacune de ces trois composantes doit être estimée avec soin. \r\n\r\nUne erreur sur l'une d'elles se propage et amplifie l'erreur finale.\n\nComposante 1 — Nombre de cas attendus\r\n\r\nSources de données épidémiologiques\r\n\r\nSource 1 — Données de morbidité des services de santé (données de consultation)\r\nLes registres de consultation des formations sanitaires enregistrent le nombre de cas diagnostiqués et traités pour chaque pathologie. \r\nC'est la source la plus directe mais elle ne capture que les cas qui se présentent dans les structures de santé.\n\nComposante 1 — Nombre de cas attendus\r\n\r\nSources de données épidémiologiques\r\n\r\nSource 2 — Données d'incidence issues des enquêtes populationnelles\r\nLes enquêtes de santé (EDS, MICS, enquêtes de ménages) estiment l'incidence des maladies dans la population totale, indépendamment du recours aux soins. \r\nElles donnent une image plus complète de la charge de morbidité réelle.\n\nComposante 1 — Nombre de cas attendus\r\n\r\nSources de données épidémiologiques\r\n\r\nSource 3 — Données historiques de morbidité ajustées\r\nQuand les deux sources précédentes ne sont pas disponibles ou récentes, on peut utiliser les données historiques de morbidité des années précédentes, ajustées pour la croissance de la population et les tendances épidémiologiques.\r\nFormule : Cas attendus année N = Cas enregistrés année N-1 × Facteur de croissance population × Facteur tendance épidémiologique\n\nComposante 1 — Nombre de cas attendus\r\n\r\nAjustement pour le taux d'utilisation des services\r\n\r\nLe taux d'utilisation des services de santé mesure la proportion de personnes malades qui consultent dans une formation sanitaire. \r\n\r\nIl est crucial pour ne quantifier que les médicaments qui seront réellement distribués dans le système public de santé.\r\n\r\nFormule : Cas traités dans le système public = Cas totaux dans la population × Taux d'utilisation des services publics\n\nComposante 2 — Les protocoles de traitement\r\n\r\nDéfinition et importance\r\n\r\nUn protocole de traitement (ou schéma thérapeutique standard) définit précisément quels médicaments utiliser, à quelle dose, pendant combien de jours, pour traiter une pathologie donnée. \r\n\r\nDans la méthode basée sur la morbidité, les protocoles sont la clé de conversion entre le nombre de cas et les quantités de médicaments nécessaires.\r\n\r\nPrincipe : Quantité de médicament par cas = Dose × Fréquence × Durée du traitement\n\nComposante 2 — Les protocoles de traitement\r\n\r\nSources des protocoles de traitement\r\n\r\nLes protocoles utilisés dans la quantification doivent impérativement être les protocoles nationaux officiels validés par le Ministère de la Santé. \r\n\r\nUtiliser des protocoles non officiels ou obsolètes invalide toute la quantification.\r\n\r\nDocuments de référence :\r\nGuide national de prise en charge des maladies\r\nProtocoles standardisés des programmes verticaux (PNLP, PNLT, PNLS)\r\nFormulaire national des médicaments essentiels\n\nComposante 3 — Taux de traitement\r\n\r\nDéfinition\r\n\r\nLe taux de traitement est la proportion des cas diagnostiqués qui reçoivent effectivement le traitement recommandé par le protocole national. \r\n\r\nIl n'est jamais de 100% pour plusieurs raisons : \r\nruptures de stock, \r\nrefus du patient, \r\nprescriptions alternatives, \r\nautomédication préalable.\r\n\r\nFormule : Taux de traitement = Cas traités selon protocole ÷ Total cas diagnostiqués × 100\n\nCalcul complet par la méthode de morbidité\r\n\r\nFormule complète\r\n\r\nBesoin total = Σ (Cas attendus par catégorie × Taux de traitement × Quantité par cas) \r\n\r\nLa sommation porte sur toutes les catégories de patients (tranches d'âge, formes de la maladie, etc\n\nAvantages, limites et conditions d'utilisation\r\n\r\nAvantages de la méthode basée sur la morbidité :\r\n\r\nElle permet de quantifier pour des programmes nouveaux où il n'y a pas encore de données de consommation. \r\nElle révèle les besoins non satisfaits (demande non couverte par le système actuel). \r\nElle permet de planifier l'impact d'une extension de couverture. \r\nElle est indépendante des biais liés aux ruptures de stock passées.\n\nAvantages, limites et conditions d'utilisation\r\n\r\nLimites de la méthode basée sur la morbidité :\r\n\r\nLa qualité des données épidémiologiques est souvent insuffisante dans les contextes à ressources limitées. \r\nLe taux d'utilisation des services est difficile à estimer avec précision. \r\nLes protocoles de traitement ne sont pas toujours parfaitement respectés sur le terrain. \r\nLa distribution par tranche d'âge et par forme clinique requiert des données démographiques précises. \r\nL'incidence réelle dépasse souvent l'incidence enregistrée.\n\nConditions d'utilisation optimale\r\n\r\n| Condition | Description |\r\n| --- | --- |\r\n| Données épidémiologiques récentes | Enquêtes de moins de 5 ans, données de surveillance à jour |\r\n| Protocoles nationaux validés | Schémas thérapeutiques officiels et appliqués |\r\n| Données démographiques fiables | Recensement récent ou projections validées |\r\n| Taux d'utilisation connu | Estimé à partir d'enquêtes ou de données historiques |\r\n| Programme nouveau ou en expansion | Contexte où les données de consommation sont inexistantes ou non représentatives |\n\nTableau synthèse — Méthode basée sur la morbidité\r\n\r\n| Étape | Action | Source de données |\r\n| --- | --- | --- |\r\n| 1. Estimer le nombre de cas | Utiliser données morbidité, incidence ou historique ajusté | Registres, enquêtes EDS/MICS, DHIS2 |\r\n| 2. Ajuster pour le taux d'utilisation | Appliquer la proportion de cas se présentant dans le système | Enquêtes, taux de recours aux soins |\r\n| 3. Distribuer par catégorie | Répartir les cas par tranche d'âge et forme clinique | Données démographiques, registres |\r\n| 4. Identifier les protocoles | Utiliser les protocoles nationaux officiels | Guide national de prise en charge |\r\n| 5. Calculer la quantité par cas | Dose × Fréquence × Durée | Protocole de traitement |\r\n| 6. Appliquer le taux de traitement | Proportion de cas traités selon le protocole | Données historiques, objectifs du programme |\r\n| 7. Calculer le besoin total | Σ (Cas × Taux traitement × Quantité/cas) | Calcul |\r\n| 8. Ajouter stock de sécurité | CMM équivalente × 2 mois | Politique nationale |\r\n| 9. Déduire stock disponible et transit | Stock physique + commandes en cours | Inventaire |"
       },
       {
-        "id": "qb-m4-c2",
-        "title": "Méthode basée sur la morbidité",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la morbidité\n\nLa méthode basée sur la morbidité part d'une logique radicalement différente de la méthode basée sur la consommation.\n\nAu lieu de regarder ce qui a été consommé dans le passé, elle part de ce qui devrait être consommé, compte tenu du nombre de cas de maladie attendus et des protocoles de traitement en vigueur.\n\nC'est une méthode de construction des besoins à partir de la demande théorique.\n\nElle est particulièrement utile quand les données historiques de consommation sont inexistantes, peu fiables, ou quand le contexte a changé significativement (nouveau programme, nouveau protocole, extension géographique).\n\nSa précision dépend de deux facteurs critiques :\n\nla fiabilité des données épidémiologiques (combien de cas sont attendus ?) et\n\nla rigueur de l'application des protocoles de traitement (quelle quantité de médicament par cas ?).\n"
-      },
-      {
-        "id": "qb-m4-c3",
-        "title": "Méthode basée sur la morbidité",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la morbidité\n\nPrincipe général de la méthode\n\nLa méthode basée sur la morbidité construit les besoins en médicaments à partir de trois composantes :\n\nBesoin = Nombre de cas attendus × Taux de traitement × Quantité de médicament par cas traité\n\nChacune de ces trois composantes doit être estimée avec soin.\n\nUne erreur sur l'une d'elles se propage et amplifie l'erreur finale.\n"
-      },
-      {
-        "id": "qb-m4-c4",
-        "title": "Méthode basée sur la morbidité",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la morbidité\n\nComposante 1 — Nombre de cas attendus\n\nSources de données épidémiologiques\n\nSource 1 — Données de morbidité des services de santé (données de consultation)\n\nLes registres de consultation des formations sanitaires enregistrent le nombre de cas diagnostiqués et traités pour chaque pathologie.\n\nC'est la source la plus directe mais elle ne capture que les cas qui se présentent dans les structures de santé.\n"
-      },
-      {
-        "id": "qb-m4-c5",
-        "title": "Méthode basée sur la morbidité",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la morbidité\n\nComposante 1 — Nombre de cas attendus\n\nSources de données épidémiologiques\n\nSource 2 — Données d'incidence issues des enquêtes populationnelles\n\nLes enquêtes de santé (EDS, MICS, enquêtes de ménages) estiment l'incidence des maladies dans la population totale, indépendamment du recours aux soins.\n\nElles donnent une image plus complète de la charge de morbidité réelle.\n"
-      },
-      {
-        "id": "qb-m4-c6",
-        "title": "Méthode basée sur la morbidité",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la morbidité\n\nComposante 1 — Nombre de cas attendus\n\nSources de données épidémiologiques\n\nSource 3 — Données historiques de morbidité ajustées\n\nQuand les deux sources précédentes ne sont pas disponibles ou récentes, on peut utiliser les données historiques de morbidité des années précédentes, ajustées pour la croissance de la population et les tendances épidémiologiques.\n\nFormule : Cas attendus année N = Cas enregistrés année N-1 × Facteur de croissance population × Facteur tendance épidémiologique\n"
-      },
-      {
-        "id": "qb-m4-c7",
-        "title": "Méthode basée sur la morbidité",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la morbidité\n\nComposante 1 — Nombre de cas attendus\n\nAjustement pour le taux d'utilisation des services\n\nLe taux d'utilisation des services de santé mesure la proportion de personnes malades qui consultent dans une formation sanitaire.\n\nIl est crucial pour ne quantifier que les médicaments qui seront réellement distribués dans le système public de santé.\n\nFormule : Cas traités dans le système public = Cas totaux dans la population × Taux d'utilisation des services publics\n"
-      },
-      {
-        "id": "qb-m4-c8",
-        "title": "Méthode basée sur la morbidité",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la morbidité\n\nComposante 2 — Les protocoles de traitement\n\nDéfinition et importance\n\nUn protocole de traitement (ou schéma thérapeutique standard) définit précisément quels médicaments utiliser, à quelle dose, pendant combien de jours, pour traiter une pathologie donnée.\n\nDans la méthode basée sur la morbidité, les protocoles sont la clé de conversion entre le nombre de cas et les quantités de médicaments nécessaires.\n\nPrincipe : Quantité de médicament par cas = Dose × Fréquence × Durée du traitement\n"
-      },
-      {
-        "id": "qb-m4-c9",
-        "title": "Méthode basée sur la morbidité",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la morbidité\n\nComposante 2 — Les protocoles de traitement\n\nSources des protocoles de traitement\n\nLes protocoles utilisés dans la quantification doivent impérativement être les protocoles nationaux officiels validés par le Ministère de la Santé.\n\nUtiliser des protocoles non officiels ou obsolètes invalide toute la quantification.\n\nDocuments de référence :\n\nGuide national de prise en charge des maladies\n\nProtocoles standardisés des programmes verticaux (PNLP, PNLT, PNLS)\n\nFormulaire national des médicaments essentiels\n"
-      },
-      {
-        "id": "qb-m4-c10",
-        "title": "Méthode basée sur la morbidité",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la morbidité\n\nComposante 3 — Taux de traitement\n\nDéfinition\n\nLe taux de traitement est la proportion des cas diagnostiqués qui reçoivent effectivement le traitement recommandé par le protocole national.\n\nIl n'est jamais de 100% pour plusieurs raisons :\n\nruptures de stock,\n\nrefus du patient,\n\nprescriptions alternatives,\n\nautomédication préalable.\n\nFormule : Taux de traitement = Cas traités selon protocole ÷ Total cas diagnostiqués × 100\n"
-      },
-      {
-        "id": "qb-m4-c11",
-        "title": "Méthode basée sur la morbidité",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la morbidité\n\nCalcul complet par la méthode de morbidité\n\nFormule complète\n\nBesoin total = Σ (Cas attendus par catégorie × Taux de traitement × Quantité par cas)\n\nLa sommation porte sur toutes les catégories de patients (tranches d'âge, formes de la maladie, etc\n"
-      },
-      {
-        "id": "qb-m4-c12",
-        "title": "Méthode basée sur la morbidité",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la morbidité\n\nAvantages, limites et conditions d'utilisation\n\nAvantages de la méthode basée sur la morbidité :\n\nElle permet de quantifier pour des programmes nouveaux où il n'y a pas encore de données de consommation.\n\nElle révèle les besoins non satisfaits (demande non couverte par le système actuel).\n\nElle permet de planifier l'impact d'une extension de couverture.\n\nElle est indépendante des biais liés aux ruptures de stock passées.\n"
-      },
-      {
-        "id": "qb-m4-c13",
-        "title": "Méthode basée sur la morbidité",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la morbidité\n\nAvantages, limites et conditions d'utilisation\n\nLimites de la méthode basée sur la morbidité :\n\nLa qualité des données épidémiologiques est souvent insuffisante dans les contextes à ressources limitées.\n\nLe taux d'utilisation des services est difficile à estimer avec précision.\n\nLes protocoles de traitement ne sont pas toujours parfaitement respectés sur le terrain.\n\nLa distribution par tranche d'âge et par forme clinique requiert des données démographiques précises.\n\nL'incidence réelle dépasse souvent l'incidence enregistrée.\n"
-      },
-      {
-        "id": "qb-m4-c14",
-        "title": "Méthode basée sur la morbidité",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la morbidité\n\nConditions d'utilisation optimale\n"
-      },
-      {
-        "id": "qb-m4-c15",
-        "title": "Méthode basée sur la morbidité",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur la morbidité\n\nTableau synthèse — Méthode basée sur la morbidité\n\n| Avantages | Inconvénients |\n|---|---|\n| Très précise si les données épidémiologiques sont fiables | Nécessite des données très détaillées et à jour |\n| Utile pour les nouveaux programmes de santé | Ne tient pas compte des pertes et péremptions passées |\n| Basée sur les besoins cliniques réels | Calculs complexes, surtout pour des maladies à schémas thérapeutiques multiples |\n"
-      }
-    ]
-  },
-  {
-    "id": "qb-m5",
-    "title": "Module 5 : Méthode basée sur les services",
-    "chapters": [
-      {
-        "id": "qb-m5-c1",
+        "id": "qb-m1-c9",
         "title": "Méthode basée sur les services",
         "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur les services\n\nLa méthode basée sur les services utilise les données de prestation de soins comme point de départ de la quantification.\n\nElle part du nombre d'actes de service rendus :\n\nconsultations prénatales effectuées,\n\naccouchements assistés,\n\nvaccinations réalisées,\n\ntests de dépistage conduits,\n\nchirurgies pratiquées.\n\nChaque acte de service consomme une quantité définie de produits selon un protocole standardisé. En multipliant le nombre d'actes par la quantité de produits consommés par acte, on obtient le besoin total.\n\nC'est la méthode de prédilection pour les produits liés à des services spécifiques et mesurables (santé reproductive, les réactifs de laboratoire, les vaccins et les consommables chirurgicaux).\n"
+        "duration": "5 min",
+        "content": "### Méthode basée sur les services\n\nLa méthode basée sur les services utilise les données de prestation de soins comme point de départ de la quantification. \r\n\r\nElle part du nombre d'actes de service rendus : \r\nconsultations prénatales effectuées, \r\naccouchements assistés, \r\nvaccinations réalisées, \r\ntests de dépistage conduits, \r\nchirurgies pratiquées. \r\n\r\nChaque acte de service consomme une quantité définie de produits selon un protocole standardisé. En multipliant le nombre d'actes par la quantité de produits consommés par acte, on obtient le besoin total. \r\n\r\nC'est la méthode de prédilection pour les produits liés à des services spécifiques et mesurables (santé reproductive, les réactifs de laboratoire, les vaccins et les consommables chirurgicaux).\n\nPrincipe général de la méthode\r\n\r\nBesoin total = Nombre d'actes de service × Quantité de produit par acte de service\r\n\r\nLa force de cette méthode réside dans le fait que les données de prestation de soins sont souvent mieux enregistrées que les données de consommation de médicaments. \r\n\r\nLe nombre de consultations prénatales, d'accouchements ou de vaccinations est systématiquement enregistré dans les registres d'activités des formations sanitaires et rapporté dans les systèmes d'information sanitaire.\n\nLes types de services et leurs produits associés\r\n\r\n| Service | Produits associés |\r\n| --- | --- |\r\n| Consultation prénatale (CPN) | Fer acide folique, Albendazole, Moustiquaire imprégnée (MILD), TPI (Sulfadoxine-Pyriméthamine), test de dépistage VIH, test syphilis |\r\n| Accouchement assisté | Oxytocine, Misoprostol, Ergométrine, Gants stériles, Lame de bistouri, Fil de suture, Lidocaïne, Vitamine K néonatale |\r\n| Consultation nourrisson (CPN0/CPS) | Vitamine A, Vaccins (PEV), Zinc, SRO |\r\n| Planification familiale | Contraceptifs oraux, Injectables (DMPA), Implants, DIU, Préservatifs |\r\n| Dépistage VIH | Tests de dépistage rapide (TDR VIH), réactifs de confirmation |\r\n| Consultation curative adulte | Variable selon pathologie (voir méthode morbidité) |\r\n| Chirurgie | Matériel de suture, anesthésiques, antibiotiques prophylactiques, antiseptiques |\r\n| Laboratoire | Réactifs selon types d'examens (NFS, glycémie, TDR paludisme, BK, CD4) |\r\n| Vaccination (PEV) | Vaccins selon calendrier, seringues autobloquantes, coton, alcool |\n\nCollecte des données de prestation de soins\r\n\r\nSources de données\r\n\r\nSource 1 — Les registres d'activités des formations sanitaires\r\nChaque service clinique tient un registre où sont enregistrés tous les actes effectués. Ces registres sont la source primaire des données de prestation.\r\n\r\nSource 2 — Les rapports mensuels d'activités (DHIS2, SIGMED)\r\nLes formations sanitaires transmettent mensuellement leurs données d'activités aux niveaux district, régional et national via les systèmes d'information. Ces données permettent la consolidation à grande échelle.\r\n\r\nSource 3 — Les données du Programme Élargi de Vaccination (PEV)\r\nLe PEV dispose de ses propres registres et rapports de vaccination, avec le nombre de doses administrées par antigène et par tranche d'âge.\n\nCollecte des données de prestation de soins\r\n\r\nVérification de la qualité des données de service\r\n\r\nComme pour les données de consommation, les données de prestation de soins doivent être évaluées avant utilisation.\r\n\r\nContrôle de cohérence interne :\r\nUne règle de cohérence bien connue stipule que le nombre de CPN4 ne peut pas dépasser le nombre de CPN1 (on ne peut pas avoir plus de femmes ayant effectué 4 visites que de femmes ayant effectué la première visite). \r\nDe même, le nombre d'accouchements assistés doit être inférieur au nombre de CPN4 (si toutes les femmes qui terminent le suivi accouchent dans la structure).\n\nDéfinition des normes de consommation par acte de service\r\n\r\nQu'est-ce qu'une norme de consommation par acte ?\r\n\r\nLa norme de consommation par acte (aussi appelée norme de service ou norme d'utilisation) définit la quantité standard d'un produit consommée lors d'un acte de service donné. \r\n\r\nElle est établie sur la base des protocoles cliniques nationaux.\r\n\r\nFormule : Norme par acte = Quantité du produit utilisée lors d'un acte de service standard\n\nCalcul complet par la méthode basée sur les services\r\n\r\nFormule\r\n\r\nBesoin total = Σ (Nombre d'actes de service × Norme de consommation par acte)\r\n\r\nLa sommation porte sur tous les types de services et toutes les normes applicables.\n\nApplication à grande échelle — Consolidation nationale\r\n\r\nÉtapes de la consolidation nationale\r\n\r\nÉtape 1 — Collecte des données de service de tous les sites : Via DHIS2 ou les rapports mensuels, collecter les données de prestation de soins de toutes les formations sanitaires.\r\n\r\nÉtape 2 — Estimation pour les sites non rapportants : Appliquer les moyennes régionales aux sites qui n'ont pas rapporté.\r\n\r\nÉtape 3 — Application des normes nationales : Utiliser les normes de consommation par acte validées au niveau national (pas les normes locales qui peuvent varier).\r\n\r\nÉtape 4 — Calcul des besoins par niveau et agrégation\n\nAvantages et limites\r\n\r\nAvantages spécifiques de la méthode basée sur les services :\r\n\r\nLes données de prestation de soins sont généralement mieux collectées et plus fiables que les données de consommation de médicaments. \r\nLa méthode est particulièrement adaptée aux produits dont la consommation est directement liée à un acte clinique mesurable. \r\nElle permet de détecter les inefficiences (gaspillage au-delà des normes) en comparant consommation réelle et consommation théorique calculée selon les normes. \r\nElle facilite la planification budgétaire car elle lie directement les coûts aux prestations de soins.\n\nAvantages et limites\r\n\r\nLimites de la méthode basée sur les services :\r\n\r\nLes normes de consommation par acte doivent être établies, validées et mises à jour régulièrement. \r\nElles varient selon le niveau de la structure et le contexte. \r\nLes données de service peuvent elles-mêmes être biaisées (sous-enregistrement des accouchements à domicile, surnotification dans certains contextes de financement basé sur les résultats). \r\nLa méthode ne capture que les actes enregistrés, pas les actes réalisés sans enregistrement.\n\nComparaison avec les autres méthodes\r\n\r\n| Critère | Méthode consommation | Méthode morbidité | Méthode services |\r\n| --- | --- | --- | --- |\r\n| Données requises | Sorties de stock | Incidence des maladies + protocoles | Actes de service + normes |\r\n| Fiabilité si données de qualité | Élevée | Moyenne à élevée | Élevée |\r\n| Adapté aux programmes nouveaux | Non | Oui | Si normes disponibles |\r\n| Capte la demande non satisfaite | Non | Oui | Partiellement |\r\n| Lien direct avec activités cliniques | Non | Indirect | Oui |\r\n| Facilité d'application | Simple | Complexe | Moyenne |\r\n| Produits adaptés | Médicaments de routine | Médicaments curatifs | Intrants liés à des actes spécifiques |\n\nTableau synthèse — Méthode basée sur les services\r\n\r\n| Étape | Action | Source de données |\r\n| --- | --- | --- |\r\n| 1. Identifier les services | Lister les actes de service consommant le produit | Protocoles cliniques nationaux |\r\n| 2. Collecter les données de service | Registres d'activités, rapports mensuels, DHIS2 | Formations sanitaires |\r\n| 3. Vérifier la cohérence | Contrôles de cohérence entre indicateurs liés | Analyse interne |\r\n| 4. Projeter les actes futurs | Appliquer le taux de croissance historique | Tendance des 3 dernières années |\r\n| 5. Définir les normes par acte | Quantité de produit par acte selon le protocole | Guide national, protocoles programmes |\r\n| 6. Calculer les besoins bruts | Nombre d'actes projetés × Norme par acte | Calcul |\r\n| 7. Ajouter le stock de sécurité | CMM équivalente × 2 mois | Politique nationale |\r\n| 8. Déduire stock disponible et transit | Inventaire physique + commandes en cours | Gestionnaire |\r\n| 9. Consolider si multi-sites | Agréger les besoins de toutes les formations sanitaires | Système d'information |"
       },
       {
-        "id": "qb-m5-c2",
-        "title": "Méthode basée sur les services",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur les services\n\nPrincipe général de la méthode\n\nBesoin total = Nombre d'actes de service × Quantité de produit par acte de service\n\nLa force de cette méthode réside dans le fait que les données de prestation de soins sont souvent mieux enregistrées que les données de consommation de médicaments.\n\nLe nombre de consultations prénatales, d'accouchements ou de vaccinations est systématiquement enregistré dans les registres d'activités des formations sanitaires et rapporté dans les systèmes d'information sanitaire.\n"
-      },
-      {
-        "id": "qb-m5-c3",
-        "title": "Méthode basée sur les services",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur les services\n\nLes types de services et leurs produits associés\n"
-      },
-      {
-        "id": "qb-m5-c4",
-        "title": "Méthode basée sur les services",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur les services\n\nCollecte des données de prestation de soins\n\nSources de données\n\nSource 1 — Les registres d'activités des formations sanitaires\n\nChaque service clinique tient un registre où sont enregistrés tous les actes effectués. Ces registres sont la source primaire des données de prestation.\n\nSource 2 — Les rapports mensuels d'activités (DHIS2, SIGMED)\n\nLes formations sanitaires transmettent mensuellement leurs données d'activités aux niveaux district, régional et national via les systèmes d'information. Ces données permettent la consolidation à grande échelle.\n\nSource 3 — Les données du Programme Élargi de Vaccination (PEV)\n\nLe PEV dispose de ses propres registres et rapports de vaccination, avec le nombre de doses administrées par antigène et par tranche d'âge.\n"
-      },
-      {
-        "id": "qb-m5-c5",
-        "title": "Méthode basée sur les services",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur les services\n\nCollecte des données de prestation de soins\n\nVérification de la qualité des données de service\n\nComme pour les données de consommation, les données de prestation de soins doivent être évaluées avant utilisation.\n\nContrôle de cohérence interne :\n\nUne règle de cohérence bien connue stipule que le nombre de CPN4 ne peut pas dépasser le nombre de CPN1 (on ne peut pas avoir plus de femmes ayant effectué 4 visites que de femmes ayant effectué la première visite).\n\nDe même, le nombre d'accouchements assistés doit être inférieur au nombre de CPN4 (si toutes les femmes qui terminent le suivi accouchent dans la structure).\n"
-      },
-      {
-        "id": "qb-m5-c6",
-        "title": "Méthode basée sur les services",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur les services\n\nDéfinition des normes de consommation par acte de service\n\nQu'est-ce qu'une norme de consommation par acte ?\n\nLa norme de consommation par acte (aussi appelée norme de service ou norme d'utilisation) définit la quantité standard d'un produit consommée lors d'un acte de service donné.\n\nElle est établie sur la base des protocoles cliniques nationaux.\n\nFormule : Norme par acte = Quantité du produit utilisée lors d'un acte de service standard\n"
-      },
-      {
-        "id": "qb-m5-c7",
-        "title": "Méthode basée sur les services",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur les services\n\nCalcul complet par la méthode basée sur les services\n\nFormule\n\nBesoin total = Σ (Nombre d'actes de service × Norme de consommation par acte)\n\nLa sommation porte sur tous les types de services et toutes les normes applicables.\n"
-      },
-      {
-        "id": "qb-m5-c8",
-        "title": "Méthode basée sur les services",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur les services\n\nApplication à grande échelle — Consolidation nationale\n\nÉtapes de la consolidation nationale\n\nÉtape 1 — Collecte des données de service de tous les sites : Via DHIS2 ou les rapports mensuels, collecter les données de prestation de soins de toutes les formations sanitaires.\n\nÉtape 2 — Estimation pour les sites non rapportants : Appliquer les moyennes régionales aux sites qui n'ont pas rapporté.\n\nÉtape 3 — Application des normes nationales : Utiliser les normes de consommation par acte validées au niveau national (pas les normes locales qui peuvent varier).\n\nÉtape 4 — Calcul des besoins par niveau et agrégation\n"
-      },
-      {
-        "id": "qb-m5-c9",
-        "title": "Méthode basée sur les services",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur les services\n\nAvantages et limites\n\nAvantages spécifiques de la méthode basée sur les services :\n\nLes données de prestation de soins sont généralement mieux collectées et plus fiables que les données de consommation de médicaments.\n\nLa méthode est particulièrement adaptée aux produits dont la consommation est directement liée à un acte clinique mesurable.\n\nElle permet de détecter les inefficiences (gaspillage au-delà des normes) en comparant consommation réelle et consommation théorique calculée selon les normes.\n\nElle facilite la planification budgétaire car elle lie directement les coûts aux prestations de soins.\n"
-      },
-      {
-        "id": "qb-m5-c10",
-        "title": "Méthode basée sur les services",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur les services\n\nAvantages et limites\n\nLimites de la méthode basée sur les services :\n\nLes normes de consommation par acte doivent être établies, validées et mises à jour régulièrement.\n\nElles varient selon le niveau de la structure et le contexte.\n\nLes données de service peuvent elles-mêmes être biaisées (sous-enregistrement des accouchements à domicile, surnotification dans certains contextes de financement basé sur les résultats).\n\nLa méthode ne capture que les actes enregistrés, pas les actes réalisés sans enregistrement.\n"
-      },
-      {
-        "id": "qb-m5-c11",
-        "title": "Méthode basée sur les services",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur les services\n\nComparaison avec les autres méthodes\n"
-      },
-      {
-        "id": "qb-m5-c12",
-        "title": "Méthode basée sur les services",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur les services\n\nTableau synthèse — Méthode basée sur les services\n\n| Avantages | Inconvénients |\n|---|---|\n| Plus facile à appliquer que la méthode de morbidité | Moins précise sur la nature exacte des pathologies |\n| Adaptée aux contraintes budgétaires existantes | Ne prend pas en compte les cas non traités (demande non satisfaite) |\n| Basée sur la capacité réelle des services de santé | Peut masquer les conséquences de ruptures de stock antérieures |\n"
-      }
-    ]
-  },
-  {
-    "id": "qb-m6",
-    "title": "Module 6 : Méthode basée sur les cibles de population",
-    "chapters": [
-      {
-        "id": "qb-m6-c1",
+        "id": "qb-m1-c10",
         "title": "Méthode basée sur les cibles de population",
         "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur les cibles de population\n\nLa méthode basée sur les cibles de population est la plus prospective des quatre méthodes de quantification. Elle ne part ni de ce qui a été consommé (méthode consommation), ni du nombre de cas enregistrés (méthode morbidité), ni des actes de service réalisés (méthode services), mais de la population cible qui devrait bénéficier d'un produit ou d'une intervention sanitaire, qu'elle ait ou non déjà accès au service.\n\nC'est la méthode des programmes d'envergure nationale ou régionale qui visent à atteindre une couverture universelle ou un objectif de couverture défini.\n\nElle est particulièrement adaptée aux produits dont la distribution est planifiée de façon systématique pour une population entière ou un sous-groupe démographique précis, indépendamment d'une demande spontanée :\n\nvaccins du PEV,\n\nsupplémentation en micronutriments,\n\nmoustiquaires imprégnées,\n\ncontraceptifs dans le cadre d'objectifs de planification familiale,\n\ntraitement préventif de masse.\n"
+        "duration": "5 min",
+        "content": "### Méthode basée sur les cibles de population\n\nLa méthode basée sur les cibles de population est la plus prospective des quatre méthodes de quantification. Elle ne part ni de ce qui a été consommé (méthode consommation), ni du nombre de cas enregistrés (méthode morbidité), ni des actes de service réalisés (méthode services), mais de la population cible qui devrait bénéficier d'un produit ou d'une intervention sanitaire, qu'elle ait ou non déjà accès au service. \r\n\r\nC'est la méthode des programmes d'envergure nationale ou régionale qui visent à atteindre une couverture universelle ou un objectif de couverture défini. \r\n\r\nElle est particulièrement adaptée aux produits dont la distribution est planifiée de façon systématique pour une population entière ou un sous-groupe démographique précis, indépendamment d'une demande spontanée : \r\nvaccins du PEV, \r\nsupplémentation en micronutriments, \r\nmoustiquaires imprégnées, \r\ncontraceptifs dans le cadre d'objectifs de planification familiale, \r\ntraitement préventif de masse.\n\nPrincipe général de la méthode\r\n\r\nBesoin total = Population cible × Taux de couverture visé × Quantité de produit par personne cible\r\n\r\nLes trois composantes sont distinctes et doivent chacune être estimées avec soin :\r\nPopulation cible : le sous-groupe de la population qui doit recevoir le produit (enfants de 6 à 59 mois, femmes enceintes, adultes de 15 à 49 ans, etc.)\r\n\r\nTaux de couverture visé : la proportion de la population cible qui doit effectivement recevoir le produit (objectif du programme)\r\n\r\nQuantité par personne : nombre d'unités du produit administrées par personne cible (doses, comprimés, moustiquaires)\n\nComposante 1 — Estimation de la population cible\r\n\r\nLes sources de données démographiques\r\n\r\nSource 1 — Le recensement général de la population\r\nC'est la source la plus fiable. Il fournit des données précises sur la structure par âge et par sexe de la population à la date du recensement.\r\n\r\nLimite principale : \r\nLes recensements sont réalisés tous les 10 ans en moyenne. \r\nEntre deux recensements, les données vieillissent et doivent être mises à jour par projection.\n\nComposante 1 — Estimation de la population cible\r\n\r\nLes sources de données démographiques\r\n\r\nSource 2 — Les projections démographiques\r\nÀ partir des données du dernier recensement, les instituts nationaux de statistique calculent des projections annuelles en appliquant les taux de natalité, mortalité et migration.\r\n\r\nFormule de projection : Population année N = Population recensement × (1 + Taux de croissance annuel)^(N − Année recensement)\n\nComposante 1 — Estimation de la population cible\r\n\r\nLes sources de données démographiques\r\n\r\nSource 3 — Les données DHIS2 et les dénombrements administratifs\r\nPour les niveaux district et infranationaux, les dénombrements administratifs annuels (recensements administratifs, dénombrements communautaires) fournissent des données plus récentes et localisées.\n\nComposante 1 — Estimation de la population cible\r\n\r\nCalcul des sous-groupes de population cible\r\n\r\nLes programmes de santé ciblent rarement la population totale. Ils ciblent des sous-groupes démographiques précis. \r\nCes sous-groupes sont calculés en appliquant des coefficients démographiques standards à la population totale.\r\n\r\n| Groupe cible | Coefficient appliqué à la population totale |\r\n| --- | --- |\r\n| Naissances attendues par an | 3,8% à 4,2% |\r\n| Enfants de 0 à 11 mois | 3,8% à 4,0% |\r\n| Enfants de 0 à 59 mois | 17% à 19% |\r\n| Enfants de 6 à 59 mois (supplémentation Vit A) | 15% à 16% |\r\n| Femmes enceintes | 4,5% à 5,0% |\r\n| Femmes en âge de procréer (15-49 ans) | 22% à 24% |\r\n| Ménages (pour les moustiquaires) | Population totale ÷ 5 à 5,5 |\r\n\r\nCoefficients démographiques standards (Bénin, contexte Afrique subsaharienne)\n\nComposante 1 — Estimation de la population cible\r\n\r\nAjustement pour la population cible réelle vs population cible théorique\r\n\r\nLa population cible théorique calculée par les coefficients démographiques est la cible maximale. \r\nDans la réalité, certains membres de la population cible ne sont pas joignables ou ne relèvent pas du système public. \r\nUn ajustement peut être nécessaire.\n\nComposante 2 — Le taux de couverture visé\r\n\r\nLe taux de couverture visé est l'objectif programmatique qui définit la proportion de la population cible qui doit recevoir le produit. Il est fixé par le programme national ou les objectifs de santé publique.\r\n\r\n| Type | Description | Exemple |\r\n| --- | --- | --- |\r\n| Couverture universelle | 100% de la cible visée | Vaccination campagne de masse contre la polio |\r\n| Couverture cible nationale | Objectif fixé par le programme | 90% de couverture VAR (Rougeole) |\r\n| Couverture historique | Couverture réelle des années précédentes | 82,5% VAR en 2024 |\r\n| Couverture progressive | Montée en charge sur plusieurs années | 70% an 1 → 80% an 2 → 90% an 3 |\n\nComposante 3 — Quantité de produit par personne cible\r\n\r\nProduits à dose unique\r\n\r\nPour les produits administrés une seule fois par cycle (par an, par campagne), la quantité par personne est directement le nombre de doses ou d'unités par personne.\r\n\r\nProduits à doses multiples\r\n\r\nPour les produits qui nécessitent plusieurs doses ou une prise continue, le calcul est plus complexe.\n\nCalcul complet par la méthode basée sur les cibles de population\r\n\r\nFormule complète\r\n\r\nQuantité à approvisionner = (Population cible × Taux de couverture × Quantité/personne × Facteur de gaspillage) + Stock de sécurité − Stock disponible − Commandes en transit\n\nLa gestion du taux de gaspillage dans la méthode population\r\n\r\nLe taux de gaspillage est un paramètre critique dans la méthode basée sur les cibles de population, particulièrement pour les vaccins et les produits biologiques.\r\n\r\n| Source | Description | Exemple |\r\n| --- | --- | --- |\r\n| Gaspillage technique (flacons ouverts) | Doses restantes dans un flacon multidose non utilisées | Flacon de 10 doses Pentavalent ouvert pour 3 enfants → 7 doses perdues |\r\n| Rupture de la chaîne du froid | Produits devenus inutilisables | Vaccins exposés à +12°C pendant le transport |\r\n| Péremption | Produits périmés avant utilisation | Stock mal géré, commandes excessives |\r\n| Pertes logistiques | Casse, vol, détérioration pendant le transport | Flacons cassés lors du déchargement |\r\n| Non-utilisation | Produits distribués mais non consommés | Moustiquaires distribuées mais non installées |\r\n\r\nSources de gaspillage\n\nAvantages et limites de la méthode basée sur les cibles de population\r\n\r\nAvantages\r\n\r\nLa méthode est indépendante des données de consommation passée, ce qui la rend applicable même pour les nouveaux programmes. \r\n\r\nElle est orientée vers les objectifs de couverture, ce qui aligne la quantification avec les ambitions programmatiques. \r\n\r\nElle permet de planifier les besoins pour des campagnes de distribution de masse avec des cibles précises. \r\n\r\nElle facilite le plaidoyer budgétaire en liant directement les coûts aux objectifs de couverture sanitaire.\n\nAvantages et limites de la méthode basée sur les cibles de population\r\n\r\nLimites\r\n\r\nLa qualité des projections démographiques est variable selon les pays et les districts. \r\n\r\nLes coefficients démographiques appliqués à la population totale sont des estimations qui peuvent diverger de la réalité locale. \r\n\r\nLe taux de couverture visé peut être trop ambitieux par rapport aux capacités réelles du système. \r\n\r\nLe taux de gaspillage varie selon les contextes et les conditions de conservation. \r\n\r\nLa méthode ne tient pas compte des inégalités d'accès au sein de la population cible.\n\nSynthèse\r\n\r\n| Étape | Action | Source de données |\r\n| --- | --- | --- |\r\n| 1. Définir la population totale | Population du territoire concerné | Recensement + projections INSAE |\r\n| 2. Identifier la population cible | Appliquer le coefficient démographique | Coefficients standards OMS/INSAE |\r\n| 3. Ajuster si nécessaire | Exclure les sous-groupes non joignables | Données locales |\r\n| 4. Fixer le taux de couverture | Objectif programmatique national | Plan stratégique du programme |\r\n| 5. Calculer la population à atteindre | Population cible × Taux de couverture | Calcul |\r\n| 6. Définir la quantité par personne | Doses, unités selon le calendrier | Protocoles et calendriers nationaux |\r\n| 7. Intégrer le taux de gaspillage | Appliquer le facteur multiplicateur | Normes OMS/UNICEF |\r\n| 8. Calculer le besoin brut | Pop à atteindre × Quantité/personne × Facteur gaspillage | Calcul |\r\n| 9. Ajouter stock de sécurité | CMM équivalente × 2 mois | Politique nationale |\r\n| 10. Déduire stock et transit | Inventaire + commandes en cours | Gestionnaire |"
       },
       {
-        "id": "qb-m6-c2",
-        "title": "Méthode basée sur les cibles de population",
+        "id": "qb-m1-c11",
+        "title": "Comparaison des quatre méthodes de quantification",
         "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur les cibles de population\n\nPrincipe général de la méthode\n\nBesoin total = Population cible × Taux de couverture visé × Quantité de produit par personne cible\n\nLes trois composantes sont distinctes et doivent chacune être estimées avec soin :\n\nPopulation cible : le sous-groupe de la population qui doit recevoir le produit (enfants de 6 à 59 mois, femmes enceintes, adultes de 15 à 49 ans, etc.)\n\nTaux de couverture visé : la proportion de la population cible qui doit effectivement recevoir le produit (objectif du programme)\n\nQuantité par personne : nombre d'unités du produit administrées par personne cible (doses, comprimés, moustiquaires)\n"
+        "duration": "5 min",
+        "content": "### Comparaison des quatre méthodes de quantification\n\n| Critère | Consommation | Morbidité | Services | Population |\r\n| --- | --- | --- | --- | --- |\r\n| Point de départ | Données historiques de stock | Données épidémiologiques | Données d'activités cliniques | Données démographiques |\r\n| Fiabilité si données de qualité | Élevée | Moyenne | Élevée | Dépend des projections |\r\n| Programme nouveau | Non applicable | Oui | Si normes disponibles | Oui |\r\n| Demande non satisfaite captée | Non | Oui | Partiellement | Oui |\r\n| Gaspillage intégré | Implicite | Non | Partiellement | Explicitement |\r\n| Facilité d'application | Simple | Complexe | Moyenne | Moyenne |\r\n| Adapté aux campagnes de masse | Non | Partiellement | Partiellement | Oui |\r\n| Produits typiquement quantifiés | Médicaments de routine | Médicaments curatifs | Intrants liés aux actes | Vaccins, micronutriments, MILD, contraceptifs |\r\n| Niveau d'application optimal | Site, district | National, district | Site, district | National, régional |"
       },
       {
-        "id": "qb-m6-c3",
-        "title": "Méthode basée sur les cibles de population",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur les cibles de population\n\nComposante 1 — Estimation de la population cible\n\nLes sources de données démographiques\n\nSource 1 — Le recensement général de la population\n\nC'est la source la plus fiable. Il fournit des données précises sur la structure par âge et par sexe de la population à la date du recensement.\n\nLimite principale :\n\nLes recensements sont réalisés tous les 10 ans en moyenne.\n\nEntre deux recensements, les données vieillissent et doivent être mises à jour par projection.\n"
-      },
-      {
-        "id": "qb-m6-c4",
-        "title": "Méthode basée sur les cibles de population",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur les cibles de population\n\nComposante 1 — Estimation de la population cible\n\nLes sources de données démographiques\n\nSource 2 — Les projections démographiques\n\nÀ partir des données du dernier recensement, les instituts nationaux de statistique calculent des projections annuelles en appliquant les taux de natalité, mortalité et migration.\n\nFormule de projection : Population année N = Population recensement × (1 + Taux de croissance annuel)^(N − Année recensement)\n"
-      },
-      {
-        "id": "qb-m6-c5",
-        "title": "Méthode basée sur les cibles de population",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur les cibles de population\n\nComposante 1 — Estimation de la population cible\n\nLes sources de données démographiques\n\nSource 3 — Les données DHIS2 et les dénombrements administratifs\n\nPour les niveaux district et infranationaux, les dénombrements administratifs annuels (recensements administratifs, dénombrements communautaires) fournissent des données plus récentes et localisées.\n"
-      },
-      {
-        "id": "qb-m6-c6",
-        "title": "Méthode basée sur les cibles de population",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur les cibles de population\n\nComposante 1 — Estimation de la population cible\n\nCalcul des sous-groupes de population cible\n\nLes programmes de santé ciblent rarement la population totale. Ils ciblent des sous-groupes démographiques précis.\n\nCes sous-groupes sont calculés en appliquant des coefficients démographiques standards à la population totale.\n\nCoefficients démographiques standards (Bénin, contexte Afrique subsaharienne)\n"
-      },
-      {
-        "id": "qb-m6-c7",
-        "title": "Méthode basée sur les cibles de population",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur les cibles de population\n\nComposante 1 — Estimation de la population cible\n\nAjustement pour la population cible réelle vs population cible théorique\n\nLa population cible théorique calculée par les coefficients démographiques est la cible maximale.\n\nDans la réalité, certains membres de la population cible ne sont pas joignables ou ne relèvent pas du système public.\n\nUn ajustement peut être nécessaire.\n"
-      },
-      {
-        "id": "qb-m6-c8",
-        "title": "Méthode basée sur les cibles de population",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur les cibles de population\n\nComposante 2 — Le taux de couverture visé\n\nLe taux de couverture visé est l'objectif programmatique qui définit la proportion de la population cible qui doit recevoir le produit. Il est fixé par le programme national ou les objectifs de santé publique.\n"
-      },
-      {
-        "id": "qb-m6-c9",
-        "title": "Méthode basée sur les cibles de population",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur les cibles de population\n\nComposante 3 — Quantité de produit par personne cible\n\nProduits à dose unique\n\nPour les produits administrés une seule fois par cycle (par an, par campagne), la quantité par personne est directement le nombre de doses ou d'unités par personne.\n\nProduits à doses multiples\n\nPour les produits qui nécessitent plusieurs doses ou une prise continue, le calcul est plus complexe.\n"
-      },
-      {
-        "id": "qb-m6-c10",
-        "title": "Méthode basée sur les cibles de population",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur les cibles de population\n\nCalcul complet par la méthode basée sur les cibles de population\n\nFormule complète\n\nQuantité à approvisionner = (Population cible × Taux de couverture × Quantité/personne × Facteur de gaspillage) + Stock de sécurité − Stock disponible − Commandes en transit\n"
-      },
-      {
-        "id": "qb-m6-c11",
-        "title": "Méthode basée sur les cibles de population",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur les cibles de population\n\nLa gestion du taux de gaspillage dans la méthode population\n\nLe taux de gaspillage est un paramètre critique dans la méthode basée sur les cibles de population, particulièrement pour les vaccins et les produits biologiques.\n\nSources de gaspillage\n"
-      },
-      {
-        "id": "qb-m6-c12",
-        "title": "Méthode basée sur les cibles de population",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur les cibles de population\n\nAvantages et limites de la méthode basée sur les cibles de population\n\nAvantages\n\nLa méthode est indépendante des données de consommation passée, ce qui la rend applicable même pour les nouveaux programmes.\n\nElle est orientée vers les objectifs de couverture, ce qui aligne la quantification avec les ambitions programmatiques.\n\nElle permet de planifier les besoins pour des campagnes de distribution de masse avec des cibles précises.\n\nElle facilite le plaidoyer budgétaire en liant directement les coûts aux objectifs de couverture sanitaire.\n"
-      },
-      {
-        "id": "qb-m6-c13",
-        "title": "Méthode basée sur les cibles de population",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur les cibles de population\n\nAvantages et limites de la méthode basée sur les cibles de population\n\nLimites\n\nLa qualité des projections démographiques est variable selon les pays et les districts.\n\nLes coefficients démographiques appliqués à la population totale sont des estimations qui peuvent diverger de la réalité locale.\n\nLe taux de couverture visé peut être trop ambitieux par rapport aux capacités réelles du système.\n\nLe taux de gaspillage varie selon les contextes et les conditions de conservation.\n\nLa méthode ne tient pas compte des inégalités d'accès au sein de la population cible.\n"
-      },
-      {
-        "id": "qb-m6-c14",
-        "title": "Méthode basée sur les cibles de population",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Méthode basée sur les cibles de population\n\nSynthèse\n"
-      }
-    ]
-  },
-  {
-    "id": "qb-m7",
-    "title": "Module 7 : Triangulation des méthodes",
-    "chapters": [
-      {
-        "id": "qb-m7-c1",
+        "id": "qb-m1-c12",
         "title": "Triangulation des méthodes",
         "type": "text",
-        "duration": "10 min",
-        "content": "#### Triangulation des méthodes\n\nLes quatre méthodes de quantification ne sont pas concurrentes. Elles sont complémentaires.\n\nDans la pratique professionnelle de la quantification pharmaceutique, aucune méthode prise isolément ne donne une réponse parfaitement fiable. Chacune a ses forces, ses limites et ses zones d'aveuglement.\n\nLa triangulation consiste à appliquer deux ou trois méthodes au même produit, à comparer les résultats obtenus, à analyser les écarts et à converger vers une estimation consensuelle fondée sur la meilleure compréhension possible du contexte.\n\nC'est une démarche intellectuelle rigoureuse qui transforme la quantification d'un simple calcul mécanique en un exercice d'analyse et de jugement professionnel.\n\nLes guides internationaux de quantification (USAID DELIVER, guide QAT, guide UNFPA) recommandent systématiquement la triangulation pour toute quantification nationale ou programmatique importante.\n"
+        "duration": "5 min",
+        "content": "### Triangulation des méthodes\n\nLes quatre méthodes de quantification ne sont pas concurrentes. Elles sont complémentaires.\r\n \r\nDans la pratique professionnelle de la quantification pharmaceutique, aucune méthode prise isolément ne donne une réponse parfaitement fiable. Chacune a ses forces, ses limites et ses zones d'aveuglement. \r\n\r\nLa triangulation consiste à appliquer deux ou trois méthodes au même produit, à comparer les résultats obtenus, à analyser les écarts et à converger vers une estimation consensuelle fondée sur la meilleure compréhension possible du contexte. \r\n\r\nC'est une démarche intellectuelle rigoureuse qui transforme la quantification d'un simple calcul mécanique en un exercice d'analyse et de jugement professionnel. \r\n\r\nLes guides internationaux de quantification (USAID DELIVER, guide QAT, guide UNFPA) recommandent systématiquement la triangulation pour toute quantification nationale ou programmatique importante.\n\nPourquoi trianguler ?\r\n\r\nLa triangulation permet de :\r\n\r\nDétecter des incohérences entre les estimations qui signalent des problèmes dans les données\r\n\r\nObtenir une fourchette de besoins (minimum probable, maximum probable) plutôt qu'un chiffre unique\r\n\r\nPrendre une décision éclairée en comprenant les hypothèses et les incertitudes de chaque méthode\r\n\r\nJustifier les choix de quantification devant les décideurs et les bailleurs de fonds\n\nPourquoi trianguler ?\r\n\r\nChaque méthode produit une estimation biaisée dans une direction particulière.\r\n\r\n| Méthode | Biais typique | Direction du biais |\r\n| --- | --- | --- |\r\n| Consommation | Sous-estime si ruptures fréquentes | ↓ Sous-estimation |\r\n| Morbidité | Surestime si taux de traitement mal estimé | ↑ Surestimation |\r\n| Services | Sous-estime si enregistrement incomplet | ↓ Sous-estimation |\r\n| Population | Surestime si couverture visée trop ambitieuse | ↑ Surestimation |\n\nLe processus de triangulation\r\n\r\nLa triangulation suit un processus structuré en six étapes.\r\n\r\nÉtape 1 — Appliquer chaque méthode applicable indépendamment\r\nChaque méthode est appliquée de façon autonome, sans que le résultat d'une méthode influence le calcul des autres. \r\nLes équipes chargées de chaque méthode travaillent idéalement en parallèle.\n\nLe processus de triangulation\r\n\r\nLa triangulation suit un processus structuré en six étapes.\r\n\r\nÉtape 2 — Comparer les résultats\r\nLes résultats de chaque méthode sont présentés dans un tableau comparatif. \r\nL'écart entre les estimations est calculé.\r\n\r\nCritères d'interprétation des écarts\r\n\r\n| Écart entre méthodes | Interprétation | Action |\r\n| --- | --- | --- |\r\n| < 10% | Convergence forte → grande fiabilité | Utiliser la moyenne pondérée |\r\n| 10% à 25% | Convergence acceptable → vérifications nécessaires | Investiguer la source de divergence, justifier le choix |\r\n| 25% à 50% | Divergence significative → données à revoir | Revoir les hypothèses et données d'une ou plusieurs méthodes |\r\n| > 50% | Divergence majeure → problème de données | Reprendre la collecte de données, ne pas quantifier sur ces bases |\n\nLe processus de triangulation\r\n\r\nÉtape 4 — Ajuster les hypothèses si nécessaire\r\n\r\nSi l'analyse révèle qu'une hypothèse d'une méthode est clairement erronée, la corriger et recalculer. \r\nDocumenter tous les ajustements effectués.\n\nLe processus de triangulation\r\n\r\nÉtape 5 — Converger vers une estimation consensuelle\r\n\r\nPlusieurs approches sont possibles :\r\n\r\nApproche 1 — Sélection de la méthode la plus fiable : Choisir la méthode dont les données sont les plus complètes et les hypothèses les plus solides, et utiliser son résultat comme estimation principale.\r\n\r\nApproche 2 — Moyenne pondérée : Attribuer un poids à chaque méthode selon la fiabilité de ses données et calculer une moyenne pondérée.\r\n\t\tEstimation consensuelle = Σ (Résultat méthode × Poids méthode) ÷ Σ Poids\r\n\r\nApproche 3 — Fourchette min-max : Utiliser le résultat le plus bas comme estimation minimale et le plus élevé comme estimation maximale, puis choisir une valeur dans cette fourchette selon le niveau de risque acceptable.\n\nMatrice de décision pour le choix des méthodes à trianguler\r\n\r\n| Situation | Méthodes recommandées | Méthode principale |\r\n| --- | --- | --- |\r\n| Programme mature avec bonnes données de stock | Consommation + Morbidité | Consommation |\r\n| Programme nouveau, pas de données historiques | Morbidité + Population | Morbidité |\r\n| Intrants liés à des actes cliniques mesurables | Services + Consommation | Services |\r\n| Campagne de distribution de masse | Population + Consommation historique | Population |\r\n| Données de consommation biaisées (ruptures >20%) | Morbidité + Population + Services | Morbidité |\r\n| Produit vaccinal PEV | Population + Services | Population |\r\n| Médicament de programme vertical (ARV, TB) | Consommation + Morbidité (file active) | Consommation |\r\n| Quantification nationale | Toutes les méthodes si données disponibles | Moyenne pondérée |\n\nLe rapport de triangulation\r\n\r\nToute quantification triangulée doit être documentée dans un rapport formel. \r\nCe rapport est la preuve de la rigueur du processus et la base des révisions futures.\n\nLes erreurs à éviter dans la triangulation\r\n\r\n| Erreur | Description | Conséquence | Comment l'éviter |\r\n| --- | --- | --- | --- |\r\n| Choisir la méthode qui donne le résultat souhaité | Sélectionner a posteriori la méthode dont le résultat correspond au budget disponible | Biais de confirmation, quantification sous ou sur-estimée | Appliquer les méthodes avant de connaître les contraintes budgétaires |\r\n| Ne pas corriger les données avant de comparer | Comparer des résultats calculés sur des données de qualité différente | Fausse impression de divergence | Corriger les données de chaque méthode avant comparaison |\r\n| Faire une simple moyenne arithmétique sans pondération | Donner le même poids à une méthode avec 95% de complétude et une avec 60% | Résultat biaisé vers les données de moins bonne qualité | Pondérer selon la qualité des données |\r\n| Ne pas documenter les choix | Prendre des décisions sans les justifier | Impossible de reproduire ou réviser la quantification | Rapport de triangulation systématique |\r\n| Trianguler avec des données de périmètres différents | Une méthode couvre le secteur public, l'autre le secteur public et privé | Fausse divergence | Harmoniser les périmètres avant de comparer |\r\n| Considérer la triangulation comme terminée | Ne pas réviser la quantification au fil du temps | Quantification obsolète dès que le contexte change | Révisions trimestrielles systématiques |\n\nSynthèse — Comparaison et triangulation des méthodes\r\n\r\n| Étape | Action | Outil |\r\n| --- | --- | --- |\r\n| 1. Sélectionner les méthodes | Choisir 2 à 3 méthodes selon le contexte et les données disponibles | Matrice de sélection |\r\n| 2. Appliquer indépendamment | Calculer chaque méthode séparément sans influence mutuelle | Feuilles de calcul distinctes |\r\n| 3. Comparer les résultats | Présenter dans un tableau comparatif, calculer les écarts | Tableau de triangulation |\r\n| 4. Analyser les divergences | Identifier les sources de différence entre méthodes | Discussion d'équipe, vérification des données |\r\n| 5. Corriger les hypothèses | Ajuster les paramètres erronés ou incohérents | Nouvelle collecte de données si nécessaire |\r\n| 6. Pondérer selon la qualité | Attribuer un poids à chaque méthode selon la fiabilité de ses données | Grille de pondération |\r\n| 7. Calculer l'estimation consensuelle | Moyenne pondérée ou sélection motivée | Calcul |\r\n| 8. Définir la fourchette | Minimum, consensuel, maximum | Tableau de décision |\r\n| 9. Documenter | Rédiger le rapport de triangulation | Rapport standardisé |\r\n| 10. Planifier la révision | Prévoir les révisions trimestrielles | Calendrier de suivi |"
       },
       {
-        "id": "qb-m7-c2",
-        "title": "Triangulation des méthodes",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Triangulation des méthodes\n\nPourquoi trianguler ?\n\nLa triangulation permet de :\n\nDétecter des incohérences entre les estimations qui signalent des problèmes dans les données\n\nObtenir une fourchette de besoins (minimum probable, maximum probable) plutôt qu'un chiffre unique\n\nPrendre une décision éclairée en comprenant les hypothèses et les incertitudes de chaque méthode\n\nJustifier les choix de quantification devant les décideurs et les bailleurs de fonds\n"
-      },
-      {
-        "id": "qb-m7-c3",
-        "title": "Triangulation des méthodes",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Triangulation des méthodes\n\nPourquoi trianguler ?\n\nChaque méthode produit une estimation biaisée dans une direction particulière.\n"
-      },
-      {
-        "id": "qb-m7-c4",
-        "title": "Triangulation des méthodes",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Triangulation des méthodes\n\nLe processus de triangulation\n\nLa triangulation suit un processus structuré en six étapes.\n\nÉtape 1 — Appliquer chaque méthode applicable indépendamment\n\nChaque méthode est appliquée de façon autonome, sans que le résultat d'une méthode influence le calcul des autres.\n\nLes équipes chargées de chaque méthode travaillent idéalement en parallèle.\n"
-      },
-      {
-        "id": "qb-m7-c5",
-        "title": "Triangulation des méthodes",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Triangulation des méthodes\n\nLe processus de triangulation\n\nLa triangulation suit un processus structuré en six étapes.\n\nÉtape 2 — Comparer les résultats\n\nLes résultats de chaque méthode sont présentés dans un tableau comparatif.\n\nL'écart entre les estimations est calculé.\n\nCritères d'interprétation des écarts\n"
-      },
-      {
-        "id": "qb-m7-c6",
-        "title": "Triangulation des méthodes",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Triangulation des méthodes\n\nLe processus de triangulation\n\nÉtape 4 — Ajuster les hypothèses si nécessaire\n\nSi l'analyse révèle qu'une hypothèse d'une méthode est clairement erronée, la corriger et recalculer.\n\nDocumenter tous les ajustements effectués.\n"
-      },
-      {
-        "id": "qb-m7-c7",
-        "title": "Triangulation des méthodes",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Triangulation des méthodes\n\nLe processus de triangulation\n\nÉtape 5 — Converger vers une estimation consensuelle\n\nPlusieurs approches sont possibles :\n\nApproche 1 — Sélection de la méthode la plus fiable : Choisir la méthode dont les données sont les plus complètes et les hypothèses les plus solides, et utiliser son résultat comme estimation principale.\n\nApproche 2 — Moyenne pondérée : Attribuer un poids à chaque méthode selon la fiabilité de ses données et calculer une moyenne pondérée.\n\nEstimation consensuelle = Σ (Résultat méthode × Poids méthode) ÷ Σ Poids\n\nApproche 3 — Fourchette min-max : Utiliser le résultat le plus bas comme estimation minimale et le plus élevé comme estimation maximale, puis choisir une valeur dans cette fourchette selon le niveau de risque acceptable.\n"
-      },
-      {
-        "id": "qb-m7-c8",
-        "title": "Triangulation des méthodes",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Triangulation des méthodes\n\nMatrice de décision pour le choix des méthodes à trianguler\n"
-      },
-      {
-        "id": "qb-m7-c9",
-        "title": "Triangulation des méthodes",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Triangulation des méthodes\n\nLe rapport de triangulation\n\nToute quantification triangulée doit être documentée dans un rapport formel.\n\nCe rapport est la preuve de la rigueur du processus et la base des révisions futures.\n"
-      },
-      {
-        "id": "qb-m7-c10",
-        "title": "Triangulation des méthodes",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Triangulation des méthodes\n\nLes erreurs à éviter dans la triangulation\n"
-      },
-      {
-        "id": "qb-m7-c11",
-        "title": "Triangulation des méthodes",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Triangulation des méthodes\n\nSynthèse — Comparaison et triangulation des méthodes\n"
-      }
-    ]
-  },
-  {
-    "id": "qb-m8",
-    "title": "Module 8 : Outils de prévision et modélisation de la demande",
-    "chapters": [
-      {
-        "id": "qb-m8-c1",
+        "id": "qb-m1-c13",
         "title": "Outils de prévision et modélisation de la demande",
         "type": "text",
-        "duration": "10 min",
-        "content": "#### Outils de prévision et modélisation de la demande\n\nQUANTIFICATION DES BESOINS\n"
+        "duration": "5 min",
+        "content": "### Outils de prévision et modélisation de la demande\n\nQUANTIFICATION DES BESOINS"
       },
       {
-        "id": "qb-m8-c2",
+        "id": "qb-m1-c14",
         "title": "Gestion des approvisionnements et des stocks",
         "type": "text",
-        "duration": "10 min",
-        "content": "#### Gestion des approvisionnements et des stocks\n\nPlan\n\nPrincipes de la prévision de la demande en santé\n\nUtilisation de Quantimed, PipeLine, ForLAB, QAT\n\nAjustements saisonniers et facteurs contextuels\n\nAnalyse des écarts entre prévisions et consommations réelles\n"
+        "duration": "5 min",
+        "content": "### Gestion des approvisionnements et des stocks\n\nPlan\r\n\r\nPrincipes de la prévision de la demande en santé\r\nUtilisation de Quantimed, PipeLine, ForLAB, QAT\r\nAjustements saisonniers et facteurs contextuels\r\nAnalyse des écarts entre prévisions et consommations réelles\n\nPrincipes de la prévision de la demande en santé\r\n\r\nLa quantification répond à la question : de combien de produits avons-nous besoin ? \r\n\r\nLa prévision de la demande répond à une question plus fine : comment cette demande va-t-elle évoluer dans le temps, et pourquoi ?\r\n\r\n Une bonne prévision ne cherche pas à prédire l'avenir avec certitude — ce qui est impossible — mais à réduire l'incertitude à un niveau gérable, en identifiant les tendances fiables et en quantifiant les zones d'incertitude. \r\n\r\nUne mauvaise prévision, qu'elle soit trop optimiste ou trop pessimiste, conduit soit à des ruptures de stock soit à des surstocks coûteux. Dans les systèmes de santé publique où les ressources sont limitées, l'enjeu est considérable."
       },
       {
-        "id": "qb-m8-c3",
-        "title": "Gestion des approvisionnements et des stocks",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Gestion des approvisionnements et des stocks\n\nPrincipes de la prévision de la demande en santé\n\nLa quantification répond à la question : de combien de produits avons-nous besoin ?\n\nLa prévision de la demande répond à une question plus fine : comment cette demande va-t-elle évoluer dans le temps, et pourquoi ?\n\nUne bonne prévision ne cherche pas à prédire l'avenir avec certitude — ce qui est impossible — mais à réduire l'incertitude à un niveau gérable, en identifiant les tendances fiables et en quantifiant les zones d'incertitude.\n\nUne mauvaise prévision, qu'elle soit trop optimiste ou trop pessimiste, conduit soit à des ruptures de stock soit à des surstocks coûteux. Dans les systèmes de santé publique où les ressources sont limitées, l'enjeu est considérable.\n"
-      },
-      {
-        "id": "qb-m8-c4",
+        "id": "qb-m1-c15",
         "title": "Principes de la prévision de la demande en santé",
         "type": "text",
-        "duration": "10 min",
-        "content": "#### Principes de la prévision de la demande en santé\n\nLa distinction entre quantification et prévision\n\nSynthèse — Comparaison et triangulation des méthodes\n\nRelation entre les deux : La prévision de la demande alimente la quantification. Une fois qu'on a modélisé comment la demande va évoluer sur les 3 prochaines années, on peut quantifier avec beaucoup plus de précision pour chaque période de planification. La quantification sans prévision est une décision aveugle au-delà du prochain cycle d'approvisionnement.\n"
+        "duration": "5 min",
+        "content": "### Principes de la prévision de la demande en santé\n\nLa distinction entre quantification et prévision\r\n\r\nSynthèse — Comparaison et triangulation des méthodes\r\n\r\n| Dimension | Quantification | Prévision de la demande |\r\n| --- | --- | --- |\r\n| Question centrale | Combien faut-il commander ? | Comment la demande va-t-elle évoluer ? |\r\n| Horizon temporel | Court terme (6 à 24 mois) | Moyen à long terme (1 à 5 ans) |\r\n| Objectif | Décision d'achat opérationnelle | Planification stratégique |\r\n| Résultat | Quantité à approvisionner | Courbe ou modèle d'évolution de la demande |\r\n| Niveau d'application | Site, district, national | National, programme, région |\r\n| Fréquence | Trimestrielle ou semestrielle | Annuelle ou pluriannuelle |\r\n| Utilisateurs | Gestionnaires de stocks, pharmaciens | Planificateurs, décideurs, bailleurs |\r\n\r\nRelation entre les deux : La prévision de la demande alimente la quantification. Une fois qu'on a modélisé comment la demande va évoluer sur les 3 prochaines années, on peut quantifier avec beaucoup plus de précision pour chaque période de planification. La quantification sans prévision est une décision aveugle au-delà du prochain cycle d'approvisionnement.\n\nCatégorie 1 — Facteurs démographiques\r\n\r\nLes déterminants de la demande pharmaceutique en santé\r\n\r\nLa demande pharmaceutique est directement proportionnelle à la taille et à la structure de la population. Toute évolution démographique se traduit mécaniquement par une évolution de la demande.\r\n\r\nFacteurs démographiques clés :\r\nCroissance de la population totale\r\nÉvolution de la structure par âge (vieillissement de la population → augmentation des maladies chroniques)\r\nMouvements migratoires (afflux de réfugiés, urbanisation)\r\nÉvolution du taux de fécondité (impact sur la demande en soins materno-infantiles)\n\nCatégorie 2 — Facteurs épidémiologiques\r\n\r\nLes déterminants de la demande pharmaceutique en santé\r\n\r\nL'évolution de la charge de morbidité (incidence, prévalence des maladies) détermine directement la demande en médicaments curatifs et préventifs.\r\n\r\nFacteurs épidémiologiques clés :\r\nTendance séculaire des maladies infectieuses (paludisme, tuberculose, VIH)\r\nTransition épidémiologique (montée des maladies non transmissibles)\r\nÉmergence de nouvelles pathologies (épidémies, pandémies)\r\nImpact des interventions préventives (vaccination, MILD, eau potable)\n\nCatégorie 3 — Facteurs programmatiques\r\n\r\nLes déterminants de la demande pharmaceutique en santé\r\n\r\nLes décisions prises par les programmes de santé ont un impact direct et souvent majeur sur la demande pharmaceutique.\r\n\r\nFacteurs programmatiques clés :\r\nExtension de la couverture géographique (ouverture de nouveaux sites)\r\nChangement de protocole de traitement (nouveau médicament, nouvelle dose)\r\nObjectifs d'élimination ou d'éradication d'une maladie\r\nIntégration de nouveaux produits dans la liste des médicaments essentiels\r\nCampagnes de dépistage ou de traitement de masse\n\nCatégorie 4 — Facteurs liés à l'accès aux soins\r\n\r\nLes déterminants de la demande pharmaceutique en santé\r\n\r\nL'amélioration de l'accès aux soins augmente mécaniquement la demande pharmaceutique, même si l'incidence des maladies reste stable.\r\n\r\nFacteurs d'accès :\r\nAugmentation du taux d'utilisation des services de santé\r\nRéduction des barrières financières (gratuité des soins, assurance maladie)\r\nExtension géographique du réseau sanitaire (nouvelles formations sanitaires)\r\nAmélioration de la route ou du transport\r\nRenforcement des ressources humaines\n\nCatégorie 5 — Facteurs conjoncturels et environnementaux\r\n\r\nLes déterminants de la demande pharmaceutique en santé\r\n\r\nCes facteurs sont les plus difficiles à anticiper mais peuvent avoir des impacts majeurs sur la demande.\r\n\r\nFacteurs conjoncturels :\r\nÉpidémies et pandémies (choléra, Ebola, COVID-19, méningite)\r\nCatastrophes naturelles et déplacements de populations\r\nConflits armés et crises humanitaires\r\nSaisonnalité (paludisme en saison des pluies, infections respiratoires en saison sèche)\r\nVariations climatiques (inondations, sécheresses affectant la transmission des maladies)\n\nTechniques de prévision qualitatives\r\n\r\nLes techniques de prévision\r\n\r\nCes techniques ne reposent pas sur des calculs statistiques mais sur le jugement d'experts. Elles sont utilisées quand les données historiques sont insuffisantes ou quand des changements majeurs rendent le passé peu prédictif du futur.\r\n\r\nTechnique 1 — Méthode Delphi : Un groupe d'experts répond de façon anonyme à une série de questionnaires sur l'évolution de la demande. Les réponses sont consolidées et renvoyées aux experts pour révision jusqu'à convergence d'opinions.\r\nTechnique 2 — Panel d'experts : Un groupe de cliniciens, épidémiologistes, gestionnaires et pharmaciens se réunit pour estimer l'évolution de la demande sur la base de leur expérience et des informations disponibles.\r\n\r\nUtilisation optimale : nouveaux programmes, changements de protocoles, contextes de crise.\n\nTechniques de prévision quantitatives\r\n\r\nLes techniques de prévision\r\n\r\nMoyenne Mobile (Moving average)\r\n Semi-Moyennes (Semi-averages)\r\n Régression lineaire (Linear regression)\r\n Lissage Exponentiel Triple [Triple exponential smoothing (TES, Holt-Winter)]\r\n Moyenne Mobile intégrée autoregressive [Auto-Regressive Integrated Moving Average (ARIMA)]\n\nMesure de la précision des prévisions\r\n\r\nL'Erreur Absolue Moyenne (EAM)\r\nEAM = Σ |Réel − Prévu| ÷ N\r\n\r\nLe Taux d'Erreur Absolue Moyen (MAPE)\r\nMAPE = Σ (|Réel − Prévu| ÷ Réel) × 100 ÷ N\n\nLa gestion de l'incertitude dans les prévisions\r\n\r\nScénarios de prévision\r\n\r\nLa méthode des scénarios consiste à construire plusieurs projections correspondant à des hypothèses différentes sur l'évolution des facteurs clés.\r\n\r\nExemple chiffré — Trois scénarios pour la demande en ACT en 2025 :\r\n\r\n| Hypothèse | Scénario pessimiste | Scénario central | Scénario optimiste |\r\n| --- | --- | --- | --- |\r\n| Croissance population | 2,8% | 2,8% | 2,8% |\r\n| Couverture MILD | 74% (stable) | 82% | 90% |\r\n| Effet MILD sur incidence | −6%/10 points | −7,5%/10 points | −9%/10 points |\r\n| Taux d'utilisation services | 58% | 62% | 68% |\r\n| Taux de traitement ACT | 75% | 82% | 88% |\r\n| Demande projetée | 18 200 boîtes | 14 000 boîtes | 10 800 boîtes |\r\n\r\nCette information est beaucoup plus utile aux décideurs qu'un simple chiffre de 14 000\r\n\r\nElle leur permet d'évaluer le risque de rupture (si le scénario pessimiste se réalise) et le risque de surstock (si le scénario optimiste se réalise)\n\nLa gestion de l'incertitude dans les prévisions\r\n\r\nIntervalles de confiance\r\n\r\nPour les prévisions basées sur des techniques statistiques (régression, lissage exponentiel), un intervalle de confiance peut être calculé pour quantifier l'incertitude.\r\n\r\nExemple chiffré :\r\nLa régression linéaire prédit 22 250 boîtes pour 2025. L'écart-type des résidus de la régression est de 520 boîtes. Intervalle de confiance à 95% :\r\n\r\nBorne inférieure = 22 250 − 1,96 × 520 = 21 230 boîtes\r\nBorne supérieure = 22 250 + 1,96 × 520 = 23 270 boîtes \r\n\r\nLa prévision centrale est de 22 250 boîtes, avec 95% de probabilité que la demande réelle se situe entre 21 230 et 23 270 boîtes. Cette fourchette permet de calculer le stock de sécurité nécessaire pour couvrir l'incertitude de prévision.\n\nLe cycle de prévision — De l'analyse à la décision\r\n\r\nCollecte des données (mensuelle)\r\n        ↓\r\nAnalyse des écarts entre prévisions et réel (mensuelle)\r\n        ↓\r\nMise à jour du modèle de prévision (trimestrielle)\r\n        ↓\r\nRévision des prévisions à 12 mois (trimestrielle)\r\n        ↓\r\nRévision des prévisions à 3-5 ans (annuelle)\r\n        ↓\r\nValidation par les programmes et les décideurs (annuelle)\r\n        ↓\r\nUtilisation dans la quantification et la planification budgétaire (annuelle)\r\n        ↓\r\nCollecte des données (mensuelle) → recommencer"
       },
       {
-        "id": "qb-m8-c5",
-        "title": "Principes de la prévision de la demande en santé",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Principes de la prévision de la demande en santé\n\nCatégorie 1 — Facteurs démographiques\n\nLes déterminants de la demande pharmaceutique en santé\n\nLa demande pharmaceutique est directement proportionnelle à la taille et à la structure de la population. Toute évolution démographique se traduit mécaniquement par une évolution de la demande.\n\nFacteurs démographiques clés :\n\nCroissance de la population totale\n\nÉvolution de la structure par âge (vieillissement de la population → augmentation des maladies chroniques)\n\nMouvements migratoires (afflux de réfugiés, urbanisation)\n\nÉvolution du taux de fécondité (impact sur la demande en soins materno-infantiles)\n"
-      },
-      {
-        "id": "qb-m8-c6",
-        "title": "Principes de la prévision de la demande en santé",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Principes de la prévision de la demande en santé\n\nCatégorie 2 — Facteurs épidémiologiques\n\nLes déterminants de la demande pharmaceutique en santé\n\nL'évolution de la charge de morbidité (incidence, prévalence des maladies) détermine directement la demande en médicaments curatifs et préventifs.\n\nFacteurs épidémiologiques clés :\n\nTendance séculaire des maladies infectieuses (paludisme, tuberculose, VIH)\n\nTransition épidémiologique (montée des maladies non transmissibles)\n\nÉmergence de nouvelles pathologies (épidémies, pandémies)\n\nImpact des interventions préventives (vaccination, MILD, eau potable)\n"
-      },
-      {
-        "id": "qb-m8-c7",
-        "title": "Principes de la prévision de la demande en santé",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Principes de la prévision de la demande en santé\n\nCatégorie 3 — Facteurs programmatiques\n\nLes déterminants de la demande pharmaceutique en santé\n\nLes décisions prises par les programmes de santé ont un impact direct et souvent majeur sur la demande pharmaceutique.\n\nFacteurs programmatiques clés :\n\nExtension de la couverture géographique (ouverture de nouveaux sites)\n\nChangement de protocole de traitement (nouveau médicament, nouvelle dose)\n\nObjectifs d'élimination ou d'éradication d'une maladie\n\nIntégration de nouveaux produits dans la liste des médicaments essentiels\n\nCampagnes de dépistage ou de traitement de masse\n"
-      },
-      {
-        "id": "qb-m8-c8",
-        "title": "Principes de la prévision de la demande en santé",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Principes de la prévision de la demande en santé\n\nCatégorie 4 — Facteurs liés à l'accès aux soins\n\nLes déterminants de la demande pharmaceutique en santé\n\nL'amélioration de l'accès aux soins augmente mécaniquement la demande pharmaceutique, même si l'incidence des maladies reste stable.\n\nFacteurs d'accès :\n\nAugmentation du taux d'utilisation des services de santé\n\nRéduction des barrières financières (gratuité des soins, assurance maladie)\n\nExtension géographique du réseau sanitaire (nouvelles formations sanitaires)\n\nAmélioration de la route ou du transport\n\nRenforcement des ressources humaines\n"
-      },
-      {
-        "id": "qb-m8-c9",
-        "title": "Principes de la prévision de la demande en santé",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Principes de la prévision de la demande en santé\n\nCatégorie 5 — Facteurs conjoncturels et environnementaux\n\nLes déterminants de la demande pharmaceutique en santé\n\nCes facteurs sont les plus difficiles à anticiper mais peuvent avoir des impacts majeurs sur la demande.\n\nFacteurs conjoncturels :\n\nÉpidémies et pandémies (choléra, Ebola, COVID-19, méningite)\n\nCatastrophes naturelles et déplacements de populations\n\nConflits armés et crises humanitaires\n\nSaisonnalité (paludisme en saison des pluies, infections respiratoires en saison sèche)\n\nVariations climatiques (inondations, sécheresses affectant la transmission des maladies)\n"
-      },
-      {
-        "id": "qb-m8-c10",
-        "title": "Principes de la prévision de la demande en santé",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Principes de la prévision de la demande en santé\n\nTechniques de prévision qualitatives\n\nLes techniques de prévision\n\nCes techniques ne reposent pas sur des calculs statistiques mais sur le jugement d'experts. Elles sont utilisées quand les données historiques sont insuffisantes ou quand des changements majeurs rendent le passé peu prédictif du futur.\n\nTechnique 1 — Méthode Delphi : Un groupe d'experts répond de façon anonyme à une série de questionnaires sur l'évolution de la demande. Les réponses sont consolidées et renvoyées aux experts pour révision jusqu'à convergence d'opinions.\n\nTechnique 2 — Panel d'experts : Un groupe de cliniciens, épidémiologistes, gestionnaires et pharmaciens se réunit pour estimer l'évolution de la demande sur la base de leur expérience et des informations disponibles.\n\nUtilisation optimale : nouveaux programmes, changements de protocoles, contextes de crise.\n"
-      },
-      {
-        "id": "qb-m8-c11",
-        "title": "Principes de la prévision de la demande en santé",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Principes de la prévision de la demande en santé\n\nTechniques de prévision quantitatives\n\nLes techniques de prévision\n\nMoyenne Mobile (Moving average)\n\nSemi-Moyennes (Semi-averages)\n\nRégression lineaire (Linear regression)\n\nLissage Exponentiel Triple [Triple exponential smoothing (TES, Holt-Winter)]\n\nMoyenne Mobile intégrée autoregressive [Auto-Regressive Integrated Moving Average (ARIMA)]\n"
-      },
-      {
-        "id": "qb-m8-c12",
-        "title": "Principes de la prévision de la demande en santé",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Principes de la prévision de la demande en santé\n\nMesure de la précision des prévisions\n\nL'Erreur Absolue Moyenne (EAM)\n\nEAM = Σ |Réel − Prévu| ÷ N\n\nLe Taux d'Erreur Absolue Moyen (MAPE)\n\nMAPE = Σ (|Réel − Prévu| ÷ Réel) × 100 ÷ N\n"
-      },
-      {
-        "id": "qb-m8-c13",
-        "title": "Principes de la prévision de la demande en santé",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Principes de la prévision de la demande en santé\n\nLa gestion de l'incertitude dans les prévisions\n\nScénarios de prévision\n\nLa méthode des scénarios consiste à construire plusieurs projections correspondant à des hypothèses différentes sur l'évolution des facteurs clés.\n\nExemple chiffré — Trois scénarios pour la demande en ACT en 2025 :\n\nCette information est beaucoup plus utile aux décideurs qu'un simple chiffre de 14 000\n\nElle leur permet d'évaluer le risque de rupture (si le scénario pessimiste se réalise) et le risque de surstock (si le scénario optimiste se réalise)\n"
-      },
-      {
-        "id": "qb-m8-c14",
-        "title": "Principes de la prévision de la demande en santé",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Principes de la prévision de la demande en santé\n\nLa gestion de l'incertitude dans les prévisions\n\nIntervalles de confiance\n\nPour les prévisions basées sur des techniques statistiques (régression, lissage exponentiel), un intervalle de confiance peut être calculé pour quantifier l'incertitude.\n\nExemple chiffré :\n\nLa régression linéaire prédit 22 250 boîtes pour 2025. L'écart-type des résidus de la régression est de 520 boîtes. Intervalle de confiance à 95% :\n\nBorne inférieure = 22 250 − 1,96 × 520 = 21 230 boîtes\n\nBorne supérieure = 22 250 + 1,96 × 520 = 23 270 boîtes\n\nLa prévision centrale est de 22 250 boîtes, avec 95% de probabilité que la demande réelle se situe entre 21 230 et 23 270 boîtes. Cette fourchette permet de calculer le stock de sécurité nécessaire pour couvrir l'incertitude de prévision.\n"
-      },
-      {
-        "id": "qb-m8-c15",
-        "title": "Principes de la prévision de la demande en santé",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Principes de la prévision de la demande en santé\n\nLe cycle de prévision — De l'analyse à la décision\n\nCollecte des données (mensuelle)\n\n↓\n\nAnalyse des écarts entre prévisions et réel (mensuelle)\n\n↓\n\nMise à jour du modèle de prévision (trimestrielle)\n\n↓\n\nRévision des prévisions à 12 mois (trimestrielle)\n\n↓\n\nRévision des prévisions à 3-5 ans (annuelle)\n\n↓\n\nValidation par les programmes et les décideurs (annuelle)\n\n↓\n\nUtilisation dans la quantification et la planification budgétaire (annuelle)\n\n↓\n\nCollecte des données (mensuelle) → recommencer\n"
-      }
-    ]
-  },
-  {
-    "id": "qb-m9",
-    "title": "Module 9 : Utilisation de Quantimed, PipeLine, ForLAB, QAT",
-    "chapters": [
-      {
-        "id": "qb-m9-c1",
+        "id": "qb-m1-c16",
         "title": "Utilisation de Quantimed, PipeLine, ForLAB, QAT",
         "type": "text",
-        "duration": "10 min",
-        "content": "#### Utilisation de Quantimed, PipeLine, ForLAB, QAT\n\nLes outils logiciels spécialisés en quantification pharmaceutique ont été développés pour répondre aux limites des tableurs Excel dans les exercices de quantification complexes :\n\nvolumes importants de données,\n\nmultiples méthodes à appliquer simultanément,\n\ngestion de plusieurs niveaux géographiques,\n\nintégration automatique des paramètres programmatiques,\n\ngénération de rapports standardisés.\n\nChacun de ces outils a été conçu pour un contexte ou un type de produit spécifique.\n"
+        "duration": "5 min",
+        "content": "### Utilisation de Quantimed, PipeLine, ForLAB, QAT\n\nLes outils logiciels spécialisés en quantification pharmaceutique ont été développés pour répondre aux limites des tableurs Excel dans les exercices de quantification complexes : \r\nvolumes importants de données, \r\nmultiples méthodes à appliquer simultanément, \r\ngestion de plusieurs niveaux géographiques, \r\nintégration automatique des paramètres programmatiques, \r\ngénération de rapports standardisés. \r\n\r\nChacun de ces outils a été conçu pour un contexte ou un type de produit spécifique.\n\nLes comprendre, savoir lequel utiliser dans quel contexte et maîtriser leur logique de fonctionnement est une compétence professionnelle essentielle pour tout planificateur en approvisionnement pharmaceutique travaillant dans les programmes de santé publique. \r\n\r\nCe cours ne vise pas à former des utilisateurs experts de chaque logiciel — cela nécessiterait plusieurs jours de pratique — mais à donner une compréhension claire de la logique, des forces et des limites de chaque outil, de façon à pouvoir choisir le bon outil et en interpréter correctement les résultats.\n\nVue d'ensemble comparative des quatre outils\r\n\r\n| Critère | Quantimed | PipeLine | ForLAB | QAT |\r\n| --- | --- | --- | --- | --- |\r\n| Développeur | USAID/MSH | USAID/JSI | CDC/WHO | USAID/Chemonics |\r\n| Année de développement | Années 1990, actualisé | Années 2000, actualisé | Années 2000, actualisé | 2018, outil le plus récent |\r\n| Produits cibles | Médicaments essentiels, contraceptifs | ARV, médicaments VIH | Réactifs de laboratoire | Tous produits de santé |\r\n| Méthodes intégrées | Consommation, morbidité, population | Consommation (file active) | Consommation, tests | Consommation, morbidité, services |\r\n| Niveau d'application | National, district | National | National, laboratoire | National, infranational |\r\n| Interface | Desktop (Windows) | Desktop (Windows) | Desktop/Web | Web (navigateur) |\r\n| Courbe d'apprentissage | Modérée | Modérée | Modérée | Élevée (plus complet) |\r\n| Gratuité | Gratuit | Gratuit | Gratuit | Gratuit |\r\n| Support technique | Limité (outil ancien) | Limité | Actif (CDC/OMS) | Actif (USAID) |\r\n| Intégration avec DHIS2 | Non | Non | Non | Partielle |\r\n| Triangulation intégrée | Non | Non | Non | Oui |\n\nQuantimed\r\n\r\nPrésentation générale\r\n\r\nQuantimed (Quantification of Health Commodities) est l'un des premiers outils informatisés de quantification pharmaceutique développés pour les pays à ressources limitées. Développé par Management Sciences for Health (MSH) avec le soutien de l'USAID, il a été largement utilisé pendant les années 2000 et 2010 dans les programmes de santé reproductive, de santé maternelle et de médicaments essentiels en Afrique subsaharienne et en Asie.\r\n\r\nPhilosophie de l'outil : Quantimed est construit autour du principe que la meilleure quantification intègre plusieurs méthodes et confronte leurs résultats. Il guide l'utilisateur à travers un processus structuré qui va de la définition des produits à quantifier jusqu'à la génération des rapports finaux.\n\nQuantimed\r\n\r\nArchitecture et modules de Quantimed\r\n\r\nQuantimed est organisé en modules successifs qui correspondent aux étapes du processus de quantification.\r\n\r\nModule 1 — Configuration du programme : \r\nL'utilisateur définit le cadre de la quantification : pays, région ou district concerné, période de planification, liste des produits à quantifier, liste des sites de prestation de soins.\n\nQuantimed\r\n\r\nArchitecture et modules de Quantimed\r\n\r\nModule 2 — Données de consommation : \r\nCe module permet la saisie et l'analyse des données de consommation historiques.\r\n\r\n| Champ | Description |\r\n| --- | --- |\r\n| Site | Formation sanitaire |\r\n| Produit | Médicament ou intrant |\r\n| Période | Mois de référence |\r\n| Ouverture | Stock début de mois |\r\n| Reçu | Réceptions du mois |\r\n| Distribué | Sorties du mois |\r\n| Pertes | Périmés, casses |\r\n| Fermeture | Stock fin de mois |\r\n| Jours rupture | Nombre de jours sans stock |\r\n\r\nQuantimed calcule automatiquement :\r\nLa CMM brute = Total distribué ÷ Nombre de mois\r\nLa CMM ajustée = Total distribué ajusté ÷ Mois valides (hors ruptures totales)\r\nLa CMM ajustée par interpolation des mois de rupture partielle\n\nQuantimed\r\n\r\nArchitecture et modules de Quantimed\r\n\r\nModule 3 — Méthode morbidité dans Quantimed\r\nQuantimed intègre la méthode morbidité pour les programmes de santé reproductive et maternelle.\r\n\r\nL'utilisateur saisit :\r\nLes données épidémiologiques (incidence par pathologie)\r\nLes protocoles de traitement (dose, durée, fréquence)\r\nLes taux de traitement et de couverture\r\n\r\nQuantimed calcule automatiquement les besoins par produit et par mois.\n\nQuantimed\r\n\r\nArchitecture et modules de Quantimed\r\n\r\nModule 4 — Méthode population dans Quantimed\r\nPour les produits de planification familiale, Quantimed intègre la méthode population avec les données démographiques et les objectifs de couverture contraceptive.\r\n\r\nParamètres saisis :\r\nPopulation totale et femmes en âge de procréer\r\nTaux de prévalence contraceptive actuel et objectif\r\nMix méthodes (répartition des femmes entre les différentes méthodes)\r\nCouverture de chaque méthode\r\n\r\nCalcul automatique : \r\nUtilisatrices COC = FAP × Taux prévalence × Part COC dans le mix\r\nUnités COC = Utilisatrices × 13 plaquettes/an\n\nQuantimed\r\n\r\nArchitecture et modules de Quantimed\r\n\r\nModule 5 — Triangulation dans Quantimed\r\nQuantimed affiche les résultats des différentes méthodes dans un tableau comparatif et calcule automatiquement les écarts en pourcentage.\r\n\r\nExemple de sortie Quantimed — Tableau de triangulation ACT :\r\n\r\n| Méthode | Besoin annuel calculé | Écart vs méthode consommation |\r\n| --- | --- | --- |\r\n| Consommation | 14 844 boîtes | Référence |\r\n| Morbidité | 11 743 boîtes | −20,9% |\r\n| Résultat Quantimed (moyenne pondérée) | 13 200 boîtes | −11,1% |\n\nQuantimed\r\n\r\nArchitecture et modules de Quantimed\r\n\r\nModule 6 — Rapport final Quantimed\r\n\r\nQuantimed génère automatiquement plusieurs rapports :\r\nRapport de quantification par produit (besoins, stock actuel, quantité à commander)\r\nRapport de triangulation (comparaison des méthodes)\r\nRapport budgétaire (coût total de la quantification)\r\nRapport de suivi (comparaison avec les quantifications précédentes)\n\nQuantimed\r\n\r\nForces et limites de Quantimed\r\n\r\nForces :\r\nInterface relativement simple et guidée étape par étape\r\nBonne intégration des trois méthodes principales\r\nGénération automatique de rapports standardisés\r\nAdapté aux programmes de santé reproductive et aux médicaments essentiels\r\nGratuit et accessible\r\n\r\nLimites :\r\nOutil relativement ancien, mises à jour limitées\r\nPas de module de prévision à long terme\r\nPas d'intégration avec les systèmes d'information nationaux (DHIS2)\r\nGestion limitée des ajustements saisonniers\r\nSupport technique peu actif\r\nInterface Windows uniquement, pas de version web\n\nPipeLine\r\n\r\nPrésentation générale\r\n\r\nPipeLine a été développé par John Snow Inc. (JSI) pour l'USAID, spécifiquement pour la quantification et le suivi des médicaments ARV (antirétroviraux) dans les programmes VIH/SIDA. Son nom fait référence au \"pipeline\" d'approvisionnement en ARV, concept central dans la gestion des programmes VIH : il faut maintenir un flux continu de médicaments dans toute la chaîne d'approvisionnement pour éviter les interruptions de traitement.\r\n\r\nPhilosophie de l'outil : PipeLine est construit autour de la notion de file active — le nombre de patients sous traitement ARV à un moment donné. C'est la variable centrale qui détermine tous les besoins en ARV. L'outil modélise l'évolution de la file active (nouveaux patients, abandons, décès, changements de schéma) et calcule les besoins en ARV résultants.\n\nPipeLine\r\n\r\nConcepts clés de PipeLine\r\n\r\nConcept 1 — La file active\r\nLa file active est le nombre de patients actuellement sous traitement ARV. \r\nElle évolue chaque mois selon la formule :\r\nFile active M+1 = File active M + Nouveaux enrôlements M − Décès M − Perdus de vue M − Transferts sortants M + Transferts entrants M\n\nPipeLine\r\n\r\nConcepts clés de PipeLine\r\n\r\nConcept 2 — Le schéma thérapeutique et la dispensation\r\nPipeLine gère la distribution des patients entre différents schémas thérapeutiques (1ère ligne, 2ème ligne, 3ème ligne) et modélise les transitions entre schémas.\r\n\r\nExemple de répartition de la file active dans PipeLine :\r\n\r\n| Schéma | Produits | Patients | % file active | Cp/patient/mois |\r\n| --- | --- | --- | --- | --- |\r\n| TLD (1ère ligne standard) | TDF/3TC/DTG | 7 850 | 61,9% | 30 cp |\r\n| TLE (1ère ligne ancienne) | TDF/3TC/EFV | 3 200 | 25,3% | 30 cp |\r\n| AZT/3TC/LPV/r (2ème ligne) | AZT+3TC+LPV/r | 1 180 | 9,3% | AZT: 60 cp, 3TC: 60 cp, LPV/r: 60 cp |\r\n| Autres schémas | Divers | 450 | 3,5% | Variable |\r\n| Total |  | 12 680 | 100% |  |\n\nPipeLine\r\n\r\nConcepts clés de PipeLine\r\n\r\nConcept 3 — Le pipeline d'approvisionnement\r\nPipeLine modélise le stock à chaque niveau de la chaîne d'approvisionnement :\r\n\r\nNiveau 1 : Stock central (Centrale d'achat)\r\n        ↓\r\nNiveau 2 : Stock régional (Dépôts régionaux)\r\n        ↓\r\nNiveau 3 : Stock district (Dépôts de district)\r\n        ↓\r\nNiveau 4 : Stock site (Pharmacies des sites VIH)\r\n\r\nPour chaque niveau, PipeLine calcule le stock disponible, la consommation mensuelle et le stock de sécurité nécessaire.\n\nPipeLine\r\n\r\nFonctionnement de PipeLine\r\n\r\nÉtape 1 — Saisie de la file active et des projections\r\n\r\nL'utilisateur saisit :\r\nLa file active actuelle par site et par schéma\r\nLe taux mensuel de nouveaux enrôlements\r\nLe taux d'attrition (décès + perdus de vue)\r\nLes projections d'évolution du programme\r\n\r\nPipeLine projette automatiquement la file active pour chaque mois de la période de planification.\n\nPipeLine\r\n\r\nFonctionnement de PipeLine\r\n\r\nÉtape 2 — Calcul des besoins en ARV\r\n\r\nÀ partir de la file active mensuelle projetée et de la répartition par schéma, PipeLine calcule les besoins mensuels en chaque ARV.\r\n\r\nÉtape 3 — Gestion du pipeline (stocks multi-niveaux)\r\n\r\nPipeLine calcule le stock total dans le pipeline à chaque niveau et identifie les niveaux en rupture ou en surstock.\n\nPipeLine\r\n\r\nFonctionnement de PipeLine\r\n\r\nÉtape 4 — Calcul de la quantité à commander\r\n\r\nPipeLine calcule la quantité à commander en tenant compte du stock total dans le pipeline (pas seulement le stock central).\r\n\r\nFormule PipeLine :\r\nQuantité à commander = Besoins période de planification + Stock de sécurité − Stock total pipeline − Commandes en transit\n\nPipeLine\r\n\r\nForces et limites de PipeLine\r\n\r\nForces :\r\nParfaitement adapté aux programmes ARV avec gestion de file active\r\nModélisation multi-niveaux du pipeline d'approvisionnement\r\nDétection automatique des surstocks et ruptures à chaque niveau\r\nGestion des transitions entre schémas thérapeutiques\r\nCalcul précis prenant en compte le stock total du pipeline\r\n\r\nLimites :\r\nConçu spécifiquement pour les ARV, peu adapté aux autres médicaments\r\nDonnées de file active doivent être régulièrement mises à jour\r\nPas de gestion de la saisonnalité\r\nInterface complexe pour les non-initiés\r\nSupport technique limité pour les versions récentes\n\nForLAB\r\n\r\nPrésentation générale\r\n\r\nForLAB (Forecasting Laboratory Commodities) est un outil développé par le CDC (Centers for Disease Control and Prevention) et l'OMS, spécifiquement pour la quantification des réactifs et consommables de laboratoire. \r\n\r\nDans les programmes de santé publique, les réactifs de laboratoire constituent une catégorie particulière de produits pharmaceutiques, avec des caractéristiques qui rendent les outils génériques peu adaptés : \r\nles réactifs sont souvent liés à des équipements spécifiques (automates), \r\nleur consommation dépend du nombre de tests réalisés et non du nombre de patients et \r\nleur gestion implique des notions de calibration de contrôle qualité et de rendement par kit qui n'existent pas pour les médicaments.\n\nForLAB\r\n\r\nSpécificités des réactifs de laboratoire\r\n\r\nCaractéristique 1 — La notion de test par kit\r\nUn kit de réactifs ne contient pas une dose par patient. \r\nIl contient un nombre défini de tests, mais ce nombre n'est jamais entièrement utilisé à cause des contrôles qualité et des calibrations.\r\n\r\nCaractéristique 2 — La dépendance aux équipements\r\nChaque automate de laboratoire utilise des réactifs spécifiques et incompatibles avec d'autres marques. \r\nLa quantification doit donc être faite par automate et non globalement.\n\nForLAB\r\n\r\nSpécificités des réactifs de laboratoire\r\n\r\nCaractéristique 3 — La consommation liée aux tests et non aux patients\r\nUn même patient peut nécessiter plusieurs types de tests différents lors d'une même consultation. \r\nLa consommation de réactifs dépend du nombre de tests prescrits, pas du nombre de patients.\n\nForLAB\r\n\r\nArchitecture et fonctionnement de ForLAB\r\n\r\nModule 1 — Configuration du laboratoire\r\nL'utilisateur définit : \r\nLes équipements disponibles (automates) avec leur marque et modèle\r\nLes types de tests réalisés sur chaque équipement\r\nLes réactifs associés à chaque test sur chaque équipement\r\n\r\nModule 2 — Données de tests réalisés\r\nForLAB collecte les données du nombre de tests effectués par type et par mois.\n\nForLAB\r\n\r\nArchitecture et fonctionnement de ForLAB\r\n\r\nModule 3 — Paramètres des kits de réactifs\r\nPour chaque réactif, ForLAB intègre :\r\nNombre de tests théoriques par kit\r\nTaux de rendement (tenant compte des calibrations et contrôles qualité)\r\nNombre de tests utilisables par kit = Tests théoriques × Taux de rendement.\r\n\r\nModule 4 — Calcul des besoins en réactifs\r\nForLAB calcule automatiquement les besoins en kits de réactifs pour chaque type de test.\r\nFormule ForLAB : \r\nKits nécessaires = (Tests à réaliser × Facteur de croissance) ÷ Tests utilisables par kit\n\nForLAB\r\n\r\nArchitecture et fonctionnement de ForLAB\r\n\r\nModule 5 — Rapport ForLAB\r\nForLAB génère un rapport complet listant pour chaque réactif :\r\nTests réalisés historiquement\r\nTests projetésKits nécessaires\r\nStock de sécurité\r\nStock disponible\r\nQuantité à commander\r\nValeur financière\n\nForLAB\r\n\r\nForces et limites de ForLAB\r\n\r\nForces :\r\nSeul outil spécifiquement conçu pour les réactifs de laboratoire\r\nIntègre les paramètres techniques des kits (calibration, contrôle qualité, rendement)\r\nGestion multi-équipements et multi-réactifs\r\nAdapté aux programmes VIH (CD4, charge virale) et tuberculose (BK, GeneXpert)\r\nSupport actif CDC/OMS\r\n\r\nLimites :\r\nLimité aux réactifs de laboratoire, ne gère pas les médicaments\r\nNécessite des données techniques détaillées sur chaque automate\r\nDonnées de tests parfois difficiles à extraire des laboratoires\r\nPas de gestion de la saisonnalité des tests (sauf saisonnalité du paludisme)\n\nQAT (Quantification and Analytics Tool)\r\n\r\nPrésentation générale\r\n\r\nQAT est l'outil le plus récent et le plus complet de la liste. Développé par USAID via Chemonics International et lancé en 2018, il a été conçu pour remplacer et intégrer les fonctionnalités de Quantimed et PipeLine dans un seul outil web moderne. \r\n\r\nQAT est accessible depuis n'importe quel navigateur internet, ne nécessite pas d'installation, et permet la collaboration en temps réel entre plusieurs utilisateurs dans différents pays.\r\n\r\nPhilosophie de l'outil :QAT est construit autour de la triangulation systématique. Pour chaque produit, il permet d'appliquer simultanément plusieurs méthodes de quantification et de les comparer côte à côte. Il intègre également des fonctions d'analyse avancées, de suivi des approvisionnements et de génération de rapports programmatiques.\n\nQAT (Quantification and Analytics Tool)\r\n\r\nArchitecture de QAT\r\n\r\nSection 1 — Gestion des programmes\r\nQAT permet de gérer plusieurs programmes de santé simultanément dans une même plateforme : \r\nVIH/SIDA, \r\npaludisme, \r\ntuberculose, \r\nsanté reproductive, \r\nmédicaments essentiels.\r\n\r\nPour chaque programme, l'utilisateur configure : \r\nLes produits à quantifier\r\nLes unités et conditionnements\r\nLes niveaux géographiques\r\nLes partenaires et bailleurs de fonds\r\nLa période de planification\n\nQAT (Quantification and Analytics Tool)\r\n\r\nArchitecture de QAT\r\n\r\nSection 2 — Collecte et gestion des données\r\nQAT dispose de fonctions avancées de collecte de données directement dans l'outil, sans passer par des fichiers Excel intermédiaires.\r\n\r\nTypes de données collectées dans QAT :\r\n\r\n| Type de données | Description | Source |\r\n| --- | --- | --- |\r\n| Consommation | Sorties de stock mensuelle par produit et par site | LMIS, rapports mensuels |\r\n| Stock | Niveaux de stock actuels à chaque niveau | Inventaires, rapports de stock |\r\n| Morbidité | Données épidémiologiques par pathologie | DHIS2, rapports épidémiologiques |\r\n| Activités | Données de prestation de soins | Rapports d'activités |\r\n| Population | Données démographiques et cibles programmatiques | INSAE, projections OMS |\r\n| Pipeline | Commandes en transit et délais de livraison | Données d'achats |\r\n\r\nFonctionnalité clé : \r\nQAT peut importer directement les données via une connexion API, éliminant la saisie manuelle et réduisant les erreurs de transcription. \r\nC'est une avancée majeure par rapport aux outils précédents.\n\nQAT (Quantification and Analytics Tool)\r\n\r\nArchitecture de QAT\r\n\r\nSection 3 — Quantification multi-méthodes\r\nC'est le cœur de QAT. \r\nPour chaque produit, l'utilisateur peut appliquer jusqu'à quatre méthodes de quantification simultanément et les comparer dans un tableau de triangulation intégré.\n\nQAT (Quantification and Analytics Tool)\r\n\r\nArchitecture de QAT\r\n\r\nSection 4 — Suivi des approvisionnements\r\nQAT intègre un module de suivi des commandes et du pipeline d'approvisionnement qui permet de visualiser en temps réel la situation des stocks à chaque niveau.\r\n\r\nFonctionnalité avancée — Analyse de scénarios dans QAT :\r\nQAT permet de simuler l'impact de différentes hypothèses sur la quantification.\n\nQAT (Quantification and Analytics Tool)\r\n\r\nGénération de rapports dans QAT :\r\n\r\nQAT génère automatiquement plusieurs types de rapports exportables en Excel, PDF ou Word :\r\n\r\n| Rapport | Contenu | Utilisateurs |\r\n| --- | --- | --- |\r\n| Rapport de quantification | Besoins par produit, méthode et période | Gestionnaires, planificateurs |\r\n| Rapport de triangulation | Comparaison des méthodes, justification | Décideurs, bailleurs |\r\n| Rapport budgétaire | Coût total par produit et par bailleur | Ministère des Finances, bailleurs |\r\n| Rapport de pipeline | Situation des stocks à chaque niveau | Gestionnaires de la chaîne |\r\n| Tableau de bord programmatique | KPIs du programme (couverture, ruptures) | Directeurs de programme |\n\nQAT (Quantification and Analytics Tool)\r\n\r\nForces et limites de QAT\r\n\r\nForces :\r\nOutil le plus complet et le plus récent\r\nAccessible en ligne, pas d'installation nécessaire\r\nDisponible en mode off line\r\nCollaboration multi-utilisateurs en temps réel\r\nIntégration des quatre méthodes de quantification dans un seul outil\r\nTriangulation intégrée avec pondération ajustable\r\nImport depuis DHIS2 (réduction des erreurs de saisie)\r\nAnalyse de scénarios intégrée\r\nRapports standardisés de haute qualité\r\nSupport technique actif USAID/Chemonics\r\nAdapté à tous les types de produits de santé\n\nQAT (Quantification and Analytics Tool)\r\n\r\nForces et limites de QAT\r\n\r\nLimites :\r\nNécessite une connexion internet fiable (mode en ligne)\r\nCourbe d'apprentissage plus longue que les autres outils\r\nInterface en anglais uniquement (au moment de la rédaction)\r\nCertaines fonctionnalités avancées nécessitent une formation spécifique\r\nDépendance à l'infrastructure internet dans les zones à faible connectivité"
       },
       {
-        "id": "qb-m9-c2",
-        "title": "Utilisation de Quantimed, PipeLine, ForLAB, QAT",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Utilisation de Quantimed, PipeLine, ForLAB, QAT\n\nLes comprendre, savoir lequel utiliser dans quel contexte et maîtriser leur logique de fonctionnement est une compétence professionnelle essentielle pour tout planificateur en approvisionnement pharmaceutique travaillant dans les programmes de santé publique.\n\nCe cours ne vise pas à former des utilisateurs experts de chaque logiciel — cela nécessiterait plusieurs jours de pratique — mais à donner une compréhension claire de la logique, des forces et des limites de chaque outil, de façon à pouvoir choisir le bon outil et en interpréter correctement les résultats.\n"
-      },
-      {
-        "id": "qb-m9-c3",
-        "title": "Utilisation de Quantimed, PipeLine, ForLAB, QAT",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Utilisation de Quantimed, PipeLine, ForLAB, QAT\n\nVue d'ensemble comparative des quatre outils\n"
-      },
-      {
-        "id": "qb-m9-c4",
-        "title": "Utilisation de Quantimed, PipeLine, ForLAB, QAT",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Utilisation de Quantimed, PipeLine, ForLAB, QAT\n\nQuantimed\n\nPrésentation générale\n\nQuantimed (Quantification of Health Commodities) est l'un des premiers outils informatisés de quantification pharmaceutique développés pour les pays à ressources limitées. Développé par Management Sciences for Health (MSH) avec le soutien de l'USAID, il a été largement utilisé pendant les années 2000 et 2010 dans les programmes de santé reproductive, de santé maternelle et de médicaments essentiels en Afrique subsaharienne et en Asie.\n\nPhilosophie de l'outil : Quantimed est construit autour du principe que la meilleure quantification intègre plusieurs méthodes et confronte leurs résultats. Il guide l'utilisateur à travers un processus structuré qui va de la définition des produits à quantifier jusqu'à la génération des rapports finaux.\n"
-      },
-      {
-        "id": "qb-m9-c5",
-        "title": "Utilisation de Quantimed, PipeLine, ForLAB, QAT",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Utilisation de Quantimed, PipeLine, ForLAB, QAT\n\nQuantimed\n\nArchitecture et modules de Quantimed\n\nQuantimed est organisé en modules successifs qui correspondent aux étapes du processus de quantification.\n\nModule 1 — Configuration du programme :\n\nL'utilisateur définit le cadre de la quantification : pays, région ou district concerné, période de planification, liste des produits à quantifier, liste des sites de prestation de soins.\n"
-      },
-      {
-        "id": "qb-m9-c6",
-        "title": "Utilisation de Quantimed, PipeLine, ForLAB, QAT",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Utilisation de Quantimed, PipeLine, ForLAB, QAT\n\nQuantimed\n\nArchitecture et modules de Quantimed\n\nModule 2 — Données de consommation :\n\nCe module permet la saisie et l'analyse des données de consommation historiques.\n\nQuantimed calcule automatiquement :\n\nLa CMM brute = Total distribué ÷ Nombre de mois\n\nLa CMM ajustée = Total distribué ajusté ÷ Mois valides (hors ruptures totales)\n\nLa CMM ajustée par interpolation des mois de rupture partielle\n"
-      },
-      {
-        "id": "qb-m9-c7",
-        "title": "Utilisation de Quantimed, PipeLine, ForLAB, QAT",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Utilisation de Quantimed, PipeLine, ForLAB, QAT\n\nQuantimed\n\nArchitecture et modules de Quantimed\n\nModule 3 — Méthode morbidité dans Quantimed\n\nQuantimed intègre la méthode morbidité pour les programmes de santé reproductive et maternelle.\n\nL'utilisateur saisit :\n\nLes données épidémiologiques (incidence par pathologie)\n\nLes protocoles de traitement (dose, durée, fréquence)\n\nLes taux de traitement et de couverture\n\nQuantimed calcule automatiquement les besoins par produit et par mois.\n"
-      },
-      {
-        "id": "qb-m9-c8",
-        "title": "Utilisation de Quantimed, PipeLine, ForLAB, QAT",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Utilisation de Quantimed, PipeLine, ForLAB, QAT\n\nQuantimed\n\nArchitecture et modules de Quantimed\n\nModule 4 — Méthode population dans Quantimed\n\nPour les produits de planification familiale, Quantimed intègre la méthode population avec les données démographiques et les objectifs de couverture contraceptive.\n\nParamètres saisis :\n\nPopulation totale et femmes en âge de procréer\n\nTaux de prévalence contraceptive actuel et objectif\n\nMix méthodes (répartition des femmes entre les différentes méthodes)\n\nCouverture de chaque méthode\n\nCalcul automatique :\n\nUtilisatrices COC = FAP × Taux prévalence × Part COC dans le mix\n\nUnités COC = Utilisatrices × 13 plaquettes/an\n"
-      },
-      {
-        "id": "qb-m9-c9",
-        "title": "Utilisation de Quantimed, PipeLine, ForLAB, QAT",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Utilisation de Quantimed, PipeLine, ForLAB, QAT\n\nQuantimed\n\nArchitecture et modules de Quantimed\n\nModule 5 — Triangulation dans Quantimed\n\nQuantimed affiche les résultats des différentes méthodes dans un tableau comparatif et calcule automatiquement les écarts en pourcentage.\n\nExemple de sortie Quantimed — Tableau de triangulation ACT :\n\n| Méthode de prévision | Quantité Estimée | Écart vs Moyenne |\n|---|---|---|\n| Méthode de Morbidité | 150 000 | +5,2% |\n| Méthode des Services | 135 000 | -5,3% |\n| Méthode de Consommation | 142 500 | +0,0% |\n"
-      },
-      {
-        "id": "qb-m9-c10",
-        "title": "Utilisation de Quantimed, PipeLine, ForLAB, QAT",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Utilisation de Quantimed, PipeLine, ForLAB, QAT\n\nQuantimed\n\nArchitecture et modules de Quantimed\n\nModule 6 — Rapport final Quantimed\n\nQuantimed génère automatiquement plusieurs rapports :\n\nRapport de quantification par produit (besoins, stock actuel, quantité à commander)\n\nRapport de triangulation (comparaison des méthodes)\n\nRapport budgétaire (coût total de la quantification)\n\nRapport de suivi (comparaison avec les quantifications précédentes)\n"
-      },
-      {
-        "id": "qb-m9-c11",
-        "title": "Utilisation de Quantimed, PipeLine, ForLAB, QAT",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Utilisation de Quantimed, PipeLine, ForLAB, QAT\n\nQuantimed\n\nForces et limites de Quantimed\n\nForces :\n\nInterface relativement simple et guidée étape par étape\n\nBonne intégration des trois méthodes principales\n\nGénération automatique de rapports standardisés\n\nAdapté aux programmes de santé reproductive et aux médicaments essentiels\n\nGratuit et accessible\n\nLimites :\n\nOutil relativement ancien, mises à jour limitées\n\nPas de module de prévision à long terme\n\nPas d'intégration avec les systèmes d'information nationaux (DHIS2)\n\nGestion limitée des ajustements saisonniers\n\nSupport technique peu actif\n\nInterface Windows uniquement, pas de version web\n"
-      },
-      {
-        "id": "qb-m9-c12",
-        "title": "Utilisation de Quantimed, PipeLine, ForLAB, QAT",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Utilisation de Quantimed, PipeLine, ForLAB, QAT\n\nPipeLine\n\nPrésentation générale\n\nPipeLine a été développé par John Snow Inc. (JSI) pour l'USAID, spécifiquement pour la quantification et le suivi des médicaments ARV (antirétroviraux) dans les programmes VIH/SIDA. Son nom fait référence au \"pipeline\" d'approvisionnement en ARV, concept central dans la gestion des programmes VIH : il faut maintenir un flux continu de médicaments dans toute la chaîne d'approvisionnement pour éviter les interruptions de traitement.\n\nPhilosophie de l'outil : PipeLine est construit autour de la notion de file active — le nombre de patients sous traitement ARV à un moment donné. C'est la variable centrale qui détermine tous les besoins en ARV. L'outil modélise l'évolution de la file active (nouveaux patients, abandons, décès, changements de schéma) et calcule les besoins en ARV résultants.\n"
-      },
-      {
-        "id": "qb-m9-c13",
-        "title": "Utilisation de Quantimed, PipeLine, ForLAB, QAT",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Utilisation de Quantimed, PipeLine, ForLAB, QAT\n\nPipeLine\n\nConcepts clés de PipeLine\n\nConcept 1 — La file active\n\nLa file active est le nombre de patients actuellement sous traitement ARV.\n\nElle évolue chaque mois selon la formule :\n\nFile active M+1 = File active M + Nouveaux enrôlements M − Décès M − Perdus de vue M − Transferts sortants M + Transferts entrants M\n"
-      },
-      {
-        "id": "qb-m9-c14",
-        "title": "Utilisation de Quantimed, PipeLine, ForLAB, QAT",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Utilisation de Quantimed, PipeLine, ForLAB, QAT\n\nPipeLine\n\nConcepts clés de PipeLine\n\nConcept 2 — Le schéma thérapeutique et la dispensation\n\nPipeLine gère la distribution des patients entre différents schémas thérapeutiques (1ère ligne, 2ème ligne, 3ème ligne) et modélise les transitions entre schémas.\n\nExemple de répartition de la file active dans PipeLine :\n"
-      },
-      {
-        "id": "qb-m9-c15",
-        "title": "Utilisation de Quantimed, PipeLine, ForLAB, QAT",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Utilisation de Quantimed, PipeLine, ForLAB, QAT\n\nPipeLine\n\nConcepts clés de PipeLine\n\nConcept 3 — Le pipeline d'approvisionnement\n\nPipeLine modélise le stock à chaque niveau de la chaîne d'approvisionnement :\n\nNiveau 1 : Stock central (Centrale d'achat)\n\n↓\n\nNiveau 2 : Stock régional (Dépôts régionaux)\n\n↓\n\nNiveau 3 : Stock district (Dépôts de district)\n\n↓\n\nNiveau 4 : Stock site (Pharmacies des sites VIH)\n\nPour chaque niveau, PipeLine calcule le stock disponible, la consommation mensuelle et le stock de sécurité nécessaire.\n"
-      },
-      {
-        "id": "qb-m9-c16",
-        "title": "Utilisation de Quantimed, PipeLine, ForLAB, QAT",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Utilisation de Quantimed, PipeLine, ForLAB, QAT\n\nPipeLine\n\nFonctionnement de PipeLine\n\nÉtape 1 — Saisie de la file active et des projections\n\nL'utilisateur saisit :\n\nLa file active actuelle par site et par schéma\n\nLe taux mensuel de nouveaux enrôlements\n\nLe taux d'attrition (décès + perdus de vue)\n\nLes projections d'évolution du programme\n\nPipeLine projette automatiquement la file active pour chaque mois de la période de planification.\n"
-      },
-      {
-        "id": "qb-m9-c17",
-        "title": "Utilisation de Quantimed, PipeLine, ForLAB, QAT",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Utilisation de Quantimed, PipeLine, ForLAB, QAT\n\nPipeLine\n\nFonctionnement de PipeLine\n\nÉtape 2 — Calcul des besoins en ARV\n\nÀ partir de la file active mensuelle projetée et de la répartition par schéma, PipeLine calcule les besoins mensuels en chaque ARV.\n\nÉtape 3 — Gestion du pipeline (stocks multi-niveaux)\n\nPipeLine calcule le stock total dans le pipeline à chaque niveau et identifie les niveaux en rupture ou en surstock.\n"
-      },
-      {
-        "id": "qb-m9-c18",
-        "title": "Utilisation de Quantimed, PipeLine, ForLAB, QAT",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Utilisation de Quantimed, PipeLine, ForLAB, QAT\n\nPipeLine\n\nFonctionnement de PipeLine\n\nÉtape 4 — Calcul de la quantité à commander\n\nPipeLine calcule la quantité à commander en tenant compte du stock total dans le pipeline (pas seulement le stock central).\n\nFormule PipeLine :\n\nQuantité à commander = Besoins période de planification + Stock de sécurité − Stock total pipeline − Commandes en transit\n"
-      },
-      {
-        "id": "qb-m9-c19",
-        "title": "Utilisation de Quantimed, PipeLine, ForLAB, QAT",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Utilisation de Quantimed, PipeLine, ForLAB, QAT\n\nPipeLine\n\nForces et limites de PipeLine\n\nForces :\n\nParfaitement adapté aux programmes ARV avec gestion de file active\n\nModélisation multi-niveaux du pipeline d'approvisionnement\n\nDétection automatique des surstocks et ruptures à chaque niveau\n\nGestion des transitions entre schémas thérapeutiques\n\nCalcul précis prenant en compte le stock total du pipeline\n\nLimites :\n\nConçu spécifiquement pour les ARV, peu adapté aux autres médicaments\n\nDonnées de file active doivent être régulièrement mises à jour\n\nPas de gestion de la saisonnalité\n\nInterface complexe pour les non-initiés\n\nSupport technique limité pour les versions récentes\n"
-      },
-      {
-        "id": "qb-m9-c20",
-        "title": "Utilisation de Quantimed, PipeLine, ForLAB, QAT",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Utilisation de Quantimed, PipeLine, ForLAB, QAT\n\nForLAB\n\nPrésentation générale\n\nForLAB (Forecasting Laboratory Commodities) est un outil développé par le CDC (Centers for Disease Control and Prevention) et l'OMS, spécifiquement pour la quantification des réactifs et consommables de laboratoire.\n\nDans les programmes de santé publique, les réactifs de laboratoire constituent une catégorie particulière de produits pharmaceutiques, avec des caractéristiques qui rendent les outils génériques peu adaptés :\n\nles réactifs sont souvent liés à des équipements spécifiques (automates),\n\nleur consommation dépend du nombre de tests réalisés et non du nombre de patients et\n\nleur gestion implique des notions de calibration de contrôle qualité et de rendement par kit qui n'existent pas pour les médicaments.\n"
-      },
-      {
-        "id": "qb-m9-c21",
-        "title": "Utilisation de Quantimed, PipeLine, ForLAB, QAT",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Utilisation de Quantimed, PipeLine, ForLAB, QAT\n\nForLAB\n\nSpécificités des réactifs de laboratoire\n\nCaractéristique 1 — La notion de test par kit\n\nUn kit de réactifs ne contient pas une dose par patient.\n\nIl contient un nombre défini de tests, mais ce nombre n'est jamais entièrement utilisé à cause des contrôles qualité et des calibrations.\n\nCaractéristique 2 — La dépendance aux équipements\n\nChaque automate de laboratoire utilise des réactifs spécifiques et incompatibles avec d'autres marques.\n\nLa quantification doit donc être faite par automate et non globalement.\n"
-      },
-      {
-        "id": "qb-m9-c22",
-        "title": "Utilisation de Quantimed, PipeLine, ForLAB, QAT",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Utilisation de Quantimed, PipeLine, ForLAB, QAT\n\nForLAB\n\nSpécificités des réactifs de laboratoire\n\nCaractéristique 3 — La consommation liée aux tests et non aux patients\n\nUn même patient peut nécessiter plusieurs types de tests différents lors d'une même consultation.\n\nLa consommation de réactifs dépend du nombre de tests prescrits, pas du nombre de patients.\n"
-      },
-      {
-        "id": "qb-m9-c23",
-        "title": "Utilisation de Quantimed, PipeLine, ForLAB, QAT",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Utilisation de Quantimed, PipeLine, ForLAB, QAT\n\nForLAB\n\nArchitecture et fonctionnement de ForLAB\n\nModule 1 — Configuration du laboratoire\n\nL'utilisateur définit :\n\nLes équipements disponibles (automates) avec leur marque et modèle\n\nLes types de tests réalisés sur chaque équipement\n\nLes réactifs associés à chaque test sur chaque équipement\n\nModule 2 — Données de tests réalisés\n\nForLAB collecte les données du nombre de tests effectués par type et par mois.\n"
-      },
-      {
-        "id": "qb-m9-c24",
-        "title": "Utilisation de Quantimed, PipeLine, ForLAB, QAT",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Utilisation de Quantimed, PipeLine, ForLAB, QAT\n\nForLAB\n\nArchitecture et fonctionnement de ForLAB\n\nModule 3 — Paramètres des kits de réactifs\n\nPour chaque réactif, ForLAB intègre :\n\nNombre de tests théoriques par kit\n\nTaux de rendement (tenant compte des calibrations et contrôles qualité)\n\nNombre de tests utilisables par kit = Tests théoriques × Taux de rendement.\n\nModule 4 — Calcul des besoins en réactifs\n\nForLAB calcule automatiquement les besoins en kits de réactifs pour chaque type de test.\n\nFormule ForLAB :\n\nKits nécessaires = (Tests à réaliser × Facteur de croissance) ÷ Tests utilisables par kit\n"
-      },
-      {
-        "id": "qb-m9-c25",
-        "title": "Utilisation de Quantimed, PipeLine, ForLAB, QAT",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Utilisation de Quantimed, PipeLine, ForLAB, QAT\n\nForLAB\n\nArchitecture et fonctionnement de ForLAB\n\nModule 5 — Rapport ForLAB\n\nForLAB génère un rapport complet listant pour chaque réactif :\n\nTests réalisés historiquement\n\nTests projetésKits nécessaires\n\nStock de sécurité\n\nStock disponible\n\nQuantité à commander\n\nValeur financière\n"
-      },
-      {
-        "id": "qb-m9-c26",
-        "title": "Utilisation de Quantimed, PipeLine, ForLAB, QAT",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Utilisation de Quantimed, PipeLine, ForLAB, QAT\n\nForLAB\n\nForces et limites de ForLAB\n\nForces :\n\nSeul outil spécifiquement conçu pour les réactifs de laboratoire\n\nIntègre les paramètres techniques des kits (calibration, contrôle qualité, rendement)\n\nGestion multi-équipements et multi-réactifs\n\nAdapté aux programmes VIH (CD4, charge virale) et tuberculose (BK, GeneXpert)\n\nSupport actif CDC/OMS\n\nLimites :\n\nLimité aux réactifs de laboratoire, ne gère pas les médicaments\n\nNécessite des données techniques détaillées sur chaque automate\n\nDonnées de tests parfois difficiles à extraire des laboratoires\n\nPas de gestion de la saisonnalité des tests (sauf saisonnalité du paludisme)\n"
-      },
-      {
-        "id": "qb-m9-c27",
-        "title": "Utilisation de Quantimed, PipeLine, ForLAB, QAT",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Utilisation de Quantimed, PipeLine, ForLAB, QAT\n\nQAT (Quantification and Analytics Tool)\n\nPrésentation générale\n\nQAT est l'outil le plus récent et le plus complet de la liste. Développé par USAID via Chemonics International et lancé en 2018, il a été conçu pour remplacer et intégrer les fonctionnalités de Quantimed et PipeLine dans un seul outil web moderne.\n\nQAT est accessible depuis n'importe quel navigateur internet, ne nécessite pas d'installation, et permet la collaboration en temps réel entre plusieurs utilisateurs dans différents pays.\n\nPhilosophie de l'outil :QAT est construit autour de la triangulation systématique. Pour chaque produit, il permet d'appliquer simultanément plusieurs méthodes de quantification et de les comparer côte à côte. Il intègre également des fonctions d'analyse avancées, de suivi des approvisionnements et de génération de rapports programmatiques.\n"
-      },
-      {
-        "id": "qb-m9-c28",
-        "title": "Utilisation de Quantimed, PipeLine, ForLAB, QAT",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Utilisation de Quantimed, PipeLine, ForLAB, QAT\n\nQAT (Quantification and Analytics Tool)\n\nArchitecture de QAT\n\nSection 1 — Gestion des programmes\n\nQAT permet de gérer plusieurs programmes de santé simultanément dans une même plateforme :\n\nVIH/SIDA,\n\npaludisme,\n\ntuberculose,\n\nsanté reproductive,\n\nmédicaments essentiels.\n\nPour chaque programme, l'utilisateur configure :\n\nLes produits à quantifier\n\nLes unités et conditionnements\n\nLes niveaux géographiques\n\nLes partenaires et bailleurs de fonds\n\nLa période de planification\n"
-      },
-      {
-        "id": "qb-m9-c29",
-        "title": "Utilisation de Quantimed, PipeLine, ForLAB, QAT",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Utilisation de Quantimed, PipeLine, ForLAB, QAT\n\nQAT (Quantification and Analytics Tool)\n\nArchitecture de QAT\n\nSection 2 — Collecte et gestion des données\n\nQAT dispose de fonctions avancées de collecte de données directement dans l'outil, sans passer par des fichiers Excel intermédiaires.\n\nTypes de données collectées dans QAT :\n\nFonctionnalité clé :\n\nQAT peut importer directement les données via une connexion API, éliminant la saisie manuelle et réduisant les erreurs de transcription.\n\nC'est une avancée majeure par rapport aux outils précédents.\n"
-      },
-      {
-        "id": "qb-m9-c30",
-        "title": "Utilisation de Quantimed, PipeLine, ForLAB, QAT",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Utilisation de Quantimed, PipeLine, ForLAB, QAT\n\nQAT (Quantification and Analytics Tool)\n\nArchitecture de QAT\n\nSection 3 — Quantification multi-méthodes\n\nC'est le cœur de QAT.\n\nPour chaque produit, l'utilisateur peut appliquer jusqu'à quatre méthodes de quantification simultanément et les comparer dans un tableau de triangulation intégré.\n"
-      },
-      {
-        "id": "qb-m9-c31",
-        "title": "Utilisation de Quantimed, PipeLine, ForLAB, QAT",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Utilisation de Quantimed, PipeLine, ForLAB, QAT\n\nQAT (Quantification and Analytics Tool)\n\nArchitecture de QAT\n\nSection 4 — Suivi des approvisionnements\n\nQAT intègre un module de suivi des commandes et du pipeline d'approvisionnement qui permet de visualiser en temps réel la situation des stocks à chaque niveau.\n\nFonctionnalité avancée — Analyse de scénarios dans QAT :\n\nQAT permet de simuler l'impact de différentes hypothèses sur la quantification.\n"
-      },
-      {
-        "id": "qb-m9-c32",
-        "title": "Utilisation de Quantimed, PipeLine, ForLAB, QAT",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Utilisation de Quantimed, PipeLine, ForLAB, QAT\n\nQAT (Quantification and Analytics Tool)\n\nGénération de rapports dans QAT :\n\nQAT génère automatiquement plusieurs types de rapports exportables en Excel, PDF ou Word :\n"
-      },
-      {
-        "id": "qb-m9-c33",
-        "title": "Utilisation de Quantimed, PipeLine, ForLAB, QAT",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Utilisation de Quantimed, PipeLine, ForLAB, QAT\n\nQAT (Quantification and Analytics Tool)\n\nForces et limites de QAT\n\nForces :\n\nOutil le plus complet et le plus récent\n\nAccessible en ligne, pas d'installation nécessaire\n\nDisponible en mode off line\n\nCollaboration multi-utilisateurs en temps réel\n\nIntégration des quatre méthodes de quantification dans un seul outil\n\nTriangulation intégrée avec pondération ajustable\n\nImport depuis DHIS2 (réduction des erreurs de saisie)\n\nAnalyse de scénarios intégrée\n\nRapports standardisés de haute qualité\n\nSupport technique actif USAID/Chemonics\n\nAdapté à tous les types de produits de santé\n"
-      },
-      {
-        "id": "qb-m9-c34",
-        "title": "Utilisation de Quantimed, PipeLine, ForLAB, QAT",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Utilisation de Quantimed, PipeLine, ForLAB, QAT\n\nQAT (Quantification and Analytics Tool)\n\nForces et limites de QAT\n\nLimites :\n\nNécessite une connexion internet fiable (mode en ligne)\n\nCourbe d'apprentissage plus longue que les autres outils\n\nInterface en anglais uniquement (au moment de la rédaction)\n\nCertaines fonctionnalités avancées nécessitent une formation spécifique\n\nDépendance à l'infrastructure internet dans les zones à faible connectivité\n"
-      },
-      {
-        "id": "qb-m9-c35",
+        "id": "qb-m1-c17",
         "title": "Ajustements saisonniers et facteurs contextuels",
         "type": "text",
-        "duration": "10 min",
-        "content": "#### Ajustements saisonniers et facteurs contextuels\n\nUne prévision qui ignore la saisonnalité et les facteurs contextuels est une prévision aveugle.\n\nElle produit une demande \"moyenne\" qui ne correspond à la réalité d'aucun mois de l'année.\n\nEn mai, le gestionnaire est en rupture d'ACT pendant que son entrepôt déborde d'antihypertenseurs.\n\nEn janvier, il a six mois de stock d'ACT qui occupent de l'espace et immobilisent des ressources.\n\nLa saisonnalité est la réalité de terrain de tout gestionnaire pharmaceutique en zone tropicale.\n\nLes facteurs contextuels — politiques de santé, événements démographiques, crises, changements de protocoles — sont les perturbateurs qui déforment les tendances \"normales\" et que seul un regard attentif sur l'environnement permet d'anticiper.\n\nMaîtriser ces deux dimensions transforme une quantification mécanique en une prévision intelligente, adaptée à la réalité de chaque territoire et de chaque période.\n"
+        "duration": "5 min",
+        "content": "### Ajustements saisonniers et facteurs contextuels\n\nUne prévision qui ignore la saisonnalité et les facteurs contextuels est une prévision aveugle.\r\n\r\nElle produit une demande \"moyenne\" qui ne correspond à la réalité d'aucun mois de l'année. \r\nEn mai, le gestionnaire est en rupture d'ACT pendant que son entrepôt déborde d'antihypertenseurs. \r\nEn janvier, il a six mois de stock d'ACT qui occupent de l'espace et immobilisent des ressources. \r\n\r\nLa saisonnalité est la réalité de terrain de tout gestionnaire pharmaceutique en zone tropicale.\r\n \r\nLes facteurs contextuels — politiques de santé, événements démographiques, crises, changements de protocoles — sont les perturbateurs qui déforment les tendances \"normales\" et que seul un regard attentif sur l'environnement permet d'anticiper. \r\n\r\nMaîtriser ces deux dimensions transforme une quantification mécanique en une prévision intelligente, adaptée à la réalité de chaque territoire et de chaque période.\n\nLes ajustements saisonniers\r\n\r\nDéfinition et sources de la saisonnalité pharmaceutique\r\n\r\nLa saisonnalité est la variation cyclique et prévisible de la demande pharmaceutique qui se répète à intervalles réguliers, généralement sur une base annuelle. \r\n\r\nElle est dite \"saisonnière\" car elle est le plus souvent liée aux saisons climatiques, mais elle peut aussi être liée au calendrier épidémiologique, au calendrier scolaire ou aux cycles agricoles.\n\nLes ajustements saisonniers\r\n\r\nSources principales de saisonnalité en santé publique\r\n\r\n| Source | Mécanisme | Produits affectés |\r\n| --- | --- | --- |\r\n| Saison des pluies | Prolifération des moustiques → paludisme | ACT, quinine, TDR paludisme, artésunate IV |\r\n| Saison sèche | Poussières, vent de l'harmattan → méningite, infections respiratoires | Vaccin méningite, antibiotiques |\r\n| Saison froide/fraîche | Favorise la transmission des virus respiratoires | Paracétamol, amoxicilline pédiatrique, SRO |\r\n| Période de récolte | Déplacements de population, changements alimentaires | SRO, antipaludéens |\r\n| Calendrier vaccinal | Campagnes de vaccination programmées | Vaccins selon programme |\r\n| Saison de maternité | Légère augmentation des naissances certaines périodes | Oxytocine, fer acide folique, vitamine K |\r\n| Rentrée scolaire | Dépistage des troubles visuels, dentaires | Médicaments pédiatriques |\r\n| Ramadan | Adaptation des horaires de prise de médicaments | Médicaments chroniques (diabète, HTA) |\n\nLes ajustements saisonniers\r\n\r\nMéthode de calcul des indices saisonniers\r\n\r\nL'indice saisonnier est un coefficient multiplicateur qui exprime, pour chaque mois, l'écart entre la demande de ce mois et la demande mensuelle moyenne annuelle.\r\n\r\nFormule :\r\nIndice saisonnier du mois M = Consommation moyenne historique du mois M ÷ CMM globale\n\nLes ajustements saisonniers\r\n\r\nMéthode de calcul des indices saisonniers\r\n\r\nPour être fiable, le calcul des indices saisonniers nécessite au minimum 3 ans de données. Avec moins de données, les variations accidentelles d'une année peuvent être confondues avec des effets saisonniers réels.\r\n\r\nÉtapes du calcul :\r\nÉtape 1 : Collecter les données mensuelles sur au minimum 3 ans\r\nÉtape 2 : Calculer la consommation moyenne de chaque mois sur toutes les années\r\nÉtape 3 : Calculer la CMM globale sur l'ensemble de la période\r\nÉtape 4 : Diviser la moyenne de chaque mois par la CMM globale\r\nÉtape 5 : Vérifier que la somme des 12 indices = 12 (contrôle de cohérence)\n\nLes ajustements saisonniers\r\n\r\nApplication des indices saisonniers aux prévisions\r\n\r\nUne fois les indices calculés, ils sont appliqués aux prévisions pour désaisonnaliser ou saisonnaliser les estimations.\r\n\r\nApplication 1 : Prévision mensuelle saisonnalisée\r\nPrévision mensuelle = CMM projetée × Indice saisonnier du mois\r\n\r\nAnnuellement, les totaux sont presque identiques. La différence n'est pas dans la quantité totale commandée sur l'année, mais dans le calendrier des commandes. Sans ajustement saisonnier, on commandera trop en hiver et pas assez en été, créant des surstocks inutiles en basse saison et des ruptures en haute saison.\n\nLes ajustements saisonniers\r\n\r\nApplication des indices saisonniers aux prévisions\r\n\r\nApplication 2 — Désaisonnalisation pour identifier la tendance pure\r\nLa désaisonnalisation permet d'éliminer l'effet saisonnier pour ne voir que la tendance structurelle de la demande, indépendamment des variations cycliques.\r\n\r\nFormule :\r\nConsommation désaisonnalisée = Consommation réelle ÷ Indice saisonnier\n\nLes ajustements saisonniers\r\n\r\nSaisonnalité et planification des commandes\r\n\r\nL'ajustement saisonnier doit être intégré dans le calendrier des commandes, pas seulement dans les quantités.\r\n\r\nPrincipe de l'anticipation saisonnière : Les commandes destinées à couvrir les pics saisonniers doivent être passées suffisamment tôt pour arriver avant le début du pic, en tenant compte du délai de livraison.\r\n\r\nFormule :\r\nDate limite de commande = Début du pic saisonnier − Délai de livraison\n\nLes ajustements saisonniers\r\n\r\nSaisonnalité de la chaîne d'approvisionnement\r\n\r\nLa saisonnalité ne concerne pas uniquement la demande. Elle affecte aussi la chaîne d'approvisionnement elle-même.\r\n\r\nPerturbations saisonnières de l'approvisionnement\r\n\r\n| Période | Perturbation | Impact | Anticipation nécessaire |\r\n| --- | --- | --- | --- |\r\n| Saison des pluies | Routes impraticables dans les zones rurales | Retard de livraison aux sites périphériques | Constituer un stock avancé avant les pluies |\r\n| Période de fin d'année | Fermetures administratives, congés | Blocage des commandes et livraisons | Passer les commandes fin novembre |\r\n| Début d'année budgétaire | Délais d'approbation des nouveaux budgets | Retard de financement des commandes | Stock de sécurité renforcé en début d'année |\r\n| Période de haute transmission | Demande augmente chez tous les acteurs simultanément | Tensions d'approvisionnement chez les fournisseurs | Commander à l'avance, avant le pic |\n\nLes facteurs contextuels\r\n\r\nFacteurs contextuels démographiques\r\n\r\nFacteur 1 — Croissance et migrations de population\r\nLa croissance démographique génère une augmentation mécanique de la demande proportionnelle au taux de croissance. \r\nLes mouvements migratoires (ruraux vers urbains, réfugiés, déplacés internes) peuvent créer des hausses brutales et localisées de la demande.\r\n\r\nFacteur 2 — Vieillissement de la population et transition épidémiologique\r\nDans les pays à revenu intermédiaire et supérieur, le vieillissement de la population entraîne une montée progressive des maladies chroniques (HTA, diabète, maladies cardiovasculaires, cancer) au détriment relatif des maladies infectieuses.\n\nLes facteurs contextuels\r\n\r\nFacteurs contextuels programmatiques\r\n\r\nFacteur 3 — Extension de la couverture géographique\r\nL'ouverture de nouveaux centres de santé ou l'extension d'un programme à de nouvelles zones génère une augmentation immédiate et parfois substantielle de la demande.\r\n\r\nFacteur 4 — Changement de protocole de traitement\r\nL'introduction d'un nouveau médicament ou d'une nouvelle dose modifie les besoins de façon immédiate et durable.\r\n\r\nFacteur 5 — Objectifs programmatiques ambitieux\r\nLes objectifs 90-90-90 et 95-95-95 de l'ONUSIDA pour le VIH (95% des séropositifs dépistés, 95% des dépistés sous traitement, 95% en succès thérapeutique) génèrent des augmentations continues et planifiées de la file active et donc de la demande en ARV.\n\nLes facteurs contextuels\r\n\r\nFacteurs contextuels liés aux politiques de santé\r\n\r\nFacteur 6 — Gratuité des soins\r\nLa suppression des barrières financières entraîne une augmentation du taux d'utilisation des services et donc de la consommation pharmaceutique.\r\n\r\nFacteur 7 — Introduction d'une assurance maladie universelle\r\nSimilaire à la gratuité, l'assurance maladie réduit les barrières financières et augmente le taux d'utilisation des services, avec un effet particulièrement marqué sur les médicaments de prescription pour les maladies chroniques.\n\nLes facteurs contextuels\r\n\r\nFacteurs contextuels liés aux épidémies et crises\r\n\r\nFacteur 8 — Épidémies imprévisibles\r\nLes épidémies créent des pics de demande soudains et brutaux qui ne peuvent pas être prévus précisément mais peuvent être anticipés dans leur probabilité grâce à la surveillance épidémiologique.\r\n\r\nFacteur 9 — Impact du changement climatique\r\nLe réchauffement climatique modifie progressivement les zones de transmission des maladies vectorielles (paludisme, dengue, leishmaniose) et augmente la fréquence des événements météorologiques extrêmes (inondations → maladies hydriques, sécheresses → malnutrition).\n\nIntégration des ajustements dans un modèle de prévision complet\r\n\r\nCe qu’il faut retenir\r\n\r\nLa puissance d'une bonne prévision réside dans la capacité à intégrer simultanément tous les ajustements pertinents dans un modèle cohérent.\n\nTableau de bord des facteurs contextuels\r\n\r\nCe qu’il faut retenir\r\n\r\nUn outil pratique pour les planificateurs est le tableau de bord des facteurs contextuels, qui liste tous les facteurs susceptibles d'influencer la demande et permet de les surveiller régulièrement.\n\nSynthèse\r\n\r\n| Dimension | Points clés |\r\n| --- | --- |\r\n| Indices saisonniers | Calculés sur 3 ans minimum, contrôle de cohérence (somme = 12) |\r\n| Application aux prévisions | Prévision mensuelle = CMM projetée × Index saisonnier du mois |\r\n| Désaisonnalisation | Permet d'identifier la tendance pure indépendamment des cycles |\r\n| Calendrier des commandes | Commandes pré-saisonnières = Début du pic − Délai de livraison |\r\n| Facteurs démographiques | Croissance population, migrations, vieillissement |\r\n| Facteurs programmatiques | Extension couverture, changements de protocoles, objectifs 95-95-95 |\r\n| Facteurs politiques | Gratuité des soins, assurance maladie, nouvelles politiques |\r\n| Facteurs conjoncturels | Épidémies, catastrophes, crises humanitaires |\r\n| Facteurs environnementaux | Changement climatique, saisonnalité renforcée |\r\n| Tableau de bord contextuel | Outil de surveillance continue et de mise à jour des prévisions |"
       },
       {
-        "id": "qb-m9-c36",
-        "title": "Ajustements saisonniers et facteurs contextuels",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Ajustements saisonniers et facteurs contextuels\n\nLes ajustements saisonniers\n\nDéfinition et sources de la saisonnalité pharmaceutique\n\nLa saisonnalité est la variation cyclique et prévisible de la demande pharmaceutique qui se répète à intervalles réguliers, généralement sur une base annuelle.\n\nElle est dite \"saisonnière\" car elle est le plus souvent liée aux saisons climatiques, mais elle peut aussi être liée au calendrier épidémiologique, au calendrier scolaire ou aux cycles agricoles.\n"
-      },
-      {
-        "id": "qb-m9-c37",
-        "title": "Ajustements saisonniers et facteurs contextuels",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Ajustements saisonniers et facteurs contextuels\n\nLes ajustements saisonniers\n\nSources principales de saisonnalité en santé publique\n"
-      },
-      {
-        "id": "qb-m9-c38",
-        "title": "Ajustements saisonniers et facteurs contextuels",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Ajustements saisonniers et facteurs contextuels\n\nLes ajustements saisonniers\n\nMéthode de calcul des indices saisonniers\n\nL'indice saisonnier est un coefficient multiplicateur qui exprime, pour chaque mois, l'écart entre la demande de ce mois et la demande mensuelle moyenne annuelle.\n\nFormule :\n\nIndice saisonnier du mois M = Consommation moyenne historique du mois M ÷ CMM globale\n"
-      },
-      {
-        "id": "qb-m9-c39",
-        "title": "Ajustements saisonniers et facteurs contextuels",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Ajustements saisonniers et facteurs contextuels\n\nLes ajustements saisonniers\n\nMéthode de calcul des indices saisonniers\n\nPour être fiable, le calcul des indices saisonniers nécessite au minimum 3 ans de données. Avec moins de données, les variations accidentelles d'une année peuvent être confondues avec des effets saisonniers réels.\n\nÉtapes du calcul :\n\nÉtape 1 : Collecter les données mensuelles sur au minimum 3 ans\n\nÉtape 2 : Calculer la consommation moyenne de chaque mois sur toutes les années\n\nÉtape 3 : Calculer la CMM globale sur l'ensemble de la période\n\nÉtape 4 : Diviser la moyenne de chaque mois par la CMM globale\n\nÉtape 5 : Vérifier que la somme des 12 indices = 12 (contrôle de cohérence)\n"
-      },
-      {
-        "id": "qb-m9-c40",
-        "title": "Ajustements saisonniers et facteurs contextuels",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Ajustements saisonniers et facteurs contextuels\n\nLes ajustements saisonniers\n\nApplication des indices saisonniers aux prévisions\n\nUne fois les indices calculés, ils sont appliqués aux prévisions pour désaisonnaliser ou saisonnaliser les estimations.\n\nApplication 1 : Prévision mensuelle saisonnalisée\n\nPrévision mensuelle = CMM projetée × Indice saisonnier du mois\n\nAnnuellement, les totaux sont presque identiques. La différence n'est pas dans la quantité totale commandée sur l'année, mais dans le calendrier des commandes. Sans ajustement saisonnier, on commandera trop en hiver et pas assez en été, créant des surstocks inutiles en basse saison et des ruptures en haute saison.\n"
-      },
-      {
-        "id": "qb-m9-c41",
-        "title": "Ajustements saisonniers et facteurs contextuels",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Ajustements saisonniers et facteurs contextuels\n\nLes ajustements saisonniers\n\nApplication des indices saisonniers aux prévisions\n\nApplication 2 — Désaisonnalisation pour identifier la tendance pure\n\nLa désaisonnalisation permet d'éliminer l'effet saisonnier pour ne voir que la tendance structurelle de la demande, indépendamment des variations cycliques.\n\nFormule :\n\nConsommation désaisonnalisée = Consommation réelle ÷ Indice saisonnier\n"
-      },
-      {
-        "id": "qb-m9-c42",
-        "title": "Ajustements saisonniers et facteurs contextuels",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Ajustements saisonniers et facteurs contextuels\n\nLes ajustements saisonniers\n\nSaisonnalité et planification des commandes\n\nL'ajustement saisonnier doit être intégré dans le calendrier des commandes, pas seulement dans les quantités.\n\nPrincipe de l'anticipation saisonnière : Les commandes destinées à couvrir les pics saisonniers doivent être passées suffisamment tôt pour arriver avant le début du pic, en tenant compte du délai de livraison.\n\nFormule :\n\nDate limite de commande = Début du pic saisonnier − Délai de livraison\n"
-      },
-      {
-        "id": "qb-m9-c43",
-        "title": "Ajustements saisonniers et facteurs contextuels",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Ajustements saisonniers et facteurs contextuels\n\nLes ajustements saisonniers\n\nSaisonnalité de la chaîne d'approvisionnement\n\nLa saisonnalité ne concerne pas uniquement la demande. Elle affecte aussi la chaîne d'approvisionnement elle-même.\n\nPerturbations saisonnières de l'approvisionnement\n"
-      },
-      {
-        "id": "qb-m9-c44",
-        "title": "Ajustements saisonniers et facteurs contextuels",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Ajustements saisonniers et facteurs contextuels\n\nLes facteurs contextuels\n\nFacteurs contextuels démographiques\n\nFacteur 1 — Croissance et migrations de population\n\nLa croissance démographique génère une augmentation mécanique de la demande proportionnelle au taux de croissance.\n\nLes mouvements migratoires (ruraux vers urbains, réfugiés, déplacés internes) peuvent créer des hausses brutales et localisées de la demande.\n\nFacteur 2 — Vieillissement de la population et transition épidémiologique\n\nDans les pays à revenu intermédiaire et supérieur, le vieillissement de la population entraîne une montée progressive des maladies chroniques (HTA, diabète, maladies cardiovasculaires, cancer) au détriment relatif des maladies infectieuses.\n"
-      },
-      {
-        "id": "qb-m9-c45",
-        "title": "Ajustements saisonniers et facteurs contextuels",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Ajustements saisonniers et facteurs contextuels\n\nLes facteurs contextuels\n\nFacteurs contextuels programmatiques\n\nFacteur 3 — Extension de la couverture géographique\n\nL'ouverture de nouveaux centres de santé ou l'extension d'un programme à de nouvelles zones génère une augmentation immédiate et parfois substantielle de la demande.\n\nFacteur 4 — Changement de protocole de traitement\n\nL'introduction d'un nouveau médicament ou d'une nouvelle dose modifie les besoins de façon immédiate et durable.\n\nFacteur 5 — Objectifs programmatiques ambitieux\n\nLes objectifs 90-90-90 et 95-95-95 de l'ONUSIDA pour le VIH (95% des séropositifs dépistés, 95% des dépistés sous traitement, 95% en succès thérapeutique) génèrent des augmentations continues et planifiées de la file active et donc de la demande en ARV.\n"
-      },
-      {
-        "id": "qb-m9-c46",
-        "title": "Ajustements saisonniers et facteurs contextuels",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Ajustements saisonniers et facteurs contextuels\n\nLes facteurs contextuels\n\nFacteurs contextuels liés aux politiques de santé\n\nFacteur 6 — Gratuité des soins\n\nLa suppression des barrières financières entraîne une augmentation du taux d'utilisation des services et donc de la consommation pharmaceutique.\n\nFacteur 7 — Introduction d'une assurance maladie universelle\n\nSimilaire à la gratuité, l'assurance maladie réduit les barrières financières et augmente le taux d'utilisation des services, avec un effet particulièrement marqué sur les médicaments de prescription pour les maladies chroniques.\n"
-      },
-      {
-        "id": "qb-m9-c47",
-        "title": "Ajustements saisonniers et facteurs contextuels",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Ajustements saisonniers et facteurs contextuels\n\nLes facteurs contextuels\n\nFacteurs contextuels liés aux épidémies et crises\n\nFacteur 8 — Épidémies imprévisibles\n\nLes épidémies créent des pics de demande soudains et brutaux qui ne peuvent pas être prévus précisément mais peuvent être anticipés dans leur probabilité grâce à la surveillance épidémiologique.\n\nFacteur 9 — Impact du changement climatique\n\nLe réchauffement climatique modifie progressivement les zones de transmission des maladies vectorielles (paludisme, dengue, leishmaniose) et augmente la fréquence des événements météorologiques extrêmes (inondations → maladies hydriques, sécheresses → malnutrition).\n"
-      },
-      {
-        "id": "qb-m9-c48",
-        "title": "Ajustements saisonniers et facteurs contextuels",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Ajustements saisonniers et facteurs contextuels\n\nIntégration des ajustements dans un modèle de prévision complet\n\nCe qu’il faut retenir\n\nLa puissance d'une bonne prévision réside dans la capacité à intégrer simultanément tous les ajustements pertinents dans un modèle cohérent.\n"
-      },
-      {
-        "id": "qb-m9-c49",
-        "title": "Ajustements saisonniers et facteurs contextuels",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Ajustements saisonniers et facteurs contextuels\n\nTableau de bord des facteurs contextuels\n\nCe qu’il faut retenir\n\nUn outil pratique pour les planificateurs est le tableau de bord des facteurs contextuels, qui liste tous les facteurs susceptibles d'influencer la demande et permet de les surveiller régulièrement.\n"
-      },
-      {
-        "id": "qb-m9-c50",
-        "title": "Ajustements saisonniers et facteurs contextuels",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Ajustements saisonniers et facteurs contextuels\n\nSynthèse\n"
-      },
-      {
-        "id": "qb-m9-c51",
+        "id": "qb-m1-c18",
         "title": "Analyse des écarts entre prévisions et consommations réelles",
         "type": "text",
-        "duration": "10 min",
-        "content": "#### Analyse des écarts entre prévisions et consommations réelles\n\nUne prévision n'est jamais parfaite. L'objectif n'est pas d'éliminer les écarts entre ce qui était prévu et ce qui s'est réellement passé — c'est impossible — mais de les mesurer, les comprendre et les utiliser pour améliorer continuellement la qualité des prévisions suivantes.\n\nL'analyse des écarts est le mécanisme d'apprentissage du système de prévision. Sans elle, les mêmes erreurs se répètent indéfiniment :\n\non sous-estime systématiquement la demande en haute saison,\n\non sur-estime en basse saison,\n\non ignore les effets des politiques de santé,\n\non ne détecte pas les tendances émergentes.\n\nAvec une analyse rigoureuse et régulière des écarts, le système de prévision s'améliore à chaque cycle, réduit progressivement ses erreurs et produit des estimations de plus en plus fiables.\n\nC'est ce processus d'amélioration continue qui distingue un système de quantification professionnel d'un exercice ponctuel.\n"
+        "duration": "5 min",
+        "content": "### Analyse des écarts entre prévisions et consommations réelles\n\nUne prévision n'est jamais parfaite. L'objectif n'est pas d'éliminer les écarts entre ce qui était prévu et ce qui s'est réellement passé — c'est impossible — mais de les mesurer, les comprendre et les utiliser pour améliorer continuellement la qualité des prévisions suivantes. \r\n\r\nL'analyse des écarts est le mécanisme d'apprentissage du système de prévision. Sans elle, les mêmes erreurs se répètent indéfiniment : \r\non sous-estime systématiquement la demande en haute saison, \r\non sur-estime en basse saison, \r\non ignore les effets des politiques de santé, \r\non ne détecte pas les tendances émergentes. \r\n\r\nAvec une analyse rigoureuse et régulière des écarts, le système de prévision s'améliore à chaque cycle, réduit progressivement ses erreurs et produit des estimations de plus en plus fiables. \r\n\r\nC'est ce processus d'amélioration continue qui distingue un système de quantification professionnel d'un exercice ponctuel.\n\nDéfinition et types d'écarts\r\n\r\nUn écart est la différence entre la consommation réelle observée et la consommation prévue pour la même période.\r\n\r\nFormule :\r\nÉcart absolu = Consommation réelle − Consommation prévue Écart relatif (%) = (Consommation réelle − Consommation prévue) ÷ Consommation prévue × 100\r\n\r\nUn écart positif signifie que la consommation réelle a dépassé la prévision → risque de rupture de stock. Un écart négatif signifie que la consommation réelle est inférieure à la prévision → risque de surstock.\n\nDéfinition et types d'écarts\r\n\r\nClassification des écarts par amplitude\r\n\r\n| Amplitude de l'écart | Classification | Niveau d'investigation requis |\r\n| --- | --- | --- |\r\n| < 5% | Écart négligeable | Aucune action requise |\r\n| 5% à 10% | Écart mineur | Surveiller, ajuster à la prochaine révision |\r\n| 10% à 20% | Écart modéré | Investigation systématique, ajustement du modèle |\r\n| 20% à 30% | Écart significatif | Investigation approfondie, révision des hypothèses |\r\n| > 30% | Écart majeur | Investigation urgente, révision complète du modèle de prévision |\n\nDéfinition et types d'écarts\r\n\r\nClassification des écarts par nature\r\n\r\nÉcart systématique : L'écart est toujours dans la même direction (toujours positif ou toujours négatif) sur plusieurs périodes consécutives. Cela indique un biais structurel dans le modèle de prévision, une hypothèse fondamentalement erronée ou un changement de tendance non détecté.\r\n\r\nÉcart aléatoire : L'écart change de signe d'une période à l'autre, alternant entre positif et négatif sans tendance claire. C'est la variabilité inhérente à tout système complexe. Un certain niveau d'écart aléatoire est inévitable et normal.\r\n\r\nÉcart ponctuel : Un écart isolé et important sur une seule période, entouré de périodes sans écart significatif. Il indique généralement un événement exceptionnel (épidémie, rupture de stock, changement brusque de protocole).\n\nMéthodes d'analyse des écarts\r\n\r\nL'analyse visuelle par graphique\r\n\r\nGraphique 1 : Courbes superposées prévision/réel :\r\nDeux courbes sur le même axe temporel. Les zones où les courbes s'écartent significativement sont les zones d'investigation prioritaire.\r\n\r\nGraphique 2 : Graphique des écarts (bar chart) :\r\nUn graphique à barres montrant l'écart positif ou négatif pour chaque mois. Les barres vers le haut indiquent une sous-estimation, les barres vers le bas une surestimation. La taille des barres indique l'amplitude de l'erreur.\r\n\r\nGraphique 3 : Graphique de dispersion avec bandes de contrôle :\r\nLes écarts mensuels sont représentés en pourcentage avec des bandes de contrôle à ±10% et ±20%. Les points hors des bandes de contrôle sont les points d'alerte qui nécessitent une investigation.\n\nMéthodes d'analyse des écarts\r\n\r\nL'analyse statistique des écarts\r\n\r\nErreur Absolue Moyenne (EAM)\r\nTaux d'Erreur Absolue Moyen (MAPE)\n\nMéthodes d'analyse des écarts\r\n\r\nMéthode des 5 Pourquoi appliquée aux écarts de prévision\r\n\r\n| Niveau | Question | Réponse |\r\n| --- | --- | --- |\r\n| Pourquoi 1 | Pourquoi la demande a-t-elle dépassé la prévision ? | Parce que la consommation réelle était supérieure aux indices saisonniers appliqués |\r\n| Pourquoi 2 | Pourquoi les indices saisonniers sous-estimaient-ils le pic ? | Parce qu'ils étaient calculés sur les données 2022-2024 qui incluaient une saison des pluies atypiquement faible en 2022 |\r\n| Pourquoi 3 | Pourquoi les données 2022 distordent-elles les indices ? | Parce que 2022 était une année avec moins de précipitations et donc moins de paludisme |\r\n| Pourquoi 4 | Pourquoi les indices n'ont-ils pas été corrigés pour exclure 2022 ? | Parce que l'analyse météorologique n'a pas été intégrée dans le processus de prévision |\r\n| Pourquoi 5 | Pourquoi l'analyse météorologique n'est-elle pas intégrée ? | Parce qu'il n'existe pas de procédure formalisée de consultation des données météorologiques dans le processus de quantification |\r\n\r\nÉcart analysé : sous-estimation de la demande en ACT en mai-juin (+21% et +26%)\r\n\r\nMesure corrective identifiée : Intégrer une consultation des prévisions saisonnières météorologiques (ANACIM ou météo nationale) dans le processus annuel de calcul des indices saisonniers. Les années avec moins ou plus d’incidence doivent être identifiées et pondérées différemment dans le calcul des indices.\n\nMéthodes d'analyse des écarts\r\n\r\nCatalogue des causes fréquentes d'écarts :\r\n\r\n| Cause | Écart typique | Signal d'alerte |\r\n| --- | --- | --- |\r\n| Rupture de stock non corrigée dans les données historiques | Négatif | CMM sous-estimée, ruptures récurrentes |\r\n| Saisonnalité sous-estimée pendant le pic | Positif en haute saison | MAPE plus élevé en mai-août |\r\n| Saisonnalité surestimée hors pic | Négatif en basse saison | MAPE plus élevé en déc-fév |\r\n| Croissance de la file active/programme non intégrée | Positif croissant | Biais positif qui augmente avec le temps |\r\n| Changement de protocole non anticipé | Variable | Rupture de tendance brutale |\r\n| Épidémie non intégrée dans le scénario de base | Positif ponctuel | Pic isolé sur 1-2 mois |\r\n| Politique de gratuité sous-estimée | Positif persistant | Surdemande dès le début de la politique |\r\n| Données de base incomplètes (taux complétude faible) | Négatif | MAPE élevé sur tous les mois |\r\n| Périmètre de quantification différent du périmètre de consommation | Systématique | Biais constant positif ou négatif |\n\nProcessus formel d'analyse des écarts\r\n\r\nLe cycle mensuel d'analyse des écarts\r\n\r\nFréquence : mensuelle pour les produits critiques, trimestrielle pour les autres.\r\n\r\nProcessus :\r\nSemaine 1 du mois M+1 : Collecter les données de consommation réelle du mois M dès leur disponibilité.\r\nSemaine 2 du mois M+1 : Calculer les écarts par rapport aux prévisions du mois M. Identifier les écarts dépassant les seuils d'alerte (>10%).\r\nSemaine 3 du mois M+1 : Mener les investigations causales sur les écarts significatifs. Documenter les causes identifiées.\r\nSemaine 4 du mois M+1 : Mettre à jour les prévisions pour les 3 prochains mois en intégrant les enseignements de l'analyse. Ajuster les commandes si nécessaire.\n\nProcessus formel d'analyse des écarts\r\n\r\nLa revue trimestrielle des prévisions\r\n\r\n| Étape | Contenu |\r\n| --- | --- |\r\n| 1. Bilan des écarts du trimestre | Présentation des statistiques d'erreur (EAM, MAPE, biais) par produit |\r\n| 2. Analyse des causes principales | Discussion des 3-5 causes d'écart les plus importantes |\r\n| 3. Révision des hypothèses | Mise à jour des facteurs contextuels (épidémies, politiques, protocoles) |\r\n| 4. Recalibration des indices saisonniers | Intégration des nouvelles données dans le calcul des indices |\r\n| 5. Mise à jour des prévisions à 12 mois | Nouvelles prévisions mensuelles révisées |\r\n| 6. Plan d'action | Actions correctives avec responsables et délais |\n\nProcessus formel d'analyse des écarts\r\n\r\nLa revue annuelle du modèle de prévision\r\n\r\nUne fois par an, le modèle de prévision lui-même est évalué et potentiellement restructuré.\r\n\r\nQuestions clés de la revue annuelle :\r\nLe MAPE annuel est-il en amélioration, stable ou en dégradation par rapport à l'année précédente ?\r\nLes biais systématiques ont-ils été corrigés ?\r\nLa méthode de prévision utilisée est-elle toujours la plus adaptée au contexte actuel ?\r\nLes données sources sont-elles de meilleure qualité ?\r\nY a-t-il de nouveaux facteurs contextuels à intégrer dans le modèle ?\n\nAjustement des prévisions basé sur l'analyse des écarts\r\n\r\nRecalibration des indices saisonniers\r\nRévision du biais systématique\r\nRévision des hypothèses clés\r\n\r\nTableau de bord de suivi de la qualité des prévisions\r\n\r\nUn tableau de bord dédié au suivi de la qualité des prévisions permet au gestionnaire de monitorer l'amélioration de ses prévisions dans le temps.\n\nRapport d'analyse des écarts\r\n\r\nRésumé exécutif\r\nDétail des écarts par mois\r\nAnalyse des causes\r\nActions correctives mises en place\r\nPrévisions révisées \r\nImpact financier des écarts\r\nRecommandations\n\nSynthèse\r\n\r\n| Dimension | Points clés |\r\n| --- | --- |\r\n| Définition des écarts | Absolu (Réel − Prévu) et relatif (%) ; positif = sous-estimation, négatif = surestimation |\r\n| Classification par amplitude | Négligeable < 5%, Mineur 5-10%, Modéré 10-20%, Significatif 20-30%, Majeur > 30% |\r\n| Classification par nature | Systématique (même direction persistante), aléatoire (alternatif), ponctuel (isolé) |\r\n| Indicateurs statistiques | EAM (erreur absolue moyenne), MAPE (taux erreur absolu moyen), Biais (erreur directionnelle) |\r\n| Cible de précision | MAPE < 10% globalement, < 12% en haute saison |\r\n| Analyse causale | Méthode des 5 Pourquoi pour identifier les causes profondes |\r\n| Causes fréquentes | Saisonnalité mal calibrée, biais dans données historiques, facteurs contextuels non intégrés |\r\n| Cycle d'analyse | Mensuel (écarts), trimestriel (révision modèle), annuel (restructuration) |\r\n| Corrections | Recalibration indices saisonniers, correction du biais, révision des hypothèses |\r\n| Documentation | Rapport formel d'analyse des écarts à chaque cycle |\r\n| Tableau de bord qualité | Suivi de l'amélioration des prévisions dans le temps |"
       },
       {
-        "id": "qb-m9-c52",
-        "title": "Analyse des écarts entre prévisions et consommations réelles",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Analyse des écarts entre prévisions et consommations réelles\n\nDéfinition et types d'écarts\n\nUn écart est la différence entre la consommation réelle observée et la consommation prévue pour la même période.\n\nFormule :\n\nÉcart absolu = Consommation réelle − Consommation prévue Écart relatif (%) = (Consommation réelle − Consommation prévue) ÷ Consommation prévue × 100\n\nUn écart positif signifie que la consommation réelle a dépassé la prévision → risque de rupture de stock. Un écart négatif signifie que la consommation réelle est inférieure à la prévision → risque de surstock.\n"
-      },
-      {
-        "id": "qb-m9-c53",
-        "title": "Analyse des écarts entre prévisions et consommations réelles",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Analyse des écarts entre prévisions et consommations réelles\n\nDéfinition et types d'écarts\n\nClassification des écarts par amplitude\n"
-      },
-      {
-        "id": "qb-m9-c54",
-        "title": "Analyse des écarts entre prévisions et consommations réelles",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Analyse des écarts entre prévisions et consommations réelles\n\nDéfinition et types d'écarts\n\nClassification des écarts par nature\n\nÉcart systématique : L'écart est toujours dans la même direction (toujours positif ou toujours négatif) sur plusieurs périodes consécutives. Cela indique un biais structurel dans le modèle de prévision, une hypothèse fondamentalement erronée ou un changement de tendance non détecté.\n\nÉcart aléatoire : L'écart change de signe d'une période à l'autre, alternant entre positif et négatif sans tendance claire. C'est la variabilité inhérente à tout système complexe. Un certain niveau d'écart aléatoire est inévitable et normal.\n\nÉcart ponctuel : Un écart isolé et important sur une seule période, entouré de périodes sans écart significatif. Il indique généralement un événement exceptionnel (épidémie, rupture de stock, changement brusque de protocole).\n"
-      },
-      {
-        "id": "qb-m9-c55",
-        "title": "Analyse des écarts entre prévisions et consommations réelles",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Analyse des écarts entre prévisions et consommations réelles\n\nMéthodes d'analyse des écarts\n\nL'analyse visuelle par graphique\n\nGraphique 1 : Courbes superposées prévision/réel :\n\nDeux courbes sur le même axe temporel. Les zones où les courbes s'écartent significativement sont les zones d'investigation prioritaire.\n\nGraphique 2 : Graphique des écarts (bar chart) :\n\nUn graphique à barres montrant l'écart positif ou négatif pour chaque mois. Les barres vers le haut indiquent une sous-estimation, les barres vers le bas une surestimation. La taille des barres indique l'amplitude de l'erreur.\n\nGraphique 3 : Graphique de dispersion avec bandes de contrôle :\n\nLes écarts mensuels sont représentés en pourcentage avec des bandes de contrôle à ±10% et ±20%. Les points hors des bandes de contrôle sont les points d'alerte qui nécessitent une investigation.\n"
-      },
-      {
-        "id": "qb-m9-c56",
-        "title": "Analyse des écarts entre prévisions et consommations réelles",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Analyse des écarts entre prévisions et consommations réelles\n\nMéthodes d'analyse des écarts\n\nL'analyse statistique des écarts\n\nErreur Absolue Moyenne (EAM)\n\nTaux d'Erreur Absolue Moyen (MAPE)\n"
-      },
-      {
-        "id": "qb-m9-c57",
-        "title": "Analyse des écarts entre prévisions et consommations réelles",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Analyse des écarts entre prévisions et consommations réelles\n\nMéthodes d'analyse des écarts\n\nMéthode des 5 Pourquoi appliquée aux écarts de prévision\n\nÉcart analysé : sous-estimation de la demande en ACT en mai-juin (+21% et +26%)\n\nMesure corrective identifiée : Intégrer une consultation des prévisions saisonnières météorologiques (ANACIM ou météo nationale) dans le processus annuel de calcul des indices saisonniers. Les années avec moins ou plus d’incidence doivent être identifiées et pondérées différemment dans le calcul des indices.\n"
-      },
-      {
-        "id": "qb-m9-c58",
-        "title": "Analyse des écarts entre prévisions et consommations réelles",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Analyse des écarts entre prévisions et consommations réelles\n\nMéthodes d'analyse des écarts\n\nCatalogue des causes fréquentes d'écarts :\n"
-      },
-      {
-        "id": "qb-m9-c59",
-        "title": "Analyse des écarts entre prévisions et consommations réelles",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Analyse des écarts entre prévisions et consommations réelles\n\nProcessus formel d'analyse des écarts\n\nLe cycle mensuel d'analyse des écarts\n\nFréquence : mensuelle pour les produits critiques, trimestrielle pour les autres.\n\nProcessus :\n\nSemaine 1 du mois M+1 : Collecter les données de consommation réelle du mois M dès leur disponibilité.\n\nSemaine 2 du mois M+1 : Calculer les écarts par rapport aux prévisions du mois M. Identifier les écarts dépassant les seuils d'alerte (>10%).\n\nSemaine 3 du mois M+1 : Mener les investigations causales sur les écarts significatifs. Documenter les causes identifiées.\n\nSemaine 4 du mois M+1 : Mettre à jour les prévisions pour les 3 prochains mois en intégrant les enseignements de l'analyse. Ajuster les commandes si nécessaire.\n"
-      },
-      {
-        "id": "qb-m9-c60",
-        "title": "Analyse des écarts entre prévisions et consommations réelles",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Analyse des écarts entre prévisions et consommations réelles\n\nProcessus formel d'analyse des écarts\n\nLa revue trimestrielle des prévisions\n"
-      },
-      {
-        "id": "qb-m9-c61",
-        "title": "Analyse des écarts entre prévisions et consommations réelles",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Analyse des écarts entre prévisions et consommations réelles\n\nProcessus formel d'analyse des écarts\n\nLa revue annuelle du modèle de prévision\n\nUne fois par an, le modèle de prévision lui-même est évalué et potentiellement restructuré.\n\nQuestions clés de la revue annuelle :\n\nLe MAPE annuel est-il en amélioration, stable ou en dégradation par rapport à l'année précédente ?\n\nLes biais systématiques ont-ils été corrigés ?\n\nLa méthode de prévision utilisée est-elle toujours la plus adaptée au contexte actuel ?\n\nLes données sources sont-elles de meilleure qualité ?\n\nY a-t-il de nouveaux facteurs contextuels à intégrer dans le modèle ?\n"
-      },
-      {
-        "id": "qb-m9-c62",
-        "title": "Analyse des écarts entre prévisions et consommations réelles",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Analyse des écarts entre prévisions et consommations réelles\n\nAjustement des prévisions basé sur l'analyse des écarts\n\nRecalibration des indices saisonniers\n\nRévision du biais systématique\n\nRévision des hypothèses clés\n\nTableau de bord de suivi de la qualité des prévisions\n\nUn tableau de bord dédié au suivi de la qualité des prévisions permet au gestionnaire de monitorer l'amélioration de ses prévisions dans le temps.\n"
-      },
-      {
-        "id": "qb-m9-c63",
-        "title": "Analyse des écarts entre prévisions et consommations réelles",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Analyse des écarts entre prévisions et consommations réelles\n\nRapport d'analyse des écarts\n\nRésumé exécutif\n\nDétail des écarts par mois\n\nAnalyse des causes\n\nActions correctives mises en place\n\nPrévisions révisées\n\nImpact financier des écarts\n\nRecommandations\n"
-      },
-      {
-        "id": "qb-m9-c64",
-        "title": "Analyse des écarts entre prévisions et consommations réelles",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Analyse des écarts entre prévisions et consommations réelles\n\nSynthèse\n"
-      }
-    ]
-  },
-  {
-    "id": "qb-m10",
-    "title": "Module 10 : Atelier pratique : exercices de quantification pays",
-    "chapters": [
-      {
-        "id": "qb-m10-c1",
+        "id": "qb-m1-c19",
         "title": "Atelier pratique : exercices de quantification pays",
         "type": "text",
-        "duration": "10 min",
-        "content": "Atelier pratique : exercices de quantification pays\n\nQUANTIFICATION DES BESOINS\n"
+        "duration": "5 min",
+        "content": "### Atelier pratique : exercices de quantification pays\n\nQUANTIFICATION DES BESOINS"
       },
       {
-        "id": "qb-m10-c2",
+        "id": "qb-m1-c20",
         "title": "Gestion des approvisionnements et des stocks",
         "type": "text",
-        "duration": "10 min",
-        "content": "#### Gestion des approvisionnements et des stocks\n\nPlan\n\nCet atelier est conçu pour simuler un exercice réel de quantification nationale dans un pays fictif mais réaliste. Les données utilisées sont inspirées de contextes africains réels et reflètent les complexités, les ambiguïtés et les défis auxquels font face les équipes de quantification dans la pratique. L'atelier de quantification des ARV mobilise les compétences développées dans les deux modules précédents : collecte et analyse des données de consommation, méthode morbidité basée sur la file active, utilisation des outils (PipeLine et QAT), triangulation, ajustements contextuels et analyse des écarts.\n\nDurée estimée : 3 à 4 heures\n\nOrganisation : groupes de 3 à 4 participants\n\nMatériel nécessaire : calculatrices, formulaires de collecte, accès à QAT ou PipeLine (si disponible), ou tableur Excel\n"
+        "duration": "5 min",
+        "content": "### Gestion des approvisionnements et des stocks\n\nPlan\r\n\r\nCet atelier est conçu pour simuler un exercice réel de quantification nationale dans un pays fictif mais réaliste. Les données utilisées sont inspirées de contextes africains réels et reflètent les complexités, les ambiguïtés et les défis auxquels font face les équipes de quantification dans la pratique. L'atelier de quantification des ARV mobilise les compétences développées dans les deux modules précédents : collecte et analyse des données de consommation, méthode morbidité basée sur la file active, utilisation des outils (PipeLine et QAT), triangulation, ajustements contextuels et analyse des écarts.\r\n\r\nDurée estimée : 3 à 4 heures\r\n\r\nOrganisation : groupes de 3 à 4 participants\r\n\r\nMatériel nécessaire : calculatrices, formulaires de collecte, accès à QAT ou PipeLine (si disponible), ou tableur Excel\n\nAtelier pratique : exercices de quantification pays\r\n\r\nAtelier pratique disponible uniquement en atelier de certification"
       },
       {
-        "id": "qb-m10-c3",
-        "title": "Gestion des approvisionnements et des stocks",
-        "type": "text",
-        "duration": "10 min",
-        "content": "#### Gestion des approvisionnements et des stocks\n\nAtelier pratique : exercices de quantification pays\n\nAtelier pratique disponible uniquement en atelier de certification\n"
-      },
-      {
-        "id": "qb-m10-c4",
+        "id": "qb-m1-c21",
         "title": "Question?",
         "type": "text",
-        "duration": "10 min",
-        "content": "#### Question?\n\nQUANTIFICATION DES BESOINS\n"
+        "duration": "5 min",
+        "content": "### Question?\n\nQUANTIFICATION DES BESOINS"
       }
     ]
   }
