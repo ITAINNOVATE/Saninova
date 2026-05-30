@@ -202,8 +202,8 @@ export default function ExpertForm() {
                     <input type="email" name="email" required value={formData.email} onChange={handleChange} className="w-full px-4 py-3 rounded-xl border border-light focus:border-orange focus:ring-2 focus:ring-orange/20 outline-none" placeholder="exemple@domaine.com" />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-semibold text-primary font-poppins">Téléphone</label>
-                    <input type="tel" name="phone" value={formData.phone} onChange={handleChange} className="w-full px-4 py-3 rounded-xl border border-light focus:border-orange focus:ring-2 focus:ring-orange/20 outline-none" placeholder="+229 ..." />
+                    <label className="text-sm font-semibold text-primary font-poppins">Téléphone *</label>
+                    <input type="tel" name="phone" required value={formData.phone} onChange={handleChange} className="w-full px-4 py-3 rounded-xl border border-light focus:border-orange focus:ring-2 focus:ring-orange/20 outline-none" placeholder="+229 ..." />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-semibold text-primary font-poppins">Pays de résidence *</label>
