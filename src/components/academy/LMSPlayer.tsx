@@ -618,6 +618,16 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                         </blockquote>
                       );
                     }
+                    
+                    const imgMatch = para.match(/^!\[(.*?)\]\((.*?)\)$/);
+                    if (imgMatch) {
+                      return (
+                        <div key={i} className="my-8 rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img src={imgMatch[2]} alt={imgMatch[1]} className="w-full h-auto object-cover max-h-[400px]" />
+                        </div>
+                      );
+                    }
                     if (para.startsWith("```")) {
                       const code = para.replace(/```[a-z]*\n|```/g, "");
                       return (
