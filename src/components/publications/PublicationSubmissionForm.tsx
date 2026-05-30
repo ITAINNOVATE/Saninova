@@ -167,7 +167,9 @@ export default function PublicationSubmissionForm() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-2">
-                  <label htmlFor="structure" className="text-sm font-semibold text-primary font-poppins">Structure / Organisation *</label>
+                  <label htmlFor="structure" className="text-sm font-semibold text-primary font-poppins">
+                    {formData.authorType === 'particulier' ? 'Profession / Affiliation *' : 'Nom de la structure / Entreprise *'}
+                  </label>
                   <input
                     type="text"
                     id="structure"
@@ -176,12 +178,14 @@ export default function PublicationSubmissionForm() {
                     value={formData.structure}
                     onChange={handleChange}
                     className="w-full px-5 py-3.5 rounded-xl border border-light focus:border-orange focus:ring-4 focus:ring-orange/10 outline-none transition-all font-inter bg-slate-50"
-                    placeholder="Nom de votre organisation"
+                    placeholder={formData.authorType === 'particulier' ? 'Ex: Pharmacien titulaire, Étudiant...' : 'Nom de votre organisation'}
                   />
                 </div>
                 
                 <div className="space-y-2">
-                  <label htmlFor="author" className="text-sm font-semibold text-primary font-poppins">Auteur(s) *</label>
+                  <label htmlFor="author" className="text-sm font-semibold text-primary font-poppins">
+                    {formData.authorType === 'particulier' ? 'Nom et Prénom(s) de l\'auteur *' : 'Point focal / Auteur(s) *'}
+                  </label>
                   <input
                     type="text"
                     id="author"
