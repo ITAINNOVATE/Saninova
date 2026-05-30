@@ -11,6 +11,7 @@ export default function PublicationSubmissionForm() {
   const [uploadProgress, setUploadProgress] = useState("");
 
   const [formData, setFormData] = useState({
+    authorType: "particulier",
     structure: "",
     author: "",
     title: "",
@@ -73,7 +74,7 @@ export default function PublicationSubmissionForm() {
       const { error: submitError } = await supabase
         .from('saninova_publication_submissions')
         .insert([{
-          structure: formData.structure,
+          structure: `${formData.structure} (${formData.authorType === 'particulier' ? 'Particulier' : 'Entreprise'})`,
           author: formData.author,
           title: formData.title,
           content_file_url: contentUrl,
@@ -87,6 +88,7 @@ export default function PublicationSubmissionForm() {
 
       setSuccess(true);
       setFormData({
+        authorType: "particulier",
         structure: "",
         author: "",
         title: "",
@@ -142,6 +144,26 @@ export default function PublicationSubmissionForm() {
                   <span className="font-medium leading-relaxed">{error}</span>
                 </div>
               )}
+
+              <div className="space-y-4 mb-8 bg-slate-50 p-6 rounded-2xl border border-light">
+                <label className="text-sm font-semibold text-primary font-poppins block">Vous soumettez en tant que :</label>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <label className={`flex items-start gap-3 p-4 rounded-xl border cursor-pointer transition-all flex-1 ${formData.authorType === 'particulier' ? 'border-orange bg-orange/5 shadow-sm' : 'border-light bg-white hover:border-orange/30'}`}>
+                    <input type="radio" name="authorType" value="particulier" checked={formData.authorType === 'particulier'} onChange={handleChange} className="w-5 h-5 mt-0.5 accent-orange" />
+                    <div>
+                      <div className="font-bold text-primary text-sm">Particulier / Indépendant</div>
+                      <div className="text-xs font-semibold text-orange mt-1">Frais de publication : 15.000 F CFA</div>
+                    </div>
+                  </label>
+                  <label className={`flex items-start gap-3 p-4 rounded-xl border cursor-pointer transition-all flex-1 ${formData.authorType === 'entreprise' ? 'border-orange bg-orange/5 shadow-sm' : 'border-light bg-white hover:border-orange/30'}`}>
+                    <input type="radio" name="authorType" value="entreprise" checked={formData.authorType === 'entreprise'} onChange={handleChange} className="w-5 h-5 mt-0.5 accent-orange" />
+                    <div>
+                      <div className="font-bold text-primary text-sm">Entreprise / Personne morale</div>
+                      <div className="text-xs font-semibold text-orange mt-1">Frais de publication : 25.000 F CFA</div>
+                    </div>
+                  </label>
+                </div>
+              </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-2">
@@ -268,6 +290,12 @@ export default function PublicationSubmissionForm() {
               </div>
 
               <div className="pt-6">
+                <div className="bg-orange/10 border border-orange/20 rounded-xl p-5 mb-6 flex gap-3 shadow-sm">
+                  <AlertCircle className="w-5 h-5 text-orange shrink-0 mt-0.5" />
+                  <p className="text-sm text-primary font-medium leading-relaxed">
+                    <strong>Note importante :</strong> La soumission est facturée à <strong className="text-orange">{formData.authorType === 'particulier' ? '15.000 F CFA' : '25.000 F CFA'}</strong>. En soumettant ce formulaire, notre équipe vous contactera pour procéder au paiement avant publication.
+                  </p>
+                </div>
                 <button
                   type="submit"
                   disabled={isSubmitting}
