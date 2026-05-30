@@ -46,108 +46,108 @@ export const gestionApprovisionnementsCourse: any[] = [
     "chapters": [
       {
         "id": "gas-m3-c1",
-        "title": "Définitions et concepts clés",
+        "title": "Le Stock",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Définitions et concepts clés\n\nEnsemble des produits (médicaments, consommables, réactifs) détenus par une structure sanitaire à un moment donné, en attente d'être utilisés ou distribués.\n\nUne pharmacie hospitalière fait le contrôle un lundi matin et compte au total :\n\nAmoxicilline 500mg : 2 400 comprimés\n\nParacétamol 500mg : 5 800 comprimés\n\nSérum physiologique 500ml : 320 poches\n\nGants d'examen (boîtes) : 45 boîtes\n\nC'est le stock de cette pharmacie à ce moment précis.\n\nIl sera différent le lendemain selon les sorties et les réceptions.\n\nLe Stock\n"
+        "content": "#### Définitions et concepts clés\n\n### Le Stock\n\nEnsemble des produits (médicaments, consommables, réactifs) détenus par une structure sanitaire à un moment donné, en attente d'être utilisés ou distribués.\n\nUne pharmacie hospitalière fait le contrôle un lundi matin et compte au total :\n\nAmoxicilline 500mg : 2 400 comprimés\n\nParacétamol 500mg : 5 800 comprimés\n\nSérum physiologique 500ml : 320 poches\n\nGants d'examen (boîtes) : 45 boîtes\n\nC'est le stock de cette pharmacie à ce moment précis.\n\nIl sera différent le lendemain selon les sorties et les réceptions.\n\n"
       },
       {
         "id": "gas-m3-c2",
-        "title": "Définitions et concepts clés",
+        "title": "Stock de sécurité (SS)",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Définitions et concepts clés\n\nQuantité minimale de produits conservée en réserve pour faire face aux imprévus (retards de livraison, hausse soudaine de la demande, ou rupture chez le fournisseur).\n\nFormule : SS = CMM × Nombre de mois tampon\n\nStock de sécurité (SS)\n\nLa pharmacie consomme en moyenne 200 comprimés d'Amoxicilline par mois (CMM = 200).\n\nElle choisit un tampon de 1,5 mois pour se protéger des aléas.\n\nSS = 200 × 1,5 = 300 comprimés\n\nCes 300 comprimés ne doivent jamais être touchés en dehors d'une urgence.\n\nSi le stock descend à ce niveau, la commande aurait déjà dû être passée.\n"
+        "content": "#### Définitions et concepts clés\n\n### Stock de sécurité (SS)\n\nQuantité minimale de produits conservée en réserve pour faire face aux imprévus (retards de livraison, hausse soudaine de la demande, ou rupture chez le fournisseur).\n\nFormule : SS = CMM × Nombre de mois tampon\n\nLa pharmacie consomme en moyenne 200 comprimés d'Amoxicilline par mois (CMM = 200).\n\nElle choisit un tampon de 1,5 mois pour se protéger des aléas.\n\nSS = 200 × 1,5 = 300 comprimés\n\nCes 300 comprimés ne doivent jamais être touchés en dehors d'une urgence.\n\nSi le stock descend à ce niveau, la commande aurait déjà dû être passée.\n"
       },
       {
         "id": "gas-m3-c3",
-        "title": "Définitions et concepts clés",
+        "title": "Stock minimum",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Définitions et concepts clés\n\nNiveau de stock qui déclenche automatiquement une commande. Quand le stock descend à ce niveau, il est temps de commander.\n\nFormule :Stock min = CMM × Délai de livraison + Stock de sécurité\n\nStock minimum\n\nLe délai de livraison de son fournisseur est de 2 mois.\n\nSon stock de sécurité est de 300 comprimés.\n\nStock min = 200 × 2 + 300 = 700 comprimés\n\nDès que le stock d'Amoxicilline passe en dessous de 700 comprimés, la pharmacie doit immédiatement passer commande. Si elle attend plus longtemps, elle risque de tomber dans son stock de sécurité, voire en rupture.\n"
+        "content": "#### Définitions et concepts clés\n\n### Stock minimum\n\nNiveau de stock qui déclenche automatiquement une commande. Quand le stock descend à ce niveau, il est temps de commander.\n\nFormule :Stock min = CMM × Délai de livraison + Stock de sécurité\n\nLe délai de livraison de son fournisseur est de 2 mois.\n\nSon stock de sécurité est de 300 comprimés.\n\nStock min = 200 × 2 + 300 = 700 comprimés\n\nDès que le stock d'Amoxicilline passe en dessous de 700 comprimés, la pharmacie doit immédiatement passer commande. Si elle attend plus longtemps, elle risque de tomber dans son stock de sécurité, voire en rupture.\n"
       },
       {
         "id": "gas-m3-c4",
-        "title": "Définitions et concepts clés",
+        "title": "Stock maximum",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Définitions et concepts clés\n\nNiveau de stock au-delà duquel il ne faut pas aller, pour éviter les surstocks, les péremptions et le gaspillage d'espace.\n\nFormule : Stock max = Stock min + Quantité économique de commande\n\nStock maximum\n\nLa pharmacie commande en général 3 mois de consommation\n\nQuantité économique de commande = 200 × 3 = 600 comprimés\n\nSon stock min est de 700\n\nStock max = 700 + 600 = 1 300 comprimés\n\nLa pharmacie ne devrait jamais dépasser 1 300 comprimés d'Amoxicilline en stock.\n\nAu-delà, elle immobilise des fonds inutilement et risque des péremptions.\n"
+        "content": "#### Définitions et concepts clés\n\n### Stock maximum\n\nNiveau de stock au-delà duquel il ne faut pas aller, pour éviter les surstocks, les péremptions et le gaspillage d'espace.\n\nFormule : Stock max = Stock min + Quantité économique de commande\n\nLa pharmacie commande en général 3 mois de consommation\n\nQuantité économique de commande = 200 × 3 = 600 comprimés\n\nSon stock min est de 700\n\nStock max = 700 + 600 = 1 300 comprimés\n\nLa pharmacie ne devrait jamais dépasser 1 300 comprimés d'Amoxicilline en stock.\n\nAu-delà, elle immobilise des fonds inutilement et risque des péremptions.\n"
       },
       {
         "id": "gas-m3-c5",
-        "title": "Définitions et concepts clés",
+        "title": "Stock disponible",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Définitions et concepts clés\n\nQuantité réellement utilisable à un instant T, c'est-à-dire le stock physique déduction faite des produits réservés, périmés ou endommagés.\n\nStock disponible = Stock physique − Produits non utilisables\n\nStock disponible\n\nLa pharmacie a physiquement 950 comprimés d'Amoxicilline.\n\nMais en faisant le contrôle qualité, elle constate que : 80 comprimés sont périmés, 50 comprimés ont un conditionnement endommagé (non distribuables)\n\nStock disponible = 950 − 80 − 50 = 820 comprimés\n\nLa pharmacie ne peut compter que sur 820 comprimés, et non 950. C'est ce chiffre qui doit figurer dans le système de gestion. Avec un stock min à 700, elle est encore au-dessus du seuil, mais la marge est faible.\n"
+        "content": "#### Définitions et concepts clés\n\n### Stock disponible\n\nQuantité réellement utilisable à un instant T, c'est-à-dire le stock physique déduction faite des produits réservés, périmés ou endommagés.\n\nStock disponible = Stock physique − Produits non utilisables\n\nLa pharmacie a physiquement 950 comprimés d'Amoxicilline.\n\nMais en faisant le contrôle qualité, elle constate que : 80 comprimés sont périmés, 50 comprimés ont un conditionnement endommagé (non distribuables)\n\nStock disponible = 950 − 80 − 50 = 820 comprimés\n\nLa pharmacie ne peut compter que sur 820 comprimés, et non 950. C'est ce chiffre qui doit figurer dans le système de gestion. Avec un stock min à 700, elle est encore au-dessus du seuil, mais la marge est faible.\n"
       },
       {
         "id": "gas-m3-c6",
-        "title": "Définitions et concepts clés",
+        "title": "Point de commande",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Définitions et concepts clés\n\nEncore appelé seuil de réapprovisionnement : Niveau de stock auquel il faut passer commande pour recevoir la livraison avant d'atteindre le stock de sécurité.\n\nC'est souvent confondu avec le stock min, mais il peut en différer selon le délai de livraison variable.\n\nPoint de commande\n\nLa pharmacie consomme 200 comprimés/mois d'Amoxicilline. Son délai de livraison habituel est de 2 mois, mais il peut varier. Son stock de sécurité est de 300.\n\nPoint de commande = 200 × 2 + 300 = 700 comprimés\n\nSupposons que le délai de livraison soit incertain et fluctue entre 1,5 et 2,5 mois.\n\nLa pharmacie choisit prudemment de travailler avec le délai maximum (2,5 mois)\n\nPoint de commande = 200 × 2,5 + 300 = 800 comprimés\n\nLa pharmacie commande plus tôt pour se couvrir contre les retards variables de son fournisseur.\n"
+        "content": "#### Définitions et concepts clés\n\n### Point de commande\n\nEncore appelé seuil de réapprovisionnement : Niveau de stock auquel il faut passer commande pour recevoir la livraison avant d'atteindre le stock de sécurité.\n\nC'est souvent confondu avec le stock min, mais il peut en différer selon le délai de livraison variable.\n\nLa pharmacie consomme 200 comprimés/mois d'Amoxicilline. Son délai de livraison habituel est de 2 mois, mais il peut varier. Son stock de sécurité est de 300.\n\nPoint de commande = 200 × 2 + 300 = 700 comprimés\n\nSupposons que le délai de livraison soit incertain et fluctue entre 1,5 et 2,5 mois.\n\nLa pharmacie choisit prudemment de travailler avec le délai maximum (2,5 mois)\n\nPoint de commande = 200 × 2,5 + 300 = 800 comprimés\n\nLa pharmacie commande plus tôt pour se couvrir contre les retards variables de son fournisseur.\n"
       },
       {
         "id": "gas-m3-c7",
-        "title": "Définitions et concepts clés",
+        "title": "Délai de livraison",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Définitions et concepts clés\n\nTemps écoulé entre le moment où la commande est passée et le moment où les produits sont effectivement disponibles en stock. Il inclut le temps de traitement, d'expédition et de réception.\n\nDélai de livraison\n\nLa pharmacie passe une commande de Paracétamol le 1er mars.\n\nLes produits arrivent le 28 mars.\n\nLe délai de livraison est de 27 jours, soit environ 1 mois.\n\nLa pharmacie doit intégrer ce délai dans tous ses calculs de stock.\n\nSi elle attend d'être à zéro pour commander, elle sera en rupture pendant près d'un mois.\n"
+        "content": "#### Définitions et concepts clés\n\n### Délai de livraison\n\nTemps écoulé entre le moment où la commande est passée et le moment où les produits sont effectivement disponibles en stock. Il inclut le temps de traitement, d'expédition et de réception.\n\nLa pharmacie passe une commande de Paracétamol le 1er mars.\n\nLes produits arrivent le 28 mars.\n\nLe délai de livraison est de 27 jours, soit environ 1 mois.\n\nLa pharmacie doit intégrer ce délai dans tous ses calculs de stock.\n\nSi elle attend d'être à zéro pour commander, elle sera en rupture pendant près d'un mois.\n"
       },
       {
         "id": "gas-m3-c8",
-        "title": "Définitions et concepts clés",
+        "title": "Consommation Moyenne Mensuelle",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Définitions et concepts clés\n\nQuantité moyenne de produits consommés par mois sur une période de référence. C'est la base de tous les calculs de stock.\n\nCMM = Total consommé sur la période ÷ Nombre de mois de la période\n\nConsommation Moyenne Mensuelle\n\nLa pharmacie relève les sorties de Paracétamol sur 6 mois : 6 800 comprimés\n\nCalcul brut : CMM = 6 800 ÷ 6 = 1 133 comprimés/mois\n\nMais avril a été marqué par une rupture partielle. On exclut ce mois et on recalcule sur 5 mois :\n\nCMM ajustée = (6 800 − 800) ÷ 5 = 1 200 comprimés/mois\n\nUtiliser la CMM brute aurait conduit à sous-commander et à reproduire la rupture.\n"
+        "content": "#### Définitions et concepts clés\n\n### Consommation Moyenne Mensuelle\n\nQuantité moyenne de produits consommés par mois sur une période de référence. C'est la base de tous les calculs de stock.\n\nCMM = Total consommé sur la période ÷ Nombre de mois de la période\n\nLa pharmacie relève les sorties de Paracétamol sur 6 mois : 6 800 comprimés\n\nCalcul brut : CMM = 6 800 ÷ 6 = 1 133 comprimés/mois\n\nMais avril a été marqué par une rupture partielle. On exclut ce mois et on recalcule sur 5 mois :\n\nCMM ajustée = (6 800 − 800) ÷ 5 = 1 200 comprimés/mois\n\nUtiliser la CMM brute aurait conduit à sous-commander et à reproduire la rupture.\n"
       },
       {
         "id": "gas-m3-c9",
-        "title": "Définitions et concepts clés",
+        "title": "Taux de rotation des stocks",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Définitions et concepts clés\n\nIndicateur qui mesure la vitesse à laquelle le stock est renouvelé sur une période donnée. Un taux élevé indique une bonne gestion ; un taux faible signale un surstock potentiel.\n\nTaux de rotation = Quantité consommée ÷ Stock moyen\n\nTaux de rotation des stocks\n\nSur les 6 derniers mois, la pharmacie a consommé 7 200 comprimés de Sérum de Réhydratation Orale (SRO). Son stock moyen sur la période était de 1 800 comprimés.\n\nTaux de rotation = 7 200 ÷ 1 800 = 4 fois en 6 mois\n\nCela signifie que le stock se renouvelle entièrement toutes les 6 semaines environ.\n\nLe SRO tourne bien (demande forte, gestion saine).\n\nUn taux de rotation inférieur à 1 sur 6 mois est un signal d'alerte.\n"
+        "content": "#### Définitions et concepts clés\n\n### Taux de rotation des stocks\n\nIndicateur qui mesure la vitesse à laquelle le stock est renouvelé sur une période donnée. Un taux élevé indique une bonne gestion ; un taux faible signale un surstock potentiel.\n\nTaux de rotation = Quantité consommée ÷ Stock moyen\n\nSur les 6 derniers mois, la pharmacie a consommé 7 200 comprimés de Sérum de Réhydratation Orale (SRO). Son stock moyen sur la période était de 1 800 comprimés.\n\nTaux de rotation = 7 200 ÷ 1 800 = 4 fois en 6 mois\n\nCela signifie que le stock se renouvelle entièrement toutes les 6 semaines environ.\n\nLe SRO tourne bien (demande forte, gestion saine).\n\nUn taux de rotation inférieur à 1 sur 6 mois est un signal d'alerte.\n"
       },
       {
         "id": "gas-m3-c10",
-        "title": "Définitions et concepts clés",
+        "title": "Rupture de stock",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Définitions et concepts clés\n\n![Rupture de stock](/images/course/rupture.png)\n\nSituation où un produit est épuisé (stock = 0 ) et ne peut plus répondre à la demande.\n\nC'est l'un des risques les plus graves.\n\nRupture de stock\n\nLa pharmacie a 150 comprimés de Métronidazole en stock. Sa CMM est de 300 comprimés et son délai de livraison est de 2 mois.\n\nElle n'a pas encore commandé.\n\nLa pharmacie est déjà en situation de rupture imminente.\n\nDéficit = 600 − 150 = 450 comprimés\n\nElle doit déclencher une commande d'urgence immédiatement.\n"
+        "content": "#### Définitions et concepts clés\n\n### Rupture de stock\n\n![Rupture de stock](/images/course/rupture.png)\n\nSituation où un produit est épuisé (stock = 0 ) et ne peut plus répondre à la demande.\n\nC'est l'un des risques les plus graves.\n\nLa pharmacie a 150 comprimés de Métronidazole en stock. Sa CMM est de 300 comprimés et son délai de livraison est de 2 mois.\n\nElle n'a pas encore commandé.\n\nLa pharmacie est déjà en situation de rupture imminente.\n\nDéficit = 600 − 150 = 450 comprimés\n\nElle doit déclencher une commande d'urgence immédiatement.\n"
       },
       {
         "id": "gas-m3-c11",
-        "title": "Définitions et concepts clés",
+        "title": "Surstock ou surstockage",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Définitions et concepts clés\n\nSituation où le stock dépasse le niveau maximum défini.\n\nCela immobilise des fonds, occupe de l'espace et expose les produits au risque de péremption.\n\nSurstock ou surstockage\n\nLa pharmacie reçoit une livraison de 3 000 comprimés de Cotrimoxazole (200 déjà en stock).\n\nSa CMM est de 400 comprimés et son stock max est de 1 600 comprimés (soit 4 mois).\n\nDurée de couverture = 3 200 ÷ 400 = 8 mois de stock\n\nSi la date de péremption de ce lot est dans 10 mois, elle dispose d'une marge.\n\nMais si elle est dans 6 mois, elle risque de perdre 800 comprimés périmés.\n\nC'est une immobilisation ou perte financière évitable.\n"
+        "content": "#### Définitions et concepts clés\n\n### Surstock ou surstockage\n\nSituation où le stock dépasse le niveau maximum défini.\n\nCela immobilise des fonds, occupe de l'espace et expose les produits au risque de péremption.\n\nLa pharmacie reçoit une livraison de 3 000 comprimés de Cotrimoxazole (200 déjà en stock).\n\nSa CMM est de 400 comprimés et son stock max est de 1 600 comprimés (soit 4 mois).\n\nDurée de couverture = 3 200 ÷ 400 = 8 mois de stock\n\nSi la date de péremption de ce lot est dans 10 mois, elle dispose d'une marge.\n\nMais si elle est dans 6 mois, elle risque de perdre 800 comprimés périmés.\n\nC'est une immobilisation ou perte financière évitable.\n"
       },
       {
         "id": "gas-m3-c12",
-        "title": "Définitions et concepts clés",
+        "title": "Péremption (Date de péremption)",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Définitions et concepts clés\n\nDate limite au-delà de laquelle un produit ne doit plus être utilisé car son efficacité ou son innocuité ne peut plus être garantie.\n\nLa gestion des péremptions est une priorité absolue.\n\nPéremption (Date de péremption)\n\nLa pharmacie reçoit deux lots d'Amoxicilline :\n\nLot A : 500 comprimés — périme le 31 mars 2026\n\nLot B : 800 comprimés — périme le 30 septembre 2026\n\nSa CMM est de 200 comprimés/mois. Nous sommes en janvier 2026.\n\n100 comprimés seront perdus si aucune mesure n'est prise.\n\nIl ne faut jamais recevoir des produits dont la durée de vie résiduelle est inférieure à la durée de couverture du stock.\n"
+        "content": "#### Définitions et concepts clés\n\n### Péremption (Date de péremption)\n\nDate limite au-delà de laquelle un produit ne doit plus être utilisé car son efficacité ou son innocuité ne peut plus être garantie.\n\nLa gestion des péremptions est une priorité absolue.\n\nLa pharmacie reçoit deux lots d'Amoxicilline :\n\nLot A : 500 comprimés — périme le 31 mars 2026\n\nLot B : 800 comprimés — périme le 30 septembre 2026\n\nSa CMM est de 200 comprimés/mois. Nous sommes en janvier 2026.\n\n100 comprimés seront perdus si aucune mesure n'est prise.\n\nIl ne faut jamais recevoir des produits dont la durée de vie résiduelle est inférieure à la durée de couverture du stock.\n"
       },
       {
         "id": "gas-m3-c13",
-        "title": "Définitions et concepts clés",
+        "title": "FEFO (First Expired, First Out)",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Définitions et concepts clés\n\n![Règle FEFO FIFO](/images/course/fefo.png)\n\nPrincipe de gestion selon lequel les produits dont la date de péremption est la plus proche doivent être distribués en premier, indépendamment de la date d'entrée en stock.\n\nC'est une règle d'or en pharmacie.\n\nFEFO (First Expired, First Out)\n\nLa pharmacie a en rayon deux lots de vaccins anti-tétaniques :\n\nLot X : 50 doses — périme le 15 février 2026 (arrivé en décembre)\n\nLot Y : 80 doses — périme le 30 juin 2026 (arrivé en janvier)\n\nUn agent de santé vient récupérer 20 doses.\n\nBonne pratique (FEFO) → il prend dans le Lot X, car il périme en premier (15 février), qu'importe l'ordre d'arrivée.\n"
+        "content": "#### Définitions et concepts clés\n\n### FEFO (First Expired, First Out)\n\n![Règle FEFO FIFO](/images/course/fefo.png)\n\nPrincipe de gestion selon lequel les produits dont la date de péremption est la plus proche doivent être distribués en premier, indépendamment de la date d'entrée en stock.\n\nC'est une règle d'or en pharmacie.\n\nLa pharmacie a en rayon deux lots de vaccins anti-tétaniques :\n\nLot X : 50 doses — périme le 15 février 2026 (arrivé en décembre)\n\nLot Y : 80 doses — périme le 30 juin 2026 (arrivé en janvier)\n\nUn agent de santé vient récupérer 20 doses.\n\nBonne pratique (FEFO) → il prend dans le Lot X, car il périme en premier (15 février), qu'importe l'ordre d'arrivée.\n"
       },
       {
         "id": "gas-m3-c14",
-        "title": "Définitions et concepts clés",
+        "title": "FIFO (First In, First Out)",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Définitions et concepts clés\n\nPrincipe selon lequel les produits entrés en premier en stock doivent sortir en premier.\n\nUtilisé quand les dates de péremption sont identiques.\n\nFIFO (First In, First Out)\n\nLa pharmacie reçoit deux livraisons de Paracétamol ayant la même date de péremption :\n\nLivraison du 5 janvier : 200 boîtes (rangées au fond)\n\nLivraison du 20 janvier : 150 boîtes (rangées devant)\n\nUn infirmier vient prendre des boîtes : il doit prendre celles du 5 janvier, qui sont entrées en premier, même si elles sont au fond.\n\nAvec des dates de péremption identiques, FIFO et FEFO donnent le même résultat.\n\nMais l'organisation physique du stock doit faciliter ce geste : rangement par rotation.\n"
+        "content": "#### Définitions et concepts clés\n\n### FIFO (First In, First Out)\n\nPrincipe selon lequel les produits entrés en premier en stock doivent sortir en premier.\n\nUtilisé quand les dates de péremption sont identiques.\n\nLa pharmacie reçoit deux livraisons de Paracétamol ayant la même date de péremption :\n\nLivraison du 5 janvier : 200 boîtes (rangées au fond)\n\nLivraison du 20 janvier : 150 boîtes (rangées devant)\n\nUn infirmier vient prendre des boîtes : il doit prendre celles du 5 janvier, qui sont entrées en premier, même si elles sont au fond.\n\nAvec des dates de péremption identiques, FIFO et FEFO donnent le même résultat.\n\nMais l'organisation physique du stock doit faciliter ce geste : rangement par rotation.\n"
       },
       {
         "id": "gas-m3-c15",
-        "title": "Définitions et concepts clés",
+        "title": "Inventaire",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Définitions et concepts clés\n\n![Inventaire en pharmacie](/images/course/inventaire.png)\n\nOpération de comptage physique de tous les produits en stock à un moment donné, permettant de vérifier la concordance entre le stock réel et le stock théorique enregistré dans le système.\n\nInventaire\n\nLa pharmacie utilise un registre manuel. Selon ce registre, le stock théorique de Paracétamol est de 4 200 comprimés. Le jour de l'inventaire, le comptage physique donne 3 850 comprimés.\n\nÉcart = 3 850 − 4 200 = −350 comprimés\n\nTaux de précision de l'inventaire = (3 850 ÷ 4 200) × 100 = 91,7 %\n\nInvestiguer sur les causes des écarts.\n\nTaux de précision acceptable : Supérieur ou égal à 95%\n"
+        "content": "#### Définitions et concepts clés\n\n### Inventaire\n\n![Inventaire en pharmacie](/images/course/inventaire.png)\n\nOpération de comptage physique de tous les produits en stock à un moment donné, permettant de vérifier la concordance entre le stock réel et le stock théorique enregistré dans le système.\n\nLa pharmacie utilise un registre manuel. Selon ce registre, le stock théorique de Paracétamol est de 4 200 comprimés. Le jour de l'inventaire, le comptage physique donne 3 850 comprimés.\n\nÉcart = 3 850 − 4 200 = −350 comprimés\n\nTaux de précision de l'inventaire = (3 850 ÷ 4 200) × 100 = 91,7 %\n\nInvestiguer sur les causes des écarts.\n\nTaux de précision acceptable : Supérieur ou égal à 95%\n"
       }
     ]
   },
@@ -164,52 +164,52 @@ export const gestionApprovisionnementsCourse: any[] = [
       },
       {
         "id": "gas-m4-c2",
-        "title": "Types de stocks et leur rôle dans la chaîne pharmaceutique",
+        "title": "Stock de cycle",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Types de stocks et leur rôle dans la chaîne pharmaceutique\n\nDéfinition\n\nRôle\n\nIllustration\n\nStock de cycle\n\nC'est la quantité de produits consommée entre deux commandes successives.\n\nIl représente le stock \"normal\" qui entre et sort régulièrement.\n\nOn parle aussi de stock d’activité ou de stock de roulement\n\nCouvrir la demande courante entre deux livraisons.\n\nUne pharmacie commande du Paracétamol toutes les 2 mois. CMM =1 200 comprimés.\n\nStock de cycle = 1 200 × 2 = 2 400 comprimés\n\nÀ la réception d'une livraison, le stock remonte de 2 400. Il descend progressivement jusqu'à la prochaine commande.\n\nC'est ce mouvement de \"montée-descente\" qui caractérise le stock de cycle.\n"
+        "content": "#### Types de stocks et leur rôle dans la chaîne pharmaceutique\n\n### Stock de cycle\n\nDéfinition\n\nRôle\n\nIllustration\n\nC'est la quantité de produits consommée entre deux commandes successives.\n\nIl représente le stock \"normal\" qui entre et sort régulièrement.\n\nOn parle aussi de stock d’activité ou de stock de roulement\n\nCouvrir la demande courante entre deux livraisons.\n\nUne pharmacie commande du Paracétamol toutes les 2 mois. CMM =1 200 comprimés.\n\nStock de cycle = 1 200 × 2 = 2 400 comprimés\n\nÀ la réception d'une livraison, le stock remonte de 2 400. Il descend progressivement jusqu'à la prochaine commande.\n\nC'est ce mouvement de \"montée-descente\" qui caractérise le stock de cycle.\n"
       },
       {
         "id": "gas-m4-c3",
-        "title": "Types de stocks et leur rôle dans la chaîne pharmaceutique",
+        "title": "Stock de sécurité",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Types de stocks et leur rôle dans la chaîne pharmaceutique\n\nDéfinition\n\nRôle\n\nIllustration\n\nStock de sécurité\n\nQuantité réservée pour faire face aux aléas : retard fournisseur, hausse imprévue de la demande, erreur de commande.\n\nIl ne doit être utilisé qu'en dernier recours.\n\nProtéger la continuité des soins contre les imprévus.\n\nLa même pharmacie a un délai de livraison qui peut varier de 1 à 3 mois au lieu des 2 mois habituels. Elle choisit de couvrir 1 mois d'incertitude :\n\nStock de sécurité = 1 200 × 1 = 1 200 comprimés\n\nCes 1 200 comprimés ne bougent pas en temps normal. Si la livraison attendue en février n'arrive qu'en mars, c'est ce stock qui permet d'éviter la rupture.\n"
+        "content": "#### Types de stocks et leur rôle dans la chaîne pharmaceutique\n\n### Stock de sécurité\n\nDéfinition\n\nRôle\n\nIllustration\n\nQuantité réservée pour faire face aux aléas : retard fournisseur, hausse imprévue de la demande, erreur de commande.\n\nIl ne doit être utilisé qu'en dernier recours.\n\nProtéger la continuité des soins contre les imprévus.\n\nLa même pharmacie a un délai de livraison qui peut varier de 1 à 3 mois au lieu des 2 mois habituels. Elle choisit de couvrir 1 mois d'incertitude :\n\nStock de sécurité = 1 200 × 1 = 1 200 comprimés\n\nCes 1 200 comprimés ne bougent pas en temps normal. Si la livraison attendue en février n'arrive qu'en mars, c'est ce stock qui permet d'éviter la rupture.\n"
       },
       {
         "id": "gas-m4-c4",
-        "title": "Types de stocks et leur rôle dans la chaîne pharmaceutique",
+        "title": "Stock en transit",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Types de stocks et leur rôle dans la chaîne pharmaceutique\n\nDéfinition\n\nRôle\n\nIllustration\n\nStock en transit\n\nProduits qui ont quitté le fournisseur ou le niveau supérieur de la chaîne mais qui ne sont pas encore arrivés à destination.\n\nIls existent physiquement mais ne sont pas encore disponibles à l’entrepôt.\n\nReprésente les ressources \"en route\" à prendre en compte dans la planification pour ne pas passer de commandes redondantes.\n\nLa Direction Régionale de la Santé a commandé 5 000 boîtes de Cotrimoxazole à la centrale d'achat nationale. La commande a été expédiée il y a 10 jours, le délai total est de 30 jours. Ces 5 000 boîtes constituent son stock en transit.\n\nStock effectif = Stock physique + Stock en transit − Commandes en attente\n"
+        "content": "#### Types de stocks et leur rôle dans la chaîne pharmaceutique\n\n### Stock en transit\n\nDéfinition\n\nRôle\n\nIllustration\n\nProduits qui ont quitté le fournisseur ou le niveau supérieur de la chaîne mais qui ne sont pas encore arrivés à destination.\n\nIls existent physiquement mais ne sont pas encore disponibles à l’entrepôt.\n\nReprésente les ressources \"en route\" à prendre en compte dans la planification pour ne pas passer de commandes redondantes.\n\nLa Direction Régionale de la Santé a commandé 5 000 boîtes de Cotrimoxazole à la centrale d'achat nationale. La commande a été expédiée il y a 10 jours, le délai total est de 30 jours. Ces 5 000 boîtes constituent son stock en transit.\n\nStock effectif = Stock physique + Stock en transit − Commandes en attente\n"
       },
       {
         "id": "gas-m4-c5",
-        "title": "Types de stocks et leur rôle dans la chaîne pharmaceutique",
+        "title": "Stock spéculatif",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Types de stocks et leur rôle dans la chaîne pharmaceutique\n\nDéfinition\n\nRôle\n\nIllustration\n\nStock spéculatif\n\nStock constitué volontairement en quantité supérieure à la normale, en anticipation d'une hausse des prix, d'une pénurie annoncée ou d'une rupture prévisible chez le fournisseur.\n\nProtéger la structure contre des risques externes connus à l'avance.\n\nUn gestionnaire apprend que le seul fabricant mondial d’AL va suspendre sa production pendant 3 mois pour maintenance. CMM = 800 boîtes.\n\nStock spéculatif = 800 × 3 = 2 400 boîtes supplémentaires\n\nAttention : \t- Ce type de stock doit rester exceptionnel et justifié.\n\n- Mal géré, il génère des surstocks coûteux."
+        "content": "#### Types de stocks et leur rôle dans la chaîne pharmaceutique\n\n### Stock spéculatif\n\nDéfinition\n\nRôle\n\nIllustration\n\nStock constitué volontairement en quantité supérieure à la normale, en anticipation d'une hausse des prix, d'une pénurie annoncée ou d'une rupture prévisible chez le fournisseur.\n\nProtéger la structure contre des risques externes connus à l'avance.\n\nUn gestionnaire apprend que le seul fabricant mondial d’AL va suspendre sa production pendant 3 mois pour maintenance. CMM = 800 boîtes.\n\nStock spéculatif = 800 × 3 = 2 400 boîtes supplémentaires\n\nAttention : \t- Ce type de stock doit rester exceptionnel et justifié.\n\n- Mal géré, il génère des surstocks coûteux."
       },
       {
         "id": "gas-m4-c6",
-        "title": "Types de stocks et leur rôle dans la chaîne pharmaceutique",
+        "title": "Stock mort (ou stock dormant)",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Types de stocks et leur rôle dans la chaîne pharmaceutique\n\nDéfinition\n\nRôle\n\nIllustration\n\nStock mort (ou stock dormant)\n\nProduits qui ne bougent plus depuis une longue période, généralement parce qu'ils ne sont plus demandés, ont été remplacés par un autre produit, ou sont proches de la péremption.\n\nIl n'a aucun rôle utile — c'est précisément le problème.\n\nIl immobilise de l'argent, de l'espace et du personnel.\n\nUne pharmacie détient 3 000 comprimés de Chloroquine.\n\nDepuis l'abandon de ce médicament comme traitement de première ligne du paludisme dans le pays, la consommation est tombée à 0 comprimé par mois depuis 8 mois.\n\nIdentifier et traiter le stock mort est une priorité de bonne gestion.\n"
+        "content": "#### Types de stocks et leur rôle dans la chaîne pharmaceutique\n\n### Stock mort (ou stock dormant)\n\nDéfinition\n\nRôle\n\nIllustration\n\nProduits qui ne bougent plus depuis une longue période, généralement parce qu'ils ne sont plus demandés, ont été remplacés par un autre produit, ou sont proches de la péremption.\n\nIl n'a aucun rôle utile — c'est précisément le problème.\n\nIl immobilise de l'argent, de l'espace et du personnel.\n\nUne pharmacie détient 3 000 comprimés de Chloroquine.\n\nDepuis l'abandon de ce médicament comme traitement de première ligne du paludisme dans le pays, la consommation est tombée à 0 comprimé par mois depuis 8 mois.\n\nIdentifier et traiter le stock mort est une priorité de bonne gestion.\n"
       },
       {
         "id": "gas-m4-c7",
-        "title": "Types de stocks et leur rôle dans la chaîne pharmaceutique",
+        "title": "Stock de consignation",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Types de stocks et leur rôle dans la chaîne pharmaceutique\n\nDéfinition\n\nRôle\n\nIllustration\n\nStock de consignation\n\nProduits mis à disposition par un fournisseur dans les locaux, mais qui restent la propriété du fournisseur jusqu'à leur utilisation effective.\n\nL’entrepôt ou l’établissement de santé ne paie que ce qu'elle consomme.\n\nRéduire le besoin en trésorerie tout en garantissant la disponibilité des produits.\n\nUn fournisseur de réactifs de laboratoire dépose 200 tests de dépistage rapide du VIH en consignation. La pharmacie en utilise 45 le premier mois.\n\nMontant facturé = 45 × 3 500 FCFA = 157 500 FCFA\n\nLes 155 tests restants ne sont pas facturés et restent propriété du fournisseur.\n\nEn fin de contrat, ils sont repris ou facturés selon les termes convenus.\n"
+        "content": "#### Types de stocks et leur rôle dans la chaîne pharmaceutique\n\n### Stock de consignation\n\nDéfinition\n\nRôle\n\nIllustration\n\nProduits mis à disposition par un fournisseur dans les locaux, mais qui restent la propriété du fournisseur jusqu'à leur utilisation effective.\n\nL’entrepôt ou l’établissement de santé ne paie que ce qu'elle consomme.\n\nRéduire le besoin en trésorerie tout en garantissant la disponibilité des produits.\n\nUn fournisseur de réactifs de laboratoire dépose 200 tests de dépistage rapide du VIH en consignation. La pharmacie en utilise 45 le premier mois.\n\nMontant facturé = 45 × 3 500 FCFA = 157 500 FCFA\n\nLes 155 tests restants ne sont pas facturés et restent propriété du fournisseur.\n\nEn fin de contrat, ils sont repris ou facturés selon les termes convenus.\n"
       },
       {
         "id": "gas-m4-c8",
-        "title": "Types de stocks et leur rôle dans la chaîne pharmaceutique",
+        "title": "Synthèse",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Types de stocks et leur rôle dans la chaîne pharmaceutique\n\nSynthèse\n"
+        "content": "#### Types de stocks et leur rôle dans la chaîne pharmaceutique\n\n### Synthèse\n\n"
       }
     ]
   },
@@ -226,73 +226,73 @@ export const gestionApprovisionnementsCourse: any[] = [
       },
       {
         "id": "gas-m5-c2",
-        "title": "Indicateurs clés de performance",
+        "title": "Taux de disponibilité des produits",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Indicateurs clés de performance\n\nDéfinition\n\nFormule\n\nInterprétation\n\nTaux de disponibilité des produits\n\nPourcentage de produits disponibles en stock par rapport à la liste des produits attendus, sur une période donnée.\n\n(Nombre de produits disponibles ÷ Nombre total de produits de la liste) × 100\n\n≥ 95 % : Bonne performance\n\n80 % à 94 % : Performance acceptable, des améliorations sont nécessaires\n\n< 80 % : Performance insuffisante, situation critique\n"
+        "content": "#### Indicateurs clés de performance\n\n### Taux de disponibilité des produits\n\nDéfinition\n\nFormule\n\nInterprétation\n\nPourcentage de produits disponibles en stock par rapport à la liste des produits attendus, sur une période donnée.\n\n(Nombre de produits disponibles ÷ Nombre total de produits de la liste) × 100\n\n≥ 95 % : Bonne performance\n\n80 % à 94 % : Performance acceptable, des améliorations sont nécessaires\n\n< 80 % : Performance insuffisante, situation critique\n"
       },
       {
         "id": "gas-m5-c3",
-        "title": "Indicateurs clés de performance",
+        "title": "Taux de rupture de stock",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Indicateurs clés de performance\n\nDéfinition\n\nFormule\n\nInterprétation\n\nTaux de rupture de stock\n\nProportion de jours dans le mois (ou dans l'année) pendant lesquels un produit était indisponible, alors qu'il aurait dû l'être.\n\n(Nombre de jours en rupture ÷ Nombre de jours de la période) × 100\n\n0 % : Aucune rupture, situation idéale\n\n1 % à 9 % : Ruptures occasionnelles, gérables\n\n≥ 10 % : Situation préoccupante nécessitant une intervention\n"
+        "content": "#### Indicateurs clés de performance\n\n### Taux de rupture de stock\n\nDéfinition\n\nFormule\n\nInterprétation\n\nProportion de jours dans le mois (ou dans l'année) pendant lesquels un produit était indisponible, alors qu'il aurait dû l'être.\n\n(Nombre de jours en rupture ÷ Nombre de jours de la période) × 100\n\n0 % : Aucune rupture, situation idéale\n\n1 % à 9 % : Ruptures occasionnelles, gérables\n\n≥ 10 % : Situation préoccupante nécessitant une intervention\n"
       },
       {
         "id": "gas-m5-c4",
-        "title": "Indicateurs clés de performance",
+        "title": "Taux de surstockage",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Indicateurs clés de performance\n\nDéfinition\n\nFormule\n\nInterprétation\n\nTaux de surstockage\n\nProportion de produits dont le stock dépasse le niveau maximum défini, sur la liste totale des produits gérés.\n\n(Nombre de produits en surstock ÷ Nombre total de produits gérés) × 100\n\n0 % : Aucun surstockage, situation idéale\n\n≥ 1 % : Finances immobilisés inutilement.\n"
+        "content": "#### Indicateurs clés de performance\n\n### Taux de surstockage\n\nDéfinition\n\nFormule\n\nInterprétation\n\nProportion de produits dont le stock dépasse le niveau maximum défini, sur la liste totale des produits gérés.\n\n(Nombre de produits en surstock ÷ Nombre total de produits gérés) × 100\n\n0 % : Aucun surstockage, situation idéale\n\n≥ 1 % : Finances immobilisés inutilement.\n"
       },
       {
         "id": "gas-m5-c5",
-        "title": "Indicateurs clés de performance",
+        "title": "Taux de péremption",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Indicateurs clés de performance\n\nDéfinition\n\nFormule\n\nInterprétation\n\nTaux de péremption\n\nProportion de la valeur des produits périmés par rapport à la valeur totale des produits reçus sur une période.\n\n(Valeur des produits périmés ÷ Valeur totale des produits reçus) × 100\n\n< 1 % : Excellente gestion des péremptions\n\n1 % à 2 % : Acceptable\n\n≥ 3 % : Problème sérieux de gestion (surstocks, FEFO non respecté, mauvaise prévision)\n"
+        "content": "#### Indicateurs clés de performance\n\n### Taux de péremption\n\nDéfinition\n\nFormule\n\nInterprétation\n\nProportion de la valeur des produits périmés par rapport à la valeur totale des produits reçus sur une période.\n\n(Valeur des produits périmés ÷ Valeur totale des produits reçus) × 100\n\n< 1 % : Excellente gestion des péremptions\n\n1 % à 2 % : Acceptable\n\n≥ 3 % : Problème sérieux de gestion (surstocks, FEFO non respecté, mauvaise prévision)\n"
       },
       {
         "id": "gas-m5-c6",
-        "title": "Indicateurs clés de performance",
+        "title": "Mois de stock disponible",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Indicateurs clés de performance\n\nDéfinition\n\nFormule\n\nInterprétation\n\nMois de stock disponible\n\nNombre de mois pendant lesquels le stock actuel peut couvrir la demande, sans nouvelle livraison.\n\nStock disponible ÷ CMM\n\n< Min : Sous stockage\n\nMin < MSD < Max : Stockage conforme au plan\n\n< Max : Surstockage\n"
+        "content": "#### Indicateurs clés de performance\n\n### Mois de stock disponible\n\nDéfinition\n\nFormule\n\nInterprétation\n\nNombre de mois pendant lesquels le stock actuel peut couvrir la demande, sans nouvelle livraison.\n\nStock disponible ÷ CMM\n\n< Min : Sous stockage\n\nMin < MSD < Max : Stockage conforme au plan\n\n< Max : Surstockage\n"
       },
       {
         "id": "gas-m5-c7",
-        "title": "Indicateurs clés de performance",
+        "title": "Taux de satisfaction des besoins",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Indicateurs clés de performance\n\nDéfinition\n\nFormule\n\nInterprétation\n\nTaux de satisfaction des besoins\n\nMesure la capacité à livrer les besoins exprimés, dans les délais convenus.\n\n(Quantité livrée dans les délais ÷ Quantité demandée) × 100\n\n(Nombre de désignation satisfaite ÷ Nombre de désignation demandée) × 100\n\n≥ 95 % : Satisfaction fiable\n\n80 % à 94 % : Performance moyenne, à améliorer\n\n< 80 % : Satisfaction peu fiable, prendre immédiatement des mesures correctrices\n"
+        "content": "#### Indicateurs clés de performance\n\n### Taux de satisfaction des besoins\n\nDéfinition\n\nFormule\n\nInterprétation\n\nMesure la capacité à livrer les besoins exprimés, dans les délais convenus.\n\n(Quantité livrée dans les délais ÷ Quantité demandée) × 100\n\n(Nombre de désignation satisfaite ÷ Nombre de désignation demandée) × 100\n\n≥ 95 % : Satisfaction fiable\n\n80 % à 94 % : Performance moyenne, à améliorer\n\n< 80 % : Satisfaction peu fiable, prendre immédiatement des mesures correctrices\n"
       },
       {
         "id": "gas-m5-c8",
-        "title": "Indicateurs clés de performance",
+        "title": "Valeur du stock immobilisé",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Indicateurs clés de performance\n\nDéfinition\n\nFormule\n\nInterprétation\n\nValeur du stock immobilisé\n\nMontant financier total des produits en surstock ou en stock mort, non utiles à la demande courante.\n\nQuantité en excédent × Prix unitaire\n\nPar produit, puis total\n\n< 5 % de la valeur totale du stock : Acceptable\n\n5–10 % de la valeur totale du stock : À surveiller\n\n> 10 % de la valeur totale du stock : Perte financière significative, Correction urgente\n"
+        "content": "#### Indicateurs clés de performance\n\n### Valeur du stock immobilisé\n\nDéfinition\n\nFormule\n\nInterprétation\n\nMontant financier total des produits en surstock ou en stock mort, non utiles à la demande courante.\n\nQuantité en excédent × Prix unitaire\n\nPar produit, puis total\n\n< 5 % de la valeur totale du stock : Acceptable\n\n5–10 % de la valeur totale du stock : À surveiller\n\n> 10 % de la valeur totale du stock : Perte financière significative, Correction urgente\n"
       },
       {
         "id": "gas-m5-c9",
-        "title": "Indicateurs clés de performance",
+        "title": "Taux de rotation des stocks",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Indicateurs clés de performance\n\nDéfinition\n\nFormule\n\nInterprétation\n\nTaux de rotation des stocks\n\nVitesse à laquelle le stock est entièrement renouvelé sur une période donnée\n\nQuantité consommée sur la période ÷ Stock moyen de la période\n\n4–6 rotations/an : Gestion saine\n\n2–3 rotations/an : Stock lent, surveiller\n\n< 2 rotations/an : Stock dormant, action requise\n"
+        "content": "#### Indicateurs clés de performance\n\n### Taux de rotation des stocks\n\nDéfinition\n\nFormule\n\nInterprétation\n\nVitesse à laquelle le stock est entièrement renouvelé sur une période donnée\n\nQuantité consommée sur la période ÷ Stock moyen de la période\n\n4–6 rotations/an : Gestion saine\n\n2–3 rotations/an : Stock lent, surveiller\n\n< 2 rotations/an : Stock dormant, action requise\n"
       },
       {
         "id": "gas-m5-c10",
-        "title": "Indicateurs clés de performance",
+        "title": "Délai moyen de livraison",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Indicateurs clés de performance\n\nDéfinition\n\nFormule\n\nInterprétation\n\nDélai moyen de livraison\n\nTemps moyen écoulé entre la date de commande et la date de livraison effective des produits\n\nSomme des délais observés ÷ Nombre de commandes sur la période\n\nConforme au contrat : Fournisseur ponctuel\n\nDépassement < 20 % : Tolérable\n\nDépassement > 20 % : Revoir le plan de distribution ou les méécanismes de livraison\n"
+        "content": "#### Indicateurs clés de performance\n\n### Délai moyen de livraison\n\nDéfinition\n\nFormule\n\nInterprétation\n\nTemps moyen écoulé entre la date de commande et la date de livraison effective des produits\n\nSomme des délais observés ÷ Nombre de commandes sur la période\n\nConforme au contrat : Fournisseur ponctuel\n\nDépassement < 20 % : Tolérable\n\nDépassement > 20 % : Revoir le plan de distribution ou les méécanismes de livraison\n"
       },
       {
         "id": "gas-m5-c11",
-        "title": "Indicateurs clés de performance",
+        "title": "Synthèse",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Indicateurs clés de performance\n\nSynthèse\n\nCes indicateurs se lisent ensemble, pas isolément.\n\nUn taux de disponibilité faible combiné à un taux de couverture élevé indique par exemple que les mauvais produits sont stockés en excès pendant que les produits essentiels manquent.\n\nC'est souvent plus révélateur que chaque chiffre pris séparément.\n\nLa fréquence de mesure recommandée est :\n\nMensuelle pour les indicateurs opérationnels (disponibilité, rupture, couverture) et\n\nTrimestrielle ou annuelle pour les indicateurs stratégiques (péremption, valeur immobilisée, satisfaction).\n"
+        "content": "#### Indicateurs clés de performance\n\n### Synthèse\n\nCes indicateurs se lisent ensemble, pas isolément.\n\nUn taux de disponibilité faible combiné à un taux de couverture élevé indique par exemple que les mauvais produits sont stockés en excès pendant que les produits essentiels manquent.\n\nC'est souvent plus révélateur que chaque chiffre pris séparément.\n\nLa fréquence de mesure recommandée est :\n\nMensuelle pour les indicateurs opérationnels (disponibilité, rupture, couverture) et\n\nTrimestrielle ou annuelle pour les indicateurs stratégiques (péremption, valeur immobilisée, satisfaction).\n"
       }
     ]
   },
