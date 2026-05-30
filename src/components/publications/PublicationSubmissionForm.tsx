@@ -145,17 +145,17 @@ export default function PublicationSubmissionForm() {
                 </div>
               )}
 
-              <div className="space-y-4 mb-8 bg-slate-50 p-6 rounded-2xl border border-light">
+              <div className="space-y-4 mb-8">
                 <label className="text-sm font-semibold text-primary font-poppins block">Vous soumettez en tant que :</label>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <label className={`flex items-start gap-3 p-4 rounded-xl border cursor-pointer transition-all flex-1 ${formData.authorType === 'particulier' ? 'border-orange bg-orange/5 shadow-sm' : 'border-light bg-white hover:border-orange/30'}`}>
+                  <label className={`flex items-start gap-3 p-4 rounded-xl cursor-pointer transition-all flex-1 border-2 ${formData.authorType === 'particulier' ? 'border-orange shadow-md' : 'border-light/60 hover:border-orange/30'}`}>
                     <input type="radio" name="authorType" value="particulier" checked={formData.authorType === 'particulier'} onChange={handleChange} className="w-5 h-5 mt-0.5 accent-orange" />
                     <div>
                       <div className="font-bold text-primary text-sm">Particulier / Indépendant</div>
                       <div className="text-xs font-semibold text-orange mt-1">Frais de publication : 15.000 F CFA</div>
                     </div>
                   </label>
-                  <label className={`flex items-start gap-3 p-4 rounded-xl border cursor-pointer transition-all flex-1 ${formData.authorType === 'entreprise' ? 'border-orange bg-orange/5 shadow-sm' : 'border-light bg-white hover:border-orange/30'}`}>
+                  <label className={`flex items-start gap-3 p-4 rounded-xl cursor-pointer transition-all flex-1 border-2 ${formData.authorType === 'entreprise' ? 'border-orange shadow-md' : 'border-light/60 hover:border-orange/30'}`}>
                     <input type="radio" name="authorType" value="entreprise" checked={formData.authorType === 'entreprise'} onChange={handleChange} className="w-5 h-5 mt-0.5 accent-orange" />
                     <div>
                       <div className="font-bold text-primary text-sm">Entreprise / Personne morale</div>
