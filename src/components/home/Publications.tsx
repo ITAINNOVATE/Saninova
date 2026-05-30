@@ -409,7 +409,7 @@ export const Publications: React.FC = () => {
             href="/publications#soumettre-publication"
             className="inline-flex items-center space-x-2 bg-orange hover:bg-orange/95 text-white font-poppins font-semibold px-6 py-3 rounded-full text-sm shadow-md transition-all duration-300"
           >
-            <span>Soumettre une publication</span>
+            <span>Publiez vos articles chez SaniNova</span>
             <ArrowRight className="w-4 h-4" />
           </a>
         </div>

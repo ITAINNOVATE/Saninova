@@ -24,7 +24,7 @@ export default function PublicationsPage() {
           }}
           className="px-8 py-4 bg-orange text-white rounded-full font-bold text-sm uppercase tracking-widest flex items-center group transition-all hover:shadow-[0_0_20px_rgba(255,122,0,0.4)] hover:scale-105 active:scale-95 cursor-pointer"
         >
-          Soumettre une publication
+          Publiez vos articles chez SaniNova
         </button>
       </PageHero>
       
