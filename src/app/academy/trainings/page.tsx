@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { useLanguage } from "../../../context/LanguageContext";
-import { Search, Filter, Calendar, MapPin, ArrowRight, X, ArrowLeft, BookOpen } from "lucide-react";
+import { Search, Filter, Calendar, MapPin, ArrowRight, X, ArrowLeft, BookOpen, CheckCircle2, Lock } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -150,10 +150,19 @@ export default function TrainingsCatalog() {
                       alt={training.title} 
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
-                    <div className="absolute top-4 left-4">
+                    <div className="absolute top-4 left-4 flex flex-col gap-2 items-start">
                       <span className="px-3.5 py-1.5 bg-dark/80 backdrop-blur-md text-white text-[9px] font-black uppercase tracking-widest rounded-full border border-white/10 shadow-lg">
                         {training.category}
                       </span>
+                      {training.isAvailable ? (
+                        <span className="px-3.5 py-1.5 bg-emerald-500/90 backdrop-blur-md text-white text-[9px] font-black uppercase tracking-widest rounded-full border border-emerald-400/20 shadow-lg flex items-center gap-1.5">
+                          <CheckCircle2 className="w-3.5 h-3.5" /> Disponible
+                        </span>
+                      ) : (
+                        <span className="px-3.5 py-1.5 bg-slate-600/90 backdrop-blur-md text-white text-[9px] font-black uppercase tracking-widest rounded-full border border-slate-400/20 shadow-lg flex items-center gap-1.5">
+                          <Lock className="w-3.5 h-3.5" /> En Maintenance
+                        </span>
+                      )}
                     </div>
                     {training.isStaticModule && (
                       <div className="absolute top-4 right-4">

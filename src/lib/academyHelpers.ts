@@ -103,4 +103,7 @@ const allModules = certificationsData.flatMap((academy) => {
 
 export const staticModules = allModules.filter((mod, index, self) =>
   index === self.findIndex((t) => t.slug === mod.slug)
-);
+).map((mod, index) => ({
+  ...mod,
+  isAvailable: index < 2
+}));

@@ -530,10 +530,19 @@ export default function StudentPortal() {
                                     alt={course.title} 
                                     className="w-full h-full object-cover"
                                   />
-                                  <div className="absolute top-4 left-4">
-                                    <span className="px-3 py-1 bg-dark/80 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-widest rounded-full border border-white/10">
+                                  <div className="absolute top-4 left-4 flex flex-col gap-2 items-start">
+                                    <span className="px-3 py-1 bg-dark/80 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-widest rounded-full border border-white/10 shadow-lg">
                                       {course.category}
                                     </span>
+                                    {course.isAvailable ? (
+                                      <span className="px-3 py-1 bg-emerald-500/90 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-widest rounded-full border border-emerald-400/20 shadow-lg flex items-center gap-1.5">
+                                        <CheckCircle2 className="w-3.5 h-3.5" /> Disponible
+                                      </span>
+                                    ) : (
+                                      <span className="px-3 py-1 bg-slate-600/90 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-widest rounded-full border border-slate-400/20 shadow-lg flex items-center gap-1.5">
+                                        <Lock className="w-3.5 h-3.5" /> En Maintenance
+                                      </span>
+                                    )}
                                   </div>
 
                                   {/* Payment status badge */}
@@ -592,7 +601,14 @@ export default function StudentPortal() {
 
                                     {/* Actions bar */}
                                     <div className="flex gap-3">
-                                      {isEnrolled ? (
+                                      {!course.isAvailable ? (
+                                        <button
+                                          disabled
+                                          className="w-full py-4 bg-white/5 text-white/40 rounded-2xl font-black text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 cursor-not-allowed shadow-none"
+                                        >
+                                          <Lock className="w-4.5 h-4.5" /> En cours de mise à jour
+                                        </button>
+                                      ) : isEnrolled ? (
                                         <>
                                           {isCompleted ? (
                                             <button
