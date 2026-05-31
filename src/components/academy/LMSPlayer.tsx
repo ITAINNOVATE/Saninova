@@ -365,29 +365,44 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
     if (saved) {
       try {
         const parsed = JSON.parse(saved);
-        setCompletedChapters(parsed.completed || {});
+        const parsedCompleted = parsed.completed || {};
+        setCompletedChapters(parsedCompleted);
         setQuizPassed(parsed.quizPassed || false);
+
+        // Recalculate percent based on valid chapters to clean up old data
+        const allCurrentChapters = limitedModules.flatMap(m => m.chapters);
+        const validCompletedCount = allCurrentChapters.filter(c => parsedCompleted[c.id]).length;
+        const newPercent = allCurrentChapters.length > 0 ? Math.min(100, Math.round((validCompletedCount / allCurrentChapters.length) * 100)) : 0;
+        
+        localStorage.setItem(`progress_${courseSlug}`, JSON.stringify({
+          ...parsed,
+          percent: newPercent
+        }));
       } catch (e) {
         console.error(e);
       }
     }
   }, [courseSlug]);
 
-  const saveProgress = (newCompleted: Record<string, boolean>, qPassed = quizPassed) => {
-    setCompletedChapters(newCompleted);
-    setQuizPassed(qPassed);
-    localStorage.setItem(`progress_${courseSlug}`, JSON.stringify({
-      completed: newCompleted,
-      quizPassed: qPassed,
-      percent: Math.min(100, Math.round((Object.keys(newCompleted).length / totalChaptersCount) * 100))
-    }));
-  };
-
   // Helper selectors
   const allChapters = syllabus.flatMap(m => m.chapters);
   const totalChaptersCount = allChapters.length;
   const currentChapter = allChapters.find(c => c.id === activeChapterId);
   const currentChapterIndex = allChapters.findIndex(c => c.id === activeChapterId);
+
+  const saveProgress = (newCompleted: Record<string, boolean>, qPassed = quizPassed) => {
+    setCompletedChapters(newCompleted);
+    setQuizPassed(qPassed);
+
+    const validCompletedCount = allChapters.filter(c => newCompleted[c.id]).length;
+    const percent = totalChaptersCount > 0 ? Math.min(100, Math.round((validCompletedCount / totalChaptersCount) * 100)) : 0;
+
+    localStorage.setItem(`progress_${courseSlug}`, JSON.stringify({
+      completed: newCompleted,
+      quizPassed: qPassed,
+      percent: percent
+    }));
+  };
 
   const toggleChapterCompleted = (chapterId: string) => {
     const newCompleted = {
