@@ -23,7 +23,7 @@ export default function TrainingDetail({ params }: { params: Promise<{ slug: str
   const [loading, setLoading] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isEnrolled, setIsEnrolled] = useState(false);
-  const [visibleModulesCount, setVisibleModulesCount] = useState(5);
+  const [visibleModulesCount, setVisibleModulesCount] = useState(1);
 
   React.useEffect(() => {
     const fetchTraining = async () => {
@@ -289,7 +289,7 @@ export default function TrainingDetail({ params }: { params: Promise<{ slug: str
                       <div className="p-6 rounded-3xl bg-white/5 border border-white/5 group-hover:border-orange/30 transition-all">
                         <span className="text-orange font-black text-xs uppercase tracking-widest mb-1 block">{item.day}</span>
                         <h4 className="text-white font-bold text-xl mb-2">{item.title}</h4>
-                        <p className="text-white/50 text-sm leading-relaxed">{item.details}</p>
+                        <p className="text-white/50 text-sm leading-relaxed line-clamp-3">{item.details}</p>
                       </div>
                     </div>
                   ))}
@@ -297,7 +297,7 @@ export default function TrainingDetail({ params }: { params: Promise<{ slug: str
                 {(training.program || []).length > visibleModulesCount && (
                   <div className="mt-8 pt-4 flex justify-center">
                     <button 
-                      onClick={() => setVisibleModulesCount((prev: number) => prev + 5)}
+                      onClick={() => setVisibleModulesCount((prev: number) => prev + 3)}
                       className="inline-flex items-center gap-2 px-8 py-4 bg-white/5 hover:bg-white/10 text-orange border border-orange/20 hover:border-orange/50 rounded-2xl font-black text-xs uppercase tracking-widest transition-all cursor-pointer shadow-lg hover:scale-[1.02]"
                     >
                       Voir la suite <ArrowRight className="w-4 h-4 rotate-90" />
