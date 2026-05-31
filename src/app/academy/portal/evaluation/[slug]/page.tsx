@@ -57,7 +57,7 @@ export default function EvaluationPage({ params }: { params: Promise<{ slug: str
     // To allow testing, we won't strictly block here, but we could check percent.
     
     // Load specific eval data based on slug
-    if (slug === "gestion-approvisionnements") {
+    if (slug === "gestion-approvisionnements" || slug === "gestion-des-approvisionnements-et-des-stocks") {
       const data = gestionApprovisionnementsEval;
       setEvalData(data);
       
