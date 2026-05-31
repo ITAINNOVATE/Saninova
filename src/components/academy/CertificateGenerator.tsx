@@ -3,7 +3,7 @@
 import React, { useRef } from "react";
 import { Award, Download } from "lucide-react";
 import html2canvas from "html2canvas";
-import jsPDF from "jspdf";
+import { jsPDF } from "jspdf";
 
 interface CertificateProps {
   studentName: string;
@@ -36,9 +36,9 @@ export default function CertificateGenerator({ studentName, courseName, score, d
       
       pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
       pdf.save(`Attestation_${courseName.replace(/\s+/g, "_")}.pdf`);
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error generating PDF:", error);
-      alert("Une erreur s'est produite lors de la génération du certificat.");
+      alert(`Une erreur s'est produite lors de la génération du certificat : ${error.message || String(error)}`);
     }
   };
 
