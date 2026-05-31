@@ -249,8 +249,7 @@ const getDynamicSyllabus = (modSlug: string): Module[] => {
   if (!match) return [];
 
   return match.program.map((subMod: any, subIdx: number) => {
-    const lessonNames = subMod.details.split(",").map((s: string) => s.trim()).filter((s: string) => s.length > 0).slice(0, 5);
-    
+    const lessonNames = subMod.details.split(",").map((s: string) => s.trim()).filter((s: string) => s.length > 0).slice(0, 4);
     const chapters: Chapter[] = lessonNames.map((lessonName: string, lessonIdx: number) => {
       const lessonId = `dynamic-c-${subIdx}-${lessonIdx}`;
       const types: ("video" | "text" | "slides")[] = ["video", "text", "slides"];
