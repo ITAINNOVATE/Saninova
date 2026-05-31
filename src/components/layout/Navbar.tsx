@@ -123,9 +123,9 @@ export const Navbar: React.FC = () => {
         <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-2.5 text-xs sm:text-sm font-poppins">
           {/* Left: Contact Info */}
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
-            <a href="mailto:saninovagc@gmail.com" className="flex items-center space-x-2 hover:text-white/80 transition-colors">
-              <Mail className="w-3.5 h-3.5 text-white" />
-              <span className="font-medium">saninovagc@gmail.com</span>
+            <a href="mailto:contact@saninovagc.com" className="flex items-center space-x-2 hover:text-white/80 transition-colors">
+              <Mail className="w-4 h-4 opacity-80" />
+              <span className="font-medium">contact@saninovagc.com</span>
             </a>
             <a href="tel:+2290161015495" className="flex items-center space-x-2 hover:text-white/80 transition-colors">
               <Phone className="w-3.5 h-3.5 text-white" />

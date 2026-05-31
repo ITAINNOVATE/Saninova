@@ -672,7 +672,7 @@ export const translations = {
         {
           category: "general",
           q: "26. Comment contacter SaniNova ?",
-          a: "Les prospects peuvent contacter SaniNova via :\n• email : saninovagc@gmail.com\n• telephone : +2290161015495\n• LinkedIn : SaniNova Global Consulting\n• site web : www.saninovagc.com\n• ou directement lors des événements professionnels.\n\nToutes les demandes sont prises en charge de manière professionnelle et confidentielle."
+          a: "Les prospects peuvent contacter SaniNova via :\n• email : contact@saninovagc.com\n• telephone : +2290161015495\n• LinkedIn : SaniNova Global Consulting\n• site web : www.saninovagc.com\n• ou directement lors des événements professionnels.\n\nToutes les demandes sont prises en charge de manière professionnelle et confidentielle."
         },
         {
           category: "academy",
@@ -1363,7 +1363,7 @@ export const translations = {
         {
           category: "general",
           q: "26. How to contact SaniNova?",
-          a: "Prospects can contact SaniNova via:\n• email: saninovagc@gmail.com\n• telephone: +2290161015495\n• LinkedIn: SaniNova Global Consulting\n• website: www.saninovagc.com\n• or directly at professional events.\n\nAll requests are handled in a professional and confidential manner."
+          a: "Prospects can contact SaniNova via:\n• email: contact@saninovagc.com\n• telephone: +2290161015495\n• LinkedIn: SaniNova Global Consulting\n• website: www.saninovagc.com\n• or directly at professional events.\n\nAll requests are handled in a professional and confidential manner."
         },
         {
           category: "academy",

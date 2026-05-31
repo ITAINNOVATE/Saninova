@@ -7,7 +7,7 @@ export async function POST(req: NextRequest) {
     const { email, password } = body;
 
     // Load from env variables, or use hardcoded fallback for guaranteed operation
-    const correctEmail = process.env.ADMIN_EMAIL || "saninovagc@gmail.com";
+    const correctEmail = process.env.ADMIN_EMAIL || "contact@saninovagc.com";
     const correctPassword = process.env.ADMIN_PASSWORD || "Saninova2026";
 
     if (!correctEmail || !correctPassword) {

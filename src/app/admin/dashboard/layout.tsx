@@ -237,7 +237,7 @@ export default function DashboardLayout({ children }: LayoutProps) {
               <div className="w-7 h-7 rounded-full bg-emerald-500/20 flex items-center justify-center text-[#00A878]">
                 <User className="w-4 h-4" />
               </div>
-              <span className="font-poppins text-sm font-medium text-slate-300">saninovagc@gmail.com</span>
+              <span className="font-poppins text-sm font-medium text-slate-300">contact@saninovagc.com</span>
             </div>
           </div>
         </header>
