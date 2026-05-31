@@ -394,13 +394,13 @@ export default function StudentPortal() {
                                     )}
 
                                     {/* Actions bar */}
-                                    <div className="flex gap-3">
+                                    <div className="flex flex-col gap-3">
                                       {isCompleted ? (
                                         <button
                                           onClick={() => handleShowCertificate(course)}
                                           className="w-full py-4 bg-emerald-500 hover:bg-emerald-600 text-white rounded-2xl font-black text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all cursor-pointer shadow-lg shadow-emerald-500/10"
                                         >
-                                          <Award className="w-4 h-4" /> Mon Certificat
+                                          <Award className="w-4 h-4" /> Certificat de complétion
                                         </button>
                                       ) : isPaid ? (
                                         <button
@@ -416,6 +416,26 @@ export default function StudentPortal() {
                                         >
                                           <Lock className="w-4 h-4 text-orange" /> S'inscrire & Payer
                                         </button>
+                                      )}
+                                      
+                                      {/* Evaluation Button */}
+                                      {isPaid && (
+                                        <Link 
+                                          href={`/academy/portal/evaluation/${course.slug}`}
+                                          onClick={(e) => {
+                                            if (!isCompleted) {
+                                              e.preventDefault();
+                                              alert("Vous devez terminer le cours à 100% pour débloquer l'évaluation finale.");
+                                            }
+                                          }}
+                                          className={`w-full py-4 rounded-2xl font-black text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all ${
+                                            isCompleted 
+                                              ? 'bg-[#0F1D33] hover:bg-[#1a2e4c] text-white border border-orange/50 shadow-[0_0_15px_rgba(255,107,0,0.2)]' 
+                                              : 'bg-white/5 text-white/30 cursor-not-allowed border border-white/5'
+                                          }`}
+                                        >
+                                          <Award className="w-4 h-4" /> Passer l'évaluation finale
+                                        </Link>
                                       )}
                                     </div>
                                   </div>
