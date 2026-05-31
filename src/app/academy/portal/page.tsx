@@ -325,7 +325,8 @@ export default function StudentPortal() {
                         {courses
                           .filter((c) => enrolledSlugs.includes(c.slug))
                           .map((course) => {
-                            const prog = progresses[course.slug] || { percent: 0, completed: {}, quizPassed: false };
+                            const rawProg = progresses[course.slug] || { percent: 0, completed: {}, quizPassed: false };
+                            const prog = { ...rawProg, percent: Math.min(100, rawProg.percent || 0) };
                             const isCompleted = prog.quizPassed;
                             const isStarted = prog.percent > 0;
                             const isPaid = paidCourses[course.slug] || false;
@@ -507,7 +508,8 @@ export default function StudentPortal() {
                       return (
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                           {filteredCourses.map((course) => {
-                            const prog = progresses[course.slug] || { percent: 0, completed: {}, quizPassed: false };
+                            const rawProg = progresses[course.slug] || { percent: 0, completed: {}, quizPassed: false };
+                            const prog = { ...rawProg, percent: Math.min(100, rawProg.percent || 0) };
                             const isCompleted = prog.quizPassed;
                             const isStarted = prog.percent > 0;
                             const isPaid = paidCourses[course.slug] || false;

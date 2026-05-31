@@ -379,7 +379,7 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
     localStorage.setItem(`progress_${courseSlug}`, JSON.stringify({
       completed: newCompleted,
       quizPassed: qPassed,
-      percent: Math.round((Object.keys(newCompleted).length / totalChaptersCount) * 100)
+      percent: Math.min(100, Math.round((Object.keys(newCompleted).length / totalChaptersCount) * 100))
     }));
   };
 
