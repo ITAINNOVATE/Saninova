@@ -321,6 +321,7 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
   const [showQuiz, setShowQuiz] = useState(false);
   const [quizPassed, setQuizPassed] = useState(false);
   const [expandedModule, setExpandedModule] = useState<string | null>(null);
+  const [visibleChaptersLimit, setVisibleChaptersLimit] = useState(4);
 
   // Load syllabus based on slug
   // Priority: mockCoursesSyllabus (real PPTX content) > getDynamicSyllabus (generic)
@@ -350,18 +351,12 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
       }
     }
 
-    // Limit to 4 sections per module globally to keep UI clean
-    const limitedModules = modules.map(m => ({
-      ...m,
-      chapters: m.chapters.slice(0, 4)
-    }));
+    setSyllabus(modules);
 
-    setSyllabus(limitedModules);
-
-    if (limitedModules.length > 0) {
-      setExpandedModule(limitedModules[0].id);
-      if (limitedModules[0].chapters.length > 0) {
-        setActiveChapterId(limitedModules[0].chapters[0].id);
+    if (modules.length > 0) {
+      setExpandedModule(modules[0].id);
+      if (modules[0].chapters.length > 0) {
+        setActiveChapterId(modules[0].chapters[0].id);
       }
     }
 
@@ -481,7 +476,10 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
             {syllabus.map((mod) => (
               <div key={mod.id} className="space-y-2">
                 <button 
-                  onClick={() => setExpandedModule(expandedModule === mod.id ? null : mod.id)}
+                  onClick={() => {
+                    setExpandedModule(expandedModule === mod.id ? null : mod.id);
+                    setVisibleChaptersLimit(4);
+                  }}
                   className="w-full text-left flex items-center justify-between group cursor-pointer"
                 >
                   <h5 className="text-[11px] font-extrabold text-orange uppercase tracking-wider line-clamp-2 leading-relaxed flex-1 pr-2">
@@ -503,7 +501,7 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                       className="overflow-hidden"
                     >
                       <div className="space-y-1.5 pl-1.5 border-l border-slate-200 ml-1 mt-3">
-                        {mod.chapters.map((chap) => {
+                        {mod.chapters.slice(0, visibleChaptersLimit).map((chap) => {
                           const isActive = chap.id === activeChapterId && !showQuiz;
                           const isCompleted = !!completedChapters[chap.id];
 
@@ -531,6 +529,15 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                             </button>
                           );
                         })}
+                        
+                        {mod.chapters.length > visibleChaptersLimit && (
+                          <button
+                            onClick={() => setVisibleChaptersLimit(prev => prev + 4)}
+                            className="w-full text-center py-2.5 mt-2 text-[10px] font-bold text-slate-400 hover:text-orange uppercase tracking-wider flex items-center justify-center gap-1.5 transition-colors cursor-pointer border-t border-slate-100/50 hover:bg-slate-50 rounded-b-xl"
+                          >
+                            Voir la suite ({mod.chapters.length - visibleChaptersLimit}) <ArrowRight className="w-3 h-3 rotate-90" />
+                          </button>
+                        )}
                       </div>
                     </motion.div>
                   )}
