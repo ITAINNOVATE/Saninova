@@ -370,7 +370,7 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
         setQuizPassed(parsed.quizPassed || false);
 
         // Recalculate percent based on valid chapters to clean up old data
-        const allCurrentChapters = limitedModules.flatMap(m => m.chapters);
+        const allCurrentChapters = modules.flatMap(m => m.chapters);
         const validCompletedCount = allCurrentChapters.filter(c => parsedCompleted[c.id]).length;
         const newPercent = allCurrentChapters.length > 0 ? Math.min(100, Math.round((validCompletedCount / allCurrentChapters.length) * 100)) : 0;
         
