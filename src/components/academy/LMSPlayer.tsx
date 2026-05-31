@@ -249,7 +249,7 @@ const getDynamicSyllabus = (modSlug: string): Module[] => {
   if (!match) return [];
 
   return match.program.map((subMod: any, subIdx: number) => {
-    const lessonNames = subMod.details.split(",").map((s: string) => s.trim());
+    const lessonNames = subMod.details.split(",").map((s: string) => s.trim()).filter((s: string) => s.length > 0).slice(0, 5);
     
     const chapters: Chapter[] = lessonNames.map((lessonName: string, lessonIdx: number) => {
       const lessonId = `dynamic-c-${subIdx}-${lessonIdx}`;
@@ -321,6 +321,7 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
   const [completedChapters, setCompletedChapters] = useState<Record<string, boolean>>({});
   const [showQuiz, setShowQuiz] = useState(false);
   const [quizPassed, setQuizPassed] = useState(false);
+  const [expandedModule, setExpandedModule] = useState<string | null>(null);
 
   // Load syllabus based on slug
   // Priority: mockCoursesSyllabus (real PPTX content) > getDynamicSyllabus (generic)
@@ -352,8 +353,11 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
 
     setSyllabus(modules);
 
-    if (modules.length > 0 && modules[0].chapters.length > 0) {
-      setActiveChapterId(modules[0].chapters[0].id);
+    if (modules.length > 0) {
+      setExpandedModule(modules[0].id);
+      if (modules[0].chapters.length > 0) {
+        setActiveChapterId(modules[0].chapters[0].id);
+      }
     }
 
     // Load progress from LocalStorage
@@ -471,39 +475,61 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
           <div className="space-y-6">
             {syllabus.map((mod) => (
               <div key={mod.id} className="space-y-2">
-                <h5 className="text-[11px] font-extrabold text-orange uppercase tracking-wider line-clamp-2 leading-relaxed">
-                  {mod.title}
-                </h5>
-                <div className="space-y-1.5 pl-1.5 border-l border-slate-200 ml-1">
-                  {mod.chapters.map((chap) => {
-                    const isActive = chap.id === activeChapterId && !showQuiz;
-                    const isCompleted = !!completedChapters[chap.id];
+                <button 
+                  onClick={() => setExpandedModule(expandedModule === mod.id ? null : mod.id)}
+                  className="w-full text-left flex items-center justify-between group cursor-pointer"
+                >
+                  <h5 className="text-[11px] font-extrabold text-orange uppercase tracking-wider line-clamp-2 leading-relaxed flex-1 pr-2">
+                    {mod.title}
+                  </h5>
+                  <div className={`w-6 h-6 rounded-full border flex items-center justify-center shrink-0 transition-all ${expandedModule === mod.id ? 'border-orange bg-orange/10 text-orange' : 'border-slate-200 text-slate-400 group-hover:border-orange/50 group-hover:text-orange'}`}>
+                    <svg className={`w-3.5 h-3.5 transition-transform duration-300 ${expandedModule === mod.id ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </button>
+                
+                <AnimatePresence>
+                  {expandedModule === mod.id && (
+                    <motion.div 
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="space-y-1.5 pl-1.5 border-l border-slate-200 ml-1 mt-3">
+                        {mod.chapters.map((chap) => {
+                          const isActive = chap.id === activeChapterId && !showQuiz;
+                          const isCompleted = !!completedChapters[chap.id];
 
-                    return (
-                      <button
-                        key={chap.id}
-                        onClick={() => {
-                          setActiveChapterId(chap.id);
-                          setShowQuiz(false);
-                        }}
-                        className={`w-full text-left py-2.5 px-3.5 rounded-xl text-xs transition-all flex items-start gap-2.5 cursor-pointer ${
-                          isActive 
-                            ? "bg-orange text-white font-bold shadow-md shadow-orange/20" 
-                            : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
-                        }`}
-                      >
-                        <div className="shrink-0 mt-0.5">
-                          {isCompleted ? (
-                            <CheckCircle className={`w-3.5 h-3.5 ${isActive ? "text-white" : "text-emerald-500"}`} />
-                          ) : (
-                            <Circle className="w-3.5 h-3.5 text-slate-300" />
-                          )}
-                        </div>
-                        <span className="leading-snug line-clamp-2">{chap.title}</span>
-                      </button>
-                    );
-                  })}
-                </div>
+                          return (
+                            <button
+                              key={chap.id}
+                              onClick={() => {
+                                setActiveChapterId(chap.id);
+                                setShowQuiz(false);
+                              }}
+                              className={`w-full text-left py-2.5 px-3.5 rounded-xl text-xs transition-all flex items-start gap-2.5 cursor-pointer ${
+                                isActive 
+                                  ? "bg-orange text-white font-bold shadow-md shadow-orange/20" 
+                                  : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
+                              }`}
+                            >
+                              <div className="shrink-0 mt-0.5">
+                                {isCompleted ? (
+                                  <CheckCircle className={`w-3.5 h-3.5 ${isActive ? "text-white" : "text-emerald-500"}`} />
+                                ) : (
+                                  <Circle className="w-3.5 h-3.5 text-slate-300" />
+                                )}
+                              </div>
+                              <span className="leading-snug line-clamp-2">{chap.title}</span>
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             ))}
 
