@@ -3,7 +3,7 @@
 import React, { useRef } from "react";
 import { Download, Calendar, BarChart, FileText, CheckCircle, QrCode, Globe, Leaf } from "lucide-react";
 // @ts-ignore
-import html2canvas from "html2canvas";
+import domtoimage from "dom-to-image-more";
 import { jsPDF } from "jspdf";
 
 interface CertificateProps {
@@ -21,13 +21,17 @@ export default function CertificateGenerator({ studentName, courseName, score, d
     
     try {
       const node = certificateRef.current;
+      const scale = 2;
       
-      const canvas = await html2canvas(node, {
-        scale: 2,
-        useCORS: true,
-        backgroundColor: '#ffffff'
+      const imgData = await domtoimage.toPng(node, {
+        width: node.clientWidth * scale,
+        height: node.clientHeight * scale,
+        bgcolor: '#ffffff',
+        style: {
+          transform: `scale(${scale})`,
+          transformOrigin: 'top left'
+        }
       });
-      const imgData = canvas.toDataURL('image/png');
       
       const pdf = new jsPDF({
         orientation: "landscape",
