@@ -26,6 +26,7 @@ export default function CertificateGenerator({ studentName, courseName, score, d
         quality: 1,
         pixelRatio: 2,
         backgroundColor: '#ffffff',
+        skipFonts: true, // Fix disappearing text bug!
         style: {
           fontFamily: 'Arial, Helvetica, sans-serif'
         }
@@ -88,12 +89,12 @@ export default function CertificateGenerator({ studentName, courseName, score, d
 
           {/* TITLE SECTION */}
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-black text-[#0F1D33] uppercase tracking-wide mb-2">
+            <div className="text-4xl font-black text-[#0F1D33] uppercase tracking-wide mb-2">
               Attestation de Réussite
-            </h1>
-            <h2 className="text-green-600 font-bold uppercase tracking-widest text-lg mb-2">
+            </div>
+            <div className="text-green-600 font-bold uppercase tracking-widest text-lg mb-2">
               SANINOVA ACADEMY
-            </h2>
+            </div>
             <p className="text-[#0F1D33] font-medium text-sm tracking-widest">
               Learning <span className="text-[#ff6b00] px-1">●</span> Innovation <span className="text-[#ff6b00] px-1">●</span> Excellence
             </p>
@@ -102,9 +103,9 @@ export default function CertificateGenerator({ studentName, courseName, score, d
           {/* RECIPIENT SECTION */}
           <div className="text-center mb-8">
             <p className="text-[#0F1D33] font-bold text-lg mb-2">Décernée à</p>
-            <h3 className="text-5xl font-bold text-[#0F1D33] uppercase tracking-wider border-b-2 border-gray-300 pb-2 inline-block px-12">
+            <div className="text-5xl font-bold text-[#0F1D33] uppercase tracking-wider border-b-2 border-gray-300 pb-2 inline-block px-12">
               {studentName}
-            </h3>
+            </div>
           </div>
 
           {/* COURSE SECTION */}
@@ -112,9 +113,9 @@ export default function CertificateGenerator({ studentName, courseName, score, d
             <p className="text-[#0F1D33] font-medium text-base mb-4">
               Pour avoir suivi avec succès et validé l'ensemble des exigences pédagogiques du module de formation :
             </p>
-            <h4 className="text-3xl font-black text-green-700 uppercase tracking-wide mb-4">
+            <div className="text-3xl font-black text-green-700 uppercase tracking-wide mb-4">
               {courseName}
-            </h4>
+            </div>
             <p className="text-gray-800 text-sm leading-relaxed px-12 font-medium">
               Cette attestation certifie que le participant a acquis les connaissances et compétences fondamentales 
               relatives à la planification des approvisionnements, à la gestion des stocks, au suivi logistique 
