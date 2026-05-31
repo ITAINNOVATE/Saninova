@@ -2,6 +2,7 @@
 
 import React, { useRef } from "react";
 import { Download, Calendar, BarChart, FileText, CheckCircle, QrCode } from "lucide-react";
+// @ts-ignore
 import domtoimage from "dom-to-image-more";
 import { jsPDF } from "jspdf";
 
