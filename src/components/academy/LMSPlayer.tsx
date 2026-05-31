@@ -447,8 +447,8 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
     onCourseCompleted();
   };
 
-  const completedCount = Object.keys(completedChapters).filter(k => completedChapters[k]).length;
-  const progressPercent = totalChaptersCount > 0 ? Math.round((completedCount / totalChaptersCount) * 100) : 0;
+  const completedCount = allChapters.filter(c => completedChapters[c.id]).length;
+  const progressPercent = totalChaptersCount > 0 ? Math.min(100, Math.round((completedCount / totalChaptersCount) * 100)) : 0;
 
   if (syllabus.length === 0 || !currentChapter) {
     return (
