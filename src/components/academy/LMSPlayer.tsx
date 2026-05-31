@@ -350,12 +350,18 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
       }
     }
 
-    setSyllabus(modules);
+    // Limit to 4 sections per module globally to keep UI clean
+    const limitedModules = modules.map(m => ({
+      ...m,
+      chapters: m.chapters.slice(0, 4)
+    }));
 
-    if (modules.length > 0) {
-      setExpandedModule(modules[0].id);
-      if (modules[0].chapters.length > 0) {
-        setActiveChapterId(modules[0].chapters[0].id);
+    setSyllabus(limitedModules);
+
+    if (limitedModules.length > 0) {
+      setExpandedModule(limitedModules[0].id);
+      if (limitedModules[0].chapters.length > 0) {
+        setActiveChapterId(limitedModules[0].chapters[0].id);
       }
     }
 
