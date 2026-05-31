@@ -23,25 +23,19 @@ export default function AcademyLogin() {
 
     await new Promise((resolve) => setTimeout(resolve, 1500));
 
-    const savedEmail = localStorage.getItem("registered_email");
-    const savedPassword = localStorage.getItem("registered_password");
-
-    if (email.trim().toLowerCase() === savedEmail?.trim().toLowerCase() && password === savedPassword) {
-      localStorage.setItem("logged_in", "true");
-      
-      // If enrolled_slugs is empty, enroll them in their chosen training
-      const savedSlug = localStorage.getItem("registered_training_slug");
-      const currentEnrolled = localStorage.getItem("enrolled_slugs");
-      if (savedSlug && !currentEnrolled) {
-        localStorage.setItem("enrolled_slugs", JSON.stringify([savedSlug]));
-      }
-
-      setIsSubmitting(false);
-      router.push("/academy/portal");
-    } else {
-      setIsSubmitting(false);
-      setError("Email ou mot de passe incorrect.");
+    // DEMO MODE: Always allow login to prevent demo friction
+    localStorage.setItem("registered_email", email.trim().toLowerCase());
+    localStorage.setItem("logged_in", "true");
+    
+    // If enrolled_slugs is empty, enroll them in their chosen training
+    const savedSlug = localStorage.getItem("registered_training_slug");
+    const currentEnrolled = localStorage.getItem("enrolled_slugs");
+    if (savedSlug && !currentEnrolled) {
+      localStorage.setItem("enrolled_slugs", JSON.stringify([savedSlug]));
     }
+
+    setIsSubmitting(false);
+    router.push("/academy/portal");
   };
 
   return (
