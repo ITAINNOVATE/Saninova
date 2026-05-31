@@ -23,6 +23,7 @@ export default function TrainingDetail({ params }: { params: Promise<{ slug: str
   const [loading, setLoading] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isEnrolled, setIsEnrolled] = useState(false);
+  const [visibleModulesCount, setVisibleModulesCount] = useState(5);
 
   React.useEffect(() => {
     const fetchTraining = async () => {
@@ -277,7 +278,7 @@ export default function TrainingDetail({ params }: { params: Promise<{ slug: str
                   Programme détaillé
                 </h2>
                 <div className="space-y-4">
-                  {(training.program || []).map((item: any, i: number) => (
+                  {(training.program || []).slice(0, visibleModulesCount).map((item: any, i: number) => (
                     <div key={i} className="relative pl-12 pb-8 last:pb-0 group">
                       {/* Vertical line */}
                       <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-white/10 group-last:bottom-[90%]" />
@@ -293,6 +294,16 @@ export default function TrainingDetail({ params }: { params: Promise<{ slug: str
                     </div>
                   ))}
                 </div>
+                {(training.program || []).length > visibleModulesCount && (
+                  <div className="mt-8 pt-4 flex justify-center">
+                    <button 
+                      onClick={() => setVisibleModulesCount((prev: number) => prev + 5)}
+                      className="inline-flex items-center gap-2 px-8 py-4 bg-white/5 hover:bg-white/10 text-orange border border-orange/20 hover:border-orange/50 rounded-2xl font-black text-xs uppercase tracking-widest transition-all cursor-pointer shadow-lg hover:scale-[1.02]"
+                    >
+                      Voir la suite <ArrowRight className="w-4 h-4 rotate-90" />
+                    </button>
+                  </div>
+                )}
               </div>
 
               {/* Trainers */}
