@@ -100,6 +100,19 @@ export default function ExpertForm() {
       setError("Vous devez accepter le traitement de vos données pour soumettre le formulaire.");
       return;
     }
+
+    const activeDomains = formData.domains.filter(d => {
+      if (d.startsWith("Autre:")) {
+        return d.substring(6).trim() !== "";
+      }
+      return d.trim() !== "";
+    });
+
+    if (activeDomains.length === 0) {
+      setError("Veuillez sélectionner au moins un domaine d'expertise (ou en préciser un dans la case 'Autre').");
+      return;
+    }
+
     setIsSubmitting(true);
     setError("");
     setSuccess(false);

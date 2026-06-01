@@ -563,13 +563,19 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
             {/* Final Quiz Navigation Tab */}
             <div className="pt-4 border-t border-slate-200">
               <button
-                onClick={() => setShowQuiz(true)}
+                onClick={(e) => {
+                  const isCompleted = Object.keys(completedChapters).length >= syllabus.reduce((acc: number, mod: any) => acc + mod.chapters.length, 0);
+                  if (!isCompleted) {
+                    alert("Vous devez terminer tous les chapitres du cours avant de pouvoir passer l'évaluation finale.");
+                    e.preventDefault();
+                    return;
+                  }
+                  window.location.href = `/academy/portal/evaluation/${courseSlug}`;
+                }}
                 className={`w-full py-4 px-4 rounded-xl text-xs font-black uppercase tracking-wider transition-all flex items-center justify-between cursor-pointer border ${
-                  showQuiz 
-                    ? "bg-orange border-orange text-white" 
-                    : quizPassed 
+                  quizPassed 
                     ? "bg-emerald-50 border-emerald-200 text-emerald-600" 
-                    : "bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100"
+                    : "bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100 hover:text-orange"
                 }`}
               >
                 <span className="flex items-center gap-2">
