@@ -402,7 +402,7 @@ export default function PublicationSubmissionForm() {
                 <div className="bg-orange/10 border border-orange/20 rounded-xl p-5 mb-6 flex gap-3 shadow-sm">
                   <AlertCircle className="w-5 h-5 text-orange shrink-0 mt-0.5" />
                   <p className="text-sm text-primary font-medium leading-relaxed">
-                    <strong>Note importante :</strong> La soumission est facturée à <strong className="text-orange">{formData.authorType === 'particulier' ? '15.000 F CFA' : '25.000 F CFA'}</strong>. En soumettant ce formulaire, notre équipe vous contactera pour procéder au paiement avant publication.
+                    <strong>Note importante :</strong> La soumission est facturée à <strong className="text-orange">{formData.authorType === 'particulier' ? '15.000 F CFA' : '25.000 F CFA'}</strong>. Une fois soumis, vous serez redirigé vers le paiement sécurisé pour finaliser votre règlement.
                   </p>
                 </div>
                 <button
