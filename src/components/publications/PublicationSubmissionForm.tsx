@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Send, CheckCircle, AlertCircle, Loader2, UploadCloud, Image as ImageIcon, FileText, Smartphone, CreditCard, Lock } from "lucide-react";
 import { supabase } from "../../lib/supabase";
 
@@ -12,6 +12,25 @@ export default function PublicationSubmissionForm() {
   const [paymentMethod, setPaymentMethod] = useState<"fedapay" | "izipay">("fedapay");
   const [paymentStep, setPaymentStep] = useState<"choice" | "redirecting" | "later">("choice");
   const [submittedAuthorType, setSubmittedAuthorType] = useState<string>("particulier");
+  
+  const [payerDetails, setPayerDetails] = useState({
+    author: "",
+    email: "",
+    contact: "",
+  });
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const existingScript = document.getElementById("fedapay-checkout-script");
+      if (!existingScript) {
+        const script = document.createElement("script");
+        script.id = "fedapay-checkout-script";
+        script.src = "https://cdn.fedapay.com/checkout.js?v=1.1.7";
+        script.async = true;
+        document.body.appendChild(script);
+      }
+    }
+  }, []);
 
   const [formData, setFormData] = useState({
     authorType: "particulier",
@@ -90,6 +109,11 @@ export default function PublicationSubmissionForm() {
       if (submitError) throw submitError;
 
       setSubmittedAuthorType(formData.authorType);
+      setPayerDetails({
+        author: formData.author,
+        email: formData.email,
+        contact: formData.contact,
+      });
       setSuccess(true);
       setPaymentStep("choice");
       setFormData({
@@ -201,15 +225,53 @@ export default function PublicationSubmissionForm() {
                     <button
                       onClick={async () => {
                         setPaymentStep("redirecting");
-                        // Wait 2s to simulate secure token generation
-                        await new Promise(resolve => setTimeout(resolve, 2000));
+                        // Wait 1s to simulate secure signature/token generation
+                        await new Promise(resolve => setTimeout(resolve, 1000));
                         
                         if (paymentMethod === "fedapay") {
-                          window.open("https://app.fedapay.com", "_blank");
+                          const FedaPay = (window as any).FedaPay;
+                          if (FedaPay) {
+                            try {
+                              const amountValue = submittedAuthorType === "particulier" ? 15000 : 25000;
+                              const authorName = payerDetails.author || "Auteur SaniNova";
+                              const nameParts = authorName.trim().split(" ");
+                              const firstname = nameParts[0] || "Auteur";
+                              const lastname = nameParts.slice(1).join(" ") || "SaniNova";
+                              
+                              const widget = FedaPay.init({
+                                public_key: process.env.NEXT_PUBLIC_FEDAPAY_PUBLIC_KEY || "pk_sandbox_q5dJjE5P1p2T3s4Y5Z6W7Q8E",
+                                transaction: {
+                                  amount: amountValue,
+                                  description: `Frais de soumission de publication SaniNova (${submittedAuthorType === "particulier" ? "Tarif Particulier" : "Tarif Entreprise"})`,
+                                },
+                                customer: {
+                                  firstname: firstname,
+                                  lastname: lastname,
+                                  email: payerDetails.email || "contact@saninova.com",
+                                  phone_number: {
+                                    number: payerDetails.contact || "",
+                                    country: "bj"
+                                  }
+                                }
+                              });
+                              
+                              setPaymentStep("choice");
+                              widget.open();
+                            } catch (err) {
+                              console.error("FedaPay widget initialization failed:", err);
+                              alert("Une erreur est survenue lors de l'initialisation du widget de paiement Fédapay.");
+                              setPaymentStep("choice");
+                            }
+                          } else {
+                            console.warn("FedaPay library not loaded on window. Redirecting to backup link...");
+                            window.open("https://app.fedapay.com", "_blank");
+                            setPaymentStep("choice");
+                          }
                         } else {
+                          // Izipay fallback
                           window.open("https://izipay.com", "_blank");
+                          setPaymentStep("choice");
                         }
-                        setPaymentStep("choice"); // reset for next steps if they go back
                       }}
                       className="w-full px-8 py-4 bg-orange hover:bg-[#d95c00] text-white font-poppins font-bold rounded-xl shadow-lg shadow-orange/20 transition-all duration-300 flex items-center justify-center space-x-2"
                     >

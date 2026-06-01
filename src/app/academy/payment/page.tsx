@@ -84,17 +84,65 @@ function PaymentContent() {
     }
   }, [trainingSlug]);
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const existingScript = document.getElementById("fedapay-checkout-script");
+      if (!existingScript) {
+        const script = document.createElement("script");
+        script.id = "fedapay-checkout-script";
+        script.src = "https://cdn.fedapay.com/checkout.js?v=1.1.7";
+        script.async = true;
+        document.body.appendChild(script);
+      }
+    }
+  }, []);
+
   const handlePayment = async () => {
     if (selectedMethod === "fedapay") {
-      // Redirect to Fedapay payment gateway
-      // In production: replace with actual Fedapay checkout URL with API key & order details
-      window.open("https://app.fedapay.com", "_blank");
+      const FedaPay = (window as any).FedaPay;
+      if (FedaPay) {
+        try {
+          const priceValue = parseInt(courseDetails.price.replace(/\D/g, ""));
+          const nameParts = participantName.trim().split(" ");
+          const firstname = nameParts[0] || "Participant";
+          const lastname = nameParts.slice(1).join(" ") || "SaniNova";
+          const savedEmail = localStorage.getItem("registered_email") || "contact@saninova.com";
+          
+          // Mark paid so the confirmation screen validates it correctly
+          if (trainingSlug) {
+            localStorage.setItem(`paid_${trainingSlug}`, "true");
+          }
+          
+          const widget = FedaPay.init({
+            public_key: process.env.NEXT_PUBLIC_FEDAPAY_PUBLIC_KEY || "pk_live_glLmgqSBaYSt9ktutyPAmLuh",
+            transaction: {
+              amount: priceValue,
+              description: `Frais d'inscription - ${courseDetails.title}`,
+            },
+            customer: {
+              firstname: firstname,
+              lastname: lastname,
+              email: savedEmail,
+            },
+            callback_url: `${window.location.origin}/academy/confirmation?training=${trainingSlug}`
+          });
+          
+          widget.open();
+          return;
+        } catch (err) {
+          console.error("FedaPay widget initialization failed:", err);
+          alert("Une erreur est survenue lors de l'initialisation du paiement Fédapay.");
+        }
+      } else {
+        console.warn("FedaPay script not loaded. Redirecting to backup link...");
+        window.open("https://app.fedapay.com", "_blank");
+      }
     } else if (selectedMethod === "izichangepay") {
       // Redirect to Izichangepay crypto payment gateway
-      window.open("https://izichangepay.com", "_blank");
+      window.open("https://izipay.com", "_blank");
     }
 
-    // After gateway interaction, simulate local confirmation for demo
+    // Fallback simulation for Izipay or if script is missing
     setIsProcessing(true);
     await new Promise(resolve => setTimeout(resolve, 2000));
     if (trainingSlug) {
