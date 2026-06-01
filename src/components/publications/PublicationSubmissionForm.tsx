@@ -218,10 +218,13 @@ export default function PublicationSubmissionForm() {
                     </button>
                     
                     <button
-                      onClick={() => setPaymentStep("later")}
-                      className="w-full px-8 py-4 bg-slate-100 hover:bg-slate-200 text-slate-700 font-poppins font-bold rounded-xl transition-all duration-300"
+                      onClick={() => {
+                        setSuccess(false);
+                        setPaymentStep("choice");
+                      }}
+                      className="text-slate-400 hover:text-orange text-sm font-semibold transition-all mt-2 cursor-pointer"
                     >
-                      Payer plus tard
+                      Soumettre une autre publication
                     </button>
                   </div>
                 </div>
@@ -235,31 +238,6 @@ export default function PublicationSubmissionForm() {
                     <p className="text-slate-500 text-sm mt-2 max-w-sm">
                       Nous vous redirigeons vers la passerelle de paiement sécurisée de {paymentMethod === "fedapay" ? "Fédapay" : "Izipay"} pour finaliser votre transaction.
                     </p>
-                  </div>
-                </div>
-              )}
-
-              {paymentStep === "later" && (
-                <div className="flex flex-col items-center justify-center py-12 text-center space-y-6">
-                  <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center text-blue-500 mb-2 border border-blue-100">
-                    <Lock className="w-8 h-8" />
-                  </div>
-                  <div className="space-y-2">
-                    <h3 className="font-montserrat text-2xl font-bold text-primary">Option "Payer plus tard" enregistrée</h3>
-                    <p className="text-slate-500 text-sm max-w-md">
-                      Votre soumission reste enregistrée au statut "Nouveau". Notre équipe commerciale prendra contact avec vous par e-mail afin de vous transmettre le lien de paiement direct et finaliser la validation.
-                    </p>
-                  </div>
-                  <div className="pt-4 flex flex-col sm:flex-row gap-4">
-                    <button 
-                      onClick={() => {
-                        setSuccess(false);
-                        setPaymentStep("choice");
-                      }}
-                      className="px-8 py-3 bg-light text-slate-800 font-semibold rounded-xl hover:bg-light/80 transition-colors shadow-sm text-sm"
-                    >
-                      Soumettre une autre publication
-                    </button>
                   </div>
                 </div>
               )}
