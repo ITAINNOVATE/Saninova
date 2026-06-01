@@ -40,7 +40,7 @@ export default function PublicationSubmissionForm() {
 
     if (uploadError) {
       console.error("Upload error details:", uploadError);
-      throw new Error(`Erreur lors de l'upload du fichier ${file.name}. Assurez-vous que le bucket "publication_submissions" existe et est public.`);
+      throw new Error(`Erreur lors de l'upload du fichier ${file.name} (${uploadError.message || JSON.stringify(uploadError)}). Assurez-vous que le bucket "publication_submissions" existe et est public.`);
     }
 
     const { data: { publicUrl } } = supabase.storage
