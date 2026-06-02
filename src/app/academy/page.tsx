@@ -171,7 +171,7 @@ export default function AcademyLanding() {
             </a>
             <a 
               href="/academy/register" 
-              className="px-10 py-4 bg-white text-primary rounded-full font-bold text-lg shadow-xl hover:scale-105 active:scale-95 transition-all"
+              className="px-10 py-4 bg-transparent border-2 border-orange text-orange rounded-full font-bold text-lg shadow-xl hover:bg-orange hover:text-white hover:shadow-[0_0_20px_rgba(255,122,0,0.3)] transition-all"
             >
               {t.academy.ctaRegister}
             </a>

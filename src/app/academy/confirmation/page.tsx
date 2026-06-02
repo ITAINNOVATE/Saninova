@@ -125,7 +125,8 @@ function ConfirmationContent() {
             </Link>
             <Link 
               href="/academy/portal" 
-              className="px-10 py-5 bg-white text-primary rounded-2xl font-black shadow-xl hover:scale-105 transition-all flex items-center justify-center gap-2"
+              className="px-10 py-5 btn-white-force rounded-2xl font-black shadow-xl hover:scale-105 transition-all flex items-center justify-center gap-2"
+              style={{ backgroundColor: '#FFFFFF', color: '#0B3C5D' }}
             >
               Mon Tableau de bord
             </Link>

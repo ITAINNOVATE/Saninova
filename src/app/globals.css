@@ -93,6 +93,17 @@ body {
   background-color: #050B14 !important;
 }
 
+/* Force true white buttons with high-contrast text */
+.btn-white-force {
+  background-color: #FFFFFF !important;
+  color: #0B3C5D !important;
+}
+.btn-white-force:hover {
+  background-color: #F1F5F9 !important;
+  color: #0B3C5D !important;
+}
+
+
 /* Partners section exception — keep background white */
 section.bg-white.border-y {
   background-color: #ffffff !important;
