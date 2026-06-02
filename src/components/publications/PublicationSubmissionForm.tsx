@@ -242,6 +242,9 @@ export default function PublicationSubmissionForm() {
                                 public_key: process.env.NEXT_PUBLIC_FEDAPAY_PUBLIC_KEY || "pk_sandbox_q5dJjE5P1p2T3s4Y5Z6W7Q8E",
                                 transaction: {
                                   amount: amountValue,
+                                  currency: {
+                                    iso: "XOF"
+                                  },
                                   description: `Frais de soumission de publication SaniNova (${submittedAuthorType === "particulier" ? "Tarif Particulier" : "Tarif Entreprise"})`,
                                 },
                                 customer: {

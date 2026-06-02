@@ -117,6 +117,9 @@ function PaymentContent() {
             public_key: process.env.NEXT_PUBLIC_FEDAPAY_PUBLIC_KEY || "pk_live_glLmgqSBaYSt9ktutyPAmLuh",
             transaction: {
               amount: priceValue,
+              currency: {
+                iso: "XOF"
+              },
               description: `Frais d'inscription - ${courseDetails.title}`,
             },
             customer: {
