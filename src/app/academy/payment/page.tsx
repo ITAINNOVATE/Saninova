@@ -141,8 +141,46 @@ function PaymentContent() {
         window.open("https://app.fedapay.com", "_blank");
       }
     } else if (selectedMethod === "izichangepay") {
-      // Redirect to Izichangepay crypto payment gateway
-      window.open("https://izipay.com", "_blank");
+      setIsProcessing(true);
+      try {
+        const savedEmail = localStorage.getItem("registered_email") || "contact@saninova.com";
+        const fullname = participantName || "Apprenant SaniNova";
+        const nameParts = fullname.trim().split(" ");
+        const firstname = nameParts[0] || "Apprenant";
+        const lastname = nameParts.slice(1).join(" ") || "SaniNova";
+        const priceValue = parseInt(courseDetails.price.replace(/\D/g, ""));
+
+        const response = await fetch("/api/payment/izipay", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            amount: priceValue,
+            firstname,
+            lastname,
+            email: savedEmail,
+            trainingSlug,
+          }),
+        });
+
+        const data = await response.json();
+        if (data.status && data.url) {
+          if (trainingSlug) {
+            localStorage.setItem(`paid_${trainingSlug}`, "true");
+          }
+          window.open(data.url, "_blank");
+          setIsProcessing(false);
+          router.push(`/academy/confirmation?training=${trainingSlug}`);
+          return;
+        } else {
+          console.warn("IzichangePay Sandbox initialization failed, using default redirection:", data.message);
+          window.open("https://izipay.com", "_blank");
+        }
+      } catch (err) {
+        console.error("IzichangePay Sandbox integration failed, using backup redirection:", err);
+        window.open("https://izipay.com", "_blank");
+      }
     }
 
     // Fallback simulation for Izipay or if script is missing

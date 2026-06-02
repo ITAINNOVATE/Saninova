@@ -271,8 +271,39 @@ export default function PublicationSubmissionForm() {
                             setPaymentStep("choice");
                           }
                         } else {
-                          // Izipay fallback
-                          window.open("https://izipay.com", "_blank");
+                          try {
+                            const amountValue = submittedAuthorType === "particulier" ? 15000 : 25000;
+                            const authorName = payerDetails.author || "Auteur SaniNova";
+                            const nameParts = authorName.trim().split(" ");
+                            const firstname = nameParts[0] || "Auteur";
+                            const lastname = nameParts.slice(1).join(" ") || "SaniNova";
+
+                            const response = await fetch("/api/payment/izipay", {
+                              method: "POST",
+                              headers: {
+                                "Content-Type": "application/json",
+                              },
+                              body: JSON.stringify({
+                                amount: amountValue,
+                                firstname,
+                                lastname,
+                                email: payerDetails.email || "contact@saninova.com",
+                                isPublication: true,
+                                publicationId: "PUB-" + Math.floor(1000 + Math.random() * 9000),
+                              }),
+                            });
+
+                            const data = await response.json();
+                            if (data.status && data.url) {
+                              window.open(data.url, "_blank");
+                            } else {
+                              console.warn("IzichangePay Sandbox failed, falling back to backup redirect:", data.message);
+                              window.open("https://izipay.com", "_blank");
+                            }
+                          } catch (err) {
+                            console.error("IzichangePay Sandbox integration failed:", err);
+                            window.open("https://izipay.com", "_blank");
+                          }
                           setPaymentStep("choice");
                         }
                       }}
