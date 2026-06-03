@@ -71,6 +71,11 @@ export default function DashboardLayout({ children }: LayoutProps) {
       icon: Mail,
     },
     {
+      label: "Abonnés Newsletter",
+      href: "/admin/dashboard/newsletter",
+      icon: Mail,
+    },
+    {
       label: "Publications / CMS",
       href: "/admin/dashboard/publications",
       icon: BookOpen,

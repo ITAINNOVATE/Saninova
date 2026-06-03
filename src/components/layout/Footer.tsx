@@ -48,11 +48,71 @@ const TwitterIcon = ({ className }: { className?: string }) => (
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import { supabase } from "../../lib/supabase";
 
 export const Footer: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
   const pathname = usePathname();
   const router = useRouter();
+
+  const [email, setEmail] = React.useState("");
+  const [subStatus, setSubStatus] = React.useState<"idle" | "loading" | "success" | "error">("idle");
+  const [subMessage, setSubMessage] = React.useState("");
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+
+    // Simple email regex validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setSubStatus("error");
+      setSubMessage(
+        locale === "fr" 
+          ? "Veuillez entrer une adresse email valide." 
+          : "Please enter a valid email address."
+      );
+      return;
+    }
+
+    setSubStatus("loading");
+
+    try {
+      const { error } = await supabase
+        .from("saninova_newsletter_subscribers")
+        .insert([{ email }]);
+
+      if (error) {
+        // If error code is 23505 (unique violation), it means already subscribed
+        if (error.code === "23505") {
+          setSubStatus("success");
+          setSubMessage(
+            locale === "fr" 
+              ? "Vous êtes déjà inscrit à notre newsletter !" 
+              : "You are already subscribed to our newsletter!"
+          );
+        } else {
+          throw error;
+        }
+      } else {
+        setSubStatus("success");
+        setSubMessage(
+          locale === "fr" 
+            ? "Merci pour votre abonnement !" 
+            : "Thank you for subscribing!"
+        );
+        setEmail("");
+      }
+    } catch (err: any) {
+      console.error("Newsletter Subscription Error:", err);
+      setSubStatus("error");
+      setSubMessage(
+        locale === "fr" 
+          ? "Une erreur est survenue. Veuillez réessayer." 
+          : "An error occurred. Please try again."
+      );
+    }
+  };
 
   // Hide footer on admin pages
   if (pathname?.startsWith("/admin")) {
@@ -194,18 +254,40 @@ export const Footer: React.FC = () => {
               Newsletter
             </h4>
             <p className="font-inter text-base sm:text-lg text-white/70 leading-relaxed">
-              Inscrivez-vous pour recevoir nos rapports stratégiques et analyses.
+              {locale === "fr"
+                ? "Inscrivez-vous pour recevoir nos rapports stratégiques et analyses."
+                : "Subscribe to receive our strategic reports and analyses."}
             </p>
-            <div className="flex flex-col space-y-2">
+            <form onSubmit={handleSubscribe} className="flex flex-col space-y-2">
               <input
                 type="email"
-                placeholder="Votre adresse email"
-                className="bg-white/10 text-white placeholder-white/40 border border-white/10 px-4 py-2.5 rounded-xl text-sm focus:outline-none focus:border-accent"
+                placeholder={locale === "fr" ? "Votre adresse email" : "Your email address"}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                disabled={subStatus === "loading"}
+                className="bg-white/10 text-white placeholder-white/40 border border-white/10 px-4 py-2.5 rounded-xl text-sm focus:outline-none focus:border-accent disabled:opacity-50"
+                required
               />
-              <button className="bg-accent hover:bg-accent/90 text-white font-poppins font-medium text-sm py-2.5 rounded-xl shadow-lg transition-all duration-200">
-                S'abonner
+              <button 
+                type="submit"
+                disabled={subStatus === "loading"}
+                className="bg-accent hover:bg-accent/90 text-white font-poppins font-medium text-sm py-2.5 rounded-xl shadow-lg transition-all duration-200 flex items-center justify-center gap-2 disabled:opacity-50 cursor-pointer"
+              >
+                {subStatus === "loading" ? (
+                  <>
+                    <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                    {locale === "fr" ? "Inscription..." : "Subscribing..."}
+                  </>
+                ) : (
+                  locale === "fr" ? "S'abonner" : "Subscribe"
+                )}
               </button>
-            </div>
+              {subMessage && (
+                <p className={`text-xs font-semibold mt-1 font-poppins ${subStatus === "success" ? "text-emerald-400" : "text-rose-400"}`}>
+                  {subMessage}
+                </p>
+              )}
+            </form>
           </div>
         </div>
 
