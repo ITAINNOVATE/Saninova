@@ -10,7 +10,9 @@ import {
   Calendar, 
   Loader2,
   AlertCircle,
-  CheckCircle2
+  CheckCircle2,
+  Edit2,
+  X
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -18,6 +20,7 @@ interface Subscriber {
   id: string;
   email: string;
   created_at: string;
+  locale?: string;
 }
 
 export default function NewsletterSubscribers() {
@@ -26,6 +29,14 @@ export default function NewsletterSubscribers() {
   const [error, setError] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [actionMessage, setActionMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
+
+  // Edit states
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [editingSub, setEditingSub] = useState<Subscriber | null>(null);
+  const [editFormData, setEditFormData] = useState<any>({
+    email: "",
+    locale: "fr",
+  });
 
   // Fetch subscribers from Supabase
   const fetchSubscribers = async () => {
@@ -44,6 +55,39 @@ export default function NewsletterSubscribers() {
       setError("Impossible de charger la liste des abonnés.");
     } finally {
       setLoading(false);
+    }
+  };
+
+  const openEditModal = (sub: Subscriber) => {
+    setEditingSub(sub);
+    setEditFormData({
+      email: sub.email || "",
+      locale: sub.locale || "fr",
+    });
+    setIsEditModalOpen(true);
+  };
+
+  const handleEditSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!editingSub) return;
+
+    try {
+      const { error: dbError } = await supabase
+        .from("saninova_newsletter_subscribers")
+        .update(editFormData)
+        .eq("id", editingSub.id);
+
+      if (dbError) throw dbError;
+
+      setSubscribers(subscribers.map(sub => 
+        sub.id === editingSub.id ? { ...sub, ...editFormData } : sub
+      ));
+      setIsEditModalOpen(false);
+      setEditingSub(null);
+      showActionMessage("success", "L'abonné a été modifié avec succès.");
+    } catch (err: any) {
+      console.error("Error updating subscriber:", err);
+      showActionMessage("error", "Une erreur est survenue lors de la modification.");
     }
   };
 
@@ -255,13 +299,22 @@ export default function NewsletterSubscribers() {
                       })}
                     </td>
                     <td className="py-4 px-6 text-right">
-                      <button
-                        onClick={() => handleDelete(sub.id, sub.email)}
-                        className="p-2 bg-slate-800/10 hover:bg-rose-500/10 text-slate-500 hover:text-rose-400 rounded-lg transition-all opacity-0 group-hover:opacity-100 cursor-pointer"
-                        title="Désabonner"
-                      >
-                        <Trash2 className="w-4.5 h-4.5" />
-                      </button>
+                      <div className="flex items-center justify-end gap-2">
+                        <button
+                          onClick={() => openEditModal(sub)}
+                          className="p-2 bg-slate-800/10 hover:bg-emerald-500/10 text-slate-500 hover:text-emerald-400 rounded-lg transition-all opacity-0 group-hover:opacity-100 cursor-pointer"
+                          title="Modifier"
+                        >
+                          <Edit2 className="w-4 h-4" />
+                        </button>
+                        <button
+                          onClick={() => handleDelete(sub.id, sub.email)}
+                          className="p-2 bg-slate-800/10 hover:bg-rose-500/10 text-slate-500 hover:text-rose-400 rounded-lg transition-all opacity-0 group-hover:opacity-100 cursor-pointer"
+                          title="Désabonner"
+                        >
+                          <Trash2 className="w-4.5 h-4.5" />
+                        </button>
+                      </div>
                     </td>
                   </tr>
                 ))}
@@ -270,6 +323,62 @@ export default function NewsletterSubscribers() {
           </div>
         )}
       </div>
+
+      {/* Edit Modal */}
+      {isEditModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={() => setIsEditModalOpen(false)}></div>
+          <div className="relative bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-md p-6 shadow-2xl">
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="text-lg font-bold font-montserrat text-white">Modifier l'Abonné</h3>
+              <button onClick={() => setIsEditModalOpen(false)} className="text-slate-400 hover:text-white p-1">
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            <form onSubmit={handleEditSubmit} className="space-y-4">
+              <div>
+                <label className="block text-xs font-medium text-slate-400 mb-1">Adresse Email</label>
+                <input
+                  type="email"
+                  required
+                  value={editFormData.email}
+                  onChange={(e) => setEditFormData({ ...editFormData, email: e.target.value })}
+                  className="w-full px-3 py-2 bg-slate-850 border border-slate-750 text-sm text-white rounded-lg focus:outline-none focus:border-emerald-500 outline-none"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-medium text-slate-400 mb-1">Langue de préférence</label>
+                <select
+                  value={editFormData.locale}
+                  onChange={(e) => setEditFormData({ ...editFormData, locale: e.target.value })}
+                  className="w-full px-3 py-2 bg-slate-850 border border-slate-750 text-sm text-white rounded-lg focus:outline-none focus:border-emerald-500 outline-none"
+                >
+                  <option value="fr">Français (FR)</option>
+                  <option value="en">English (EN)</option>
+                </select>
+              </div>
+
+              <div className="flex justify-end gap-3 pt-4 font-poppins">
+                <button
+                  type="button"
+                  onClick={() => setIsEditModalOpen(false)}
+                  className="px-4 py-2 bg-slate-800 hover:bg-slate-750 text-sm font-bold text-white rounded-lg transition-colors cursor-pointer"
+                >
+                  Annuler
+                </button>
+                <button
+                  type="submit"
+                  className="px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-sm font-bold text-slate-950 rounded-lg transition-colors cursor-pointer"
+                >
+                  Enregistrer
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { supabase } from "../../../../lib/supabase";
-import { Loader2, Search, FileText, CheckCircle, Mail, Phone, ExternalLink, MapPin, Briefcase } from "lucide-react";
+import { Loader2, Search, FileText, CheckCircle, Mail, Phone, ExternalLink, MapPin, Briefcase, Edit2, Trash2, X } from "lucide-react";
 
 interface ExpertApplication {
   id: string;
@@ -32,6 +32,23 @@ export default function ExpertsDashboard() {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [updating, setUpdating] = useState<string | null>(null);
+
+  // Edit states
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [editingApp, setEditingApp] = useState<ExpertApplication | null>(null);
+  const [editFormData, setEditFormData] = useState<any>({
+    first_name: "",
+    last_name: "",
+    email: "",
+    phone: "",
+    country: "",
+    city: "",
+    professional_status: "",
+    job_title: "",
+    institution: "",
+    availability: "",
+    status: "",
+  });
 
   useEffect(() => {
     fetchApplications();
@@ -69,6 +86,63 @@ export default function ExpertsDashboard() {
       alert("Erreur lors de la mise à jour du statut.");
     } finally {
       setUpdating(null);
+    }
+  };
+
+  const handleDelete = async (id: string) => {
+    if (!confirm("Voulez-vous vraiment supprimer cette candidature d'expert ?")) return;
+    try {
+      const { error } = await supabase
+        .from('saninova_expert_applications')
+        .delete()
+        .eq('id', id);
+        
+      if (error) throw error;
+      setApplications(applications.filter(app => app.id !== id));
+    } catch (err) {
+      console.error("Error deleting application:", err);
+      alert("Erreur lors de la suppression.");
+    }
+  };
+
+  const openEditModal = (app: ExpertApplication) => {
+    setEditingApp(app);
+    setEditFormData({
+      first_name: app.first_name || "",
+      last_name: app.last_name || "",
+      email: app.email || "",
+      phone: app.phone || "",
+      country: app.country || "",
+      city: app.city || "",
+      professional_status: app.professional_status || "",
+      job_title: app.job_title || "",
+      institution: app.institution || "",
+      availability: app.availability || "",
+      status: app.status || "Nouveau",
+    });
+    setIsEditModalOpen(true);
+  };
+
+  const handleEditSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!editingApp) return;
+
+    try {
+      const { error } = await supabase
+        .from('saninova_expert_applications')
+        .update(editFormData)
+        .eq('id', editingApp.id);
+
+      if (error) throw error;
+
+      setApplications(applications.map(app => 
+        app.id === editingApp.id ? { ...app, ...editFormData } : app
+      ));
+      setIsEditModalOpen(false);
+      setEditingApp(null);
+    } catch (err) {
+      console.error("Error updating application:", err);
+      alert("Erreur lors de la mise à jour.");
     }
   };
 
@@ -206,6 +280,20 @@ export default function ExpertsDashboard() {
                             {updating === app.id ? <Loader2 className="w-4 h-4 animate-spin" /> : <CheckCircle className="w-4 h-4" />}
                           </button>
                         )}
+                        <button
+                          onClick={() => openEditModal(app)}
+                          className="p-1.5 bg-slate-800 text-slate-300 hover:text-emerald-400 rounded border border-slate-700 transition-colors"
+                          title="Modifier"
+                        >
+                          <Edit2 className="w-4 h-4" />
+                        </button>
+                        <button
+                          onClick={() => handleDelete(app.id)}
+                          className="p-1.5 bg-slate-800 text-slate-300 hover:text-red-400 rounded border border-slate-700 transition-colors"
+                          title="Supprimer"
+                        >
+                          <Trash2 className="w-4 h-4" />
+                        </button>
                       </div>
                     </td>
                   </tr>
@@ -215,6 +303,160 @@ export default function ExpertsDashboard() {
           </div>
         )}
       </div>
+
+      {/* Edit Modal */}
+      {isEditModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={() => setIsEditModalOpen(false)}></div>
+          <div className="relative bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-xl max-h-[90vh] overflow-y-auto p-6 shadow-2xl">
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="text-lg font-bold font-montserrat text-white">Modifier la Candidature</h3>
+              <button onClick={() => setIsEditModalOpen(false)} className="text-slate-400 hover:text-white p-1">
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            <form onSubmit={handleEditSubmit} className="space-y-4">
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-medium text-slate-400 mb-1">Prénom</label>
+                  <input
+                    type="text"
+                    required
+                    value={editFormData.first_name}
+                    onChange={(e) => setEditFormData({ ...editFormData, first_name: e.target.value })}
+                    className="w-full px-3 py-2 bg-slate-850 border border-slate-750 text-sm text-white rounded-lg focus:outline-none focus:border-[#00A878] outline-none"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-medium text-slate-400 mb-1">Nom</label>
+                  <input
+                    type="text"
+                    required
+                    value={editFormData.last_name}
+                    onChange={(e) => setEditFormData({ ...editFormData, last_name: e.target.value })}
+                    className="w-full px-3 py-2 bg-slate-850 border border-slate-750 text-sm text-white rounded-lg focus:outline-none focus:border-[#00A878] outline-none"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-medium text-slate-400 mb-1">Email</label>
+                  <input
+                    type="email"
+                    required
+                    value={editFormData.email}
+                    onChange={(e) => setEditFormData({ ...editFormData, email: e.target.value })}
+                    className="w-full px-3 py-2 bg-slate-850 border border-slate-750 text-sm text-white rounded-lg focus:outline-none focus:border-[#00A878] outline-none"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-medium text-slate-400 mb-1">Téléphone</label>
+                  <input
+                    type="text"
+                    value={editFormData.phone}
+                    onChange={(e) => setEditFormData({ ...editFormData, phone: e.target.value })}
+                    className="w-full px-3 py-2 bg-slate-850 border border-slate-750 text-sm text-white rounded-lg focus:outline-none focus:border-[#00A878] outline-none"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-medium text-slate-400 mb-1">Pays</label>
+                  <input
+                    type="text"
+                    required
+                    value={editFormData.country}
+                    onChange={(e) => setEditFormData({ ...editFormData, country: e.target.value })}
+                    className="w-full px-3 py-2 bg-slate-850 border border-slate-750 text-sm text-white rounded-lg focus:outline-none focus:border-[#00A878] outline-none"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-medium text-slate-400 mb-1">Ville</label>
+                  <input
+                    type="text"
+                    value={editFormData.city}
+                    onChange={(e) => setEditFormData({ ...editFormData, city: e.target.value })}
+                    className="w-full px-3 py-2 bg-slate-850 border border-slate-750 text-sm text-white rounded-lg focus:outline-none focus:border-[#00A878] outline-none"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-medium text-slate-400 mb-1">Statut Professionnel</label>
+                  <input
+                    type="text"
+                    value={editFormData.professional_status}
+                    onChange={(e) => setEditFormData({ ...editFormData, professional_status: e.target.value })}
+                    className="w-full px-3 py-2 bg-slate-850 border border-slate-750 text-sm text-white rounded-lg focus:outline-none focus:border-[#00A878] outline-none"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-medium text-slate-400 mb-1">Disponibilité</label>
+                  <input
+                    type="text"
+                    value={editFormData.availability}
+                    onChange={(e) => setEditFormData({ ...editFormData, availability: e.target.value })}
+                    className="w-full px-3 py-2 bg-slate-850 border border-slate-750 text-sm text-white rounded-lg focus:outline-none focus:border-[#00A878] outline-none"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-medium text-slate-400 mb-1">Poste / Rôle</label>
+                  <input
+                    type="text"
+                    value={editFormData.job_title}
+                    onChange={(e) => setEditFormData({ ...editFormData, job_title: e.target.value })}
+                    className="w-full px-3 py-2 bg-slate-850 border border-slate-750 text-sm text-white rounded-lg focus:outline-none focus:border-[#00A878] outline-none"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-medium text-slate-400 mb-1">Institution</label>
+                  <input
+                    type="text"
+                    value={editFormData.institution}
+                    onChange={(e) => setEditFormData({ ...editFormData, institution: e.target.value })}
+                    className="w-full px-3 py-2 bg-slate-850 border border-slate-750 text-sm text-white rounded-lg focus:outline-none focus:border-[#00A878] outline-none"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-xs font-medium text-slate-400 mb-1">Statut d'évaluation</label>
+                <select
+                  value={editFormData.status}
+                  onChange={(e) => setEditFormData({ ...editFormData, status: e.target.value })}
+                  className="w-full px-3 py-2 bg-slate-850 border border-slate-750 text-sm text-white rounded-lg focus:outline-none focus:border-[#00A878] outline-none"
+                >
+                  <option value="Nouveau">Nouveau</option>
+                  <option value="Examiné">Examiné</option>
+                </select>
+              </div>
+
+              <div className="flex justify-end gap-3 pt-4 font-poppins">
+                <button
+                  type="button"
+                  onClick={() => setIsEditModalOpen(false)}
+                  className="px-4 py-2 bg-slate-800 hover:bg-slate-750 text-sm font-bold text-white rounded-lg transition-colors cursor-pointer"
+                >
+                  Annuler
+                </button>
+                <button
+                  type="submit"
+                  className="px-4 py-2 bg-[#00A878] hover:bg-[#00A878]/90 text-sm font-bold text-white rounded-lg transition-colors cursor-pointer"
+                >
+                  Enregistrer
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

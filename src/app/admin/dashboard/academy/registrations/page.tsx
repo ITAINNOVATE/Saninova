@@ -6,7 +6,8 @@ import {
   Search, Filter, ArrowLeft, Loader2, 
   CheckCircle2, XCircle, MoreHorizontal, 
   Download, Mail, Phone, ExternalLink,
-  CreditCard, UserCheck, AlertCircle, Clock
+  CreditCard, UserCheck, AlertCircle, Clock,
+  Edit2, Trash2, X
 } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -15,6 +16,18 @@ export default function AdminAcademyRegistrations() {
   const [registrations, setRegistrations] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
+
+  // Edit states
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [editingReg, setEditingReg] = useState<any | null>(null);
+  const [editFormData, setEditFormData] = useState<any>({
+    fullname: "",
+    email: "",
+    phone: "",
+    organization: "",
+    role: "",
+    payment_status: "",
+  });
 
   useEffect(() => {
     fetchRegistrations();
@@ -29,6 +42,58 @@ export default function AdminAcademyRegistrations() {
 
     if (data) setRegistrations(data);
     setLoading(false);
+  };
+
+  const handleDelete = async (id: string) => {
+    if (!confirm("Voulez-vous vraiment supprimer cette inscription ?")) return;
+    try {
+      const { error } = await supabase
+        .from("academy_registrations")
+        .delete()
+        .eq("id", id);
+        
+      if (error) throw error;
+      setRegistrations(registrations.filter(r => r.id !== id));
+    } catch (err) {
+      console.error("Error deleting registration:", err);
+      alert("Erreur lors de la suppression.");
+    }
+  };
+
+  const openEditModal = (reg: any) => {
+    setEditingReg(reg);
+    setEditFormData({
+      fullname: reg.fullname || "",
+      email: reg.email || "",
+      phone: reg.phone || "",
+      organization: reg.organization || "",
+      role: reg.role || "",
+      payment_status: reg.payment_status || "pending",
+    });
+    setIsEditModalOpen(true);
+  };
+
+  const handleEditSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!editingReg) return;
+
+    try {
+      const { error } = await supabase
+        .from("academy_registrations")
+        .update(editFormData)
+        .eq("id", editingReg.id);
+
+      if (error) throw error;
+
+      setRegistrations(registrations.map(r => 
+        r.id === editingReg.id ? { ...r, ...editFormData } : r
+      ));
+      setIsEditModalOpen(false);
+      setEditingReg(null);
+    } catch (err) {
+      console.error("Error updating registration:", err);
+      alert("Erreur lors de la mise à jour.");
+    }
   };
 
   const updatePaymentStatus = async (id: string, status: string) => {
@@ -197,6 +262,20 @@ export default function AdminAcademyRegistrations() {
                         >
                           <CreditCard className="w-4 h-4" />
                         </button>
+                        <button 
+                          onClick={() => openEditModal(r)}
+                          className="p-2 rounded-lg bg-slate-800 text-slate-400 hover:text-emerald-400 transition-all"
+                          title="Modifier"
+                        >
+                          <Edit2 className="w-4 h-4" />
+                        </button>
+                        <button 
+                          onClick={() => handleDelete(r.id)}
+                          className="p-2 rounded-lg bg-slate-800 text-slate-400 hover:text-red-400 transition-all"
+                          title="Supprimer"
+                        >
+                          <Trash2 className="w-4 h-4" />
+                        </button>
                       </div>
                     </td>
                   </tr>
@@ -206,6 +285,109 @@ export default function AdminAcademyRegistrations() {
           </div>
         )}
       </div>
+
+      {/* Edit Modal */}
+      {isEditModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={() => setIsEditModalOpen(false)}></div>
+          <div className="relative bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-xl max-h-[90vh] overflow-y-auto p-6 shadow-2xl">
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="text-lg font-bold font-montserrat text-white">Modifier l'Inscription</h3>
+              <button onClick={() => setIsEditModalOpen(false)} className="text-slate-400 hover:text-white p-1">
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            <form onSubmit={handleEditSubmit} className="space-y-4">
+              <div>
+                <label className="block text-xs font-medium text-slate-400 mb-1">Nom complet</label>
+                <input
+                  type="text"
+                  required
+                  value={editFormData.fullname}
+                  onChange={(e) => setEditFormData({ ...editFormData, fullname: e.target.value })}
+                  className="w-full px-3 py-2 bg-slate-850 border border-slate-750 text-sm text-white rounded-lg focus:outline-none focus:border-[#00A878] outline-none"
+                />
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-medium text-slate-400 mb-1">Email</label>
+                  <input
+                    type="email"
+                    required
+                    value={editFormData.email}
+                    onChange={(e) => setEditFormData({ ...editFormData, email: e.target.value })}
+                    className="w-full px-3 py-2 bg-slate-850 border border-slate-750 text-sm text-white rounded-lg focus:outline-none focus:border-[#00A878] outline-none"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-medium text-slate-400 mb-1">Téléphone</label>
+                  <input
+                    type="text"
+                    required
+                    value={editFormData.phone}
+                    onChange={(e) => setEditFormData({ ...editFormData, phone: e.target.value })}
+                    className="w-full px-3 py-2 bg-slate-850 border border-slate-750 text-sm text-white rounded-lg focus:outline-none focus:border-[#00A878] outline-none"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-medium text-slate-400 mb-1">Organisation</label>
+                  <input
+                    type="text"
+                    required
+                    value={editFormData.organization}
+                    onChange={(e) => setEditFormData({ ...editFormData, organization: e.target.value })}
+                    className="w-full px-3 py-2 bg-slate-850 border border-slate-750 text-sm text-white rounded-lg focus:outline-none focus:border-[#00A878] outline-none"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-medium text-slate-400 mb-1">Poste / Rôle</label>
+                  <input
+                    type="text"
+                    required
+                    value={editFormData.role}
+                    onChange={(e) => setEditFormData({ ...editFormData, role: e.target.value })}
+                    className="w-full px-3 py-2 bg-slate-850 border border-slate-750 text-sm text-white rounded-lg focus:outline-none focus:border-[#00A878] outline-none"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-xs font-medium text-slate-400 mb-1">Statut Paiement</label>
+                <select
+                  value={editFormData.payment_status}
+                  onChange={(e) => setEditFormData({ ...editFormData, payment_status: e.target.value })}
+                  className="w-full px-3 py-2 bg-slate-850 border border-slate-750 text-sm text-white rounded-lg focus:outline-none focus:border-[#00A878] outline-none"
+                >
+                  <option value="pending">En attente</option>
+                  <option value="completed">Confirmé</option>
+                  <option value="cancelled">Annulé</option>
+                </select>
+              </div>
+
+              <div className="flex justify-end gap-3 pt-4 font-poppins">
+                <button
+                  type="button"
+                  onClick={() => setIsEditModalOpen(false)}
+                  className="px-4 py-2 bg-slate-800 hover:bg-slate-750 text-sm font-bold text-white rounded-lg transition-colors cursor-pointer"
+                >
+                  Annuler
+                </button>
+                <button
+                  type="submit"
+                  className="px-4 py-2 bg-[#00A878] hover:bg-[#00A878]/90 text-sm font-bold text-white rounded-lg transition-colors cursor-pointer"
+                >
+                  Enregistrer
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
