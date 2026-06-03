@@ -78,29 +78,23 @@ export const Footer: React.FC = () => {
     setSubStatus("loading");
 
     try {
-      const { error } = await supabase
-        .from("saninova_newsletter_subscribers")
-        .insert([{ email }]);
+      const res = await fetch("/api/newsletter/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, locale }),
+      });
 
-      if (error) {
-        // If error code is 23505 (unique violation), it means already subscribed
-        if (error.code === "23505") {
-          setSubStatus("success");
-          setSubMessage(
-            locale === "fr" 
-              ? "Vous êtes déjà inscrit à notre newsletter !" 
-              : "You are already subscribed to our newsletter!"
-          );
-        } else {
-          throw error;
-        }
-      } else {
-        setSubStatus("success");
-        setSubMessage(
-          locale === "fr" 
-            ? "Merci pour votre abonnement !" 
-            : "Thank you for subscribing!"
-        );
+      const data = await res.json();
+
+      if (!res.ok || !data.success) {
+        throw new Error(data.error || "Subscription request failed");
+      }
+
+      setSubStatus("success");
+      setSubMessage(data.message);
+      if (!data.alreadySubscribed) {
         setEmail("");
       }
     } catch (err: any) {

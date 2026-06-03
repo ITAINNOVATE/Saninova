@@ -142,10 +142,34 @@ export default function PublicationsDashboardPage() {
         if (err) throw err;
       } else {
         // Insert
-        const { error: err } = await supabase
+        const { data: newPubs, error: err } = await supabase
           .from("saninova_publications")
-          .insert([formData]);
+          .insert([formData])
+          .select();
         if (err) throw err;
+
+        if (newPubs && newPubs.length > 0) {
+          const newPub = newPubs[0];
+          // Trigger newsletter sending in background
+          fetch("/api/newsletter/send-publication", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ publicationId: newPub.id }),
+          })
+            .then(async (res) => {
+              const resData = await res.json();
+              if (resData.success) {
+                console.log(`Newsletter broadcast triggered successfully. Sent to ${resData.sentCount} subscribers.`);
+              } else {
+                console.error("Newsletter broadcast failed:", resData.error);
+              }
+            })
+            .catch((fetchErr) => {
+              console.error("Failed to trigger newsletter broadcast API:", fetchErr);
+            });
+        }
       }
 
       await fetchPublications();
