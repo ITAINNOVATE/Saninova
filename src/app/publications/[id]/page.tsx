@@ -381,6 +381,17 @@ export default function PublicationDetailPage() {
       "Le renforcement des capacités nationales : investissement central, pas activité transversale",
       "La coordination entre PTF : éviter la fragmentation, amplifier les synergies",
       "Ce que SaniNova apporte aux organisations internationales et PTF",
+      // Article 11: Health NGOs in Africa
+      "Le défi de la mesure de l’impact : au-delà des indicateurs de performance",
+      "La chaîne d’approvisionnement des ONG : un maillon critique souvent sous-estimé",
+      "L’intégration dans les systèmes nationaux : une responsabilité stratégique",
+      "La gestion des ressources humaines en contexte opérationnel difficile",
+      "Ce que SaniNova apporte aux ONG de santé",
+      "The Challenge of Impact Measurement: Beyond Performance Indicators",
+      "The NGO Supply Chain: A Critical and Often Underestimated Link",
+      "Integration into National Systems: A Strategic Responsibility",
+      "Human Resources Management in Difficult Operational Contexts",
+      "What SaniNova Brings to Health NGOs",
     ];
 
     const renderedElements: React.ReactNode[] = [];
