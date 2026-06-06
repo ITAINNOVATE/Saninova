@@ -235,6 +235,154 @@ export default function AnnouncementDetail() {
     ? new Date(announcement.created_at).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
     : "---";
 
+  const renderAnnouncementContent = (content: string) => {
+    if (!content) return null;
+
+    const lines = content.split("\n").map(l => l.trim()).filter(l => l.length > 0);
+    const elements: React.ReactNode[] = [];
+
+    const metadataKeys = [
+      "employeur", "intitulé du poste", "type de contrat", "lieu d’affectation", 
+      "nombre de poste(s)", "date limite de dépôt", "mode de dépôt"
+    ];
+
+    const metadata: { key: string; val: string }[] = [];
+    const mainTitleBlock: string[] = [];
+    const remainingLines: string[] = [];
+
+    let isParsingMetadata = false;
+    let currentKey = "";
+
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i];
+      const lowerLine = line.toLowerCase();
+
+      // Detect header lines before metadata
+      if (i < 4 && (
+        lowerLine.includes("termes de référence") || 
+        lowerLine.includes("recrutement") || 
+        lowerLine.includes("avis de recrutement")
+      )) {
+        mainTitleBlock.push(line);
+        continue;
+      }
+
+      // Check if it matches a metadata key
+      const matchingKey = metadataKeys.find(k => 
+        lowerLine === k || 
+        lowerLine.startsWith(k + " :") || 
+        lowerLine.startsWith(k + ":")
+      );
+      
+      if (matchingKey) {
+        currentKey = line;
+        isParsingMetadata = true;
+        continue;
+      }
+
+      if (isParsingMetadata && currentKey) {
+        metadata.push({ key: currentKey, val: line });
+        currentKey = "";
+        isParsingMetadata = false;
+        continue;
+      }
+
+      // Otherwise, save to remaining lines
+      remainingLines.push(line);
+    }
+
+    // Centered title header block
+    if (mainTitleBlock.length > 0) {
+      elements.push(
+        <div key="title-block" className="text-center mb-12 pb-8 border-b border-white/10 space-y-3">
+          {mainTitleBlock.map((t, idx) => {
+            if (t.toLowerCase().includes("termes de référence")) {
+              return <h4 key={idx} className="text-[#00A878] text-xs md:text-sm font-black uppercase tracking-widest">{t}</h4>;
+            } else if (t.toLowerCase().includes("recrutement")) {
+              return <h2 key={idx} className="text-2xl md:text-4xl font-montserrat font-black text-white leading-tight">{t}</h2>;
+            } else {
+              return <p key={idx} className="text-white/40 text-xs md:text-sm font-bold uppercase tracking-wider">{t}</p>;
+            }
+          })}
+        </div>
+      );
+    }
+
+    // Premium metadata card
+    if (metadata.length > 0) {
+      elements.push(
+        <div key="metadata-card" className="grid grid-cols-1 md:grid-cols-2 gap-6 p-8 bg-white/5 border border-white/10 rounded-[32px] mb-12 font-poppins">
+          {metadata.map((item, idx) => (
+            <div key={idx} className="space-y-1">
+              <span className="text-[10px] md:text-xs font-black uppercase tracking-widest text-[#00A878]">{item.key}</span>
+              <p className="text-sm md:text-base font-bold text-white/90 leading-snug">{item.val}</p>
+            </div>
+          ))}
+        </div>
+      );
+    }
+
+    // Now parse the remaining lines (body content)
+    let currentList: string[] = [];
+
+    const flushList = (key: string) => {
+      if (currentList.length > 0) {
+        elements.push(
+          <ul key={key} className="list-disc pl-6 space-y-2.5 mb-6 text-white/70 text-justify text-sm md:text-base font-poppins">
+            {currentList.map((li, liIdx) => (
+              <li key={liIdx} className="leading-relaxed">{li}</li>
+            ))}
+          </ul>
+        );
+        currentList = [];
+      }
+    };
+
+    for (let i = 0; i < remainingLines.length; i++) {
+      const line = remainingLines[i];
+
+      // Check if Heading 1: e.g. "1. CONTEXTE ET JUSTIFICATION"
+      const h1Match = line.match(/^(\d+)\.\s+(.+)$/);
+      // Check if Heading 2: e.g. "2.1. Comptabilité et gestion financière"
+      const h2Match = line.match(/^(\d+\.\d+)\.\s+(.+)$/);
+
+      if (h2Match) {
+        flushList(`list-h2-${i}`);
+        elements.push(
+          <h3 key={`h2-${i}`} className="text-sm md:text-base font-extrabold text-white/90 mt-8 mb-3 leading-snug font-poppins">
+            {line}
+          </h3>
+        );
+      } else if (h1Match) {
+        flushList(`list-h1-${i}`);
+        elements.push(
+          <h2 key={`h1-${i}`} className="text-base md:text-lg font-black text-orange uppercase tracking-wide mt-10 mb-4 border-l-4 border-orange pl-3 leading-snug font-montserrat">
+            {line}
+          </h2>
+        );
+      } else {
+        // Check if list item: ends with semicolon `;` or starts with bullet points, or matches composition items
+        const isBullet = line.startsWith("-") || line.startsWith("•") || line.startsWith("*") || line.endsWith(";") || (currentList.length > 0 && line.endsWith("."));
+        if (isBullet) {
+          const cleanLine = line.replace(/^[-•*]\s*/, "");
+          currentList.push(cleanLine);
+        } else {
+          flushList(`list-p-${i}`);
+          elements.push(
+            <p key={`p-${i}`} className="text-white/60 text-justify text-sm md:text-base leading-relaxed mb-4 font-poppins">
+              {line}
+            </p>
+          );
+        }
+      }
+    }
+
+    // Flush any remaining list items
+    flushList("list-final");
+
+    return elements;
+  };
+
   return (
     <>
       <PageHero 
@@ -274,7 +422,7 @@ export default function AnnouncementDetail() {
                 </button>
               </div>
             </div>
-
+ 
             {/* Main Content */}
             <div className="p-8 md:p-16">
               <div className="flex items-center gap-6 mb-8 text-white/40 text-sm font-bold uppercase tracking-widest">
@@ -286,15 +434,9 @@ export default function AnnouncementDetail() {
                   <Clock className="w-5 h-5 text-orange" /> Deadline: {deadlineFormatted}
                 </div>
               </div>
-
-              <h1 className="text-3xl md:text-5xl font-montserrat font-black text-white mb-8 leading-tight">
-                {announcement.title}
-              </h1>
-
-              <div className="prose prose-invert max-w-none prose-lg mb-12">
-                <p className="text-white/60 leading-relaxed whitespace-pre-wrap font-poppins">
-                  {announcement.fullContent || announcement.content}
-                </p>
+ 
+              <div className="mb-12 font-poppins">
+                {renderAnnouncementContent(announcement.content || announcement.fullContent)}
               </div>
 
               {/* Status Badge */}
