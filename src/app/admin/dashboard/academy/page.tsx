@@ -16,6 +16,7 @@ export default function AcademyDashboardOverview() {
     registrations: 0,
     announcements: 0,
     events: 0,
+    applications: 0,
     revenue: "0"
   });
   const [loading, setLoading] = useState(true);
@@ -27,12 +28,14 @@ export default function AcademyDashboardOverview() {
           { count: tCount },
           { count: rCount },
           { count: aCount },
-          { count: eCount }
+          { count: eCount },
+          { count: appCount }
         ] = await Promise.all([
           supabase.from("academy_trainings").select("*", { count: "exact", head: true }),
           supabase.from("academy_registrations").select("*", { count: "exact", head: true }),
           supabase.from("academy_announcements").select("*", { count: "exact", head: true }),
-          supabase.from("academy_events").select("*", { count: "exact", head: true })
+          supabase.from("academy_events").select("*", { count: "exact", head: true }),
+          supabase.from("saninova_job_applications").select("*", { count: "exact", head: true })
         ]);
 
         setStats({
@@ -40,6 +43,7 @@ export default function AcademyDashboardOverview() {
           registrations: rCount || 0,
           announcements: aCount || 0,
           events: eCount || 0,
+          applications: appCount || 0,
           revenue: "1.250.000" // Placeholder for revenue
         });
       } catch (err) {
@@ -80,6 +84,15 @@ export default function AcademyDashboardOverview() {
       link: "/admin/dashboard/academy/announcements"
     },
     {
+      title: "Candidatures",
+      desc: "Suivi des dossiers de recrutement",
+      count: stats.applications,
+      icon: Briefcase,
+      color: "text-purple-400",
+      bgColor: "bg-purple-500/10 border-purple-500/20",
+      link: "/admin/dashboard/academy/applications"
+    },
+    {
       title: "Événements",
       desc: "Calendrier des symposiums et webinars",
       count: stats.events,
@@ -116,7 +129,7 @@ export default function AcademyDashboardOverview() {
       </div>
 
       {/* Main Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
         {menuCards.map((card, i) => (
           <motion.div
             key={i}
