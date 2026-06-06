@@ -101,9 +101,18 @@ const allModules = certificationsData.flatMap((academy) => {
   });
 });
 
-export const staticModules = allModules.filter((mod, index, self) =>
+const tempModules = allModules.filter((mod, index, self) =>
   index === self.findIndex((t) => t.slug === mod.slug)
-).map((mod, index) => ({
+);
+
+// Reposition "Gestion d'officine" (gestion-d-officine) to the 3rd position (index 2)
+const officineIndex = tempModules.findIndex((m) => m.slug === "gestion-d-officine");
+if (officineIndex !== -1) {
+  const [officineModule] = tempModules.splice(officineIndex, 1);
+  tempModules.splice(2, 0, officineModule);
+}
+
+export const staticModules = tempModules.map((mod, index) => ({
   ...mod,
-  isAvailable: index < 2
+  isAvailable: index < 3
 }));
