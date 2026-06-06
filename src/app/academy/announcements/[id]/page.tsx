@@ -53,54 +53,8 @@ export default function AnnouncementDetail() {
             return;
           }
         }
-
-        // Fallback mock data matching static IDs
-        const mockAnnouncements = [
-          {
-            id: "1",
-            title: locale === "fr" ? "Appel à candidatures : Bourses d'excellence SaniNova 2026" : "Call for Applications: SaniNova Excellence Scholarships 2026",
-            type: locale === "fr" ? "Appel" : "Call",
-            date: "10 Mai 2026",
-            deadline: "30 Mai 2026",
-            content: locale === "fr" 
-              ? "SaniNova Academy offre 5 bourses complètes pour les jeunes professionnels de santé souhaitant se spécialiser en Santé Digitale. Ce programme vise à soutenir l'émergence d'une nouvelle génération de leaders capables de piloter la transformation numérique des systèmes de santé africains."
-              : "SaniNova Academy is offering 5 full scholarships for young health professionals wishing to specialize in Digital Health. This program aims to support the emergence of a new generation of leaders capable of steering the digital transformation of African health systems.",
-            image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80",
-            status: "Ouvert",
-            fullContent: locale === "fr"
-              ? "Le programme de bourses d'excellence SaniNova est conçu pour identifier et soutenir les talents les plus prometteurs du secteur de la santé en Afrique. \n\nLes candidats sélectionnés bénéficieront d'une prise en charge totale des frais de scolarité pour le programme de certification en Santé Digitale, ainsi que d'un mentorat personnalisé par des experts internationaux. \n\nCritères d'éligibilité : \n- Être ressortissant d'un pays africain. \n- Avoir au moins 2 ans d'expérience professionnelle dans le secteur de la santé. \n- Démontrer un engagement fort pour l'innovation technologique."
-              : "The SaniNova Excellence Scholarship program is designed to identify and support the most promising healthcare talents in Africa. \n\nSelected candidates will benefit from full tuition coverage for the Digital Health certification program, as well as personalized mentoring from international experts. \n\nEligibility Criteria: \n- Be a citizen of an African country. \n- Have at least 2 years of professional experience in the healthcare sector. \n- Demonstrate a strong commitment to technological innovation."
-          },
-          {
-            id: "2",
-            title: locale === "fr" ? "Webinaire Gratuit : L'IA dans la régulation pharmaceutique" : "Free Webinar: AI in Pharmaceutical Regulation",
-            type: locale === "fr" ? "Webinaire" : "Webinar",
-            date: "25 Mai 2026",
-            deadline: "24 Mai 2026",
-            content: "Rejoignez nos experts pour une session interactive sur les nouvelles frontières de l'intelligence artificielle appliquée au secteur pharma.",
-            image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80",
-            status: "Bientôt",
-            fullContent: "Ce webinaire explorera comment l'intelligence artificielle transforme les processus de régulation pharmaceutique, de l'homologation des médicaments à la pharmacovigilance."
-          },
-          {
-            id: "3",
-            title: locale === "fr" ? "Conférence Annuelle SaniNova : Horizon Santé 2030" : "SaniNova Annual Conference: Horizon Health 2030",
-            type: locale === "fr" ? "Conférence" : "Conference",
-            date: "15 Mai 2026",
-            deadline: "10 Juin 2026",
-            content: "La conférence de référence sur la transformation des systèmes de santé se tiendra à Cotonou et en ligne.",
-            image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80",
-            status: "Annonce",
-            fullContent: "La Conférence Horizon Santé 2030 est l'événement phare de l'année pour tous les acteurs de la santé en Afrique. Pendant trois jours, nous discuterons des stratégies pour atteindre la couverture santé universelle grâce à l'innovation."
-          }
-        ];
-
-        const mock = mockAnnouncements.find(a => a.id === id);
-        if (mock) {
-          setAnnouncement(mock);
-        } else {
-          setError(locale === "fr" ? "Annonce introuvable." : "Announcement not found.");
-        }
+        
+        setError(locale === "fr" ? "Annonce introuvable." : "Announcement not found.");
       } catch (err: any) {
         console.error("Error loading announcement:", err);
         setError(locale === "fr" ? "Annonce introuvable." : "Announcement not found.");
