@@ -33,6 +33,10 @@ export default function AnnouncementDetail() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
+  const isClosed = announcement?.deadline 
+    ? new Date() > new Date(announcement.deadline)
+    : false;
+
   useEffect(() => {
     const fetchAnnouncement = async () => {
       try {
@@ -89,6 +93,13 @@ export default function AnnouncementDetail() {
   const handleApply = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
+
+    if (isClosed) {
+      setError(locale === "fr" 
+        ? "Cette offre est déjà clôturée. Les candidatures ne sont plus acceptées." 
+        : "This offer is already closed. Applications are no longer accepted.");
+      return;
+    }
 
     if (!fullName.trim() || !email.trim() || !phone.trim() || !cvFile) {
       setError(locale === "fr" 
@@ -178,6 +189,8 @@ export default function AnnouncementDetail() {
   const deadlineFormatted = announcement.deadline 
     ? new Date(announcement.deadline).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
     : "---";
+
+  // isClosed is defined at the component level
 
   const dateFormatted = announcement.created_at
     ? new Date(announcement.created_at).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
@@ -414,29 +427,14 @@ export default function AnnouncementDetail() {
                 <div>
                   <p className="text-[10px] text-white/30 font-bold uppercase tracking-widest mb-1">Statut actuel</p>
                   <div className="flex items-center gap-2">
-                    <div className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse" />
-                    <span className="text-white font-black uppercase tracking-wider text-sm">{announcement.status || "Ouvert"}</span>
+                    <div className={`w-2.5 h-2.5 rounded-full ${isClosed ? "bg-red-500" : "bg-green-500 animate-pulse"}`} />
+                    <span className="text-white font-black uppercase tracking-wider text-sm">
+                      {isClosed 
+                        ? (locale === "fr" ? "Clôturé" : "Closed") 
+                        : (announcement.status || (locale === "fr" ? "Ouvert" : "Open"))}
+                    </span>
                   </div>
                 </div>
-                
-                {(announcement.type === "Appel" || (announcement.type === "Recrutement" && !showApplyForm && !submitSuccess)) && (
-                  <button 
-                    onClick={() => {
-                      if (announcement.type === "Recrutement") {
-                        setShowApplyForm(true);
-                        setTimeout(() => {
-                          const formElem = document.getElementById("application-form-section");
-                          if (formElem) {
-                            formElem.scrollIntoView({ behavior: "smooth", block: "start" });
-                          }
-                        }, 100);
-                      }
-                    }}
-                    className="px-8 py-4 bg-[#00A878] text-white rounded-2xl font-black shadow-xl shadow-accent/20 hover:scale-105 transition-all"
-                  >
-                    Postuler maintenant
-                  </button>
-                )}
               </div>
 
               {/* Apply Button at the bottom of announcement description */}
@@ -444,6 +442,7 @@ export default function AnnouncementDetail() {
                 <div className="mt-12 pt-8 border-t border-white/10 text-center">
                   <button
                     onClick={() => {
+                      if (isClosed) return;
                       setShowApplyForm(true);
                       setTimeout(() => {
                         const formElem = document.getElementById("application-form-section");
@@ -452,15 +451,22 @@ export default function AnnouncementDetail() {
                         }
                       }, 100);
                     }}
-                    className="px-10 py-5 bg-orange text-white rounded-2xl font-black text-sm uppercase tracking-wider shadow-xl shadow-orange/20 hover:scale-105 hover:bg-orange/90 transition-all cursor-pointer inline-flex items-center gap-2"
+                    disabled={isClosed}
+                    className={`px-10 py-5 rounded-2xl font-black text-sm uppercase tracking-wider transition-all inline-flex items-center gap-2 ${
+                      isClosed
+                        ? "bg-white/10 text-white/40 cursor-not-allowed border border-white/10"
+                        : "bg-orange text-white shadow-xl shadow-orange/20 hover:scale-105 hover:bg-orange/90 cursor-pointer"
+                    }`}
                   >
-                    Postuler à cette offre
+                    {isClosed
+                      ? (locale === "fr" ? "Offre clôturée" : "Offer closed")
+                      : (locale === "fr" ? "Postuler à cette offre" : "Apply to this offer")}
                   </button>
                 </div>
               )}
 
               {/* Online Job Application Form (Only for Recruitment - Shown on click) */}
-              {announcement.type === "Recrutement" && (showApplyForm || submitSuccess) && (
+              {announcement.type === "Recrutement" && ((!isClosed && showApplyForm) || submitSuccess) && (
                 <div id="application-form-section" className="mt-12 pt-12 border-t border-white/10">
                   {submitSuccess ? (
                     <motion.div
