@@ -246,6 +246,8 @@ export default function AnnouncementDetail() {
           {mainTitleBlock.map((t, idx) => {
             if (t.toLowerCase().includes("termes de référence")) {
               return <h4 key={idx} className="text-[#00A878] text-xs md:text-sm font-black uppercase tracking-widest">{t}</h4>;
+            } else if (t.toLowerCase().includes("avis de") || t.toLowerCase().includes("réf")) {
+              return <h4 key={idx} className="text-white/60 text-xs md:text-sm font-bold uppercase tracking-wider">{t}</h4>;
             } else if (t.toLowerCase().includes("recrutement")) {
               return <h2 key={idx} className="text-2xl md:text-4xl font-montserrat font-black text-white leading-tight">{t}</h2>;
             } else {
