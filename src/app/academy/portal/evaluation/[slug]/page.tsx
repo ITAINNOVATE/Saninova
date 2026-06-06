@@ -12,8 +12,9 @@ import PageHero from "../../../../../components/ui/PageHero";
 import CertificateGenerator from "../../../../../components/academy/CertificateGenerator";
 
 // We import the data based on the slug. 
-// For now, we only have one evaluation, but we can map it dynamically later.
 import { gestionApprovisionnementsEval } from "../../../../../data/evaluations/gestionApprovisionnementsEval";
+import { gestionOfficineEval } from "../../../../../data/evaluations/gestionOfficineEval";
+import { quantificationBesoinsEval } from "../../../../../data/evaluations/quantificationBesoinsEval";
 
 function shuffleArray<T>(array: T[]): T[] {
   const newArray = [...array];
@@ -68,6 +69,42 @@ export default function EvaluationPage({ params }: { params: Promise<{ slug: str
         setBlocked(true);
       } else {
         // Shuffle questions and options
+        const shuffledQuestions = shuffleArray(data.questions).map(q => ({
+          ...q,
+          options: shuffleArray(q.options)
+        }));
+        setQuestions(shuffledQuestions);
+        setTimeLeft(data.timeLimit);
+      }
+      setLoading(false);
+    } else if (slug === "gestion-d-une-officine-moderne") {
+      const data = gestionOfficineEval;
+      setEvalData(data);
+      
+      const savedAttempts = parseInt(localStorage.getItem(`eval_attempts_${slug}`) || "0");
+      setAttempts(savedAttempts);
+      
+      if (savedAttempts >= data.maxAttempts) {
+        setBlocked(true);
+      } else {
+        const shuffledQuestions = shuffleArray(data.questions).map(q => ({
+          ...q,
+          options: shuffleArray(q.options)
+        }));
+        setQuestions(shuffledQuestions);
+        setTimeLeft(data.timeLimit);
+      }
+      setLoading(false);
+    } else if (slug === "quantification-des-besoins-en-produits-de-sante" || slug === "quantification-et-previsions") {
+      const data = quantificationBesoinsEval;
+      setEvalData(data);
+      
+      const savedAttempts = parseInt(localStorage.getItem(`eval_attempts_${slug}`) || "0");
+      setAttempts(savedAttempts);
+      
+      if (savedAttempts >= data.maxAttempts) {
+        setBlocked(true);
+      } else {
         const shuffledQuestions = shuffleArray(data.questions).map(q => ({
           ...q,
           options: shuffleArray(q.options)
