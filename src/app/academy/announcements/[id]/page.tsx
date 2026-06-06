@@ -316,6 +316,9 @@ export default function AnnouncementDetail() {
         if (isBullet) {
           const cleanLine = line.replace(/^[-•*]\s*/, "");
           currentList.push(cleanLine);
+          if (line.endsWith(".")) {
+            flushList(`list-auto-end-${i}`);
+          }
         } else {
           flushList(`list-p-${i}`);
           elements.push(
