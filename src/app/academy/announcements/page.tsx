@@ -32,7 +32,7 @@ export default function AcademyAnnouncements() {
     fetchAnnouncements();
   }, []);
 
-  const types = ["all", "Appel", "Webinaire", "Conférence", "Annonce"];
+  const types = ["all", "Recrutement", "Appel", "Webinaire", "Conférence", "Annonce"];
 
   const filtered = activeType === "all" ? announcements : announcements.filter(a => a.type === activeType);
 
@@ -66,7 +66,7 @@ export default function AcademyAnnouncements() {
             </div>
             
             <button className="flex items-center gap-3 px-6 py-4 bg-white/5 border border-white/10 rounded-2xl text-white font-bold hover:bg-white/10 transition-all">
-              <Bell className="w-5 h-5 text-orange" /> S'abonner aux alertes
+              <Bell className="w-5 h-5 text-orange" /> {locale === "fr" ? "S'abonner aux alertes" : "Subscribe to alerts"}
             </button>
           </div>
 
@@ -78,7 +78,7 @@ export default function AcademyAnnouncements() {
               onClick={() => setActiveType(type)}
               className={`px-6 py-3 rounded-full text-xs font-black uppercase tracking-widest transition-all ${activeType === type ? "bg-orange text-white shadow-lg shadow-orange/20" : "bg-white/5 text-white/40 hover:bg-white/10 border border-white/5"}`}
             >
-              {type === "all" ? "Toutes les annonces" : type}
+              {type === "all" ? (locale === "fr" ? "Toutes les annonces" : "All Announcements") : type}
             </button>
           ))}
         </div>
