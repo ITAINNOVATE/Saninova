@@ -3157,7 +3157,7 @@ export const certificationsData: AcademyData[] = [
         "cost": "2300 USD",
         "modules": [
           {
-            "name": "Gestion d'officine",
+            "name": "Gestion d'une officine moderne",
             "duration": "5 jours",
             "cost": "900 USD",
             "subModules": [

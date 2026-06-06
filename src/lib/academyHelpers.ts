@@ -105,8 +105,8 @@ const tempModules = allModules.filter((mod, index, self) =>
   index === self.findIndex((t) => t.slug === mod.slug)
 );
 
-// Reposition "Gestion d'officine" (gestion-d-officine) to the 3rd position (index 2)
-const officineIndex = tempModules.findIndex((m) => m.slug === "gestion-d-officine");
+// Reposition "Gestion d'une officine moderne" (gestion-d-une-officine-moderne) to the 3rd position (index 2)
+const officineIndex = tempModules.findIndex((m) => m.slug === "gestion-d-une-officine-moderne");
 if (officineIndex !== -1) {
   const [officineModule] = tempModules.splice(officineIndex, 1);
   tempModules.splice(2, 0, officineModule);
