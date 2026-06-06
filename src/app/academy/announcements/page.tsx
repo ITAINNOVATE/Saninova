@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Megaphone, Calendar, Tag, ArrowRight, Search, Bell, ArrowLeft } from "lucide-react";
+import { Megaphone, Calendar, Tag, ArrowRight, Search, Bell, ArrowLeft, X, Loader2 } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -16,6 +16,48 @@ export default function AcademyAnnouncements() {
   const [activeType, setActiveType] = useState("all");
   const [announcements, setAnnouncements] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+
+  const [showSubscribeModal, setShowSubscribeModal] = useState(false);
+  const [subscribeEmail, setSubscribeEmail] = useState("");
+  const [subscribeStatus, setSubscribeStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [subscribeMessage, setSubscribeMessage] = useState("");
+
+  const handleNewsletterSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!subscribeEmail.trim()) return;
+
+    setSubscribeStatus("loading");
+    setSubscribeMessage("");
+
+    try {
+      const res = await fetch("/api/newsletter/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: subscribeEmail.trim(), locale }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        setSubscribeStatus("success");
+        setSubscribeMessage(data.message);
+        setTimeout(() => {
+          setShowSubscribeModal(false);
+          setSubscribeEmail("");
+          setSubscribeStatus("idle");
+          setSubscribeMessage("");
+        }, 3000);
+      } else {
+        setSubscribeStatus("error");
+        setSubscribeMessage(data.error || (locale === "fr" ? "Une erreur est survenue." : "An error occurred."));
+      }
+    } catch (err) {
+      setSubscribeStatus("error");
+      setSubscribeMessage(locale === "fr" ? "Impossible de contacter le serveur." : "Failed to connect to the server.");
+    }
+  };
 
   React.useEffect(() => {
     const fetchAnnouncements = async () => {
@@ -65,7 +107,10 @@ export default function AcademyAnnouncements() {
               </span>
             </div>
             
-            <button className="flex items-center gap-3 px-6 py-4 bg-white/5 border border-white/10 rounded-2xl text-white font-bold hover:bg-white/10 transition-all">
+            <button 
+              onClick={() => setShowSubscribeModal(true)}
+              className="flex items-center gap-3 px-6 py-4 bg-white/5 border border-white/10 rounded-2xl text-white font-bold hover:bg-white/10 transition-all"
+            >
               <Bell className="w-5 h-5 text-orange" /> {locale === "fr" ? "S'abonner aux alertes" : "Subscribe to alerts"}
             </button>
           </div>
@@ -139,6 +184,82 @@ export default function AcademyAnnouncements() {
         </div>
         </div>
       </div>
+
+      {/* Subscribe Modal */}
+      {showSubscribeModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          {/* Backdrop */}
+          <div 
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            onClick={() => setShowSubscribeModal(false)}
+          />
+          
+          {/* Modal Card */}
+          <div className="relative bg-[#0F1D33] border border-white/10 rounded-[32px] p-8 max-w-md w-full shadow-2xl z-10 overflow-hidden font-poppins">
+            <button 
+              onClick={() => setShowSubscribeModal(false)}
+              className="absolute top-4 right-4 p-2 text-white/40 hover:text-white rounded-full transition-colors"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            <div className="text-center mb-6">
+              <div className="w-12 h-12 bg-orange/10 rounded-2xl flex items-center justify-center text-orange mx-auto mb-4">
+                <Bell className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-montserrat font-bold text-white mb-2">
+                {locale === "fr" ? "S'abonner aux alertes" : "Subscribe to Alerts"}
+              </h3>
+              <p className="text-white/60 text-xs leading-relaxed">
+                {locale === "fr" 
+                  ? "Recevez en exclusivité nos opportunités de recrutement et actualités sanitaires en Afrique." 
+                  : "Receive our exclusive recruitment opportunities and healthcare news in Africa."}
+              </p>
+            </div>
+
+            <form onSubmit={handleNewsletterSubscribe} className="space-y-4">
+              <div>
+                <input
+                  type="email"
+                  required
+                  placeholder={locale === "fr" ? "Votre adresse e-mail" : "Your email address"}
+                  value={subscribeEmail}
+                  onChange={(e) => setSubscribeEmail(e.target.value)}
+                  disabled={subscribeStatus === "loading"}
+                  className="w-full bg-white/5 border border-white/10 rounded-2xl py-3.5 px-4 text-white placeholder-white/20 focus:border-orange/50 outline-none transition-all text-sm"
+                />
+              </div>
+
+              {subscribeMessage && (
+                <div className={`text-xs font-semibold font-poppins text-center p-2 rounded-xl ${
+                  subscribeStatus === "success" 
+                    ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20" 
+                    : "bg-red-500/10 text-red-400 border border-red-500/20"
+                }`}>
+                  {subscribeMessage}
+                </div>
+              )}
+
+              <button
+                type="submit"
+                disabled={subscribeStatus === "loading" || subscribeStatus === "success"}
+                className="w-full py-3.5 bg-orange text-white rounded-2xl font-bold text-sm transition-all hover:bg-orange/90 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:scale-100 shadow-lg shadow-orange/20"
+              >
+                {subscribeStatus === "loading" ? (
+                  <>
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                    {locale === "fr" ? "Inscription..." : "Subscribing..."}
+                  </>
+                ) : subscribeStatus === "success" ? (
+                  locale === "fr" ? "Inscrit avec succès !" : "Subscribed!"
+                ) : (
+                  locale === "fr" ? "S'abonner" : "Subscribe"
+                )}
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
     </>
   );
 }
