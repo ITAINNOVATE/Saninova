@@ -300,11 +300,11 @@ export default function JobApplicationsDashboard() {
                               className="inline-flex items-center gap-1.5 text-xs text-blue-400 hover:text-blue-300 font-bold font-poppins"
                             >
                               <FileText className="w-3.5 h-3.5" />
-                              <span>Curriculum Vitae</span>
+                              <span>{app.motivation_letter_url ? "Curriculum Vitae" : "Dossier de candidature (PDF)"}</span>
                               <Download className="w-3 h-3" />
                             </a>
                           )}
-                          {app.motivation_letter_url ? (
+                          {app.motivation_letter_url && (
                             <a
                               href={app.motivation_letter_url}
                               target="_blank"
@@ -315,8 +315,6 @@ export default function JobApplicationsDashboard() {
                               <span>Lettre de Motivation</span>
                               <Download className="w-3 h-3" />
                             </a>
-                          ) : (
-                            <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider font-poppins">Lettre non jointe</span>
                           )}
                         </div>
                       </td>

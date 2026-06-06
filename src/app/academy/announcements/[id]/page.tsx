@@ -28,7 +28,7 @@ export default function AnnouncementDetail() {
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
   const [cvFile, setCvFile] = useState<File | null>(null);
-  const [motivationFile, setMotivationFile] = useState<File | null>(null);
+  const [showApplyForm, setShowApplyForm] = useState(false);
   const [subscribeNewsletter, setSubscribeNewsletter] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -91,31 +91,25 @@ export default function AnnouncementDetail() {
     setError(null);
 
     if (!fullName.trim() || !email.trim() || !phone.trim() || !cvFile) {
-      setError(locale === "fr" ? "Veuillez remplir tous les champs obligatoires et joindre votre CV." : "Please fill in all required fields and upload your CV.");
+      setError(locale === "fr" 
+        ? "Veuillez remplir tous les champs obligatoires et joindre votre dossier de candidature PDF." 
+        : "Please fill in all required fields and upload your candidate PDF dossier.");
       return;
     }
 
     setIsSubmitting(true);
     try {
-      // 1. Upload CV file
+      // 1. Upload Combined Dossier PDF
       let cvUrl = "";
       try {
         cvUrl = await uploadFile(cvFile, "cvs");
       } catch (err: any) {
-        throw new Error(locale === "fr" ? `Impossible de téléverser le CV : ${err.message}` : `Failed to upload CV: ${err.message}`);
+        throw new Error(locale === "fr" 
+          ? `Impossible de téléverser le dossier de candidature : ${err.message}` 
+          : `Failed to upload candidate dossier: ${err.message}`);
       }
 
-      // 2. Upload motivation letter if exists
-      let motivationUrl = "";
-      if (motivationFile) {
-        try {
-          motivationUrl = await uploadFile(motivationFile, "motivations");
-        } catch (err: any) {
-          throw new Error(locale === "fr" ? `Impossible de téléverser la lettre de motivation : ${err.message}` : `Failed to upload cover letter: ${err.message}`);
-        }
-      }
-
-      // 3. Save application details
+      // 2. Save application details
       const { error: insertError } = await supabase
         .from("saninova_job_applications")
         .insert({
@@ -124,7 +118,7 @@ export default function AnnouncementDetail() {
           email: email.trim().toLowerCase(),
           phone: phone.trim(),
           cv_url: cvUrl,
-          motivation_letter_url: motivationUrl || null,
+          motivation_letter_url: null,
           message: message.trim() || null
         });
 
@@ -403,16 +397,49 @@ export default function AnnouncementDetail() {
                   </div>
                 </div>
                 
-                {announcement.type === "Appel" && (
-                  <button className="px-8 py-4 bg-accent text-white rounded-2xl font-black shadow-xl shadow-accent/20 hover:scale-105 transition-all">
+                {(announcement.type === "Appel" || (announcement.type === "Recrutement" && !showApplyForm && !submitSuccess)) && (
+                  <button 
+                    onClick={() => {
+                      if (announcement.type === "Recrutement") {
+                        setShowApplyForm(true);
+                        setTimeout(() => {
+                          const formElem = document.getElementById("application-form-section");
+                          if (formElem) {
+                            formElem.scrollIntoView({ behavior: "smooth", block: "start" });
+                          }
+                        }, 100);
+                      }
+                    }}
+                    className="px-8 py-4 bg-[#00A878] text-white rounded-2xl font-black shadow-xl shadow-accent/20 hover:scale-105 transition-all"
+                  >
                     Postuler maintenant
                   </button>
                 )}
               </div>
 
-              {/* Online Job Application Form (Only for Recruitment) */}
-              {announcement.type === "Recrutement" && (
-                <div className="mt-12 pt-12 border-t border-white/10">
+              {/* Apply Button at the bottom of announcement description */}
+              {announcement.type === "Recrutement" && !showApplyForm && !submitSuccess && (
+                <div className="mt-12 pt-8 border-t border-white/10 text-center">
+                  <button
+                    onClick={() => {
+                      setShowApplyForm(true);
+                      setTimeout(() => {
+                        const formElem = document.getElementById("application-form-section");
+                        if (formElem) {
+                          formElem.scrollIntoView({ behavior: "smooth", block: "start" });
+                        }
+                      }, 100);
+                    }}
+                    className="px-10 py-5 bg-orange text-white rounded-2xl font-black text-sm uppercase tracking-wider shadow-xl shadow-orange/20 hover:scale-105 hover:bg-orange/90 transition-all cursor-pointer inline-flex items-center gap-2"
+                  >
+                    Postuler à cette offre
+                  </button>
+                </div>
+              )}
+
+              {/* Online Job Application Form (Only for Recruitment - Shown on click) */}
+              {announcement.type === "Recrutement" && (showApplyForm || submitSuccess) && (
+                <div id="application-form-section" className="mt-12 pt-12 border-t border-white/10">
                   {submitSuccess ? (
                     <motion.div
                       initial={{ opacity: 0, scale: 0.95 }}
@@ -460,9 +487,18 @@ export default function AnnouncementDetail() {
                     </motion.div>
                   ) : (
                     <form onSubmit={handleApply} className="space-y-6">
-                      <div>
-                        <h2 className="text-2xl font-montserrat font-black text-white mb-2">Postuler en ligne</h2>
-                        <p className="text-white/40 text-sm">Veuillez soumettre votre dossier complet pour cette offre d'emploi.</p>
+                      <div className="flex justify-between items-start">
+                        <div>
+                          <h2 className="text-2xl font-montserrat font-black text-white mb-2">Postuler en ligne</h2>
+                          <p className="text-white/40 text-sm">Veuillez soumettre votre dossier complet pour cette offre d'emploi.</p>
+                        </div>
+                        <button
+                          type="button"
+                          onClick={() => setShowApplyForm(false)}
+                          className="px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white/60 hover:text-white rounded-xl text-xs font-bold transition-all"
+                        >
+                          Fermer
+                        </button>
                       </div>
 
                       {error && (
@@ -520,71 +556,42 @@ export default function AnnouncementDetail() {
                         </div>
                       </div>
 
-                      <div className="grid md:grid-cols-2 gap-6">
-                        {/* CV Upload */}
-                        <div className="space-y-2">
-                          <label className="text-sm font-bold text-white/40 uppercase tracking-wider ml-1">Curriculum Vitae (CV) *</label>
-                          <div className="relative">
-                            {cvFile ? (
-                              <div className="w-full bg-emerald-500/10 border border-emerald-500/20 rounded-2xl p-4 flex items-center justify-between">
-                                <div className="flex items-center gap-3">
-                                  <FileText className="w-6 h-6 text-emerald-400" />
-                                  <span className="text-white text-sm font-medium font-poppins truncate max-w-[200px]">{cvFile.name}</span>
+                      {/* Combined PDF Upload */}
+                      <div className="space-y-2">
+                        <label className="text-sm font-bold text-white/40 uppercase tracking-wider ml-1">Dossier de candidature (PDF unique) *</label>
+                        <div className="relative">
+                          {cvFile ? (
+                            <div className="w-full bg-emerald-500/10 border border-emerald-500/20 rounded-2xl p-6 flex items-center justify-between">
+                              <div className="flex items-center gap-3">
+                                <FileText className="w-8 h-8 text-emerald-400" />
+                                <div className="flex flex-col min-w-0">
+                                  <span className="text-white text-sm font-bold font-poppins truncate max-w-[280px]">{cvFile.name}</span>
+                                  <span className="text-[10px] text-white/40 font-poppins font-semibold mt-0.5">{(cvFile.size / (1024 * 1024)).toFixed(2)} Mo</span>
                                 </div>
-                                <button type="button" onClick={() => setCvFile(null)} className="text-white/40 hover:text-white transition-colors">
-                                  <X className="w-5 h-5" />
-                                </button>
                               </div>
-                            ) : (
-                              <label className="w-full bg-white/5 border border-dashed border-white/20 hover:border-orange/50 hover:bg-white/10 rounded-2xl p-6 flex flex-col items-center justify-center gap-2 cursor-pointer transition-all">
-                                <UploadCloud className="w-8 h-8 text-white/40" />
-                                <span className="text-xs text-white/60 font-semibold font-poppins">Cliquez pour téléverser votre CV (PDF/DOCX)</span>
-                                <input
-                                  type="file"
-                                  accept=".pdf,.docx,.doc"
-                                  onChange={(e) => {
-                                    if (e.target.files && e.target.files[0]) {
-                                      setCvFile(e.target.files[0]);
-                                    }
-                                  }}
-                                  className="hidden"
-                                />
-                              </label>
-                            )}
-                          </div>
-                        </div>
-
-                        {/* Letter Upload */}
-                        <div className="space-y-2">
-                          <label className="text-sm font-bold text-white/40 uppercase tracking-wider ml-1">Lettre de motivation (Optionnel)</label>
-                          <div className="relative">
-                            {motivationFile ? (
-                              <div className="w-full bg-emerald-500/10 border border-emerald-500/20 rounded-2xl p-4 flex items-center justify-between">
-                                <div className="flex items-center gap-3">
-                                  <FileText className="w-6 h-6 text-emerald-400" />
-                                  <span className="text-white text-sm font-medium font-poppins truncate max-w-[200px]">{motivationFile.name}</span>
-                                </div>
-                                <button type="button" onClick={() => setMotivationFile(null)} className="text-white/40 hover:text-white transition-colors">
-                                  <X className="w-5 h-5" />
-                                </button>
-                              </div>
-                            ) : (
-                              <label className="w-full bg-white/5 border border-dashed border-white/20 hover:border-orange/50 hover:bg-white/10 rounded-2xl p-6 flex flex-col items-center justify-center gap-2 cursor-pointer transition-all">
-                                <UploadCloud className="w-8 h-8 text-white/40" />
-                                <span className="text-xs text-white/60 font-semibold font-poppins">Cliquez pour téléverser la lettre (PDF/DOCX)</span>
-                                <input
-                                  type="file"
-                                  accept=".pdf,.docx,.doc"
-                                  onChange={(e) => {
-                                    if (e.target.files && e.target.files[0]) {
-                                      setMotivationFile(e.target.files[0]);
-                                    }
-                                  }}
-                                  className="hidden"
-                                />
-                              </label>
-                            )}
-                          </div>
+                              <button type="button" onClick={() => setCvFile(null)} className="text-white/40 hover:text-white transition-colors p-1">
+                                <X className="w-6 h-6" />
+                              </button>
+                            </div>
+                          ) : (
+                            <label className="w-full bg-white/5 border border-dashed border-white/20 hover:border-orange/50 hover:bg-white/10 rounded-[32px] p-10 flex flex-col items-center justify-center gap-3 cursor-pointer transition-all">
+                              <UploadCloud className="w-12 h-12 text-white/40" />
+                              <span className="text-sm text-white/80 font-bold font-poppins text-center">Téléverser votre dossier de candidature</span>
+                              <span className="text-xs text-white/40 font-medium font-poppins text-center max-w-lg leading-relaxed">
+                                Veuillez joindre toutes les pièces demandées (Lettre de motivation, CV, copies des diplômes et attestations, pièce d'identité) compilées en un **seul fichier PDF unique**.
+                              </span>
+                              <input
+                                type="file"
+                                accept=".pdf"
+                                onChange={(e) => {
+                                  if (e.target.files && e.target.files[0]) {
+                                    setCvFile(e.target.files[0]);
+                                  }
+                                }}
+                                className="hidden"
+                              />
+                            </label>
+                          )}
                         </div>
                       </div>
 
