@@ -5,7 +5,7 @@ import { supabase } from "../../../../../lib/supabase";
 import { 
   Loader2, Search, FileText, CheckCircle, Mail, Phone, 
   ExternalLink, Briefcase, Edit2, Trash2, X, AlertCircle, 
-  ArrowLeft, Download, Filter, Check, Ban, Clock
+  ArrowLeft, Download, Filter, Check, Ban, Clock, Eye
 } from "lucide-react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -49,6 +49,7 @@ export default function JobApplicationsDashboard() {
   });
 
   const [viewingMessage, setViewingMessage] = useState<string | null>(null);
+  const [detailApp, setDetailApp] = useState<JobApplication | null>(null);
 
   useEffect(() => {
     fetchData();
@@ -334,15 +335,13 @@ export default function JobApplicationsDashboard() {
                       {/* Actions */}
                       <td className="px-8 py-5 text-right">
                         <div className="flex items-center justify-end gap-2">
-                          {app.message && (
-                            <button
-                              onClick={() => setViewingMessage(app.message)}
-                              className="p-2 bg-slate-800 text-slate-400 hover:text-white rounded-lg border border-slate-700 transition-all cursor-pointer"
-                              title="Voir le message d'accompagnement"
-                            >
-                              <FileText className="w-4 h-4" />
-                            </button>
-                          )}
+                          <button
+                            onClick={() => setDetailApp(app)}
+                            className="p-2 bg-slate-800 text-[#00A878] hover:text-emerald-300 rounded-lg border border-slate-700 transition-all cursor-pointer"
+                            title="Voir les détails de la candidature"
+                          >
+                            <Eye className="w-4 h-4" />
+                          </button>
                           
                           {/* Quick Status Buttons */}
                           {app.status === 'Nouveau' && (
@@ -382,24 +381,179 @@ export default function JobApplicationsDashboard() {
         )}
       </div>
 
-      {/* Viewing Message Modal */}
-      {viewingMessage !== null && (
+      {/* Viewing Details Modal */}
+      {detailApp && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-          <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={() => setViewingMessage(null)}></div>
-          <div className="relative bg-slate-900 border border-slate-800 rounded-3xl w-full max-w-lg p-6 shadow-2xl">
-            <div className="flex justify-between items-center mb-6">
-              <h3 className="text-lg font-bold font-montserrat text-white">Message d'accompagnement</h3>
-              <button onClick={() => setViewingMessage(null)} className="text-slate-400 hover:text-white p-1">
-                <X className="w-5 h-5" />
+          <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={() => setDetailApp(null)}></div>
+          <div className="relative bg-slate-900 border border-slate-800 rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6 md:p-8 shadow-2xl">
+            {/* Header */}
+            <div className="flex justify-between items-start mb-6 pb-4 border-b border-slate-800">
+              <div>
+                <span className="text-[10px] font-black uppercase tracking-widest text-[#00A878]">Détails de la candidature</span>
+                <h3 className="text-2xl font-montserrat font-black text-white mt-1">{detailApp.name}</h3>
+                <p className="text-slate-500 text-xs mt-1 font-poppins font-medium">
+                  Soumise le {new Date(detailApp.created_at).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })} à {new Date(detailApp.created_at).toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })}
+                </p>
+              </div>
+              <button onClick={() => setDetailApp(null)} className="text-slate-400 hover:text-white p-1 hover:bg-slate-800 rounded-lg transition-colors">
+                <X className="w-6 h-6" />
               </button>
             </div>
-            <div className="p-4 bg-slate-950/60 border border-slate-800 rounded-2xl text-slate-300 font-poppins text-sm leading-relaxed whitespace-pre-wrap max-h-[50vh] overflow-y-auto">
-              {viewingMessage}
+
+            <div className="space-y-6 font-poppins text-sm text-slate-300">
+              {/* Job Offer Info */}
+              <div className="p-4 bg-slate-950/40 border border-slate-800/80 rounded-2xl flex items-start gap-4">
+                <div className="p-3 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-xl shrink-0">
+                  <Briefcase className="w-6 h-6" />
+                </div>
+                <div>
+                  <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider font-semibold">Poste postulé</span>
+                  <p className="text-white font-bold text-base leading-snug mt-0.5">{announcementMap[detailApp.announcement_id] || "Offre supprimée"}</p>
+                </div>
+              </div>
+
+              {/* Candidate contact Details */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="p-4 bg-slate-950/40 border border-slate-800/80 rounded-2xl space-y-1">
+                  <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider flex items-center gap-1.5 font-semibold">
+                    <Mail className="w-3.5 h-3.5" /> Adresse Email
+                  </span>
+                  <a href={`mailto:${detailApp.email}`} className="text-white font-bold hover:text-emerald-400 transition-colors break-all block mt-1">
+                    {detailApp.email}
+                  </a>
+                </div>
+                <div className="p-4 bg-slate-950/40 border border-slate-800/80 rounded-2xl space-y-1">
+                  <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider flex items-center gap-1.5 font-semibold">
+                    <Phone className="w-3.5 h-3.5" /> Numéro de téléphone
+                  </span>
+                  <a href={`tel:${detailApp.phone}`} className="text-white font-bold hover:text-emerald-400 transition-colors block mt-1">
+                    {detailApp.phone}
+                  </a>
+                </div>
+              </div>
+
+              {/* Attachments Section */}
+              <div className="space-y-2">
+                <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider ml-1 font-semibold">Pièces Jointes</span>
+                <div className="p-5 bg-slate-950/40 border border-slate-800/80 rounded-2xl space-y-3">
+                  {detailApp.cv_url && (
+                    <div className="flex items-center justify-between p-3 bg-slate-900 border border-slate-850 rounded-xl flex-wrap gap-2">
+                      <div className="flex items-center gap-2.5 min-w-0">
+                        <FileText className="w-5 h-5 text-blue-400 shrink-0" />
+                        <span className="text-white font-bold text-xs truncate max-w-[280px]">
+                          {detailApp.motivation_letter_url ? "Curriculum Vitae" : "Dossier de candidature (PDF)"}
+                        </span>
+                      </div>
+                      <a
+                        href={detailApp.cv_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-4 py-2 bg-blue-500/10 text-blue-400 border border-blue-500/20 hover:bg-blue-500 hover:text-white rounded-lg text-xs font-black transition-all flex items-center gap-1.5 shrink-0"
+                      >
+                        <Download className="w-3.5 h-3.5" /> Télécharger
+                      </a>
+                    </div>
+                  )}
+                  {detailApp.motivation_letter_url && (
+                    <div className="flex items-center justify-between p-3 bg-slate-900 border border-slate-850 rounded-xl flex-wrap gap-2">
+                      <div className="flex items-center gap-2.5 min-w-0">
+                        <FileText className="w-5 h-5 text-amber-400 shrink-0" />
+                        <span className="text-white font-bold text-xs truncate max-w-[280px]">Lettre de Motivation</span>
+                      </div>
+                      <a
+                        href={detailApp.motivation_letter_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-4 py-2 bg-amber-500/10 text-amber-400 border border-amber-500/20 hover:bg-amber-500 hover:text-white rounded-lg text-xs font-black transition-all flex items-center gap-1.5 shrink-0"
+                      >
+                        <Download className="w-3.5 h-3.5" /> Télécharger
+                      </a>
+                    </div>
+                  )}
+                  {!detailApp.cv_url && !detailApp.motivation_letter_url && (
+                    <p className="text-slate-500 text-xs italic">Aucune pièce jointe disponible.</p>
+                  )}
+                </div>
+              </div>
+
+              {/* Accompanying Message */}
+              <div className="space-y-2">
+                <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider ml-1 font-semibold">Message d'accompagnement</span>
+                <div className="p-4 bg-slate-950/60 border border-slate-800/80 rounded-2xl text-slate-300 whitespace-pre-wrap max-h-40 overflow-y-auto leading-relaxed">
+                  {detailApp.message || <span className="text-slate-500 italic text-xs">Aucun message d'accompagnement fourni.</span>}
+                </div>
+              </div>
+
+              {/* Status management inside modal */}
+              <div className="p-4 bg-slate-950/40 border border-slate-800/80 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                  <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider font-semibold">Statut actuel</span>
+                  <div className="mt-1">
+                    <span className={`inline-flex items-center px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest border ${
+                      detailApp.status === 'Nouveau' ? 'bg-blue-500/10 text-blue-400 border-blue-500/20' :
+                      detailApp.status === 'Examiné' ? 'bg-amber-500/10 text-amber-400 border-amber-500/20' :
+                      detailApp.status === 'Accepté' ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20' :
+                      'bg-red-500/10 text-red-400 border-red-500/20'
+                    }`}>
+                      {detailApp.status || 'Nouveau'}
+                    </span>
+                  </div>
+                </div>
+                
+                <div className="flex flex-wrap gap-2">
+                  {detailApp.status !== 'Examiné' && detailApp.status !== 'Accepté' && detailApp.status !== 'Refusé' && (
+                    <button
+                      onClick={async () => {
+                        await updateStatus(detailApp.id, 'Examiné');
+                        setDetailApp({ ...detailApp, status: 'Examiné' });
+                      }}
+                      disabled={updatingId === detailApp.id}
+                      className="px-3.5 py-2 bg-amber-500/10 text-amber-400 hover:bg-amber-500 hover:text-white border border-amber-500/20 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer font-semibold"
+                    >
+                      <Clock className="w-3.5 h-3.5" /> Marquer Examiné
+                    </button>
+                  )}
+                  {detailApp.status !== 'Accepté' && (
+                    <button
+                      onClick={async () => {
+                        await updateStatus(detailApp.id, 'Accepté');
+                        setDetailApp({ ...detailApp, status: 'Accepté' });
+                      }}
+                      disabled={updatingId === detailApp.id}
+                      className="px-3.5 py-2 bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500 hover:text-white border border-emerald-500/20 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer font-semibold"
+                    >
+                      <Check className="w-3.5 h-3.5" /> Accepter
+                    </button>
+                  )}
+                  {detailApp.status !== 'Refusé' && (
+                    <button
+                      onClick={async () => {
+                        await updateStatus(detailApp.id, 'Refusé');
+                        setDetailApp({ ...detailApp, status: 'Refusé' });
+                      }}
+                      disabled={updatingId === detailApp.id}
+                      className="px-3.5 py-2 bg-red-500/10 text-red-400 hover:bg-red-500 hover:text-white border border-red-500/20 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer font-semibold"
+                    >
+                      <Ban className="w-3.5 h-3.5" /> Refuser
+                    </button>
+                  )}
+                </div>
+              </div>
             </div>
-            <div className="flex justify-end mt-6">
+
+            <div className="flex justify-end gap-3 mt-8 pt-4 border-t border-slate-800">
               <button
-                onClick={() => setViewingMessage(null)}
-                className="px-6 py-2.5 bg-slate-850 hover:bg-slate-800 text-sm font-bold text-white rounded-xl transition-all cursor-pointer font-poppins"
+                onClick={() => {
+                  setDetailApp(null);
+                  openEditModal(detailApp);
+                }}
+                className="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-sm font-bold text-white rounded-xl border border-slate-700 transition-all cursor-pointer flex items-center gap-1.5"
+              >
+                <Edit2 className="w-4 h-4" /> Modifier
+              </button>
+              <button
+                onClick={() => setDetailApp(null)}
+                className="px-5 py-2.5 bg-slate-950 hover:bg-slate-900 border border-slate-800 text-sm font-bold text-slate-400 hover:text-white rounded-xl transition-all cursor-pointer"
               >
                 Fermer
               </button>
