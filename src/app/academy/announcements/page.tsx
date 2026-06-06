@@ -112,7 +112,7 @@ export default function AcademyAnnouncements() {
                 <div className="flex items-center gap-3 text-white/30 text-xs font-bold uppercase tracking-wider mb-4">
                   <Calendar className="w-4 h-4" /> {announcement.created_at ? new Date(announcement.created_at).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }) : "---"}
                 </div>
-                <h3 className="text-xl md:text-2xl font-montserrat font-bold text-white mb-4 line-clamp-2 leading-tight group-hover:text-accent transition-colors">
+                <h3 className="text-xl md:text-2xl font-montserrat font-bold text-white mb-4 line-clamp-3 leading-tight group-hover:text-accent transition-colors">
                   {announcement.title}
                 </h3>
                 <p className="text-white/50 text-sm font-poppins mb-8 line-clamp-3 leading-relaxed">
