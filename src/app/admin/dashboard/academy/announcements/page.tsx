@@ -153,14 +153,25 @@ export default function AdminAcademyAnnouncements() {
                     <td className="px-8 py-6 text-right">
                       <div className="flex items-center justify-end gap-2">
                         <Link 
+                          href={`/academy/announcements/${a.id}`} 
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 rounded-lg bg-slate-800 text-slate-400 hover:text-white transition-all"
+                          title="Voir en ligne"
+                        >
+                          <Eye className="w-4 h-4" />
+                        </Link>
+                        <Link 
                           href={`/admin/dashboard/academy/announcements/edit/${a.id}`} 
                           className="p-2 rounded-lg bg-slate-800 text-slate-400 hover:text-emerald-400 transition-all"
+                          title="Modifier"
                         >
                           <Edit2 className="w-4 h-4" />
                         </Link>
                         <button 
                           onClick={() => handleDelete(a.id)}
                           className="p-2 rounded-lg bg-slate-800 text-slate-400 hover:text-red-400 transition-all"
+                          title="Supprimer"
                         >
                           <Trash2 className="w-4 h-4" />
                         </button>

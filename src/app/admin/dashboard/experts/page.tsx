@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { supabase } from "../../../../lib/supabase";
-import { Loader2, Search, FileText, CheckCircle, Mail, Phone, ExternalLink, MapPin, Briefcase, Edit2, Trash2, X } from "lucide-react";
+import { Loader2, Search, FileText, CheckCircle, Mail, Phone, ExternalLink, MapPin, Briefcase, Edit2, Trash2, X, Eye, Globe, Calendar, Award } from "lucide-react";
 
 interface ExpertApplication {
   id: string;
@@ -32,6 +32,7 @@ export default function ExpertsDashboard() {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [updating, setUpdating] = useState<string | null>(null);
+  const [detailApp, setDetailApp] = useState<ExpertApplication | null>(null);
 
   // Edit states
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
@@ -250,14 +251,11 @@ export default function ExpertsDashboard() {
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-2">
                         <button
-                          onClick={() => {
-                            const msg = `PRÉSENTATION:\n${app.biography || 'Non renseignée'}\n\nMODALITÉS:\nCollaborations: ${app.collaboration_types?.join(', ') || 'N/A'}\nDisponibilité: ${app.availability || 'N/A'}\nLangues: ${app.languages?.join(', ') || 'N/A'}\nNiveau: ${app.education_level || 'N/A'}`;
-                            alert(msg);
-                          }}
-                          className="p-1.5 bg-slate-800 text-slate-300 hover:text-white rounded border border-slate-700 transition-colors"
-                          title="Voir les détails et modalités"
+                          onClick={() => setDetailApp(app)}
+                          className="p-1.5 bg-slate-800 text-[#00A878] hover:text-emerald-300 rounded border border-slate-700 transition-colors"
+                          title="Voir tous les détails"
                         >
-                          <FileText className="w-4 h-4" />
+                          <Eye className="w-4 h-4" />
                         </button>
                         {app.cv_link && (
                           <a
@@ -303,6 +301,208 @@ export default function ExpertsDashboard() {
           </div>
         )}
       </div>
+
+      {/* Viewing Details Modal */}
+      {detailApp && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={() => setDetailApp(null)}></div>
+          <div className="relative bg-slate-900 border border-slate-800 rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6 md:p-8 shadow-2xl">
+            {/* Header */}
+            <div className="flex justify-between items-start mb-6 pb-4 border-b border-slate-800">
+              <div>
+                <span className="text-[10px] font-black uppercase tracking-widest text-[#00A878]">Détails du profil d'expert</span>
+                <h3 className="text-2xl font-montserrat font-black text-white mt-1">{detailApp.first_name} {detailApp.last_name}</h3>
+                <p className="text-slate-500 text-xs mt-1 font-poppins font-medium">
+                  Candidature reçue le {new Date(detailApp.created_at).toLocaleDateString('fr-FR')}
+                </p>
+              </div>
+              <button onClick={() => setDetailApp(null)} className="text-slate-400 hover:text-white p-1 hover:bg-slate-800 rounded-lg transition-colors">
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+
+            <div className="space-y-6 font-poppins text-sm text-slate-300">
+              {/* Profile Details */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="p-4 bg-slate-950/40 border border-slate-800/80 rounded-2xl flex items-start gap-3">
+                  <div className="p-2 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-xl shrink-0"><Briefcase className="w-4 h-4" /></div>
+                  <div>
+                    <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider font-semibold">Statut Professionnel</span>
+                    <p className="text-white font-bold mt-0.5">{detailApp.professional_status || "N/A"}</p>
+                  </div>
+                </div>
+
+                <div className="p-4 bg-slate-950/40 border border-slate-800/80 rounded-2xl flex items-start gap-3">
+                  <div className="p-2 bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-xl shrink-0"><Award className="w-4 h-4" /></div>
+                  <div>
+                    <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider font-semibold">Niveau d'études / Expérience</span>
+                    <p className="text-white font-bold mt-0.5">{detailApp.education_level || "N/A"} ({detailApp.experience_years || "N/A"})</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Institution and role */}
+              {(detailApp.job_title || detailApp.institution) && (
+                <div className="p-4 bg-slate-950/40 border border-slate-800/80 rounded-2xl space-y-1">
+                  <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider font-semibold">Poste actuel & Institution</span>
+                  <p className="text-white font-bold text-base leading-snug">
+                    {detailApp.job_title || "N/A"} {detailApp.institution ? `chez ${detailApp.institution}` : ""}
+                  </p>
+                </div>
+              )}
+
+              {/* Contact information */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="p-4 bg-slate-950/40 border border-slate-800/80 rounded-2xl space-y-1">
+                  <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider flex items-center gap-1.5 font-semibold">
+                    <Mail className="w-3.5 h-3.5" /> Adresse Email
+                  </span>
+                  <a href={`mailto:${detailApp.email}`} className="text-white font-bold hover:text-emerald-400 transition-colors break-all block mt-1">
+                    {detailApp.email}
+                  </a>
+                </div>
+                <div className="p-4 bg-slate-950/40 border border-slate-800/80 rounded-2xl space-y-1">
+                  <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider flex items-center gap-1.5 font-semibold">
+                    <Phone className="w-3.5 h-3.5" /> Numéro de téléphone
+                  </span>
+                  <a href={`tel:${detailApp.phone}`} className="text-white font-bold hover:text-emerald-400 transition-colors block mt-1">
+                    {detailApp.phone || "Non renseigné"}
+                  </a>
+                </div>
+              </div>
+
+              {/* Location, Availability & Languages */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="p-4 bg-slate-950/40 border border-slate-800/80 rounded-2xl space-y-1">
+                  <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider flex items-center gap-1.5 font-semibold">
+                    <MapPin className="w-3.5 h-3.5" /> Ville, Pays
+                  </span>
+                  <p className="text-white font-bold mt-1">{detailApp.city ? `${detailApp.city}, ` : ""}{detailApp.country}</p>
+                </div>
+                <div className="p-4 bg-slate-950/40 border border-slate-800/80 rounded-2xl space-y-1">
+                  <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider flex items-center gap-1.5 font-semibold">
+                    <Calendar className="w-3.5 h-3.5" /> Disponibilité
+                  </span>
+                  <p className="text-white font-bold mt-1">{detailApp.availability || "N/A"}</p>
+                </div>
+                <div className="p-4 bg-slate-950/40 border border-slate-800/80 rounded-2xl space-y-1">
+                  <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider flex items-center gap-1.5 font-semibold">
+                    <Globe className="w-3.5 h-3.5" /> Langues
+                  </span>
+                  <p className="text-white font-bold mt-1">{detailApp.languages?.join(', ') || "N/A"}</p>
+                </div>
+              </div>
+
+              {/* Domains Tags */}
+              <div className="space-y-2">
+                <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider ml-1 font-semibold">Domaines d'expertise</span>
+                <div className="flex flex-wrap gap-2 p-4 bg-slate-950/40 border border-slate-800/80 rounded-2xl">
+                  {detailApp.domains?.map((domain, idx) => (
+                    <span key={idx} className="px-3 py-1 bg-slate-900 border border-slate-800 text-[#00A878] rounded-lg text-xs font-bold font-poppins">
+                      {domain}
+                    </span>
+                  ))}
+                  {(!detailApp.domains || detailApp.domains.length === 0) && (
+                    <span className="text-slate-500 italic text-xs">Aucun domaine spécifié.</span>
+                  )}
+                </div>
+              </div>
+
+              {/* Collaborations Tags */}
+              <div className="space-y-2">
+                <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider ml-1 font-semibold">Types de collaboration</span>
+                <div className="flex flex-wrap gap-2 p-4 bg-slate-950/40 border border-slate-800/80 rounded-2xl">
+                  {detailApp.collaboration_types?.map((type, idx) => (
+                    <span key={idx} className="px-3 py-1 bg-slate-900 border border-slate-800 text-blue-400 rounded-lg text-xs font-bold font-poppins">
+                      {type}
+                    </span>
+                  ))}
+                  {(!detailApp.collaboration_types || detailApp.collaboration_types.length === 0) && (
+                    <span className="text-slate-500 italic text-xs">Aucun type spécifié.</span>
+                  )}
+                </div>
+              </div>
+
+              {/* Biography / Presentation */}
+              <div className="space-y-2">
+                <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider ml-1 font-semibold">Biographie & Présentation</span>
+                <div className="p-4 bg-slate-950/60 border border-slate-800/80 rounded-2xl text-slate-300 whitespace-pre-wrap max-h-40 overflow-y-auto leading-relaxed">
+                  {detailApp.biography || <span className="text-slate-500 italic text-xs">Aucune présentation fournie.</span>}
+                </div>
+              </div>
+
+              {/* Attachments (CV) */}
+              {detailApp.cv_link && (
+                <div className="space-y-2">
+                  <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider ml-1 font-semibold">Document Joint (CV)</span>
+                  <div className="p-4 bg-slate-950/40 border border-slate-800/80 rounded-2xl flex items-center justify-between">
+                    <div className="flex items-center gap-2.5 min-w-0">
+                      <FileText className="w-5 h-5 text-blue-400 shrink-0" />
+                      <span className="text-white font-bold text-xs truncate max-w-[280px]">Curriculum Vitae</span>
+                    </div>
+                    <a
+                      href={detailApp.cv_link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 bg-blue-500/10 text-blue-400 border border-blue-500/20 hover:bg-blue-500 hover:text-white rounded-lg text-xs font-black transition-all flex items-center gap-1.5 shrink-0"
+                    >
+                      <ExternalLink className="w-3.5 h-3.5" /> Voir le profil / CV
+                    </a>
+                  </div>
+                </div>
+              )}
+
+              {/* Status and Action Buttons inside modal */}
+              <div className="p-4 bg-slate-950/40 border border-slate-800/80 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                  <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider font-semibold">Statut de validation</span>
+                  <div className="mt-1">
+                    <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium border ${
+                      detailApp.status === 'Examiné' 
+                        ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20' 
+                        : 'bg-orange-500/10 text-orange-400 border-orange-500/20'
+                    }`}>
+                      {detailApp.status === 'Examiné' ? 'Examiné' : 'Nouveau'}
+                    </span>
+                  </div>
+                </div>
+                
+                {detailApp.status !== 'Examiné' && (
+                  <button
+                    onClick={async () => {
+                      await updateStatus(detailApp.id, 'Examiné');
+                      setDetailApp({ ...detailApp, status: 'Examiné' });
+                    }}
+                    disabled={updating === detailApp.id}
+                    className="px-4 py-2.5 bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500 hover:text-white border border-emerald-500/20 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer font-semibold disabled:opacity-50"
+                  >
+                    {updating === detailApp.id ? <Loader2 className="w-4 h-4 animate-spin" /> : <CheckCircle className="w-4 h-4" />}
+                    <span>Marquer comme examiné</span>
+                  </button>
+                )}
+              </div>
+            </div>
+
+            <div className="flex justify-end gap-3 mt-8 pt-4 border-t border-slate-800">
+              <button
+                onClick={() => {
+                  setDetailApp(null);
+                  openEditModal(detailApp);
+                }}
+                className="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-sm font-bold text-white rounded-xl border border-slate-700 transition-all cursor-pointer flex items-center gap-1.5"
+              >
+                <Edit2 className="w-4 h-4" /> Modifier
+              </button>
+              <button
+                onClick={() => setDetailApp(null)}
+                className="px-5 py-2.5 bg-slate-950 hover:bg-slate-900 border border-slate-800 text-sm font-bold text-slate-400 hover:text-white rounded-xl transition-all cursor-pointer"
+              >
+                Fermer
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Edit Modal */}
       {isEditModalOpen && (
