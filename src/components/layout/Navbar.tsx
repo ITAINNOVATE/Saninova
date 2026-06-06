@@ -93,13 +93,13 @@ export const Navbar: React.FC = () => {
     { label: t.nav.services, href: "/services" },
     { label: t.nav.publications, href: "/publications" },
     { label: t.nav.academy, href: "/academy", isDropdown: true },
+    { label: t.nav.announcements, href: "/academy/announcements" },
     { label: t.nav.contact, href: "/contact" },
     { label: t.nav.faq, href: "/faq" },
   ];
 
   const academyItems = [
     { label: t.academy.nav.home, href: "/academy" },
-    { label: t.academy.nav.announcements, href: "/academy/announcements" },
     { label: t.academy.nav.trainings, href: "/academy/trainings" },
     { label: t.academy.nav.certifications, href: "/academy/certifications" },
   ];
@@ -176,7 +176,9 @@ export const Navbar: React.FC = () => {
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
           {navItems.map((item) => {
-            const isActive = pathname === item.href || (item.isDropdown && pathname?.startsWith("/academy"));
+            const isActive = pathname === item.href || 
+              (item.isDropdown && pathname?.startsWith("/academy") && !pathname?.startsWith("/academy/announcements")) ||
+              (item.href === "/academy/announcements" && pathname?.startsWith("/academy/announcements"));
             const label = item.label || (item.href === "/academy" ? (locale === "fr" ? "Académie" : "Academy") : "");
             
             if (item.isDropdown) {
@@ -263,7 +265,9 @@ export const Navbar: React.FC = () => {
         <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-b border-dark/5 shadow-xl p-6 transition-all duration-300">
           <div className="flex flex-col space-y-4">
             {navItems.map((item) => {
-              const isActive = pathname === item.href || (item.isDropdown && pathname?.startsWith("/academy"));
+              const isActive = pathname === item.href || 
+                (item.isDropdown && pathname?.startsWith("/academy") && !pathname?.startsWith("/academy/announcements")) ||
+                (item.href === "/academy/announcements" && pathname?.startsWith("/academy/announcements"));
               const label = item.label || (item.href === "/academy" ? (locale === "fr" ? "Académie" : "Academy") : "");
               
               if (item.isDropdown) {

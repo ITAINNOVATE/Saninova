@@ -11,6 +11,7 @@ export const translations = {
       contact: "Contact",
       faq: "FAQ",
       academy: "Académie",
+      announcements: "Annonces",
       cta: "Demander une consultation",
     },
     common: {
@@ -702,6 +703,7 @@ export const translations = {
       contact: "Contact",
       faq: "FAQ",
       academy: "Academy",
+      announcements: "Announcements",
       cta: "Request Consultation",
     },
     common: {
