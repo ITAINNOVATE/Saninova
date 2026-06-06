@@ -290,6 +290,23 @@ export default function AnnouncementDetail() {
 
     for (let i = 0; i < remainingLines.length; i++) {
       const line = remainingLines[i];
+      const lowerLine = line.toLowerCase();
+
+      // Signature block detection
+      if (lowerLine.startsWith("fait à") || lowerLine.startsWith("fait a")) {
+        flushList(`list-sig-${i}`);
+        const sigLines = remainingLines.slice(i);
+        elements.push(
+          <div key={`sig-block-${i}`} className="mt-12 text-right space-y-1.5 font-poppins">
+            {sigLines.map((sigLine, sigIdx) => (
+              <p key={sigIdx} className="text-white/80 text-sm md:text-base font-bold leading-normal">
+                {sigLine}
+              </p>
+            ))}
+          </div>
+        );
+        break;
+      }
 
       // Check if Heading 1: e.g. "1. CONTEXTE ET JUSTIFICATION"
       const h1Match = line.match(/^(\d+)\.\s+(.+)$/);
