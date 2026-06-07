@@ -114,5 +114,5 @@ if (officineIndex !== -1) {
 
 export const staticModules = tempModules.map((mod, index) => ({
   ...mod,
-  isAvailable: index < 3
+  isAvailable: false
 }));
