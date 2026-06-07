@@ -95,19 +95,29 @@ export default function AnnouncementDetail() {
     return publicUrl;
   };
 
+  const triggerError = (msg: string) => {
+    setError(msg);
+    setTimeout(() => {
+      const errorElem = document.getElementById("application-error-alert");
+      if (errorElem) {
+        errorElem.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }, 100);
+  };
+
   const handleApply = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
 
     if (isClosed) {
-      setError(locale === "fr" 
+      triggerError(locale === "fr" 
         ? "Cette offre est déjà clôturée. Les candidatures ne sont plus acceptées." 
         : "This offer is already closed. Applications are no longer accepted.");
       return;
     }
 
     if (!fullName.trim() || !email.trim() || !phone.trim() || !cvFile) {
-      setError(locale === "fr" 
+      triggerError(locale === "fr" 
         ? "Veuillez remplir tous les champs obligatoires et joindre votre dossier de candidature PDF." 
         : "Please fill in all required fields and upload your candidate PDF dossier.");
       return;
@@ -161,7 +171,7 @@ export default function AnnouncementDetail() {
       setSubmitSuccess(true);
     } catch (err: any) {
       console.error("Application submission error:", err);
-      setError(err.message || (locale === "fr" ? "Une erreur est survenue lors de l'envoi de votre candidature." : "An error occurred while submitting your application."));
+      triggerError(err.message || (locale === "fr" ? "Une erreur est survenue lors de l'envoi de votre candidature." : "An error occurred while submitting your application."));
     } finally {
       setIsSubmitting(false);
     }
@@ -575,7 +585,7 @@ export default function AnnouncementDetail() {
                       </div>
 
                       {error && (
-                        <div className="p-4 bg-red-500/10 border border-red-500/20 text-red-400 rounded-2xl flex items-start gap-3 text-sm font-semibold font-poppins">
+                        <div id="application-error-alert" className="p-4 bg-red-500/10 border border-red-500/20 text-red-400 rounded-2xl flex items-start gap-3 text-sm font-semibold font-poppins">
                           <AlertCircle className="w-5 h-5 shrink-0" />
                           <span>{error}</span>
                         </div>
