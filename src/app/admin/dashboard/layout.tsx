@@ -15,7 +15,8 @@ import {
   ChevronRight,
   User,
   FileText,
-  GraduationCap
+  GraduationCap,
+  Briefcase
 } from "lucide-react";
 
 interface LayoutProps {
@@ -89,6 +90,11 @@ export default function DashboardLayout({ children }: LayoutProps) {
       label: "Candidatures Experts",
       href: "/admin/dashboard/experts",
       icon: User,
+    },
+    {
+      label: "Candidatures Recrutement",
+      href: "/admin/dashboard/academy/applications",
+      icon: Briefcase,
     },
     {
       label: "SaniNova Academy",
