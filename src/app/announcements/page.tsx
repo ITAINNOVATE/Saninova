@@ -5,10 +5,10 @@ import { Megaphone, Calendar, Tag, ArrowRight, Search, Bell, ArrowLeft, X, Loade
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useLanguage } from "../../../context/LanguageContext";
-import PageHero from "../../../components/ui/PageHero";
+import { useLanguage } from "../../context/LanguageContext";
+import PageHero from "../../components/ui/PageHero";
 
-import { supabase } from "../../../lib/supabase";
+import { supabase } from "../../lib/supabase";
 
 export default function AcademyAnnouncements() {
   const router = useRouter();
@@ -172,7 +172,7 @@ export default function AcademyAnnouncements() {
                     </span>
                   </div>
                   <Link 
-                    href={`/academy/announcements/${announcement.id}`}
+                    href={`/announcements/${announcement.id}`}
                     className="w-12 h-12 rounded-2xl bg-white/5 text-white flex items-center justify-center hover:bg-orange transition-all"
                   >
                     <ArrowRight className="w-5 h-5" />

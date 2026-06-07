@@ -93,7 +93,7 @@ export const Navbar: React.FC = () => {
     { label: t.nav.services, href: "/services" },
     { label: t.nav.publications, href: "/publications" },
     { label: t.nav.academy, href: "/academy", isDropdown: true },
-    { label: t.nav.announcements, href: "/academy/announcements" },
+    { label: t.nav.announcements, href: "/announcements" },
     { label: t.nav.contact, href: "/contact" },
     { label: t.nav.faq, href: "/faq" },
   ];
@@ -177,8 +177,8 @@ export const Navbar: React.FC = () => {
         <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
           {navItems.map((item) => {
             const isActive = pathname === item.href || 
-              (item.isDropdown && pathname?.startsWith("/academy") && !pathname?.startsWith("/academy/announcements")) ||
-              (item.href === "/academy/announcements" && pathname?.startsWith("/academy/announcements"));
+              (item.isDropdown && pathname?.startsWith("/academy")) ||
+              (item.href === "/announcements" && pathname?.startsWith("/announcements"));
             const label = item.label || (item.href === "/academy" ? (locale === "fr" ? "Académie" : "Academy") : "");
             
             if (item.isDropdown) {
@@ -266,8 +266,8 @@ export const Navbar: React.FC = () => {
           <div className="flex flex-col space-y-4">
             {navItems.map((item) => {
               const isActive = pathname === item.href || 
-                (item.isDropdown && pathname?.startsWith("/academy") && !pathname?.startsWith("/academy/announcements")) ||
-                (item.href === "/academy/announcements" && pathname?.startsWith("/academy/announcements"));
+                (item.isDropdown && pathname?.startsWith("/academy")) ||
+                (item.href === "/announcements" && pathname?.startsWith("/announcements"));
               const label = item.label || (item.href === "/academy" ? (locale === "fr" ? "Académie" : "Academy") : "");
               
               if (item.isDropdown) {

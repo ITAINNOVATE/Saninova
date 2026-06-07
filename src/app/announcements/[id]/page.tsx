@@ -9,9 +9,9 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import PageHero from "../../../../components/ui/PageHero";
-import { useLanguage } from "../../../../context/LanguageContext";
-import { supabase } from "../../../../lib/supabase";
+import PageHero from "../../../components/ui/PageHero";
+import { useLanguage } from "../../../context/LanguageContext";
+import { supabase } from "../../../lib/supabase";
 
 export default function AnnouncementDetail() {
   const { id } = useParams();
@@ -231,7 +231,7 @@ export default function AnnouncementDetail() {
         <p className="text-sm opacity-60 mb-8 max-w-sm text-center font-poppins">
           {locale === "fr" ? "L'annonce que vous cherchez n'existe pas ou a été retirée." : "The announcement you are looking for does not exist or has been removed."}
         </p>
-        <Link href="/academy/announcements" className="px-8 py-3 bg-orange text-white rounded-full font-bold shadow-lg shadow-orange/20 hover:scale-105 transition-all text-sm uppercase tracking-wider font-poppins">
+        <Link href="/announcements" className="px-8 py-3 bg-orange text-white rounded-full font-bold shadow-lg shadow-orange/20 hover:scale-105 transition-all text-sm uppercase tracking-wider font-poppins">
           {locale === "fr" ? "Retour aux annonces" : "Back to announcements"}
         </Link>
       </div>
@@ -551,255 +551,255 @@ export default function AnnouncementDetail() {
                           <button
                             onClick={async () => {
                               try {
-                                await fetch("/api/newsletter/subscribe", {
-                                  method: "POST",
-                                  headers: { "Content-Type": "application/json" },
-                                  body: JSON.stringify({ email, locale })
-                                });
-                                setSubscribeNewsletter(true);
-                              } catch (err) {
-                                console.error(err);
-                              }
-                            }}
-                            className="w-full py-3 bg-orange hover:bg-orange/90 text-white rounded-xl font-bold text-xs transition-all uppercase tracking-wider"
+                                  await fetch("/api/newsletter/subscribe", {
+                                    method: "POST",
+                                    headers: { "Content-Type": "application/json" },
+                                    body: JSON.stringify({ email, locale })
+                                  });
+                                  setSubscribeNewsletter(true);
+                                } catch (err) {
+                                  console.error(err);
+                                }
+                              }}
+                              className="w-full py-3 bg-orange hover:bg-orange/90 text-white rounded-xl font-bold text-xs transition-all uppercase tracking-wider"
+                            >
+                              S'inscrire à la newsletter d'offres
+                            </button>
+                          </div>
+                        )}
+                      </motion.div>
+                    ) : (
+                      <form onSubmit={handleApply} className="space-y-6">
+                        <div className="flex justify-between items-start">
+                          <div>
+                            <h2 className="text-2xl font-montserrat font-black text-white mb-2">Postuler en ligne</h2>
+                            <p className="text-white/40 text-sm">Veuillez soumettre votre dossier complet pour cette offre d'emploi.</p>
+                          </div>
+                          <button
+                            type="button"
+                            onClick={() => setShowApplyForm(false)}
+                            className="px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white/60 hover:text-white rounded-xl text-xs font-bold transition-all"
                           >
-                            S'inscrire à la newsletter d'offres
+                            Fermer
                           </button>
                         </div>
-                      )}
-                    </motion.div>
-                  ) : (
-                    <form onSubmit={handleApply} className="space-y-6">
-                      <div className="flex justify-between items-start">
-                        <div>
-                          <h2 className="text-2xl font-montserrat font-black text-white mb-2">Postuler en ligne</h2>
-                          <p className="text-white/40 text-sm">Veuillez soumettre votre dossier complet pour cette offre d'emploi.</p>
-                        </div>
-                        <button
-                          type="button"
-                          onClick={() => setShowApplyForm(false)}
-                          className="px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white/60 hover:text-white rounded-xl text-xs font-bold transition-all"
-                        >
-                          Fermer
-                        </button>
-                      </div>
 
-                      {error && (
-                        <div id="application-error-alert" className="p-4 bg-red-500/10 border border-red-500/20 text-red-400 rounded-2xl flex items-start gap-3 text-sm font-semibold font-poppins">
-                          <AlertCircle className="w-5 h-5 shrink-0" />
-                          <span>{error}</span>
-                        </div>
-                      )}
-
-                      <div className="grid md:grid-cols-2 gap-6">
-                        <div className="space-y-2">
-                          <label className="text-sm font-bold text-white/40 uppercase tracking-wider ml-1">Nom complet *</label>
-                          <div className="relative">
-                            <User className="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 w-5 h-5" />
-                            <input
-                              type="text"
-                              value={fullName}
-                              onChange={(e) => setFullName(e.target.value)}
-                              required
-                              className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white focus:border-orange/50 focus:bg-white/10 transition-all outline-none font-poppins"
-                              placeholder="Ex: Dr. John Doe"
-                            />
+                        {error && (
+                          <div id="application-error-alert" className="p-4 bg-red-500/10 border border-red-500/20 text-red-400 rounded-2xl flex items-start gap-3 text-sm font-semibold font-poppins">
+                            <AlertCircle className="w-5 h-5 shrink-0" />
+                            <span>{error}</span>
                           </div>
-                        </div>
-                        <div className="space-y-2">
-                          <label className="text-sm font-bold text-white/40 uppercase tracking-wider ml-1">Adresse email *</label>
-                          <div className="relative">
-                            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 w-5 h-5" />
-                            <input
-                              type="email"
-                              value={email}
-                              onChange={(e) => setEmail(e.target.value)}
-                              required
-                              className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white focus:border-orange/50 focus:bg-white/10 transition-all outline-none font-poppins"
-                              placeholder="john.doe@exemple.com"
-                            />
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="grid md:grid-cols-1 gap-6">
-                        <div className="space-y-2">
-                          <label className="text-sm font-bold text-white/40 uppercase tracking-wider ml-1">Numéro de téléphone *</label>
-                          <div className="relative">
-                            <Phone className="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 w-5 h-5" />
-                            <input
-                              type="tel"
-                              value={phone}
-                              onChange={(e) => setPhone(e.target.value)}
-                              required
-                              className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white focus:border-orange/50 focus:bg-white/10 transition-all outline-none font-poppins"
-                              placeholder="+229 01 00 00 00 00"
-                            />
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Combined PDF Upload */}
-                      <div className="space-y-2">
-                        <label className="text-sm font-bold text-white/40 uppercase tracking-wider ml-1">Dossier de candidature (PDF unique) *</label>
-                        <div className="relative">
-                          {cvFile ? (
-                            <div className="w-full bg-emerald-500/10 border border-emerald-500/20 rounded-2xl p-6 flex items-center justify-between">
-                              <div className="flex items-center gap-3">
-                                <FileText className="w-8 h-8 text-emerald-400" />
-                                <div className="flex flex-col min-w-0">
-                                  <span className="text-white text-sm font-bold font-poppins truncate max-w-[280px]">{cvFile.name}</span>
-                                  <span className="text-[10px] text-white/40 font-poppins font-semibold mt-0.5">{(cvFile.size / (1024 * 1024)).toFixed(2)} Mo</span>
-                                </div>
-                              </div>
-                              <button type="button" onClick={() => setCvFile(null)} className="text-white/40 hover:text-white transition-colors p-1">
-                                <X className="w-6 h-6" />
-                              </button>
-                            </div>
-                          ) : (
-                            <label className="w-full bg-white/5 border border-dashed border-white/20 hover:border-orange/50 hover:bg-white/10 rounded-[32px] p-10 flex flex-col items-center justify-center gap-3 cursor-pointer transition-all">
-                              <UploadCloud className="w-12 h-12 text-white/40" />
-                              <span className="text-sm text-white/80 font-bold font-poppins text-center">Téléverser votre dossier de candidature</span>
-                              <span className="text-xs text-white/40 font-medium font-poppins text-center max-w-lg leading-relaxed">
-                                Veuillez joindre toutes les pièces demandées (Lettre de motivation, CV, copies des diplômes et attestations, pièce d'identité) compilées en un **seul fichier PDF unique**.
-                              </span>
-                              <input
-                                type="file"
-                                accept=".pdf"
-                                onChange={(e) => {
-                                  if (e.target.files && e.target.files[0]) {
-                                    setCvFile(e.target.files[0]);
-                                  }
-                                }}
-                                className="hidden"
-                              />
-                            </label>
-                          )}
-                        </div>
-                      </div>
-
-                      <div className="space-y-2">
-                        <label className="text-sm font-bold text-white/40 uppercase tracking-wider ml-1">Message d'accompagnement (Optionnel)</label>
-                        <textarea
-                          value={message}
-                          onChange={(e) => setMessage(e.target.value)}
-                          rows={4}
-                          className="w-full bg-white/5 border border-white/10 rounded-2xl p-4 text-white focus:border-orange/50 focus:bg-white/10 transition-all outline-none font-poppins resize-none"
-                          placeholder="Décrivez brièvement votre parcours et votre motivation..."
-                        />
-                      </div>
-
-                      {/* Newsletter Checkbox */}
-                      <label className="flex items-start gap-3 cursor-pointer group mt-4">
-                        <input
-                          type="checkbox"
-                          checked={subscribeNewsletter}
-                          onChange={(e) => setSubscribeNewsletter(e.target.checked)}
-                          className="mt-1 w-4.5 h-4.5 accent-orange rounded cursor-pointer"
-                        />
-                        <span className="text-xs text-white/60 group-hover:text-white transition-colors font-medium font-poppins leading-relaxed select-none">
-                          Je souhaite m'inscrire à la newsletter de SaniNova pour recevoir les opportunités de recrutement et actualités sanitaires en Afrique.
-                        </span>
-                      </label>
-
-                      {/* Submit button */}
-                      <button
-                        type="submit"
-                        disabled={isSubmitting}
-                        className="w-full py-4.5 bg-orange text-white rounded-2xl font-black text-sm uppercase tracking-wider shadow-xl shadow-orange/20 hover:scale-[1.01] transition-all disabled:opacity-50 disabled:scale-100 flex items-center justify-center gap-2 cursor-pointer"
-                      >
-                        {isSubmitting ? (
-                          <>
-                            <Loader2 className="w-5 h-5 animate-spin" /> Envoi en cours...
-                          </>
-                        ) : (
-                          "Soumettre ma candidature"
                         )}
-                      </button>
-                    </form>
-                  )}
-                </div>
-              )}
-            </div>
-          </motion.div>
-        </div>
-      </div>
 
-      {/* Subscribe Modal */}
-      {showSubscribeModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-          {/* Backdrop */}
-          <div 
-            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-            onClick={() => setShowSubscribeModal(false)}
-          />
-          
-          {/* Modal Card */}
-          <div className="relative bg-[#0F1D33] border border-white/10 rounded-[32px] p-8 max-w-md w-full shadow-2xl z-10 overflow-hidden font-poppins">
-            <button 
-              onClick={() => setShowSubscribeModal(false)}
-              className="absolute top-4 right-4 p-2 text-white/40 hover:text-white rounded-full transition-colors"
-            >
-              <X className="w-5 h-5" />
-            </button>
+                        <div className="grid md:grid-cols-2 gap-6">
+                          <div className="space-y-2">
+                            <label className="text-sm font-bold text-white/40 uppercase tracking-wider ml-1">Nom complet *</label>
+                            <div className="relative">
+                              <User className="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 w-5 h-5" />
+                              <input
+                                type="text"
+                                value={fullName}
+                                onChange={(e) => setFullName(e.target.value)}
+                                required
+                                className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white focus:border-orange/50 focus:bg-white/10 transition-all outline-none font-poppins"
+                                placeholder="Ex: Dr. John Doe"
+                              />
+                            </div>
+                          </div>
+                          <div className="space-y-2">
+                            <label className="text-sm font-bold text-white/40 uppercase tracking-wider ml-1">Adresse email *</label>
+                            <div className="relative">
+                              <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 w-5 h-5" />
+                              <input
+                                type="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
+                                className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white focus:border-orange/50 focus:bg-white/10 transition-all outline-none font-poppins"
+                                placeholder="john.doe@exemple.com"
+                              />
+                            </div>
+                          </div>
+                        </div>
 
-            <div className="text-center mb-6">
-              <div className="w-12 h-12 bg-orange/10 rounded-2xl flex items-center justify-center text-orange mx-auto mb-4">
-                <Bell className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-montserrat font-bold text-white mb-2">
-                {locale === "fr" ? "S'abonner aux alertes" : "Subscribe to Alerts"}
-              </h3>
-              <p className="text-white/60 text-xs leading-relaxed">
-                {locale === "fr" 
-                  ? "Recevez en exclusivité nos opportunités de recrutement et actualités sanitaires en Afrique." 
-                  : "Receive our exclusive recruitment opportunities and healthcare news in Africa."}
-              </p>
-            </div>
+                        <div className="grid md:grid-cols-1 gap-6">
+                          <div className="space-y-2">
+                            <label className="text-sm font-bold text-white/40 uppercase tracking-wider ml-1">Numéro de téléphone *</label>
+                            <div className="relative">
+                              <Phone className="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 w-5 h-5" />
+                              <input
+                                type="tel"
+                                value={phone}
+                                onChange={(e) => setPhone(e.target.value)}
+                                required
+                                className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white focus:border-orange/50 focus:bg-white/10 transition-all outline-none font-poppins"
+                                placeholder="+229 01 00 00 00 00"
+                              />
+                            </div>
+                          </div>
+                        </div>
 
-            <form onSubmit={handleNewsletterSubscribe} className="space-y-4">
-              <div>
-                <input
-                  type="email"
-                  required
-                  placeholder={locale === "fr" ? "Votre adresse e-mail" : "Your email address"}
-                  value={subscribeEmail}
-                  onChange={(e) => setSubscribeEmail(e.target.value)}
-                  disabled={subscribeStatus === "loading"}
-                  className="w-full bg-white/5 border border-white/10 rounded-2xl py-3.5 px-4 text-white placeholder-white/20 focus:border-orange/50 outline-none transition-all text-sm"
-                />
-              </div>
+                        {/* Combined PDF Upload */}
+                        <div className="space-y-2">
+                          <label className="text-sm font-bold text-white/40 uppercase tracking-wider ml-1">Dossier de candidature (PDF unique) *</label>
+                          <div className="relative">
+                            {cvFile ? (
+                              <div className="w-full bg-emerald-500/10 border border-emerald-500/20 rounded-2xl p-6 flex items-center justify-between">
+                                <div className="flex items-center gap-3">
+                                  <FileText className="w-8 h-8 text-emerald-400" />
+                                  <div className="flex flex-col min-w-0">
+                                    <span className="text-white text-sm font-bold font-poppins truncate max-w-[280px]">{cvFile.name}</span>
+                                    <span className="text-[10px] text-white/40 font-poppins font-semibold mt-0.5">{(cvFile.size / (1024 * 1024)).toFixed(2)} Mo</span>
+                                  </div>
+                                </div>
+                                <button type="button" onClick={() => setCvFile(null)} className="text-white/40 hover:text-white transition-colors p-1">
+                                  <X className="w-6 h-6" />
+                                </button>
+                              </div>
+                            ) : (
+                              <label className="w-full bg-white/5 border border-dashed border-white/20 hover:border-orange/50 hover:bg-white/10 rounded-[32px] p-10 flex flex-col items-center justify-center gap-3 cursor-pointer transition-all">
+                                <UploadCloud className="w-12 h-12 text-white/40" />
+                                <span className="text-sm text-white/80 font-bold font-poppins text-center">Téléverser votre dossier de candidature</span>
+                                <span className="text-xs text-white/40 font-medium font-poppins text-center max-w-lg leading-relaxed">
+                                  Veuillez joindre toutes les pièces demandées (Lettre de motivation, CV, copies des diplômes et attestations, pièce d'identité) compilées en un **seul fichier PDF unique**.
+                                </span>
+                                <input
+                                  type="file"
+                                  accept=".pdf"
+                                  onChange={(e) => {
+                                    if (e.target.files && e.target.files[0]) {
+                                      setCvFile(e.target.files[0]);
+                                    }
+                                  }}
+                                  className="hidden"
+                                />
+                              </label>
+                            )}
+                          </div>
+                        </div>
 
-              {subscribeMessage && (
-                <div className={`text-xs font-semibold font-poppins text-center p-2 rounded-xl ${
-                  subscribeStatus === "success" 
-                    ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20" 
-                    : "bg-red-500/10 text-red-400 border border-red-500/20"
-                }`}>
-                  {subscribeMessage}
-                </div>
-              )}
+                        <div className="space-y-2">
+                          <label className="text-sm font-bold text-white/40 uppercase tracking-wider ml-1">Message d'accompagnement (Optionnel)</label>
+                          <textarea
+                            value={message}
+                            onChange={(e) => setMessage(e.target.value)}
+                            rows={4}
+                            className="w-full bg-white/5 border border-white/10 rounded-2xl p-4 text-white focus:border-orange/50 focus:bg-white/10 transition-all outline-none font-poppins resize-none"
+                            placeholder="Décrivez brièvement votre parcours et votre motivation..."
+                          />
+                        </div>
 
-              <button
-                type="submit"
-                disabled={subscribeStatus === "loading" || subscribeStatus === "success"}
-                className="w-full py-3.5 bg-orange text-white rounded-2xl font-bold text-sm transition-all hover:bg-orange/90 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:scale-100 shadow-lg shadow-orange/20"
-              >
-                {subscribeStatus === "loading" ? (
-                  <>
-                    <Loader2 className="w-4 h-4 animate-spin" />
-                    {locale === "fr" ? "Inscription..." : "Subscribing..."}
-                  </>
-                ) : subscribeStatus === "success" ? (
-                  locale === "fr" ? "Inscrit avec succès !" : "Subscribed!"
-                ) : (
-                  locale === "fr" ? "S'abonner" : "Subscribe"
+                        {/* Newsletter Checkbox */}
+                        <label className="flex items-start gap-3 cursor-pointer group mt-4">
+                          <input
+                            type="checkbox"
+                            checked={subscribeNewsletter}
+                            onChange={(e) => setSubscribeNewsletter(e.target.checked)}
+                            className="mt-1 w-4.5 h-4.5 accent-orange rounded cursor-pointer"
+                          />
+                          <span className="text-xs text-white/60 group-hover:text-white transition-colors font-medium font-poppins leading-relaxed select-none">
+                            Je souhaite m'inscrire à la newsletter de SaniNova pour recevoir les opportunités de recrutement et actualités sanitaires en Afrique.
+                          </span>
+                        </label>
+
+                        {/* Submit button */}
+                        <button
+                          type="submit"
+                          disabled={isSubmitting}
+                          className="w-full py-4.5 bg-orange text-white rounded-2xl font-black text-sm uppercase tracking-wider shadow-xl shadow-orange/20 hover:scale-[1.01] transition-all disabled:opacity-50 disabled:scale-100 flex items-center justify-center gap-2 cursor-pointer"
+                        >
+                          {isSubmitting ? (
+                            <>
+                              <Loader2 className="w-5 h-5 animate-spin" /> Envoi en cours...
+                            </>
+                          ) : (
+                            "Soumettre ma candidature"
+                          )}
+                        </button>
+                      </form>
+                    )}
+                  </div>
                 )}
-              </button>
-            </form>
+              </div>
+            </motion.div>
           </div>
         </div>
-      )}
-    </>
-  );
-}
+
+        {/* Subscribe Modal */}
+        {showSubscribeModal && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+            {/* Backdrop */}
+            <div 
+              className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+              onClick={() => setShowSubscribeModal(false)}
+            />
+            
+            {/* Modal Card */}
+            <div className="relative bg-[#0F1D33] border border-white/10 rounded-[32px] p-8 max-w-md w-full shadow-2xl z-10 overflow-hidden font-poppins">
+              <button 
+                onClick={() => setShowSubscribeModal(false)}
+                className="absolute top-4 right-4 p-2 text-white/40 hover:text-white rounded-full transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              <div className="text-center mb-6">
+                <div className="w-12 h-12 bg-orange/10 rounded-2xl flex items-center justify-center text-orange mx-auto mb-4">
+                  <Bell className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-montserrat font-bold text-white mb-2">
+                  {locale === "fr" ? "S'abonner aux alertes" : "Subscribe to Alerts"}
+                </h3>
+                <p className="text-white/60 text-xs leading-relaxed">
+                  {locale === "fr" 
+                    ? "Recevez en exclusivité nos opportunités de recrutement et actualités sanitaires en Afrique." 
+                    : "Receive our exclusive recruitment opportunities and healthcare news in Africa."}
+                </p>
+              </div>
+
+              <form onSubmit={handleNewsletterSubscribe} className="space-y-4">
+                <div>
+                  <input
+                    type="email"
+                    required
+                    placeholder={locale === "fr" ? "Votre adresse e-mail" : "Your email address"}
+                    value={subscribeEmail}
+                    onChange={(e) => setSubscribeEmail(e.target.value)}
+                    disabled={subscribeStatus === "loading"}
+                    className="w-full bg-white/5 border border-white/10 rounded-2xl py-3.5 px-4 text-white placeholder-white/20 focus:border-orange/50 outline-none transition-all text-sm"
+                  />
+                </div>
+
+                {subscribeMessage && (
+                  <div className={`text-xs font-semibold font-poppins text-center p-2 rounded-xl ${
+                    subscribeStatus === "success" 
+                      ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20" 
+                      : "bg-red-500/10 text-red-400 border border-red-500/20"
+                  }`}>
+                    {subscribeMessage}
+                  </div>
+                )}
+
+                <button
+                  type="submit"
+                  disabled={subscribeStatus === "loading" || subscribeStatus === "success"}
+                  className="w-full py-3.5 bg-orange text-white rounded-2xl font-bold text-sm transition-all hover:bg-orange/90 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:scale-100 shadow-lg shadow-orange/20"
+                >
+                  {subscribeStatus === "loading" ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      {locale === "fr" ? "Inscription..." : "Subscribing..."}
+                    </>
+                  ) : subscribeStatus === "success" ? (
+                    locale === "fr" ? "Inscrit avec succès !" : "Subscribed!"
+                  ) : (
+                    locale === "fr" ? "S'abonner" : "Subscribe"
+                  )}
+                </button>
+              </form>
+            </div>
+          </div>
+        )}
+      </>
+    );
+  }

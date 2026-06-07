@@ -7,7 +7,7 @@ export default function AcademyEvents() {
   const router = useRouter();
 
   useEffect(() => {
-    router.replace("/academy/announcements");
+    router.replace("/announcements");
   }, [router]);
 
   return (

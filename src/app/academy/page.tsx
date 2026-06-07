@@ -140,7 +140,7 @@ export default function AcademyLanding() {
           
           <div className="mt-16 text-center">
             <Link 
-              href="/academy/announcements"
+              href="/announcements"
               className="inline-flex items-center gap-3 px-8 py-4 bg-orange/10 border border-orange/20 text-orange rounded-full font-bold hover:bg-orange hover:text-white transition-all group"
             >
               <Megaphone className="w-5 h-5" />
