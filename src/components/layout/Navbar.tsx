@@ -174,7 +174,7 @@ export const Navbar: React.FC = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+        <div className="hidden lg:flex items-center space-x-4 xl:space-x-6">
           {navItems.map((item) => {
             const isActive = pathname === item.href || 
               (item.isDropdown && pathname?.startsWith("/academy")) ||
@@ -190,7 +190,7 @@ export const Navbar: React.FC = () => {
                   onMouseLeave={() => setIsAcademyOpen(false)}
                 >
                   <button
-                    className={`flex items-center space-x-1 font-poppins text-base xl:text-lg font-medium transition-all duration-200 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-orange after:transition-all after:duration-300 hover:after:w-full ${
+                    className={`flex items-center space-x-1 font-poppins text-base xl:text-lg font-medium whitespace-nowrap transition-all duration-200 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-orange after:transition-all after:duration-300 hover:after:w-full ${
                       isActive ? "after:w-full text-orange" : "after:w-0"
                     } ${
                       isScrolled 
@@ -224,7 +224,7 @@ export const Navbar: React.FC = () => {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`font-poppins text-base xl:text-lg font-medium transition-all duration-200 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-orange after:transition-all after:duration-300 hover:after:w-full ${
+                className={`font-poppins text-base xl:text-lg font-medium whitespace-nowrap transition-all duration-200 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-orange after:transition-all after:duration-300 hover:after:w-full ${
                   isActive ? "after:w-full text-orange" : "after:w-0"
                 } ${
                   isScrolled 
