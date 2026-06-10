@@ -392,6 +392,17 @@ export default function PublicationDetailPage() {
       "Integration into National Systems: A Strategic Responsibility",
       "Human Resources Management in Difficult Operational Contexts",
       "What SaniNova Brings to Health NGOs",
+      // Article 12: Private Pharmaceutical Sector in Africa
+      "Un marché en croissance, mais fragmenté et exigeant",
+      "La conformité réglementaire : d’une contrainte à un avantage concurrentiel",
+      "La traçabilité pharmaceutique : une évolution inéluctable à anticiper",
+      "La production locale : une ambition continentale à saisir",
+      "Ce que SaniNova apporte au secteur pharmaceutique privé",
+      "A Growing but Fragmented and Demanding Market",
+      "Regulatory Compliance: From a Constraint to a Competitive Advantage",
+      "Pharmaceutical Traceability: An Inevitable Evolution to Anticipate",
+      "Local Production: A Continental Ambition to Seize",
+      "What SaniNova Brings to the Private Pharmaceutical Sector",
     ];
 
     const renderedElements: React.ReactNode[] = [];
