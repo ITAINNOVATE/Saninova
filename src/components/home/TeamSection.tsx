@@ -69,7 +69,7 @@ export const TeamSection: React.FC = () => {
           </div>
 
           {/* Rest of the team (4 Members) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {t.aboutPage.leadership.members.slice(1).map((member, index) => {
               const originalIndex = index + 1;
               return (
