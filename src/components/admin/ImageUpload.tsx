@@ -27,7 +27,7 @@ const GALLERY_IMAGES = [
   { name: "Fond Services 1", url: "/images/bg_services.png" },
   { name: "Fond Services 2", url: "/images/bg_services2.png" },
   { name: "Directeur Général", url: "/images/director.png" },
-  { name: "Dr. Hope Akohouvi Amou", url: "/images/photo_hope.png" },
+  { name: "Dr Hope Akohouvi Amou", url: "/images/photo_hope.png" },
   { name: "Arrière-plan Hero 1", url: "/images/hero_background.png" },
   { name: "Arrière-plan Hero 2", url: "/images/hero_background2.png" },
   { name: "Arrière-plan Hero 3", url: "/images/hero_background3.png" },
