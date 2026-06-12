@@ -103,6 +103,11 @@ function PaymentContent() {
       if (FedaPay) {
         try {
           const priceValue = parseInt(courseDetails.price.replace(/\D/g, ""));
+          let finalAmount = priceValue;
+          if (courseDetails.currency === "USD") {
+            finalAmount = priceValue * 600;
+          }
+
           const nameParts = participantName.trim().split(" ");
           const firstname = nameParts[0] || "Participant";
           const lastname = nameParts.slice(1).join(" ") || "SaniNova";
@@ -116,7 +121,7 @@ function PaymentContent() {
           const widget = FedaPay.init({
             public_key: process.env.NEXT_PUBLIC_FEDAPAY_PUBLIC_KEY || "pk_live_glLmgqSBaYSt9ktutyPAmLuh",
             transaction: {
-              amount: priceValue,
+              amount: finalAmount,
               currency: {
                 iso: "XOF"
               },
