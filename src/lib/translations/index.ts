@@ -429,18 +429,28 @@ export const translations = {
         members: [
           {
             name: "Dr. Hope Akohouvi AMOU",
-            role: "Président & CEO",
+            role: "Président",
             desc: "Directeur Général de SaniNova, expert international en transformation des systèmes de santé et réformes à fort impact en Afrique.",
           },
           {
+            name: "Prénom Nom",
+            role: "Directrice Technique - Santé Publique",
+            desc: "Spécialiste en santé publique et épidémiologie.",
+          },
+          {
             name: "Sophie KABORE",
-            role: "Directrice Associée, Santé Digitale",
+            role: "Directrice Technique - Digitalisation",
             desc: "Ingénieure spécialisée dans les systèmes d'information en santé, pionnière des projets e-santé à l'échelle nationale.",
           },
           {
-            name: "Prof. Jean-Marie BEHANZIN",
-            role: "Conseiller Scientifique Principal",
-            desc: "Professeur agrégé en épidémiologie, expert auprès de l'Organisation Mondiale de la Santé (OMS).",
+            name: "Prénom Nom",
+            role: "Directrice des Études",
+            desc: "Experte en ingénierie pédagogique et élaboration de programmes de formation en santé.",
+          },
+          {
+            name: "Prénom Nom",
+            role: "Directrice Exécutive - Chargée des projets",
+            desc: "Spécialiste en gestion et coordination de projets de santé d'envergure internationale.",
           },
         ],
       },
@@ -1121,18 +1131,28 @@ export const translations = {
         members: [
           {
             name: "Dr. Hope Akohouvi AMOU",
-            role: "President & CEO",
+            role: "President",
             desc: "Managing Director of SaniNova, international expert in health systems transformation and high-impact reforms in Africa.",
           },
           {
+            name: "Firstname Lastname",
+            role: "Technical Director - Public Health",
+            desc: "Specialist in public health and epidemiology.",
+          },
+          {
             name: "Sophie KABORE",
-            role: "Partner, Digital Health",
+            role: "Technical Director - Digitalization",
             desc: "Engineering expert specialized in health information systems, pioneer of national-scale e-health initiatives.",
           },
           {
-            name: "Prof. Jean-Marie BEHANZIN",
-            role: "Chief Scientific Advisor",
-            desc: "Professor in Epidemiology, expert consultant for the World Health Organization (WHO).",
+            name: "Firstname Lastname",
+            role: "Director of Studies",
+            desc: "Expert in educational engineering and development of health training programs.",
+          },
+          {
+            name: "Firstname Lastname",
+            role: "Executive Director - Project Manager",
+            desc: "Specialist in the management and coordination of international health projects.",
           },
         ],
       },
