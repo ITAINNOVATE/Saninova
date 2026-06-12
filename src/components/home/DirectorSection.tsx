@@ -117,7 +117,7 @@ export const DirectorSection: React.FC = () => {
                 </p>
                 <div className="flex items-center justify-center lg:justify-start space-x-3">
                   <div className="w-10 h-[2px] bg-orange rounded-full" />
-                  <span className="font-poppins text-sm font-bold text-dark/80 uppercase tracking-wider">
+                  <span className="font-poppins text-sm font-bold text-dark/80 tracking-wider">
                     {dir.name}
                   </span>
                 </div>
