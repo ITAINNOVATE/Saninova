@@ -50,7 +50,7 @@ export const TeamSection: React.FC = () => {
 
                 {/* Floating Identity Box - Overlapping */}
                 <div className="relative z-10 w-[85%] mx-auto -mt-12 bg-orange text-white text-center py-5 px-4 shadow-lg group-hover:bg-orange/95 transition-colors flex flex-col items-center justify-center min-h-[90px]">
-                  <h4 className="font-poppins text-lg sm:text-xl font-bold uppercase tracking-wide mb-1">
+                  <h4 className="font-poppins text-lg sm:text-xl font-bold tracking-wide mb-1">
                     {t.aboutPage.leadership.members[0].name}
                   </h4>
                   <p className="font-poppins text-xs sm:text-sm font-medium opacity-90 leading-tight uppercase tracking-wider">
@@ -90,7 +90,7 @@ export const TeamSection: React.FC = () => {
 
                   {/* Floating Identity Box - Smaller for the 4 items */}
                   <div className="relative z-10 w-[90%] mx-auto -mt-8 bg-orange text-white text-center py-4 px-3 shadow-lg group-hover:bg-orange/95 transition-colors flex flex-col items-center justify-center min-h-[80px]">
-                    <h4 className="font-poppins text-sm font-bold uppercase tracking-wide mb-1">
+                    <h4 className="font-poppins text-sm font-bold tracking-wide mb-1">
                       {member.name}
                     </h4>
                     <p className="font-poppins text-[10px] font-medium opacity-90 leading-tight uppercase tracking-wider">
