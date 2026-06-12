@@ -428,7 +428,7 @@ export const translations = {
         desc: "Des leaders d'opinion chevronnés alliant expérience dans la haute fonction publique, cabinets internationaux et recherche médicale.",
         members: [
           {
-            name: "Dr. Hope Akohouvi AMOU",
+            name: "Dr Hope AKOHOUVI AMOU",
             role: "Président",
             desc: "Directeur Général de SaniNova, expert international en transformation des systèmes de santé et réformes à fort impact en Afrique.",
           },
@@ -457,9 +457,9 @@ export const translations = {
     },
     director: {
       tag: "DIRECTION GÉNÉRALE",
-      name: "Dr. Hope Akohouvi Amou",
+      name: "Dr Hope AKOHOUVI AMOU",
       role: "Directeur Général & Expert en Systèmes de Santé",
-      description1: "Dr. Hope Akohouvi Amou est le Directeur Général de SaniNova, assurant un leadership stratégique pour la transformation des systèmes de santé à travers l'Afrique. Il conseille les gouvernements et les partenaires au développement sur la conception et la mise en œuvre de réformes à fort impact.",
+      description1: "Dr Hope AKOHOUVI AMOU est le Directeur Général de SaniNova, assurant un leadership stratégique pour la transformation des systèmes de santé à travers l'Afrique. Il conseille les gouvernements et les partenaires au développement sur la conception et la mise en œuvre de réformes à fort impact.",
       description2: "Son expertise couvre la gouvernance sanitaire, la régulation pharmaceutique, la chaîne d'approvisionnement, la santé digitale, le financement de la santé et la sécurité sanitaire. Il dirige SaniNova avec une vision claire axée sur la promotion de systèmes de santé résilients, équitables et performants.",
       description3: "",
       expertiseTitle: "Domaines d'expertise",
@@ -1130,7 +1130,7 @@ export const translations = {
         desc: "Seasoned thought-leaders combining high public service experience, international consulting background, and medical research.",
         members: [
           {
-            name: "Dr. Hope Akohouvi AMOU",
+            name: "Dr Hope AKOHOUVI AMOU",
             role: "President",
             desc: "Managing Director of SaniNova, international expert in health systems transformation and high-impact reforms in Africa.",
           },
@@ -1159,9 +1159,9 @@ export const translations = {
     },
     director: {
       tag: "EXECUTIVE LEADERSHIP",
-      name: "Dr. Hope Akohouvi Amou",
+      name: "Dr Hope AKOHOUVI AMOU",
       role: "Managing Director & Health Systems Expert",
-      description1: "Dr. Hope Akohouvi Amou is the Managing Director of SaniNova, providing strategic leadership on health systems transformation across Africa. He advises governments and development partners on the design and implementation of high-impact reforms.",
+      description1: "Dr Hope AKOHOUVI AMOU is the Managing Director of SaniNova, providing strategic leadership on health systems transformation across Africa. He advises governments and development partners on the design and implementation of high-impact reforms.",
       description2: "His expertise spans health governance, pharmaceutical regulation, supply chain management, digital health, health financing, and health security. He leads SaniNova with a clear focus on advancing resilient, equitable, and high-performing health systems.",
       description3: "",
       expertiseTitle: "Areas of Expertise",
