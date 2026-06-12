@@ -34,11 +34,11 @@ export const TeamSection: React.FC = () => {
           </div>
 
           {/* User requested layout style */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
+          <div className="flex flex-wrap justify-center gap-10 md:gap-8">
             {t.aboutPage.leadership.members.map((member, index) => (
               <div
                 key={index}
-                className="bg-white border border-dark/5 shadow-md flex flex-col overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
+                className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-[380px] bg-white border border-dark/5 shadow-md flex flex-col overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
               >
                 {/* Image Section */}
                 <div className="relative w-full aspect-[3/4] sm:aspect-[4/5] overflow-hidden bg-light/50">
