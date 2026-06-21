@@ -16,7 +16,8 @@ import {
   User,
   FileText,
   GraduationCap,
-  Briefcase
+  Briefcase,
+  Folder
 } from "lucide-react";
 
 interface LayoutProps {
@@ -77,9 +78,14 @@ export default function DashboardLayout({ children }: LayoutProps) {
       icon: Mail,
     },
     {
-      label: "Publications / CMS",
+      label: "Publications",
       href: "/admin/dashboard/publications",
       icon: BookOpen,
+    },
+    {
+      label: "Ressources",
+      href: "/admin/dashboard/ressources",
+      icon: Folder,
     },
     {
       label: "Soumissions Publications",

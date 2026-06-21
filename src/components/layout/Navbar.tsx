@@ -94,7 +94,7 @@ export const Navbar: React.FC = () => {
     { label: t.nav.publications, href: "/publications" },
     { label: t.nav.academy, href: "/academy", isDropdown: true },
     { label: t.nav.announcements, href: "/announcements" },
-    { label: t.nav.contact, href: "/contact" },
+    { label: t.nav.resources, href: "/ressources" },
     { label: t.nav.faq, href: "/faq" },
   ];
 
