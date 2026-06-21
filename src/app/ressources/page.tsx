@@ -151,8 +151,13 @@ export default function RessourcesPage() {
 
       {/* Header Banner */}
       <div className="bg-primary pt-32 pb-20 relative overflow-hidden">
+        <div 
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-30 mix-blend-overlay"
+          style={{ backgroundImage: 'url("/images/bg_publications.png")' }}
+        />
+        <div className="absolute inset-0 z-0 bg-gradient-to-b from-primary/80 to-primary/95" />
         <div className="absolute inset-0 z-0">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-accent rounded-full mix-blend-multiply filter blur-3xl opacity-20 transform translate-x-1/2 -translate-y-1/2" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-accent rounded-full mix-blend-multiply filter blur-3xl opacity-30 transform translate-x-1/2 -translate-y-1/2" />
         </div>
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-montserrat font-bold text-white mb-6">
