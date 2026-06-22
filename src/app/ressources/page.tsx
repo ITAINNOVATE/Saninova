@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { ResourceCard } from "../../components/resources/ResourceCard";
 import { supabase } from "../../lib/supabase";
-import { Search, File, X, Loader2, CreditCard } from "lucide-react";
+import { Search, File, X, Loader2, CreditCard, Download } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface Resource {
@@ -14,6 +14,7 @@ interface Resource {
   file_url: string;
   is_free: boolean;
   price_usd: number;
+  created_at: string;
 }
 
 export default function RessourcesPage() {
@@ -190,21 +191,61 @@ export default function RessourcesPage() {
             <p className="text-slate-500 font-inter">Essayez d'autres termes de recherche.</p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredResources.map((res) => (
-              <ResourceCard
-                key={res.id}
-                resource={res}
-                onDownloadFree={(r) => {
-                  setSelectedResource(r);
-                  setIsFreeModalOpen(true);
-                }}
-                onBuy={(r) => {
-                  setSelectedResource(r);
-                  setIsPaidModalOpen(true);
-                }}
-              />
-            ))}
+          <div className="bg-white rounded-3xl border border-slate-100 shadow-xl overflow-x-auto">
+            <table className="w-full text-left border-collapse min-w-[800px]">
+              <thead>
+                <tr className="bg-slate-50 border-b border-slate-100 text-slate-500 font-poppins text-sm uppercase tracking-wider">
+                  <th className="p-4 font-semibold">N°</th>
+                  <th className="p-4 font-semibold">Titre du document</th>
+                  <th className="p-4 font-semibold">Type</th>
+                  <th className="p-4 font-semibold">Description</th>
+                  <th className="p-4 font-semibold">Date de mise en ligne</th>
+                  <th className="p-4 font-semibold text-center">Téléchargement</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100">
+                {filteredResources.map((res, index) => (
+                  <tr key={res.id} className="hover:bg-slate-50/50 transition-colors group">
+                    <td className="p-4 font-mono text-slate-400">{index + 1}</td>
+                    <td className="p-4 font-montserrat font-bold text-slate-900">{res.title}</td>
+                    <td className="p-4">
+                      <span className="bg-slate-100 text-slate-600 font-mono text-xs font-bold px-2 py-1 rounded-md">
+                        {res.file_type}
+                      </span>
+                    </td>
+                    <td className="p-4 font-inter text-slate-600 text-sm max-w-xs truncate" title={res.description}>
+                      {res.description || "-"}
+                    </td>
+                    <td className="p-4 font-inter text-slate-500 text-sm whitespace-nowrap">
+                      {new Date(res.created_at).toLocaleDateString('fr-FR')}
+                    </td>
+                    <td className="p-4 text-center">
+                      {res.is_free ? (
+                        <button
+                          onClick={() => {
+                            setSelectedResource(res);
+                            setIsFreeModalOpen(true);
+                          }}
+                          className="bg-emerald-50 text-emerald-600 hover:bg-emerald-100 px-4 py-2 rounded-lg font-poppins text-sm font-medium transition-colors inline-flex items-center whitespace-nowrap"
+                        >
+                          <Download className="w-4 h-4 mr-2" /> Gratuit
+                        </button>
+                      ) : (
+                        <button
+                          onClick={() => {
+                            setSelectedResource(res);
+                            setIsPaidModalOpen(true);
+                          }}
+                          className="bg-orange/10 text-orange hover:bg-orange/20 px-4 py-2 rounded-lg font-poppins text-sm font-medium transition-colors inline-flex items-center whitespace-nowrap"
+                        >
+                          <CreditCard className="w-4 h-4 mr-2" /> Acheter ({res.price_usd} $)
+                        </button>
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         )}
       </div>
