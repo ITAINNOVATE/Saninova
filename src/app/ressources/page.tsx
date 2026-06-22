@@ -205,7 +205,7 @@ export default function RessourcesPage() {
               </thead>
               <tbody className="divide-y divide-slate-100">
                 {filteredResources.map((res, index) => (
-                  <tr key={res.id} className="hover:bg-slate-50/50 transition-colors group">
+                  <tr key={res.id} className="bg-white hover:bg-slate-50 transition-colors group">
                     <td className="p-4 font-mono text-slate-400">{index + 1}</td>
                     <td className="p-4 font-montserrat font-bold text-slate-900">{res.title}</td>
                     <td className="p-4">
