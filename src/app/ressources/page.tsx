@@ -1,8 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Navbar } from "../../components/layout/Navbar";
-import { Footer } from "../../components/layout/Footer";
 import { ResourceCard } from "../../components/resources/ResourceCard";
 import { supabase } from "../../lib/supabase";
 import { Search, File, X, Loader2, CreditCard } from "lucide-react";
@@ -147,8 +145,6 @@ export default function RessourcesPage() {
 
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col font-sans">
-      <Navbar />
-
       {/* Header Banner */}
       <div className="bg-primary pt-32 pb-20 relative overflow-hidden">
         <div className="absolute inset-0 z-0 bg-gradient-to-b from-primary/60 to-primary/95" />
@@ -212,8 +208,6 @@ export default function RessourcesPage() {
           </div>
         )}
       </div>
-
-      <Footer />
 
       {/* Free Download Modal */}
       <AnimatePresence>
