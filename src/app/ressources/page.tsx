@@ -191,10 +191,10 @@ export default function RessourcesPage() {
             <p className="text-slate-500 font-inter">Essayez d'autres termes de recherche.</p>
           </div>
         ) : (
-          <div className="bg-white rounded-3xl border border-slate-100 shadow-xl overflow-x-auto">
+          <div className="bg-white rounded-3xl border border-white/10 shadow-xl overflow-x-auto">
             <table className="w-full text-left border-collapse min-w-[800px]">
               <thead>
-                <tr className="bg-slate-50 border-b border-slate-100 text-slate-500 font-poppins text-sm uppercase tracking-wider">
+                <tr className="border-b border-white/10 text-slate-300 font-poppins text-sm uppercase tracking-wider bg-white/5">
                   <th className="p-4 font-semibold">N°</th>
                   <th className="p-4 font-semibold">Titre du document</th>
                   <th className="p-4 font-semibold">Type</th>
@@ -203,20 +203,20 @@ export default function RessourcesPage() {
                   <th className="p-4 font-semibold text-center">Téléchargement</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100">
+              <tbody className="divide-y divide-white/5">
                 {filteredResources.map((res, index) => (
-                  <tr key={res.id} className="bg-white hover:bg-slate-50 transition-colors group">
+                  <tr key={res.id} className="hover:bg-white/5 transition-colors group">
                     <td className="p-4 font-mono text-slate-400">{index + 1}</td>
-                    <td className="p-4 font-montserrat font-bold text-slate-900">{res.title}</td>
+                    <td className="p-4 font-montserrat font-bold text-white">{res.title}</td>
                     <td className="p-4">
-                      <span className="bg-slate-100 text-slate-600 font-mono text-xs font-bold px-2 py-1 rounded-md">
+                      <span className="bg-white/10 text-slate-200 font-mono text-xs font-bold px-2 py-1 rounded-md">
                         {res.file_type}
                       </span>
                     </td>
-                    <td className="p-4 font-inter text-slate-600 text-sm max-w-xs truncate" title={res.description}>
+                    <td className="p-4 font-inter text-slate-300 text-sm max-w-xs truncate" title={res.description}>
                       {res.description || "-"}
                     </td>
-                    <td className="p-4 font-inter text-slate-500 text-sm whitespace-nowrap">
+                    <td className="p-4 font-inter text-slate-400 text-sm whitespace-nowrap">
                       {new Date(res.created_at).toLocaleDateString('fr-FR')}
                     </td>
                     <td className="p-4 text-center">
