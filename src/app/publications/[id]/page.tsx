@@ -419,7 +419,7 @@ export default function PublicationDetailPage() {
         line.toLowerCase().includes("bibliographical references")
       ) {
         isInBibliography = true;
-        biblioHeader = line;
+        biblioHeader = line.replace(/^\*\*|\*\*$/g, '');
         continue;
       }
 
@@ -430,13 +430,17 @@ export default function PublicationDetailPage() {
 
       // Check if it is an orange subheading
       const normalize = (str: string) => str.toLowerCase().replace(/[\s\u200B-\u200D\uFEFF]/g, '').replace(/['’]/g, "'");
-      if (orangeHeadings.some(heading => normalize(heading) === normalize(line))) {
+      const isHardcodedHeading = orangeHeadings.some(heading => normalize(heading) === normalize(line));
+      const isMarkdownHeading = line.startsWith('**') && line.endsWith('**');
+
+      if (isHardcodedHeading || isMarkdownHeading) {
+        const displayText = isMarkdownHeading ? line.replace(/^\*\*|\*\*$/g, '') : line;
         renderedElements.push(
           <h3 
             key={`heading-${i}`} 
             className="font-montserrat text-lg sm:text-xl font-extrabold text-orange mt-10 mb-4 tracking-tight leading-snug"
           >
-            {line}
+            {displayText}
           </h3>
         );
       } else {
