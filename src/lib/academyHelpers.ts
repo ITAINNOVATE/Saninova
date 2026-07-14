@@ -112,7 +112,15 @@ if (officineIndex !== -1) {
   tempModules.splice(2, 0, officineModule);
 }
 
-export const staticModules = tempModules.map((mod, index) => ({
-  ...mod,
-  isAvailable: false
-}));
+export const staticModules = tempModules.map((mod, index) => {
+  const availableSlugs = [
+    "gestion-des-approvisionnements-et-des-stocks",
+    "quantification-et-previsions",
+    "gestion-d-une-officine-moderne"
+  ];
+
+  return {
+    ...mod,
+    isAvailable: availableSlugs.includes(mod.slug)
+  };
+});
