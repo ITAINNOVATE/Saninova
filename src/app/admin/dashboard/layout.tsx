@@ -103,9 +103,14 @@ export default function DashboardLayout({ children }: LayoutProps) {
       icon: Briefcase,
     },
     {
+      label: "Modules E-Learning",
+      href: "/admin/dashboard/academy/trainings",
+      icon: GraduationCap,
+    },
+    {
       label: "SaniNova Academy",
       href: "/admin/dashboard/academy",
-      icon: GraduationCap,
+      icon: LayoutDashboard,
     },
   ];
 
