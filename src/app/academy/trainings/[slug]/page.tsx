@@ -5,7 +5,7 @@ import { useLanguage } from "../../../../context/LanguageContext";
 import { 
   Calendar, Clock, MapPin, CheckCircle2, Users, 
   Award, Globe, BookOpen, User, PhoneCall, 
-  ArrowRight, ShieldCheck, Share2, Heart, ArrowLeft
+  ArrowRight, ShieldCheck, Share2, Heart, ArrowLeft, Package
 } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -236,6 +236,26 @@ export default function TrainingDetail({ params }: { params: Promise<{ slug: str
                 <div className="text-lg text-white/70 font-poppins leading-relaxed whitespace-pre-wrap">
                   {training.full_description}
                 </div>
+
+                {training.featured_concept && (
+                  <div className="mt-16 relative pt-6">
+                    <div className="absolute top-0 left-6 -translate-y-1/2 bg-[#4CAF50] text-white font-black text-xl tracking-wide px-8 py-2 rounded-full border-[4px] border-white shadow-lg z-10">
+                      {training.featured_concept.title}
+                    </div>
+                    <div className="bg-[#0B4A8E] rounded-xl p-8 pt-12 flex flex-col sm:flex-row gap-8 items-center sm:items-start relative overflow-hidden shadow-2xl">
+                      <div className="flex-shrink-0">
+                        <img src="/images/boxes_placeholder.png" alt="Boxes" className="w-24 h-24 object-contain opacity-0" onError={(e) => e.currentTarget.style.display = 'none'} />
+                        <div className="absolute top-10 left-8 sm:relative sm:top-0 sm:left-0">
+                           {/* Fallback to icon if no image */}
+                           <Package className="w-20 h-20 text-white/20" />
+                        </div>
+                      </div>
+                      <div className="text-white text-[1.1rem] font-medium leading-relaxed whitespace-pre-wrap flex-1 z-10">
+                        {training.featured_concept.text}
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Objectives */}
