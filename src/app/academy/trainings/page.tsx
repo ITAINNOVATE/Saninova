@@ -19,27 +19,8 @@ export default function TrainingsCatalog() {
   const [loading, setLoading] = useState(true);
 
   React.useEffect(() => {
-    const fetchTrainings = async () => {
-      setLoading(true);
-      const { data, error } = await supabase
-        .from("academy_trainings")
-        .select("*")
-        .order("created_at", { ascending: false });
-
-      if (data) {
-        // We set isAvailable to true if status is published, and keep the 'isStaticModule' tag for the UI badge
-        const formattedData = data.map(d => ({
-          ...d,
-          isAvailable: d.status === 'published',
-          isStaticModule: true, 
-          parentCertification: d.category
-        }));
-        setTrainings(formattedData);
-      }
-      setLoading(false);
-    };
-    
-    fetchTrainings();
+    setTrainings(staticModules);
+    setLoading(false);
   }, []);
 
   const categories = [
