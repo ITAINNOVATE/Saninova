@@ -691,8 +691,8 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                     // ### Concept title (e.g. "Le Stock") — green pill badge
                     if (para.startsWith("###")) {
                       return (
-                        <div key={i} style={{ marginTop: '1.25rem', marginBottom: '0.5rem' }}>
-                          <span style={{ display: 'inline-block', backgroundColor: '#16a34a', color: '#ffffff', fontWeight: 700, fontSize: '0.875rem', padding: '0.375rem 1.25rem', borderRadius: '9999px' }}>
+                        <div key={i} style={{ marginTop: '2rem', marginBottom: '-1rem', position: 'relative', zIndex: 10, paddingLeft: '1rem' }}>
+                          <span style={{ display: 'inline-block', backgroundColor: '#34A853', color: '#ffffff', fontWeight: 800, fontSize: '1.1rem', padding: '0.4rem 1.5rem', borderRadius: '9999px', border: '3px solid white', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}>
                             {para.replace(/^#+\s*/, "")}
                           </span>
                         </div>
@@ -701,8 +701,8 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                     // > blockquote — blue definition block (like PPT blue box)
                     if (para.startsWith(">")) {
                       return (
-                        <div key={i} style={{ backgroundColor: '#1a4ea0', color: '#ffffff', padding: '1rem 1.5rem', borderRadius: '12px', margin: '1rem 0', lineHeight: 1.7 }}>
-                          {para.replace(/^>\s*"?|"?$/g, "")}
+                        <div key={i} style={{ backgroundColor: '#0B4A8E', color: '#ffffff', padding: '2rem 1.5rem 1.5rem', borderRadius: '8px', margin: '0 0 1.5rem 0', lineHeight: 1.7, fontSize: '1.05rem' }}>
+                          {renderMarkdownText(para.replace(/^>\s*"?|"?$/g, ""))}
                         </div>
                       );
                     }
