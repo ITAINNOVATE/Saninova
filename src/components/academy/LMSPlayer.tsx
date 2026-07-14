@@ -780,7 +780,26 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                       );
                     }
                     // Default paragraph
-                    return <p key={i} style={{ color: '#334155', lineHeight: 1.75, margin: '0.5rem 0' }}>{renderMarkdownText(para)}</p>;
+                    return (
+                      <div key={i} style={{ color: '#334155', lineHeight: 1.75, margin: '0.5rem 0' }}>
+                        {para.split('\n').map((line, lineIndex, arr) => {
+                          if (line.trim().startsWith('- ')) {
+                            return (
+                              <div key={lineIndex} className="flex items-start mt-2 ml-4 mb-1">
+                                <span className="inline-block w-1.5 h-1.5 rounded-full bg-blue-500 mt-2.5 mr-3 flex-shrink-0"></span>
+                                <span>{renderMarkdownText(line.trim().substring(2))}</span>
+                              </div>
+                            );
+                          }
+                          return (
+                            <span key={lineIndex}>
+                              {renderMarkdownText(line)}
+                              {lineIndex !== arr.length - 1 && <br />}
+                            </span>
+                          );
+                        })}
+                      </div>
+                    );
                   })}
                 </div>
 
