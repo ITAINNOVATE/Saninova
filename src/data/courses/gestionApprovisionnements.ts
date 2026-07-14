@@ -23,7 +23,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Le Stock",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Définitions et concepts clés\n\n### Le Stock\n\n> Ensemble des produits (médicaments, consommables, réactifs) détenus par une structure sanitaire à un moment donné, en attente d'être utilisés ou distribués.\n\nUne pharmacie hospitalière fait le contrôle un lundi matin et compte au total :\n- Amoxicilline 500mg : 2 400 comprimés\n- Paracétamol 500mg : 5 800 comprimés\n- Sérum physiologique 500ml : 320 poches\n- Gants d'examen (boîtes) : 45 boîtes\n\n![Cartons de stock](/images/course/cartons.png)\n\nC'est le stock de cette pharmacie à ce moment précis.\n\nIl sera différent le lendemain selon les sorties et les réceptions.\n\n"
+        "content": "#### Définitions et concepts clés\n\n### Le Stock\n\n> Ensemble des produits (médicaments, consommables, réactifs) détenus par une structure sanitaire à un moment donné, en attente d'être utilisés ou distribués.\n\nUne pharmacie hospitalière fait le contrôle un lundi matin et compte au total :\n- Amoxicilline 500mg : 2 400 comprimés\n- Paracétamol 500mg : 5 800 comprimés\n- Sérum physiologique 500ml : 320 poches\n- Gants d'examen (boîtes) : 45 boîtes\n\nC'est le stock de cette pharmacie à ce moment précis.\n\nIl sera différent le lendemain selon les sorties et les réceptions.\n\n"
       },
       {
         "id": "gas-m1-c4",
@@ -65,7 +65,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Délai de livraison",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Définitions et concepts clés\n\n### Délai de livraison\n\n> Temps écoulé entre le moment où la commande est passée et le moment où les produits sont effectivement disponibles en stock. Il inclut le temps de traitement, d'expédition et de réception.\n\n![Camion de livraison](/images/course/camion.png)\n\nLa pharmacie passe une commande de Paracétamol le 1er mars.\n\nLes produits arrivent le 28 mars.\n\nLe délai de livraison est de 27 jours, soit environ 1 mois.\n\nLa pharmacie doit intégrer ce délai dans tous ses calculs de stock.\n\nSi elle attend d'être à zéro pour commander, elle sera en rupture pendant près d'un mois.\n"
+        "content": "#### Définitions et concepts clés\n\n### Délai de livraison\n\n> Temps écoulé entre le moment où la commande est passée et le moment où les produits sont effectivement disponibles en stock. Il inclut le temps de traitement, d'expédition et de réception.\n\nLa pharmacie passe une commande de Paracétamol le 1er mars.\n\nLes produits arrivent le 28 mars.\n\nLe délai de livraison est de 27 jours, soit environ 1 mois.\n\nLa pharmacie doit intégrer ce délai dans tous ses calculs de stock.\n\nSi elle attend d'être à zéro pour commander, elle sera en rupture pendant près d'un mois.\n"
       },
       {
         "id": "gas-m1-c10",
