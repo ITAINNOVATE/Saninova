@@ -675,7 +675,7 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                 )}
 
                 {/* Lesson Rich Content - PPT Style */}
-                <div className="max-w-none mb-10 space-y-5 text-sm md:text-base">
+                <div className="max-w-none mb-10 space-y-5 text-sm md:text-base flow-root">
                   {currentChapter.content.split("\n\n").map((para, i) => {
                     // #### Section title (e.g. "Définitions et concepts clés") — orange bar + title
                     if (para.startsWith("####")) {
@@ -764,9 +764,9 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                     const imgMatch = para.match(/^!\[(.*?)\]\((.*?)\)$/);
                     if (imgMatch) {
                       return (
-                        <div key={i} className="my-6 rounded-2xl overflow-hidden border border-slate-200 shadow">
+                        <div key={i} className="my-4 sm:float-right sm:w-5/12 sm:ml-8 mb-6 rounded-2xl overflow-hidden border border-slate-100 shadow-lg bg-white p-2">
                           {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img src={imgMatch[2]} alt={imgMatch[1]} className="w-full h-auto object-cover max-h-[400px]" />
+                          <img src={imgMatch[2]} alt={imgMatch[1]} className="w-full h-auto object-contain rounded-xl" style={{ maxHeight: '280px' }} />
                         </div>
                       );
                     }
