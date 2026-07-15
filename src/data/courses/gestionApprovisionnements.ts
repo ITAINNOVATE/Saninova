@@ -679,7 +679,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Cycle de commande : de la quantification à la réception",
         "type": "text",
         "duration": "10 min",
-        "content": "Cycle de commande : de la quantification à la réception\n\nVue d'ensemble du cycle de commande\n\nÉtape 7 — Réception et contrôle\n\nDéfinition :\n- C'est l'étape finale du cycle. Les produits arrivent et doivent être soigneusement vérifiés avant d'être intégrés au stock.\n\nUne réception bâclée est la porte d'entrée de nombreux problèmes : produits manquants non détectés, produits de mauvaise qualité acceptés, erreurs d'enregistrement.\n"
+        "content": "#### Cycle de commande : de la quantification à la réception\n\n### Vue d'ensemble du cycle de commande\n\n**Étape 7 — Réception et contrôle**\n\n- **Définition :**\n  - C'est l'étape finale du cycle. Les produits arrivent et doivent être soigneusement vérifiés avant d'être intégrés au stock.\n  - Une réception bâclée est la porte d'entrée de nombreux problèmes : produits manquants non détectés, produits de mauvaise qualité acceptés, erreurs d'enregistrement.\n"
       },
       {
         "id": "gas-m3-c14",
