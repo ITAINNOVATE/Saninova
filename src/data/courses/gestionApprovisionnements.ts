@@ -484,7 +484,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Exercices pratiques sur données réelles",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Exercices pratiques sur données réelles\n\nCorrection EXERCICE 1 — Calcul de la CMM\n\nQuestion 1 — CMM brute :\n- Total consommé = 1 450 + 1 380 + 1 510 + 1 420 + 1 390 + 1 480 = 8 630 cp\n- CMM brute = 8 630 ÷ 6 = 1 438 cp/mois\n\nQuestion 2 — Ajustements :\n\nAucun ajustement n'est nécessaire.\n\nTous les mois sont normaux, sans rupture ni événement exceptionnel.\n\nLes consommations sont stables et cohérentes entre elles (écart maximum entre les mois : 130 cp, soit moins de 10%).\n\nQuestion 3 — CMM retenue :\n- CMM = 1 438 cp/mois, arrondie à 1 440 cp/mois pour faciliter les calculs.\n"
+        "content": "#### Exercices pratiques sur données réelles\n\n### Correction EXERCICE 1 — Calcul de la CMM\n\n**Question 1 — CMM brute :**\n\nTotal consommé = 1 450 + 1 380 + 1 510 + 1 420 + 1 390 + 1 480 = 8 630 cp\n\nCMM brute = 8 630 ÷ 6 = 1 438 cp/mois\n\n**Question 2 — Ajustements :**\n\nAucun ajustement n'est nécessaire.\n\nTous les mois sont normaux, sans rupture ni événement exceptionnel.\n\nLes consommations sont stables et cohérentes entre elles (écart maximum entre les mois : 130 cp, soit moins de 10%).\n\n**Question 3 — CMM retenue :**\n\nCMM = 1 438 cp/mois, arrondie à 1 440 cp/mois pour faciliter les calculs.\n"
       },
       {
         "id": "gas-m2-c26",
