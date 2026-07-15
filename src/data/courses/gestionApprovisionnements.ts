@@ -561,7 +561,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Exercices pratiques sur données réelles",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Exercices pratiques sur données réelles\n\nCorrection EXERCICE 4 — Cas complexe multiproduits\n\nProduit 3 — Vitamine A 200 000 UI (CMM = 310 capsules)\n\nStatut : stock actuel (2 800) >> stock max (2 170) → Surstock important (+630 capsules)\n\nCouverture = 2 800 ÷ 310 = 9 mois\n\nAction : ne pas commander. Vérifier impérativement les dates de péremption. Si les capsules périment dans moins de 9 mois, une partie sera perdue. Informer le niveau supérieur et proposer une redistribution vers les sites déficitaires. Investiguer la cause du surstock (erreur de commande précédente ? baisse de la demande ?).\n"
+        "content": "#### Exercices pratiques sur données réelles\n\n### Correction EXERCICE 4 — Cas complexe multiproduits\n\n**Produit 3 — Vitamine A 200 000 UI (CMM = 310 capsules)**\n\n| Paramètre | Calcul | Résultat |\n| --- | --- | --- |\n| Stock de sécurité | 310 × 2 | 620 cp |\n| Stock minimum | (310 × 2) + 620 | 1 240 cp |\n| Stock maximum | 1 240 + (310 × 3) | 2 170 cp |\n| Stock actuel | — | 2 800 cp |\n\n- **Statut :** stock actuel (2 800) >> stock max (2 170) → Surstock important (+630 capsules)\n- **Couverture** = 2 800 ÷ 310 = 9 mois\n- **Action :** ne pas commander. Vérifier impérativement les dates de péremption. Si les capsules périment dans moins de 9 mois, une partie sera perdue. Informer le niveau supérieur et proposer une redistribution vers les sites déficitaires. Investiguer la cause du surstock (erreur de commande précédente ? baisse de la demande ?).\n"
       },
       {
         "id": "gas-m2-c37",
