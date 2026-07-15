@@ -100,12 +100,7 @@ export default function AcademyAnnouncements() {
             </Link>
           </div>
           {/* Header (Simplified since PageHero handles title) */}
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12">
-            <div className="max-w-2xl">
-              <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent font-bold text-xs tracking-widest uppercase mb-4">
-                <Megaphone className="w-4 h-4 mr-2" /> Academy Insights
-              </span>
-            </div>
+          <div className="flex flex-col md:flex-row justify-end items-start md:items-end gap-6 mb-12">
             
             <button 
               onClick={() => setShowSubscribeModal(true)}
