@@ -693,7 +693,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Cycle de commande : de la quantification à la réception",
         "type": "text",
         "duration": "10 min",
-        "content": "Cycle de commande : de la quantification à la réception\n\nVue d'ensemble du cycle de commande\n\nÉtape 7 — Réception et contrôle\n\nLes 5 vérifications obligatoires à la réception : :\n- Vérification 3 — Contrôle qualitatif\n- Vérification 4 — Contrôle de la chaîne du froid (produits thermosensibles)\n- Vérifier le pastillage des vaccins (Vaccine Vial Monitor - VVM).\n- Si le pastillage indique une rupture de la chaîne du froid, placer en quarantaine immédiatement.\n"
+        "content": "#### Cycle de commande : de la quantification à la réception\n\n### Vue d'ensemble du cycle de commande\n\n**Étape 7 — Réception et contrôle**\n\n- **Les 5 vérifications obligatoires à la réception :**\n  - **Vérification 3 — Contrôle qualitatif**\n\n| Critère | Ce qu'on vérifie |\n| --- | --- |\n| Intégrité des emballages | Pas de boîtes écrasées, mouillées, déchirées |\n| Dates de péremption | Suffisamment éloignées (règle : DDP > durée de couverture du stock) |\n| Aspect des produits | Pas de décoloration, pas de cristallisation anormale, pas d'odeur suspecte |\n| Numéros de lot | Correspondance avec les certificats d'analyse |\n| Étiquetage | Lisible, en langue appropriée, mentions légales présentes |\n\n  - **Vérification 4 — Contrôle de la chaîne du froid (produits thermosensibles)**\n    - Vérifier le pastillage des vaccins (Vaccine Vial Monitor - VVM).\n    - Si le pastillage indique une rupture de la chaîne du froid, placer en quarantaine immédiatement.\n"
       },
       {
         "id": "gas-m3-c16",
