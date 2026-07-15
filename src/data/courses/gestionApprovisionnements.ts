@@ -491,7 +491,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Exercices pratiques sur données réelles",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Exercices pratiques sur données réelles\n\nEXERCICE 2 — CMM avec mois de rupture\n\nDonnées\n\nLa Pharmacie du District Sanitaire de Glazoué enregistre les sorties de Cotrimoxazole 480mg sur 8 mois :\n\nQuestions :\n\nIdentifiez les mois à exclure ou à ajuster et justifiez chaque décision.\n\nCalculez la CMM ajustée.\n\nPourquoi est-il dangereux d'utiliser la CMM brute dans ce cas ?\n"
+        "content": "#### Exercices pratiques sur données réelles\n\n### EXERCICE 2 — CMM avec mois de rupture\n\n**Données**\n\nLa Pharmacie du District Sanitaire de Glazoué enregistre les sorties de Cotrimoxazole 480mg sur 8 mois :\n\n| Mois | Quantité sortie | Observations |\n| --- | --- | --- |\n| Janvier | 520 cp | Normal |\n| Février | 490 cp | Normal |\n| Mars | 210 cp | Rupture partielle — produit disponible 12 jours sur 30 |\n| Avril | 0 cp | Rupture totale |\n| Mai | 0 cp | Rupture totale |\n| Juin | 530 cp | Normal |\n| Juillet | 4 200 cp | Campagne nationale de déparasitage |\n| Août | 510 cp | Normal |\n\n**Questions :**\n\n1. Identifiez les mois à exclure ou à ajuster et justifiez chaque décision.\n2. Calculez la CMM ajustée.\n3. Pourquoi est-il dangereux d'utiliser la CMM brute dans ce cas ?\n"
       },
       {
         "id": "gas-m2-c27",
