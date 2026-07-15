@@ -512,7 +512,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Exercices pratiques sur données réelles",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Exercices pratiques sur données réelles\n\n### Correction EXERCICE 2 — CMM avec mois de rupture\n\n**Question 3 — Danger de la CMM brute :**\n\nCMM brute = (520 + 490 + 210 + 0 + 0 + 530 + 4 200 + 510) ÷ 8 = 6 460 ÷ 8 = 808 cp/mois\n\nLa CMM brute de 808 cp est 57% plus élevée que la CMM ajustée de 515 cp.\n\nCommander sur cette base conduirait à commander systématiquement 293 cp de trop chaque mois, soit un surstock permanent et une immobilisation inutile de ressources financières.\n\nÀ l'inverse, si on avait calculé la CMM uniquement sur les mois de rupture, on aurait obtenu un chiffre bien trop bas et reproduit la rupture.\n"
+        "content": "#### Exercices pratiques sur données réelles\n\n### Correction EXERCICE 2 — CMM avec mois de rupture\n\n**Question 3 — Danger de la CMM brute :**\n\n**CMM brute = (520 + 490 + 210 + 0 + 0 + 530 + 4 200 + 510) ÷ 8 = 6 460 ÷ 8 = 808 cp/mois**\n\n- La CMM brute de 808 cp est 57% plus élevée que la CMM ajustée de 515 cp.\n- Commander sur cette base conduirait à commander systématiquement 293 cp de trop chaque mois, soit un surstock permanent et une immobilisation inutile de ressources financières.\n- À l'inverse, si on avait calculé la CMM uniquement sur les mois de rupture, on aurait obtenu un chiffre bien trop bas et reproduit la rupture.\n"
       },
       {
         "id": "gas-m2-c30",
