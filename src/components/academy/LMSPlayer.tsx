@@ -710,7 +710,7 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                     if (para.startsWith("-") || para.startsWith("\u25b8")) {
                       return (
                         <ul key={i} style={{ paddingLeft: '1.25rem', margin: '0.75rem 0', listStyleType: 'disc' }}>
-                          {para.split("\n").map((li, j) => (
+                          {para.split("\n").filter(li => li.trim() !== "").map((li, j) => (
                             <li key={j} style={{ color: '#334155', lineHeight: 1.7, marginBottom: '0.375rem' }}>{renderMarkdownText(li.replace(/^[\-\u25b8]\s*/, ""))}</li>
                           ))}
                         </ul>
@@ -720,7 +720,7 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                     if (/^\d+\./.test(para.trim())) {
                       return (
                         <ol key={i} style={{ paddingLeft: '1.25rem', margin: '0.75rem 0', listStyleType: 'decimal' }}>
-                          {para.split("\n").map((li, j) => (
+                          {para.split("\n").filter(li => li.trim() !== "").map((li, j) => (
                             <li key={j} style={{ color: '#334155', lineHeight: 1.7, marginBottom: '0.375rem' }}>{renderMarkdownText(li.replace(/^\d+\.\s*/, ""))}</li>
                           ))}
                         </ol>
