@@ -889,7 +889,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Gestion des contrats et des termes de livraison (Incoterms)",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\nLes Incoterms — Règles internationales de livraison\n\nComparaison synthétique des principaux Incoterms\n"
+        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\n### Les Incoterms — Règles internationales de livraison\n\n**Comparaison synthétique des principaux Incoterms**\n\n| Incoterm | Transport | Assurance | Douane export | Douane import | Transfert de risque |\n|---|---|---|---|---|---|\n| **EXW** | Acheteur | Acheteur | Acheteur | Acheteur | Chez le vendeur |\n| **FOB** | Acheteur | Acheteur | Vendeur | Acheteur | À bord du navire export |\n| **CIF** | Vendeur | Vendeur | Vendeur | Acheteur | À bord du navire export |\n| **DAP** | Vendeur | Vendeur | Vendeur | Acheteur | À destination (avant déchargement) |\n| **DDP** | Vendeur | Vendeur | Vendeur | Vendeur | À destination (après déchargement) |\n"
       },
       {
         "id": "gas-m3-c44",
