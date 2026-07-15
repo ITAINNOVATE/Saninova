@@ -421,7 +421,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Méthode min/max : formules et application",
         "type": "text",
         "duration": "10 min",
-        "content": "Méthode min/max : formules et application\n\nLes limites de la méthode min/max et comment les contourner\n"
+        "content": "#### Méthode min/max : formules et application\n\n### Les limites de la méthode min/max et comment les contourner\n\n| Limite | Impact | Solution |\n| --- | --- | --- |\n| **CMM mal calculée** | Tous les niveaux sont faux | Réviser la CMM régulièrement (tous les trimestres) |\n| **Délai de livraison variable** | Le stock min ne protège pas suffisamment | Utiliser le délai maximum observé, pas la moyenne |\n| **Changement soudain de la demande** | Stock min/max obsolètes rapidement | Recalculer dès qu'un changement est détecté |\n| **Produits saisonniers** | Un seul min/max inadapté toute l'année | Calculer des min/max saisonniers |\n| **Non-respect du calendrier de commande** | Commandes tardives, ruptures | Automatiser les alertes ou afficher les dates limites de commande |\n"
       },
       {
         "id": "gas-m2-c17",
