@@ -763,7 +763,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Sélection et évaluation des fournisseurs",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Sélection et évaluation des fournisseurs\n\nLa gestion des fournisseurs alternatifs\n\nDépendre d'un seul fournisseur pour un produit critique est un risque majeur.\n\nSi ce fournisseur est en rupture, en grève, ou en difficulté financière, toute la chaîne d'approvisionnement est bloquée.\n\nBonne pratique — La règle des 3 fournisseurs : Pour chaque produit essentiel, identifier et qualifier au minimum :\n- 1 fournisseur principal : celui avec qui on travaille habituellement (meilleur score global)\n- 1 fournisseur secondaire : sollicité en cas de défaillance du principal\n- 1 fournisseur d'urgence : prix potentiellement plus élevé, mais disponible rapidement en cas de crise\n"
+        "content": "#### Sélection et évaluation des fournisseurs\n\n### La gestion des fournisseurs alternatifs\n\n- Dépendre d'un seul fournisseur pour un produit critique est un risque majeur.\n- Si ce fournisseur est en rupture, en grève, ou en difficulté financière, toute la chaîne d'approvisionnement est bloquée.\n- **Bonne pratique — La règle des 3 fournisseurs :** Pour chaque produit essentiel, identifier et qualifier au minimum :\n  - **1 fournisseur principal :** celui avec qui on travaille habituellement (meilleur score global)\n  - **1 fournisseur secondaire :** sollicité en cas de défaillance du principal\n  - **1 fournisseur d'urgence :** prix potentiellement plus élevé, mais disponible rapidement en cas de crise\n"
       },
       {
         "id": "gas-m3-c26",
