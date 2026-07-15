@@ -498,21 +498,21 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Exercices pratiques sur données réelles",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Exercices pratiques sur données réelles\n\nCorrection EXERCICE 2 — CMM avec mois de rupture\n\nQuestion 1 — Identification des mois à traiter :\n\nMars → Ajustement : rupture partielle de 18 jours. Le produit n'était disponible que 12 jours sur 30. La consommation enregistrée (210 cp) ne reflète que 12/30 de la demande réelle.\n\nConsommation extrapolée mars = 210 × (30 ÷ 12) = 525 cp\n\nAvril → Exclusion : rupture totale, consommation nulle non représentative de la demande réelle.\n\nMai → Exclusion : rupture totale, même raison.\n\nJuillet → Exclusion : consommation atypique liée à une campagne exceptionnelle (4 200 cp vs une moyenne d'environ 510 cp en période normale). Inclure ce mois gonflerait artificiellement la CMM.\n"
+        "content": "#### Exercices pratiques sur données réelles\n\n### Correction EXERCICE 2 — CMM avec mois de rupture\n\n**Question 1 — Identification des mois à traiter :**\n\n- Mars → Ajustement : rupture partielle de 18 jours. Le produit n'était disponible que 12 jours sur 30. La consommation enregistrée (210 cp) ne reflète que 12/30 de la demande réelle.\n  - Consommation extrapolée mars = 210 × (30 ÷ 12) = 525 cp\n\n- Avril → Exclusion : rupture totale, consommation nulle non représentative de la demande réelle.\n\n- Mai → Exclusion : rupture totale, même raison.\n\n- Juillet → Exclusion : consommation atypique liée à une campagne exceptionnelle (4 200 cp vs une moyenne d'environ 510 cp en période normale). Inclure ce mois gonflerait artificiellement la CMM.\n"
       },
       {
         "id": "gas-m2-c28",
         "title": "Exercices pratiques sur données réelles",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Exercices pratiques sur données réelles\n\nCorrection EXERCICE 2 — CMM avec mois de rupture\n\nQuestion 2 — CMM ajustée :\n- Mois retenus : janvier, février, mars ajusté, juin, août\n- CMM ajustée = 2 575 ÷ 5 = 515 cp/mois\n"
+        "content": "#### Exercices pratiques sur données réelles\n\n### Correction EXERCICE 2 — CMM avec mois de rupture\n\n**Question 2 — CMM ajustée :**\n\nMois retenus : janvier, février, mars ajusté, juin, août\n\nCMM ajustée = 2 575 ÷ 5 = 515 cp/mois\n"
       },
       {
         "id": "gas-m2-c29",
         "title": "Exercices pratiques sur données réelles",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Exercices pratiques sur données réelles\n\nCorrection EXERCICE 2 — CMM avec mois de rupture\n\nQuestion 3 — Danger de la CMM brute :\n- CMM brute = (520 + 490 + 210 + 0 + 0 + 530 + 4 200 + 510) ÷ 8 = 6 460 ÷ 8 = 808 cp/mois\n- La CMM brute de 808 cp est 57% plus élevée que la CMM ajustée de 515 cp.\n\nCommander sur cette base conduirait à commander systématiquement 293 cp de trop chaque mois, soit un surstock permanent et une immobilisation inutile de ressources financières.\n\nÀ l'inverse, si on avait calculé la CMM uniquement sur les mois de rupture, on aurait obtenu un chiffre bien trop bas et reproduit la rupture.\n"
+        "content": "#### Exercices pratiques sur données réelles\n\n### Correction EXERCICE 2 — CMM avec mois de rupture\n\n**Question 3 — Danger de la CMM brute :**\n\nCMM brute = (520 + 490 + 210 + 0 + 0 + 530 + 4 200 + 510) ÷ 8 = 6 460 ÷ 8 = 808 cp/mois\n\nLa CMM brute de 808 cp est 57% plus élevée que la CMM ajustée de 515 cp.\n\nCommander sur cette base conduirait à commander systématiquement 293 cp de trop chaque mois, soit un surstock permanent et une immobilisation inutile de ressources financières.\n\nÀ l'inverse, si on avait calculé la CMM uniquement sur les mois de rupture, on aurait obtenu un chiffre bien trop bas et reproduit la rupture.\n"
       },
       {
         "id": "gas-m2-c30",
