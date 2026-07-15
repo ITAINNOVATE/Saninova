@@ -442,7 +442,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Calcul du point de commande et du délai de livraison",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Calcul du point de commande et du délai de livraison\n\nLe point de commande — Définition et formule\n\nLe point de commande (PC) est le niveau de stock auquel il faut déclencher la commande pour recevoir les produits avant d'entamer le stock de sécurité.\n\nPoint de commande = (CMM × Délai de livraison) + Stock de sécurité\n\nCette formule est identique à celle du stock minimum dans la méthode min/max simple. Mais dans une approche plus fine, les deux peuvent différer selon la variabilité du délai de livraison et de la demande.\n"
+        "content": "#### Calcul du point de commande et du délai de livraison\n\n### Le point de commande — Définition et formule\n\n- Le point de commande (PC) est le niveau de stock auquel il faut déclencher la commande pour recevoir les produits avant d'entamer le stock de sécurité.\n\n- **Point de commande = (CMM × Délai de livraison) + Stock de sécurité**\n\n- Cette formule est identique à celle du stock minimum dans la méthode min/max simple. Mais dans une approche plus fine, les deux peuvent différer selon la variabilité du délai de livraison et de la demande.\n"
       },
       {
         "id": "gas-m2-c20",
