@@ -756,7 +756,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Sélection et évaluation des fournisseurs",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Sélection et évaluation des fournisseurs\n\nL'évaluation périodique des fournisseurs\n\nSélectionner un fournisseur est une décision ponctuelle.\n\nL'évaluer régulièrement est une obligation continue.\n\nUn fournisseur qui performait bien il y a deux ans peut s'être dégradé.\n\nÀ l'inverse, un fournisseur moyen peut s'être amélioré après des investissements.\n"
+        "content": "#### Sélection et évaluation des fournisseurs\n\n### L'évaluation périodique des fournisseurs\n\n- Sélectionner un fournisseur est une décision ponctuelle.\n- L'évaluer régulièrement est une obligation continue.\n- Un fournisseur qui performait bien il y a deux ans peut s'être dégradé.\n- À l'inverse, un fournisseur moyen peut s'être amélioré après des investissements.\n\n| Type d'évaluation | Fréquence | Objectif |\n| --- | --- | --- |\n| Évaluation de routine | Mensuelle | Suivi des KPIs (délais, taux de service) |\n| Évaluation formelle | Semestrielle ou annuelle | Revue complète avec scoring |\n| Évaluation d'urgence | Après tout incident majeur | Décision de maintien ou exclusion |\n| Audit fournisseur | Tous les 2 à 3 ans | Visite sur site, vérification BPF |\n"
       },
       {
         "id": "gas-m3-c25",
