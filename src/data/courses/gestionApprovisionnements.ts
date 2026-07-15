@@ -449,7 +449,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Calcul du point de commande et du délai de livraison",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Calcul du point de commande et du délai de livraison\n\nLe point de commande avec délai variable\n\nDans la réalité, le délai de livraison n'est jamais parfaitement stable. Une approche plus rigoureuse intègre cette variabilité.\n\nPoint de commande = (CMM × DL moyen) + (Z × σ × √DL)\n\nZ = facteur de service (1,65 pour un taux de service de 95%)\n\nσ = écart-type de la consommation mensuelle\n\nDL = délai de livraison en mois\n\nCette formule statistique est utilisée dans les systèmes informatisés.\n\nDans un contexte manuel, on simplifie en utilisant le délai maximum observé plutôt que la moyenne.\n"
+        "content": "#### Calcul du point de commande et du délai de livraison\n\n### Le point de commande avec délai variable\n\n- Dans la réalité, le délai de livraison n'est jamais parfaitement stable. Une approche plus rigoureuse intègre cette variabilité.\n\n- **Point de commande = (CMM × DL moyen) + (Z × σ × √DL)**\n  - **Z** = facteur de service (1,65 pour un taux de service de 95%)\n  - **σ** = écart-type de la consommation mensuelle\n  - **DL** = délai de livraison en mois\n\n- Cette formule statistique est utilisée dans les systèmes informatisés.\n\n- Dans un contexte manuel, on simplifie en utilisant le délai maximum observé plutôt que la moyenne.\n"
       },
       {
         "id": "gas-m2-c21",
