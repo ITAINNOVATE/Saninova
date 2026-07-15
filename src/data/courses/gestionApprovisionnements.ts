@@ -637,7 +637,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Cycle de commande : de la quantification à la réception",
         "type": "text",
         "duration": "10 min",
-        "content": "Cycle de commande : de la quantification à la réception\n\nVue d'ensemble du cycle de commande\n\n### Étape 3 — Validation et approbation\n\n**Définition :**\n\nAvant d'être transmis au fournisseur, le bon de commande doit être validé par l'autorité compétente. Cette étape garantit que la commande est justifiée, correctement calculée et dans les limites budgétaires disponibles.\n\n**Ce que le valideur vérifie :**\n- Les quantités sont-elles cohérentes avec la CMM et les niveaux de stock ?\n- Le budget disponible couvre-t-il le montant total de la commande ?\n- Les produits commandés figurent-ils sur la liste des médicaments essentiels autorisés ?\n- La commande est-elle dans le calendrier prévu ?\n"
+        "content": "#### Cycle de commande : de la quantification à la réception\n\n### Vue d'ensemble du cycle de commande\n\n**Étape 3 — Validation et approbation**\n\n- **Définition :**\n  - Avant d'être transmis au fournisseur, le bon de commande doit être validé par l'autorité compétente. Cette étape garantit que la commande est justifiée, correctement calculée et dans les limites budgétaires disponibles.\n\n- **Ce que le valideur vérifie :**\n  - Les quantités sont-elles cohérentes avec la CMM et les niveaux de stock ?\n  - Le budget disponible couvre-t-il le montant total de la commande ?\n  - Les produits commandés figurent-ils sur la liste des médicaments essentiels autorisés ?\n  - La commande est-elle dans le calendrier prévu ?\n"
       },
       {
         "id": "gas-m3-c8",
