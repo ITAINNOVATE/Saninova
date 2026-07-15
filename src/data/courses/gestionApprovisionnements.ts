@@ -477,7 +477,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Exercices pratiques sur données réelles",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Exercices pratiques sur données réelles\n\nEXERCICE 1 — Calcul de la CMM\n\nDonnées\n\nLa Pharmacie du Centre de Santé de Bohicon enregistre les sorties de Paracétamol 500mg sur 6 mois :\n\nQuestions :\n\nCalculez la CMM brute sur 6 mois.\n\nY a-t-il des ajustements à faire ? Justifiez.\n\nQuelle CMM retenez-vous pour les calculs suivants ?\n"
+        "content": "#### Exercices pratiques sur données réelles\n\n### EXERCICE 1 — Calcul de la CMM\n\n**Données**\n\nLa Pharmacie du Centre de Santé de Bohicon enregistre les sorties de Paracétamol 500mg sur 6 mois :\n\n| Mois | Quantité sortie | Observations |\n| --- | --- | --- |\n| Janvier | 1 450 cp | Normal |\n| Février | 1 380 cp | Normal |\n| Mars | 1 510 cp | Normal |\n| Avril | 1 420 cp | Normal |\n| Mai | 1 390 cp | Normal |\n| Juin | 1 480 cp | Normal |\n\n**Questions :**\n\n1. Calculez la CMM brute sur 6 mois.\n2. Y a-t-il des ajustements à faire ? Justifiez.\n3. Quelle CMM retenez-vous pour les calculs suivants ?\n"
       },
       {
         "id": "gas-m2-c25",
