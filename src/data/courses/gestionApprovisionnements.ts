@@ -616,28 +616,28 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Cycle de commande : de la quantification à la réception",
         "type": "text",
         "duration": "10 min",
-        "content": "Cycle de commande : de la quantification à la réception\n\nVue d'ensemble du cycle de commande\n\nÉtape 1 : Quantification des besoins\n\nÉtape 2 : Élaboration du bon de commande\n\nÉtape 3 : Validation et approbation\n\nÉtape 4 : Transmission au fournisseur\n\nÉtape 5 : Traitement par le fournisseur\n\nÉtape 6 : Expédition et transport\n\nÉtape 7 : Réception et contrôle\n\nChaque étape a ses acteurs, ses documents et ses délais.\n"
+        "content": "Cycle de commande : de la quantification à la réception\n\n### Vue d'ensemble du cycle de commande\n\n1. **Étape 1 :** Quantification des besoins\n2. **Étape 2 :** Élaboration du bon de commande\n3. **Étape 3 :** Validation et approbation\n4. **Étape 4 :** Transmission au fournisseur\n5. **Étape 5 :** Traitement par le fournisseur\n6. **Étape 6 :** Expédition et transport\n7. **Étape 7 :** Réception et contrôle\n\nChaque étape a ses acteurs, ses documents et ses délais.\n"
       },
       {
         "id": "gas-m3-c5",
         "title": "Cycle de commande : de la quantification à la réception",
         "type": "text",
         "duration": "10 min",
-        "content": "Cycle de commande : de la quantification à la réception\n\nVue d'ensemble du cycle de commande\n\nÉtape 1 — Quantification des besoins\n\nDéfinition : La quantification est le processus de calcul des quantités de chaque produit à commander pour couvrir les besoins jusqu'à la prochaine livraison.\n\nQui la fait? : Le gestionnaire de la pharmacie ou du dépôt, assisté si possible d'un responsable de programme (paludisme, VIH, CPN, etc.) pour les produits de programmes spécifiques.\n\nComment ? En appliquant la formule : QàC = Stock max − Stock disponible actuel\n\nDocuments produits à cette étape : Fiche de collecte des données de stock et tableau de quantification rempli et signé\n\nErreurs fréquentes à éviter :\n- Quantifier sur la base du stock théorique sans vérifier le stock physique\n- Oublier d'intégrer les commandes déjà en transit\n- Ne pas ajuster la CMM depuis plusieurs mois malgré l'évolution de la demande\n"
+        "content": "Cycle de commande : de la quantification à la réception\n\nVue d'ensemble du cycle de commande\n\n### Étape 1 — Quantification des besoins\n\n- **Définition :** La quantification est le processus de calcul des quantités de chaque produit à commander pour couvrir les besoins jusqu'à la prochaine livraison.\n- **Qui la fait ? :** Le gestionnaire de la pharmacie ou du dépôt, assisté si possible d'un responsable de programme (paludisme, VIH, CPN, etc.) pour les produits de programmes spécifiques.\n- **Comment ?** En appliquant la formule : **QàC = Stock max − Stock disponible actuel**\n- **Documents produits à cette étape :** Fiche de collecte des données de stock et tableau de quantification rempli et signé\n\n**Erreurs fréquentes à éviter :**\n- Quantifier sur la base du stock théorique sans vérifier le stock physique\n- Oublier d'intégrer les commandes déjà en transit\n- Ne pas ajuster la CMM depuis plusieurs mois malgré l'évolution de la demande\n"
       },
       {
         "id": "gas-m3-c6",
         "title": "Cycle de commande : de la quantification à la réception",
         "type": "text",
         "duration": "10 min",
-        "content": "Cycle de commande : de la quantification à la réception\n\nVue d'ensemble du cycle de commande\n\nÉtape 2 — Élaboration du bon de commande\n\nDéfinition :\n- Le bon de commande (BC) est le document officiel qui formalise la demande d'approvisionnement.\n- Il engage la pharmacie et le fournisseur.\n- Il doit être précis, complet et sans ambiguïté.\n"
+        "content": "Cycle de commande : de la quantification à la réception\n\nVue d'ensemble du cycle de commande\n\n### Étape 2 — Élaboration du bon de commande\n\n**Définition :**\n- Le bon de commande (BC) est le document officiel qui formalise la demande d'approvisionnement.\n- Il engage la pharmacie et le fournisseur.\n- Il doit être précis, complet et sans ambiguïté.\n"
       },
       {
         "id": "gas-m3-c7",
         "title": "Cycle de commande : de la quantification à la réception",
         "type": "text",
         "duration": "10 min",
-        "content": "Cycle de commande : de la quantification à la réception\n\nVue d'ensemble du cycle de commande\n\nÉtape 3 — Validation et approbation\n\nDéfinition :\n\nAvant d'être transmis au fournisseur, le bon de commande doit être validé par l'autorité compétente. Cette étape garantit que la commande est justifiée, correctement calculée et dans les limites budgétaires disponibles.\n\nCe que le valideur vérifie :\n- Les quantités sont-elles cohérentes avec la CMM et les niveaux de stock ?\n- Le budget disponible couvre-t-il le montant total de la commande ?\n- Les produits commandés figurent-ils sur la liste des médicaments essentiels autorisés ?\n- La commande est-elle dans le calendrier prévu ?\n"
+        "content": "Cycle de commande : de la quantification à la réception\n\nVue d'ensemble du cycle de commande\n\n### Étape 3 — Validation et approbation\n\n**Définition :**\n\nAvant d'être transmis au fournisseur, le bon de commande doit être validé par l'autorité compétente. Cette étape garantit que la commande est justifiée, correctement calculée et dans les limites budgétaires disponibles.\n\n**Ce que le valideur vérifie :**\n- Les quantités sont-elles cohérentes avec la CMM et les niveaux de stock ?\n- Le budget disponible couvre-t-il le montant total de la commande ?\n- Les produits commandés figurent-ils sur la liste des médicaments essentiels autorisés ?\n- La commande est-elle dans le calendrier prévu ?\n"
       },
       {
         "id": "gas-m3-c8",
