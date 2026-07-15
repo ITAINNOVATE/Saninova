@@ -82,7 +82,7 @@ export default function AcademyAnnouncements() {
     <>
       <PageHero 
         title={locale === "fr" ? "Actualités & Appels" : "News & Calls"}
-        subtitle={locale === "fr" ? "Restez informé des opportunités de la SaniNova Academy." : "Stay informed about SaniNova Academy opportunities."}
+        subtitle={locale === "fr" ? "Restez informés (es) des activités de SaniNova Global Consulting." : "Stay informed about SaniNova Global Consulting activities."}
         backgroundImages={[
           "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80",
           "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80",
