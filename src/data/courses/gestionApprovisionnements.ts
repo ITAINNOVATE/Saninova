@@ -609,7 +609,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Cycle de commande : de la quantification à la réception",
         "type": "text",
         "duration": "10 min",
-        "content": "Cycle de commande : de la quantification à la réception\n\nLe cycle de commande est l'ensemble des étapes qui s'enchaînent depuis le moment où un besoin en produits est identifié jusqu'au moment où ces produits sont disponibles en stock et prêts à être distribués.\n\nC'est un processus structuré, documenté et impliquant plusieurs acteurs.\n\nUne défaillance à n'importe quelle étape peut retarder la livraison, générer des erreurs de quantité ou introduire des produits de mauvaise qualité dans le stock.\n\nConnaître et maîtriser chaque étape est donc une compétence fondamentale pour tout gestionnaire de pharmacie.\n"
+        "content": "#### Cycle de commande : de la quantification à la réception\n\n- Le cycle de commande est l'ensemble des étapes qui s'enchaînent depuis le moment où un besoin en produits est identifié jusqu'au moment où ces produits sont disponibles en stock et prêts à être distribués.\n\n- C'est un processus structuré, documenté et impliquant plusieurs acteurs.\n\n- Une défaillance à n'importe quelle étape peut retarder la livraison, générer des erreurs de quantité ou introduire des produits de mauvaise qualité dans le stock.\n\n- Connaître et maîtriser chaque étape est donc une compétence fondamentale pour tout gestionnaire de pharmacie.\n"
       },
       {
         "id": "gas-m3-c4",
