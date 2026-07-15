@@ -777,14 +777,14 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Sélection et évaluation des fournisseurs",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Sélection et évaluation des fournisseurs\n\nLa gestion des litiges fournisseurs\n\nProcédure de gestion d'un litige\n\nÉtape 1 — Documentation immédiate :\n- Au moment de la réception, noter l'anomalie sur le bon de livraison avant de signer.\n- Faire contresigner par le livreur.\n- Prendre des photos si possible.\n- Étape 2 — Notification formelle\n\nAdresser au fournisseur une réclamation écrite dans les 48 à 72 heures suivant la réception, avec les éléments suivants :\n\nNuméro de commande et numéro de bon de livraison\n\nDescription précise de l'anomalie\n\nQuantité ou valeur concernée\n\nAction attendue (remplacement, avoir, remboursement)\n\nDélai de réponse attendu\n"
+        "content": "#### Sélection et évaluation des fournisseurs\n\n### La gestion des litiges fournisseurs\n\n**Procédure de gestion d'un litige**\n\n**Étape 1 — Documentation immédiate :**\n- Au moment de la réception, noter l'anomalie sur le bon de livraison avant de signer.\n- Faire contresigner par le livreur.\n- Prendre des photos si possible.\n\n**Étape 2 — Notification formelle**\n- Adresser au fournisseur une réclamation écrite dans les **48 à 72 heures** suivant la réception, avec les éléments suivants :\n  - Numéro de commande et numéro de bon de livraison\n  - Description précise de l'anomalie\n  - Quantité ou valeur concernée\n  - Action attendue (remplacement, avoir, remboursement)\n  - Délai de réponse attendu\n"
       },
       {
         "id": "gas-m3-c28",
         "title": "Sélection et évaluation des fournisseurs",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Sélection et évaluation des fournisseurs\n\nLa gestion des litiges fournisseurs\n\nProcédure de gestion d'un litige\n\nÉtape 3 — Suivi et escalade\n\nSi le fournisseur ne répond pas dans le délai imparti :\n- Escalader au niveau hiérarchique supérieur (direction régionale, ministère) ou\n- Activer les clauses contractuelles de pénalité.\n- Étape 4 — Enregistrement dans le dossier fournisseur\n- Tout litige, même résolu, doit être enregistré dans le dossier du fournisseur.\n- Ces données alimentent l'évaluation périodique et peuvent justifier une décision de changement de fournisseur si les incidents se répètent.\n"
+        "content": "#### Sélection et évaluation des fournisseurs\n\n### La gestion des litiges fournisseurs\n\n**Procédure de gestion d'un litige**\n\n**Étape 3 — Suivi et escalade**\n- Si le fournisseur ne répond pas dans le délai imparti :\n  - Escalader au niveau hiérarchique supérieur (direction régionale, ministère) ou\n  - Activer les clauses contractuelles de pénalité.\n\n**Étape 4 — Enregistrement dans le dossier fournisseur**\n- Tout litige, même résolu, doit être enregistré dans le dossier du fournisseur.\n- Ces données alimentent l'évaluation périodique et peuvent justifier une décision de changement de fournisseur si les incidents se répètent.\n"
       },
       {
         "id": "gas-m3-c29",
