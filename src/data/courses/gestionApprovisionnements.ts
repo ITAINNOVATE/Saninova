@@ -700,7 +700,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Cycle de commande : de la quantification à la réception",
         "type": "text",
         "duration": "10 min",
-        "content": "Cycle de commande : de la quantification à la réception\n\nVue d'ensemble du cycle de commande\n\nÉtape 7 — Réception et contrôle\n\nLes 5 vérifications obligatoires à la réception : :\n- Vérification 5 — Enregistrement immédiat\n\nDès que la réception est validée, enregistrer sur :\n\nLa fiche de stock de chaque produit reçu\n\nLe registre de réceptions\n\nLe système informatisé si disponible\n\nRègle absolue : aucun produit ne doit être rangé dans le stock sans avoir été enregistré.\n"
+        "content": "#### Cycle de commande : de la quantification à la réception\n\n### Vue d'ensemble du cycle de commande\n\n**Étape 7 — Réception et contrôle**\n\n- **Les 5 vérifications obligatoires à la réception : :**\n  - **Vérification 5 — Enregistrement immédiat**\n    - Dès que la réception est validée, enregistrer sur :\n      - La fiche de stock de chaque produit reçu\n      - Le registre de réceptions\n      - Le système informatisé si disponible\n\n**Règle absolue :** aucun produit ne doit être rangé dans le stock sans avoir été enregistré.\n"
       },
       {
         "id": "gas-m3-c17",
