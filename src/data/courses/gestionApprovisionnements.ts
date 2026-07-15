@@ -177,7 +177,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Synthèse",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Types de stocks et leur rôle dans la chaîne pharmaceutique\n\n### Synthèse\n\n> "
+        "content": "#### Types de stocks et leur rôle dans la chaîne pharmaceutique\n\n### Synthèse\n\n| Type de stock | Rôle principal | Signal d'alerte |\n| --- | --- | --- |\n| **Stock de cycle** | Couvrir la demande entre deux commandes | Trop court → rupture fréquente |\n| **Stock de sécurité** | Absorber les imprévus | Trop faible → exposition aux ruptures |\n| **Stock de transit** | Produits en acheminement | Non comptabilisé → commandes doublées |\n| **Stock spéculatif** | Anticiper une pénurie connue | Mal géré → surstock coûteux |\n| **Stock mort** | Aucun — à éliminer | Présence prolongée → perte financière |\n| **Stock de consignation** | Disponibilité sans immobilisation de trésorerie | Mauvais suivi → désaccords fournisseur |\n"
       },
       {
         "id": "gas-m1-c26",
