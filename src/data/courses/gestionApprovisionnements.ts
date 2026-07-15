@@ -721,7 +721,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Sélection et évaluation des fournisseurs",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Sélection et évaluation des fournisseurs\n\nLes critères de sélection d'un fournisseur\n\nCritère 2 — Le prix et les conditions financières\n\nLe prix est important mais ne doit jamais être le seul critère. Un produit moins cher qui génère des ruptures fréquentes ou des problèmes de qualité coûte finalement plus cher qu'un produit bien géré à prix légèrement supérieur.\n\nCe qu'on évalue :\n- Prix unitaire par produit\n- Remises quantitatives (réductions pour grandes commandes)\n- Conditions de paiement (délai de paiement, acompte exigé)\n- Politique de retour et d'avoir pour les produits non conformes\n- Frais de livraison inclus ou non dans le prix\n"
+        "content": "#### Sélection et évaluation des fournisseurs\n\n### Les critères de sélection d'un fournisseur\n\n**Critère 2 — Le prix et les conditions financières**\n\nLe prix est important mais ne doit jamais être le seul critère. Un produit moins cher qui génère des ruptures fréquentes ou des problèmes de qualité coûte finalement plus cher qu'un produit bien géré à prix légèrement supérieur.\n\n**Ce qu'on évalue :**\n- Prix unitaire par produit\n- Remises quantitatives (réductions pour grandes commandes)\n- Conditions de paiement (délai de paiement, acompte exigé)\n- Politique de retour et d'avoir pour les produits non conformes\n- Frais de livraison inclus ou non dans le prix\n"
       },
       {
         "id": "gas-m3-c20",
@@ -742,7 +742,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Sélection et évaluation des fournisseurs",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Sélection et évaluation des fournisseurs\n\nLes critères de sélection d'un fournisseur\n\nCritère 5 — Le service et le support\n\nAu-delà des produits eux-mêmes, la qualité de la relation commerciale et du support est un critère différenciant, particulièrement en situation de crise.\n\nCe qu'on évalue :\n- Réactivité aux demandes d'information et aux réclamations\n- Qualité de la communication en cas de retard ou de rupture\n- Flexibilité pour les commandes urgentes\n- Support technique (information sur les produits, gestion des effets indésirables)\n- Politique de gestion des litiges\n"
+        "content": "#### Sélection et évaluation des fournisseurs\n\n### Les critères de sélection d'un fournisseur\n\n**Critère 5 — Le service et le support**\n\nAu-delà des produits eux-mêmes, la qualité de la relation commerciale et du support est un critère différenciant, particulièrement en situation de crise.\n\n**Ce qu'on évalue :**\n- Réactivité aux demandes d'information et aux réclamations\n- Qualité de la communication en cas de retard ou de rupture\n- Flexibilité pour les commandes urgentes\n- Support technique (information sur les produits, gestion des effets indésirables)\n- Politique de gestion des litiges\n"
       },
       {
         "id": "gas-m3-c23",
