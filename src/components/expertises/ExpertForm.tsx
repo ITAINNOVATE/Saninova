@@ -1,13 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
-import { Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
+import { Send, CheckCircle, AlertCircle, Loader2, UploadCloud, FileText, X } from "lucide-react";
 import { supabase } from "../../lib/supabase";
 
 export default function ExpertForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
+  const [cvFile, setCvFile] = useState<File | null>(null);
 
   const [formData, setFormData] = useState({
     last_name: "",
@@ -113,11 +114,40 @@ export default function ExpertForm() {
       return;
     }
 
+      const uploadFile = async (file: File, folder: string) => {
+    const fileExt = file.name.split('.').pop();
+    const fileName = `${Math.random().toString(36).substring(2, 15)}_${Date.now()}.${fileExt}`;
+    const filePath = `${folder}/${fileName}`;
+
+    const { error: uploadError } = await supabase.storage
+      .from('publication_submissions')
+      .upload(filePath, file, { cacheControl: '3600', upsert: false });
+
+    if (uploadError) {
+      throw new Error(`Erreur de téléchargement: ${uploadError.message}`);
+    }
+
+    const { data: { publicUrl } } = supabase.storage
+      .from('publication_submissions')
+      .getPublicUrl(filePath);
+
+    return publicUrl;
+  };
+
     setIsSubmitting(true);
     setError("");
     setSuccess(false);
 
     try {
+      let finalCvLink = formData.cv_link;
+      if (cvFile) {
+        try {
+          finalCvLink = await uploadFile(cvFile, "expert_cvs");
+        } catch (uploadErr: any) {
+          throw new Error("Impossible de télécharger le fichier: " + uploadErr.message);
+        }
+      }
+
       const { error: submitError } = await supabase
         .from('saninova_expert_applications')
         .insert([{
@@ -137,7 +167,7 @@ export default function ExpertForm() {
           availability: formData.availability,
           languages: formData.languages,
           biography: formData.biography,
-          cv_link: formData.cv_link,
+          cv_link: finalCvLink,
           consent: formData.consent,
           status: 'Nouveau'
         }]);
@@ -145,6 +175,7 @@ export default function ExpertForm() {
       if (submitError) throw submitError;
 
       setSuccess(true);
+      setCvFile(null);
       setFormData({
         last_name: "", first_name: "", email: "", phone: "", country: "", city: "",
         professional_status: "", job_title: "", institution: "", experience_years: "", education_level: "",
