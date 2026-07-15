@@ -735,7 +735,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Sélection et évaluation des fournisseurs",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Sélection et évaluation des fournisseurs\n\nLes critères de sélection d'un fournisseur\n\nCritère 4 — La capacité et la disponibilité des produits\n\nUn fournisseur peut avoir de bons produits et de bons prix, mais s'il est régulièrement en rupture sur les produits commandés, il ne peut pas être considéré comme fiable.\n\nCe qu'on évalue :\n- Taux de service (quantité livrée / quantité commandée)\n- Fréquence des livraisons partielles\n- Capacité à absorber des commandes exceptionnelles (urgences, épidémies)\n- Diversité du catalogue (peut-il fournir tous les produits dont on a besoin ?)\n"
+        "content": "#### Sélection et évaluation des fournisseurs\n\n### Les critères de sélection d'un fournisseur\n\n**Critère 4 — La capacité et la disponibilité des produits**\n\nUn fournisseur peut avoir de bons produits et de bons prix, mais s'il est régulièrement en rupture sur les produits commandés, il ne peut pas être considéré comme fiable.\n\n**Ce qu'on évalue :**\n- Taux de service (quantité livrée / quantité commandée)\n- Fréquence des livraisons partielles\n- Capacité à absorber des commandes exceptionnelles (urgences, épidémies)\n- Diversité du catalogue (peut-il fournir tous les produits dont on a besoin ?)\n"
       },
       {
         "id": "gas-m3-c22",
