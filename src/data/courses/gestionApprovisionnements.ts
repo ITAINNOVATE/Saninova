@@ -728,7 +728,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Sélection et évaluation des fournisseurs",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Sélection et évaluation des fournisseurs\n\nLes critères de sélection d'un fournisseur\n\nCritère 3 — La fiabilité des délais de livraison\n\nUn fournisseur qui livre en retard est aussi dangereux qu'un fournisseur qui livre des produits de mauvaise qualité. Le respect des délais est mesurable sur l'historique des commandes.\n\nCe qu'on évalue :\n- Délai de livraison annoncé vs délai réellement observé\n- Fréquence des retards\n- Amplitude des retards (quelques jours vs plusieurs semaines)\n- Capacité à livrer en urgence si besoin\n"
+        "content": "#### Sélection et évaluation des fournisseurs\n\n### Les critères de sélection d'un fournisseur\n\n**Critère 3 — La fiabilité des délais de livraison**\n\nUn fournisseur qui livre en retard est aussi dangereux qu'un fournisseur qui livre des produits de mauvaise qualité. Le respect des délais est mesurable sur l'historique des commandes.\n\n**Ce qu'on évalue :**\n- Délai de livraison annoncé vs délai réellement observé\n- Fréquence des retards\n- Amplitude des retards (quelques jours vs plusieurs semaines)\n- Capacité à livrer en urgence si besoin\n"
       },
       {
         "id": "gas-m3-c21",
