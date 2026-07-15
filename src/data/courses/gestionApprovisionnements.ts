@@ -686,7 +686,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Cycle de commande : de la quantification à la réception",
         "type": "text",
         "duration": "10 min",
-        "content": "Cycle de commande : de la quantification à la réception\n\nVue d'ensemble du cycle de commande\n\nÉtape 7 — Réception et contrôle\n\nLes 5 vérifications obligatoires à la réception : :\n- Vérification 1 — Conformité documentaire\n- Comparer le bon de livraison du fournisseur avec le bon de commande initial.\n- Vérification 2 — Contrôle quantitatif\n- Compter physiquement chaque produit, boîte par boîte, flacon par flacon.\n- Ne jamais accepter le chiffre du bon de livraison sans vérification.\n"
+        "content": "#### Cycle de commande : de la quantification à la réception\n\n### Vue d'ensemble du cycle de commande\n\n**Étape 7 — Réception et contrôle**\n\n- **Les 5 vérifications obligatoires à la réception :**\n  - **Vérification 1 — Conformité documentaire**\n    - Comparer le bon de livraison du fournisseur avec le bon de commande initial.\n\n| Question | Vérification |\n| --- | --- |\n| Les produits livrés sont-ils ceux commandés ? | DCI, dosage, forme, conditionnement |\n| Les quantités livrées correspondent-elles au BL ? | Compter physiquement |\n| Le numéro de commande correspond-il ? | Référence croisée BC / BL |\n\n  - **Vérification 2 — Contrôle quantitatif**\n    - Compter physiquement chaque produit, boîte par boîte, flacon par flacon.\n    - Ne jamais accepter le chiffre du bon de livraison sans vérification.\n"
       },
       {
         "id": "gas-m3-c15",
