@@ -23,14 +23,14 @@ const renderMarkdownText = (text: string, lightText: boolean = false) => {
   const isEquationLine = trimmedText.includes('=') && formulaKeywords.some(kw => trimmedText.startsWith(kw));
 
   if (isEquationLine) {
-    return <strong style={{ color: lightText ? '#ffffff' : '#0F1D33', fontWeight: 800 }}>{text}</strong>;
+    return <strong style={{ color: lightText ? '#ffffff' : 'inherit', fontWeight: 800 }}>{text}</strong>;
   }
 
   if (!text.includes('**')) return text;
   const parts = text.split(/(\*\*.*?\*\*)/g);
   return parts.map((part, index) => {
     if (part.startsWith('**') && part.endsWith('**')) {
-      return <strong key={index} style={{ color: lightText ? '#ffffff' : '#0F1D33', fontWeight: 800 }}>{part.slice(2, -2)}</strong>;
+      return <strong key={index} style={{ color: lightText ? '#ffffff' : 'inherit', fontWeight: 800 }}>{part.slice(2, -2)}</strong>;
     }
     return part;
   });
