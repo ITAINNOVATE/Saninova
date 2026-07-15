@@ -798,7 +798,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Gestion des contrats et des termes de livraison (Incoterms)",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\nUn contrat d'approvisionnement est le document juridique qui définit les droits et obligations de chaque partie, protège la le client en cas de défaillance du fournisseur, et encadre toutes les conditions dans lesquelles les produits seront fournis.\n\nLes Incoterms, quant à eux, sont des règles internationales standardisées qui précisent à quel moment la responsabilité des marchandises passe du vendeur à l'acheteur pendant le transport.\n\nLes maîtriser permet d'éviter des litiges coûteux et des pertes de produits non couverts.\n"
+        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\n- Un contrat d'approvisionnement est le document juridique qui définit les droits et obligations de chaque partie, protège la le client en cas de défaillance du fournisseur, et encadre toutes les conditions dans lesquelles les produits seront fournis.\n- Les Incoterms, quant à eux, sont des règles internationales standardisées qui précisent à quel moment la responsabilité des marchandises passe du vendeur à l'acheteur pendant le transport.\n- Les maîtriser permet d'éviter des litiges coûteux et des pertes de produits non couverts.\n"
       },
       {
         "id": "gas-m3-c31",
