@@ -665,7 +665,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Cycle de commande : de la quantification à la réception",
         "type": "text",
         "duration": "10 min",
-        "content": "Cycle de commande : de la quantification à la réception\n\nVue d'ensemble du cycle de commande\n\nÉtape 6 — Expédition et transport\n\nDéfinition :\n\nLes produits sont chargés et acheminés vers la pharmacie destinataire. Cette étape est critique pour les produits thermosensibles (vaccins, insuline) qui exigent une chaîne du froid maintenue pendant tout le transport.\n\nDocuments accompagnant la livraison :\n- Bon de livraison signé par le transporteur\n- Bon de transport / bordereau d'expédition\n- Certificats d'analyse des lots\n- Formulaire de suivi de température (pour les produits de la chaîne du froid)\n"
+        "content": "#### Cycle de commande : de la quantification à la réception\n\n### Vue d'ensemble du cycle de commande\n\n**Étape 6 — Expédition et transport**\n\n- **Définition :**\n  - Les produits sont chargés et acheminés vers la pharmacie destinataire. Cette étape est critique pour les produits thermosensibles (vaccins, insuline) qui exigent une chaîne du froid maintenue pendant tout le transport.\n\n- **Documents accompagnant la livraison :**\n  - Bon de livraison signé par le transporteur\n  - Bon de transport / bordereau d'expédition\n  - Certificats d'analyse des lots\n  - Formulaire de suivi de température (pour les produits de la chaîne du froid)\n"
       },
       {
         "id": "gas-m3-c12",
