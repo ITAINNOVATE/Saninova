@@ -463,7 +463,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Calcul du point de commande et du délai de livraison",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Calcul du point de commande et du délai de livraison\n\nLe point de commande en contexte de livraison programmée\n\nDans certains systèmes (notamment les systèmes de distribution intégrée), les livraisons sont programmées à dates fixes, indépendamment du niveau de stock.\n\nDans ce cas, le point de commande classique est remplacé par une quantité à commander calculée à chaque date de livraison programmée.\n\nQuantité à commander = (CMM × Période jusqu'à prochaine livraison) + Stock min − Stock disponible actuel\n"
+        "content": "#### Calcul du point de commande et du délai de livraison\n\n### Le point de commande en contexte de livraison programmée\n\n- Dans certains systèmes (notamment les systèmes de distribution intégrée), les livraisons sont programmées à dates fixes, indépendamment du niveau de stock.\n\n- Dans ce cas, le point de commande classique est remplacé par une quantité à commander calculée à chaque date de livraison programmée.\n\n- **Quantité à commander = (CMM × Période jusqu'à prochaine livraison) + Stock min − Stock disponible actuel**\n"
       },
       {
         "id": "gas-m2-c23",
