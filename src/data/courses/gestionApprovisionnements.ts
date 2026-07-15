@@ -749,7 +749,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Sélection et évaluation des fournisseurs",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Sélection et évaluation des fournisseurs\n\nLa pondération des critères — Système de scoring\n\nPour comparer objectivement plusieurs fournisseurs, on utilise un système de scoring pondéré. Chaque critère reçoit un poids selon son importance, et chaque fournisseur est noté sur chaque critère.\n"
+        "content": "#### Sélection et évaluation des fournisseurs\n\n### La pondération des critères — Système de scoring\n\n- Pour comparer objectivement plusieurs fournisseurs, on utilise un système de scoring pondéré. Chaque critère reçoit un poids selon son importance, et chaque fournisseur est noté sur chaque critère.\n\n| Critère | Poids |\n| --- | --- |\n| Qualité des produits | 30% |\n| Prix et conditions | 25% |\n| Fiabilité des délais | 25% |\n| Disponibilité produits | 10% |\n| Service et support | 10% |\n| **Total** | **100%** |\n"
       },
       {
         "id": "gas-m3-c24",
