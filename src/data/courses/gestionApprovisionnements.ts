@@ -770,7 +770,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Sélection et évaluation des fournisseurs",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Sélection et évaluation des fournisseurs\n\nLa gestion des litiges fournisseurs\n\nMalgré une bonne sélection et un suivi régulier, des litiges surviennent. Il faut savoir les gérer de façon professionnelle et documentée.\n"
+        "content": "#### Sélection et évaluation des fournisseurs\n\n### La gestion des litiges fournisseurs\n\n- Malgré une bonne sélection et un suivi régulier, des litiges surviennent. Il faut savoir les gérer de façon professionnelle et documentée.\n\n| Type de litige | Description | Exemple |\n| --- | --- | --- |\n| Écart de quantité | Livraison inférieure à la commande | 14 boîtes reçues pour 15 commandées |\n| Produit non conforme | Qualité insuffisante, emballage endommagé | Ampoules fissurées |\n| Date de péremption insuffisante | DDP trop proche à la réception | Produit périmant dans 2 mois pour une couverture de 4 mois |\n| Retard de livraison | Livraison après la date contractuelle | Livraison à J+42 pour un délai promis de J+21 |\n| Substitution non autorisée | Produit différent de celui commandé livré sans accord | Amoxicilline 250mg au lieu de 500mg |\n"
       },
       {
         "id": "gas-m3-c27",
