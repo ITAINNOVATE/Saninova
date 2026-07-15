@@ -707,7 +707,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Sélection et évaluation des fournisseurs",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Sélection et évaluation des fournisseurs\n\nLe fournisseur est un maillon critique de la chaîne pharmaceutique.\n\nUn bon produit mal livré, livré en retard, ou livré en quantité insuffisante a les mêmes conséquences qu'une mauvaise gestion interne :\n- Rupture de stock,\n- Soins interrompus,\n- Pertes financières.\n- Choisir ses fournisseurs avec rigueur et les évaluer régulièrement n'est pas une option, c'est une nécessité.\n\nDans le secteur pharmaceutique, cette rigueur est d'autant plus importante que la qualité des produits a un impact direct sur la santé et la vie des patients.\n"
+        "content": "#### Sélection et évaluation des fournisseurs\n\n- Le fournisseur est un maillon critique de la chaîne pharmaceutique.\n\n- Un bon produit mal livré, livré en retard, ou livré en quantité insuffisante a les mêmes conséquences qu'une mauvaise gestion interne :\n  - Rupture de stock,\n  - Soins interrompus,\n  - Pertes financières.\n\n- Choisir ses fournisseurs avec rigueur et les évaluer régulièrement n'est pas une option, c'est une nécessité.\n\n- Dans le secteur pharmaceutique, cette rigueur est d'autant plus importante que la qualité des produits a un impact direct sur la santé et la vie des patients.\n"
       },
       {
         "id": "gas-m3-c18",
