@@ -470,7 +470,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Calcul du point de commande et du délai de livraison",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Calcul du point de commande et du délai de livraison\n\nTableau de synthèse — Point de commande selon les contextes\n\n| Contexte de livraison | Formule du Point de Commande (PC) | Niveau de Sécurité |\n|---|---|---|\n| Livraison rapide et fiable | PC = (CMM × Délai) + Stock Min faible | Bas |\n| Délai long (International) | PC = (CMM × Délai) + Stock Min élevé | Haut |\n| Demande très variable | PC = (CMM max × Délai) + Stock Min élevé | Très Haut |\n"
+        "content": "#### Calcul du point de commande et du délai de livraison\n\n### Tableau de synthèse — Point de commande selon les contextes\n\n| Contexte | Formule du point de commande | Remarque |\n| --- | --- | --- |\n| Délai stable, système continu | (CMM × DL moyen) + SS | Idéal, peu de risque |\n| Délai variable, système continu | (CMM × DL max) + SS | Prudent, légèrement conservateur |\n| Révision périodique mensuelle | (CMM × (DL + 0,5 PC)) + SS | Ajouter la moitié de la période de révision |\n| Livraison programmée | (CMM × période suivante) + Stock min − Stock actuel | Calcul de la quantité, pas du niveau de déclenchement |\n"
       },
       {
         "id": "gas-m2-c24",
