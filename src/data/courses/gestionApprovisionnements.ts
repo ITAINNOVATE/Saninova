@@ -505,7 +505,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Exercices pratiques sur données réelles",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Exercices pratiques sur données réelles\n\n### Correction EXERCICE 2 — CMM avec mois de rupture\n\n**Question 2 — CMM ajustée :**\n\nMois retenus : janvier, février, mars ajusté, juin, août\n\nCMM ajustée = 2 575 ÷ 5 = 515 cp/mois\n"
+        "content": "#### Exercices pratiques sur données réelles\n\n### Correction EXERCICE 2 — CMM avec mois de rupture\n\n**Question 2 — CMM ajustée :**\n\n- Mois retenus : janvier, février, mars ajusté, juin, août\n\n| Mois | Consommation retenue |\n| --- | --- |\n| Janvier | 520 cp |\n| Février | 490 cp |\n| Mars (ajusté) | 525 cp |\n| Juin | 530 cp |\n| Août | 510 cp |\n| **Total** | **2 575 cp** |\n\n- CMM ajustée = 2 575 ÷ 5 = 515 cp/mois\n"
       },
       {
         "id": "gas-m2-c29",
