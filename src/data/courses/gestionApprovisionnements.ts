@@ -658,7 +658,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Cycle de commande : de la quantification à la réception",
         "type": "text",
         "duration": "10 min",
-        "content": "Cycle de commande : de la quantification à la réception\n\nVue d'ensemble du cycle de commande\n\nÉtape 5 — Traitement par le fournisseur\n\nBonne pratique :\n\nSi la livraison sera partielle ou retardée :\n\nLe fournisseur doit en informer le commanditaire avant l'expédition, pas au moment de la livraison.\n\nCela permet au gestionnaire d'anticiper et de prendre des mesures alternatives.\n"
+        "content": "#### Cycle de commande : de la quantification à la réception\n\n### Vue d'ensemble du cycle de commande\n\n**Étape 5 — Traitement par le fournisseur**\n\n- **Bonne pratique :**\n  - Si la livraison sera partielle ou retardée :\n    - Le fournisseur doit en informer le commanditaire avant l'expédition, pas au moment de la livraison.\n    - Cela permet au gestionnaire d'anticiper et de prendre des mesures alternatives.\n"
       },
       {
         "id": "gas-m3-c11",
