@@ -303,7 +303,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Introduction aux bonnes pratiques de gestion des stocks",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Introduction aux bonnes pratiques de gestion des stocks\n\n### Réaliser des inventaires réguliers\n\n| | |\n| --- | --- |\n| **Principe** | L'inventaire est le seul moyen de vérifier que les données dans le système correspondent à la réalité physique. Sans inventaire régulier, les écarts s'accumulent et les décisions deviennent de moins en moins fiables. |\n"
+        "content": "#### Introduction aux bonnes pratiques de gestion des stocks\n\n### Réaliser des inventaires réguliers\n\n| | |\n| --- | --- |\n| **Principe** | L'inventaire est le seul moyen de vérifier que les données dans le système correspondent à la réalité physique. Sans inventaire régulier, les écarts s'accumulent et les décisions deviennent de moins en moins fiables. |\n\n#### Fréquences\n\n| Type d'inventaire | Fréquence | Objectif |\n| --- | --- | --- |\n| **Inventaire complet** | 2 fois par an minimum | Vérification globale de tous les produits |\n| **Inventaire tournant** | Mensuel, Par rotation de zones | Maintien continu de la précision |\n| **Inventaire de contrôle** | À chaque changement de responsable | Passation de service propre |\n| **Inventaire d'urgence** | En cas de suspicion de vol ou d'erreur | Vérification ciblée |\n"
       }
     ]
   },
