@@ -547,7 +547,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Exercices pratiques sur données réelles",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Exercices pratiques sur données réelles\n\nCorrection EXERCICE 4 — Cas complexe multiproduits\n\nProduit 1 — Amoxicilline 250mg sirop (CMM = 85 flacons)\n\nStatut : stock actuel (620) > stock max (595) → Surstock léger (+25 flacons)\n\nCouverture = 620 ÷ 85 = 7,3 mois\n\nAction :\n- Ne pas commander lors de cette révision.\n- Surveiller la date de péremption des flacons en excès.\n- Si la péremption est proche, envisager une redistribution vers un autre centre de santé.\n"
+        "content": "#### Exercices pratiques sur données réelles\n\n### Correction EXERCICE 4 — Cas complexe multiproduits\n\n**Produit 1 — Amoxicilline 250mg sirop (CMM = 85 flacons)**\n\n| Paramètre | Calcul | Résultat |\n| --- | --- | --- |\n| Stock de sécurité | 85 × 2 | 170 flacons |\n| Stock minimum | (85 × 2) + 170 | 340 flacons |\n| Stock maximum | 340 + (85 × 3) | 595 flacons |\n| Stock actuel | — | 620 flacons |\n\n- **Statut :** stock actuel (620) > stock max (595) → **Surstock léger** (+25 flacons)\n- **Couverture** = 620 ÷ 85 = **7,3 mois**\n- **Action :**\n  - Ne pas commander lors de cette révision.\n  - Surveiller la date de péremption des flacons en excès.\n  - Si la péremption est proche, envisager une redistribution vers un autre centre de santé.\n"
       },
       {
         "id": "gas-m2-c35",
