@@ -540,7 +540,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Exercices pratiques sur données réelles",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Exercices pratiques sur données réelles\n\nEXERCICE 4 — Cas complexe multiproduits\n\nDonnées\n\nDépôt de district de Savalou — Révision mensuelle du stock\n\nParamètres fixes :\n- délai de livraison = 2 mois,\n- période de commande = 3 mois,\n- stock de sécurité = 2 mois.\n\nQuestions :\n\nCalculez le stock de sécurité, le stock minimum et le stock maximum.\n\nDéterminez le statut du stock (normal, surstock, rupture imminente, commander).\n\nCalculez la quantité à commander si nécessaire.\n\nProposez une action concrète pour chaque produit.\n"
+        "content": "#### Exercices pratiques sur données réelles\n\n### EXERCICE 4 — Cas complexe multiproduits\n\n**Données**\n\n- Dépôt de district de Savalou — Révision mensuelle du stock\n- Paramètres fixes :\n  - délai de livraison = 2 mois,\n  - période de commande = 3 mois,\n  - stock de sécurité = 2 mois.\n\n| Produit | CMM | Stock actuel | Obs. |\n| --- | --- | --- | --- |\n| Amoxicilline 250mg sirop | 85 flacons | 620 flacons | — |\n| Fer acide folique 200/0,4mg | 430 cp | 280 cp | — |\n| Vitamine A 200 000 UI | 310 capsules | 2 800 capsules | — |\n| Misoprostol 200mcg | 95 cp | 410 cp | — |\n| Gentamicine injectable 80mg | 40 ampoules | 55 ampoules | — |\n\n**Questions :**\n\n1. Calculez le stock de sécurité, le stock minimum et le stock maximum.\n2. Déterminez le statut du stock (normal, surstock, rupture imminente, commander).\n3. Calculez la quantité à commander si nécessaire.\n4. Proposez une action concrète pour chaque produit.\n"
       },
       {
         "id": "gas-m2-c34",
