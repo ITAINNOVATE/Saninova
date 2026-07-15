@@ -582,7 +582,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Exercices pratiques sur données réelles",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Exercices pratiques sur données réelles\n\nCorrection EXERCICE 4 — Cas complexe multiproduits\n\nTableau de bord final — Dépôt de district de Savalou\n\n| Produit | CMM | Stock Dispo | Mois de Stock | Statut | Quantité à Commander |\n|---|---|---|---|---|---|\n| Paracétamol 500mg | 10 000 | 15 000 | 1,5 | Normal | 15 000 |\n| Amoxicilline 250mg | 5 000 | 2 500 | 0,5 | Rupture imminente | 12 500 |\n| CTA Adulte | 2 000 | 8 000 | 4,0 | Surstock | 0 |\n"
+        "content": "#### Exercices pratiques sur données réelles\n\n### Correction EXERCICE 4 — Cas complexe multiproduits\n\n**Tableau de bord final — Dépôt de district de Savalou**\n\n| Produit | Stock actuel | Stock min | Stock max | Couverture | Statut | Action |\n| --- | --- | --- | --- | --- | --- | --- |\n| Amoxicilline sirop | 620 fl | 340 fl | 595 fl | 7,3 mois | 🟡 Surstock léger | Surveiller péremptions |\n| Fer acide folique | 280 cp | 1 720 cp | 3 010 cp | 0,65 mois | 🔴 Rupture critique | Commande urgente — 2 730 cp |\n| Vitamine A | 2 800 caps | 1 240 caps | 2 170 caps | 9 mois | 🟡 Surstock important | Redistribuer — ne pas commander |\n| Misoprostol | 410 cp | 380 cp | 665 cp | 4,3 mois | 🟢 Normal | Commander à la prochaine révision |\n| Gentamicine inj. | 55 amp | 160 amp | 280 amp | 1,4 mois | 🔴 Rupture imminente | Commande urgente — 225 amp |\n"
       }
     ]
   },
