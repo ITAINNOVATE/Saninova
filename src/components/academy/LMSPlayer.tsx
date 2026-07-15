@@ -9,7 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import QuizModule from "./QuizModule";
 import { staticModules, slugify } from "../../lib/academyHelpers";
 
-const renderMarkdownText = (text: string) => {
+const renderMarkdownText = (text: string, lightText: boolean = false) => {
   if (!text || typeof text !== 'string') return text;
   
   // Auto-bold specific formula lines
@@ -23,14 +23,14 @@ const renderMarkdownText = (text: string) => {
   const isEquationLine = trimmedText.includes('=') && formulaKeywords.some(kw => trimmedText.startsWith(kw));
 
   if (isEquationLine) {
-    return <strong style={{ color: '#0F1D33', fontWeight: 800 }}>{text}</strong>;
+    return <strong style={{ color: lightText ? '#ffffff' : '#0F1D33', fontWeight: 800 }}>{text}</strong>;
   }
 
   if (!text.includes('**')) return text;
   const parts = text.split(/(\*\*.*?\*\*)/g);
   return parts.map((part, index) => {
     if (part.startsWith('**') && part.endsWith('**')) {
-      return <strong key={index} style={{ color: '#0F1D33', fontWeight: 800 }}>{part.slice(2, -2)}</strong>;
+      return <strong key={index} style={{ color: lightText ? '#ffffff' : '#0F1D33', fontWeight: 800 }}>{part.slice(2, -2)}</strong>;
     }
     return part;
   });
@@ -702,7 +702,7 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                     if (para.startsWith(">")) {
                       return (
                         <div key={i} style={{ backgroundColor: '#0B4A8E', color: '#ffffff', padding: '2rem 1.5rem 1.5rem', borderRadius: '8px', margin: '0 0 1.5rem 0', lineHeight: 1.7, fontSize: '1.05rem' }}>
-                          {renderMarkdownText(para.replace(/^>\s*"?|"?$/g, ""))}
+                          {renderMarkdownText(para.replace(/^>\s*"?|"?$/g, ""), true)}
                         </div>
                       );
                     }
