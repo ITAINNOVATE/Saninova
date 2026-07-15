@@ -630,7 +630,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Cycle de commande : de la quantification à la réception",
         "type": "text",
         "duration": "10 min",
-        "content": "Cycle de commande : de la quantification à la réception\n\nVue d'ensemble du cycle de commande\n\n### Étape 2 — Élaboration du bon de commande\n\n**Définition :**\n- Le bon de commande (BC) est le document officiel qui formalise la demande d'approvisionnement.\n- Il engage la pharmacie et le fournisseur.\n- Il doit être précis, complet et sans ambiguïté.\n"
+        "content": "#### Cycle de commande : de la quantification à la réception\n\n### Vue d'ensemble du cycle de commande\n\n**Étape 2 — Élaboration du bon de commande**\n\n- **Définition :**\n  - Le bon de commande (BC) est le document officiel qui formalise la demande d'approvisionnement.\n  - Il engage la pharmacie et le fournisseur.\n  - Il doit être précis, complet et sans ambiguïté.\n\n| Champ | Description |\n| --- | --- |\n| Numéro de commande | Référence unique pour le suivi |\n| Date d'émission | Date à laquelle le BC est établi |\n| Identité du commanditaire | Nom de la structure, adresse, contact |\n| Identité du fournisseur | Nom, adresse, contact |\n| Désignation exacte des produits | Dénomination Commune Internationale (DCI), dosage, forme, conditionnement |\n| Quantités commandées | En unités clairement définies (comprimés, flacons, boîtes) |\n| Prix unitaire et prix total | Si connu au moment de la commande |\n| Délai de livraison souhaité | Date limite de livraison attendue |\n| Conditions de livraison | Lieu de livraison, Incoterms applicables |\n| Signatures | Gestionnaire, responsable hiérarchique |\n"
       },
       {
         "id": "gas-m3-c7",
