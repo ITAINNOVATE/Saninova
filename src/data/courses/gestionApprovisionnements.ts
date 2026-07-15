@@ -672,7 +672,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Cycle de commande : de la quantification à la réception",
         "type": "text",
         "duration": "10 min",
-        "content": "Cycle de commande : de la quantification à la réception\n\nVue d'ensemble du cycle de commande\n\nÉtape 6 — Expédition et transport\n\nBonnes pratiques pendant le transport :\n\nPour les produits standards :\n\nEmballages protégés contre l'humidité et la chaleur excessive\n\nProduits non exposés au soleil direct pendant le transport\n\nProduits fragiles (ampoules) emballés avec protection anti-choc\n\nPour les produits de la chaîne du froid :\n- Transport dans des glacières ou véhicules réfrigérés\n- Packs de glace en quantité suffisante pour la durée du trajet\n- Thermomètre enregistreur dans chaque contenant\n- Pastilles de contrôle du vaccin (VVM) vérifiées avant et après transport\n"
+        "content": "#### Cycle de commande : de la quantification à la réception\n\n### Vue d'ensemble du cycle de commande\n\n**Étape 6 — Expédition et transport**\n\n- **Bonnes pratiques pendant le transport :**\n  - Pour les produits standards :\n    - Emballages protégés contre l'humidité et la chaleur excessive\n    - Produits non exposés au soleil direct pendant le transport\n    - Produits fragiles (ampoules) emballés avec protection anti-choc\n\n  - Pour les produits de la chaîne du froid :\n    - Transport dans des glacières ou véhicules réfrigérés\n    - Packs de glace en quantité suffisante pour la durée du trajet\n    - Thermomètre enregistreur dans chaque contenant\n    - Pastilles de contrôle du vaccin (VVM) vérifiées avant et après transport\n"
       },
       {
         "id": "gas-m3-c13",
