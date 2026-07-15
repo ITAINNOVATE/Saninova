@@ -732,25 +732,32 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                       const hasSeparator = rows.length > 1 && rows[1].includes("---");
                       const bodyStartIndex = hasSeparator ? 2 : 1;
                       return (
-                        <div key={i} className="my-6 overflow-x-auto rounded-xl border border-slate-200 shadow-sm">
-                          <table className="w-full text-left text-sm">
+                        <div key={i} className="my-6 overflow-x-auto rounded-xl border shadow-sm" style={{ borderColor: '#E2E8F0' }}>
+                          <table className="w-full text-left text-sm border-collapse">
                             <thead>
-                              <tr className="bg-[#1a4ea0] text-white">
+                              <tr style={{ backgroundColor: '#1a4ea0', color: '#ffffff' }}>
                                 {rows[0].split("|").filter(c => c.trim() !== "").map((cell, cIdx) => (
-                                  <th key={cIdx} className="px-4 py-3 font-bold border-r border-blue-400/30 last:border-0">{cell.trim()}</th>
+                                  <th key={cIdx} className="px-5 py-4 font-bold border-r last:border-0" style={{ borderColor: 'rgba(255,255,255,0.2)' }}>{cell.trim()}</th>
                                 ))}
                               </tr>
                             </thead>
-                            <tbody className="divide-y divide-slate-100">
+                            <tbody>
                               {rows.slice(bodyStartIndex).map((row, rIdx) => {
                                 if (row.trim() === "") return null;
                                 return (
-                                  <tr key={rIdx} className={rIdx % 2 === 0 ? "bg-white" : "bg-slate-50"}>
+                                  <tr key={rIdx} style={{ backgroundColor: rIdx % 2 === 0 ? '#FFFFFF' : '#F8FAFC' }}>
                                     {row.split("|").filter((c, idx, arr) => {
                                       if ((idx === 0 || idx === arr.length - 1) && c.trim() === "") return false;
                                       return true;
                                     }).map((cell, cIdx) => (
-                                      <td key={cIdx} className="px-4 py-3 text-slate-700 border-r border-slate-200 last:border-0">{renderMarkdownText(cell.trim())}</td>
+                                      <td key={cIdx} className="px-5 py-4 align-top border-r last:border-r-0" style={{ color: '#334155', borderColor: '#E2E8F0', borderBottom: '1px solid #E2E8F0', fontSize: '15px', lineHeight: '1.7' }}>
+                                        {cell.trim().split(/<br\s*\/?>/i).map((line, lIdx, arr) => (
+                                          <React.Fragment key={lIdx}>
+                                            {renderMarkdownText(line.trim())}
+                                            {lIdx < arr.length - 1 && <div className="h-3" />}
+                                          </React.Fragment>
+                                        ))}
+                                      </td>
                                     ))}
                                   </tr>
                                 );
