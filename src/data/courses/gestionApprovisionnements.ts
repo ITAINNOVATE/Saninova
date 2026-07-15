@@ -854,35 +854,35 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Gestion des contrats et des termes de livraison (Incoterms)",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\nLes Incoterms — Règles internationales de livraison\n\nLes Incoterms les plus utilisés en approvisionnement pharmaceutique\n\nEXW — Ex Works (À l'usine)\n\nPrincipe : Le vendeur met les marchandises à disposition dans ses locaux. L'acheteur prend en charge tout le reste : chargement, transport, assurance, formalités douanières d'export et d'import, livraison finale.\n"
+        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\n### Les Incoterms — Règles internationales de livraison\n\n**Les Incoterms les plus utilisés en approvisionnement pharmaceutique**\n\n**EXW — Ex Works (À l'usine)**\n- **Principe :** Le vendeur met les marchandises à disposition dans ses locaux. L'acheteur prend en charge tout le reste : chargement, transport, assurance, formalités douanières d'export et d'import, livraison finale.\n"
       },
       {
         "id": "gas-m3-c39",
         "title": "Gestion des contrats et des termes de livraison (Incoterms)",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\nLes Incoterms — Règles internationales de livraison\n\nLes Incoterms les plus utilisés en approvisionnement pharmaceutique\n\nFOB — Free On Board (Franco à bord)\n\nPrincipe : Le vendeur livre les marchandises à bord du navire désigné par l'acheteur, dans le port d'embarquement convenu. Les formalités douanières d'export sont à la charge du vendeur. À partir du moment où les marchandises sont à bord, le risque et les coûts passent à l'acheteur.\n"
+        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\n### Les Incoterms — Règles internationales de livraison\n\n**Les Incoterms les plus utilisés en approvisionnement pharmaceutique**\n\n**FOB — Free On Board (Franco à bord)**\n- **Principe :** Le vendeur livre les marchandises à bord du navire désigné par l'acheteur, dans le port d'embarquement convenu. Les formalités douanières d'export sont à la charge du vendeur. À partir du moment où les marchandises sont à bord, le risque et les coûts passent à l'acheteur.\n"
       },
       {
         "id": "gas-m3-c40",
         "title": "Gestion des contrats et des termes de livraison (Incoterms)",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\nLes Incoterms — Règles internationales de livraison\n\nLes Incoterms les plus utilisés en approvisionnement pharmaceutique\n\nCIF — Cost, Insurance and Freight (Coût, assurance et fret)\n\nPrincipe : Le vendeur paie le transport et l'assurance jusqu'au port de destination désigné. Cependant, le risque passe à l'acheteur dès que les marchandises sont à bord du navire dans le port d'export (comme en FOB). C'est une distinction importante : le vendeur paie l'assurance mais c'est l'acheteur qui en bénéficie si un sinistre survient pendant le transport.\n"
+        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\n### Les Incoterms — Règles internationales de livraison\n\n**Les Incoterms les plus utilisés en approvisionnement pharmaceutique**\n\n**CIF — Cost, Insurance and Freight (Coût, assurance et fret)**\n- **Principe :** Le vendeur paie le transport et l'assurance jusqu'au port de destination désigné. Cependant, le risque passe à l'acheteur dès que les marchandises sont à bord du navire dans le port d'export (comme en FOB). C'est une distinction importante : le vendeur paie l'assurance mais c'est l'acheteur qui en bénéficie si un sinistre survient pendant le transport.\n"
       },
       {
         "id": "gas-m3-c41",
         "title": "Gestion des contrats et des termes de livraison (Incoterms)",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\nLes Incoterms — Règles internationales de livraison\n\nLes Incoterms les plus utilisés en approvisionnement pharmaceutique\n\nDDP — Delivered Duty Paid (Rendu droits acquittés)\n\nPrincipe : C'est l'Incoterm le plus favorable à l'acheteur. Le vendeur supporte tous les coûts et tous les risques jusqu'à la destination finale convenue, y compris les droits de douane à l'importation. L'acheteur n'a qu'à réceptionner les marchandises.\n"
+        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\n### Les Incoterms — Règles internationales de livraison\n\n**Les Incoterms les plus utilisés en approvisionnement pharmaceutique**\n\n**DDP — Delivered Duty Paid (Rendu droits acquittés)**\n- **Principe :** C'est l'Incoterm le plus favorable à l'acheteur. Le vendeur supporte tous les coûts et tous les risques jusqu'à la destination finale convenue, y compris les droits de douane à l'importation. L'acheteur n'a qu'à réceptionner les marchandises.\n"
       },
       {
         "id": "gas-m3-c42",
         "title": "Gestion des contrats et des termes de livraison (Incoterms)",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\nLes Incoterms — Règles internationales de livraison\n\nLes Incoterms les plus utilisés en approvisionnement pharmaceutique\n\nDAP — Delivered At Place (Rendu au lieu de destination)\n\nPrincipe : Similaire au DDP mais le vendeur ne prend pas en charge les droits de douane à l'importation, qui restent à la charge de l'acheteur. Le vendeur livre jusqu'au lieu de destination convenu, prêt à être déchargé.\n"
+        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\n### Les Incoterms — Règles internationales de livraison\n\n**Les Incoterms les plus utilisés en approvisionnement pharmaceutique**\n\n**DAP — Delivered At Place (Rendu au lieu de destination)**\n- **Principe :** Similaire au DDP mais le vendeur ne prend pas en charge les droits de douane à l'importation, qui restent à la charge de l'acheteur. Le vendeur livre jusqu'au lieu de destination convenu, prêt à être déchargé.\n"
       },
       {
         "id": "gas-m3-c43",
