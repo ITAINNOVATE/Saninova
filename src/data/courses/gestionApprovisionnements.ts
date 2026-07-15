@@ -805,7 +805,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Gestion des contrats et des termes de livraison (Incoterms)",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\nLe contrat d'approvisionnement pharmaceutique\n\nPourquoi un contrat est-il indispensable ?\n\nSans contrat formalisé, chaque commande est une transaction isolée sans garanties. Le fournisseur peut modifier ses prix, ses délais ou ses conditions à tout moment.\n\nLe client ne dispose d'aucun recours juridique en cas de :\n- livraison non conforme,\n- retard ou de\n- rupture unilatérale.\n- Un contrat bien rédigé protège les deux parties et crée un cadre stable pour une relation durable.\n"
+        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\n### Le contrat d'approvisionnement pharmaceutique\n\n**Pourquoi un contrat est-il indispensable ?**\n- Sans contrat formalisé, chaque commande est une transaction isolée sans garanties. Le fournisseur peut modifier ses prix, ses délais ou ses conditions à tout moment.\n- Le client ne dispose d'aucun recours juridique en cas de :\n  - livraison non conforme,\n  - retard ou de\n  - rupture unilatérale.\n- Un contrat bien rédigé protège les deux parties et crée un cadre stable pour une relation durable.\n"
       },
       {
         "id": "gas-m3-c32",
