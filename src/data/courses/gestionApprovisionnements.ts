@@ -791,7 +791,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Sélection et évaluation des fournisseurs",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Sélection et évaluation des fournisseurs\n\nSynthèse — Sélection et évaluation des fournisseurs\n"
+        "content": "#### Sélection et évaluation des fournisseurs\n\n### Synthèse — Sélection et évaluation des fournisseurs\n\n| Étape | Action | Fréquence | Outil |\n| --- | --- | --- | --- |\n| Sélection initiale | Évaluer sur 5 critères pondérés | À chaque nouveau fournisseur | Grille de scoring |\n| Suivi opérationnel | Mesurer les KPIs à chaque livraison | Mensuelle | Scorecard fournisseur |\n| Évaluation formelle | Revue complète avec scoring global | Semestrielle ou annuelle | Rapport d'évaluation |\n| Gestion des litiges | Documenter et réclamation écrite | À chaque incident | Formulaire de réclamation |\n| Audit sur site | Vérification BPF et capacités | Tous les 2 à 3 ans | Grille d'audit |\n| Mise à jour panel | Maintenir 3 fournisseurs par produit critique | Continue | Liste des fournisseurs qualifiés |\n"
       },
       {
         "id": "gas-m3-c30",
