@@ -903,7 +903,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Chapitre 1",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\nPasser une commande est une chose. Savoir à tout moment où elle en est, si elle sera livrée à temps, et si le fournisseur performe correctement en est une autre.\n\nSans outils de suivi structurés, le gestionnaire travaille dans l'incertitude :\n- il ne sait pas si sa commande a bien été reçue par le fournisseur,\n- si l'expédition a eu lieu,\n- ni quand la livraison est attendue.\n- Cette incertitude conduit à des relances tardives, des ruptures non anticipées et des décisions de commande mal calibrées.\n\nLes outils de suivi des commandes et le tableau de bord fournisseurs transforment cette incertitude en visibilité et cette réactivité subie en anticipation maîtrisée.\n"
+        "content": "### Outils de suivi des commandes et tableau de bord fournisseurs\n\nPasser une commande est une chose. Savoir à tout moment où elle en est, si elle sera livrée à temps, et si le fournisseur performe correctement en est une autre.\n\nSans outils de suivi structurés, le gestionnaire travaille dans l'incertitude :\n- il ne sait pas si sa commande a bien été reçue par le fournisseur,\n- si l'expédition a eu lieu,\n- ni quand la livraison est attendue.\n- Cette incertitude conduit à des relances tardives, des ruptures non anticipées et des décisions de commande mal calibrées.\n\nLes outils de suivi des commandes et le tableau de bord fournisseurs transforment cette incertitude en visibilité et cette réactivité subie en anticipation maîtrisée.\n"
       },
       {
         "id": "gas-m3-c46",
