@@ -1615,7 +1615,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Outils digitaux de gestion des stocks",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Outils digitaux de gestion des stocks\n\nCritères de choix d'un outil digital\n"
+        "content": "#### Outils digitaux de gestion des stocks\n\n**Critères de choix d'un outil digital**\n\n| Critère | Questions à se poser |\n|---|---|\n| Infrastructure informatique | Y a-t-il des ordinateurs disponibles et en état de fonctionnement ? |\n| Connexion internet | La connexion est-elle fiable et permanente, ou intermittente ? |\n| Électricité | L'alimentation électrique est-elle stable ? Dispose-t-on de groupes électrogènes ou de panneaux solaires ? |\n| Compétences du personnel | Le personnel a-t-il une formation informatique de base ? Peut-on former rapidement ? |\n| Volume de produits gérés | Combien de références différentes le dépôt gère-t-il ? |\n| Budget disponible | Quel est le budget pour l'acquisition et la maintenance de l'outil ? |\n| Support technique local | Y a-t-il un support technique disponible localement en cas de panne ? |\n| Interopérabilité | L'outil doit-il s'interfacer avec le système national (DHIS2, OpenLMIS) ? |\n"
       },
       {
         "id": "gas-m5-c33",
