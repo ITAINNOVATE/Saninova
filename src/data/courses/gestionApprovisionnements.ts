@@ -1252,7 +1252,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Identification et traitement des surstocks",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Causes des surstocks\n"
+        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Causes des surstocks\n\n| Cause | Description | Exemple |\n|---|---|---|\n| Surestimation de la CMM | CMM calculée sur un mois atypique | CMM gonflée par une épidémie incluse dans le calcul |\n| Sur-commande | Quantité commandée supérieure aux besoins réels | Arrondi excessif à la hausse |\n| Chute soudaine de la demande | Changement de protocole, départ d'un médecin prescripteur | Arrêt de la prescription d'un médicament |\n| Livraison non sollicitée | Le niveau supérieur livre sans commande préalable (push system) | Dépôt régional qui impose une livraison |\n| Double commande | Commande passée deux fois pour le même produit | Commande en transit oubliée |\n| Produit remplacé | Changement de liste des médicaments essentiels | Ancien produit délisté mais encore en stock |\n| Non-respect du FEFO | Produits anciens non distribués en priorité | Accumulation de lots en fin de péremption |\n"
       },
       {
         "id": "gas-m4-c39",
