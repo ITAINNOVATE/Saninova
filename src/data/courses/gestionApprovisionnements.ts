@@ -966,7 +966,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Chapitre 10",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\n### Le tableau de bord fournisseurs\n\n**Définition et objectif**\n- Le tableau de bord fournisseurs est l'outil stratégique d'évaluation continue de la performance des fournisseurs.\n- Il consolide les données de toutes les commandes passées auprès d'un fournisseur sur une période donnée et calcule automatiquement ses KPIs.\n- Il permet de prendre des décisions objectives : maintenir, réorienter ou exclure un fournisseur.\n"
+        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\n### Le tableau de bord fournisseurs\n\n**Définition et objectif**\n- Le tableau de bord fournisseurs est l'outil stratégique d'évaluation continue de la performance des fournisseurs.\n- Il consolide les données de toutes les commandes passées auprès d'un fournisseur sur une période donnée et calcule automatiquement ses KPIs.\n- Il permet de prendre des décisions objectives :\n  - maintenir,\n  - réorienter ou\n  - exclure un fournisseur.\n"
       },
       {
         "id": "gas-m3-c55",
