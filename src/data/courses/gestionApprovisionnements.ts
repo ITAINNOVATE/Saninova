@@ -910,77 +910,77 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Chapitre 2",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\nLe registre de suivi des commandes\n\nDéfinition et objectif\n\nLe registre de suivi des commandes est le document de base qui trace le cycle de vie de chaque commande depuis son émission jusqu'à sa clôture après réception et vérification.\n\nC'est l'outil minimal indispensable, utilisable même sans informatique.\n"
+        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\n### Le registre de suivi des commandes\n\n**Définition et objectif**\n- Le registre de suivi des commandes est le document de base qui trace le cycle de vie de chaque commande depuis son émission jusqu'à sa clôture après réception et vérification.\n- C'est l'outil minimal indispensable, utilisable même sans informatique.\n"
       },
       {
         "id": "gas-m3-c47",
         "title": "Chapitre 3",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\nLe registre de suivi des commandes\n\nStructure du registre\n"
+        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\n### Le registre de suivi des commandes\n\n**Structure du registre**\n\n| Champ | Description |\n|---|---|\n| Numéro de commande | Référence unique du bon de commande |\n| Date d'émission | Date à laquelle le BC a été établi |\n| Date de transmission | Date à laquelle le BC a été envoyé au fournisseur |\n| Fournisseur | Nom du fournisseur concerné |\n| Produits commandés | Liste des produits avec quantités |\n| Montant total | Valeur financière de la commande |\n| Date de confirmation fournisseur | Date à laquelle le fournisseur a confirmé réception |\n| Date de livraison promise | Date contractuelle de livraison |\n| Date de livraison réelle | Date effective de réception |\n| Quantités reçues | Ce qui a réellement été livré |\n| Écarts constatés | Différences entre commandé et reçu |\n| Statut | En attente / En transit / Reçu conforme / Litige |\n| Actions en cours | Relances, réclamations, suivi |\n"
       },
       {
         "id": "gas-m3-c48",
         "title": "Chapitre 4",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\nLe tableau de bord des commandes en cours\n\nDéfinition\n\nLe tableau de bord des commandes en cours est une vue synthétique et visuelle de toutes les commandes actives à un instant T.\n\nContrairement au registre (document historique complet), le tableau de bord ne montre que les commandes non encore clôturées.\n\nIl permet au gestionnaire d'identifier en un coup d'œil les commandes à risque.\n"
+        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\n### Le tableau de bord des commandes en cours\n\n**Définition**\n- Le tableau de bord des commandes en cours est une vue synthétique et visuelle de toutes les commandes actives à un instant T.\n- Contrairement au registre (document historique complet), le tableau de bord ne montre que les commandes non encore clôturées.\n- Il permet au gestionnaire d'identifier en un coup d'œil les commandes à risque.\n"
       },
       {
         "id": "gas-m3-c49",
         "title": "Chapitre 5",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\nLe système d'alerte et de relance\n\nPrincipe\n\nUn bon système de suivi ne se contente pas d'enregistrer passivement les informations.\n\nIl génère des alertes proactives qui déclenchent des actions avant que les problèmes ne surviennent.\n\nDans un système manuel, ces alertes sont des rappels inscrits dans un calendrier. Dans un système informatisé, elles sont automatiques.\n"
+        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\n### Le système d'alerte et de relance\n\n**Principe**\n- Un bon système de suivi ne se contente pas d'enregistrer passivement les informations.\n- Il génère des alertes proactives qui déclenchent des actions avant que les problèmes ne surviennent.\n- Dans un système manuel, ces alertes sont des rappels inscrits dans un calendrier. Dans un système informatisé, elles sont automatiques.\n"
       },
       {
         "id": "gas-m3-c50",
         "title": "Chapitre 6",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\nLe système d'alerte et de relance\n\nLes 4 niveaux d'alerte\n\nAlerte niveau 1 — Confirmation de réception de commande (J+2 après transmission)*\n\nSi le fournisseur n'a pas confirmé la réception du bon de commande dans les 48 heures suivant sa transmission, le gestionnaire relance.\n\nPourquoi : une commande non confirmée peut ne pas avoir été enregistrée par le fournisseur. Plus on attend pour s'en apercevoir, plus le retard s'accumule.\n\n* : selon les termes du contrat\n"
+        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\n### Le système d'alerte et de relance\n\n**Les 4 niveaux d'alerte**\n\n**Alerte niveau 1 — Confirmation de réception de commande (J+2 après transmission)\\***\n- Si le fournisseur n'a pas confirmé la réception du bon de commande dans les 48 heures suivant sa transmission, le gestionnaire relance.\n- **Pourquoi :** une commande non confirmée peut ne pas avoir été enregistrée par le fournisseur. Plus on attend pour s'en apercevoir, plus le retard s'accumule.\n\n*\\* : selon les termes du contrat*\n"
       },
       {
         "id": "gas-m3-c51",
         "title": "Chapitre 7",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\nLe système d'alerte et de relance\n\nLes 4 niveaux d'alerte\n\nAlerte niveau 2 — Suivi d'expédition (J−7 avant la date de livraison promise)*\n\nSept jours avant la date de livraison promise, le gestionnaire vérifie que les produits ont bien été expédiés.\n\nPourquoi : si l'expédition n'a pas encore eu lieu à J−7, la livraison sera très probablement en retard. C'est le moment d'anticiper et d'évaluer l'impact sur le stock.\n\n* : selon les termes du contrat\n"
+        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\n### Le système d'alerte et de relance\n\n**Les 4 niveaux d'alerte**\n\n**Alerte niveau 2 — Suivi d'expédition (J−7 avant la date de livraison promise)\\***\n- Sept jours avant la date de livraison promise, le gestionnaire vérifie que les produits ont bien été expédiés.\n- **Pourquoi :** si l'expédition n'a pas encore eu lieu à J−7, la livraison sera très probablement en retard. C'est le moment d'anticiper et d'évaluer l'impact sur le stock.\n\n*\\* : selon les termes du contrat*\n"
       },
       {
         "id": "gas-m3-c52",
         "title": "Chapitre 8",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\nLe système d'alerte et de relance\n\nLes 4 niveaux d'alerte\n\nAlerte niveau 3 — Retard avéré (J+1 après la date de livraison promise)*\n\nSi la livraison n'est pas arrivée à la date promise, le gestionnaire déclenche le niveau 3 : notification formelle de retard avec application des pénalités contractuelles et évaluation de l'impact sur le stock.\n\n* : selon les termes du contrat\n"
+        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\n### Le système d'alerte et de relance\n\n**Les 4 niveaux d'alerte**\n\n**Alerte niveau 3 — Retard avéré (J+1 après la date de livraison promise)\\***\n- Si la livraison n'est pas arrivée à la date promise, le gestionnaire déclenche le niveau 3 : notification formelle de retard avec application des pénalités contractuelles et évaluation de l'impact sur le stock.\n\n*\\* : selon les termes du contrat*\n"
       },
       {
         "id": "gas-m3-c53",
         "title": "Chapitre 9",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\nLe système d'alerte et de relance\n\nLes 4 niveaux d'alerte\n\nAlerte niveau 4 — Retard critique (J+7 et au-delà)*\n\nSi après 7 jours de retard le problème n'est pas résolu, le gestionnaire escalade au niveau hiérarchique supérieur, active le fournisseur alternatif si le stock est en danger, et documente formellement en vue d'une éventuelle révision du contrat.\n\n* : selon les termes du contrat\n"
+        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\n### Le système d'alerte et de relance\n\n**Les 4 niveaux d'alerte**\n\n**Alerte niveau 4 — Retard critique (J+7 et au-delà)\\***\n- Si après 7 jours de retard le problème n'est pas résolu, le gestionnaire escalade au niveau hiérarchique supérieur, active le fournisseur alternatif si le stock est en danger, et documente formellement en vue d'une éventuelle révision du contrat.\n\n*\\* : selon les termes du contrat*\n"
       },
       {
         "id": "gas-m3-c54",
         "title": "Chapitre 10",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\nLe tableau de bord fournisseurs\n\nDéfinition et objectif\n\nLe tableau de bord fournisseurs est l'outil stratégique d'évaluation continue de la performance des fournisseurs.\n\nIl consolide les données de toutes les commandes passées auprès d'un fournisseur sur une période donnée et calcule automatiquement ses KPIs.\n\nIl permet de prendre des décisions objectives :\n- maintenir,\n- réorienter ou\n- exclure un fournisseur.\n"
+        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\n### Le tableau de bord fournisseurs\n\n**Définition et objectif**\n- Le tableau de bord fournisseurs est l'outil stratégique d'évaluation continue de la performance des fournisseurs.\n- Il consolide les données de toutes les commandes passées auprès d'un fournisseur sur une période donnée et calcule automatiquement ses KPIs.\n- Il permet de prendre des décisions objectives : maintenir, réorienter ou exclure un fournisseur.\n"
       },
       {
         "id": "gas-m3-c55",
         "title": "Chapitre 11",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\nLe tableau de bord fournisseurs\n\nLes indicateurs du tableau de bord fournisseurs\n\nIndicateur 1 — Taux de service\n\n(Quantité livrée conforme ÷ Quantité commandée) × 100\n\nIndicateur 2 — Taux de respect des délais\n\n(Nombre de livraisons dans les délais ÷ Nombre total de livraisons) × 100\n\nIndicateur 3 — Taux de conformité qualité\n\n(Nombre de lots conformes ÷ Nombre total de lots reçus) × 100\n\nIndicateur 4 — Délai moyen de livraison\n\nMoyenne des délais réels observés sur la période\n\nIndicateur 5 — Taux de résolution des réclamations\n\n(Réclamations résolues dans les délais ÷ Total des réclamations) × 100\n"
+        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\n### Le tableau de bord fournisseurs\n\n**Les indicateurs du tableau de bord fournisseurs**\n\n**Indicateur 1 — Taux de service**\n- (Quantité livrée conforme ÷ Quantité commandée) × 100\n\n**Indicateur 2 — Taux de respect des délais**\n- (Nombre de livraisons dans les délais ÷ Nombre total de livraisons) × 100\n\n**Indicateur 3 — Taux de conformité qualité**\n- (Nombre de lots conformes ÷ Nombre total de lots reçus) × 100\n\n**Indicateur 4 — Délai moyen de livraison**\n- Moyenne des délais réels observés sur la période\n\n**Indicateur 5 — Taux de résolution des réclamations**\n- (Réclamations résolues dans les délais ÷ Total des réclamations) × 100\n"
       },
       {
         "id": "gas-m3-c56",
         "title": "Chapitre 12",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\nOutils digitaux de suivi\n\nNiveau 1 — Manuel (registre papier)\n\nAdapté aux structures sans électricité fiable ni informatique.\n\nEfficace si rigoureusement tenu. Limite : pas de calculs automatiques, risque d'erreurs de transcription.\n\nNiveau 2 — Tableur (Excel, Google Sheets)\n\nLe niveau le plus répandu et le plus accessible.\n\nPermet les calculs automatiques, les graphiques, le filtrage. Un fichier Excel bien construit peut gérer l'ensemble du suivi des commandes et des tableaux de bord fournisseurs d'un dépôt de district.\n\nNiveau 3 — Logiciel de gestion (SAGE, Odoo, OpenLMIS)\n\nSystèmes intégrés qui automatisent le suivi des commandes, génèrent les alertes, calculent les KPIs en temps réel et permettent la consolidation des données entre plusieurs sites.\n\nNiveau 4 — Système d'information logistique national (LMIS)\n\nNiveau le plus avancé, utilisé par les centrales d'achat et les ministères.\n\nPermet une visibilité en temps réel sur l'ensemble de la chaîne d'approvisionnement nationale.\n"
+        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\n### Outils digitaux de suivi\n\n**Niveau 1 — Manuel (registre papier)**\n- Adapté aux structures sans électricité fiable ni informatique.\n- Efficace si rigoureusement tenu. Limite : pas de calculs automatiques, risque d'erreurs de transcription.\n\n**Niveau 2 — Tableur (Excel, Google Sheets)**\n- Le niveau le plus répandu et le plus accessible.\n- Permet les calculs automatiques, les graphiques, le filtrage. Un fichier Excel bien construit peut gérer l'ensemble du suivi des commandes et des tableaux de bord fournisseurs d'un dépôt de district.\n\n**Niveau 3 — Logiciel de gestion (SAGE, Odoo, OpenLMIS)**\n- Systèmes intégrés qui automatisent le suivi des commandes, génèrent les alertes, calculent les KPIs en temps réel et permettent la consolidation des données entre plusieurs sites.\n\n**Niveau 4 — Système d'information logistique national (LMIS)**\n- Niveau le plus avancé, utilisé par les centrales d'achat et les ministères.\n- Permet une visibilité en temps réel sur l'ensemble de la chaîne d'approvisionnement nationale.\n"
       }
     ]
   },
