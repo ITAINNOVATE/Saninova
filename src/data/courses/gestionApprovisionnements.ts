@@ -1468,28 +1468,28 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Types d'inventaires (permanent, périodique, tournant)",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Types d'inventaires (permanent, périodique, tournant)\n\nDifférences entre inventaire permanent et périodique\n"
+        "content": "#### Différences entre inventaire permanent et périodique\n\n| Critère | Inventaire permanent | Inventaire périodique |\n|---|---|---|\n| Suivi du stock | En continu, en temps réel | Uniquement aux dates d'inventaire |\n| Connaissance du stock | À tout moment | Seulement après chaque inventaire |\n| Charge de travail | Continue mais légère | Concentrée aux dates d'inventaire |\n| Fiabilité des données | Élevée si enregistrement rigoureux | Limitée entre deux inventaires |\n| Détection des écarts | Immédiate si enregistrement complet | Seulement à chaque inventaire |\n| Ressources nécessaires | Formation et discipline du personnel | Organisation et temps pour l'inventaire |\n| Adapté à | Structures avec logiciel, faible volume de produits | Structures avec volume important, ressources limitées |\n"
       },
       {
         "id": "gas-m5-c12",
         "title": "Types d'inventaires (permanent, périodique, tournant)",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Types d'inventaires (permanent, périodique, tournant)\n\nL'inventaire tournant\n\nDéfinition\n\nL'inventaire tournant est un système dans lequel l'ensemble du stock est divisé en segments (par zone, par famille de produits, ou par ordre alphabétique), et chaque segment est compté à tour de rôle selon un calendrier prédéfini.\n\nÀ tout moment de l'année, une partie du stock a été récemment vérifiée.\n\nSur une période de 12 mois, l'intégralité du stock est passée en revue plusieurs fois.\n\nPrincipe : Au lieu de tout compter en une seule fois (comme pour l'inventaire périodique), on compte un peu chaque semaine ou chaque mois, de façon continue et rotative.\n"
+        "content": "#### L'inventaire tournant\n\n- **Définition**\n  - L'inventaire tournant est un système dans lequel l'ensemble du stock est divisé en segments (par zone, par famille de produits, ou par ordre alphabétique), et chaque segment est compté à tour de rôle selon un calendrier prédéfini.\n  - À tout moment de l'année, une partie du stock a été récemment vérifiée.\n  - Sur une période de 12 mois, l'intégralité du stock est passée en revue plusieurs fois.\n- **Principe :** Au lieu de tout compter en une seule fois (comme pour l'inventaire périodique), on compte un peu chaque semaine ou chaque mois, de façon continue et rotative.\n"
       },
       {
         "id": "gas-m5-c13",
         "title": "Types d'inventaires (permanent, périodique, tournant)",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Types d'inventaires (permanent, périodique, tournant)\n\nL'inventaire tournant\n\nAvantages de l'inventaire tournant\n\nAvantage 1 — Détection rapide des écarts : Un écart sera détecté au plus tard 4 semaines après sa survenue (au prochain comptage du Groupe A), alors qu'avec un inventaire semestriel il pourrait rester invisible pendant 6 mois.\n\nAvantage 2 — Charge de travail répartie : L'inventaire tournant ne mobilise jamais l'ensemble du personnel en même temps. Chaque semaine, seulement peu de produits sont comptés, ce qui prend environ 1 à 2 heures au lieu de la journée entière qu'exige un inventaire complet.\n\nAvantage 3 — Maintien continu de la fiabilité des données : Avec l'inventaire tournant, les données de stock des produits récemment comptés sont fiables à tout moment.\n"
+        "content": "#### L'inventaire tournant\n\n- **Avantages de l'inventaire tournant**\n  - **Avantage 1 — Détection rapide des écarts :** Un écart sera détecté au plus tard 4 semaines après sa survenue (au prochain comptage du Groupe A), alors qu'avec un inventaire semestriel il pourrait rester invisible pendant 6 mois.\n  - **Avantage 2 — Charge de travail répartie :** L'inventaire tournant ne mobilise jamais l'ensemble du personnel en même temps. Chaque semaine, seulement peu de produits sont comptés, ce qui prend environ 1 à 2 heures au lieu de la journée entière qu'exige un inventaire complet.\n  - **Avantage 3 — Maintien continu de la fiabilité des données :** Avec l'inventaire tournant, les données de stock des produits récemment comptés sont fiables à tout moment.\n"
       },
       {
         "id": "gas-m5-c14",
         "title": "Types d'inventaires (permanent, périodique, tournant)",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Types d'inventaires (permanent, périodique, tournant)\n\nL'inventaire de passation de service\n\nUn type d'inventaire particulier mérite une mention spéciale : l'inventaire de passation de service. Il est réalisé à chaque changement de gestionnaire et protège à la fois le gestionnaire sortant (il n'est pas tenu responsable de pertes survenues après son départ) et le gestionnaire entrant (il sait exactement ce qu'il prend en charge).\n\nProcédure :\n- ☐ Comptage physique complet de tous les produits en présence des deux gestionnaires\n- ☐ Vérification de tous les documents (registres, bons de commande en cours, fiches de stock)\n- ☐ Inventaire des équipements et du matériel\n- ☐ Rédaction d'un procès-verbal de passation cosigné par les deux gestionnaires et le médecin chef\n- ☐ Conservation d'une copie par chaque partie\n"
+        "content": "#### L'inventaire de passation de service\n\n- Un type d'inventaire particulier mérite une mention spéciale : l'inventaire de passation de service. Il est réalisé à chaque changement de gestionnaire et protège à la fois le gestionnaire sortant (il n'est pas tenu responsable de pertes survenues après son départ) et le gestionnaire entrant (il sait exactement ce qu'il prend en charge).\n- **Procédure :**\n  - ☐ Comptage physique complet de tous les produits en présence des deux gestionnaires\n  - ☐ Vérification de tous les documents (registres, bons de commande en cours, fiches de stock)\n  - ☐ Inventaire des équipements et du matériel\n  - ☐ Rédaction d'un procès-verbal de passation cosigné par les deux gestionnaires et le médecin chef\n  - ☐ Conservation d'une copie par chaque partie\n"
       },
       {
         "id": "gas-m5-c15",
