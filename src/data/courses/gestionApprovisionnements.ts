@@ -1329,7 +1329,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Plans de contingence et procédures d'urgence",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Plans de contingence et procédures d'urgence\n\nStratégies de prévention et de gestion des ruptures\n\nCatégorie 2 — Crises liées à l'approvisionnement\n"
+        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Catégorie 2 — Crises liées à l'approvisionnement\n\n| Scénario | Description | Impact |\n|---|---|---|\n| Rupture chez le fabricant unique | Arrêt de production mondial d'un principe actif | Indisponibilité totale et prolongée |\n| Perturbation logistique majeure | Grève des transports, route coupée, inondation | Blocage des livraisons |\n| Défaillance financière d'un fournisseur | Faillite ou cessation d'activité | Rupture de contrat sans préavis |\n| Problème qualité majeur | Rappel de lot à l'échelle nationale ou internationale | Retrait urgent de produits du stock |\n"
       },
       {
         "id": "gas-m4-c50",
