@@ -43,6 +43,7 @@ export default function EvaluationPage({ params }: { params: Promise<{ slug: str
   
   const [attempts, setAttempts] = useState(0);
   const [blocked, setBlocked] = useState(false);
+  const [reviewMode, setReviewMode] = useState(false);
 
   // Initialize the evaluation
   useEffect(() => {
@@ -63,9 +64,10 @@ export default function EvaluationPage({ params }: { params: Promise<{ slug: str
       setEvalData(data);
       
       const savedAttempts = parseInt(localStorage.getItem(`eval_attempts_${slug}`) || "0");
+      const passed = localStorage.getItem(`eval_passed_${slug}`) === "true";
       setAttempts(savedAttempts);
       
-      if (savedAttempts >= data.maxAttempts) {
+      if (savedAttempts >= data.maxAttempts && !passed) {
         setBlocked(true);
       } else {
         // Shuffle questions and options
@@ -82,9 +84,10 @@ export default function EvaluationPage({ params }: { params: Promise<{ slug: str
       setEvalData(data);
       
       const savedAttempts = parseInt(localStorage.getItem(`eval_attempts_${slug}`) || "0");
+      const passed = localStorage.getItem(`eval_passed_${slug}`) === "true";
       setAttempts(savedAttempts);
       
-      if (savedAttempts >= data.maxAttempts) {
+      if (savedAttempts >= data.maxAttempts && !passed) {
         setBlocked(true);
       } else {
         const shuffledQuestions = shuffleArray(data.questions).map(q => ({
@@ -100,9 +103,10 @@ export default function EvaluationPage({ params }: { params: Promise<{ slug: str
       setEvalData(data);
       
       const savedAttempts = parseInt(localStorage.getItem(`eval_attempts_${slug}`) || "0");
+      const passed = localStorage.getItem(`eval_passed_${slug}`) === "true";
       setAttempts(savedAttempts);
       
-      if (savedAttempts >= data.maxAttempts) {
+      if (savedAttempts >= data.maxAttempts && !passed) {
         setBlocked(true);
       } else {
         const shuffledQuestions = shuffleArray(data.questions).map(q => ({
@@ -172,17 +176,31 @@ export default function EvaluationPage({ params }: { params: Promise<{ slug: str
     const finalScore = Math.round((correctCount / questions.length) * 100);
     setScore(finalScore);
     
-    // Increment attempts
-    const newAttempts = attempts + 1;
-    setAttempts(newAttempts);
-    localStorage.setItem(`eval_attempts_${slug}`, newAttempts.toString());
+    const passed = localStorage.getItem(`eval_passed_${slug}`) === "true";
     
-    // Save score
-    localStorage.setItem(`eval_score_${slug}`, finalScore.toString());
+    // Only increment attempts if they haven't officially passed yet
+    if (!passed) {
+      const newAttempts = attempts + 1;
+      setAttempts(newAttempts);
+      localStorage.setItem(`eval_attempts_${slug}`, newAttempts.toString());
+    }
+    
+    // Save score if it's their best score
+    const savedScore = parseInt(localStorage.getItem(`eval_score_${slug}`) || "0");
+    if (finalScore > savedScore) {
+      localStorage.setItem(`eval_score_${slug}`, finalScore.toString());
+    }
     
     if (finalScore >= evalData.passingScore) {
       localStorage.setItem(`eval_passed_${slug}`, "true");
     }
+  };
+
+  const handleRestart = () => {
+    setIsSubmitted(false);
+    setAnswers({});
+    setCurrentIndex(0);
+    setTimeLeft(evalData.timeLimit);
   };
 
   useEffect(() => {
@@ -227,7 +245,7 @@ export default function EvaluationPage({ params }: { params: Promise<{ slug: str
   const isFirstQuestion = currentIndex === 0;
   const answeredCount = Object.keys(answers).length;
   const progressPercent = Math.round((answeredCount / questions.length) * 100);
-  const isPassed = score >= evalData.passingScore;
+  const isPassed = score >= evalData.passingScore || (typeof window !== "undefined" && localStorage.getItem(`eval_passed_${slug}`) === "true");
   const studentEmail = typeof window !== "undefined" ? localStorage.getItem("registered_email") || "Étudiant(e)" : "Étudiant(e)";
   const currentDate = new Date().toLocaleDateString('fr-FR', { day: '2-digit', month: 'long', year: 'numeric' });
 
@@ -235,8 +253,49 @@ export default function EvaluationPage({ params }: { params: Promise<{ slug: str
     <>
       <PageHero title="Évaluation Finale" subtitle={evalData.title} backgroundImages={["https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80"]} />
       
-      <div className="bg-dark min-h-screen pb-24 px-4 md:px-6 -mt-12 relative z-20">
-        <div className="max-w-4xl mx-auto">
+      {reviewMode ? (
+        <div className="bg-dark min-h-screen pb-24 px-4 md:px-6 -mt-12 relative z-20">
+          <div className="max-w-4xl mx-auto">
+            <div className="mb-6">
+              <button onClick={() => setReviewMode(false)} className="inline-flex items-center text-accent font-bold text-sm uppercase tracking-widest hover:translate-x-[-4px] transition-transform">
+                <ArrowLeft className="w-4 h-4 mr-2" /> Retour aux résultats
+              </button>
+            </div>
+            <div className="space-y-8">
+              {questions.map((q, idx) => (
+                <div key={q.id} className="bg-[#0F1D33] rounded-[32px] border border-white/5 p-8 shadow-xl">
+                  <h3 className="text-xl font-bold text-white mb-6">{idx + 1}. {q.text}</h3>
+                  <div className="space-y-3">
+                    {q.options.map((opt: string, i: number) => {
+                      const isCorrect = opt === q.correctAnswer;
+                      const isSelected = answers[q.id] === opt;
+                      let btnClass = "border-white/10 text-white/80 bg-white/5";
+                      if (isCorrect) {
+                        btnClass = "border-green-500 bg-green-500/10 text-white";
+                      } else if (isSelected) {
+                        btnClass = "border-red-500 bg-red-500/10 text-white";
+                      }
+                      
+                      return (
+                        <div key={i} className={`w-full text-left p-4 rounded-xl border-2 flex items-start space-x-4 ${btnClass}`}>
+                          <div className={`w-6 h-6 rounded-full border-2 flex-shrink-0 mt-0.5 flex items-center justify-center ${isCorrect ? 'border-green-500' : (isSelected ? 'border-red-500' : 'border-white/30')}`}>
+                            {(isCorrect || isSelected) && <div className={`w-2 h-2 rounded-full ${isCorrect ? 'bg-green-500' : 'bg-red-500'}`} />}
+                          </div>
+                          <span className="text-lg leading-tight">{opt}</span>
+                          {isCorrect && <CheckCircle2 className="w-6 h-6 text-green-500 ml-auto flex-shrink-0" />}
+                          {!isCorrect && isSelected && <XCircle className="w-6 h-6 text-red-500 ml-auto flex-shrink-0" />}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div className="bg-dark min-h-screen pb-24 px-4 md:px-6 -mt-12 relative z-20">
+          <div className="max-w-4xl mx-auto">
           
           <div className="mb-6 flex items-center justify-between">
             <Link href={`/academy/portal`} className="inline-flex items-center text-accent font-bold text-sm uppercase tracking-widest hover:translate-x-[-4px] transition-transform">
@@ -376,12 +435,31 @@ export default function EvaluationPage({ params }: { params: Promise<{ slug: str
 
                 {!isPassed && attempts < evalData.maxAttempts && (
                   <button 
-                    onClick={() => window.location.reload()}
+                    onClick={handleRestart}
                     className="flex items-center justify-center space-x-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-bold transition-colors mx-auto"
                   >
                     <RefreshCw className="w-5 h-5" />
                     <span>Retenter l'évaluation</span>
                   </button>
+                )}
+
+                {isPassed && (
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+                    <button 
+                      onClick={() => setReviewMode(true)}
+                      className="flex items-center justify-center space-x-2 bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-xl font-bold transition-colors w-full sm:w-auto"
+                    >
+                      <CheckCircle2 className="w-5 h-5" />
+                      <span>Revoir les questions</span>
+                    </button>
+                    <button 
+                      onClick={handleRestart}
+                      className="flex items-center justify-center space-x-2 bg-accent/20 hover:bg-accent/40 text-accent px-6 py-3 rounded-xl font-bold transition-colors w-full sm:w-auto"
+                    >
+                      <RefreshCw className="w-5 h-5" />
+                      <span>Refaire l'évaluation</span>
+                    </button>
+                  </div>
                 )}
                 
                 {isPassed && (
@@ -400,7 +478,7 @@ export default function EvaluationPage({ params }: { params: Promise<{ slug: str
             </div>
           )}
         </div>
-      </div>
+      )}
     </>
   );
 }
