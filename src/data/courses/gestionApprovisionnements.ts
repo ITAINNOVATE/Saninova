@@ -1343,7 +1343,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Plans de contingence et procédures d'urgence",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Plans de contingence et procédures d'urgence\n\nStructure d'un plan de contingence\n\nComposante 1 — Identification des produits critiques\n\nTous les produits ne nécessitent pas le même niveau de préparation d'urgence.\n\nLe plan de contingence doit se concentrer en priorité sur les produits dont la rupture a les conséquences sanitaires les plus graves.\n\nMéthode de priorisation — Matrice de criticité\n\nComposante 2 — Stock de contingence dédié\n\nPour les produits critiques, un stock de contingence supplémentaire est constitué et maintenu en dehors du stock de routine.\n\nIl ne doit être utilisé qu'en cas de déclenchement officiel du plan de contingence.\n\nStock de contingence = CMM × Durée estimée de la crise la plus probable\n"
+        "content": "#### Structure d'un plan de contingence\n\n**Composante 1 — Identification des produits critiques**\n- Tous les produits ne nécessitent pas le même niveau de préparation d'urgence.\n- Le plan de contingence doit se concentrer en priorité sur les produits dont la rupture a les conséquences sanitaires les plus graves.\n- **Méthode de priorisation — Matrice de criticité**\n\n**Composante 2 — Stock de contingence dédié**\n- Pour les produits critiques, un stock de contingence supplémentaire est constitué et maintenu en dehors du stock de routine.\n- Il ne doit être utilisé qu'en cas de déclenchement officiel du plan de contingence.\n- **Stock de contingence = CMM × Durée estimée de la crise la plus probable**\n"
       },
       {
         "id": "gas-m4-c52",
