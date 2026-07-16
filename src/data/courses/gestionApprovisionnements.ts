@@ -1440,28 +1440,28 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Types d'inventaires (permanent, périodique, tournant)",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Types d'inventaires (permanent, périodique, tournant)\n\nL'inventaire périodique\n\nDéfinition\n\nL'inventaire périodique est un système dans lequel le stock n'est pas suivi en continu mais compté physiquement à intervalles réguliers et prédéfinis.\n\nEntre deux inventaires, le gestionnaire ne dispose pas nécessairement d'un stock théorique fiable.\n\nL'inventaire périodique est souvent utilisé dans les structures avec des ressources limitées ou un volume de produits important.\n\nFréquences habituelles :\n"
+        "content": "#### L'inventaire périodique\n\n- **Définition**\n  - L'inventaire périodique est un système dans lequel le stock n'est pas suivi en continu mais compté physiquement à intervalles réguliers et prédéfinis.\n  - Entre deux inventaires, le gestionnaire ne dispose pas nécessairement d'un stock théorique fiable.\n  - L'inventaire périodique est souvent utilisé dans les structures avec des ressources limitées ou un volume de produits important.\n\n- **Fréquences habituelles :**\n\n| Fréquence | Contexte recommandé |\n|---|---|\n| Mensuelle | Structures avec peu de produits, gestionnaire seul |\n| Trimestrielle | Dépôts de district avec volume moyen |\n| Semestrielle | Dépôts régionaux, structures bien informatisées |\n| Annuelle | Inventaire général obligatoire pour toutes les structures |\n"
       },
       {
         "id": "gas-m5-c8",
         "title": "Types d'inventaires (permanent, périodique, tournant)",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Types d'inventaires (permanent, périodique, tournant)\n\nL'inventaire périodique\n\nProcédure d'inventaire périodique\n\nAvant l'inventaire :\n- ☐ Fixer la date à l'avance et la communiquer au personnel\n- ☐ Suspendre tous les mouvements de stock 2 heures avant le début\n- ☐ Préparer les formulaires de comptage (un formulaire par produit ou par zone)\n- ☐ Constituer les équipes de comptage (2 personnes minimum par équipe : un qui compte, un qui enregistre)\n- ☐ S'assurer que les registres et fiches de stock sont à jour jusqu'à la veille\n"
+        "content": "#### L'inventaire périodique\n\n- **Procédure d'inventaire périodique**\n  - **Avant l'inventaire :**\n    - ☐ Fixer la date à l'avance et la communiquer au personnel\n    - ☐ Suspendre tous les mouvements de stock 2 heures avant le début\n    - ☐ Préparer les formulaires de comptage (un formulaire par produit ou par zone)\n    - ☐ Constituer les équipes de comptage (2 personnes minimum par équipe : un qui compte, un qui enregistre)\n    - ☐ S'assurer que les registres et fiches de stock sont à jour jusqu'à la veille\n"
       },
       {
         "id": "gas-m5-c9",
         "title": "Types d'inventaires (permanent, périodique, tournant)",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Types d'inventaires (permanent, périodique, tournant)\n\nL'inventaire périodique\n\nProcédure d'inventaire périodique\n\nPendant l'inventaire :\n- ☐ Chaque équipe compte sa zone sans connaître le stock théorique (pour éviter les biais)\n- ☐ Comptage physique unité par unité, boîte par boîte\n- ☐ Enregistrement immédiat de chaque comptage sur le formulaire\n- ☐ Double-comptage obligatoire pour les produits à forte valeur ou les écarts suspects\n- ☐ Identification et séparation physique des produits périmés, endommagés, en quarantaine\n"
+        "content": "#### L'inventaire périodique\n\n- **Procédure d'inventaire périodique**\n  - **Pendant l'inventaire :**\n    - ☐ Chaque équipe compte sa zone sans connaître le stock théorique (pour éviter les biais)\n    - ☐ Comptage physique unité par unité, boîte par boîte\n    - ☐ Enregistrement immédiat de chaque comptage sur le formulaire\n    - ☐ Double-comptage obligatoire pour les produits à forte valeur ou les écarts suspects\n    - ☐ Identification et séparation physique des produits périmés, endommagés, en quarantaine\n"
       },
       {
         "id": "gas-m5-c10",
         "title": "Types d'inventaires (permanent, périodique, tournant)",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Types d'inventaires (permanent, périodique, tournant)\n\nL'inventaire périodique\n\nProcédure d'inventaire périodique\n\nAprès l'inventaire :\n- ☐ Comparaison entre stock physique compté et stock théorique\n- ☐ Calcul des écarts\n- ☐ Investigation des écarts significatifs\n- ☐ Mise à jour des fiches de stock avec le stock physique réel\n- ☐ Rédaction du rapport d'inventaire\n"
+        "content": "#### L'inventaire périodique\n\n- **Procédure d'inventaire périodique**\n  - **Après l'inventaire :**\n    - ☐ Comparaison entre stock physique compté et stock théorique\n    - ☐ Calcul des écarts\n    - ☐ Investigation des écarts significatifs\n    - ☐ Mise à jour des fiches de stock avec le stock physique réel\n    - ☐ Rédaction du rapport d'inventaire\n"
       },
       {
         "id": "gas-m5-c11",
