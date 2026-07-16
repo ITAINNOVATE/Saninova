@@ -1419,7 +1419,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Types d'inventaires (permanent, périodique, tournant)",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Types d'inventaires (permanent, périodique, tournant)\n\nL'inventaire permanent\n\nDéfinition\n\nL'inventaire permanent, aussi appelé inventaire continu, est un système dans lequel le stock théorique est mis à jour en temps réel à chaque mouvement de produit, entrée ou sortie.\n\nÀ tout moment, le gestionnaire peut consulter le stock théorique sans avoir besoin de compter physiquement les produits.\n\nPrincipe de fonctionnement : Stock théorique au temps T = Stock initial + Total des entrées − Total des sorties (depuis le stock initial)\n\nChaque entrée (réception de livraison) et chaque sortie (distribution, transfert, perte) est immédiatement enregistrée sur la fiche de stock ou dans le logiciel.\n\nLe stock théorique est donc toujours à jour.\n"
+        "content": "#### L'inventaire permanent\n\n- **Définition**\n  - L'inventaire permanent, aussi appelé inventaire continu, est un système dans lequel le stock théorique est mis à jour en temps réel à chaque mouvement de produit, entrée ou sortie.\n  - À tout moment, le gestionnaire peut consulter le stock théorique sans avoir besoin de compter physiquement les produits.\n- **Principe de fonctionnement :** Stock théorique au temps T = Stock initial + Total des entrées − Total des sorties (depuis le stock initial)\n- Chaque entrée (réception de livraison) et chaque sortie (distribution, transfert, perte) est immédiatement enregistrée sur la fiche de stock ou dans le logiciel.\n- Le stock théorique est donc toujours à jour.\n"
       },
       {
         "id": "gas-m5-c5",
