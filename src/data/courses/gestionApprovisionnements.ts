@@ -1301,7 +1301,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Identification et traitement des surstocks",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Options de traitement des surstocks\n\n**Option 6 — Destruction réglementaire**\n\n- **Procédure de destruction :**\n  - **Étape 2 — Méthode de destruction selon le type de produit**\n    - Jamais : jeter dans une décharge à ciel ouvert, enterrer sans neutralisation, brûler à l'air libre (risque toxique)\n"
+        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Options de traitement des surstocks\n\n**Option 6 — Destruction réglementaire**\n\n- **Procédure de destruction :**\n  - **Étape 2 — Méthode de destruction selon le type de produit**\n\n| Type de produit | Méthode de destruction recommandée |\n|---|---|\n| Comprimés, gélules | Incinération à haute température (> 1 200°C) ou encapsulation dans du ciment |\n| Liquides, sirops | Dilution forte puis élimination dans un réseau d'égout approuvé |\n| Injectables | Incinération après neutralisation du contenu |\n| Produits cytotoxiques | Incinération spécialisée obligatoire |\n| Emballages vides | Déformation + incinération pour éviter la réutilisation |\n\n**Jamais :** jeter dans une décharge à ciel ouvert, enterrer sans neutralisation, brûler à l'air libre (risque toxique)\n"
       },
       {
         "id": "gas-m4-c46",
