@@ -938,28 +938,28 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Chapitre 6",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\n### Le système d'alerte et de relance\n\n**Les 4 niveaux d'alerte**\n\n**Alerte niveau 1 — Confirmation de réception de commande (J+2 après transmission)\\***\n- Si le fournisseur n'a pas confirmé la réception du bon de commande dans les 48 heures suivant sa transmission, le gestionnaire relance.\n- **Pourquoi :** une commande non confirmée peut ne pas avoir été enregistrée par le fournisseur. Plus on attend pour s'en apercevoir, plus le retard s'accumule.\n\n*\\* : selon les termes du contrat*\n"
+        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\n### Le système d'alerte et de relance\n\n**Les 4 niveaux d'alerte**\n\n- **Alerte niveau 1 — Confirmation de réception de commande (J+2 après transmission)\\***\n\nSi le fournisseur n'a pas confirmé la réception du bon de commande dans les 48 heures suivant sa transmission, le gestionnaire relance.\n\n**Pourquoi :** une commande non confirmée peut ne pas avoir été enregistrée par le fournisseur. Plus on attend pour s'en apercevoir, plus le retard s'accumule.\n\n*\\* : selon les termes du contrat*\n"
       },
       {
         "id": "gas-m3-c51",
         "title": "Chapitre 7",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\n### Le système d'alerte et de relance\n\n**Les 4 niveaux d'alerte**\n\n**Alerte niveau 2 — Suivi d'expédition (J−7 avant la date de livraison promise)\\***\n- Sept jours avant la date de livraison promise, le gestionnaire vérifie que les produits ont bien été expédiés.\n- **Pourquoi :** si l'expédition n'a pas encore eu lieu à J−7, la livraison sera très probablement en retard. C'est le moment d'anticiper et d'évaluer l'impact sur le stock.\n\n*\\* : selon les termes du contrat*\n"
+        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\n### Le système d'alerte et de relance\n\n**Les 4 niveaux d'alerte**\n\n- **Alerte niveau 2 — Suivi d'expédition (J−7 avant la date de livraison promise)\\***\n\nSept jours avant la date de livraison promise, le gestionnaire vérifie que les produits ont bien été expédiés.\n\n**Pourquoi :** si l'expédition n'a pas encore eu lieu à J−7, la livraison sera très probablement en retard. C'est le moment d'anticiper et d'évaluer l'impact sur le stock.\n\n*\\* : selon les termes du contrat*\n"
       },
       {
         "id": "gas-m3-c52",
         "title": "Chapitre 8",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\n### Le système d'alerte et de relance\n\n**Les 4 niveaux d'alerte**\n\n**Alerte niveau 3 — Retard avéré (J+1 après la date de livraison promise)\\***\n- Si la livraison n'est pas arrivée à la date promise, le gestionnaire déclenche le niveau 3 : notification formelle de retard avec application des pénalités contractuelles et évaluation de l'impact sur le stock.\n\n*\\* : selon les termes du contrat*\n"
+        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\n### Le système d'alerte et de relance\n\n**Les 4 niveaux d'alerte**\n\n- **Alerte niveau 3 — Retard avéré (J+1 après la date de livraison promise)\\***\n\nSi la livraison n'est pas arrivée à la date promise, le gestionnaire déclenche le niveau 3 : notification formelle de retard avec application des pénalités contractuelles et évaluation de l'impact sur le stock.\n\n*\\* : selon les termes du contrat*\n"
       },
       {
         "id": "gas-m3-c53",
         "title": "Chapitre 9",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\n### Le système d'alerte et de relance\n\n**Les 4 niveaux d'alerte**\n\n**Alerte niveau 4 — Retard critique (J+7 et au-delà)\\***\n- Si après 7 jours de retard le problème n'est pas résolu, le gestionnaire escalade au niveau hiérarchique supérieur, active le fournisseur alternatif si le stock est en danger, et documente formellement en vue d'une éventuelle révision du contrat.\n\n*\\* : selon les termes du contrat*\n"
+        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\n### Le système d'alerte et de relance\n\n**Les 4 niveaux d'alerte**\n\n- **Alerte niveau 4 — Retard critique (J+7 et au-delà)\\***\n\nSi après 7 jours de retard le problème n'est pas résolu, le gestionnaire escalade au niveau hiérarchique supérieur, active le fournisseur alternatif si le stock est en danger, et documente formellement en vue d'une éventuelle révision du contrat.\n\n*\\* : selon les termes du contrat*\n"
       },
       {
         "id": "gas-m3-c54",
