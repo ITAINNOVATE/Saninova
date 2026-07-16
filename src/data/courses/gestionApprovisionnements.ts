@@ -1007,42 +1007,42 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Causes et conséquences des ruptures de stock",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Causes et conséquences des ruptures de stock\n\nLes causes des ruptures de stock\n\nUne rupture de stock pharmaceutique n'est jamais un simple problème logistique.\n\nC'est une défaillance du système de santé qui a des conséquences directes sur les patients, les soignants et les finances de la structure.\n\nComprendre pourquoi les ruptures surviennent est la première étape pour les prévenir.\n\nLes causes sont multiples, souvent combinées, et peuvent se situer à n'importe quel niveau de la chaîne pharmaceutique.\n\nLes ignorer ou les traiter superficiellement conduit inévitablement à la récurrence des ruptures.\n"
+        "content": "#### Causes et conséquences des ruptures de stock\n\n### Les causes des ruptures de stock\n\n- Une rupture de stock pharmaceutique n'est jamais un simple problème logistique.\n- C'est une défaillance du système de santé qui a des conséquences directes sur les patients, les soignants et les finances de la structure.\n- Comprendre pourquoi les ruptures surviennent est la première étape pour les prévenir.\n- Les causes sont multiples, souvent combinées, et peuvent se situer à n'importe quel niveau de la chaîne pharmaceutique.\n- Les ignorer ou les traiter superficiellement conduit inévitablement à la récurrence des ruptures.\n"
       },
       {
         "id": "gas-m4-c4",
         "title": "Causes et conséquences des ruptures de stock",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Causes et conséquences des ruptures de stock\n\nLes causes des ruptures de stock\n\nCatégorie 1 — Causes liées à la prévision et à la quantification\n\nCMM mal calculée\n\nNon prise en compte de la saisonnalité\n\nCatégorie 2 — Causes liées au processus de commande\n\nCommande tardive\n\nCommande rejetée ou bloquée administrativement\n\nBudget insuffisant\n"
+        "content": "#### Causes et conséquences des ruptures de stock\n\n### Les causes des ruptures de stock\n\n**Catégorie 1 — Causes liées à la prévision et à la quantification**\n- CMM mal calculée\n- Non prise en compte de la saisonnalité\n\n**Catégorie 2 — Causes liées au processus de commande**\n- Commande tardive\n- Commande rejetée ou bloquée administrativement\n- Budget insuffisant\n"
       },
       {
         "id": "gas-m4-c5",
         "title": "Causes et conséquences des ruptures de stock",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Causes et conséquences des ruptures de stock\n\nLes causes des ruptures de stock\n\nCatégorie 3 — Causes liées aux fournisseurs\n\nRupture chez le fournisseur\n\nRetard de livraison\n\nCatégorie 4 — Causes liées à la demande\n\nHausse soudaine et imprévue de la demande\n\nAugmentation structurelle de la demande non détectée\n\nLivraison partielle\n"
+        "content": "#### Causes et conséquences des ruptures de stock\n\n### Les causes des ruptures de stock\n\n**Catégorie 3 — Causes liées aux fournisseurs**\n- Rupture chez le fournisseur\n- Retard de livraison\n\n**Catégorie 4 — Causes liées à la demande**\n- Hausse soudaine et imprévue de la demande\n- Augmentation structurelle de la demande non détectée\n- Livraison partielle\n"
       },
       {
         "id": "gas-m4-c6",
         "title": "Causes et conséquences des ruptures de stock",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Causes et conséquences des ruptures de stock\n\nLes causes des ruptures de stock\n\nCatégorie 5 — Causes liées à la gestion physique du stock\n\nPertes physiques non enregistrées\n\nMauvaise organisation physique\n"
+        "content": "#### Causes et conséquences des ruptures de stock\n\n### Les causes des ruptures de stock\n\n**Catégorie 5 — Causes liées à la gestion physique du stock**\n- Pertes physiques non enregistrées\n- Mauvaise organisation physique\n"
       },
       {
         "id": "gas-m4-c7",
         "title": "Causes et conséquences des ruptures de stock",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Causes et conséquences des ruptures de stock\n\nLes conséquences des ruptures de stock\n\nNiveau 1 — Conséquences sanitaires\n\nInterruption de traitements en cours\n\nÉchec thérapeutique et résistances\n\nRecours à des alternatives moins efficaces ou plus dangereuses\n\nMortalité évitable\n\nNiveau 2 — Conséquences organisationnelles\n\nPerte de confiance des patients et des soignants\n\nSurcharge administrative liée aux commandes d'urgence\n\nDégradation des indicateurs de performance\n"
+        "content": "#### Causes et conséquences des ruptures de stock\n\n### Les conséquences des ruptures de stock\n\n**Niveau 1 — Conséquences sanitaires**\n- Interruption de traitements en cours\n- Échec thérapeutique et résistances\n- Recours à des alternatives moins efficaces ou plus dangereuses\n- Mortalité évitable\n\n**Niveau 2 — Conséquences organisationnelles**\n- Perte de confiance des patients et des soignants\n- Surcharge administrative liée aux commandes d'urgence\n- Dégradation des indicateurs de performance\n"
       },
       {
         "id": "gas-m4-c8",
         "title": "Causes et conséquences des ruptures de stock",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Causes et conséquences des ruptures de stock\n\nLes conséquences des ruptures de stock\n\nNiveau 3 — Conséquences financières\n\nSurcoût des commandes d'urgence\n\nPerte de recettes\n\nGaspillage lié aux produits substitués puis non utilisés\n"
+        "content": "#### Causes et conséquences des ruptures de stock\n\n### Les conséquences des ruptures de stock\n\n**Niveau 3 — Conséquences financières**\n- Surcoût des commandes d'urgence\n- Perte de recettes\n- Gaspillage lié aux produits substitués puis non utilisés\n"
       },
       {
         "id": "gas-m4-c9",
