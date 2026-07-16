@@ -896,7 +896,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Gestion des contrats et des termes de livraison (Incoterms)",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\nLes Incoterms — Règles internationales de livraison\n\nChoisir le bon Incoterm selon le contexte\n"
+        "content": "#### Gestion des contrats et des termes de livraison (Incoterms)\n\n### Les Incoterms — Règles internationales de livraison\n\n**Choisir le bon Incoterm selon le contexte**\n\n| Situation | Incoterm recommandé | Raison |\n|---|---|---|\n| Acheteur avec expertise logistique et bons contacts transporteurs | FOB | Peut négocier de meilleurs tarifs de fret |\n| Acheteur sans expertise en logistique internationale | CIF ou DAP | Le vendeur gère le transport |\n| Produits très sensibles (vaccins, chaîne du froid) | DDP | Le vendeur, qui connaît son produit, gère tout le transport |\n| Commandes urgentes | DDP ou DAP | Simplicité et rapidité |\n| Budget contraint, acheteur expérimenté | FOB | Coût total souvent inférieur |\n| Pays avec procédures douanières complexes | DDP | Le vendeur gère le dédouanement dans les deux pays |\n"
       },
       {
         "id": "gas-m3-c45",
