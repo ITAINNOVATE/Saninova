@@ -1350,14 +1350,14 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Plans de contingence et procédures d'urgence",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Plans de contingence et procédures d'urgence\n\nStructure d'un plan de contingence\n\nComposante 3 — Liste des fournisseurs d'urgence\n\nPour chaque produit critique, une liste de fournisseurs d'urgence homologués doit être préparée à l'avance, avec toutes les informations nécessaires pour passer une commande immédiatement.\n\nRègle de mise à jour :\n- Les fiches fournisseurs d'urgence doivent être vérifiées et mises à jour tous les 6 mois minimum.\n- Un contact téléphonique de vérification suffit.\n- Un fournisseur d'urgence dont les informations sont obsolètes est un fournisseur inutilisable au moment de la crise.\n"
+        "content": "#### Structure d'un plan de contingence\n\n**Composante 3 — Liste des fournisseurs d'urgence**\n- Pour chaque produit critique, une liste de fournisseurs d'urgence homologués doit être préparée à l'avance, avec toutes les informations nécessaires pour passer une commande immédiatement.\n- **Règle de mise à jour :**\n  - Les fiches fournisseurs d'urgence doivent être vérifiées et mises à jour tous les 6 mois minimum.\n  - Un contact téléphonique de vérification suffit.\n  - Un fournisseur d'urgence dont les informations sont obsolètes est un fournisseur inutilisable au moment de la crise.\n"
       },
       {
         "id": "gas-m4-c53",
         "title": "Plans de contingence et procédures d'urgence",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Plans de contingence et procédures d'urgence\n\nStructure d'un plan de contingence\n\nComposante 4 — Procédures d'activation du plan\n\nLe plan de contingence ne doit pas rester un document théorique. Il doit définir précisément les conditions de son déclenchement, les étapes à suivre et les responsabilités de chacun.\n\nCritères de déclenchement du plan :\n"
+        "content": "#### Structure d'un plan de contingence\n\n**Composante 4 — Procédures d'activation du plan**\n- Le plan de contingence ne doit pas rester un document théorique. Il doit définir précisément les conditions de son déclenchement, les étapes à suivre et les responsabilités de chacun.\n- **Critères de déclenchement du plan :**\n\n| Critère | Seuil de déclenchement |\n|---|---|\n| Niveau de stock | Stock d'un produit critique tombe sous 50% du stock de sécurité |\n| Alerte épidémique | Déclaration officielle d'épidémie par les autorités sanitaires |\n| Perturbation fournisseur | Rupture confirmée chez le fournisseur principal pour > 30 jours |\n| Événement exceptionnel | Catastrophe naturelle, afflux de réfugiés > 20% de la population habituelle |\n| Perte de stock | Incendie, inondation ou vol > 30% de la valeur totale du stock |\n"
       },
       {
         "id": "gas-m4-c54",
