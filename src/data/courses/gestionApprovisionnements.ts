@@ -1238,7 +1238,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Identification et traitement des surstocks",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Les outils d'identification des surstocks\n\n**Outil 2 — L'analyse ABC-VEN croisée**\n\n**Matrice de priorité pour le traitement des surstocks**\n"
+        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Les outils d'identification des surstocks\n\n**Outil 2 — L'analyse ABC-VEN croisée**\n\n- Matrice de priorité pour le traitement des surstocks\n\n| | Vital (V) | Essentiel (E) | Non essentiel (N) |\n|---|---|---|---|\n| **Classe A** (valeur élevée) | Traiter en priorité absolue | Traiter en priorité haute | Traiter rapidement |\n| **Classe B** (valeur moyenne) | Traiter en priorité haute | Traiter rapidement | Traiter dans le mois |\n| **Classe C** (valeur faible) | Traiter rapidement | Traiter dans le mois | Traiter selon disponibilité |\n"
       },
       {
         "id": "gas-m4-c37",
