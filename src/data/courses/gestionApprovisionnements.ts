@@ -1601,7 +1601,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Outils digitaux de gestion des stocks",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Outils digitaux de gestion des stocks\n\n**Panorama des outils digitaux disponibles**\n\n**Catégorie 3 — Les applications mobiles**\n- **Description :** Les applications mobiles permettent de gérer les stocks directement depuis un smartphone ou une tablette. Elles sont particulièrement adaptées aux structures éloignées où l'accès à un ordinateur est limité, et aux agents de terrain qui collectent des données lors de visites de supervision.\n- **Les principales applications mobiles utilisées :**\n  - mSupply Mobile\n  - StockOut Notifier\n  - CommCare\n  - DHIS2 (District Health Information System version 2)\n  - …\n"
+        "content": "#### Outils digitaux de gestion des stocks\n\n**Panorama des outils digitaux disponibles**\n\n**Catégorie 3 — Les applications mobiles**\n- **Description :** Les applications mobiles permettent de gérer les stocks directement depuis un smartphone ou une tablette. Elles sont particulièrement adaptées aux structures éloignées où l'accès à un ordinateur est limité, et aux agents de terrain qui collectent des données lors de visites de supervision.\n- Les principales applications mobiles utilisées :\n  - mSupply Mobile\n  - StockOut Notifier\n  - CommCare\n  - DHIS2 (District Health Information System version 2)\n  - …\n"
       },
       {
         "id": "gas-m5-c31",
