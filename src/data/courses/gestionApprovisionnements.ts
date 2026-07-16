@@ -1133,77 +1133,77 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Stratégies de prévention et de gestion des ruptures",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Stratégies de prévention et de gestion des ruptures\n\nStratégies de prévention et de gestion des ruptures\n\nPrévenir une rupture coûte toujours moins cher que la gérer.\n\nMais même avec les meilleures mesures préventives, certaines ruptures surviennent malgré tout, souvent pour des raisons extérieures au contrôle du gestionnaire.\n\nIl faut donc maîtriser deux registres complémentaires :\n- les stratégies préventives, qui réduisent la probabilité et la fréquence des ruptures et\n- les stratégies curatives, qui minimisent leur durée et leur impact quand elles surviennent malgré tout.\n- Un gestionnaire compétent ne se contente pas de subir les ruptures. Il les anticipe, les détecte tôt et réagit vite avec des mesures adaptées.\n"
+        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Stratégies de prévention et de gestion des ruptures\n\n- Prévenir une rupture coûte toujours moins cher que la gérer.\n\n- Mais même avec les meilleures mesures préventives, certaines ruptures surviennent malgré tout, souvent pour des raisons extérieures au contrôle du gestionnaire.\n\n- Il faut donc maîtriser deux registres complémentaires :\n  - les stratégies préventives, qui réduisent la probabilité et la fréquence des ruptures et\n  - les stratégies curatives, qui minimisent leur durée et leur impact quand elles surviennent malgré tout.\n\n- Un gestionnaire compétent ne se contente pas de subir les ruptures. Il les anticipe, les détecte tôt et réagit vite avec des mesures adaptées.\n"
       },
       {
         "id": "gas-m4-c22",
         "title": "Stratégies de prévention et de gestion des ruptures",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Stratégies de prévention et de gestion des ruptures\n\nStratégies de prévention et de gestion des ruptures\n\nStratégies de prévention des ruptures\n\nStratégie 1 — Maintenir une CMM fiable et à jour\n\nC'est la base de tout. Une CMM fiable est le meilleur rempart contre les ruptures liées à une mauvaise quantification.\n\nActions concrètes :\n- Réviser la CMM tous les trimestres sans exception.\n- Enregistrer systématiquement toutes les sorties de stock dès qu'elles ont lieu.\n- Ajuster la CMM dès qu'un changement structurel est détecté (nouveau service, nouveau protocole, évolution de la population).\n"
+        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Stratégies de prévention et de gestion des ruptures\n\n**Stratégie 1 — Maintenir une CMM fiable et à jour**\n\n- C'est la base de tout.\n- Une CMM fiable est le meilleur rempart contre les ruptures liées à une mauvaise quantification.\n- **Actions concrètes :**\n  - Réviser la CMM tous les trimestres sans exception.\n  - Enregistrer systématiquement toutes les sorties de stock dès qu'elles ont lieu.\n  - Ajuster la CMM dès qu'un changement structurel est détecté (nouveau service, nouveau protocole, évolution de la population).\n"
       },
       {
         "id": "gas-m4-c23",
         "title": "Stratégies de prévention et de gestion des ruptures",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Stratégies de prévention et de gestion des ruptures\n\nStratégies de prévention et de gestion des ruptures\n\nStratégies de prévention des ruptures\n\nStratégie 2 — Dimensionner correctement le stock de sécurité\n\nUn stock de sécurité bien calibré est le filet de protection contre les aléas.\n\nTrop faible, il ne protège pas.\n\nTrop élevé, il immobilise des ressources inutilement.\n"
+        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Stratégies de prévention et de gestion des ruptures\n\n**Stratégie 2 — Dimensionner correctement le stock de sécurité**\n\n- Un stock de sécurité bien calibré est le filet de protection contre les aléas.\n- Trop faible, il ne protège pas.\n- Trop élevé, il immobilise des ressources inutilement.\n"
       },
       {
         "id": "gas-m4-c24",
         "title": "Stratégies de prévention et de gestion des ruptures",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Stratégies de prévention et de gestion des ruptures\n\nStratégies de prévention et de gestion des ruptures\n\nStratégies de prévention des ruptures\n\nStratégie 3 — Respecter rigoureusement le calendrier de commande\n\nLa commande tardive est une cause majeure de rupture évitable. Elle doit être éliminée par la discipline et l'organisation.\n\nActions concrètes :\n- Définir des dates fixes de commande dans un calendrier annuel affiché et connu de tous.\n- Créer des alertes visuelles dans le registre ou le système informatique.\n- Vérifier le stock de chaque produit critique au moins deux fois par mois.\n"
+        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Stratégies de prévention et de gestion des ruptures\n\n**Stratégie 3 — Respecter rigoureusement le calendrier de commande**\n\n- La commande tardive est une cause majeure de rupture évitable.\n- Elle doit être éliminée par la discipline et l'organisation.\n- **Actions concrètes :**\n  - Définir des dates fixes de commande dans un calendrier annuel affiché et connu de tous.\n  - Créer des alertes visuelles dans le registre ou le système informatique.\n  - Vérifier le stock de chaque produit critique au moins deux fois par mois.\n"
       },
       {
         "id": "gas-m4-c25",
         "title": "Stratégies de prévention et de gestion des ruptures",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Stratégies de prévention et de gestion des ruptures\n\nStratégies de prévention et de gestion des ruptures\n\nStratégies de prévention des ruptures\n\nStratégie 4 — Diversifier les sources d'approvisionnement\n\nDépendre d'un seul fournisseur pour un produit essentiel est un facteur de risque majeur. La diversification réduit l'exposition aux défaillances d'un fournisseur unique.\n\nActions concrètes :\n- Identifier et qualifier au minimum deux fournisseurs pour chaque produit essentiel.\n- Répartir les commandes entre les fournisseurs pour maintenir la relation commerciale active avec chacun.\n- Ne jamais dépasser 70 à 80% des commandes chez un seul fournisseur pour les produits critiques.\n"
+        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Stratégies de prévention et de gestion des ruptures\n\n**Stratégie 4 — Diversifier les sources d'approvisionnement**\n\n- Dépendre d'un seul fournisseur pour un produit essentiel est un facteur de risque majeur.\n- La diversification réduit l'exposition aux défaillances d'un fournisseur unique.\n- **Actions concrètes :**\n  - Identifier et qualifier au minimum deux fournisseurs pour chaque produit essentiel.\n  - Répartir les commandes entre les fournisseurs pour maintenir la relation commerciale active avec chacun.\n  - Ne jamais dépasser 70 à 80% des commandes chez un seul fournisseur pour les produits critiques.\n"
       },
       {
         "id": "gas-m4-c26",
         "title": "Stratégies de prévention et de gestion des ruptures",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Stratégies de prévention et de gestion des ruptures\n\nStratégies de prévention et de gestion des ruptures\n\nStratégies de prévention des ruptures\n\nStratégie 5 — Mettre en place un système de surveillance précoce\n\nDétecter la tendance à la rupture avant qu'elle ne se produise permet d'intervenir à temps.\n\nActions concrètes :\n- Calculer mensuellement le taux de couverture de chaque produit.\n- Définir des seuils d'alerte à deux niveaux : alerte jaune et alerte rouge.\n"
+        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Stratégies de prévention et de gestion des ruptures\n\n**Stratégie 5 — Mettre en place un système de surveillance précoce**\n\n- Détecter la tendance à la rupture avant qu'elle ne se produise permet d'intervenir à temps.\n- **Actions concrètes :**\n  - Calculer mensuellement le taux de couverture de chaque produit.\n  - Définir des seuils d'alerte à deux niveaux : alerte jaune et alerte rouge.\n"
       },
       {
         "id": "gas-m4-c27",
         "title": "Stratégies de prévention et de gestion des ruptures",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Stratégies de prévention et de gestion des ruptures\n\nStratégies de prévention et de gestion des ruptures\n\nStratégies de prévention des ruptures\n\nStratégie 6 — Conduire des inventaires réguliers\n\nLes inventaires réguliers permettent de détecter les écarts entre stock théorique et stock réel avant qu'ils ne deviennent critiques.\n"
+        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Stratégies de prévention et de gestion des ruptures\n\n**Stratégie 6 — Conduire des inventaires réguliers**\n\n- Les inventaires réguliers permettent de détecter les écarts entre stock théorique et stock réel avant qu'ils ne deviennent critiques.\n"
       },
       {
         "id": "gas-m4-c28",
         "title": "Stratégies de prévention et de gestion des ruptures",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Stratégies de prévention et de gestion des ruptures\n\nStratégies de prévention et de gestion des ruptures\n\nStratégies de gestion des ruptures avérées\n\nÉtape 1 — Déclarer et évaluer la rupture\n\nDès qu'une rupture est constatée ou imminente, le gestionnaire doit immédiatement :\n- Évaluer la criticité du produit\n- Évaluer la durée prévisionnelle de la rupture\n- Étape 2 — Alerter la hiérarchie et les partenaires\n- Toute rupture avérée ou imminente sur un produit essentiel doit être signalée immédiatement au niveau hiérarchique supérieur.\n\nCe signalement doit être :\n\nÉcrit (email, rapport, formulaire standardisé)\n\nFactuel (produit concerné, stock résiduel, durée estimée, nombre de patients potentiellement affectés)\n\nAccompagné d'une proposition de solution\n"
+        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Stratégies de prévention et de gestion des ruptures\n\n**Étape 1 — Déclarer et évaluer la rupture**\n\n- **Évaluer la criticité du produit :**\n\n| Niveau | Définition | Exemples | Délai de réaction |\n|---|---|---|---|\n| Critique | Traitement vital, pas de substitut | Insuline, antiépileptiques, ARV | Immédiat (< 24h) |\n| Majeur | Médicament essentiel, substitut possible mais moins efficace | Artéméther-Lum, Amoxicilline | Urgent (< 48h) |\n| Modéré | Médicament important, substitut disponible | Paracétamol, Cotrimoxazole | Rapide (< 1 semaine) |\n| Mineur | Médicament non vital, facilement substituable | Vitamines, compléments | Normal (< 2 semaines) |\n\n- **Évaluer la durée prévisionnelle de la rupture :**\n  - Durée de rupture estimée = Délai avant prochaine livraison − Couverture du stock résiduel\n"
       },
       {
         "id": "gas-m4-c29",
         "title": "Stratégies de prévention et de gestion des ruptures",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Stratégies de prévention et de gestion des ruptures\n\nStratégies de prévention et de gestion des ruptures\n\nStratégies de gestion des ruptures avérées\n\nÉtape 3 — Activer les sources d'approvisionnement d'urgence\n\nOption 1 — Redistribution inter-sites (la plus rapide et la moins coûteuse)\n\nOption 2 — Commande urgente auprès du fournisseur alternatif\n\nOption 3 — Achat en pharmacie privée (dernier recours)\n"
+        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Stratégies de prévention et de gestion des ruptures\n\n**Étape 2 — Alerter la hiérarchie et les partenaires**\n\n- Toute rupture avérée ou imminente sur un produit essentiel doit être signalée immédiatement au niveau hiérarchique supérieur.\n- **Ce signalement doit être :**\n  - Écrit (email, rapport, formulaire standardisé)\n  - Factuel (produit concerné, stock résiduel, durée estimée, nombre de patients potentiellement affectés)\n  - Accompagné d'une proposition de solution\n"
       },
       {
         "id": "gas-m4-c30",
         "title": "Stratégies de prévention et de gestion des ruptures",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Stratégies de prévention et de gestion des ruptures\n\nStratégies de prévention et de gestion des ruptures\n\nStratégies de gestion des ruptures avérées\n\nÉtape 4 — Gérer la distribution pendant la rupture\n\nQuand le stock résiduel est limité et qu'une rupture partielle est inévitable, le gestionnaire doit rationner la distribution de façon équitable et médicalement justifiée.\n\nPrincipes de rationnement :\n- Prioriser les patients déjà en cours de traitement sur les nouveaux cas.\n- Prioriser les cas les plus sévères sur les cas légers.\n\nInformer les prescripteurs immédiatement pour qu'ils adaptent leurs prescriptions (doses réduites si médicalement acceptable, substituts thérapeutiques).\n"
+        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Stratégies de prévention et de gestion des ruptures\n\n**Étape 3 — Activer les sources d'approvisionnement d'urgence**\n\n- **Option 1 — Redistribution inter-sites (la plus rapide et la moins coûteuse)**\n  - Identifier les sites disposant d'un excédent du produit manquant et organiser un transfert.\n\n- **Option 2 — Commande urgente auprès du fournisseur alternatif**\n  - Si la redistribution inter-sites est insuffisante ou impossible.\n\n- **Option 3 — Achat en pharmacie privée (dernier recours)**\n  - Pour les cas extrêmes où les autres options ne sont pas disponibles assez rapidement.\n  - Le coût est généralement très élevé mais peut être justifié pour des produits vitaux.\n"
       },
       {
         "id": "gas-m4-c31",
         "title": "Stratégies de prévention et de gestion des ruptures",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Stratégies de prévention et de gestion des ruptures\n\nStratégies de prévention et de gestion des ruptures\n\nStratégies de gestion des ruptures avérées\n\nÉtape 5 — Analyser les causes et mettre en place des mesures correctives\n\nUne fois la rupture résolue, une analyse des causes doit être conduite pour éviter la récurrence. C'est l'étape la plus souvent négligée mais la plus importante pour progresser.\n"
+        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Stratégies de prévention et de gestion des ruptures\n\n**Étape 5 — Analyser les causes et mettre en place des mesures correctives**\n\n- Une fois la rupture résolue, une analyse des causes doit être conduite pour éviter la récurrence. C'est l'étape la plus souvent négligée mais la plus importante pour progresser.\n"
       },
       {
         "id": "gas-m4-c32",
