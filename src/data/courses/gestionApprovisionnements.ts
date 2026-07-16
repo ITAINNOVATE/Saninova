@@ -1524,21 +1524,21 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Procédures de comptage et de réconciliation",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Méthodes de comptage\n\n**Comptage par unités**\n- C'est la méthode la plus précise. Chaque unité (comprimé, ampoule, flacon, sachet) est comptée individuellement.\n- **Quand l'utiliser :**\n  - Produits à forte valeur unitaire (insuline, vaccins, ARV)\n  - Produits avec des écarts fréquents\n  - Produits en petite quantité (moins de 500 unités)\n- **Technique :** Regrouper les unités par paquets de 10 ou de 100 pour faciliter le comptage.\n"
+        "content": "#### Méthodes de comptage\n\n**Comptage par unités**\nC'est la méthode la plus précise. Chaque unité (comprimé, ampoule, flacon, sachet) est comptée individuellement.\n\n- **Quand l'utiliser :**\n  - Produits à forte valeur unitaire (insuline, vaccins, ARV)\n  - Produits avec des écarts fréquents\n  - Produits en petite quantité (moins de 500 unités)\n- **Technique :** Regrouper les unités par paquets de 10 ou de 100 pour faciliter le comptage.\n"
       },
       {
         "id": "gas-m5-c20",
         "title": "Procédures de comptage et de réconciliation",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Méthodes de comptage\n\n**Comptage par conditionnements intacts**\n- Pour les produits en grandes quantités et dont les conditionnements sont scellés et inviolés, on peut compter les boîtes et multiplier par leur contenu.\n- **Quand l'utiliser :**\n  - Produits en grandes quantités (> 1 000 unités)\n  - Conditionnements scellés, non ouverts, avec contenu vérifié à la réception\n- **Règle de précaution :**\n  - Ouvrir et vérifier un échantillon aléatoire de boîtes pour s'assurer que le contenu correspond bien à la quantité indiquée sur l'étiquette.\n  - Ne jamais compter les boîtes sans vérification d'un échantillon.\n"
+        "content": "#### Méthodes de comptage\n\n**Comptage par conditionnements intacts**\nPour les produits en grandes quantités et dont les conditionnements sont scellés et inviolés, on peut compter les boîtes et multiplier par leur contenu.\n\n- **Quand l'utiliser :**\n  - Produits en grandes quantités (> 1 000 unités)\n  - Conditionnements scellés, non ouverts, avec contenu vérifié à la réception\n- **Règle de précaution :**\n  - Ouvrir et vérifier un échantillon aléatoire de boîtes pour s'assurer que le contenu correspond bien à la quantité indiquée sur l'étiquette.\n  - Ne jamais compter les boîtes sans vérification d'un échantillon.\n"
       },
       {
         "id": "gas-m5-c21",
         "title": "Procédures de comptage et de réconciliation",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Méthodes de comptage\n\n**Comptage par pesée (pour les produits en vrac)**\n- Certains produits (poudres, coton, certains consommables) peuvent être pesés et convertis en unités sur la base d'un poids unitaire établi.\n\n**Comptage par lot et par date de péremption**\n- Pour les produits pharmaceutiques, il est indispensable de comptabiliser séparément chaque lot avec sa date de péremption. Cela permet de détecter les produits proches de péremption et d'appliquer le FEFO lors de la distribution.\n"
+        "content": "#### Méthodes de comptage\n\n**Comptage par pesée (pour les produits en vrac)**\nCertains produits (poudres, coton, certains consommables) peuvent être pesés et convertis en unités sur la base d'un poids unitaire établi.\n\n**Comptage par lot et par date de péremption**\nPour les produits pharmaceutiques, il est indispensable de comptabiliser séparément chaque lot avec sa date de péremption. Cela permet de détecter les produits proches de péremption et d'appliquer le FEFO lors de la distribution.\n"
       },
       {
         "id": "gas-m5-c22",
