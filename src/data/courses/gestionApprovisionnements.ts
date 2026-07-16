@@ -1426,14 +1426,14 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Types d'inventaires (permanent, périodique, tournant)",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Types d'inventaires (permanent, périodique, tournant)\n\nL'inventaire permanent\n\nCe que l'inventaire permanent permet :\n- Connaître à tout moment le stock théorique sans compter physiquement\n- Détecter immédiatement toute anomalie (sortie sans justificatif)\n- Calculer automatiquement la CMM à partir des sorties enregistrées\n- Déclencher les alertes de stock min en temps réel\n\nLimites de l'inventaire permanent :\n\nExige un enregistrement rigoureux et immédiat de chaque mouvement\n\nSi un mouvement est oublié ou mal enregistré, l'écart s'accumule sans être détecté\n\nNe remplace pas le comptage physique périodique\n"
+        "content": "#### L'inventaire permanent\n\n- **Ce que l'inventaire permanent permet :**\n  - Connaître à tout moment le stock théorique sans compter physiquement\n  - Détecter immédiatement toute anomalie (sortie sans justificatif)\n  - Calculer automatiquement la CMM à partir des sorties enregistrées\n  - Déclencher les alertes de stock min en temps réel\n\n- **Limites de l'inventaire permanent :**\n  - Exige un enregistrement rigoureux et immédiat de chaque mouvement\n  - Si un mouvement est oublié ou mal enregistré, l'écart s'accumule sans être détecté\n  - Ne remplace pas le comptage physique périodique\n"
       },
       {
         "id": "gas-m5-c6",
         "title": "Types d'inventaires (permanent, périodique, tournant)",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Types d'inventaires (permanent, périodique, tournant)\n\nL'inventaire permanent\n\nConditions de réussite de l'inventaire permanent\n"
+        "content": "#### L'inventaire permanent\n\n- **Conditions de réussite de l'inventaire permanent**\n\n| Condition | Description |\n|---|---|\n| Discipline d'enregistrement | Chaque mouvement enregistré le jour même, sans exception |\n| Documents de référence | Bon de sortie ou bon de réception pour chaque mouvement |\n| Vérification régulière | Comptage physique au moins mensuel pour détecter les écarts |\n| Formation du personnel | Tout agent manipulant les produits doit maîtriser l'enregistrement |\n| Supervision | Contrôles inopinés réguliers par le responsable |\n"
       },
       {
         "id": "gas-m5-c7",
