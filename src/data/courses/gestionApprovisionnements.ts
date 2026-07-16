@@ -973,7 +973,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Chapitre 11",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\n### Le tableau de bord fournisseurs\n\n**Les indicateurs du tableau de bord fournisseurs**\n\n**Indicateur 1 — Taux de service**\n- (Quantité livrée conforme ÷ Quantité commandée) × 100\n\n**Indicateur 2 — Taux de respect des délais**\n- (Nombre de livraisons dans les délais ÷ Nombre total de livraisons) × 100\n\n**Indicateur 3 — Taux de conformité qualité**\n- (Nombre de lots conformes ÷ Nombre total de lots reçus) × 100\n\n**Indicateur 4 — Délai moyen de livraison**\n- Moyenne des délais réels observés sur la période\n\n**Indicateur 5 — Taux de résolution des réclamations**\n- (Réclamations résolues dans les délais ÷ Total des réclamations) × 100\n"
+        "content": "#### Outils de suivi des commandes et tableau de bord fournisseurs\n\n### Le tableau de bord fournisseurs\n\n**Les indicateurs du tableau de bord fournisseurs**\n\n- **Indicateur 1 — Taux de service**\n  - (Quantité livrée conforme ÷ Quantité commandée) × 100\n\n- **Indicateur 2 — Taux de respect des délais**\n  - (Nombre de livraisons dans les délais ÷ Nombre total de livraisons) × 100\n\n- **Indicateur 3 — Taux de conformité qualité**\n  - (Nombre de lots conformes ÷ Nombre total de lots reçus) × 100\n\n- **Indicateur 4 — Délai moyen de livraison**\n  - Moyenne des délais réels observés sur la période\n\n- **Indicateur 5 — Taux de résolution des réclamations**\n  - (Réclamations résolues dans les délais ÷ Total des réclamations) × 100\n"
       },
       {
         "id": "gas-m3-c56",
