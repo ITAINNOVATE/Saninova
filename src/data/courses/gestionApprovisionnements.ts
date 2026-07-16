@@ -1510,7 +1510,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Procédures de comptage et de réconciliation",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Préparation du comptage\n\n**Constitution des équipes de comptage**\n- **Principe du double comptage :** Chaque produit doit être compté par au moins deux personnes différentes, indépendamment l'une de l'autre. Les résultats sont comparés. En cas de divergence, un troisième comptage est effectué.\n- **Composition recommandée des équipes :**\n  - Règle absolue : Le compteur ne doit pas connaître le stock théorique avant de compter\n"
+        "content": "#### Préparation du comptage\n\n**Constitution des équipes de comptage**\n- **Principe du double comptage :** Chaque produit doit être compté par au moins deux personnes différentes, indépendamment l'une de l'autre. Les résultats sont comparés. En cas de divergence, un troisième comptage est effectué..\n- **Composition recommandée des équipes :**\n\n| Rôle | Nombre | Responsabilité |\n|---|---|---|\n| Compteur | 1 par équipe | Compte physiquement les produits |\n| Enregistreur | 1 par équipe | Note les résultats sur le formulaire |\n| Superviseur | 1 pour plusieurs équipes | Vérifie la méthode, résout les ambiguïtés |\n| Validateur | 1 (responsable hiérarchique) | Signe les formulaires, valide les résultats finaux |\n\n- **Règle absolue :** Le compteur ne doit pas connaître le stock théorique avant de compter\n"
       },
       {
         "id": "gas-m5-c18",
