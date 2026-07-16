@@ -478,6 +478,7 @@ export default function EvaluationPage({ params }: { params: Promise<{ slug: str
             </div>
           )}
         </div>
+      </div>
       )}
     </>
   );
