@@ -1315,7 +1315,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Plans de contingence et procédures d'urgence",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Plans de contingence et procédures d'urgence\n\nUn plan de contingence est un dispositif préparé à l'avance pour répondre à des situations exceptionnelles qui perturbent le fonctionnement normal de la chaîne d'approvisionnement.\n\nIl répond à une logique simple :\n- les crises ne s'improvisent pas.\n\nUne pharmacie qui attend qu'une épidémie éclate pour réfléchir à comment s'approvisionner en urgence perdra un temps précieux, paiera des prix excessifs et mettra des vies en danger.\n\nUne pharmacie qui a anticipé ces scénarios dispose de réponses prêtes à être activées immédiatement.\n\nLa différence entre les deux peut se mesurer en vies sauvées.\n"
+        "content": "#### Plans de contingence et procédures d'urgence\n\n- Un plan de contingence est un dispositif préparé à l'avance pour répondre à des situations exceptionnelles qui perturbent le fonctionnement normal de la chaîne d'approvisionnement.\n\n- **Il répond à une logique simple :**\n  - les crises ne s'improvisent pas.\n  - Une pharmacie qui attend qu'une épidémie éclate pour réfléchir à comment s'approvisionner en urgence perdra un temps précieux, paiera des prix excessifs et mettra des vies en danger.\n  - Une pharmacie qui a anticipé ces scénarios dispose de réponses prêtes à être activées immédiatement.\n\nLa différence entre les deux peut se mesurer en vies sauvées.\n"
       },
       {
         "id": "gas-m4-c48",
