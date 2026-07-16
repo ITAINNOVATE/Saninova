@@ -1503,21 +1503,21 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Procédures de comptage et de réconciliation",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Procédures de comptage et de réconciliation\n\nPréparation du comptage\n\nPrincipe : Le dépôt doit être organisé de façon à rendre le comptage systématique et exhaustif. Chaque produit doit avoir une place définie et connue. Les produits de statuts différents doivent être physiquement séparés avant le comptage.\n\nActions préparatoires :\n- ☐ Regrouper tous les produits de même type au même endroit (si ce n'est pas déjà le cas)\n\n☐ Séparer physiquement les produits de statuts différents :\n\nZone de stock actif : produits disponibles à la distribution\n\nZone de quarantaine : produits suspects, en attente de décision\n\nZone de périmés : produits hors d'usage, en attente de destruction\n\n☐ Étiqueter chaque zone clairement\n\n☐ Vérifier que tous les produits sont accessibles (rien derrière des palettes inaccessibles, rien sous des étagères sans visibilité)\n\nOrganisation de l'espace\n"
+        "content": "#### Préparation du comptage\n\n**Organisation de l'espace**\n- **Principe :** Le dépôt doit être organisé de façon à rendre le comptage systématique et exhaustif. Chaque produit doit avoir une place définie et connue. Les produits de statuts différents doivent être physiquement séparés avant le comptage.\n- **Actions préparatoires :**\n  - ☐ Regrouper tous les produits de même type au même endroit (si ce n'est pas déjà le cas)\n  - ☐ Séparer physiquement les produits de statuts différents :\n    - ✓ Zone de stock actif : produits disponibles à la distribution\n    - ✓ Zone de quarantaine : produits suspects, en attente de décision\n    - ✓ Zone de périmés : produits hors d'usage, en attente de destruction\n  - ☐ Étiqueter chaque zone clairement\n  - ☐ Vérifier que tous les produits sont accessibles (rien derrière des palettes inaccessibles, rien sous des étagères sans visibilité)\n"
       },
       {
         "id": "gas-m5-c17",
         "title": "Procédures de comptage et de réconciliation",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Procédures de comptage et de réconciliation\n\nPrincipe du double comptage : Chaque produit doit être compté par au moins deux personnes différentes, indépendamment l'une de l'autre. Les résultats sont comparés. En cas de divergence, un troisième comptage est effectué..\n\nComposition recommandée des équipes :\n- Règle absolue : Le compteur ne doit pas connaître le stock théorique avant de compter\n- Préparation du comptage\n- Constitution des équipes de comptage\n"
+        "content": "#### Préparation du comptage\n\n**Constitution des équipes de comptage**\n- **Principe du double comptage :** Chaque produit doit être compté par au moins deux personnes différentes, indépendamment l'une de l'autre. Les résultats sont comparés. En cas de divergence, un troisième comptage est effectué.\n- **Composition recommandée des équipes :**\n  - Règle absolue : Le compteur ne doit pas connaître le stock théorique avant de compter\n"
       },
       {
         "id": "gas-m5-c18",
         "title": "Procédures de comptage et de réconciliation",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Procédures de comptage et de réconciliation\n\nUn formulaire de comptage bien conçu facilite le travail et réduit les erreurs. Il doit être préparé à l'avance et distribué aux équipes avant le début du comptage.\n\nPréparation du comptage\n\nPréparation des formulaires de comptage\n"
+        "content": "#### Préparation du comptage\n\n**Préparation des formulaires de comptage**\n- Un formulaire de comptage bien conçu facilite le travail et réduit les erreurs. Il doit être préparé à l'avance et distribué aux équipes avant le début du comptage.\n"
       },
       {
         "id": "gas-m5-c19",
