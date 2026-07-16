@@ -1545,21 +1545,21 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Procédures de comptage et de réconciliation",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Procédures de comptage et de réconciliation\n\nLa réconciliation des stocks\n\nFormule : Écart = Stock physique − Stock théorique\n\nClassification des écarts\n\nCalcul des écarts\n"
+        "content": "#### La réconciliation des stocks\n\n**Calcul des écarts**\n- **Formule :** Écart = Stock physique − Stock théorique\n\n- **Classification des écarts**\n\n| Niveau d'écart | Seuil | Réponse |\n|---|---|---|\n| Négligeable | < 1% | Correction des données sans investigation |\n| Tolérable | 1 à 2% | Correction des données + note explicative |\n| Significatif | 2 à 5% | Correction + investigation documentée |\n| Majeur | 5 à 10% | Correction + investigation approfondie + rapport hiérarchique |\n| Critique | > 10% | Correction + investigation formelle + suspension possible du gestionnaire le temps de l'investigation |\n"
       },
       {
         "id": "gas-m5-c23",
         "title": "Procédures de comptage et de réconciliation",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Procédures de comptage et de réconciliation\n\nLa réconciliation des stocks\n\nInvestigation des écarts\n\nÉtape 1 — Vérifier le comptage : Avant de conclure à un écart réel, s'assurer que le comptage a été correctement effectué. Un recomptage s'impose pour tout écart significatif.\n\nÉtape 2 — Vérifier les documents de la période : Examiner tous les bons de sortie, bons de réception, bons de transfert et documents de perte de la période couverte par l'inventaire.\n\nÉtape 3 — Identifier les mouvements non documentés : Interroger le personnel sur les mouvements de produits qui pourraient ne pas avoir été enregistrés.\n\nÉtape 4 — Analyser l'écart résiduel inexpliqué\n\nÉtape 5 — Mesures correctives : Sur la base de l'investigation, des mesures correctives sont définies et documentées.\n\nCalcul des écarts\n"
+        "content": "#### La réconciliation des stocks\n\n**Investigation des écarts**\n- **Étape 1 — Vérifier le comptage :** Avant de conclure à un écart réel, s'assurer que le comptage a été correctement effectué. Un recomptage s'impose pour tout écart significatif.\n- **Étape 2 — Vérifier les documents de la période :** Examiner tous les bons de sortie, bons de réception, bons de transfert et documents de perte de la période couverte par l'inventaire.\n- **Étape 3 — Identifier les mouvements non documentés :** Interroger le personnel sur les mouvements de produits qui pourraient ne pas avoir été enregistrés.\n- **Étape 4 — Analyser l'écart résiduel inexpliqué**\n- **Étape 5 — Mesures correctives :** Sur la base de l'investigation, des mesures correctives sont définies et documentées.\n"
       },
       {
         "id": "gas-m5-c24",
         "title": "Procédures de comptage et de réconciliation",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Procédures de comptage et de réconciliation\n\nLa réconciliation des stocks\n\nUne fois l'investigation terminée, les fiches de stock et le registre sont mis à jour avec le stock physique réel issu du comptage.\n\nProcédure de correction :\n- Ne jamais rayer ou effacer l'ancienne valeur dans le registre.\n- Tirer un trait sur l'ancienne valeur et écrire la nouvelle à côté, avec la date et la signature du gestionnaire.\n- Créer une ligne de régularisation dans la fiche de stock\n- Correction des données et mise à jour des fiches de stock\n\nLe rapport d'inventaire est le document officiel qui synthétise les résultats du comptage et de la réconciliation. Il est conservé dans les archives de la structure et transmis à la hiérarchie.\n\nLe rapport d'inventaire\n"
+        "content": "#### La réconciliation des stocks\n\n**Correction des données et mise à jour des fiches de stock**\n- Une fois l'investigation terminée, les fiches de stock et le registre sont mis à jour avec le stock physique réel issu du comptage.\n- **Procédure de correction :**\n  - Ne jamais rayer ou effacer l'ancienne valeur dans le registre.\n  - Tirer un trait sur l'ancienne valeur et écrire la nouvelle à côté, avec la date et la signature du gestionnaire.\n  - Créer une ligne de régularisation dans la fiche de stock\n\n**Le rapport d'inventaire**\n- Le rapport d'inventaire est le document officiel qui synthétise les résultats du comptage et de la réconciliation. Il est conservé dans les archives de la structure et transmis à la hiérarchie.\n"
       },
       {
         "id": "gas-m5-c25",
