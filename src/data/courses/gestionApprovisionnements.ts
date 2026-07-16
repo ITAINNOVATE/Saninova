@@ -1266,49 +1266,49 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Identification et traitement des surstocks",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Options de traitement des surstocks\n\n**Option 2 — Redistribution inter-sites**\nTransférer l'excédent vers des sites en rupture ou à stock bas sur le même produit. C'est la solution la plus rapide, la moins coûteuse et la plus utile d'un point de vue sanitaire.\n\n**Processus de redistribution :**\n- Étape 1 : Identifier les sites déficitaires sur le même produit via le rapport mensuel ou un contact direct.\n- Étape 2 : Calculer la quantité redistribuable sans mettre le site donneur en danger.\n- Étape 3 : Obtenir l'autorisation du niveau hiérarchique supérieur.\n- Étape 4 : Préparer les documents de transfert (bon de transfert, fiche de stock des deux sites).\n- Étape 5 : Assurer le transport dans de bonnes conditions.\n- Étape 6 : Mettre à jour les fiches de stock des deux sites.\n"
+        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Options de traitement des surstocks\n\n**Option 2 — Redistribution inter-sites**\nTransférer l'excédent vers des sites en rupture ou à stock bas sur le même produit. C'est la solution la plus rapide, la moins coûteuse et la plus utile d'un point de vue sanitaire.\n\n- **Processus de redistribution :**\n  - Étape 1 : Identifier les sites déficitaires sur le même produit via le rapport mensuel ou un contact direct.\n  - Étape 2 : Calculer la quantité redistribuable sans mettre le site donneur en danger.\n  - Étape 3 : Obtenir l'autorisation du niveau hiérarchique supérieur.\n  - Étape 4 : Préparer les documents de transfert (bon de transfert, fiche de stock des deux sites).\n  - Étape 5 : Assurer le transport dans de bonnes conditions.\n  - Étape 6 : Mettre à jour les fiches de stock des deux sites.\n"
       },
       {
         "id": "gas-m4-c41",
         "title": "Identification et traitement des surstocks",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Options de traitement des surstocks\n\n**Option 3 — Retour au fournisseur ou au niveau supérieur**\nQuand la redistribution inter-sites ne suffit pas, les produits excédentaires peuvent être retournés au fournisseur ou au niveau hiérarchique supérieur (dépôt régional, centrale d'achat) qui peut les redistribuer à plus grande échelle.\n\n**Conditions pour un retour fournisseur :**\n- Les produits sont encore dans leur emballage d'origine, non ouverts\n- La date de péremption est suffisamment éloignée (généralement > 12 mois)\n- Le contrat avec le fournisseur prévoit une clause de retour\n- L'autorisation du niveau hiérarchique supérieur est obtenue\n"
+        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Options de traitement des surstocks\n\n**Option 3 — Retour au fournisseur ou au niveau supérieur**\nQuand la redistribution inter-sites ne suffit pas, les produits excédentaires peuvent être retournés au fournisseur ou au niveau hiérarchique supérieur (dépôt régional, centrale d'achat) qui peut les redistribuer à plus grande échelle.\n\n- **Conditions pour un retour fournisseur :**\n  - Les produits sont encore dans leur emballage d'origine, non ouverts\n  - La date de péremption est suffisamment éloignée (généralement > 12 mois)\n  - Le contrat avec le fournisseur prévoit une clause de retour\n  - L'autorisation du niveau hiérarchique supérieur est obtenue\n"
       },
       {
         "id": "gas-m4-c42",
         "title": "Identification et traitement des surstocks",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Options de traitement des surstocks\n\n**Option 4 — Accélération de la consommation**\nPour certains produits non critiques disponibles en excès, il est possible d'augmenter la vitesse d'écoulement du stock en intensifiant les activités qui consomment ce produit.\n\n**Actions possibles :**\n- Intensifier les activités de prévention (journées de sensibilisation, distribution communautaire)\n- Partager l'information avec les prescripteurs pour favoriser la prescription du produit en excès quand il est médicalement approprié\n- Organiser des séances de distribution de masse pour les produits dont la distribution est possible (Vitamine A, moustiquaires, SRO)\n"
+        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Options de traitement des surstocks\n\n**Option 4 — Accélération de la consommation**\nPour certains produits non critiques disponibles en excès, il est possible d'augmenter la vitesse d'écoulement du stock en intensifiant les activités qui consomment ce produit.\n\n- **Actions possibles :**\n  - Intensifier les activités de prévention (journées de sensibilisation, distribution communautaire)\n  - Partager l'information avec les prescripteurs pour favoriser la prescription du produit en excès quand il est médicalement approprié\n  - Organiser des séances de distribution de masse pour les produits dont la distribution est possible (Vitamine A, moustiquaires, SRO)\n"
       },
       {
         "id": "gas-m4-c43",
         "title": "Identification et traitement des surstocks",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Options de traitement des surstocks\n\n**Option 5 — Don à une autre structure**\nQuand le retour au fournisseur est impossible et que la redistribution inter-sites dans le même système ne suffit pas, un don à une structure partenaire (ONG, structure privée à but non lucratif, camp de réfugiés) peut permettre d'utiliser les produits plutôt que de les détruire.\n\n**Conditions :**\n- Autorisation obligatoire du niveau hiérarchique supérieur et de la direction de la pharmacie\n- La structure bénéficiaire doit être habilitée à recevoir et gérer des produits pharmaceutiques\n- Les produits doivent être en bon état et avoir une date de péremption suffisante\n- Un bon de don formalisé doit être établi et signé par les deux parties\n"
+        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Options de traitement des surstocks\n\n**Option 5 — Don à une autre structure**\nQuand le retour au fournisseur est impossible et que la redistribution inter-sites dans le même système ne suffit pas, un don à une structure partenaire (ONG, structure privée à but non lucratif, camp de réfugiés) peut permettre d'utiliser les produits plutôt que de les détruire.\n\n- **Conditions :**\n  - Autorisation obligatoire du niveau hiérarchique supérieur et de la direction de la pharmacie\n  - La structure bénéficiaire doit être habilitée à recevoir et gérer des produits pharmaceutiques\n  - Les produits doivent être en bon état et avoir une date de péremption suffisante\n  - Un bon de don formalisé doit être établi et signé par les deux parties\n"
       },
       {
         "id": "gas-m4-c44",
         "title": "Identification et traitement des surstocks",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Options de traitement des surstocks\n\n**Option 6 — Destruction réglementaire**\nQuand aucune autre option n'est possible (produits périmés, endommagés, non conformes, irrécupérables), la destruction est la seule solution. Elle doit être réalisée selon des procédures strictes pour protéger l'environnement et la santé publique.\n\n**Procédure de destruction :**\n- **Étape 1 — Constitution du dossier de destruction**\n  - Liste complète des produits à détruire (désignation, lot, quantité, valeur, raison)\n  - Autorisation du niveau hiérarchique supérieur\n  - Présence d'au moins deux témoins (médecin chef, inspecteur de pharmacie)\n"
+        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Options de traitement des surstocks\n\n**Option 6 — Destruction réglementaire**\nQuand aucune autre option n'est possible (produits périmés, endommagés, non conformes, irrécupérables), la destruction est la seule solution. Elle doit être réalisée selon des procédures strictes pour protéger l'environnement et la santé publique.\n\n- **Procédure de destruction :**\n  - **Étape 1 — Constitution du dossier de destruction**\n    - Liste complète des produits à détruire (désignation, lot, quantité, valeur, raison)\n    - Autorisation du niveau hiérarchique supérieur\n    - Présence d'au moins deux témoins (médecin chef, inspecteur de pharmacie)\n"
       },
       {
         "id": "gas-m4-c45",
         "title": "Identification et traitement des surstocks",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Options de traitement des surstocks\n\n**Option 6 — Destruction réglementaire**\n\n**Procédure de destruction :**\n- **Étape 2 — Méthode de destruction selon le type de produit**\n  - Jamais : jeter dans une décharge à ciel ouvert, enterrer sans neutralisation, brûler à l'air libre (risque toxique)\n"
+        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Options de traitement des surstocks\n\n**Option 6 — Destruction réglementaire**\n\n- **Procédure de destruction :**\n  - **Étape 2 — Méthode de destruction selon le type de produit**\n    - Jamais : jeter dans une décharge à ciel ouvert, enterrer sans neutralisation, brûler à l'air libre (risque toxique)\n"
       },
       {
         "id": "gas-m4-c46",
         "title": "Identification et traitement des surstocks",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Options de traitement des surstocks\n\n**Option 6 — Destruction réglementaire**\n\n**Procédure de destruction :**\n- **Étape 3 — Documentation**\n  - Procès-verbal de destruction signé par tous les témoins présents\n  - Mise à jour des fiches de stock (sortie pour destruction)\n  - Conservation du PV pendant au moins 5 ans\n"
+        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Options de traitement des surstocks\n\n**Option 6 — Destruction réglementaire**\n\n- **Procédure de destruction :**\n  - **Étape 3 — Documentation**\n    - Procès-verbal de destruction signé par tous les témoins présents\n    - Mise à jour des fiches de stock (sortie pour destruction)\n    - Conservation du PV pendant au moins 5 ans\n"
       },
       {
         "id": "gas-m4-c47",
