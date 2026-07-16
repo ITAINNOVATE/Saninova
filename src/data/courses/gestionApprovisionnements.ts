@@ -1049,7 +1049,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Stratégies de prévention et de gestion des ruptures",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Stratégies de prévention et de gestion des ruptures\n\nPrévenir une rupture coûte toujours moins cher que la gérer.\n\nMais même avec les meilleures mesures préventives, certaines ruptures surviennent malgré tout, souvent pour des raisons extérieures au contrôle du gestionnaire.\n\nIl faut donc maîtriser deux registres complémentaires :\n- les stratégies préventives, qui réduisent la probabilité et la fréquence des ruptures et\n- les stratégies curatives, qui minimisent leur durée et leur impact quand elles surviennent malgré tout.\n- Un gestionnaire compétent ne se contente pas de subir les ruptures. Il les anticipe, les détecte tôt et réagit vite avec des mesures adaptées.\n"
+        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n- Prévenir une rupture coûte toujours moins cher que la gérer.\n\n- Mais même avec les meilleures mesures préventives, certaines ruptures surviennent malgré tout, souvent pour des raisons extérieures au contrôle du gestionnaire.\n\n- Il faut donc maîtriser deux registres complémentaires :\n  - les stratégies préventives, qui réduisent la probabilité et la fréquence des ruptures et\n  - les stratégies curatives, qui minimisent leur durée et leur impact quand elles surviennent malgré tout.\n\n- Un gestionnaire compétent ne se contente pas de subir les ruptures. Il les anticipe, les détecte tôt et réagit vite avec des mesures adaptées.\n"
       },
       {
         "id": "gas-m4-c10",
