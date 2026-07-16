@@ -1210,7 +1210,7 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Identification et traitement des surstocks",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Identification et traitement des surstocks\n\nLe surstock est souvent perçu comme un problème mineur comparé à la rupture. Cette perception est erronée.\n\nUn surstock non traité coûte de l'argent, occupe de l'espace, immobilise des ressources qui auraient pu financer d'autres produits, et finit fréquemment par se transformer en péremption, c'est-à-dire en perte sèche.\n\nDans certains systèmes de santé, jusqu'à 10 à 15% de la valeur des produits pharmaceutiques sont perdus chaque année par péremption, soit des dizaines de millions de francs CFA gaspillés.\n\nL'identification précoce et le traitement rapide des surstocks sont donc des actes de gestion à part entière, aussi importants que la prévention des ruptures.\n"
+        "content": "#### Identification et traitement des surstocks\n\n- Le surstock est souvent perçu comme un problème mineur comparé à la rupture. Cette perception est erronée.\n\n- Un surstock non traité coûte de l'argent, occupe de l'espace, immobilise des ressources qui auraient pu financer d'autres produits, et finit fréquemment par se transformer en péremption, c'est-à-dire en perte sèche.\n\n- Dans certains systèmes de santé, jusqu'à 10 à 15% de la valeur des produits pharmaceutiques sont perdus chaque année par péremption, soit des dizaines de millions de francs CFA gaspillés.\n\n- L'identification précoce et le traitement rapide des surstocks sont donc des actes de gestion à part entière, aussi importants que la prévention des ruptures.\n"
       },
       {
         "id": "gas-m4-c33",
