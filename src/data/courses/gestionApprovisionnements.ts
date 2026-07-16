@@ -1098,35 +1098,35 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Stratégies de prévention et de gestion des ruptures",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Stratégies de prévention et de gestion des ruptures\n\nStratégies de gestion des ruptures avérées\n\nÉtape 1 — Déclarer et évaluer la rupture\n\nÉvaluer la criticité du produit :\n\nÉvaluer la durée prévisionnelle de la rupture :\n\nDurée de rupture estimée = Délai avant prochaine livraison − Couverture du stock résiduel\n"
+        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Stratégies de gestion des ruptures avérées\n\n**Étape 1 — Déclarer et évaluer la rupture**\n\n- **Évaluer la criticité du produit :**\n\n| Niveau | Définition | Exemples | Délai de réaction |\n|---|---|---|---|\n| Critique | Traitement vital, pas de substitut | Insuline, antiépileptiques, ARV | Immédiat (< 24h) |\n| Majeur | Médicament essentiel, substitut possible mais moins efficace | Artéméther-Lum, Amoxicilline | Urgent (< 48h) |\n| Modéré | Médicament important, substitut disponible | Paracétamol, Cotrimoxazole | Rapide (< 1 semaine) |\n| Mineur | Médicament non vital, facilement substituable | Vitamines, compléments | Normal (< 2 semaines) |\n\n- **Évaluer la durée prévisionnelle de la rupture :**\n  - Durée de rupture estimée = Délai avant prochaine livraison − Couverture du stock résiduel\n"
       },
       {
         "id": "gas-m4-c17",
         "title": "Stratégies de prévention et de gestion des ruptures",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Stratégies de prévention et de gestion des ruptures\n\nStratégies de gestion des ruptures avérées\n\nÉtape 2 — Alerter la hiérarchie et les partenaires\n\nToute rupture avérée ou imminente sur un produit essentiel doit être signalée immédiatement au niveau hiérarchique supérieur.\n\nCe signalement doit être :\n- Écrit (email, rapport, formulaire standardisé)\n- Factuel (produit concerné, stock résiduel, durée estimée, nombre de patients potentiellement affectés)\n- Accompagné d'une proposition de solution\n"
+        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Stratégies de gestion des ruptures avérées\n\n**Étape 2 — Alerter la hiérarchie et les partenaires**\n\n- Toute rupture avérée ou imminente sur un produit essentiel doit être signalée immédiatement au niveau hiérarchique supérieur.\n- **Ce signalement doit être :**\n  - Écrit (email, rapport, formulaire standardisé)\n  - Factuel (produit concerné, stock résiduel, durée estimée, nombre de patients potentiellement affectés)\n  - Accompagné d'une proposition de solution\n"
       },
       {
         "id": "gas-m4-c18",
         "title": "Stratégies de prévention et de gestion des ruptures",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Stratégies de prévention et de gestion des ruptures\n\nStratégies de gestion des ruptures avérées\n\nÉtape 3 — Activer les sources d'approvisionnement d'urgence\n\nOption 1 — Redistribution inter-sites (la plus rapide et la moins coûteuse)\n\nIdentifier les sites disposant d'un excédent du produit manquant et organiser un transfert.\n\nOption 2 — Commande urgente auprès du fournisseur alternatif\n\nSi la redistribution inter-sites est insuffisante ou impossible.\n\nOption 3 — Achat en pharmacie privée (dernier recours)\n\nPour les cas extrêmes où les autres options ne sont pas disponibles assez rapidement.\n\nLe coût est généralement très élevé mais peut être justifié pour des produits vitaux.\n"
+        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Stratégies de gestion des ruptures avérées\n\n**Étape 3 — Activer les sources d'approvisionnement d'urgence**\n\n- **Option 1 — Redistribution inter-sites (la plus rapide et la moins coûteuse)**\n  - Identifier les sites disposant d'un excédent du produit manquant et organiser un transfert.\n\n- **Option 2 — Commande urgente auprès du fournisseur alternatif**\n  - Si la redistribution inter-sites est insuffisante ou impossible.\n\n- **Option 3 — Achat en pharmacie privée (dernier recours)**\n  - Pour les cas extrêmes où les autres options ne sont pas disponibles assez rapidement.\n  - Le coût est généralement très élevé mais peut être justifié pour des produits vitaux.\n"
       },
       {
         "id": "gas-m4-c19",
         "title": "Stratégies de prévention et de gestion des ruptures",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Stratégies de prévention et de gestion des ruptures\n\nStratégies de gestion des ruptures avérées\n\nÉtape 4 — Gérer la distribution pendant la rupture\n\nQuand le stock résiduel est limité et qu'une rupture partielle est inévitable, le gestionnaire doit rationner la distribution de façon équitable et médicalement justifiée.\n\nPrincipes de rationnement :\n- Prioriser les patients déjà en cours de traitement sur les nouveaux cas.\n- Prioriser les cas les plus sévères sur les cas légers.\n\nInformer les prescripteurs immédiatement pour qu'ils adaptent leurs prescriptions (doses réduites si médicalement acceptable, substituts thérapeutiques).\n"
+        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Stratégies de gestion des ruptures avérées\n\n**Étape 4 — Gérer la distribution pendant la rupture**\n\n- Quand le stock résiduel est limité et qu'une rupture partielle est inévitable, le gestionnaire doit rationner la distribution de façon équitable et médicalement justifiée.\n- **Principes de rationnement :**\n  - Prioriser les patients déjà en cours de traitement sur les nouveaux cas.\n  - Prioriser les cas les plus sévères sur les cas légers.\n- Informer les prescripteurs immédiatement pour qu'ils adaptent leurs prescriptions (doses réduites si médicalement acceptable, substituts thérapeutiques).\n"
       },
       {
         "id": "gas-m4-c20",
         "title": "Stratégies de prévention et de gestion des ruptures",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Stratégies de prévention et de gestion des ruptures\n\nStratégies de gestion des ruptures avérées\n\nÉtape 5 — Analyser les causes et mettre en place des mesures correctives\n\nUne fois la rupture résolue, une analyse des causes doit être conduite pour éviter la récurrence. C'est l'étape la plus souvent négligée mais la plus importante pour progresser.\n"
+        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Stratégies de gestion des ruptures avérées\n\n**Étape 5 — Analyser les causes et mettre en place des mesures correctives**\n\n- Une fois la rupture résolue, une analyse des causes doit être conduite pour éviter la récurrence. C'est l'étape la plus souvent négligée mais la plus importante pour progresser.\n"
       },
       {
         "id": "gas-m4-c21",
