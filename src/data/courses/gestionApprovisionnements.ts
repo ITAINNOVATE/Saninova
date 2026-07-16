@@ -1224,35 +1224,35 @@ export const gestionApprovisionnementsCourse: any[] = [
         "title": "Identification et traitement des surstocks",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Identification et traitement des surstocks\n\nStratégies de prévention et de gestion des ruptures\n\nLes outils d'identification des surstocks\n\nOutil 1 — L'analyse mensuelle du taux de couverture\n\nLe taux de couverture est le premier signal d'alerte d'un surstock. Tout produit avec un taux de couverture supérieur à la durée stock max doit être examiné.\n"
+        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Les outils d'identification des surstocks\n\n**Outil 1 — L'analyse mensuelle du taux de couverture**\nLe taux de couverture est le premier signal d'alerte d'un surstock. Tout produit avec un taux de couverture supérieur à la durée stock max doit être examiné.\n"
       },
       {
         "id": "gas-m4-c35",
         "title": "Identification et traitement des surstocks",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Identification et traitement des surstocks\n\nStratégies de prévention et de gestion des ruptures\n\nLes outils d'identification des surstocks\n\nOutil 2 — L'analyse ABC-VEN croisée\n\nL'analyse ABC classe les produits par valeur financière. L'analyse VEN les classe par importance médicale (Vital, Essentiel, Non essentiel). Croisées, elles permettent de prioriser les actions sur les surstocks.\n\nAnalyse ABC :\n- Catégorie A : 20% des produits représentant 80% de la valeur totale du stock\n- Catégorie B : 30% des produits représentant 15% de la valeur\n- Catégorie C : 50% des produits représentant 5% de la valeur\n\nAnalyse VEN :\n\nV (Vital) : produit dont l'absence entraîne un risque immédiat pour la vie du patient\n\nE (Essentiel) : produit important mais dont l'absence n'est pas immédiatement mortelle\n\nN (Non essentiel) : produit dont l'absence ne met pas en danger la vie du patient\n"
+        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Les outils d'identification des surstocks\n\n**Outil 2 — L'analyse ABC-VEN croisée**\nL'analyse ABC classe les produits par valeur financière. L'analyse VEN les classe par importance médicale (Vital, Essentiel, Non essentiel). Croisées, elles permettent de prioriser les actions sur les surstocks.\n\n- **Analyse ABC :**\n  - Catégorie A : 20% des produits représentant 80% de la valeur totale du stock\n  - Catégorie B : 30% des produits représentant 15% de la valeur\n  - Catégorie C : 50% des produits représentant 5% de la valeur\n\n- **Analyse VEN :**\n  - V (Vital) : produit dont l'absence entraîne un risque immédiat pour la vie du patient\n  - E (Essentiel) : produit important mais dont l'absence n'est pas immédiatement mortelle\n  - N (Non essentiel) : produit dont l'absence ne met pas en danger la vie du patient\n"
       },
       {
         "id": "gas-m4-c36",
         "title": "Identification et traitement des surstocks",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Identification et traitement des surstocks\n\nStratégies de prévention et de gestion des ruptures\n\nLes outils d'identification des surstocks\n\nOutil 2 — L'analyse ABC-VEN croisée\n\nMatrice de priorité pour le traitement des surstocks\n"
+        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Les outils d'identification des surstocks\n\n**Outil 2 — L'analyse ABC-VEN croisée**\n\n**Matrice de priorité pour le traitement des surstocks**\n"
       },
       {
         "id": "gas-m4-c37",
         "title": "Identification et traitement des surstocks",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Identification et traitement des surstocks\n\nStratégies de prévention et de gestion des ruptures\n\nLes outils d'identification des surstocks\n\nOutil 3 — La liste des produits proches de péremption\n\nUn produit qui périme dans moins de 6 mois doit automatiquement être considéré comme un surstock à traiter, même si son niveau de stock ne dépasse pas le stock max.\n"
+        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Les outils d'identification des surstocks\n\n**Outil 3 — La liste des produits proches de péremption**\nUn produit qui périme dans moins de 6 mois doit automatiquement être considéré comme un surstock à traiter, même si son niveau de stock ne dépasse pas le stock max.\n"
       },
       {
         "id": "gas-m4-c38",
         "title": "Identification et traitement des surstocks",
         "type": "text",
         "duration": "10 min",
-        "content": "#### Identification et traitement des surstocks\n\nStratégies de prévention et de gestion des ruptures\n\nCauses des surstocks\n"
+        "content": "#### Stratégies de prévention et de gestion des ruptures\n\n### Causes des surstocks\n"
       },
       {
         "id": "gas-m4-c39",
