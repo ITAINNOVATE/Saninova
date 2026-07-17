@@ -434,12 +434,12 @@ export const translations = {
             desc: "Directeur Général de SaniNova, expert international en transformation des systèmes de santé et réformes à fort impact en Afrique.",
           },
           {
-            name: "Prénom Nom",
+            name: "Dr Ghislaine LOKO DJIDJOHO",
             role: "Directrice Technique - Santé Publique",
             desc: "Spécialiste en santé publique et épidémiologie.",
           },
           {
-            name: "Sophie KABORE",
+            name: "Mylène Fatima ADIGOUN",
             role: "Directrice Technique - Digitalisation",
             desc: "Ingénieure spécialisée dans les systèmes d'information en santé, pionnière des projets e-santé à l'échelle nationale.",
           },
@@ -1137,12 +1137,12 @@ export const translations = {
             desc: "Managing Director of SaniNova, international expert in health systems transformation and high-impact reforms in Africa.",
           },
           {
-            name: "Firstname Lastname",
+            name: "Dr Ghislaine LOKO DJIDJOHO",
             role: "Technical Director - Public Health",
             desc: "Specialist in public health and epidemiology.",
           },
           {
-            name: "Sophie KABORE",
+            name: "Mylène Fatima ADIGOUN",
             role: "Technical Director - Digitalization",
             desc: "Engineering expert specialized in health information systems, pioneer of national-scale e-health initiatives.",
           },
