@@ -12,7 +12,7 @@ export const TeamSection: React.FC = () => {
   const memberImages = [
     "/images/team/hope.jpg",
     "/images/team/ghislaine.jpg", // Directrice Technique - Santé Publique
-    "/images/team/mylene.jpeg", // Directrice Technique - Digitalisation
+    "/images/team/mylene.png", // Directrice Technique - Digitalisation
     "/images/team/sophie.png", // Directrice des Études (Placeholder)
     "/images/team/sophie.png"  // Directrice Exécutive (Placeholder)
   ];
