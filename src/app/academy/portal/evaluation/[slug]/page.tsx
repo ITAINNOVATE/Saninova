@@ -44,6 +44,7 @@ export default function EvaluationPage({ params }: { params: Promise<{ slug: str
   const [attempts, setAttempts] = useState(0);
   const [blocked, setBlocked] = useState(false);
   const [reviewMode, setReviewMode] = useState(false);
+  const [passDate, setPassDate] = useState<string>("");
 
   // Initialize the evaluation
   useEffect(() => {
@@ -67,6 +68,9 @@ export default function EvaluationPage({ params }: { params: Promise<{ slug: str
       const passed = localStorage.getItem(`eval_passed_${slug}`) === "true";
       setAttempts(savedAttempts);
       
+      const savedDate = localStorage.getItem(`eval_passed_date_${slug}`);
+      if (savedDate) setPassDate(savedDate);
+      
       if (savedAttempts >= data.maxAttempts && !passed) {
         setBlocked(true);
       } else {
@@ -87,6 +91,9 @@ export default function EvaluationPage({ params }: { params: Promise<{ slug: str
       const passed = localStorage.getItem(`eval_passed_${slug}`) === "true";
       setAttempts(savedAttempts);
       
+      const savedDate = localStorage.getItem(`eval_passed_date_${slug}`);
+      if (savedDate) setPassDate(savedDate);
+      
       if (savedAttempts >= data.maxAttempts && !passed) {
         setBlocked(true);
       } else {
@@ -105,6 +112,9 @@ export default function EvaluationPage({ params }: { params: Promise<{ slug: str
       const savedAttempts = parseInt(localStorage.getItem(`eval_attempts_${slug}`) || "0");
       const passed = localStorage.getItem(`eval_passed_${slug}`) === "true";
       setAttempts(savedAttempts);
+      
+      const savedDate = localStorage.getItem(`eval_passed_date_${slug}`);
+      if (savedDate) setPassDate(savedDate);
       
       if (savedAttempts >= data.maxAttempts && !passed) {
         setBlocked(true);
@@ -193,6 +203,11 @@ export default function EvaluationPage({ params }: { params: Promise<{ slug: str
     
     if (finalScore >= evalData.passingScore) {
       localStorage.setItem(`eval_passed_${slug}`, "true");
+      if (!localStorage.getItem(`eval_passed_date_${slug}`)) {
+        const d = new Date().toLocaleDateString('fr-FR', { day: '2-digit', month: 'long', year: 'numeric' });
+        localStorage.setItem(`eval_passed_date_${slug}`, d);
+        setPassDate(d);
+      }
     }
   };
 
@@ -246,8 +261,13 @@ export default function EvaluationPage({ params }: { params: Promise<{ slug: str
   const answeredCount = Object.keys(answers).length;
   const progressPercent = Math.round((answeredCount / questions.length) * 100);
   const isPassed = score >= evalData.passingScore || (typeof window !== "undefined" && localStorage.getItem(`eval_passed_${slug}`) === "true");
-  const studentEmail = typeof window !== "undefined" ? localStorage.getItem("registered_email") || "Étudiant(e)" : "Étudiant(e)";
+  
+  const savedName = typeof window !== "undefined" ? localStorage.getItem("registered_fullname") : null;
+  const studentEmail = typeof window !== "undefined" ? localStorage.getItem("registered_email") || "" : "";
+  const finalStudentName = savedName || (studentEmail ? studentEmail.split('@')[0].replace('.', ' ') : "Étudiant(e)");
+  
   const currentDate = new Date().toLocaleDateString('fr-FR', { day: '2-digit', month: 'long', year: 'numeric' });
+  const displayDate = passDate || currentDate;
 
   return (
     <>
@@ -467,10 +487,10 @@ export default function EvaluationPage({ params }: { params: Promise<{ slug: str
                     <h3 className="text-2xl font-bold text-white mb-4">Votre Attestation</h3>
                     <p className="text-white/60 mb-8">Téléchargez votre attestation officielle validant vos compétences.</p>
                     <CertificateGenerator 
-                      studentName={studentEmail.split('@')[0].replace('.', ' ')} 
+                      studentName={finalStudentName} 
                       courseName={evalData.title.replace("Évaluation Finale : ", "")} 
                       score={score} 
-                      date={currentDate} 
+                      date={displayDate} 
                     />
                   </div>
                 )}

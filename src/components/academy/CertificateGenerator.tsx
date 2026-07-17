@@ -28,7 +28,7 @@ export default function CertificateGenerator({ studentName, courseName, score, d
         backgroundColor: '#ffffff',
         skipFonts: true, // Fix disappearing text bug!
         style: {
-          fontFamily: 'Arial, Helvetica, sans-serif'
+          fontFamily: "'Aptos', Arial, Helvetica, sans-serif"
         }
       });
       
@@ -58,7 +58,7 @@ export default function CertificateGenerator({ studentName, courseName, score, d
       <div 
         ref={certificateRef}
         className="w-[1123px] h-[794px] bg-white relative overflow-hidden flex-shrink-0 border border-gray-200"
-        style={{ fontFamily: "Arial, Helvetica, sans-serif" }}
+        style={{ fontFamily: "'Aptos', Arial, Helvetica, sans-serif" }}
       >
         {/* ================= SIMPLE CORNERS ================= */}
         {/* Top-Left */}
