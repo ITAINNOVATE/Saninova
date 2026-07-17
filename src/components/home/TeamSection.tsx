@@ -10,7 +10,7 @@ export const TeamSection: React.FC = () => {
 
   // Array mapping team photos to translated members by order
   const memberImages = [
-    "/images/photo_hope.png",
+    "/images/team/hope.jpg",
     "/images/team/ghislaine.jpg", // Directrice Technique - Santé Publique
     "/images/team/mylene.jpeg", // Directrice Technique - Digitalisation
     "/images/team/sophie.png", // Directrice des Études (Placeholder)

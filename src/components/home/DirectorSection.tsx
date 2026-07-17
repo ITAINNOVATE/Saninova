@@ -56,7 +56,7 @@ export const DirectorSection: React.FC = () => {
               {/* Image container */}
               <div className="absolute inset-0 bg-light transition-transform duration-700 group-hover:scale-105">
                 <Image
-                  src="/images/photo_hope.png"
+                  src="/images/team/hope.jpg"
                   alt={dir.name}
                   fill
                   sizes="(max-width: 768px) 100vw, 400px"

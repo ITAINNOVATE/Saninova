@@ -94,7 +94,7 @@ const allModules = certificationsData.flatMap((academy) => {
             name: "Dr Hope AKOHOUVI AMOU",
             role: "Directeur Général de SANINOVA",
             bio: "Expert international en systèmes de santé avec une grande expérience sur le terrain.",
-            image: "/images/photo_hope.png"
+            image: "/images/team/hope.jpg"
           }
         ],
         isStaticModule: true,
