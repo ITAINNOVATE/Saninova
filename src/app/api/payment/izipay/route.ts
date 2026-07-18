@@ -6,7 +6,7 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { amount, firstname, lastname, email, trainingSlug, isPublication, publicationId } = body;
 
-    const apiKey = process.env.IZIPAY_API_KEY_TEST || process.env.IZIPAY_API_KEY_LIVE;
+    const apiKey = process.env.IZIPAY_API_KEY_LIVE || process.env.IZIPAY_API_KEY_TEST;
 
     if (!apiKey) {
       return NextResponse.json(
