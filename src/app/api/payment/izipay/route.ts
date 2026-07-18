@@ -61,7 +61,10 @@ export async function POST(request: Request) {
 
     console.log("IzichangePay API Response:", intent);
 
-    if (!intent || !intent.paymentLink) {
+    const actualIntent = intent as any;
+    const finalUrl = actualIntent.paymentLink || actualIntent.paymentUrl || actualIntent.url;
+
+    if (!finalUrl) {
       return NextResponse.json(
         { 
           status: false, 
@@ -72,7 +75,7 @@ export async function POST(request: Request) {
       );
     }
 
-    return NextResponse.json({ status: true, url: intent.paymentLink });
+    return NextResponse.json({ status: true, url: finalUrl });
   } catch (error: any) {
     console.error("IzichangePay Integration Error:", error);
     return NextResponse.json(
