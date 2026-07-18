@@ -278,6 +278,8 @@ export default function PublicationSubmissionForm() {
                             const firstname = nameParts[0] || "Auteur";
                             const lastname = nameParts.slice(1).join(" ") || "SaniNova";
 
+                            const currentPublicationId = "PUB-" + Math.floor(1000 + Math.random() * 9000);
+
                             const response = await fetch("/api/payment/izipay", {
                               method: "POST",
                               headers: {
@@ -289,7 +291,7 @@ export default function PublicationSubmissionForm() {
                                 lastname,
                                 email: payerDetails.email || "contact@saninova.com",
                                 isPublication: true,
-                                publicationId: "PUB-" + Math.floor(1000 + Math.random() * 9000),
+                                publicationId: currentPublicationId,
                               }),
                             });
 
@@ -299,7 +301,7 @@ export default function PublicationSubmissionForm() {
                               // Wait a bit before verifying or redirecting
                               setTimeout(() => {
                                 setIsSubmitting(false);
-                                window.location.href = `/publications?status=success&id=${data.publicationId || submissionId}`;
+                                window.location.href = `/publications?status=success&id=${currentPublicationId}`;
                               }, 2000);
                             } else {
                               console.error("Erreur IzichangePay:", data.message, data.details);
