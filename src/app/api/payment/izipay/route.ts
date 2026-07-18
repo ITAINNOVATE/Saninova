@@ -6,9 +6,12 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { amount, firstname, lastname, email, trainingSlug, isPublication, publicationId } = body;
 
-    const apiKey = process.env.IZIPAY_API_KEY_LIVE || process.env.IZIPAY_API_KEY_TEST;
+    const apiKey = process.env.IZIPAY_API_KEY_LIVE || 
+                   process.env.IZIPAY_SECRET_KEY_LIVE || 
+                   process.env.IZIPAY_API_KEY || 
+                   process.env.IZIPAY_API_KEY_TEST;
 
-    if (!apiKey) {
+    if (!apiKey || apiKey.includes("placeholder")) {
       return NextResponse.json(
         { 
           status: false, 
