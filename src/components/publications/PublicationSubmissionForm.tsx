@@ -296,13 +296,20 @@ export default function PublicationSubmissionForm() {
                             const data = await response.json();
                             if (data.status && data.url) {
                               window.open(data.url, "_blank");
+                              // Wait a bit before verifying or redirecting
+                              setTimeout(() => {
+                                setIsSubmitting(false);
+                                window.location.href = `/publications?status=success&id=${data.publicationId || submissionId}`;
+                              }, 2000);
                             } else {
-                              console.warn("IzichangePay Sandbox failed, falling back to backup redirect:", data.message);
-                              window.open("https://izipay.com", "_blank");
+                              console.error("Erreur IzichangePay:", data.message, data.details);
+                              alert("Erreur de paiement IzichangePay : " + (data.message || "Impossible d'initialiser le paiement."));
+                              setIsSubmitting(false);
                             }
                           } catch (err) {
-                            console.error("IzichangePay Sandbox integration failed:", err);
-                            window.open("https://izipay.com", "_blank");
+                            console.error("Erreur requête IzichangePay:", err);
+                            alert("Une erreur de connexion est survenue avec le service de paiement IzichangePay.");
+                            setIsSubmitting(false);
                           }
                           setPaymentStep("choice");
                         }

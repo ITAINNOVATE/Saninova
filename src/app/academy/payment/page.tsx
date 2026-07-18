@@ -179,12 +179,16 @@ function PaymentContent() {
           router.push(`/academy/confirmation?training=${trainingSlug}`);
           return;
         } else {
-          console.warn("IzichangePay Sandbox initialization failed, using default redirection:", data.message);
-          window.open("https://izipay.com", "_blank");
+          console.error("Erreur IzichangePay:", data.message, data.details);
+          alert("Erreur de paiement IzichangePay : " + (data.message || "Impossible d'initialiser le paiement."));
+          setIsProcessing(false);
+          return;
         }
       } catch (err) {
-        console.error("IzichangePay Sandbox integration failed, using backup redirection:", err);
-        window.open("https://izipay.com", "_blank");
+        console.error("Erreur requête IzichangePay:", err);
+        alert("Une erreur de connexion est survenue avec le service de paiement IzichangePay.");
+        setIsProcessing(false);
+        return;
       }
     }
 
