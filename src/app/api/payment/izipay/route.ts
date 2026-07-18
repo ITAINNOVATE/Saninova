@@ -4,7 +4,7 @@ import { IziPayClient } from "izichangepay-sdk";
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { amount, firstname, lastname, email, trainingSlug, isPublication, publicationId } = body;
+    const { amount, firstname, lastname, email, trainingSlug, isPublication, publicationId, currency } = body;
 
     const apiKey = process.env.IZIPAY_API_KEY_LIVE || 
                    process.env.IZIPAY_SECRET_KEY_LIVE || 
@@ -42,10 +42,12 @@ export async function POST(request: Request) {
       orderId = `${trainingSlug}-${Date.now()}`;
     }
 
+    const requestedCurrency = currency || 'XOF';
+
     // Call IzichangePay V2 SDK
     const intent = await izipay.paymentIntents.create({
       requestedCurrencyType: 'fiat',
-      currencyRequested: 'XOF',
+      currencyRequested: requestedCurrency,
       amountRequested: String(amount),
       acceptedCoins: ["USDT.TRC20", "USDT.BEP20", "BTC", "ETH", "TRX"],
       merchantReference: orderId,

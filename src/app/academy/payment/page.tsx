@@ -154,6 +154,7 @@ function PaymentContent() {
         const firstname = nameParts[0] || "Apprenant";
         const lastname = nameParts.slice(1).join(" ") || "SaniNova";
         const priceValue = parseInt(courseDetails.price.replace(/\D/g, ""));
+        const currency = courseDetails.currency || (courseDetails.price.includes("USD") || courseDetails.price.includes("$") ? "USD" : "XOF");
 
         const response = await fetch("/api/payment/izipay", {
           method: "POST",
@@ -162,6 +163,7 @@ function PaymentContent() {
           },
           body: JSON.stringify({
             amount: priceValue,
+            currency: currency,
             firstname,
             lastname,
             email: savedEmail,
