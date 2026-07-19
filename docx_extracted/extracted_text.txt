@@ -1,0 +1,3951 @@
+SaniNova Academy
+
+SaniNova Global Consulting
+
+CATALOGUE PÉDAGOGIQUE COMPLET
+
+6 Académies • 22 Certifications • 50+ Filières • 150+ Modules
+
+Académies — Certifications — Filières — Modules — Chapitres
+
+2025
+
+ACADÉMIE 1 — ACADÉMIE SUPPLY CHAIN SANTÉ
+
+Mission : Former des experts capables de sécuriser la disponibilité des produits de santé à travers des systèmes logistiques performants, résilients et digitalisés.
+
+🎓 Certificat professionnel en Supply Chain Pharmaceutique
+
+Synthèse de la certification
+
+Filière
+
+Durée
+
+Coût (USD)
+
+Gestion des approvisionnements et des stocks
+
+5 jours
+
+800 USD
+
+Quantification et prévisions
+
+3 jours
+
+600 USD
+
+Distribution et dernier kilomètre
+
+3 jours
+
+600 USD
+
+Entreposage pharmaceutique
+
+2 jours
+
+400 USD
+
+Chaîne du froid
+
+2 jours
+
+400 USD
+
+TOTAL CERTIFICATION
+
+15 jours
+
+2800 USD
+
+Contenu détaillé
+
+📂 Gestion des approvisionnements et des stocks   ⏱ 5 jours  |  💰 800 USD
+
+Module 1 — Principes fondamentaux de la gestion des stocks  (1 jour)
+
+▸  Définitions et concepts clés (stock de sécurité, min, max)
+
+▸  Types de stocks et leur rôle dans la chaîne pharmaceutique
+
+▸  Indicateurs clés de performance (taux de rupture, surstockage)
+
+▸  Introduction aux bonnes pratiques de gestion des stocks
+
+Module 2 — Méthodes de calcul des niveaux de stock  (1 jour)
+
+▸  Calcul de la consommation moyenne mensuelle (CMM)
+
+▸  Méthode min/max : formules et application
+
+▸  Calcul du point de commande et du délai de livraison
+
+▸  Exercices pratiques sur données réelles
+
+Module 3 — Processus de commande et suivi fournisseurs  (1 jour)
+
+▸  Cycle de commande : de la quantification à la réception
+
+▸  Sélection et évaluation des fournisseurs
+
+▸  Gestion des contrats et des termes de livraison (Incoterms)
+
+▸  Outils de suivi des commandes et tableau de bord fournisseurs
+
+Module 4 — Gestion des ruptures et des surstocks  (1 jour)
+
+▸  Causes et conséquences des ruptures de stock
+
+▸  Stratégies de prévention et de gestion des ruptures
+
+▸  Identification et traitement des surstocks (redistribution, retour)
+
+▸  Plans de contingence et procédures d'urgence
+
+Module 5 — Systèmes d'inventaire et outils digitaux  (1 jour)
+
+▸  Types d'inventaires (permanent, périodique, tournant)
+
+▸  Procédures de comptage et de réconciliation
+
+▸  Outils digitaux de gestion des stocks (logiciels, applications mobiles)
+
+▸  Atelier : simulation d'un inventaire complet
+
+📂 Quantification et prévisions   ⏱ 3 jours  |  💰 600 USD
+
+Module 1 — Méthodes de quantification  (1 jour)
+
+▸  Méthode basée sur la consommation : collecte et analyse des données
+
+▸  Méthode basée sur la morbidité : protocoles de traitement et incidence
+
+▸  Méthode basée sur les cibles de population
+
+▸  Comparaison et triangulation des méthodes
+
+Module 2 — Outils de prévision et modélisation de la demande  (1 jour)
+
+▸  Principes de la prévision de la demande en santé
+
+▸  Utilisation de Quantimed, PipeLine, ForLAB, QAT
+
+▸  Ajustements saisonniers et facteurs contextuels
+
+▸  Analyse des écarts entre prévisions et consommations réelles
+
+Module 3 — Atelier pratique : exercices de quantification pays  (1 jour)
+
+▸  Étude de cas : quantification nationale d'ARV
+
+▸  Étude de cas : quantification des intrants paludisme
+
+▸  Simulation d'un exercice complet de quantification
+
+▸  Restitution et critique collective des résultats
+
+📂 Distribution et dernier kilomètre   ⏱ 3 jours  |  💰 600 USD
+
+Module 1 — Conception des réseaux de distribution  (1 jour)
+
+▸  Modèles de distribution (push, pull, hybride)
+
+▸  Niveaux de la chaîne de distribution (central, régional, district, FOSA)
+
+▸  Cartographie des flux logistiques
+
+▸  Optimisation des routes et des fréquences de livraison
+
+Module 2 — Stratégies de distribution au dernier kilomètre  (1 jour)
+
+▸  Défis spécifiques des zones rurales et enclavées
+
+▸  Distribution par agents communautaires
+
+▸  Stratégies mobiles et distribution intégrée
+
+▸  Exemples africains : Zambie, Rwanda, Éthiopie
+
+Module 3 — Suivi des livraisons et indicateurs de performance  (1 jour)
+
+▸  Outils de suivi des livraisons (bons de livraison, applications mobiles)
+
+▸  Indicateurs clés : taux de livraison complète, délai moyen, taux de retour
+
+▸  Tableaux de bord de suivi de la distribution
+
+▸  Étude de cas et exercices pratiques
+
+📂 Entreposage pharmaceutique   ⏱ 2 jours  |  💰 400 USD
+
+Module 1 — Normes d'entreposage (BPD, OMS)  (1 jour)
+
+▸  Bonnes pratiques de distribution (BPD) et directives OMS
+
+▸  Conditions de stockage par catégorie de produits
+
+▸  Séparation des produits (expirés, endommagés, FEFO)
+
+▸  Sécurité et contrôle d'accès à l'entrepôt
+
+Module 2 — Organisation physique et gestion des espaces  (1 jour)
+
+▸  Conception et aménagement d'un entrepôt pharmaceutique
+
+▸  Systèmes de rangement et d'adressage
+
+▸  Gestion des zones : réception, quarantaine, stockage, expédition
+
+▸  Maintenance de l'entrepôt et équipements de manutention
+
+📂 Chaîne du froid   ⏱ 2 jours  |  💰 400 USD
+
+Module 1 — Principes et équipements de la chaîne du froid  (1 jour)
+
+▸  Définition et enjeux de la chaîne du froid pharmaceutique
+
+▸  Types d'équipements (réfrigérateurs, congélateurs, chambres froides)
+
+▸  Normes de qualification des équipements (OMS PQS)
+
+▸  Procédures de stockage et de transport des produits thermosensibles
+
+Module 2 — Surveillance des températures et gestion des incidents  (1 jour)
+
+▸  Dispositifs de surveillance (thermomètres, enregistreurs, indicateurs)
+
+▸  Procédures d'alerte et d'intervention en cas d'excursion
+
+▸  Évaluation de l'impact sur la qualité des produits
+
+▸  Documentation et traçabilité des incidents de température
+
+🎓 Certification avancée en Quantification
+
+Synthèse de la certification
+
+Filière
+
+Durée
+
+Coût (USD)
+
+Quantification et prévisions
+
+3 jours
+
+600 USD
+
+Data analytics logistique
+
+3 jours
+
+700 USD
+
+TOTAL CERTIFICATION
+
+6 jours
+
+1300 USD
+
+Contenu détaillé
+
+📂 Quantification et prévisions   ⏱ 3 jours  |  💰 600 USD
+
+Module 1 — Méthodes de quantification  (1 jour)
+
+▸  Méthode basée sur la consommation : collecte et analyse des données
+
+▸  Méthode basée sur la morbidité : protocoles de traitement et incidence
+
+▸  Méthode basée sur les cibles de population
+
+▸  Comparaison et triangulation des méthodes
+
+Module 2 — Outils de prévision et modélisation de la demande  (1 jour)
+
+▸  Principes de la prévision de la demande en santé
+
+▸  Utilisation de Quantimed, PipeLine, ForLAB
+
+▸  Ajustements saisonniers et facteurs contextuels
+
+▸  Analyse des écarts entre prévisions et consommations réelles
+
+Module 3 — Atelier pratique : exercices de quantification pays  (1 jour)
+
+▸  Étude de cas : quantification nationale d'ARV
+
+▸  Étude de cas : quantification des intrants paludisme
+
+▸  Simulation d'un exercice complet de quantification
+
+▸  Restitution et critique collective des résultats
+
+📂 Data analytics logistique   ⏱ 3 jours  |  💰 700 USD
+
+Module 1 — Collecte et nettoyage des données logistiques  (1 jour)
+
+▸  Sources de données logistiques (LMIS, registres, rapports)
+
+▸  Identification et traitement des données manquantes ou erronées
+
+▸  Structuration des bases de données logistiques
+
+▸  Bonnes pratiques de saisie et de validation des données
+
+Module 2 — Visualisation avec Excel / Power BI  (1 jour)
+
+▸  Création de graphiques et tableaux croisés dynamiques sous Excel
+
+▸  Introduction à Power BI : connexion aux données, modélisation
+
+▸  Conception de visuels interactifs (courbes de stock, taux de disponibilité)
+
+▸  Partage et publication des rapports Power BI
+
+Module 3 — Tableaux de bord et aide à la décision  (1 jour)
+
+▸  Conception d'un tableau de bord logistique national
+
+▸  Indicateurs clés à monitorer (disponibilité, ruptures, couverture)
+
+▸  Utilisation des données pour les revues de performance
+
+▸  Atelier : construction d'un tableau de bord complet
+
+🎓 Certification en Gestion des Stocks
+
+Synthèse de la certification
+
+Filière
+
+Durée
+
+Coût (USD)
+
+Gestion des approvisionnements et des stocks
+
+5 jours
+
+800 USD
+
+Entreposage pharmaceutique
+
+2 jours
+
+400 USD
+
+Chaîne du froid
+
+2 jours
+
+400 USD
+
+TOTAL CERTIFICATION
+
+9 jours
+
+1600 USD
+
+Contenu détaillé
+
+📂 Gestion des approvisionnements et des stocks   ⏱ 5 jours  |  💰 800 USD
+
+Module 1 — Principes fondamentaux de la gestion des stocks  (1 jour)
+
+▸  Définitions et concepts clés (stock de sécurité, min, max)
+
+▸  Types de stocks et leur rôle dans la chaîne pharmaceutique
+
+▸  Indicateurs clés de performance (taux de rupture, surstockage)
+
+▸  Introduction aux bonnes pratiques de gestion des stocks
+
+Module 2 — Méthodes de calcul des niveaux de stock  (1 jour)
+
+▸  Calcul de la consommation moyenne mensuelle (CMM)
+
+▸  Méthode min/max : formules et application
+
+▸  Calcul du point de commande et du délai de livraison
+
+▸  Exercices pratiques sur données réelles
+
+Module 3 — Processus de commande et suivi fournisseurs  (1 jour)
+
+▸  Cycle de commande : de la quantification à la réception
+
+▸  Sélection et évaluation des fournisseurs
+
+▸  Gestion des contrats et des termes de livraison (Incoterms)
+
+▸  Outils de suivi des commandes et tableau de bord fournisseurs
+
+Module 4 — Gestion des ruptures et des surstocks  (1 jour)
+
+▸  Causes et conséquences des ruptures de stock
+
+▸  Stratégies de prévention et de gestion des ruptures
+
+▸  Identification et traitement des surstocks (redistribution, retour)
+
+▸  Plans de contingence et procédures d'urgence
+
+Module 5 — Systèmes d'inventaire et outils digitaux  (1 jour)
+
+▸  Types d'inventaires (permanent, périodique, tournant)
+
+▸  Procédures de comptage et de réconciliation
+
+▸  Outils digitaux de gestion des stocks
+
+▸  Atelier : simulation d'un inventaire complet
+
+📂 Entreposage pharmaceutique   ⏱ 2 jours  |  💰 400 USD
+
+Module 1 — Normes d'entreposage (BPD, OMS)  (1 jour)
+
+▸  Bonnes pratiques de distribution (BPD) et directives OMS
+
+▸  Conditions de stockage par catégorie de produits
+
+▸  Séparation des produits (expirés, endommagés, FEFO)
+
+▸  Sécurité et contrôle d'accès à l'entrepôt
+
+Module 2 — Organisation physique et gestion des espaces  (1 jour)
+
+▸  Conception et aménagement d'un entrepôt pharmaceutique
+
+▸  Systèmes de rangement et d'adressage
+
+▸  Gestion des zones : réception, quarantaine, stockage, expédition
+
+▸  Maintenance de l'entrepôt et équipements de manutention
+
+📂 Chaîne du froid   ⏱ 2 jours  |  💰 400 USD
+
+Module 1 — Principes et équipements de la chaîne du froid  (1 jour)
+
+▸  Définition et enjeux de la chaîne du froid pharmaceutique
+
+▸  Types d'équipements (réfrigérateurs, congélateurs, chambres froides)
+
+▸  Normes de qualification des équipements (OMS PQS)
+
+▸  Procédures de stockage et de transport des produits thermosensibles
+
+Module 2 — Surveillance des températures et gestion des incidents  (1 jour)
+
+▸  Dispositifs de surveillance (thermomètres, enregistreurs)
+
+▸  Procédures d'alerte et d'intervention en cas d'excursion
+
+▸  Évaluation de l'impact sur la qualité des produits
+
+▸  Documentation et traçabilité des incidents de température
+
+🎓 Certification en eLMIS & Data Visibility
+
+Synthèse de la certification
+
+Filière
+
+Durée
+
+Coût (USD)
+
+LMIS & eSIGL
+
+3 jours
+
+700 USD
+
+Data analytics logistique
+
+3 jours
+
+700 USD
+
+TOTAL CERTIFICATION
+
+6 jours
+
+1400 USD
+
+Contenu détaillé
+
+📂 LMIS & eSIGL   ⏱ 3 jours  |  💰 700 USD
+
+Module 1 — Architecture des systèmes LMIS  (1 jour)
+
+▸  Définition et rôle d'un LMIS dans la supply chain santé
+
+▸  Composantes d'un LMIS : collecte, transmission, analyse, feedback
+
+▸  Panorama des systèmes existants (eSIGL, OpenLMIS, DHIS2 logistique)
+
+▸  Critères de sélection et d'implémentation d'un LMIS
+
+Module 2 — Paramétrage et utilisation d'eSIGL  (1 jour)
+
+▸  Navigation dans l'interface eSIGL
+
+▸  Saisie des données de stock et des commandes
+
+▸  Génération des rapports et des ordres de commande automatiques
+
+▸  Administration des utilisateurs et droits d'accès
+
+Module 3 — Reporting et analyse des données logistiques  (1 jour)
+
+▸  Taux de complétude et de promptitude des rapports
+
+▸  Analyse des données de stock via eSIGL
+
+▸  Utilisation des données pour les décisions d'approvisionnement
+
+▸  Boucle de rétro-information (feedback loop) aux formations sanitaires
+
+📂 Data analytics logistique   ⏱ 3 jours  |  💰 700 USD
+
+Module 1 — Collecte et nettoyage des données logistiques  (1 jour)
+
+▸  Sources de données logistiques (LMIS, registres, rapports)
+
+▸  Identification et traitement des données manquantes ou erronées
+
+▸  Structuration des bases de données logistiques
+
+▸  Bonnes pratiques de saisie et de validation des données
+
+Module 2 — Visualisation avec Excel / Power BI  (1 jour)
+
+▸  Création de graphiques et tableaux croisés dynamiques sous Excel
+
+▸  Introduction à Power BI : connexion aux données, modélisation
+
+▸  Conception de visuels interactifs (courbes de stock, taux de disponibilité)
+
+▸  Partage et publication des rapports Power BI
+
+Module 3 — Tableaux de bord et aide à la décision  (1 jour)
+
+▸  Conception d'un tableau de bord logistique national
+
+▸  Indicateurs clés à monitorer (disponibilité, ruptures, couverture)
+
+▸  Utilisation des données pour les revues de performance
+
+▸  Atelier : construction d'un tableau de bord complet
+
+🎓 Certification en Distribution Pharmaceutique
+
+Synthèse de la certification
+
+Filière
+
+Durée
+
+Coût (USD)
+
+Distribution et dernier kilomètre
+
+3 jours
+
+600 USD
+
+Supply chain humanitaire
+
+2 jours
+
+500 USD
+
+Gestion des urgences sanitaires
+
+2 jours
+
+500 USD
+
+TOTAL CERTIFICATION
+
+7 jours
+
+1600 USD
+
+Contenu détaillé
+
+📂 Distribution et dernier kilomètre   ⏱ 3 jours  |  💰 600 USD
+
+Module 1 — Conception des réseaux de distribution  (1 jour)
+
+▸  Modèles de distribution (push, pull, hybride)
+
+▸  Niveaux de la chaîne de distribution (central, régional, district, FOSA)
+
+▸  Cartographie des flux logistiques
+
+▸  Optimisation des routes et des fréquences de livraison
+
+Module 2 — Stratégies de distribution au dernier kilomètre  (1 jour)
+
+▸  Défis spécifiques des zones rurales et enclavées
+
+▸  Distribution par agents communautaires
+
+▸  Stratégies mobiles et distribution intégrée
+
+▸  Exemples africains : Zambie, Rwanda, Éthiopie
+
+Module 3 — Suivi des livraisons et indicateurs de performance  (1 jour)
+
+▸  Outils de suivi des livraisons (bons de livraison, applications mobiles)
+
+▸  Indicateurs clés : taux de livraison complète, délai moyen, taux de retour
+
+▸  Tableaux de bord de suivi de la distribution
+
+▸  Étude de cas et exercices pratiques
+
+📂 Supply chain humanitaire   ⏱ 2 jours  |  💰 500 USD
+
+Module 1 — Spécificités de la logistique humanitaire  (1 jour)
+
+▸  Différences entre supply chain commerciale et humanitaire
+
+▸  Gestion des approvisionnements en contexte de crise
+
+▸  Acteurs clés de la logistique humanitaire (UNICEF, MSF, OCHA)
+
+▸  Procédures d'urgence et achats accélérés
+
+Module 2 — Coordination inter-agences et gestion des clusters  (1 jour)
+
+▸  Système des clusters humanitaires (Cluster Santé, Logistique)
+
+▸  Mécanismes de coordination et partage de l'information
+
+▸  Gestion des entrepôts humanitaires et des pipelines d'urgence
+
+▸  Étude de cas : réponse Ebola, COVID-19, crises alimentaires
+
+📂 Gestion des urgences sanitaires   ⏱ 2 jours  |  💰 500 USD
+
+Module 1 — Planification de la réponse aux urgences  (1 jour)
+
+▸  Cadres internationaux (RSI 2005, Sendai, NAPHS)
+
+▸  Évaluation des risques et cartographie des menaces sanitaires
+
+▸  Plans de préparation et de réponse aux urgences (PPRUC)
+
+▸  Simulation d'exercice : tabletop exercise
+
+Module 2 — Mobilisation rapide des stocks et contingences  (1 jour)
+
+▸  Stocks prépositionnés et stocks stratégiques nationaux
+
+▸  Procédures de déclenchement et de libération des stocks d'urgence
+
+▸  Coordination avec les partenaires (OMS, CEDEAO, Africa CDC)
+
+▸  Retour d'expérience : leçons apprises des crises récentes
+
+🎓 Executive Program en Leadership Supply Chain
+
+Synthèse de la certification
+
+Filière
+
+Durée
+
+Coût (USD)
+
+Gestion des approvisionnements et des stocks
+
+5 jours
+
+800 USD
+
+Data analytics logistique
+
+3 jours
+
+700 USD
+
+Supply chain humanitaire
+
+2 jours
+
+500 USD
+
+Gestion des urgences sanitaires
+
+2 jours
+
+500 USD
+
+TOTAL CERTIFICATION
+
+12 jours
+
+2500 USD
+
+Contenu détaillé
+
+📂 Gestion des approvisionnements et des stocks   ⏱ 5 jours  |  💰 800 USD
+
+Module 1 — Principes fondamentaux de la gestion des stocks  (1 jour)
+
+▸  Définitions et concepts clés (stock de sécurité, min, max)
+
+▸  Types de stocks et leur rôle dans la chaîne pharmaceutique
+
+▸  Indicateurs clés de performance (taux de rupture, surstockage)
+
+▸  Introduction aux bonnes pratiques de gestion des stocks
+
+Module 2 — Méthodes de calcul des niveaux de stock  (1 jour)
+
+▸  Calcul de la consommation moyenne mensuelle (CMM)
+
+▸  Méthode min/max : formules et application
+
+▸  Calcul du point de commande et du délai de livraison
+
+▸  Exercices pratiques sur données réelles
+
+Module 3 — Processus de commande et suivi fournisseurs  (1 jour)
+
+▸  Cycle de commande : de la quantification à la réception
+
+▸  Sélection et évaluation des fournisseurs
+
+▸  Gestion des contrats et des termes de livraison
+
+▸  Outils de suivi des commandes et tableau de bord fournisseurs
+
+Module 4 — Gestion des ruptures et des surstocks  (1 jour)
+
+▸  Causes et conséquences des ruptures de stock
+
+▸  Stratégies de prévention et de gestion des ruptures
+
+▸  Identification et traitement des surstocks
+
+▸  Plans de contingence et procédures d'urgence
+
+Module 5 — Systèmes d'inventaire et outils digitaux  (1 jour)
+
+▸  Types d'inventaires (permanent, périodique, tournant)
+
+▸  Procédures de comptage et de réconciliation
+
+▸  Outils digitaux de gestion des stocks
+
+▸  Atelier : simulation d'un inventaire complet
+
+📂 Data analytics logistique   ⏱ 3 jours  |  💰 700 USD
+
+Module 1 — Collecte et nettoyage des données logistiques  (1 jour)
+
+▸  Sources de données logistiques (LMIS, registres, rapports)
+
+▸  Identification et traitement des données manquantes ou erronées
+
+▸  Structuration des bases de données logistiques
+
+▸  Bonnes pratiques de saisie et de validation des données
+
+Module 2 — Visualisation avec Excel / Power BI  (1 jour)
+
+▸  Création de graphiques et tableaux croisés dynamiques sous Excel
+
+▸  Introduction à Power BI : connexion aux données, modélisation
+
+▸  Conception de visuels interactifs
+
+▸  Partage et publication des rapports Power BI
+
+Module 3 — Tableaux de bord et aide à la décision  (1 jour)
+
+▸  Conception d'un tableau de bord logistique national
+
+▸  Indicateurs clés à monitorer
+
+▸  Utilisation des données pour les revues de performance
+
+▸  Atelier : construction d'un tableau de bord complet
+
+📂 Supply chain humanitaire   ⏱ 2 jours  |  💰 500 USD
+
+Module 1 — Spécificités de la logistique humanitaire  (1 jour)
+
+▸  Différences entre supply chain commerciale et humanitaire
+
+▸  Gestion des approvisionnements en contexte de crise
+
+▸  Acteurs clés de la logistique humanitaire (UNICEF, MSF, OCHA)
+
+▸  Procédures d'urgence et achats accélérés
+
+Module 2 — Coordination inter-agences et gestion des clusters  (1 jour)
+
+▸  Système des clusters humanitaires
+
+▸  Mécanismes de coordination et partage de l'information
+
+▸  Gestion des entrepôts humanitaires et des pipelines d'urgence
+
+▸  Étude de cas : réponse Ebola, COVID-19, crises alimentaires
+
+📂 Gestion des urgences sanitaires   ⏱ 2 jours  |  💰 500 USD
+
+Module 1 — Planification de la réponse aux urgences  (1 jour)
+
+▸  Cadres internationaux (RSI 2005, Sendai, NAPHS)
+
+▸  Évaluation des risques et cartographie des menaces sanitaires
+
+▸  Plans de préparation et de réponse aux urgences
+
+▸  Simulation d'exercice : tabletop exercise
+
+Module 2 — Mobilisation rapide des stocks et contingences  (1 jour)
+
+▸  Stocks prépositionnés et stocks stratégiques nationaux
+
+▸  Procédures de déclenchement et de libération des stocks d'urgence
+
+▸  Coordination avec les partenaires (OMS, CEDEAO, Africa CDC)
+
+▸  Retour d'expérience : leçons apprises des crises récentes
+
+ACADÉMIE 2 — ACADÉMIE RÉGLEMENTATION PHARMACEUTIQUE
+
+Mission : Développer des compétences avancées en gouvernance pharmaceutique, conformité réglementaire et assurance qualité.
+
+🎓 Certificat en Cadre Réglementaire Pharmaceutique
+
+Synthèse de la certification
+
+Filière
+
+Durée
+
+Coût (USD)
+
+Réglementation pharmaceutique
+
+5 jours
+
+900 USD
+
+Gouvernance pharmaceutique
+
+3 jours
+
+700 USD
+
+Gestion réglementaire des produits de santé
+
+3 jours
+
+700 USD
+
+TOTAL CERTIFICATION
+
+11 jours
+
+2300 USD
+
+Contenu détaillé
+
+📂 Réglementation pharmaceutique   ⏱ 5 jours  |  💰 900 USD
+
+Module 1 — Cadres réglementaires nationaux et régionaux  (1 jour)
+
+▸  Structure des systèmes réglementaires pharmaceutiques nationaux
+
+▸  Rôle de l'ARCA, de la CEDEAO et de l'Union Africaine
+
+▸  Comparaison des cadres réglementaires (Afrique, Europe, USA)
+
+▸  Défis de l'harmonisation réglementaire en Afrique
+
+Module 2 — Enregistrement des médicaments  (1 jour)
+
+▸  Processus d'enregistrement : dossier technique, évaluation, décision
+
+▸  Critères d'évaluation de la qualité, sécurité et efficacité
+
+▸  Procédures accélérées pour les médicaments essentiels
+
+▸  Gestion des délais et des rejets de dossiers
+
+Module 3 — Contrôle de qualité des produits  (1 jour)
+
+▸  Techniques de contrôle qualité en laboratoire
+
+▸  Pharmacopées de référence (BP, USP, Ph. Eur.)
+
+▸  Plans d'échantillonnage et de surveillance post-commercialisation
+
+▸  Gestion des résultats hors spécifications (OOS)
+
+Module 4 — Lutte contre les médicaments falsifiés et sous-standards  (1 jour)
+
+▸  Ampleur du problème en Afrique subsaharienne
+
+▸  Systèmes d'alerte rapide (RAPID ALERT, WHO Global Surveillance)
+
+▸  Techniques de détection sur le terrain (Minilab, GPHF)
+
+▸  Cadres juridiques et sanctions applicables
+
+Module 5 — Harmonisation réglementaire africaine  (1 jour)
+
+▸  Initiative d'harmonisation réglementaire africaine (ARIA)
+
+▸  ZLECAf et ses implications pour la réglementation pharmaceutique
+
+▸  Procédures de reconnaissance mutuelle entre pays
+
+▸  Perspectives : Agence africaine du médicament (AMA)
+
+📂 Gouvernance pharmaceutique   ⏱ 3 jours  |  💰 700 USD
+
+Module 1 — Politiques pharmaceutiques nationales  (1 jour)
+
+▸  Composantes d'une politique pharmaceutique nationale (PPN)
+
+▸  Élaboration, mise en œuvre et révision des PPN
+
+▸  Liste nationale des médicaments essentiels (LNME)
+
+▸  Politique de génériques et accès aux médicaments abordables
+
+Module 2 — Mécanismes de financement et d'accès  (1 jour)
+
+▸  Sources de financement du secteur pharmaceutique
+
+▸  Mécanismes de prix et de remboursement
+
+▸  Fonds communs d'achat et centrales d'achats (ACAME, OOAS)
+
+▸  Partenariats public-privé pour l'accès aux médicaments
+
+Module 3 — Rôle des agences de régulation  (1 jour)
+
+▸  Missions et attributions d'une agence nationale de régulation
+
+▸  Indépendance, financement et gouvernance des agences
+
+▸  Inspection et contrôle du marché pharmaceutique
+
+▸  Benchmarking : NAFDAC, SAHPRA, ANSM
+
+📂 Gestion réglementaire des produits de santé   ⏱ 3 jours  |  💰 700 USD
+
+Module 1 — Dossiers d'enregistrement (CTD/ACTD)  (1 jour)
+
+▸  Structure du dossier technique commun (CTD/eCTD)
+
+▸  Format africain ACTD : spécificités et exigences
+
+▸  Modules du CTD : qualité, préclinique, clinique
+
+▸  Préparation et soumission électronique des dossiers
+
+Module 2 — Gestion du cycle de vie des produits  (1 jour)
+
+▸  Maintien de l'autorisation de mise sur le marché (AMM)
+
+▸  Gestion des variations (Type I, Type II, extensions de gamme)
+
+▸  Surveillance post-commercialisation
+
+▸  Retraits de lot et alertes de sécurité
+
+Module 3 — Renouvellements, variations et retraits de marché  (1 jour)
+
+▸  Procédures de renouvellement des AMM
+
+▸  Classification et gestion des variations réglementaires
+
+▸  Procédures de retrait volontaire et obligatoire
+
+▸  Communication de crise lors d'un retrait de marché
+
+🎓 Certification en Assurance Qualité
+
+Synthèse de la certification
+
+Filière
+
+Durée
+
+Coût (USD)
+
+Assurance qualité
+
+5 jours
+
+900 USD
+
+Inspection pharmaceutique
+
+3 jours
+
+700 USD
+
+Traçabilité pharmaceutique
+
+2 jours
+
+500 USD
+
+TOTAL CERTIFICATION
+
+10 jours
+
+2100 USD
+
+Contenu détaillé
+
+📂 Assurance qualité   ⏱ 5 jours  |  💰 900 USD
+
+Module 1 — Systèmes de management de la qualité  (1 jour)
+
+▸  Principes ISO 9001 appliqués au secteur pharmaceutique
+
+▸  Bonnes pratiques de fabrication (BPF/GMP) OMS et ICH
+
+▸  Structure d'un système qualité pharmaceutique (PQS)
+
+▸  Culture qualité et engagement de la direction
+
+Module 2 — Audits internes et externes  (1 jour)
+
+▸  Planification et conduite d'un audit qualité
+
+▸  Techniques d'entretien et d'observation lors des audits
+
+▸  Rédaction des rapports d'audit et des non-conformités
+
+▸  Suivi des actions correctives et préventives (CAPA)
+
+Module 3 — Gestion des non-conformités  (1 jour)
+
+▸  Identification et classification des non-conformités
+
+▸  Analyse des causes profondes (diagramme d'Ishikawa, 5 Pourquoi)
+
+▸  Plan d'actions correctives et préventives (CAPA)
+
+▸  Évaluation de l'efficacité des actions mises en place
+
+Module 4 — Qualification et validation  (1 jour)
+
+▸  Qualification des équipements (IQ, OQ, PQ)
+
+▸  Validation des procédés de fabrication et de nettoyage
+
+▸  Validation des méthodes analytiques
+
+▸  Gestion des changements (change control)
+
+Module 5 — Documentation qualité  (1 jour)
+
+▸  Hiérarchie documentaire (politiques, SOPs, instructions, enregistrements)
+
+▸  Rédaction et maîtrise des SOPs
+
+▸  Gestion électronique des documents (GED)
+
+▸  Archivage et traçabilité documentaire
+
+📂 Inspection pharmaceutique   ⏱ 3 jours  |  💰 700 USD
+
+Module 1 — Méthodologie d'inspection des établissements  (1 jour)
+
+▸  Types d'inspections (routine, ciblée, de suivi, inopinée)
+
+▸  Préparation d'une inspection : checklist et planification
+
+▸  Conduite de l'inspection : ouverture, visite, clôture
+
+▸  Droits et obligations des inspecteurs et des inspectés
+
+Module 2 — Inspection des officines et grossistes  (1 jour)
+
+▸  Critères d'inspection des officines (locaux, personnel, stocks)
+
+▸  Inspection des grossistes-répartiteurs et dépôts
+
+▸  Vérification des conditions de stockage et de distribution
+
+▸  Identification des infractions et sanctions applicables
+
+Module 3 — Rédaction des rapports d'inspection  (1 jour)
+
+▸  Structure et contenu d'un rapport d'inspection
+
+▸  Classification des observations (critique, majeure, mineure)
+
+▸  Notification aux établissements inspectés
+
+▸  Suivi des mesures correctives et fermeture des observations
+
+📂 Traçabilité pharmaceutique   ⏱ 2 jours  |  💰 500 USD
+
+Module 1 — Systèmes de sérialisation et track & trace  (1 jour)
+
+▸  Principes de la sérialisation des médicaments
+
+▸  Standards internationaux (GS1, DataMatrix, QR codes)
+
+▸  Systèmes de track & trace : niveaux (unité, boîte, palette)
+
+▸  Réglementation internationale (EU FMD, DSCSA USA)
+
+Module 2 — Outils numériques de traçabilité  (1 jour)
+
+▸  Technologies RFID : principes et applications pharmaceutiques
+
+▸  Codes QR et vérification par smartphone
+
+▸  Intégration avec les systèmes ERP et LMIS
+
+▸  Étude de cas : mise en œuvre de la traçabilité en Afrique
+
+🎓 Certification en Bonnes Pratiques Pharmaceutiques
+
+Synthèse de la certification
+
+Filière
+
+Durée
+
+Coût (USD)
+
+Assurance qualité
+
+5 jours
+
+900 USD
+
+Importation et conformité
+
+2 jours
+
+500 USD
+
+Inspection pharmaceutique
+
+3 jours
+
+700 USD
+
+TOTAL CERTIFICATION
+
+10 jours
+
+2100 USD
+
+Contenu détaillé
+
+📂 Assurance qualité   ⏱ 5 jours  |  💰 900 USD
+
+Module 1 — Systèmes de management de la qualité  (1 jour)
+
+▸  Principes ISO 9001 appliqués au secteur pharmaceutique
+
+▸  Bonnes pratiques de fabrication (BPF/GMP) OMS et ICH
+
+▸  Structure d'un système qualité pharmaceutique (PQS)
+
+▸  Culture qualité et engagement de la direction
+
+Module 2 — Audits internes et externes  (1 jour)
+
+▸  Planification et conduite d'un audit qualité
+
+▸  Techniques d'entretien et d'observation lors des audits
+
+▸  Rédaction des rapports d'audit et des non-conformités
+
+▸  Suivi des actions correctives et préventives (CAPA)
+
+Module 3 — Gestion des non-conformités  (1 jour)
+
+▸  Identification et classification des non-conformités
+
+▸  Analyse des causes profondes (Ishikawa, 5 Pourquoi)
+
+▸  Plan d'actions correctives et préventives (CAPA)
+
+▸  Évaluation de l'efficacité des actions mises en place
+
+Module 4 — Qualification et validation  (1 jour)
+
+▸  Qualification des équipements (IQ, OQ, PQ)
+
+▸  Validation des procédés de fabrication et de nettoyage
+
+▸  Validation des méthodes analytiques
+
+▸  Gestion des changements (change control)
+
+Module 5 — Documentation qualité  (1 jour)
+
+▸  Hiérarchie documentaire (politiques, SOPs, instructions)
+
+▸  Rédaction et maîtrise des SOPs
+
+▸  Gestion électronique des documents (GED)
+
+▸  Archivage et traçabilité documentaire
+
+📂 Importation et conformité   ⏱ 2 jours  |  💰 500 USD
+
+Module 1 — Procédures d'importation et de dédouanement  (1 jour)
+
+▸  Réglementation douanière applicable aux produits pharmaceutiques
+
+▸  Documents requis : certificat d'analyse, de conformité, AMM
+
+▸  Procédures de dédouanement accéléré pour les urgences
+
+▸  Rôle des transitaires et des courtiers en douane
+
+Module 2 — Vérification de conformité et certification  (1 jour)
+
+▸  Inspection à la réception des produits importés
+
+▸  Certificats OMS de produit pharmaceutique (CPP)
+
+▸  Mécanismes de vérification de l'authenticité des documents
+
+▸  Procédures de retour et de destruction des produits non conformes
+
+📂 Inspection pharmaceutique   ⏱ 3 jours  |  💰 700 USD
+
+Module 1 — Méthodologie d'inspection des établissements  (1 jour)
+
+▸  Types d'inspections (routine, ciblée, de suivi, inopinée)
+
+▸  Préparation d'une inspection : checklist et planification
+
+▸  Conduite de l'inspection : ouverture, visite, clôture
+
+▸  Droits et obligations des inspecteurs et des inspectés
+
+Module 2 — Inspection des officines et grossistes  (1 jour)
+
+▸  Critères d'inspection des officines (locaux, personnel, stocks)
+
+▸  Inspection des grossistes-répartiteurs et dépôts
+
+▸  Vérification des conditions de stockage et de distribution
+
+▸  Identification des infractions et sanctions applicables
+
+Module 3 — Rédaction des rapports d'inspection  (1 jour)
+
+▸  Structure et contenu d'un rapport d'inspection
+
+▸  Classification des observations (critique, majeure, mineure)
+
+▸  Notification aux établissements inspectés
+
+▸  Suivi des mesures correctives et fermeture des observations
+
+🎓 Certification en Pharmacovigilance
+
+Synthèse de la certification
+
+Filière
+
+Durée
+
+Coût (USD)
+
+Pharmacovigilance
+
+3 jours
+
+700 USD
+
+Gestion réglementaire des produits de santé
+
+3 jours
+
+700 USD
+
+TOTAL CERTIFICATION
+
+6 jours
+
+1400 USD
+
+Contenu détaillé
+
+📂 Pharmacovigilance   ⏱ 3 jours  |  💰 700 USD
+
+Module 1 — Systèmes de notification des effets indésirables  (1 jour)
+
+▸  Définitions : effet indésirable, événement indésirable, signal
+
+▸  Obligations réglementaires de notification (professionnels, industrie)
+
+▸  Formulaires de notification et circuits de remontée
+
+▸  Rôle des centres nationaux de pharmacovigilance
+
+Module 2 — Analyse de causalité et évaluation des signaux  (1 jour)
+
+▸  Algorithmes de causalité (OMS-Uppsala, Naranjo)
+
+▸  Détection et validation des signaux de sécurité
+
+▸  Gestion des risques : REMS, plans de gestion des risques (RMP)
+
+▸  Communication sur les risques médicamenteux
+
+Module 3 — Reporting national et international  (1 jour)
+
+▸  Exigences de reporting aux autorités nationales
+
+▸  Soumission à la base de données OMS VigiBase
+
+▸  Rapports périodiques de sécurité (PSUR/PBRER)
+
+▸  Collaboration avec le Programme OMS de pharmacovigilance
+
+📂 Gestion réglementaire des produits de santé   ⏱ 3 jours  |  💰 700 USD
+
+Module 1 — Dossiers d'enregistrement (CTD/ACTD)  (1 jour)
+
+▸  Structure du dossier technique commun (CTD/eCTD)
+
+▸  Format africain ACTD : spécificités et exigences
+
+▸  Modules du CTD : qualité, préclinique, clinique
+
+▸  Préparation et soumission électronique des dossiers
+
+Module 2 — Gestion du cycle de vie des produits  (1 jour)
+
+▸  Maintien de l'autorisation de mise sur le marché (AMM)
+
+▸  Gestion des variations (Type I, Type II, extensions de gamme)
+
+▸  Surveillance post-commercialisation
+
+▸  Retraits de lot et alertes de sécurité
+
+Module 3 — Renouvellements, variations et retraits de marché  (1 jour)
+
+▸  Procédures de renouvellement des AMM
+
+▸  Classification et gestion des variations réglementaires
+
+▸  Procédures de retrait volontaire et obligatoire
+
+▸  Communication de crise lors d'un retrait de marché
+
+🎓 Certification en Régulation Pharmaceutique
+
+Synthèse de la certification
+
+Filière
+
+Durée
+
+Coût (USD)
+
+Réglementation pharmaceutique
+
+5 jours
+
+900 USD
+
+Gouvernance pharmaceutique
+
+3 jours
+
+700 USD
+
+Importation et conformité
+
+2 jours
+
+500 USD
+
+Traçabilité pharmaceutique
+
+2 jours
+
+500 USD
+
+Inspection pharmaceutique
+
+3 jours
+
+700 USD
+
+TOTAL CERTIFICATION
+
+15 jours
+
+3300 USD
+
+Contenu détaillé
+
+📂 Réglementation pharmaceutique   ⏱ 5 jours  |  💰 900 USD
+
+Module 1 — Cadres réglementaires nationaux et régionaux  (1 jour)
+
+▸  Structure des systèmes réglementaires pharmaceutiques nationaux
+
+▸  Rôle de l'ARCA, de la CEDEAO et de l'Union Africaine
+
+▸  Comparaison des cadres réglementaires (Afrique, Europe, USA)
+
+▸  Défis de l'harmonisation réglementaire en Afrique
+
+Module 2 — Enregistrement des médicaments  (1 jour)
+
+▸  Processus d'enregistrement : dossier technique, évaluation, décision
+
+▸  Critères d'évaluation de la qualité, sécurité et efficacité
+
+▸  Procédures accélérées pour les médicaments essentiels
+
+▸  Gestion des délais et des rejets de dossiers
+
+Module 3 — Contrôle de qualité des produits  (1 jour)
+
+▸  Techniques de contrôle qualité en laboratoire
+
+▸  Pharmacopées de référence (BP, USP, Ph. Eur.)
+
+▸  Plans d'échantillonnage et de surveillance post-commercialisation
+
+▸  Gestion des résultats hors spécifications (OOS)
+
+Module 4 — Lutte contre les médicaments falsifiés  (1 jour)
+
+▸  Ampleur du problème en Afrique subsaharienne
+
+▸  Systèmes d'alerte rapide (RAPID ALERT, WHO Global Surveillance)
+
+▸  Techniques de détection sur le terrain (Minilab, GPHF)
+
+▸  Cadres juridiques et sanctions applicables
+
+Module 5 — Harmonisation réglementaire africaine  (1 jour)
+
+▸  Initiative d'harmonisation réglementaire africaine (ARIA)
+
+▸  ZLECAf et ses implications pour la réglementation pharmaceutique
+
+▸  Procédures de reconnaissance mutuelle entre pays
+
+▸  Perspectives : Agence africaine du médicament (AMA)
+
+📂 Gouvernance pharmaceutique   ⏱ 3 jours  |  💰 700 USD
+
+Module 1 — Politiques pharmaceutiques nationales  (1 jour)
+
+▸  Composantes d'une politique pharmaceutique nationale (PPN)
+
+▸  Élaboration, mise en œuvre et révision des PPN
+
+▸  Liste nationale des médicaments essentiels (LNME)
+
+▸  Politique de génériques et accès aux médicaments abordables
+
+Module 2 — Mécanismes de financement et d'accès  (1 jour)
+
+▸  Sources de financement du secteur pharmaceutique
+
+▸  Mécanismes de prix et de remboursement
+
+▸  Fonds communs d'achat et centrales d'achats (ACAME, OOAS)
+
+▸  Partenariats public-privé pour l'accès aux médicaments
+
+Module 3 — Rôle des agences de régulation  (1 jour)
+
+▸  Missions et attributions d'une agence nationale de régulation
+
+▸  Indépendance, financement et gouvernance des agences
+
+▸  Inspection et contrôle du marché pharmaceutique
+
+▸  Benchmarking : NAFDAC, SAHPRA, ANSM
+
+📂 Importation et conformité   ⏱ 2 jours  |  💰 500 USD
+
+Module 1 — Procédures d'importation et de dédouanement  (1 jour)
+
+▸  Réglementation douanière applicable aux produits pharmaceutiques
+
+▸  Documents requis : certificat d'analyse, de conformité, AMM
+
+▸  Procédures de dédouanement accéléré pour les urgences
+
+▸  Rôle des transitaires et des courtiers en douane
+
+Module 2 — Vérification de conformité et certification  (1 jour)
+
+▸  Inspection à la réception des produits importés
+
+▸  Certificats OMS de produit pharmaceutique (CPP)
+
+▸  Mécanismes de vérification de l'authenticité des documents
+
+▸  Procédures de retour et de destruction des produits non conformes
+
+📂 Traçabilité pharmaceutique   ⏱ 2 jours  |  💰 500 USD
+
+Module 1 — Systèmes de sérialisation et track & trace  (1 jour)
+
+▸  Principes de la sérialisation des médicaments
+
+▸  Standards internationaux (GS1, DataMatrix, QR codes)
+
+▸  Systèmes de track & trace : niveaux (unité, boîte, palette)
+
+▸  Réglementation internationale (EU FMD, DSCSA USA)
+
+Module 2 — Outils numériques de traçabilité  (1 jour)
+
+▸  Technologies RFID : principes et applications pharmaceutiques
+
+▸  Codes QR et vérification par smartphone
+
+▸  Intégration avec les systèmes ERP et LMIS
+
+▸  Étude de cas : mise en œuvre de la traçabilité en Afrique
+
+📂 Inspection pharmaceutique   ⏱ 3 jours  |  💰 700 USD
+
+Module 1 — Méthodologie d'inspection des établissements  (1 jour)
+
+▸  Types d'inspections (routine, ciblée, de suivi, inopinée)
+
+▸  Préparation d'une inspection : checklist et planification
+
+▸  Conduite de l'inspection : ouverture, visite, clôture
+
+▸  Droits et obligations des inspecteurs et des inspectés
+
+Module 2 — Inspection des officines et grossistes  (1 jour)
+
+▸  Critères d'inspection des officines (locaux, personnel, stocks)
+
+▸  Inspection des grossistes-répartiteurs et dépôts
+
+▸  Vérification des conditions de stockage et de distribution
+
+▸  Identification des infractions et sanctions applicables
+
+Module 3 — Rédaction des rapports d'inspection  (1 jour)
+
+▸  Structure et contenu d'un rapport d'inspection
+
+▸  Classification des observations (critique, majeure, mineure)
+
+▸  Notification aux établissements inspectés
+
+▸  Suivi des mesures correctives et fermeture des observations
+
+ACADÉMIE 3 — ACADÉMIE SANTÉ DIGITALE & INNOVATION
+
+Mission : Former les leaders de la transformation numérique des systèmes de santé africains.
+
+🎓 Certificat en Santé Digitale
+
+Synthèse de la certification
+
+Filière
+
+Durée
+
+Coût (USD)
+
+Santé numérique
+
+3 jours
+
+700 USD
+
+Architecture des systèmes santé
+
+5 jours
+
+1100 USD
+
+Gouvernance des données
+
+3 jours
+
+700 USD
+
+TOTAL CERTIFICATION
+
+11 jours
+
+2500 USD
+
+Contenu détaillé
+
+📂 Santé numérique   ⏱ 3 jours  |  💰 700 USD
+
+Module 1 — Panorama des outils de santé digitale  (1 jour)
+
+▸  Écosystème global des outils de santé numérique
+
+▸  DHIS2 : architecture, modules et cas d'usage
+
+▸  CommCare et ODK : collecte de données sur le terrain
+
+▸  Autres outils : OpenMRS, iHRIS, RapidPro
+
+Module 2 — Stratégies nationales de santé numérique  (1 jour)
+
+▸  Composantes d'une stratégie nationale de santé numérique
+
+▸  Cadre de l'OMS pour la transformation numérique de la santé
+
+▸  Expériences africaines : Kenya, Sénégal, Rwanda, Éthiopie
+
+▸  Gouvernance et coordination des initiatives e-santé
+
+Module 3 — Interopérabilité des systèmes d'information de santé  (1 jour)
+
+▸  Définition et enjeux de l'interopérabilité en santé
+
+▸  Standards d'échange de données (HL7, FHIR, ADX)
+
+▸  Architecture ouverte OpenHIE
+
+▸  Mise en œuvre d'un cadre d'interopérabilité national
+
+📂 Architecture des systèmes santé   ⏱ 5 jours  |  💰 1100 USD
+
+Module 1 — Principes d'architecture des systèmes d'information  (1 jour)
+
+▸  Concepts fondamentaux : architecture, composants, couches
+
+▸  Architecture orientée services (SOA) et microservices
+
+▸  Patterns d'intégration des systèmes d'information
+
+▸  Documentation d'architecture (UML, ArchiMate)
+
+Module 2 — Conception d'un SIS national  (1 jour)
+
+▸  Cartographie des besoins fonctionnels d'un SIS national
+
+▸  Composantes d'un SIS : DHIS2, eLMIS, dossier patient électronique
+
+▸  Approche modulaire et évolutive
+
+▸  Gouvernance et comité de pilotage d'un SIS
+
+Module 3 — Standards d'interopérabilité (HL7, FHIR, OpenHIE)  (1 jour)
+
+▸  HL7 FHIR : ressources, API RESTful et cas d'usage
+
+▸  Standards OpenHIE et profils IHE
+
+▸  Médiateurs d'intégration (OpenHIM)
+
+▸  Mise en œuvre pratique d'une interface d'interopérabilité
+
+Module 4 — Infrastructure cloud et hébergement sécurisé  (1 jour)
+
+▸  Modèles cloud (IaaS, PaaS, SaaS) pour la santé
+
+▸  Souveraineté des données et hébergement local vs cloud
+
+▸  Sécurisation de l'infrastructure (pare-feu, chiffrement, sauvegardes)
+
+▸  Dimensionnement et scalabilité des serveurs
+
+Module 5 — Gouvernance et maintenance des systèmes  (1 jour)
+
+▸  Gestion du cycle de vie des systèmes d'information
+
+▸  Contrats de maintenance et niveaux de service (SLA)
+
+▸  Gestion des mises à jour et des migrations
+
+▸  Tableau de bord de monitoring des systèmes
+
+📂 Gouvernance des données   ⏱ 3 jours  |  💰 700 USD
+
+Module 1 — Politique de gestion des données de santé  (1 jour)
+
+▸  Définition et enjeux de la gouvernance des données
+
+▸  Propriété, responsabilité et droits sur les données de santé
+
+▸  Élaboration d'une politique nationale de données de santé
+
+▸  Rôles : propriétaire, gestionnaire, utilisateur des données
+
+Module 2 — Protection des données et conformité  (1 jour)
+
+▸  Principes du RGPD et leur application en contexte africain
+
+▸  Législations africaines sur la protection des données (UEMOA, CEDEAO)
+
+▸  Consentement éclairé et anonymisation des données
+
+▸  Audit de conformité et mesures de protection
+
+Module 3 — Qualité et intégrité des données  (1 jour)
+
+▸  Dimensions de la qualité des données (exactitude, complétude, cohérence)
+
+▸  Outils d'évaluation de la qualité des données (RDQA, DQA)
+
+▸  Processus de validation et de nettoyage des données
+
+▸  Culture de la qualité des données au sein des organisations
+
+🎓 Certification en Traçabilité
+
+Synthèse de la certification
+
+Filière
+
+Durée
+
+Coût (USD)
+
+Traçabilité des produits de santé
+
+2 jours
+
+500 USD
+
+eLMIS
+
+3 jours
+
+700 USD
+
+TOTAL CERTIFICATION
+
+5 jours
+
+1200 USD
+
+Contenu détaillé
+
+📂 Traçabilité des produits de santé   ⏱ 2 jours  |  💰 500 USD
+
+Module 1 — Technologies de traçabilité (codes-barres, QR, RFID)  (1 jour)
+
+▸  Codes-barres 1D et 2D (EAN, DataMatrix) : principes et lecture
+
+▸  QR codes : génération, encodage et vérification
+
+▸  RFID : fonctionnement, avantages et limites
+
+▸  Comparaison des technologies et choix selon le contexte
+
+Module 2 — Mise en œuvre dans les chaînes d'approvisionnement  (1 jour)
+
+▸  Étapes de déploiement d'un système de traçabilité
+
+▸  Intégration avec les systèmes ERP et LMIS
+
+▸  Formation des utilisateurs et gestion du changement
+
+▸  Étude de cas : déploiement en Afrique francophone
+
+📂 eLMIS   ⏱ 3 jours  |  💰 700 USD
+
+Module 1 — Introduction aux systèmes eLMIS  (1 jour)
+
+▸  Définition, fonctions et bénéfices d'un eLMIS
+
+▸  Panorama des solutions disponibles (OpenLMIS, eSIGL, mSupply)
+
+▸  Critères de sélection d'un eLMIS adapté au contexte national
+
+▸  Facteurs clés de succès de l'implémentation
+
+Module 2 — Configuration et administration  (1 jour)
+
+▸  Paramétrage d'un eLMIS : produits, établissements, utilisateurs
+
+▸  Configuration des workflows et des processus métier
+
+▸  Gestion des droits d'accès et des rôles
+
+▸  Maintenance et mises à jour du système
+
+Module 3 — Exploitation des données pour la prise de décision  (1 jour)
+
+▸  Extraction et analyse des données de stock depuis l'eLMIS
+
+▸  Génération de rapports automatisés
+
+▸  Intégration avec DHIS2 et autres systèmes
+
+▸  Utilisation des données pour les revues de programme
+
+🎓 Certification en Data Analytics Santé
+
+Synthèse de la certification
+
+Filière
+
+Durée
+
+Coût (USD)
+
+Collecte et analyse digitale des données de santé
+
+3 jours
+
+700 USD
+
+Gouvernance des données
+
+3 jours
+
+700 USD
+
+Intelligence artificielle appliquée à la santé
+
+5 jours
+
+1200 USD
+
+TOTAL CERTIFICATION
+
+11 jours
+
+2600 USD
+
+Contenu détaillé
+
+📂 Collecte et analyse digitale des données de santé   ⏱ 3 jours  |  💰 700 USD
+
+Module 1 — Outils de collecte mobile (KoboToolbox, ODK)  (1 jour)
+
+▸  KoboToolbox : conception de formulaires et déploiement
+
+▸  ODK Collect : installation, paramétrage et synchronisation
+
+▸  Conception de questionnaires adaptés aux mobiles
+
+▸  Gestion des données hors connexion et synchronisation
+
+Module 2 — Nettoyage et structuration des données  (1 jour)
+
+▸  Identification des erreurs et des valeurs aberrantes
+
+▸  Techniques de nettoyage sous Excel et R/Python
+
+▸  Structuration des bases de données pour l'analyse
+
+▸  Documentation des procédures de nettoyage
+
+Module 3 — Analyse et interprétation des résultats  (1 jour)
+
+▸  Statistiques descriptives appliquées aux données de santé
+
+▸  Tests statistiques de base (chi², t-test, corrélation)
+
+▸  Présentation et communication des résultats
+
+▸  Rédaction d'un rapport d'analyse de données
+
+📂 Gouvernance des données   ⏱ 3 jours  |  💰 700 USD
+
+Module 1 — Politique de gestion des données de santé  (1 jour)
+
+▸  Définition et enjeux de la gouvernance des données
+
+▸  Propriété, responsabilité et droits sur les données de santé
+
+▸  Élaboration d'une politique nationale de données de santé
+
+▸  Rôles : propriétaire, gestionnaire, utilisateur des données
+
+Module 2 — Protection des données et conformité  (1 jour)
+
+▸  Principes du RGPD et leur application en contexte africain
+
+▸  Législations africaines sur la protection des données
+
+▸  Consentement éclairé et anonymisation des données
+
+▸  Audit de conformité et mesures de protection
+
+Module 3 — Qualité et intégrité des données  (1 jour)
+
+▸  Dimensions de la qualité des données (exactitude, complétude, cohérence)
+
+▸  Outils d'évaluation de la qualité des données (RDQA, DQA)
+
+▸  Processus de validation et de nettoyage des données
+
+▸  Culture de la qualité des données au sein des organisations
+
+📂 Intelligence artificielle appliquée à la santé   ⏱ 5 jours  |  💰 1200 USD
+
+Module 1 — Fondamentaux de l'IA et du machine learning  (1 jour)
+
+▸  Concepts clés : IA, machine learning, deep learning
+
+▸  Types d'apprentissage (supervisé, non supervisé, par renforcement)
+
+▸  Principales familles d'algorithmes et leurs applications
+
+▸  Environnements de développement (Python, TensorFlow, scikit-learn)
+
+Module 2 — IA appliquée au diagnostic et à l'imagerie médicale  (1 jour)
+
+▸  Réseaux de neurones convolutifs (CNN) pour l'imagerie
+
+▸  Applications : détection de la malaria, TB, rétinopathie
+
+▸  Validation clinique des algorithmes d'IA
+
+▸  Enjeux de l'intégration de l'IA dans le parcours de soins
+
+Module 3 — IA pour la prédiction épidémiologique  (1 jour)
+
+▸  Modèles prédictifs de propagation des épidémies
+
+▸  Analyse des données de surveillance épidémiologique
+
+▸  Systèmes d'alerte précoce basés sur l'IA
+
+▸  Cas d'usage : prédiction du paludisme, choléra, COVID-19
+
+Module 4 — Enjeux éthiques de l'IA en santé  (1 jour)
+
+▸  Biais algorithmiques et équité en santé
+
+▸  Transparence et explicabilité des modèles d'IA
+
+▸  Responsabilité médicale et juridique des décisions assistées par IA
+
+▸  Cadres éthiques internationaux (UNESCO, OMS)
+
+Module 5 — Atelier pratique : cas d'usage africains  (1 jour)
+
+▸  Développement d'un modèle de prédiction simple
+
+▸  Analyse d'un jeu de données de santé africain
+
+▸  Présentation et critique des projets développés
+
+▸  Perspectives de déploiement à l'échelle nationale
+
+🎓 Certification Power BI Santé
+
+Synthèse de la certification
+
+Filière
+
+Durée
+
+Coût (USD)
+
+Collecte et analyse digitale des données de santé
+
+3 jours
+
+700 USD
+
+Gouvernance des données
+
+3 jours
+
+700 USD
+
+TOTAL CERTIFICATION
+
+6 jours
+
+1400 USD
+
+Contenu détaillé
+
+📂 Collecte et analyse digitale des données de santé   ⏱ 3 jours  |  💰 700 USD
+
+Module 1 — Outils de collecte mobile (KoboToolbox, ODK)  (1 jour)
+
+▸  KoboToolbox : conception de formulaires et déploiement
+
+▸  ODK Collect : installation, paramétrage et synchronisation
+
+▸  Conception de questionnaires adaptés aux mobiles
+
+▸  Gestion des données hors connexion et synchronisation
+
+Module 2 — Nettoyage et structuration des données  (1 jour)
+
+▸  Identification des erreurs et des valeurs aberrantes
+
+▸  Techniques de nettoyage sous Excel et R/Python
+
+▸  Structuration des bases de données pour l'analyse
+
+▸  Documentation des procédures de nettoyage
+
+Module 3 — Analyse et interprétation des résultats  (1 jour)
+
+▸  Statistiques descriptives appliquées aux données de santé
+
+▸  Tests statistiques de base (chi², t-test, corrélation)
+
+▸  Présentation et communication des résultats
+
+▸  Rédaction d'un rapport d'analyse de données
+
+📂 Gouvernance des données   ⏱ 3 jours  |  💰 700 USD
+
+Module 1 — Politique de gestion des données de santé  (1 jour)
+
+▸  Définition et enjeux de la gouvernance des données
+
+▸  Propriété, responsabilité et droits sur les données de santé
+
+▸  Élaboration d'une politique nationale de données de santé
+
+▸  Rôles : propriétaire, gestionnaire, utilisateur des données
+
+Module 2 — Protection des données et conformité  (1 jour)
+
+▸  Principes du RGPD et leur application en contexte africain
+
+▸  Législations africaines sur la protection des données
+
+▸  Consentement éclairé et anonymisation des données
+
+▸  Audit de conformité et mesures de protection
+
+Module 3 — Qualité et intégrité des données  (1 jour)
+
+▸  Dimensions de la qualité des données
+
+▸  Outils d'évaluation de la qualité des données (RDQA, DQA)
+
+▸  Processus de validation et de nettoyage des données
+
+▸  Culture de la qualité des données au sein des organisations
+
+🎓 Executive Program en Transformation Digitale Santé
+
+Synthèse de la certification
+
+Filière
+
+Durée
+
+Coût (USD)
+
+Santé numérique
+
+3 jours
+
+700 USD
+
+Intelligence artificielle appliquée à la santé
+
+5 jours
+
+1200 USD
+
+Cybersécurité santé
+
+3 jours
+
+900 USD
+
+Architecture des systèmes santé
+
+5 jours
+
+1100 USD
+
+TOTAL CERTIFICATION
+
+16 jours
+
+3900 USD
+
+Contenu détaillé
+
+📂 Santé numérique   ⏱ 3 jours  |  💰 700 USD
+
+Module 1 — Panorama des outils de santé digitale  (1 jour)
+
+▸  Écosystème global des outils de santé numérique
+
+▸  DHIS2 : architecture, modules et cas d'usage
+
+▸  CommCare et ODK : collecte de données sur le terrain
+
+▸  Autres outils : OpenMRS, iHRIS, RapidPro
+
+Module 2 — Stratégies nationales de santé numérique  (1 jour)
+
+▸  Composantes d'une stratégie nationale de santé numérique
+
+▸  Cadre de l'OMS pour la transformation numérique de la santé
+
+▸  Expériences africaines : Kenya, Sénégal, Rwanda, Éthiopie
+
+▸  Gouvernance et coordination des initiatives e-santé
+
+Module 3 — Interopérabilité des systèmes d'information de santé  (1 jour)
+
+▸  Définition et enjeux de l'interopérabilité en santé
+
+▸  Standards d'échange de données (HL7, FHIR, ADX)
+
+▸  Architecture ouverte OpenHIE
+
+▸  Mise en œuvre d'un cadre d'interopérabilité national
+
+📂 Intelligence artificielle appliquée à la santé   ⏱ 5 jours  |  💰 1200 USD
+
+Module 1 — Fondamentaux de l'IA et du machine learning  (1 jour)
+
+▸  Concepts clés : IA, machine learning, deep learning
+
+▸  Types d'apprentissage (supervisé, non supervisé, par renforcement)
+
+▸  Principales familles d'algorithmes et leurs applications
+
+▸  Environnements de développement (Python, TensorFlow, scikit-learn)
+
+Module 2 — IA appliquée au diagnostic et à l'imagerie médicale  (1 jour)
+
+▸  Réseaux de neurones convolutifs (CNN) pour l'imagerie
+
+▸  Applications : détection de la malaria, TB, rétinopathie
+
+▸  Validation clinique des algorithmes d'IA
+
+▸  Enjeux de l'intégration de l'IA dans le parcours de soins
+
+Module 3 — IA pour la prédiction épidémiologique  (1 jour)
+
+▸  Modèles prédictifs de propagation des épidémies
+
+▸  Analyse des données de surveillance épidémiologique
+
+▸  Systèmes d'alerte précoce basés sur l'IA
+
+▸  Cas d'usage : prédiction du paludisme, choléra, COVID-19
+
+Module 4 — Enjeux éthiques de l'IA en santé  (1 jour)
+
+▸  Biais algorithmiques et équité en santé
+
+▸  Transparence et explicabilité des modèles d'IA
+
+▸  Responsabilité médicale et juridique des décisions assistées par IA
+
+▸  Cadres éthiques internationaux (UNESCO, OMS)
+
+Module 5 — Atelier pratique : cas d'usage africains  (1 jour)
+
+▸  Développement d'un modèle de prédiction simple
+
+▸  Analyse d'un jeu de données de santé africain
+
+▸  Présentation et critique des projets développés
+
+▸  Perspectives de déploiement à l'échelle nationale
+
+📂 Cybersécurité santé   ⏱ 3 jours  |  💰 900 USD
+
+Module 1 — Menaces et vulnérabilités des systèmes de santé  (1 jour)
+
+▸  Panorama des cybermenaces (ransomware, phishing, attaques DDoS)
+
+▸  Vulnérabilités spécifiques aux systèmes d'information de santé (SIS)
+
+▸  Incidents majeurs dans le secteur santé : retours d'expérience
+
+▸  Évaluation des risques cyber dans un établissement de santé
+
+Module 2 — Politiques de sécurité et bonnes pratiques  (1 jour)
+
+▸  Élaboration d'une politique de sécurité des systèmes d'information (PSSI)
+
+▸  Bonnes pratiques : mots de passe, chiffrement, sauvegardes
+
+▸  Sécurisation des réseaux et des accès distants (VPN, MFA)
+
+▸  Sensibilisation et formation du personnel de santé
+
+Module 3 — Réponse aux incidents et continuité des activités  (1 jour)
+
+▸  Plan de réponse aux incidents de sécurité (IRP)
+
+▸  Procédures de détection, confinement et éradication
+
+▸  Plan de continuité des activités (PCA) et plan de reprise (PRA)
+
+▸  Exercice de simulation : gestion d'une cyberattaque hospitalière
+
+📂 Architecture des systèmes santé   ⏱ 5 jours  |  💰 1100 USD
+
+Module 1 — Principes d'architecture des systèmes d'information  (1 jour)
+
+▸  Concepts fondamentaux : architecture, composants, couches
+
+▸  Architecture orientée services (SOA) et microservices
+
+▸  Patterns d'intégration des systèmes d'information
+
+▸  Documentation d'architecture (UML, ArchiMate)
+
+Module 2 — Conception d'un SIS national  (1 jour)
+
+▸  Cartographie des besoins fonctionnels d'un SIS national
+
+▸  Composantes d'un SIS : DHIS2, eLMIS, dossier patient électronique
+
+▸  Approche modulaire et évolutive
+
+▸  Gouvernance et comité de pilotage d'un SIS
+
+Module 3 — Standards d'interopérabilité (HL7, FHIR, OpenHIE)  (1 jour)
+
+▸  HL7 FHIR : ressources, API RESTful et cas d'usage
+
+▸  Standards OpenHIE et profils IHE
+
+▸  Médiateurs d'intégration (OpenHIM)
+
+▸  Mise en œuvre pratique d'une interface d'interopérabilité
+
+Module 4 — Infrastructure cloud et hébergement sécurisé  (1 jour)
+
+▸  Modèles cloud (IaaS, PaaS, SaaS) pour la santé
+
+▸  Souveraineté des données et hébergement local vs cloud
+
+▸  Sécurisation de l'infrastructure (pare-feu, chiffrement, sauvegardes)
+
+▸  Dimensionnement et scalabilité des serveurs
+
+Module 5 — Gouvernance et maintenance des systèmes  (1 jour)
+
+▸  Gestion du cycle de vie des systèmes d'information
+
+▸  Contrats de maintenance et niveaux de service (SLA)
+
+▸  Gestion des mises à jour et des migrations
+
+▸  Tableau de bord de monitoring des systèmes
+
+ACADÉMIE 4 — ACADÉMIE LEADERSHIP & GOUVERNANCE SANITAIRE
+
+Mission : Renforcer les capacités de leadership stratégique, gouvernance institutionnelle et pilotage des réformes sanitaires.
+
+🎓 Executive Certificate in Health Leadership
+
+Synthèse de la certification
+
+Filière
+
+Durée
+
+Coût (USD)
+
+Leadership exécutif
+
+5 jours
+
+1200 USD
+
+Gestion stratégique
+
+3 jours
+
+800 USD
+
+Coordination multisectorielle
+
+2 jours
+
+600 USD
+
+Diplomatie sanitaire
+
+2 jours
+
+700 USD
+
+TOTAL CERTIFICATION
+
+12 jours
+
+3300 USD
+
+Contenu détaillé
+
+📂 Leadership exécutif   ⏱ 5 jours  |  💰 1200 USD
+
+Module 1 — Styles de leadership et intelligence émotionnelle  (1 jour)
+
+▸  Théories du leadership (transformationnel, situationnel, servant leadership)
+
+▸  Autodiagnostic de son style de leadership
+
+▸  Intelligence émotionnelle : les 4 composantes (Goleman)
+
+▸  Développement de l'empathie et de la conscience de soi
+
+Module 2 — Communication stratégique et influence  (1 jour)
+
+▸  Techniques de communication persuasive
+
+▸  Prise de parole en public et storytelling
+
+▸  Communication en situation de crise
+
+▸  Gestion des médias et relations publiques
+
+Module 3 — Prise de décision en contexte complexe  (1 jour)
+
+▸  Cadres de prise de décision (OODA Loop, modèle Cynefin)
+
+▸  Gestion de l'incertitude et du risque décisionnel
+
+▸  Biais cognitifs et comment les contourner
+
+▸  Ateliers de simulation : scénarios de décision complexe
+
+Module 4 — Leadership en temps de crise  (1 jour)
+
+▸  Caractéristiques du leadership de crise
+
+▸  Gestion des équipes sous pression
+
+▸  Communication de crise interne et externe
+
+▸  Retours d'expérience : leaders africains face aux crises sanitaires
+
+Module 5 — Coaching et développement des équipes  (1 jour)
+
+▸  Principes du coaching professionnel
+
+▸  Techniques de feedback constructif
+
+▸  Construction et animation d'équipes performantes
+
+▸  Plans de développement individuel (PDI)
+
+📂 Gestion stratégique   ⏱ 3 jours  |  💰 800 USD
+
+Module 1 — Analyse stratégique (SWOT, PESTEL, chaîne de valeur)  (1 jour)
+
+▸  Analyse SWOT : forces, faiblesses, opportunités, menaces
+
+▸  Analyse PESTEL appliquée au secteur santé
+
+▸  Analyse de la chaîne de valeur et des parties prenantes
+
+▸  Cartographie des risques stratégiques
+
+Module 2 — Formulation et mise en œuvre de la stratégie  (1 jour)
+
+▸  Du diagnostic à la vision stratégique
+
+▸  Élaboration des objectifs stratégiques (SMART, OKR)
+
+▸  Déclinaison opérationnelle de la stratégie
+
+▸  Gestion des priorités et des ressources
+
+Module 3 — Suivi-évaluation des performances organisationnelles  (1 jour)
+
+▸  Tableaux de bord de pilotage stratégique (BSC)
+
+▸  Indicateurs de performance organisationnelle (KPI)
+
+▸  Revues de performance et processus d'amélioration continue
+
+▸  Communication des résultats aux parties prenantes
+
+📂 Coordination multisectorielle   ⏱ 2 jours  |  💰 600 USD
+
+Module 1 — Mécanismes de coordination intersectorielle  (1 jour)
+
+▸  Approche One Health : santé humaine, animale, environnementale
+
+▸  Mécanismes de coordination nationale (comités interministériels)
+
+▸  Outils de collaboration et partage de l'information intersectorielle
+
+▸  Exemples africains de coordination multisectorielle réussie
+
+Module 2 — Partenariats public-privé en santé  (1 jour)
+
+▸  Cadres et modèles de PPP en santé
+
+▸  Négociation et contractualisation avec le secteur privé
+
+▸  Suivi et redevabilité des partenariats
+
+▸  Études de cas : PPP en santé en Afrique
+
+📂 Diplomatie sanitaire   ⏱ 2 jours  |  💰 700 USD
+
+Module 1 — Négociation internationale en santé  (1 jour)
+
+▸  Techniques de négociation multilatérale
+
+▸  Processus de l'OMS : Assemblée mondiale de la santé, comités régionaux
+
+▸  Négociation des traités et accords sanitaires internationaux
+
+▸  Simulations de négociations diplomatiques
+
+Module 2 — Enjeux géopolitiques de la santé mondiale  (1 jour)
+
+▸  Gouvernance mondiale de la santé (OMS, G20, G7 Santé)
+
+▸  Enjeux Nord-Sud dans l'accès aux médicaments et vaccins
+
+▸  Souveraineté sanitaire et sécurité sanitaire mondiale
+
+▸  Positionnement de l'Afrique dans les négociations sanitaires mondiales
+
+🎓 Certification en Gouvernance Sanitaire
+
+Synthèse de la certification
+
+Filière
+
+Durée
+
+Coût (USD)
+
+Gouvernance sanitaire
+
+3 jours
+
+800 USD
+
+Planification stratégique
+
+3 jours
+
+700 USD
+
+Coordination multisectorielle
+
+2 jours
+
+600 USD
+
+TOTAL CERTIFICATION
+
+8 jours
+
+2100 USD
+
+Contenu détaillé
+
+📂 Gouvernance sanitaire   ⏱ 3 jours  |  💰 800 USD
+
+Module 1 — Principes de gouvernance des systèmes de santé  (1 jour)
+
+▸  Définition et piliers de la gouvernance sanitaire
+
+▸  Rôle de l'État, du secteur privé et de la société civile
+
+▸  Décentralisation et gouvernance locale de la santé
+
+▸  Cadres de gouvernance sanitaire (OMS, Banque mondiale)
+
+Module 2 — Redevabilité, transparence et lutte contre la corruption  (1 jour)
+
+▸  Mécanismes de redevabilité dans le secteur de la santé
+
+▸  Transparence dans la gestion des ressources de santé
+
+▸  Systèmes de contrôle interne et audit
+
+▸  Lutte contre la corruption dans les achats pharmaceutiques
+
+Module 3 — Gouvernance décentralisée  (1 jour)
+
+▸  Transfert de compétences aux collectivités territoriales
+
+▸  Rôle des districts sanitaires dans la gouvernance locale
+
+▸  Mécanismes de planification et budgétisation décentralisées
+
+▸  Études de cas : expériences africaines de décentralisation
+
+📂 Planification stratégique   ⏱ 3 jours  |  💰 700 USD
+
+Module 1 — Diagnostic situationnel et analyse des besoins  (1 jour)
+
+▸  Méthodes d'analyse de situation (SWOT, arbre à problèmes)
+
+▸  Collecte et analyse des données de santé pour la planification
+
+▸  Analyse des parties prenantes et de leurs intérêts
+
+▸  Priorisation des problèmes de santé publique
+
+Module 2 — Élaboration des plans stratégiques de santé  (1 jour)
+
+▸  Structure d'un Plan National de Développement Sanitaire (PNDS)
+
+▸  Définition des axes stratégiques et objectifs
+
+▸  Chiffrage et planification budgétaire pluriannuelle
+
+▸  Processus consultatif et validation des plans
+
+Module 3 — Alignement avec les agendas internationaux  (1 jour)
+
+▸  Objectifs de Développement Durable (ODD) en lien avec la santé
+
+▸  Agenda 2063 de l'Union Africaine et santé
+
+▸  Cadre de Maputo et autres engagements régionaux
+
+▸  Mécanismes de reporting international (ODD, UHC)
+
+📂 Coordination multisectorielle   ⏱ 2 jours  |  💰 600 USD
+
+Module 1 — Mécanismes de coordination intersectorielle  (1 jour)
+
+▸  Approche One Health : santé humaine, animale, environnementale
+
+▸  Mécanismes de coordination nationale (comités interministériels)
+
+▸  Outils de collaboration et partage de l'information intersectorielle
+
+▸  Exemples africains de coordination multisectorielle réussie
+
+Module 2 — Partenariats public-privé en santé  (1 jour)
+
+▸  Cadres et modèles de PPP en santé
+
+▸  Négociation et contractualisation avec le secteur privé
+
+▸  Suivi et redevabilité des partenariats
+
+▸  Études de cas : PPP en santé en Afrique
+
+🎓 Certification en Gestion des Projets Santé
+
+Synthèse de la certification
+
+Filière
+
+Durée
+
+Coût (USD)
+
+Gestion des projets santé
+
+5 jours
+
+900 USD
+
+Gestion du changement
+
+2 jours
+
+600 USD
+
+Planification stratégique
+
+3 jours
+
+700 USD
+
+TOTAL CERTIFICATION
+
+10 jours
+
+2200 USD
+
+Contenu détaillé
+
+📂 Gestion des projets santé   ⏱ 5 jours  |  💰 900 USD
+
+Module 1 — Cycle de vie d'un projet santé  (1 jour)
+
+▸  Phases du cycle de projet (identification, formulation, mise en œuvre, clôture)
+
+▸  Documents clés : note conceptuelle, document de projet
+
+▸  Parties prenantes et analyse de leurs intérêts
+
+▸  Montage institutionnel d'un projet santé
+
+Module 2 — Cadre logique et théorie du changement  (1 jour)
+
+▸  Construction d'une théorie du changement
+
+▸  Matrice du cadre logique : intrants, activités, extrants, effets, impact
+
+▸  Indicateurs SMART et sources de vérification
+
+▸  Hypothèses et risques dans le cadre logique
+
+Module 3 — Planification opérationnelle et budgétisation  (1 jour)
+
+▸  Plan de travail annuel (PTA) et chronogramme d'activités
+
+▸  Techniques de budgétisation par activité (ABC)
+
+▸  Gestion des ressources humaines du projet
+
+▸  Outils de planification : Gantt, MS Project, Monday.com
+
+Module 4 — Gestion des risques projet  (1 jour)
+
+▸  Identification et évaluation des risques (matrice probabilité/impact)
+
+▸  Stratégies de réponse aux risques (évitement, atténuation, transfert)
+
+▸  Registre des risques et plan de mitigation
+
+▸  Gestion des crises et ajustements en cours de projet
+
+Module 5 — Suivi-évaluation et rapportage bailleur  (1 jour)
+
+▸  Systèmes de suivi-évaluation (S&E) des projets santé
+
+▸  Collecte et analyse des données de suivi
+
+▸  Rédaction des rapports narratifs et financiers bailleurs
+
+▸  Capitalisation et leçons apprises en fin de projet
+
+📂 Gestion du changement   ⏱ 2 jours  |  💰 600 USD
+
+Module 1 — Modèles de conduite du changement (Kotter, ADKAR)  (1 jour)
+
+▸  Modèle de Kotter : les 8 étapes du changement
+
+▸  Modèle ADKAR : Awareness, Desire, Knowledge, Ability, Reinforcement
+
+▸  Courbe du deuil et gestion des résistances
+
+▸  Diagnostic de la maturité organisationnelle au changement
+
+Module 2 — Communication et mobilisation des parties prenantes  (1 jour)
+
+▸  Cartographie et analyse des parties prenantes (matrice influence/intérêt)
+
+▸  Stratégie de communication accompagnant le changement
+
+▸  Techniques d'engagement et de co-construction
+
+▸  Pérennisation du changement et ancrage dans la culture organisationnelle
+
+📂 Planification stratégique   ⏱ 3 jours  |  💰 700 USD
+
+Module 1 — Diagnostic situationnel et analyse des besoins  (1 jour)
+
+▸  Méthodes d'analyse de situation (SWOT, arbre à problèmes)
+
+▸  Collecte et analyse des données de santé pour la planification
+
+▸  Analyse des parties prenantes et de leurs intérêts
+
+▸  Priorisation des problèmes de santé publique
+
+Module 2 — Élaboration des plans stratégiques de santé  (1 jour)
+
+▸  Structure d'un Plan National de Développement Sanitaire (PNDS)
+
+▸  Définition des axes stratégiques et objectifs
+
+▸  Chiffrage et planification budgétaire pluriannuelle
+
+▸  Processus consultatif et validation des plans
+
+Module 3 — Alignement avec les agendas internationaux  (1 jour)
+
+▸  Objectifs de Développement Durable (ODD) en lien avec la santé
+
+▸  Agenda 2063 de l'Union Africaine et santé
+
+▸  Cadre de Maputo et autres engagements régionaux
+
+▸  Mécanismes de reporting international (ODD, UHC)
+
+🎓 Certification en Gestion des Financements de Santé
+
+Synthèse de la certification
+
+Filière
+
+Durée
+
+Coût (USD)
+
+Gestion des financements de santé
+
+3 jours
+
+900 USD
+
+Gestion stratégique
+
+3 jours
+
+800 USD
+
+TOTAL CERTIFICATION
+
+6 jours
+
+1700 USD
+
+Contenu détaillé
+
+📂 Gestion des financements de santé   ⏱ 3 jours  |  💰 900 USD
+
+Module 1 — Cartographie des financements de la santé  (1 jour)
+
+▸  Principaux bailleurs : Fonds mondial, GAVI, USAID, Banque mondiale, AFD
+
+▸  Mécanismes de financement innovants (obligations de résultats, blended finance)
+
+▸  Financement domestique de la santé et mobilisation des ressources internes
+
+▸  Traçabilité et suivi des flux financiers de la santé
+
+Module 2 — Mobilisation des ressources et rédaction de propositions  (1 jour)
+
+▸  Cycle de financement des principaux bailleurs
+
+▸  Rédaction de notes conceptuelles et de propositions complètes
+
+▸  Budgétisation et justification des coûts
+
+▸  Stratégies de mobilisation des ressources domestiques
+
+Module 3 — Gestion financière et conformité des grants  (1 jour)
+
+▸  Mécanismes de gestion financière des subventions (grants)
+
+▸  Exigences de conformité et d'audit des bailleurs
+
+▸  Gestion de la trésorerie et des décaissements
+
+▸  Clôture financière et audit final des projets
+
+📂 Gestion stratégique   ⏱ 3 jours  |  💰 800 USD
+
+Module 1 — Analyse stratégique (SWOT, PESTEL, chaîne de valeur)  (1 jour)
+
+▸  Analyse SWOT : forces, faiblesses, opportunités, menaces
+
+▸  Analyse PESTEL appliquée au secteur santé
+
+▸  Analyse de la chaîne de valeur et des parties prenantes
+
+▸  Cartographie des risques stratégiques
+
+Module 2 — Formulation et mise en œuvre de la stratégie  (1 jour)
+
+▸  Du diagnostic à la vision stratégique
+
+▸  Élaboration des objectifs stratégiques (SMART, OKR)
+
+▸  Déclinaison opérationnelle de la stratégie
+
+▸  Gestion des priorités et des ressources
+
+Module 3 — Suivi-évaluation des performances organisationnelles  (1 jour)
+
+▸  Tableaux de bord de pilotage stratégique (BSC)
+
+▸  Indicateurs de performance organisationnelle (KPI)
+
+▸  Revues de performance et processus d'amélioration continue
+
+▸  Communication des résultats aux parties prenantes
+
+🎓 Certification en Leadership Institutionnel
+
+Synthèse de la certification
+
+Filière
+
+Durée
+
+Coût (USD)
+
+Leadership exécutif
+
+5 jours
+
+1200 USD
+
+Gouvernance sanitaire
+
+3 jours
+
+800 USD
+
+Gestion du changement
+
+2 jours
+
+600 USD
+
+TOTAL CERTIFICATION
+
+10 jours
+
+2600 USD
+
+Contenu détaillé
+
+📂 Leadership exécutif   ⏱ 5 jours  |  💰 1200 USD
+
+Module 1 — Styles de leadership et intelligence émotionnelle  (1 jour)
+
+▸  Théories du leadership (transformationnel, situationnel, servant leadership)
+
+▸  Autodiagnostic de son style de leadership
+
+▸  Intelligence émotionnelle : les 4 composantes (Goleman)
+
+▸  Développement de l'empathie et de la conscience de soi
+
+Module 2 — Communication stratégique et influence  (1 jour)
+
+▸  Techniques de communication persuasive
+
+▸  Prise de parole en public et storytelling
+
+▸  Communication en situation de crise
+
+▸  Gestion des médias et relations publiques
+
+Module 3 — Prise de décision en contexte complexe  (1 jour)
+
+▸  Cadres de prise de décision (OODA Loop, modèle Cynefin)
+
+▸  Gestion de l'incertitude et du risque décisionnel
+
+▸  Biais cognitifs et comment les contourner
+
+▸  Ateliers de simulation : scénarios de décision complexe
+
+Module 4 — Leadership en temps de crise  (1 jour)
+
+▸  Caractéristiques du leadership de crise
+
+▸  Gestion des équipes sous pression
+
+▸  Communication de crise interne et externe
+
+▸  Retours d'expérience : leaders africains face aux crises sanitaires
+
+Module 5 — Coaching et développement des équipes  (1 jour)
+
+▸  Principes du coaching professionnel
+
+▸  Techniques de feedback constructif
+
+▸  Construction et animation d'équipes performantes
+
+▸  Plans de développement individuel (PDI)
+
+📂 Gouvernance sanitaire   ⏱ 3 jours  |  💰 800 USD
+
+Module 1 — Principes de gouvernance des systèmes de santé  (1 jour)
+
+▸  Définition et piliers de la gouvernance sanitaire
+
+▸  Rôle de l'État, du secteur privé et de la société civile
+
+▸  Décentralisation et gouvernance locale de la santé
+
+▸  Cadres de gouvernance sanitaire (OMS, Banque mondiale)
+
+Module 2 — Redevabilité, transparence et lutte contre la corruption  (1 jour)
+
+▸  Mécanismes de redevabilité dans le secteur de la santé
+
+▸  Transparence dans la gestion des ressources de santé
+
+▸  Systèmes de contrôle interne et audit
+
+▸  Lutte contre la corruption dans les achats pharmaceutiques
+
+Module 3 — Gouvernance décentralisée  (1 jour)
+
+▸  Transfert de compétences aux collectivités territoriales
+
+▸  Rôle des districts sanitaires dans la gouvernance locale
+
+▸  Mécanismes de planification et budgétisation décentralisées
+
+▸  Études de cas : expériences africaines de décentralisation
+
+📂 Gestion du changement   ⏱ 2 jours  |  💰 600 USD
+
+Module 1 — Modèles de conduite du changement (Kotter, ADKAR)  (1 jour)
+
+▸  Modèle de Kotter : les 8 étapes du changement
+
+▸  Modèle ADKAR : Awareness, Desire, Knowledge, Ability, Reinforcement
+
+▸  Courbe du deuil et gestion des résistances
+
+▸  Diagnostic de la maturité organisationnelle au changement
+
+Module 2 — Communication et mobilisation des parties prenantes  (1 jour)
+
+▸  Cartographie et analyse des parties prenantes (matrice influence/intérêt)
+
+▸  Stratégie de communication accompagnant le changement
+
+▸  Techniques d'engagement et de co-construction
+
+▸  Pérennisation du changement et ancrage dans la culture organisationnelle
+
+ACADÉMIE 5 — ACADÉMIE SANTÉ PUBLIQUE & PROGRAMMES
+
+Mission : Former les professionnels à la gestion programmatique et opérationnelle des interventions de santé publique.
+
+🎓 Certification en Gestion des Programmes de Santé
+
+Synthèse de la certification
+
+Filière
+
+Durée
+
+Coût (USD)
+
+VIH
+
+3 jours
+
+700 USD
+
+Paludisme
+
+3 jours
+
+700 USD
+
+Tuberculose
+
+3 jours
+
+700 USD
+
+Vaccination
+
+3 jours
+
+700 USD
+
+Santé maternelle
+
+3 jours
+
+700 USD
+
+Nutrition
+
+2 jours
+
+500 USD
+
+TOTAL CERTIFICATION
+
+17 jours
+
+4000 USD
+
+Contenu détaillé
+
+📂 VIH   ⏱ 3 jours  |  💰 700 USD
+
+Module 1 — Épidémiologie et riposte nationale au VIH  (1 jour)
+
+▸  Situation épidémiologique mondiale et africaine du VIH
+
+▸  Modes de transmission et populations clés
+
+▸  Stratégie 95-95-95 de l'ONUSIDA
+
+▸  Cadre politique national de lutte contre le VIH
+
+Module 2 — Gestion des ARV et chaîne d'approvisionnement VIH  (1 jour)
+
+▸  Gamme des médicaments ARV et schémas thérapeutiques
+
+▸  Quantification et approvisionnement en ARV
+
+▸  Gestion des stocks et prévention des ruptures en ARV
+
+▸  Suivi de l'observance et de la rétention au traitement
+
+Module 3 — Suivi-évaluation des programmes VIH  (1 jour)
+
+▸  Indicateurs clés des programmes VIH (PEPFAR, Fonds mondial)
+
+▸  Systèmes de collecte de données (DHIS2, DATIM)
+
+▸  Analyse des données de performance des programmes
+
+▸  Rapportage aux bailleurs et aux instances nationales
+
+📂 Paludisme   ⏱ 3 jours  |  💰 700 USD
+
+Module 1 — Stratégies de lutte antipaludique  (1 jour)
+
+▸  Épidémiologie du paludisme en Afrique subsaharienne
+
+▸  Vecteurs et transmission : bases entomologiques
+
+▸  Stratégies de prévention (MILD, PID, chimioprévention)
+
+▸  Plan stratégique national de lutte contre le paludisme
+
+Module 2 — Gestion des intrants (ACT, MILD, TDR)  (1 jour)
+
+▸  Quantification des ACT, MILD et TDR
+
+▸  Gestion de la chaîne d'approvisionnement paludisme
+
+▸  Distribution des MILD et couverture universelle
+
+▸  Gestion des stocks et prévention des ruptures
+
+Module 3 — Surveillance épidémiologique et reporting  (1 jour)
+
+▸  Systèmes de surveillance du paludisme (SNIS, DHIS2)
+
+▸  Indicateurs de suivi des programmes paludisme
+
+▸  Gestion des épidémies de paludisme
+
+▸  Rapportage au Fonds mondial et à l'OMS
+
+📂 Tuberculose   ⏱ 3 jours  |  💰 700 USD
+
+Module 1 — Prise en charge et traitement de la TB  (1 jour)
+
+▸  Épidémiologie mondiale de la TB et charge de morbidité
+
+▸  Diagnostic de la TB (bactériologie, imagerie, GeneXpert)
+
+▸  Schémas thérapeutiques de la TB sensible
+
+▸  Stratégie DOTS et DOTS-Plus
+
+Module 2 — Gestion des médicaments antituberculeux  (1 jour)
+
+▸  Gamme des médicaments antituberculeux de 1ère et 2ème ligne
+
+▸  Quantification et approvisionnement en médicaments TB
+
+▸  Conditions de stockage des médicaments antituberculeux
+
+▸  Suivi de l'observance (DOT) et gestion des perdus de vue
+
+Module 3 — TB-MR et stratégies END TB  (1 jour)
+
+▸  Définition et ampleur de la TB multirésistante (TB-MR)
+
+▸  Diagnostic et traitement de la TB-MR et TB-UR
+
+▸  Stratégie END TB de l'OMS : objectifs et indicateurs
+
+▸  Financement et ressources pour les programmes TB
+
+📂 Vaccination   ⏱ 3 jours  |  💰 700 USD
+
+Module 1 — Programmes élargis de vaccination (PEV)  (1 jour)
+
+▸  Historique et principes du PEV
+
+▸  Calendrier vaccinal national et recommandations OMS
+
+▸  Nouveaux vaccins et stratégies d'introduction
+
+▸  Financement des programmes de vaccination (GAVI, État)
+
+Module 2 — Gestion des vaccins et chaîne du froid  (1 jour)
+
+▸  Stockage et manutention des vaccins
+
+▸  Chaîne du froid vaccinale : équipements et surveillance
+
+▸  Gestion des stocks de vaccins (FEFO, pertes)
+
+▸  Système d'information pour la gestion des vaccins
+
+Module 3 — Stratégies d'atteinte des populations  (1 jour)
+
+▸  Stratégies fixes, avancées et mobiles de vaccination
+
+▸  Couverture vaccinale : mesure et analyse des données
+
+▸  Identification et ciblage des enfants non vaccinés
+
+▸  Campagnes de vaccination supplémentaires (CVS)
+
+📂 Santé maternelle   ⏱ 3 jours  |  💰 700 USD
+
+Module 1 — Soins prénatals, accouchement et post-partum  (1 jour)
+
+▸  Contenu des consultations prénatales (CPN)
+
+▸  Accouchement assisté et soins obstétricaux d'urgence (SONU)
+
+▸  Soins post-partum et prévention des complications
+
+▸  Soins essentiels du nouveau-né
+
+Module 2 — Planification familiale et santé reproductive  (1 jour)
+
+▸  Méthodes contraceptives : types, efficacité, disponibilité
+
+▸  Conseil en planification familiale
+
+▸  Gestion des produits de planification familiale
+
+▸  Intégration PF/SMI dans les systèmes de santé
+
+Module 3 — Mortalité maternelle : causes et stratégies de réduction  (1 jour)
+
+▸  Principales causes de mortalité maternelle en Afrique
+
+▸  Audit des décès maternels et prise de décision
+
+▸  Stratégies pour réduire la mortalité maternelle (3 retards)
+
+▸  Objectifs mondiaux et indicateurs de suivi (ODD 3.1)
+
+📂 Nutrition   ⏱ 2 jours  |  💰 500 USD
+
+Module 1 — Malnutrition aiguë et chronique : diagnostic et prise en charge  (1 jour)
+
+▸  Types de malnutrition (aiguë globale, modérée, sévère, chronique)
+
+▸  Dépistage et diagnostic de la malnutrition (PB, P/T, oedèmes)
+
+▸  Protocoles PCIMA (prise en charge intégrée de la malnutrition aiguë)
+
+▸  Alimentation thérapeutique prête à l'emploi (ATPE)
+
+Module 2 — Programmes nutritionnels et interventions communautaires  (1 jour)
+
+▸  Promotion de l'allaitement maternel exclusif
+
+▸  Alimentation de complément et diversification alimentaire
+
+▸  Supplémentation en micronutriments (vitamine A, fer, zinc)
+
+▸  Rôle des agents de santé communautaires dans la nutrition
+
+🎓 Certification en Santé Publique Opérationnelle
+
+Synthèse de la certification
+
+Filière
+
+Durée
+
+Coût (USD)
+
+Santé communautaire
+
+2 jours
+
+500 USD
+
+Renforcement des systèmes de santé
+
+5 jours
+
+900 USD
+
+CSU
+
+3 jours
+
+700 USD
+
+TOTAL CERTIFICATION
+
+10 jours
+
+2100 USD
+
+Contenu détaillé
+
+📂 Santé communautaire   ⏱ 2 jours  |  💰 500 USD
+
+Module 1 — Rôle des agents de santé communautaire  (1 jour)
+
+▸  Définition et profils des agents de santé communautaire (ASC)
+
+▸  Formation initiale et continue des ASC
+
+▸  Supervision, motivation et rétention des ASC
+
+▸  Intégration des ASC dans le système de santé formel
+
+Module 2 — Mobilisation communautaire et promotion de la santé  (1 jour)
+
+▸  Approches de mobilisation et d'engagement communautaire
+
+▸  Communication pour le changement de comportement (CCC)
+
+▸  Organisation des comités de santé villageois
+
+▸  Outils et supports de sensibilisation communautaire
+
+📂 Renforcement des systèmes de santé   ⏱ 5 jours  |  💰 900 USD
+
+Module 1 — Les 6 piliers des systèmes de santé (OMS)  (1 jour)
+
+▸  Prestation de services : disponibilité et qualité des soins
+
+▸  Ressources humaines pour la santé
+
+▸  Systèmes d'information sanitaire
+
+▸  Accès aux médicaments et technologies essentiels
+
+▸  Financement de la santé et gouvernance
+
+Module 2 — Ressources humaines pour la santé  (1 jour)
+
+▸  Planification des ressources humaines pour la santé
+
+▸  Formation et développement professionnel continu
+
+▸  Gestion des performances et motivation du personnel
+
+▸  Migration et fidélisation des professionnels de santé
+
+Module 3 — Financement de la santé et CSU  (1 jour)
+
+▸  Sources de financement de la santé (État, ménages, bailleurs)
+
+▸  Mécanismes de protection financière et assurance maladie
+
+▸  Progrès vers la couverture sanitaire universelle (CSU)
+
+▸  Espace budgétaire et priorités de financement de la santé
+
+Module 4 — Systèmes d'information sanitaire  (1 jour)
+
+▸  Architecture d'un système national d'information sanitaire
+
+▸  Collecte, traitement et utilisation des données de routine
+
+▸  DHIS2 : utilisation et gouvernance
+
+▸  Culture de la donnée et prise de décision basée sur les preuves
+
+Module 5 — Gouvernance et leadership des systèmes  (1 jour)
+
+▸  Fonctions essentielles de l'État en matière de santé
+
+▸  Dialogue politique et réforme des systèmes de santé
+
+▸  Évaluation des systèmes de santé (ESS)
+
+▸  Partenariats et coordination de l'aide dans le secteur santé
+
+📂 CSU   ⏱ 3 jours  |  💰 700 USD
+
+Module 1 — Principes et mesure de la CSU  (1 jour)
+
+▸  Définition et dimensions de la couverture sanitaire universelle
+
+▸  Indice de couverture des services essentiels (OMS)
+
+▸  Protection contre les risques financiers : indicateurs et mesure
+
+▸  Cadre de suivi mondial de la CSU
+
+Module 2 — Mécanismes de protection financière  (1 jour)
+
+▸  Assurance maladie obligatoire et volontaire
+
+▸  Mutuelles de santé communautaires
+
+▸  Gratuité ciblée et filets de sécurité sociale
+
+▸  Fonds d'indigence et exemption des plus vulnérables
+
+Module 3 — Réformes nationales vers la CSU  (1 jour)
+
+▸  Diagnostic des obstacles à la CSU (financiers, géographiques, culturels)
+
+▸  Stratégies nationales vers la CSU : exemples africains
+
+▸  Rôle du secteur privé dans l'atteinte de la CSU
+
+▸  Suivi et évaluation des progrès vers la CSU
+
+🎓 Certification en Renforcement des Systèmes de Santé
+
+Synthèse de la certification
+
+Filière
+
+Durée
+
+Coût (USD)
+
+Renforcement des systèmes de santé
+
+5 jours
+
+900 USD
+
+CSU
+
+3 jours
+
+700 USD
+
+Santé communautaire
+
+2 jours
+
+500 USD
+
+TOTAL CERTIFICATION
+
+10 jours
+
+2100 USD
+
+Contenu détaillé
+
+📂 Renforcement des systèmes de santé   ⏱ 5 jours  |  💰 900 USD
+
+Module 1 — Les 6 piliers des systèmes de santé (OMS)  (1 jour)
+
+▸  Prestation de services : disponibilité et qualité des soins
+
+▸  Ressources humaines pour la santé
+
+▸  Systèmes d'information sanitaire
+
+▸  Accès aux médicaments et technologies essentiels
+
+▸  Financement de la santé et gouvernance
+
+Module 2 — Ressources humaines pour la santé  (1 jour)
+
+▸  Planification des ressources humaines pour la santé
+
+▸  Formation et développement professionnel continu
+
+▸  Gestion des performances et motivation du personnel
+
+▸  Migration et fidélisation des professionnels de santé
+
+Module 3 — Financement de la santé et CSU  (1 jour)
+
+▸  Sources de financement de la santé (État, ménages, bailleurs)
+
+▸  Mécanismes de protection financière et assurance maladie
+
+▸  Progrès vers la couverture sanitaire universelle (CSU)
+
+▸  Espace budgétaire et priorités de financement de la santé
+
+Module 4 — Systèmes d'information sanitaire  (1 jour)
+
+▸  Architecture d'un système national d'information sanitaire
+
+▸  Collecte, traitement et utilisation des données de routine
+
+▸  DHIS2 : utilisation et gouvernance
+
+▸  Culture de la donnée et prise de décision basée sur les preuves
+
+Module 5 — Gouvernance et leadership des systèmes  (1 jour)
+
+▸  Fonctions essentielles de l'État en matière de santé
+
+▸  Dialogue politique et réforme des systèmes de santé
+
+▸  Évaluation des systèmes de santé (ESS)
+
+▸  Partenariats et coordination de l'aide dans le secteur santé
+
+📂 CSU   ⏱ 3 jours  |  💰 700 USD
+
+Module 1 — Principes et mesure de la CSU  (1 jour)
+
+▸  Définition et dimensions de la couverture sanitaire universelle
+
+▸  Indice de couverture des services essentiels (OMS)
+
+▸  Protection contre les risques financiers : indicateurs et mesure
+
+▸  Cadre de suivi mondial de la CSU
+
+Module 2 — Mécanismes de protection financière  (1 jour)
+
+▸  Assurance maladie obligatoire et volontaire
+
+▸  Mutuelles de santé communautaires
+
+▸  Gratuité ciblée et filets de sécurité sociale
+
+▸  Fonds d'indigence et exemption des plus vulnérables
+
+Module 3 — Réformes nationales vers la CSU  (1 jour)
+
+▸  Diagnostic des obstacles à la CSU (financiers, géographiques, culturels)
+
+▸  Stratégies nationales vers la CSU : exemples africains
+
+▸  Rôle du secteur privé dans l'atteinte de la CSU
+
+▸  Suivi et évaluation des progrès vers la CSU
+
+📂 Santé communautaire   ⏱ 2 jours  |  💰 500 USD
+
+Module 1 — Rôle des agents de santé communautaire  (1 jour)
+
+▸  Définition et profils des agents de santé communautaire (ASC)
+
+▸  Formation initiale et continue des ASC
+
+▸  Supervision, motivation et rétention des ASC
+
+▸  Intégration des ASC dans le système de santé formel
+
+Module 2 — Mobilisation communautaire et promotion de la santé  (1 jour)
+
+▸  Approches de mobilisation et d'engagement communautaire
+
+▸  Communication pour le changement de comportement (CCC)
+
+▸  Organisation des comités de santé villageois
+
+▸  Outils et supports de sensibilisation communautaire
+
+ACADÉMIE 6 — ACADÉMIE BUSINESS PHARMACEUTIQUE & ENTREPRENEURIAT SANTÉ
+
+Mission : Développer les compétences entrepreneuriales et managériales du secteur pharmaceutique et santé.
+
+🎓 Certification en Gestion Moderne d'Officine
+
+Synthèse de la certification
+
+Filière
+
+Durée
+
+Coût (USD)
+
+Gestion d'officine
+
+5 jours
+
+900 USD
+
+Finance pharmaceutique
+
+3 jours
+
+800 USD
+
+Marketing pharmaceutique
+
+2 jours
+
+600 USD
+
+TOTAL CERTIFICATION
+
+10 jours
+
+2300 USD
+
+Contenu détaillé
+
+📂 Gestion d'officine   ⏱ 5 jours  |  💰 900 USD
+
+Module 1 — Réglementation et gestion administrative de l'officine  (1 jour)
+
+▸  Cadre juridique et réglementaire des officines
+
+▸  Obligations légales du pharmacien titulaire
+
+▸  Gestion des autorisations et des renouvellements
+
+▸  Responsabilité professionnelle du pharmacien
+
+Module 2 — Gestion des stocks et approvisionnements officinaux  (1 jour)
+
+▸  Sélection des fournisseurs et grossistes répartiteurs
+
+▸  Gestion des commandes et des niveaux de stock
+
+▸  Méthodes d'inventaire et gestion des périmés
+
+▸  Outils informatiques de gestion officinale (logiciels métier)
+
+Module 3 — Relation client et conseil pharmaceutique  (1 jour)
+
+▸  Techniques d'accueil et de communication avec le patient
+
+▸  Conseil pharmaceutique : médicaments OTC et prescription
+
+▸  Gestion des réclamations et des situations difficiles
+
+▸  Fidélisation de la clientèle
+
+Module 4 — Comptabilité et rentabilité de l'officine  (1 jour)
+
+▸  Lecture et analyse des états financiers d'une officine
+
+▸  Calcul des marges et du seuil de rentabilité
+
+▸  Gestion de la trésorerie et du BFR
+
+▸  Optimisation fiscale et sociale de l'officine
+
+Module 5 — Marketing et fidélisation de la clientèle  (1 jour)
+
+▸  Diagnostic marketing d'une officine
+
+▸  Aménagement et merchandising de l'espace officinal
+
+▸  Communication digitale et réseaux sociaux pour l'officine
+
+▸  Programmes de fidélité et services à valeur ajoutée
+
+📂 Finance pharmaceutique   ⏱ 3 jours  |  💰 800 USD
+
+Module 1 — Analyse financière et rentabilité  (1 jour)
+
+▸  Lecture et interprétation du bilan et du compte de résultat
+
+▸  Calcul et analyse des ratios financiers
+
+▸  Évaluation de la rentabilité des activités
+
+▸  Diagnostic financier d'une entreprise pharmaceutique
+
+Module 2 — Gestion de trésorerie et budgétisation  (1 jour)
+
+▸  Plan de trésorerie : élaboration et suivi
+
+▸  Gestion du besoin en fonds de roulement (BFR)
+
+▸  Budgets prévisionnels et contrôle budgétaire
+
+▸  Négociation avec les banques et les établissements de crédit
+
+Module 3 — Fiscalité et conformité comptable du secteur  (1 jour)
+
+▸  Régimes fiscaux applicables au secteur pharmaceutique
+
+▸  TVA sur les médicaments et produits de santé
+
+▸  Obligations déclaratives et comptables
+
+▸  Optimisation fiscale dans le respect des règles en vigueur
+
+📂 Marketing pharmaceutique   ⏱ 2 jours  |  💰 600 USD
+
+Module 1 — Stratégies marketing B2B et B2C en pharma  (1 jour)
+
+▸  Spécificités du marketing pharmaceutique (réglementation, éthique)
+
+▸  Marketing B2B : ciblage des prescripteurs et des institutions
+
+▸  Marketing B2C : communication grand public et patients
+
+▸  Stratégies de lancement de produits pharmaceutiques
+
+Module 2 — Marketing digital et réseaux sociaux en santé  (1 jour)
+
+▸  Présence digitale et site web d'une structure de santé
+
+▸  Réseaux sociaux en santé : usages et bonnes pratiques
+
+▸  E-réputation et gestion des avis en ligne
+
+▸  Publicité digitale réglementée pour les produits de santé
+
+🎓 Certification en Entrepreneuriat Pharmaceutique
+
+Synthèse de la certification
+
+Filière
+
+Durée
+
+Coût (USD)
+
+Entrepreneuriat pharmaceutique
+
+3 jours
+
+800 USD
+
+Business développement santé
+
+3 jours
+
+700 USD
+
+Innovation santé
+
+2 jours
+
+600 USD
+
+Finance pharmaceutique
+
+3 jours
+
+800 USD
+
+TOTAL CERTIFICATION
+
+11 jours
+
+2900 USD
+
+Contenu détaillé
+
+📂 Entrepreneuriat pharmaceutique   ⏱ 3 jours  |  💰 800 USD
+
+Module 1 — Création et structuration d'une entreprise de santé  (1 jour)
+
+▸  Formes juridiques adaptées aux entreprises de santé
+
+▸  Démarches de création et formalités administratives
+
+▸  Gouvernance et organisation d'une startup santé
+
+▸  Propriété intellectuelle et protection des innovations
+
+Module 2 — Business plan et modèle économique santé  (1 jour)
+
+▸  Analyse de marché et étude de faisabilité
+
+▸  Modèles économiques innovants en santé (freemium, B2G, SaaS santé)
+
+▸  Rédaction d'un business plan convaincant
+
+▸  Projection financière et valorisation d'une startup santé
+
+Module 3 — Accès aux financements et levée de fonds  (1 jour)
+
+▸  Cartographie des financements pour les startups santé en Afrique
+
+▸  Business angels, fonds d'investissement et accélérateurs santé
+
+▸  Techniques de pitch et présentation aux investisseurs
+
+▸  Due diligence et négociation des termes d'investissement
+
+📂 Business développement santé   ⏱ 3 jours  |  💰 700 USD
+
+Module 1 — Analyse de marché et opportunités d'affaires  (1 jour)
+
+▸  Méthodes d'analyse de marché dans le secteur santé
+
+▸  Identification et qualification des opportunités commerciales
+
+▸  Veille concurrentielle et positionnement stratégique
+
+▸  Analyse des besoins non couverts dans les systèmes de santé africains
+
+Module 2 — Négociation et partenariats commerciaux  (1 jour)
+
+▸  Techniques de négociation commerciale en santé
+
+▸  Structuration des contrats commerciaux et partenariats
+
+▸  Gestion des relations avec les clients institutionnels (ministères, ONG)
+
+▸  Gestion des accords de distribution et d'exclusivité
+
+Module 3 — Expansion et scaling des activités santé  (1 jour)
+
+▸  Stratégies d'expansion géographique en Afrique
+
+▸  Adaptation des produits/services aux marchés locaux
+
+▸  Gestion de la croissance et maintien de la qualité
+
+▸  Franchising et modèles de réplication dans le secteur santé
+
+📂 Innovation santé   ⏱ 2 jours  |  💰 600 USD
+
+Module 1 — Design thinking appliqué à la santé  (1 jour)
+
+▸  Principes et processus du design thinking
+
+▸  Empathie et compréhension des besoins des patients
+
+▸  Idéation et prototypage rapide de solutions santé
+
+▸  Test et itération avec les utilisateurs finaux
+
+Module 2 — Écosystème startup santé en Afrique  (1 jour)
+
+▸  Panorama de l'écosystème healthtech africain
+
+▸  Hubs d'innovation, incubateurs et accélérateurs santé en Afrique
+
+▸  Cas d'usage : mHealth, télémédecine, diagnostic digital
+
+▸  Perspectives et tendances de l'innovation santé africaine
+
+📂 Finance pharmaceutique   ⏱ 3 jours  |  💰 800 USD
+
+Module 1 — Analyse financière et rentabilité  (1 jour)
+
+▸  Lecture et interprétation du bilan et du compte de résultat
+
+▸  Calcul et analyse des ratios financiers
+
+▸  Évaluation de la rentabilité des activités
+
+▸  Diagnostic financier d'une entreprise pharmaceutique
+
+Module 2 — Gestion de trésorerie et budgétisation  (1 jour)
+
+▸  Plan de trésorerie : élaboration et suivi
+
+▸  Gestion du besoin en fonds de roulement (BFR)
+
+▸  Budgets prévisionnels et contrôle budgétaire
+
+▸  Négociation avec les banques et les établissements de crédit
+
+Module 3 — Fiscalité et conformité comptable du secteur  (1 jour)
+
+▸  Régimes fiscaux applicables au secteur pharmaceutique
+
+▸  TVA sur les médicaments et produits de santé
+
+▸  Obligations déclaratives et comptables
+
+▸  Optimisation fiscale dans le respect des règles en vigueur
+
+🎓 Certification en Management des Structures de Santé
+
+Synthèse de la certification
+
+Filière
+
+Durée
+
+Coût (USD)
+
+Gestion des cliniques
+
+3 jours
+
+800 USD
+
+Gestion hospitalière
+
+5 jours
+
+1000 USD
+
+Marketing pharmaceutique
+
+2 jours
+
+600 USD
+
+Business développement santé
+
+3 jours
+
+700 USD
+
+TOTAL CERTIFICATION
+
+13 jours
+
+3100 USD
+
+Contenu détaillé
+
+📂 Gestion des cliniques   ⏱ 3 jours  |  💰 800 USD
+
+Module 1 — Organisation et administration d'une clinique  (1 jour)
+
+▸  Cadre réglementaire des établissements de santé privés
+
+▸  Organigramme et gouvernance d'une clinique
+
+▸  Gestion administrative : admissions, dossiers patients, facturation
+
+▸  Accréditation et démarche qualité en clinique privée
+
+Module 2 — Gestion des ressources humaines médicales  (1 jour)
+
+▸  Recrutement et fidélisation du personnel médical et paramédical
+
+▸  Planification des gardes et des astreintes
+
+▸  Évaluation des compétences et formation continue
+
+▸  Gestion des conflits et bien-être au travail
+
+Module 3 — Qualité des soins et satisfaction patient  (1 jour)
+
+▸  Indicateurs de qualité des soins en clinique
+
+▸  Mesure et analyse de la satisfaction des patients
+
+▸  Démarche d'amélioration continue des soins (PDCA)
+
+▸  Gestion des événements indésirables et des plaintes
+
+📂 Gestion hospitalière   ⏱ 5 jours  |  💰 1000 USD
+
+Module 1 — Gouvernance hospitalière et organigramme  (1 jour)
+
+▸  Modes de gouvernance des hôpitaux (publics, privés, PPP)
+
+▸  Rôle du conseil d'administration et de la direction médicale
+
+▸  Fonctions et services d'un hôpital général
+
+▸  Réforme hospitalière et autonomie de gestion
+
+Module 2 — Gestion des plateaux techniques et équipements  (1 jour)
+
+▸  Inventaire et maintenance des équipements biomédicaux
+
+▸  Gestion du bloc opératoire et des unités critiques
+
+▸  Laboratoire, imagerie et pharmacie hospitalière
+
+▸  Plan directeur et investissements en équipements
+
+Module 3 — Gestion financière et facturation hospitalière  (1 jour)
+
+▸  Comptabilité analytique et centre de coûts hospitaliers
+
+▸  Tarification des actes et groupes homogènes de malades (GHM)
+
+▸  Recouvrement des créances et gestion des assureurs
+
+▸  Budget hospitalier : élaboration, exécution et contrôle
+
+Module 4 — Gestion des ressources humaines hospitalières  (1 jour)
+
+▸  Planification des effectifs et des compétences
+
+▸  Gestion des carrières et des mobilités internes
+
+▸  Régimes statutaires et contractuels du personnel hospitalier
+
+▸  Politique sociale et gestion du dialogue social
+
+Module 5 — Accréditation et qualité hospitalière  (1 jour)
+
+▸  Normes d'accréditation hospitalière (JCI, HAS, normes africaines)
+
+▸  Démarche qualité et sécurité des patients
+
+▸  Indicateurs de performance hospitalière (taux d'occupation, DMS)
+
+▸  Audit hospitalier et plan d'amélioration
+
+📂 Marketing pharmaceutique   ⏱ 2 jours  |  💰 600 USD
+
+Module 1 — Stratégies marketing B2B et B2C en pharma  (1 jour)
+
+▸  Spécificités du marketing pharmaceutique (réglementation, éthique)
+
+▸  Marketing B2B : ciblage des prescripteurs et des institutions
+
+▸  Marketing B2C : communication grand public et patients
+
+▸  Stratégies de lancement de produits pharmaceutiques
+
+Module 2 — Marketing digital et réseaux sociaux en santé  (1 jour)
+
+▸  Présence digitale et site web d'une structure de santé
+
+▸  Réseaux sociaux en santé : usages et bonnes pratiques
+
+▸  E-réputation et gestion des avis en ligne
+
+▸  Publicité digitale réglementée pour les produits de santé
+
+📂 Business développement santé   ⏱ 3 jours  |  💰 700 USD
+
+Module 1 — Analyse de marché et opportunités d'affaires  (1 jour)
+
+▸  Méthodes d'analyse de marché dans le secteur santé
+
+▸  Identification et qualification des opportunités commerciales
+
+▸  Veille concurrentielle et positionnement stratégique
+
+▸  Analyse des besoins non couverts dans les systèmes de santé africains
+
+Module 2 — Négociation et partenariats commerciaux  (1 jour)
+
+▸  Techniques de négociation commerciale en santé
+
+▸  Structuration des contrats commerciaux et partenariats
+
+▸  Gestion des relations avec les clients institutionnels (ministères, ONG)
+
+▸  Gestion des accords de distribution et d'exclusivité
+
+Module 3 — Expansion et scaling des activités santé  (1 jour)
+
+▸  Stratégies d'expansion géographique en Afrique
+
+▸  Adaptation des produits/services aux marchés locaux
+
+▸  Gestion de la croissance et maintien de la qualité
+
+▸  Franchising et modèles de réplication dans le secteur santé

@@ -1,0 +1,2852 @@
+
+## Slide 1
+
+
+## Slide 2
+
+Quantification  des besoins
+
+ACADEMIE SUPPLY CHAIN SANTE
+
+
+## Slide 3
+
+Gestion des approvisionnements et des stocks
+
+Chapitres
+
+Introduction à la quantification
+Méthodes de prévision
+Outils de prévision et modélisation de la demande 
+Planification des approvisionnements
+Atelier pratique : exercices de quantification pays
+
+
+## Slide 4
+
+Introduction à la quantification
+
+QUANTIFICATION DES BESOINS
+
+
+## Slide 5
+
+Introduction à la quantification
+
+La quantification est un processus de gestion de la chaîne d’approvisionnement qui consiste à estimer les besoins futurs en produits de santé et à déterminer les quantités ainsi que le calendrier des approvisionnements nécessaires pour garantir la disponibilité continue des produits (suivant les financements disponibles) au sein du système de santé.
+
+Elle ne se limite plus à un simple exercice de calcul des besoins. 
+
+Elle devient :
+Un outil de gouvernance 
+Un mécanisme d’aide à la décision
+Un instrument de coordination des bailleurs et 
+Un levier de résilience des systèmes de santé.
+
+
+## Slide 6
+
+Introduction à la quantification
+
+La quantification repose généralement sur :
+les données de consommation 
+les données morbidité/programme 
+les niveaux de stock disponibles 
+les commandes en cours 
+les délais d’approvisionnement 
+les pertes et ajustements 
+les objectifs programmatiques 
+les tendances épidémiologiques et 
+les contraintes budgétaires.
+
+
+## Slide 7
+
+Introduction à la quantification
+
+Préparation: 
+Elle consiste à organiser l’ensemble des données, des acteurs, des hypothèses, des outils et des paramètres nécessaires afin d’assurer un exercice de quantification fiable, coordonné et basé sur des données de qualité.
+
+Prévision des besoins : 
+C’est une estimation/prédiction des quantités de produits qui seront consommées/utilisées par les patients/utilisateurs pour leur traitement ou reçues par les formations sanitaires sur une période de temps futur.
+Elaboration du plan d’approvisionnement :
+C’est un calendrier des envois de produits pour un programme sur une période de temps futur afin de garantir des niveaux de stock suffisant pour satisfaire les besoins de la population. Les envois sont définis en terme de quantité et nécessitent une date de réception (au niveau central d’entreposage).
+
+PREPARATION
+
+PREVISION
+
+PLANIFICATION
+
+Les composantes de la quantification
+
+
+## Slide 8
+
+Méthodes de prévision
+
+QUANTIFICATION DES BESOINS
+
+
+## Slide 9
+
+Gestion des approvisionnements et des stocks
+
+Plan
+
+Résumé des méthodes de prévision
+Méthode basée sur la consommation 
+Méthode basée sur la morbidité 
+Méthode basée sur les services
+Méthode basée sur les cibles de population
+Triangulation des méthodes
+
+
+## Slide 10
+
+Résumé des méthodes de prévision
+
+Démographiques
+
+PopulationPopulation du pays
+
+Services# de Tests/Visite
+
+Services
+
+Consommation
+
+Produits# d’unité
+
+Patients# de Patients
+
+Morbidité
+
+Les patients représentent quel pourcentage de la population?
+
+Quel est le nombre de services par patient?
+
+Quel est le nombre de produits requis par patient?
+
+Quel est le nombre de produits requis par service?
+
+
+## Slide 11
+
+Méthode basée sur la consommation
+
+La méthode basée sur la consommation est la plus utilisée dans les systèmes de santé disposant d'un historique de données fiable. 
+
+Elle part d'un principe simple : la meilleure estimation des besoins futurs est ce qui a été réellement consommé dans le passé, ajusté pour tenir compte des tendances, des ruptures et des évolutions prévisibles. 
+
+C'est la méthode de référence pour les médicaments dont la consommation est stable et bien documentée. 
+
+Sa qualité dépend entièrement de la qualité des données collectées. Des données médiocres produiront une quantification médiocre, peu importe la sophistication de la formule appliquée.
+
+
+## Slide 12
+
+Méthode basée sur la consommation
+
+Principe général de la méthode
+
+La méthode basée sur la consommation utilise les données historiques de distribution ou de consommation pour projeter les besoins futurs. 
+
+Elle répond à la question : 
+si nous avons consommé X unités sur les 12 derniers mois, 
+combien nous faudra-t-il sur les 12 prochains mois ?
+
+Formule de base : Besoin prévisionnel = CMM ajustée × Nombre de mois de la période de planification × Facteur d'ajustement
+
+Le facteur d'ajustement tient compte des évolutions attendues : croissance de la population desservie, changement de protocole, amélioration de la couverture des services.
+
+
+## Slide 13
+
+Méthode basée sur la consommation
+
+Principe général de la méthode
+
+Extrapolation à partir d’une série de données chronologiques –
+Série de données chronologiques : nécessite une série de données au fil du temps – pas juste des données annuelles (c.-à-d. consommation réelle mensuelle ajustée)
+Extrapolation : utilise les données du passé pour prédire le futur.
+
+A n’utiliser que si le passé est un bon indicateur du futur! Plus utile pour des produits avec des données complètes et précises.
+
+En théorie il existe 4 composantes de base: Prévision ≅𝐵𝑎𝑠𝑒+𝑇𝑒𝑛𝑑𝑎𝑛𝑐𝑒+𝑆𝑎𝑖𝑠𝑜𝑛𝑎𝑙𝑖𝑡é +𝐴𝑙é𝑎𝑡𝑜𝑖𝑟𝑒
+
+Différentes méthodes d’extrapolation estiment ces composantes sur la base de séries de données chronologiques pour aboutir à la prévision
+
+
+## Slide 14
+
+Méthode basée sur la consommation
+
+Les sources de données de consommation
+
+La première étape de la méthode est la collecte des données. 
+
+La qualité de ces données est le facteur le plus critique de toute la démarche.
+
+
+## Slide 15
+
+Méthode basée sur la consommation
+
+Les sources de données de consommation
+
+Source 1 — Les registres de dispensation des pharmacies
+C'est la source la plus directe. 
+Avantages :
+Données proches de la consommation réelle au niveau patient
+Granularité élevée (par produit, par date, par service)
+Disponibles dans la plupart des structures
+Limites :
+Qualité variable selon la rigueur d'enregistrement
+Données de consommation biaisées si des ruptures ont eu lieu (demande non satisfaite non visible)
+Consolidation difficile entre plusieurs sites
+
+Les principales sources de données
+
+
+## Slide 16
+
+Méthode basée sur la consommation
+
+Les sources de données de consommation
+
+Source 2 — Les rapports de consommation des programmes de santé
+Les programmes verticaux (VIH/SIDA, paludisme, tuberculose, vaccination) collectent leurs propres données de consommation via des rapports mensuels ou trimestriels standardisés. 
+Avantages :
+Données agrégées à plusieurs niveaux (site, district, région, national)
+Format standardisé facilitant la comparaison
+Souvent saisies dans des systèmes informatisés 
+Limites :
+Délais de transmission (les données du mois M arrivent parfois au mois M+2 ou M+3)
+Taux de complétude parfois insuffisant (tous les sites ne rapportent pas)
+Données de dispensation ≠ données de consommation réelle si retours de stock non enregistrés
+
+Les principales sources de données
+
+
+## Slide 17
+
+Méthode basée sur la consommation
+
+Les sources de données de consommation
+
+Source 3 — Les données de sortie des dépôts centraux et régionaux
+Les quantités expédiées par les centrales d'achat vers les niveaux inférieurs constituent une source de données de consommation agrégée. 
+Avantages :
+Données centralisées et généralement bien documentées
+Reflètent les flux réels de produits dans le système 
+Limites :
+Reflètent les sorties du dépôt central, pas la consommation finale au patient
+Biaisées si des stocks s'accumulent aux niveaux intermédiaires ou si des redistributions ont eu lieu
+Ne permettent pas de détecter les pertes et péremptions aux niveaux périphériques
+
+Les principales sources de données
+
+
+## Slide 18
+
+Méthode basée sur la consommation
+
+Les sources de données de consommation
+
+Source 4 — Les données des systèmes d'information de santé
+Les systèmes d'information nationaux consolident les données de plusieurs sources et permettent des analyses multi-niveaux. 
+Avantages :
+Vue d'ensemble nationale en temps réel (si les données sont saisies régulièrement)
+Permet la comparaison entre régions, districts et sites
+Historique long terme accessible
+Limites :
+Qualité dépendante de la rigueur de saisie à la base
+Délais de saisie parfois importants
+Nécessite une formation pour l'extraction et l'analyse des données
+
+Les principales sources de données
+
+
+## Slide 19
+
+Méthode basée sur la consommation
+
+Les sources de données de consommation
+
+Critères de qualité des données de consommation
+
+| Critère | Description | Questions clés |
+| --- | --- | --- |
+| Complétude | Toutes les sources ont-elles rapporté ? | Quel est le taux de complétude des rapports ? |
+| Exactitude | Les données reflètent-elles la réalité ? | Y a-t-il eu des ruptures qui biaisent les données ? |
+| Cohérence | Les données sont-elles cohérentes dans le temps et entre sites ? | Y a-t-il des valeurs aberrantes inexpliquées ? |
+| Promptitude | Les données sont-elles disponibles à temps pour la quantification ? | Avec quel délai les données arrivent-elles ? |
+| Granularité | Le niveau de détail est-il suffisant ? | Peut-on distinguer les données par produit, site, période ? |
+
+
+## Slide 20
+
+Méthode basée sur la consommation
+
+Collecte des données — Procédure standardisée
+
+Définir la période de référence
+
+| Situation | Période recommandée | Justification |
+| --- | --- | --- |
+| Données stables et complètes | 12 mois | Capture la saisonnalité complète |
+| Données partiellement disponibles | 6 mois minimum | En dessous, la CMM est peu fiable |
+| Changement récent de protocole | Données post-changement uniquement | Les données antérieures ne sont plus pertinentes |
+| Programme en phase de montée en charge | 3 à 6 mois récents + projection | La tendance est plus importante que la moyenne historique |
+
+
+## Slide 21
+
+Méthode basée sur la consommation
+
+Collecte des données — Procédure standardisée
+
+Formulaire standardisé de collecte des données
+
+Pour garantir la cohérence des données collectées auprès de plusieurs sites, un formulaire standardisé doit être utilisé.
+
+
+## Slide 22
+
+Méthode basée sur la consommation
+
+Analyse des données — Ajustements nécessaires
+
+Ajustement pour les ruptures de stock
+
+Les mois de rupture biaisent la CMM vers le bas. 
+
+L'ajustement consiste à extrapoler la consommation réelle pendant les périodes de rupture.
+
+Formule d'ajustement : 
+Consommation ajustée du mois = Consommation enregistrée × (Jours du mois ÷ Jours de disponibilité)
+
+
+## Slide 23
+
+Méthode basée sur la consommation
+
+Analyse des données — Ajustements nécessaires
+
+Ajustement des données de consommation par interpolation
+
+Pour les champs vides , l’interpolation utilise les valeurs les plus proches des deux côtés du champ vide (avant ou après le vide) et calcule la ligne directe entre les deux pour renseigner le champ vide
+
+Consommations réelles
+
+Mois
+
+
+## Slide 24
+
+Méthode basée sur la consommation
+
+Analyse des données — Ajustements nécessaires
+
+Ajustement pour la croissance du programme
+
+Si le nombre de patients ou d'utilisateurs du service augmente structurellement, la CMM historique sous-estime les besoins futurs. 
+
+Un facteur de croissance doit être appliqué.
+
+Formule :
+CMM projetée = CMM ajustée × (1 + Taux de croissance annuel)
+
+
+## Slide 25
+
+Méthode basée sur la consommation
+
+Analyse des données — Ajustements nécessaires
+
+Ajustement pour les changements de protocole
+
+Quand un protocole de traitement change (nouveau médicament, nouvelle dose, nouveau schéma), les données historiques de l'ancien produit ne sont plus pertinentes pour quantifier le nouveau.
+
+
+## Slide 26
+
+Méthode basée sur la consommation
+
+Analyse des données — Ajustements nécessaires
+
+Détection et traitement des valeurs aberrantes
+
+Une valeur aberrante est une donnée qui s'écarte significativement de la tendance générale sans explication documentée. 
+
+Elle peut résulter d'une erreur de saisie, d'un transfert non enregistré ou d'un événement exceptionnel.
+
+Méthode de détection : Calculer la moyenne et l'écart-type des données. Toute valeur à plus de 2 écarts-types de la moyenne est considérée comme aberrante et doit être vérifiée.
+
+
+## Slide 27
+
+Méthode basée sur la consommation
+
+Analyse des données — Ajustements nécessaires
+
+Ajustement pour la couverture attendue
+
+Si le programme prévoit d'étendre sa couverture géographique ou populationnelle, un facteur d'expansion doit être intégré.
+
+Formule : 
+Besoin projeté = CMM actuelle × (Couverture cible ÷ Couverture actuelle)
+
+
+## Slide 28
+
+Méthode basée sur la consommation
+
+Calcul de la quantification par la méthode de consommation
+
+Une fois les données collectées, vérifiées et ajustées, la quantification peut être calculée.
+
+Formule complète : 
+Quantité à approvisionner = (CMM ajustée × Mois de planification) + Stock de sécurité − Stock disponible − Commandes en transit
+
+
+## Slide 29
+
+Méthode basée sur la consommation
+
+Modèles statistiques d’extrapolation
+
+5 modèles statistiques d’extrapolation
+ Moyenne Mobile (Moving average)
+ Semi-Moyennes (Semi-averages)
+ Régression lineaire (Linear regression)
+ Lissage Exponentiel Triple [Triple exponential smoothing (TES, Holt-Winter)]
+ Moyenne Mobile intégrée autoregressive [Auto-Regressive Integrated Moving Average (ARIMA)]
+
+
+## Slide 30
+
+Méthode basée sur la consommation
+
+Modèles statistiques d’extrapolation
+
+Moyenne Mobile (Moving average)
+
+Une moyenne qui évolue dans le temps, supprimant les données plus anciennes à mesure qu'elle intègre des données plus récentes (+ données = + facile)
+
+Possible avec <14 mois de données (pas de minimum) 
+N’inclue pas : 
+Saisonnalité, 
+Tendance, 
+Intervalle de confiance
+
+
+## Slide 31
+
+Méthode basée sur la consommation
+
+Modèles statistiques d’extrapolation
+
+Semi-Moyennes (Semi-averages)
+
+Divise les données réelles en deux parties égales (moitiés) et calcule la moyenne arithmétique des valeurs de chaque partie (moitié)
+
+Possible avec <14 mois de données (au moins 3 mois de données)
+N’inclue pas : 
+Saisonnalité, 
+Données non aléatoire
+
+Y=mx+b
+m= Pente
+b= Y-interception avec l’axe des ordonnées
+
+m=(Y2-Y1)/(X2-X1)
+
+
+## Slide 32
+
+Méthode basée sur la consommation
+
+Modèles statistiques d’extrapolation
+
+Régression lineaire (Linear regression)
+
+modélise la relation entre deux variables en ajustant une équation linéaire aux données observées. Méthode très utilisée.
+
+Possible avec <14 mois de données (au moins 3 mois de données)
+N’inclue pas : 
+Saisonnalité, 
+Données non aléatoire
+
+
+## Slide 33
+
+Méthode basée sur la consommation
+
+Modèles statistiques d’extrapolation
+
+Lissage Exponentiel Triple [Triple exponential smoothing (TES, Holt-Winter)]
+
+Utilise des données plus anciennes à des poids décroissants de manière exponentielle au fil du temps (supérieur = Plus de poids aux données récentes)
+alpha, s’applique à la base
+beta, s’applique à la tendance
+gamma, s’applique à la saisonnalité
+
+Possible qu’ avec >24 mois de données, 
+Inclue : 
+saisonalité, 
+tendance, 
+intervalle de confiance
+
+
+## Slide 34
+
+Méthode basée sur la consommation
+
+Modèles statistiques d’extrapolation
+
+Moyenne Mobile intégrée autorégressive [Auto-Regressive Integrated Moving Average (ARIMA)]
+
+"Auto-regressive" (AR) Chaque point est influence par ses valeurs précédentes 
+“Moyenne mobile" (MA) Chaque point est une Moyenne d’un ou de plusieurs points adjacents. 
+AR & MA sont "intégrés" pour ajuster un meilleur modèle pour la série par différenciation (en utilisant ma différence entre les points d’une série chronologique au lieu des valeurs brutes)
+
+Possible qu’ avec >14 mois de données, 
+Inclue : 
+saisonalité, 
+tendance, 
+intervalle de confiance
+
+
+## Slide 35
+
+Méthode basée sur la consommation
+
+Prévision basée sur les modèles de données
+
+✔ Tendance
+Pas de saisonalité
+
+✔  Saisonalité 
+Pas de tendance
+
+Pas de tendance ou de saisonalité
+
+Meilleures unites de mesure
+
+✔  Tendance
+✔ Saisonalité
+
+Semi-moyennes
+Régression linéaire
+
+ARIMA
+Lissage Exponential Triple
+
+Naïve, Simple Moyenne, or 
+Moyenne mobile
+
+ARIMA
+Lissage Exponential Triple
+
+MAPE
+WAPE*
+RMSE
+
+WAPE*
+RMSE
+MAE
+
+MAPE
+WAPE*
+RMSE
+MAE
+
+WAPE*
+RMSE
+MAE
+
+Méthodes d’extrapolation
+
+Modèles de données
+
+ex. Faible dose, les progestatifs en comp, 
+DTG-10 (stable, après introduction)
+
+ex. Etonogestrel 4-year contraceptive Implant, TLD-90, 
+sulfadoxine-pyrimethamine
+
+ex. Artemether-Lumefantrine (Endemies)
+
+MAPE : Erreur Absolue Moyenne en Pourcentage
+WAPE : Pourcentage d’Erreur Absolu Pondéré
+RMSE : Erreur Quadratique Moyenne
+MAE : Erreur Absolue Moyenne
+
+
+## Slide 36
+
+Méthode basée sur la morbidité
+
+Démographiques
+
+PopulationPopulation du pays
+
+Services# de Tests/Visite
+
+Services
+
+Consommation
+
+Produits# d’unité
+
+Patients# de Patients
+
+Morbidité
+
+Les patients représentent quel pourcentage de la population?
+
+Quel est le nombre de services par patient?
+
+Quel est le nombre de produits requis par patient?
+
+Quel est le nombre de produits requis par service?
+
+
+## Slide 37
+
+Méthode basée sur la morbidité
+
+La méthode basée sur la morbidité part d'une logique radicalement différente de la méthode basée sur la consommation. 
+
+Au lieu de regarder ce qui a été consommé dans le passé, elle part de ce qui devrait être consommé, compte tenu du nombre de cas de maladie attendus et des protocoles de traitement en vigueur. 
+
+C'est une méthode de construction des besoins à partir de la demande théorique. 
+
+Elle est particulièrement utile quand les données historiques de consommation sont inexistantes, peu fiables, ou quand le contexte a changé significativement (nouveau programme, nouveau protocole, extension géographique).
+ 
+Sa précision dépend de deux facteurs critiques : 
+la fiabilité des données épidémiologiques (combien de cas sont attendus ?) et 
+la rigueur de l'application des protocoles de traitement (quelle quantité de médicament par cas ?).
+
+
+## Slide 38
+
+Méthode basée sur la morbidité
+
+Principe général de la méthode
+
+La méthode basée sur la morbidité construit les besoins en médicaments à partir de trois composantes : 
+
+Besoin = Nombre de cas attendus × Taux de traitement × Quantité de médicament par cas traité
+
+Chacune de ces trois composantes doit être estimée avec soin. 
+
+Une erreur sur l'une d'elles se propage et amplifie l'erreur finale.
+
+
+## Slide 39
+
+Méthode basée sur la morbidité
+
+Composante 1 — Nombre de cas attendus
+
+Sources de données épidémiologiques
+
+Source 1 — Données de morbidité des services de santé (données de consultation)
+Les registres de consultation des formations sanitaires enregistrent le nombre de cas diagnostiqués et traités pour chaque pathologie. 
+C'est la source la plus directe mais elle ne capture que les cas qui se présentent dans les structures de santé.
+
+
+## Slide 40
+
+Méthode basée sur la morbidité
+
+Composante 1 — Nombre de cas attendus
+
+Sources de données épidémiologiques
+
+Source 2 — Données d'incidence issues des enquêtes populationnelles
+Les enquêtes de santé (EDS, MICS, enquêtes de ménages) estiment l'incidence des maladies dans la population totale, indépendamment du recours aux soins. 
+Elles donnent une image plus complète de la charge de morbidité réelle.
+
+
+## Slide 41
+
+Méthode basée sur la morbidité
+
+Composante 1 — Nombre de cas attendus
+
+Sources de données épidémiologiques
+
+Source 3 — Données historiques de morbidité ajustées
+Quand les deux sources précédentes ne sont pas disponibles ou récentes, on peut utiliser les données historiques de morbidité des années précédentes, ajustées pour la croissance de la population et les tendances épidémiologiques.
+Formule : Cas attendus année N = Cas enregistrés année N-1 × Facteur de croissance population × Facteur tendance épidémiologique
+
+
+## Slide 42
+
+Méthode basée sur la morbidité
+
+Composante 1 — Nombre de cas attendus
+
+Ajustement pour le taux d'utilisation des services
+
+Le taux d'utilisation des services de santé mesure la proportion de personnes malades qui consultent dans une formation sanitaire. 
+
+Il est crucial pour ne quantifier que les médicaments qui seront réellement distribués dans le système public de santé.
+
+Formule : Cas traités dans le système public = Cas totaux dans la population × Taux d'utilisation des services publics
+
+
+## Slide 43
+
+Méthode basée sur la morbidité
+
+Composante 2 — Les protocoles de traitement
+
+Définition et importance
+
+Un protocole de traitement (ou schéma thérapeutique standard) définit précisément quels médicaments utiliser, à quelle dose, pendant combien de jours, pour traiter une pathologie donnée. 
+
+Dans la méthode basée sur la morbidité, les protocoles sont la clé de conversion entre le nombre de cas et les quantités de médicaments nécessaires.
+
+Principe : Quantité de médicament par cas = Dose × Fréquence × Durée du traitement
+
+
+## Slide 44
+
+Méthode basée sur la morbidité
+
+Composante 2 — Les protocoles de traitement
+
+Sources des protocoles de traitement
+
+Les protocoles utilisés dans la quantification doivent impérativement être les protocoles nationaux officiels validés par le Ministère de la Santé. 
+
+Utiliser des protocoles non officiels ou obsolètes invalide toute la quantification.
+
+Documents de référence :
+Guide national de prise en charge des maladies
+Protocoles standardisés des programmes verticaux (PNLP, PNLT, PNLS)
+Formulaire national des médicaments essentiels
+
+
+## Slide 45
+
+Méthode basée sur la morbidité
+
+Composante 3 — Taux de traitement
+
+Définition
+
+Le taux de traitement est la proportion des cas diagnostiqués qui reçoivent effectivement le traitement recommandé par le protocole national. 
+
+Il n'est jamais de 100% pour plusieurs raisons : 
+ruptures de stock, 
+refus du patient, 
+prescriptions alternatives, 
+automédication préalable.
+
+Formule : Taux de traitement = Cas traités selon protocole ÷ Total cas diagnostiqués × 100
+
+
+## Slide 46
+
+Méthode basée sur la morbidité
+
+Calcul complet par la méthode de morbidité
+
+Formule complète
+
+Besoin total = Σ (Cas attendus par catégorie × Taux de traitement × Quantité par cas) 
+
+La sommation porte sur toutes les catégories de patients (tranches d'âge, formes de la maladie, etc
+
+
+## Slide 47
+
+Méthode basée sur la morbidité
+
+Avantages, limites et conditions d'utilisation
+
+Avantages de la méthode basée sur la morbidité :
+
+Elle permet de quantifier pour des programmes nouveaux où il n'y a pas encore de données de consommation. 
+Elle révèle les besoins non satisfaits (demande non couverte par le système actuel). 
+Elle permet de planifier l'impact d'une extension de couverture. 
+Elle est indépendante des biais liés aux ruptures de stock passées.
+
+
+## Slide 48
+
+Méthode basée sur la morbidité
+
+Avantages, limites et conditions d'utilisation
+
+Limites de la méthode basée sur la morbidité :
+
+La qualité des données épidémiologiques est souvent insuffisante dans les contextes à ressources limitées. 
+Le taux d'utilisation des services est difficile à estimer avec précision. 
+Les protocoles de traitement ne sont pas toujours parfaitement respectés sur le terrain. 
+La distribution par tranche d'âge et par forme clinique requiert des données démographiques précises. 
+L'incidence réelle dépasse souvent l'incidence enregistrée.
+
+
+## Slide 49
+
+Méthode basée sur la morbidité
+
+Conditions d'utilisation optimale
+
+| Condition | Description |
+| --- | --- |
+| Données épidémiologiques récentes | Enquêtes de moins de 5 ans, données de surveillance à jour |
+| Protocoles nationaux validés | Schémas thérapeutiques officiels et appliqués |
+| Données démographiques fiables | Recensement récent ou projections validées |
+| Taux d'utilisation connu | Estimé à partir d'enquêtes ou de données historiques |
+| Programme nouveau ou en expansion | Contexte où les données de consommation sont inexistantes ou non représentatives |
+
+
+## Slide 50
+
+Méthode basée sur la morbidité
+
+Tableau synthèse — Méthode basée sur la morbidité
+
+| Étape | Action | Source de données |
+| --- | --- | --- |
+| 1. Estimer le nombre de cas | Utiliser données morbidité, incidence ou historique ajusté | Registres, enquêtes EDS/MICS, DHIS2 |
+| 2. Ajuster pour le taux d'utilisation | Appliquer la proportion de cas se présentant dans le système | Enquêtes, taux de recours aux soins |
+| 3. Distribuer par catégorie | Répartir les cas par tranche d'âge et forme clinique | Données démographiques, registres |
+| 4. Identifier les protocoles | Utiliser les protocoles nationaux officiels | Guide national de prise en charge |
+| 5. Calculer la quantité par cas | Dose × Fréquence × Durée | Protocole de traitement |
+| 6. Appliquer le taux de traitement | Proportion de cas traités selon le protocole | Données historiques, objectifs du programme |
+| 7. Calculer le besoin total | Σ (Cas × Taux traitement × Quantité/cas) | Calcul |
+| 8. Ajouter stock de sécurité | CMM équivalente × 2 mois | Politique nationale |
+| 9. Déduire stock disponible et transit | Stock physique + commandes en cours | Inventaire |
+
+
+## Slide 51
+
+Méthode basée sur les services
+
+La méthode basée sur les services utilise les données de prestation de soins comme point de départ de la quantification. 
+
+Elle part du nombre d'actes de service rendus : 
+consultations prénatales effectuées, 
+accouchements assistés, 
+vaccinations réalisées, 
+tests de dépistage conduits, 
+chirurgies pratiquées. 
+
+Chaque acte de service consomme une quantité définie de produits selon un protocole standardisé. En multipliant le nombre d'actes par la quantité de produits consommés par acte, on obtient le besoin total. 
+
+C'est la méthode de prédilection pour les produits liés à des services spécifiques et mesurables (santé reproductive, les réactifs de laboratoire, les vaccins et les consommables chirurgicaux).
+
+
+## Slide 52
+
+Méthode basée sur les services
+
+Principe général de la méthode
+
+Besoin total = Nombre d'actes de service × Quantité de produit par acte de service
+
+La force de cette méthode réside dans le fait que les données de prestation de soins sont souvent mieux enregistrées que les données de consommation de médicaments. 
+
+Le nombre de consultations prénatales, d'accouchements ou de vaccinations est systématiquement enregistré dans les registres d'activités des formations sanitaires et rapporté dans les systèmes d'information sanitaire.
+
+
+## Slide 53
+
+Méthode basée sur les services
+
+Les types de services et leurs produits associés
+
+| Service | Produits associés |
+| --- | --- |
+| Consultation prénatale (CPN) | Fer acide folique, Albendazole, Moustiquaire imprégnée (MILD), TPI (Sulfadoxine-Pyriméthamine), test de dépistage VIH, test syphilis |
+| Accouchement assisté | Oxytocine, Misoprostol, Ergométrine, Gants stériles, Lame de bistouri, Fil de suture, Lidocaïne, Vitamine K néonatale |
+| Consultation nourrisson (CPN0/CPS) | Vitamine A, Vaccins (PEV), Zinc, SRO |
+| Planification familiale | Contraceptifs oraux, Injectables (DMPA), Implants, DIU, Préservatifs |
+| Dépistage VIH | Tests de dépistage rapide (TDR VIH), réactifs de confirmation |
+| Consultation curative adulte | Variable selon pathologie (voir méthode morbidité) |
+| Chirurgie | Matériel de suture, anesthésiques, antibiotiques prophylactiques, antiseptiques |
+| Laboratoire | Réactifs selon types d'examens (NFS, glycémie, TDR paludisme, BK, CD4) |
+| Vaccination (PEV) | Vaccins selon calendrier, seringues autobloquantes, coton, alcool |
+
+
+## Slide 54
+
+Méthode basée sur les services
+
+Collecte des données de prestation de soins
+
+Sources de données
+
+Source 1 — Les registres d'activités des formations sanitaires
+Chaque service clinique tient un registre où sont enregistrés tous les actes effectués. Ces registres sont la source primaire des données de prestation.
+
+Source 2 — Les rapports mensuels d'activités (DHIS2, SIGMED)
+Les formations sanitaires transmettent mensuellement leurs données d'activités aux niveaux district, régional et national via les systèmes d'information. Ces données permettent la consolidation à grande échelle.
+
+Source 3 — Les données du Programme Élargi de Vaccination (PEV)
+Le PEV dispose de ses propres registres et rapports de vaccination, avec le nombre de doses administrées par antigène et par tranche d'âge.
+
+
+## Slide 55
+
+Méthode basée sur les services
+
+Collecte des données de prestation de soins
+
+Vérification de la qualité des données de service
+
+Comme pour les données de consommation, les données de prestation de soins doivent être évaluées avant utilisation.
+
+Contrôle de cohérence interne :
+Une règle de cohérence bien connue stipule que le nombre de CPN4 ne peut pas dépasser le nombre de CPN1 (on ne peut pas avoir plus de femmes ayant effectué 4 visites que de femmes ayant effectué la première visite). 
+De même, le nombre d'accouchements assistés doit être inférieur au nombre de CPN4 (si toutes les femmes qui terminent le suivi accouchent dans la structure).
+
+
+## Slide 56
+
+Méthode basée sur les services
+
+Définition des normes de consommation par acte de service
+
+Qu'est-ce qu'une norme de consommation par acte ?
+
+La norme de consommation par acte (aussi appelée norme de service ou norme d'utilisation) définit la quantité standard d'un produit consommée lors d'un acte de service donné. 
+
+Elle est établie sur la base des protocoles cliniques nationaux.
+
+Formule : Norme par acte = Quantité du produit utilisée lors d'un acte de service standard
+
+
+## Slide 57
+
+Méthode basée sur les services
+
+Calcul complet par la méthode basée sur les services
+
+Formule
+
+Besoin total = Σ (Nombre d'actes de service × Norme de consommation par acte)
+
+La sommation porte sur tous les types de services et toutes les normes applicables.
+
+
+## Slide 58
+
+Méthode basée sur les services
+
+Application à grande échelle — Consolidation nationale
+
+Étapes de la consolidation nationale
+
+Étape 1 — Collecte des données de service de tous les sites : Via DHIS2 ou les rapports mensuels, collecter les données de prestation de soins de toutes les formations sanitaires.
+
+Étape 2 — Estimation pour les sites non rapportants : Appliquer les moyennes régionales aux sites qui n'ont pas rapporté.
+
+Étape 3 — Application des normes nationales : Utiliser les normes de consommation par acte validées au niveau national (pas les normes locales qui peuvent varier).
+
+Étape 4 — Calcul des besoins par niveau et agrégation
+
+
+## Slide 59
+
+Méthode basée sur les services
+
+Avantages et limites
+
+Avantages spécifiques de la méthode basée sur les services :
+
+Les données de prestation de soins sont généralement mieux collectées et plus fiables que les données de consommation de médicaments. 
+La méthode est particulièrement adaptée aux produits dont la consommation est directement liée à un acte clinique mesurable. 
+Elle permet de détecter les inefficiences (gaspillage au-delà des normes) en comparant consommation réelle et consommation théorique calculée selon les normes. 
+Elle facilite la planification budgétaire car elle lie directement les coûts aux prestations de soins.
+
+
+## Slide 60
+
+Méthode basée sur les services
+
+Avantages et limites
+
+Limites de la méthode basée sur les services :
+
+Les normes de consommation par acte doivent être établies, validées et mises à jour régulièrement. 
+Elles varient selon le niveau de la structure et le contexte. 
+Les données de service peuvent elles-mêmes être biaisées (sous-enregistrement des accouchements à domicile, surnotification dans certains contextes de financement basé sur les résultats). 
+La méthode ne capture que les actes enregistrés, pas les actes réalisés sans enregistrement.
+
+
+## Slide 61
+
+Méthode basée sur les services
+
+Comparaison avec les autres méthodes
+
+| Critère | Méthode consommation | Méthode morbidité | Méthode services |
+| --- | --- | --- | --- |
+| Données requises | Sorties de stock | Incidence des maladies + protocoles | Actes de service + normes |
+| Fiabilité si données de qualité | Élevée | Moyenne à élevée | Élevée |
+| Adapté aux programmes nouveaux | Non | Oui | Si normes disponibles |
+| Capte la demande non satisfaite | Non | Oui | Partiellement |
+| Lien direct avec activités cliniques | Non | Indirect | Oui |
+| Facilité d'application | Simple | Complexe | Moyenne |
+| Produits adaptés | Médicaments de routine | Médicaments curatifs | Intrants liés à des actes spécifiques |
+
+
+## Slide 62
+
+Méthode basée sur les services
+
+Tableau synthèse — Méthode basée sur les services
+
+| Étape | Action | Source de données |
+| --- | --- | --- |
+| 1. Identifier les services | Lister les actes de service consommant le produit | Protocoles cliniques nationaux |
+| 2. Collecter les données de service | Registres d'activités, rapports mensuels, DHIS2 | Formations sanitaires |
+| 3. Vérifier la cohérence | Contrôles de cohérence entre indicateurs liés | Analyse interne |
+| 4. Projeter les actes futurs | Appliquer le taux de croissance historique | Tendance des 3 dernières années |
+| 5. Définir les normes par acte | Quantité de produit par acte selon le protocole | Guide national, protocoles programmes |
+| 6. Calculer les besoins bruts | Nombre d'actes projetés × Norme par acte | Calcul |
+| 7. Ajouter le stock de sécurité | CMM équivalente × 2 mois | Politique nationale |
+| 8. Déduire stock disponible et transit | Inventaire physique + commandes en cours | Gestionnaire |
+| 9. Consolider si multi-sites | Agréger les besoins de toutes les formations sanitaires | Système d'information |
+
+
+## Slide 63
+
+Méthode basée sur les cibles de population
+
+La méthode basée sur les cibles de population est la plus prospective des quatre méthodes de quantification. Elle ne part ni de ce qui a été consommé (méthode consommation), ni du nombre de cas enregistrés (méthode morbidité), ni des actes de service réalisés (méthode services), mais de la population cible qui devrait bénéficier d'un produit ou d'une intervention sanitaire, qu'elle ait ou non déjà accès au service. 
+
+C'est la méthode des programmes d'envergure nationale ou régionale qui visent à atteindre une couverture universelle ou un objectif de couverture défini. 
+
+Elle est particulièrement adaptée aux produits dont la distribution est planifiée de façon systématique pour une population entière ou un sous-groupe démographique précis, indépendamment d'une demande spontanée : 
+vaccins du PEV, 
+supplémentation en micronutriments, 
+moustiquaires imprégnées, 
+contraceptifs dans le cadre d'objectifs de planification familiale, 
+traitement préventif de masse.
+
+
+## Slide 64
+
+Méthode basée sur les cibles de population
+
+Principe général de la méthode
+
+Besoin total = Population cible × Taux de couverture visé × Quantité de produit par personne cible
+
+Les trois composantes sont distinctes et doivent chacune être estimées avec soin :
+Population cible : le sous-groupe de la population qui doit recevoir le produit (enfants de 6 à 59 mois, femmes enceintes, adultes de 15 à 49 ans, etc.)
+
+Taux de couverture visé : la proportion de la population cible qui doit effectivement recevoir le produit (objectif du programme)
+
+Quantité par personne : nombre d'unités du produit administrées par personne cible (doses, comprimés, moustiquaires)
+
+
+## Slide 65
+
+Méthode basée sur les cibles de population
+
+Composante 1 — Estimation de la population cible
+
+Les sources de données démographiques
+
+Source 1 — Le recensement général de la population
+C'est la source la plus fiable. Il fournit des données précises sur la structure par âge et par sexe de la population à la date du recensement.
+
+Limite principale : 
+Les recensements sont réalisés tous les 10 ans en moyenne. 
+Entre deux recensements, les données vieillissent et doivent être mises à jour par projection.
+
+
+## Slide 66
+
+Méthode basée sur les cibles de population
+
+Composante 1 — Estimation de la population cible
+
+Les sources de données démographiques
+
+Source 2 — Les projections démographiques
+À partir des données du dernier recensement, les instituts nationaux de statistique calculent des projections annuelles en appliquant les taux de natalité, mortalité et migration.
+
+Formule de projection : Population année N = Population recensement × (1 + Taux de croissance annuel)^(N − Année recensement)
+
+
+## Slide 67
+
+Méthode basée sur les cibles de population
+
+Composante 1 — Estimation de la population cible
+
+Les sources de données démographiques
+
+Source 3 — Les données DHIS2 et les dénombrements administratifs
+Pour les niveaux district et infranationaux, les dénombrements administratifs annuels (recensements administratifs, dénombrements communautaires) fournissent des données plus récentes et localisées.
+
+
+## Slide 68
+
+Méthode basée sur les cibles de population
+
+Composante 1 — Estimation de la population cible
+
+Calcul des sous-groupes de population cible
+
+Les programmes de santé ciblent rarement la population totale. Ils ciblent des sous-groupes démographiques précis. 
+Ces sous-groupes sont calculés en appliquant des coefficients démographiques standards à la population totale.
+
+| Groupe cible | Coefficient appliqué à la population totale |
+| --- | --- |
+| Naissances attendues par an | 3,8% à 4,2% |
+| Enfants de 0 à 11 mois | 3,8% à 4,0% |
+| Enfants de 0 à 59 mois | 17% à 19% |
+| Enfants de 6 à 59 mois (supplémentation Vit A) | 15% à 16% |
+| Femmes enceintes | 4,5% à 5,0% |
+| Femmes en âge de procréer (15-49 ans) | 22% à 24% |
+| Ménages (pour les moustiquaires) | Population totale ÷ 5 à 5,5 |
+
+Coefficients démographiques standards (Bénin, contexte Afrique subsaharienne)
+
+
+## Slide 69
+
+Méthode basée sur les cibles de population
+
+Composante 1 — Estimation de la population cible
+
+Ajustement pour la population cible réelle vs population cible théorique
+
+La population cible théorique calculée par les coefficients démographiques est la cible maximale. 
+Dans la réalité, certains membres de la population cible ne sont pas joignables ou ne relèvent pas du système public. 
+Un ajustement peut être nécessaire.
+
+
+## Slide 70
+
+Méthode basée sur les cibles de population
+
+Composante 2 — Le taux de couverture visé
+
+Le taux de couverture visé est l'objectif programmatique qui définit la proportion de la population cible qui doit recevoir le produit. Il est fixé par le programme national ou les objectifs de santé publique.
+
+| Type | Description | Exemple |
+| --- | --- | --- |
+| Couverture universelle | 100% de la cible visée | Vaccination campagne de masse contre la polio |
+| Couverture cible nationale | Objectif fixé par le programme | 90% de couverture VAR (Rougeole) |
+| Couverture historique | Couverture réelle des années précédentes | 82,5% VAR en 2024 |
+| Couverture progressive | Montée en charge sur plusieurs années | 70% an 1 → 80% an 2 → 90% an 3 |
+
+
+## Slide 71
+
+Méthode basée sur les cibles de population
+
+Composante 3 — Quantité de produit par personne cible
+
+Produits à dose unique
+
+Pour les produits administrés une seule fois par cycle (par an, par campagne), la quantité par personne est directement le nombre de doses ou d'unités par personne.
+
+Produits à doses multiples
+
+Pour les produits qui nécessitent plusieurs doses ou une prise continue, le calcul est plus complexe.
+
+
+## Slide 72
+
+Méthode basée sur les cibles de population
+
+Calcul complet par la méthode basée sur les cibles de population
+
+Formule complète
+
+Quantité à approvisionner = (Population cible × Taux de couverture × Quantité/personne × Facteur de gaspillage) + Stock de sécurité − Stock disponible − Commandes en transit
+
+
+## Slide 73
+
+Méthode basée sur les cibles de population
+
+La gestion du taux de gaspillage dans la méthode population
+
+Le taux de gaspillage est un paramètre critique dans la méthode basée sur les cibles de population, particulièrement pour les vaccins et les produits biologiques.
+
+| Source | Description | Exemple |
+| --- | --- | --- |
+| Gaspillage technique (flacons ouverts) | Doses restantes dans un flacon multidose non utilisées | Flacon de 10 doses Pentavalent ouvert pour 3 enfants → 7 doses perdues |
+| Rupture de la chaîne du froid | Produits devenus inutilisables | Vaccins exposés à +12°C pendant le transport |
+| Péremption | Produits périmés avant utilisation | Stock mal géré, commandes excessives |
+| Pertes logistiques | Casse, vol, détérioration pendant le transport | Flacons cassés lors du déchargement |
+| Non-utilisation | Produits distribués mais non consommés | Moustiquaires distribuées mais non installées |
+
+Sources de gaspillage
+
+
+## Slide 74
+
+Méthode basée sur les cibles de population
+
+Avantages et limites de la méthode basée sur les cibles de population
+
+Avantages
+
+La méthode est indépendante des données de consommation passée, ce qui la rend applicable même pour les nouveaux programmes. 
+
+Elle est orientée vers les objectifs de couverture, ce qui aligne la quantification avec les ambitions programmatiques. 
+
+Elle permet de planifier les besoins pour des campagnes de distribution de masse avec des cibles précises. 
+
+Elle facilite le plaidoyer budgétaire en liant directement les coûts aux objectifs de couverture sanitaire.
+
+
+## Slide 75
+
+Méthode basée sur les cibles de population
+
+Avantages et limites de la méthode basée sur les cibles de population
+
+Limites
+
+La qualité des projections démographiques est variable selon les pays et les districts. 
+
+Les coefficients démographiques appliqués à la population totale sont des estimations qui peuvent diverger de la réalité locale. 
+
+Le taux de couverture visé peut être trop ambitieux par rapport aux capacités réelles du système. 
+
+Le taux de gaspillage varie selon les contextes et les conditions de conservation. 
+
+La méthode ne tient pas compte des inégalités d'accès au sein de la population cible.
+
+
+## Slide 76
+
+Méthode basée sur les cibles de population
+
+Synthèse
+
+| Étape | Action | Source de données |
+| --- | --- | --- |
+| 1. Définir la population totale | Population du territoire concerné | Recensement + projections INSAE |
+| 2. Identifier la population cible | Appliquer le coefficient démographique | Coefficients standards OMS/INSAE |
+| 3. Ajuster si nécessaire | Exclure les sous-groupes non joignables | Données locales |
+| 4. Fixer le taux de couverture | Objectif programmatique national | Plan stratégique du programme |
+| 5. Calculer la population à atteindre | Population cible × Taux de couverture | Calcul |
+| 6. Définir la quantité par personne | Doses, unités selon le calendrier | Protocoles et calendriers nationaux |
+| 7. Intégrer le taux de gaspillage | Appliquer le facteur multiplicateur | Normes OMS/UNICEF |
+| 8. Calculer le besoin brut | Pop à atteindre × Quantité/personne × Facteur gaspillage | Calcul |
+| 9. Ajouter stock de sécurité | CMM équivalente × 2 mois | Politique nationale |
+| 10. Déduire stock et transit | Inventaire + commandes en cours | Gestionnaire |
+
+
+## Slide 77
+
+Comparaison des quatre méthodes de quantification
+
+| Critère | Consommation | Morbidité | Services | Population |
+| --- | --- | --- | --- | --- |
+| Point de départ | Données historiques de stock | Données épidémiologiques | Données d'activités cliniques | Données démographiques |
+| Fiabilité si données de qualité | Élevée | Moyenne | Élevée | Dépend des projections |
+| Programme nouveau | Non applicable | Oui | Si normes disponibles | Oui |
+| Demande non satisfaite captée | Non | Oui | Partiellement | Oui |
+| Gaspillage intégré | Implicite | Non | Partiellement | Explicitement |
+| Facilité d'application | Simple | Complexe | Moyenne | Moyenne |
+| Adapté aux campagnes de masse | Non | Partiellement | Partiellement | Oui |
+| Produits typiquement quantifiés | Médicaments de routine | Médicaments curatifs | Intrants liés aux actes | Vaccins, micronutriments, MILD, contraceptifs |
+| Niveau d'application optimal | Site, district | National, district | Site, district | National, régional |
+
+
+## Slide 78
+
+Triangulation des méthodes
+
+Les quatre méthodes de quantification ne sont pas concurrentes. Elles sont complémentaires.
+ 
+Dans la pratique professionnelle de la quantification pharmaceutique, aucune méthode prise isolément ne donne une réponse parfaitement fiable. Chacune a ses forces, ses limites et ses zones d'aveuglement. 
+
+La triangulation consiste à appliquer deux ou trois méthodes au même produit, à comparer les résultats obtenus, à analyser les écarts et à converger vers une estimation consensuelle fondée sur la meilleure compréhension possible du contexte. 
+
+C'est une démarche intellectuelle rigoureuse qui transforme la quantification d'un simple calcul mécanique en un exercice d'analyse et de jugement professionnel. 
+
+Les guides internationaux de quantification (USAID DELIVER, guide QAT, guide UNFPA) recommandent systématiquement la triangulation pour toute quantification nationale ou programmatique importante.
+
+
+## Slide 79
+
+Triangulation des méthodes
+
+Pourquoi trianguler ?
+
+La triangulation permet de :
+
+Détecter des incohérences entre les estimations qui signalent des problèmes dans les données
+
+Obtenir une fourchette de besoins (minimum probable, maximum probable) plutôt qu'un chiffre unique
+
+Prendre une décision éclairée en comprenant les hypothèses et les incertitudes de chaque méthode
+
+Justifier les choix de quantification devant les décideurs et les bailleurs de fonds
+
+
+## Slide 80
+
+Triangulation des méthodes
+
+Pourquoi trianguler ?
+
+Chaque méthode produit une estimation biaisée dans une direction particulière.
+
+| Méthode | Biais typique | Direction du biais |
+| --- | --- | --- |
+| Consommation | Sous-estime si ruptures fréquentes | ↓ Sous-estimation |
+| Morbidité | Surestime si taux de traitement mal estimé | ↑ Surestimation |
+| Services | Sous-estime si enregistrement incomplet | ↓ Sous-estimation |
+| Population | Surestime si couverture visée trop ambitieuse | ↑ Surestimation |
+
+
+## Slide 81
+
+Triangulation des méthodes
+
+Le processus de triangulation
+
+La triangulation suit un processus structuré en six étapes.
+
+Étape 1 — Appliquer chaque méthode applicable indépendamment
+Chaque méthode est appliquée de façon autonome, sans que le résultat d'une méthode influence le calcul des autres. 
+Les équipes chargées de chaque méthode travaillent idéalement en parallèle.
+
+
+## Slide 82
+
+Triangulation des méthodes
+
+Le processus de triangulation
+
+La triangulation suit un processus structuré en six étapes.
+
+Étape 2 — Comparer les résultats
+Les résultats de chaque méthode sont présentés dans un tableau comparatif. 
+L'écart entre les estimations est calculé.
+
+Critères d'interprétation des écarts
+
+| Écart entre méthodes | Interprétation | Action |
+| --- | --- | --- |
+| < 10% | Convergence forte → grande fiabilité | Utiliser la moyenne pondérée |
+| 10% à 25% | Convergence acceptable → vérifications nécessaires | Investiguer la source de divergence, justifier le choix |
+| 25% à 50% | Divergence significative → données à revoir | Revoir les hypothèses et données d'une ou plusieurs méthodes |
+| > 50% | Divergence majeure → problème de données | Reprendre la collecte de données, ne pas quantifier sur ces bases |
+
+
+## Slide 83
+
+Triangulation des méthodes
+
+Le processus de triangulation
+
+Étape 4 — Ajuster les hypothèses si nécessaire
+
+Si l'analyse révèle qu'une hypothèse d'une méthode est clairement erronée, la corriger et recalculer. 
+Documenter tous les ajustements effectués.
+
+
+## Slide 84
+
+Triangulation des méthodes
+
+Le processus de triangulation
+
+Étape 5 — Converger vers une estimation consensuelle
+
+Plusieurs approches sont possibles :
+
+Approche 1 — Sélection de la méthode la plus fiable : Choisir la méthode dont les données sont les plus complètes et les hypothèses les plus solides, et utiliser son résultat comme estimation principale.
+
+Approche 2 — Moyenne pondérée : Attribuer un poids à chaque méthode selon la fiabilité de ses données et calculer une moyenne pondérée.
+		Estimation consensuelle = Σ (Résultat méthode × Poids méthode) ÷ Σ Poids
+
+Approche 3 — Fourchette min-max : Utiliser le résultat le plus bas comme estimation minimale et le plus élevé comme estimation maximale, puis choisir une valeur dans cette fourchette selon le niveau de risque acceptable.
+
+
+## Slide 85
+
+Triangulation des méthodes
+
+Matrice de décision pour le choix des méthodes à trianguler
+
+| Situation | Méthodes recommandées | Méthode principale |
+| --- | --- | --- |
+| Programme mature avec bonnes données de stock | Consommation + Morbidité | Consommation |
+| Programme nouveau, pas de données historiques | Morbidité + Population | Morbidité |
+| Intrants liés à des actes cliniques mesurables | Services + Consommation | Services |
+| Campagne de distribution de masse | Population + Consommation historique | Population |
+| Données de consommation biaisées (ruptures >20%) | Morbidité + Population + Services | Morbidité |
+| Produit vaccinal PEV | Population + Services | Population |
+| Médicament de programme vertical (ARV, TB) | Consommation + Morbidité (file active) | Consommation |
+| Quantification nationale | Toutes les méthodes si données disponibles | Moyenne pondérée |
+
+
+## Slide 86
+
+Triangulation des méthodes
+
+Le rapport de triangulation
+
+Toute quantification triangulée doit être documentée dans un rapport formel. 
+Ce rapport est la preuve de la rigueur du processus et la base des révisions futures.
+
+
+## Slide 87
+
+Triangulation des méthodes
+
+Les erreurs à éviter dans la triangulation
+
+| Erreur | Description | Conséquence | Comment l'éviter |
+| --- | --- | --- | --- |
+| Choisir la méthode qui donne le résultat souhaité | Sélectionner a posteriori la méthode dont le résultat correspond au budget disponible | Biais de confirmation, quantification sous ou sur-estimée | Appliquer les méthodes avant de connaître les contraintes budgétaires |
+| Ne pas corriger les données avant de comparer | Comparer des résultats calculés sur des données de qualité différente | Fausse impression de divergence | Corriger les données de chaque méthode avant comparaison |
+| Faire une simple moyenne arithmétique sans pondération | Donner le même poids à une méthode avec 95% de complétude et une avec 60% | Résultat biaisé vers les données de moins bonne qualité | Pondérer selon la qualité des données |
+| Ne pas documenter les choix | Prendre des décisions sans les justifier | Impossible de reproduire ou réviser la quantification | Rapport de triangulation systématique |
+| Trianguler avec des données de périmètres différents | Une méthode couvre le secteur public, l'autre le secteur public et privé | Fausse divergence | Harmoniser les périmètres avant de comparer |
+| Considérer la triangulation comme terminée | Ne pas réviser la quantification au fil du temps | Quantification obsolète dès que le contexte change | Révisions trimestrielles systématiques |
+
+
+## Slide 88
+
+Triangulation des méthodes
+
+Synthèse — Comparaison et triangulation des méthodes
+
+| Étape | Action | Outil |
+| --- | --- | --- |
+| 1. Sélectionner les méthodes | Choisir 2 à 3 méthodes selon le contexte et les données disponibles | Matrice de sélection |
+| 2. Appliquer indépendamment | Calculer chaque méthode séparément sans influence mutuelle | Feuilles de calcul distinctes |
+| 3. Comparer les résultats | Présenter dans un tableau comparatif, calculer les écarts | Tableau de triangulation |
+| 4. Analyser les divergences | Identifier les sources de différence entre méthodes | Discussion d'équipe, vérification des données |
+| 5. Corriger les hypothèses | Ajuster les paramètres erronés ou incohérents | Nouvelle collecte de données si nécessaire |
+| 6. Pondérer selon la qualité | Attribuer un poids à chaque méthode selon la fiabilité de ses données | Grille de pondération |
+| 7. Calculer l'estimation consensuelle | Moyenne pondérée ou sélection motivée | Calcul |
+| 8. Définir la fourchette | Minimum, consensuel, maximum | Tableau de décision |
+| 9. Documenter | Rédiger le rapport de triangulation | Rapport standardisé |
+| 10. Planifier la révision | Prévoir les révisions trimestrielles | Calendrier de suivi |
+
+
+## Slide 89
+
+Outils de prévision et modélisation de la demande
+
+QUANTIFICATION DES BESOINS
+
+
+## Slide 90
+
+Gestion des approvisionnements et des stocks
+
+Plan
+
+Principes de la prévision de la demande en santé
+Utilisation de Quantimed, PipeLine, ForLAB, QAT
+Ajustements saisonniers et facteurs contextuels
+Analyse des écarts entre prévisions et consommations réelles
+
+
+## Slide 91
+
+Gestion des approvisionnements et des stocks
+
+Principes de la prévision de la demande en santé
+
+La quantification répond à la question : de combien de produits avons-nous besoin ? 
+
+La prévision de la demande répond à une question plus fine : comment cette demande va-t-elle évoluer dans le temps, et pourquoi ?
+
+ Une bonne prévision ne cherche pas à prédire l'avenir avec certitude — ce qui est impossible — mais à réduire l'incertitude à un niveau gérable, en identifiant les tendances fiables et en quantifiant les zones d'incertitude. 
+
+Une mauvaise prévision, qu'elle soit trop optimiste ou trop pessimiste, conduit soit à des ruptures de stock soit à des surstocks coûteux. Dans les systèmes de santé publique où les ressources sont limitées, l'enjeu est considérable.
+
+
+## Slide 92
+
+Principes de la prévision de la demande en santé
+
+La distinction entre quantification et prévision
+
+Synthèse — Comparaison et triangulation des méthodes
+
+| Dimension | Quantification | Prévision de la demande |
+| --- | --- | --- |
+| Question centrale | Combien faut-il commander ? | Comment la demande va-t-elle évoluer ? |
+| Horizon temporel | Court terme (6 à 24 mois) | Moyen à long terme (1 à 5 ans) |
+| Objectif | Décision d'achat opérationnelle | Planification stratégique |
+| Résultat | Quantité à approvisionner | Courbe ou modèle d'évolution de la demande |
+| Niveau d'application | Site, district, national | National, programme, région |
+| Fréquence | Trimestrielle ou semestrielle | Annuelle ou pluriannuelle |
+| Utilisateurs | Gestionnaires de stocks, pharmaciens | Planificateurs, décideurs, bailleurs |
+
+Relation entre les deux : La prévision de la demande alimente la quantification. Une fois qu'on a modélisé comment la demande va évoluer sur les 3 prochaines années, on peut quantifier avec beaucoup plus de précision pour chaque période de planification. La quantification sans prévision est une décision aveugle au-delà du prochain cycle d'approvisionnement.
+
+
+## Slide 93
+
+Principes de la prévision de la demande en santé
+
+Catégorie 1 — Facteurs démographiques
+
+Les déterminants de la demande pharmaceutique en santé
+
+La demande pharmaceutique est directement proportionnelle à la taille et à la structure de la population. Toute évolution démographique se traduit mécaniquement par une évolution de la demande.
+
+Facteurs démographiques clés :
+Croissance de la population totale
+Évolution de la structure par âge (vieillissement de la population → augmentation des maladies chroniques)
+Mouvements migratoires (afflux de réfugiés, urbanisation)
+Évolution du taux de fécondité (impact sur la demande en soins materno-infantiles)
+
+
+## Slide 94
+
+Principes de la prévision de la demande en santé
+
+Catégorie 2 — Facteurs épidémiologiques
+
+Les déterminants de la demande pharmaceutique en santé
+
+L'évolution de la charge de morbidité (incidence, prévalence des maladies) détermine directement la demande en médicaments curatifs et préventifs.
+
+Facteurs épidémiologiques clés :
+Tendance séculaire des maladies infectieuses (paludisme, tuberculose, VIH)
+Transition épidémiologique (montée des maladies non transmissibles)
+Émergence de nouvelles pathologies (épidémies, pandémies)
+Impact des interventions préventives (vaccination, MILD, eau potable)
+
+
+## Slide 95
+
+Principes de la prévision de la demande en santé
+
+Catégorie 3 — Facteurs programmatiques
+
+Les déterminants de la demande pharmaceutique en santé
+
+Les décisions prises par les programmes de santé ont un impact direct et souvent majeur sur la demande pharmaceutique.
+
+Facteurs programmatiques clés :
+Extension de la couverture géographique (ouverture de nouveaux sites)
+Changement de protocole de traitement (nouveau médicament, nouvelle dose)
+Objectifs d'élimination ou d'éradication d'une maladie
+Intégration de nouveaux produits dans la liste des médicaments essentiels
+Campagnes de dépistage ou de traitement de masse
+
+
+## Slide 96
+
+Principes de la prévision de la demande en santé
+
+Catégorie 4 — Facteurs liés à l'accès aux soins
+
+Les déterminants de la demande pharmaceutique en santé
+
+L'amélioration de l'accès aux soins augmente mécaniquement la demande pharmaceutique, même si l'incidence des maladies reste stable.
+
+Facteurs d'accès :
+Augmentation du taux d'utilisation des services de santé
+Réduction des barrières financières (gratuité des soins, assurance maladie)
+Extension géographique du réseau sanitaire (nouvelles formations sanitaires)
+Amélioration de la route ou du transport
+Renforcement des ressources humaines
+
+
+## Slide 97
+
+Principes de la prévision de la demande en santé
+
+Catégorie 5 — Facteurs conjoncturels et environnementaux
+
+Les déterminants de la demande pharmaceutique en santé
+
+Ces facteurs sont les plus difficiles à anticiper mais peuvent avoir des impacts majeurs sur la demande.
+
+Facteurs conjoncturels :
+Épidémies et pandémies (choléra, Ebola, COVID-19, méningite)
+Catastrophes naturelles et déplacements de populations
+Conflits armés et crises humanitaires
+Saisonnalité (paludisme en saison des pluies, infections respiratoires en saison sèche)
+Variations climatiques (inondations, sécheresses affectant la transmission des maladies)
+
+
+## Slide 98
+
+Principes de la prévision de la demande en santé
+
+Techniques de prévision qualitatives
+
+Les techniques de prévision
+
+Ces techniques ne reposent pas sur des calculs statistiques mais sur le jugement d'experts. Elles sont utilisées quand les données historiques sont insuffisantes ou quand des changements majeurs rendent le passé peu prédictif du futur.
+
+Technique 1 — Méthode Delphi : Un groupe d'experts répond de façon anonyme à une série de questionnaires sur l'évolution de la demande. Les réponses sont consolidées et renvoyées aux experts pour révision jusqu'à convergence d'opinions.
+Technique 2 — Panel d'experts : Un groupe de cliniciens, épidémiologistes, gestionnaires et pharmaciens se réunit pour estimer l'évolution de la demande sur la base de leur expérience et des informations disponibles.
+
+Utilisation optimale : nouveaux programmes, changements de protocoles, contextes de crise.
+
+
+## Slide 99
+
+Principes de la prévision de la demande en santé
+
+Techniques de prévision quantitatives
+
+Les techniques de prévision
+
+Moyenne Mobile (Moving average)
+ Semi-Moyennes (Semi-averages)
+ Régression lineaire (Linear regression)
+ Lissage Exponentiel Triple [Triple exponential smoothing (TES, Holt-Winter)]
+ Moyenne Mobile intégrée autoregressive [Auto-Regressive Integrated Moving Average (ARIMA)]
+
+
+## Slide 100
+
+Principes de la prévision de la demande en santé
+
+Mesure de la précision des prévisions
+
+L'Erreur Absolue Moyenne (EAM)
+EAM = Σ |Réel − Prévu| ÷ N
+
+Le Taux d'Erreur Absolue Moyen (MAPE)
+MAPE = Σ (|Réel − Prévu| ÷ Réel) × 100 ÷ N
+
+
+## Slide 101
+
+Principes de la prévision de la demande en santé
+
+La gestion de l'incertitude dans les prévisions
+
+Scénarios de prévision
+
+La méthode des scénarios consiste à construire plusieurs projections correspondant à des hypothèses différentes sur l'évolution des facteurs clés.
+
+Exemple chiffré — Trois scénarios pour la demande en ACT en 2025 :
+
+| Hypothèse | Scénario pessimiste | Scénario central | Scénario optimiste |
+| --- | --- | --- | --- |
+| Croissance population | 2,8% | 2,8% | 2,8% |
+| Couverture MILD | 74% (stable) | 82% | 90% |
+| Effet MILD sur incidence | −6%/10 points | −7,5%/10 points | −9%/10 points |
+| Taux d'utilisation services | 58% | 62% | 68% |
+| Taux de traitement ACT | 75% | 82% | 88% |
+| Demande projetée | 18 200 boîtes | 14 000 boîtes | 10 800 boîtes |
+
+Cette information est beaucoup plus utile aux décideurs qu'un simple chiffre de 14 000
+
+Elle leur permet d'évaluer le risque de rupture (si le scénario pessimiste se réalise) et le risque de surstock (si le scénario optimiste se réalise)
+
+
+## Slide 102
+
+Principes de la prévision de la demande en santé
+
+La gestion de l'incertitude dans les prévisions
+
+Intervalles de confiance
+
+Pour les prévisions basées sur des techniques statistiques (régression, lissage exponentiel), un intervalle de confiance peut être calculé pour quantifier l'incertitude.
+
+Exemple chiffré :
+La régression linéaire prédit 22 250 boîtes pour 2025. L'écart-type des résidus de la régression est de 520 boîtes. Intervalle de confiance à 95% :
+
+Borne inférieure = 22 250 − 1,96 × 520 = 21 230 boîtes
+Borne supérieure = 22 250 + 1,96 × 520 = 23 270 boîtes 
+
+La prévision centrale est de 22 250 boîtes, avec 95% de probabilité que la demande réelle se situe entre 21 230 et 23 270 boîtes. Cette fourchette permet de calculer le stock de sécurité nécessaire pour couvrir l'incertitude de prévision.
+
+
+## Slide 103
+
+Principes de la prévision de la demande en santé
+
+Le cycle de prévision — De l'analyse à la décision
+
+Collecte des données (mensuelle)
+        ↓
+Analyse des écarts entre prévisions et réel (mensuelle)
+        ↓
+Mise à jour du modèle de prévision (trimestrielle)
+        ↓
+Révision des prévisions à 12 mois (trimestrielle)
+        ↓
+Révision des prévisions à 3-5 ans (annuelle)
+        ↓
+Validation par les programmes et les décideurs (annuelle)
+        ↓
+Utilisation dans la quantification et la planification budgétaire (annuelle)
+        ↓
+Collecte des données (mensuelle) → recommencer
+
+
+## Slide 104
+
+Utilisation de Quantimed, PipeLine, ForLAB, QAT
+
+Les outils logiciels spécialisés en quantification pharmaceutique ont été développés pour répondre aux limites des tableurs Excel dans les exercices de quantification complexes : 
+volumes importants de données, 
+multiples méthodes à appliquer simultanément, 
+gestion de plusieurs niveaux géographiques, 
+intégration automatique des paramètres programmatiques, 
+génération de rapports standardisés. 
+
+Chacun de ces outils a été conçu pour un contexte ou un type de produit spécifique.
+
+
+## Slide 105
+
+Utilisation de Quantimed, PipeLine, ForLAB, QAT
+
+Les comprendre, savoir lequel utiliser dans quel contexte et maîtriser leur logique de fonctionnement est une compétence professionnelle essentielle pour tout planificateur en approvisionnement pharmaceutique travaillant dans les programmes de santé publique. 
+
+Ce cours ne vise pas à former des utilisateurs experts de chaque logiciel — cela nécessiterait plusieurs jours de pratique — mais à donner une compréhension claire de la logique, des forces et des limites de chaque outil, de façon à pouvoir choisir le bon outil et en interpréter correctement les résultats.
+
+
+## Slide 106
+
+Utilisation de Quantimed, PipeLine, ForLAB, QAT
+
+Vue d'ensemble comparative des quatre outils
+
+| Critère | Quantimed | PipeLine | ForLAB | QAT |
+| --- | --- | --- | --- | --- |
+| Développeur | USAID/MSH | USAID/JSI | CDC/WHO | USAID/Chemonics |
+| Année de développement | Années 1990, actualisé | Années 2000, actualisé | Années 2000, actualisé | 2018, outil le plus récent |
+| Produits cibles | Médicaments essentiels, contraceptifs | ARV, médicaments VIH | Réactifs de laboratoire | Tous produits de santé |
+| Méthodes intégrées | Consommation, morbidité, population | Consommation (file active) | Consommation, tests | Consommation, morbidité, services |
+| Niveau d'application | National, district | National | National, laboratoire | National, infranational |
+| Interface | Desktop (Windows) | Desktop (Windows) | Desktop/Web | Web (navigateur) |
+| Courbe d'apprentissage | Modérée | Modérée | Modérée | Élevée (plus complet) |
+| Gratuité | Gratuit | Gratuit | Gratuit | Gratuit |
+| Support technique | Limité (outil ancien) | Limité | Actif (CDC/OMS) | Actif (USAID) |
+| Intégration avec DHIS2 | Non | Non | Non | Partielle |
+| Triangulation intégrée | Non | Non | Non | Oui |
+
+
+## Slide 107
+
+Utilisation de Quantimed, PipeLine, ForLAB, QAT
+
+Quantimed
+
+Présentation générale
+
+Quantimed (Quantification of Health Commodities) est l'un des premiers outils informatisés de quantification pharmaceutique développés pour les pays à ressources limitées. Développé par Management Sciences for Health (MSH) avec le soutien de l'USAID, il a été largement utilisé pendant les années 2000 et 2010 dans les programmes de santé reproductive, de santé maternelle et de médicaments essentiels en Afrique subsaharienne et en Asie.
+
+Philosophie de l'outil : Quantimed est construit autour du principe que la meilleure quantification intègre plusieurs méthodes et confronte leurs résultats. Il guide l'utilisateur à travers un processus structuré qui va de la définition des produits à quantifier jusqu'à la génération des rapports finaux.
+
+
+## Slide 108
+
+Utilisation de Quantimed, PipeLine, ForLAB, QAT
+
+Quantimed
+
+Architecture et modules de Quantimed
+
+Quantimed est organisé en modules successifs qui correspondent aux étapes du processus de quantification.
+
+Module 1 — Configuration du programme : 
+L'utilisateur définit le cadre de la quantification : pays, région ou district concerné, période de planification, liste des produits à quantifier, liste des sites de prestation de soins.
+
+
+## Slide 109
+
+Utilisation de Quantimed, PipeLine, ForLAB, QAT
+
+Quantimed
+
+Architecture et modules de Quantimed
+
+Module 2 — Données de consommation : 
+Ce module permet la saisie et l'analyse des données de consommation historiques.
+
+| Champ | Description |
+| --- | --- |
+| Site | Formation sanitaire |
+| Produit | Médicament ou intrant |
+| Période | Mois de référence |
+| Ouverture | Stock début de mois |
+| Reçu | Réceptions du mois |
+| Distribué | Sorties du mois |
+| Pertes | Périmés, casses |
+| Fermeture | Stock fin de mois |
+| Jours rupture | Nombre de jours sans stock |
+
+Quantimed calcule automatiquement :
+La CMM brute = Total distribué ÷ Nombre de mois
+La CMM ajustée = Total distribué ajusté ÷ Mois valides (hors ruptures totales)
+La CMM ajustée par interpolation des mois de rupture partielle
+
+
+## Slide 110
+
+Utilisation de Quantimed, PipeLine, ForLAB, QAT
+
+Quantimed
+
+Architecture et modules de Quantimed
+
+Module 3 — Méthode morbidité dans Quantimed
+Quantimed intègre la méthode morbidité pour les programmes de santé reproductive et maternelle.
+
+L'utilisateur saisit :
+Les données épidémiologiques (incidence par pathologie)
+Les protocoles de traitement (dose, durée, fréquence)
+Les taux de traitement et de couverture
+
+Quantimed calcule automatiquement les besoins par produit et par mois.
+
+
+## Slide 111
+
+Utilisation de Quantimed, PipeLine, ForLAB, QAT
+
+Quantimed
+
+Architecture et modules de Quantimed
+
+Module 4 — Méthode population dans Quantimed
+Pour les produits de planification familiale, Quantimed intègre la méthode population avec les données démographiques et les objectifs de couverture contraceptive.
+
+Paramètres saisis :
+Population totale et femmes en âge de procréer
+Taux de prévalence contraceptive actuel et objectif
+Mix méthodes (répartition des femmes entre les différentes méthodes)
+Couverture de chaque méthode
+
+Calcul automatique : 
+Utilisatrices COC = FAP × Taux prévalence × Part COC dans le mix
+Unités COC = Utilisatrices × 13 plaquettes/an
+
+
+## Slide 112
+
+Utilisation de Quantimed, PipeLine, ForLAB, QAT
+
+Quantimed
+
+Architecture et modules de Quantimed
+
+Module 5 — Triangulation dans Quantimed
+Quantimed affiche les résultats des différentes méthodes dans un tableau comparatif et calcule automatiquement les écarts en pourcentage.
+
+Exemple de sortie Quantimed — Tableau de triangulation ACT :
+
+| Méthode | Besoin annuel calculé | Écart vs méthode consommation |
+| --- | --- | --- |
+| Consommation | 14 844 boîtes | Référence |
+| Morbidité | 11 743 boîtes | −20,9% |
+| Résultat Quantimed (moyenne pondérée) | 13 200 boîtes | −11,1% |
+
+
+## Slide 113
+
+Utilisation de Quantimed, PipeLine, ForLAB, QAT
+
+Quantimed
+
+Architecture et modules de Quantimed
+
+Module 6 — Rapport final Quantimed
+
+Quantimed génère automatiquement plusieurs rapports :
+Rapport de quantification par produit (besoins, stock actuel, quantité à commander)
+Rapport de triangulation (comparaison des méthodes)
+Rapport budgétaire (coût total de la quantification)
+Rapport de suivi (comparaison avec les quantifications précédentes)
+
+
+## Slide 114
+
+Utilisation de Quantimed, PipeLine, ForLAB, QAT
+
+Quantimed
+
+Forces et limites de Quantimed
+
+Forces :
+Interface relativement simple et guidée étape par étape
+Bonne intégration des trois méthodes principales
+Génération automatique de rapports standardisés
+Adapté aux programmes de santé reproductive et aux médicaments essentiels
+Gratuit et accessible
+
+Limites :
+Outil relativement ancien, mises à jour limitées
+Pas de module de prévision à long terme
+Pas d'intégration avec les systèmes d'information nationaux (DHIS2)
+Gestion limitée des ajustements saisonniers
+Support technique peu actif
+Interface Windows uniquement, pas de version web
+
+
+## Slide 115
+
+Utilisation de Quantimed, PipeLine, ForLAB, QAT
+
+PipeLine
+
+Présentation générale
+
+PipeLine a été développé par John Snow Inc. (JSI) pour l'USAID, spécifiquement pour la quantification et le suivi des médicaments ARV (antirétroviraux) dans les programmes VIH/SIDA. Son nom fait référence au "pipeline" d'approvisionnement en ARV, concept central dans la gestion des programmes VIH : il faut maintenir un flux continu de médicaments dans toute la chaîne d'approvisionnement pour éviter les interruptions de traitement.
+
+Philosophie de l'outil : PipeLine est construit autour de la notion de file active — le nombre de patients sous traitement ARV à un moment donné. C'est la variable centrale qui détermine tous les besoins en ARV. L'outil modélise l'évolution de la file active (nouveaux patients, abandons, décès, changements de schéma) et calcule les besoins en ARV résultants.
+
+
+## Slide 116
+
+Utilisation de Quantimed, PipeLine, ForLAB, QAT
+
+PipeLine
+
+Concepts clés de PipeLine
+
+Concept 1 — La file active
+La file active est le nombre de patients actuellement sous traitement ARV. 
+Elle évolue chaque mois selon la formule :
+File active M+1 = File active M + Nouveaux enrôlements M − Décès M − Perdus de vue M − Transferts sortants M + Transferts entrants M
+
+
+## Slide 117
+
+Utilisation de Quantimed, PipeLine, ForLAB, QAT
+
+PipeLine
+
+Concepts clés de PipeLine
+
+Concept 2 — Le schéma thérapeutique et la dispensation
+PipeLine gère la distribution des patients entre différents schémas thérapeutiques (1ère ligne, 2ème ligne, 3ème ligne) et modélise les transitions entre schémas.
+
+Exemple de répartition de la file active dans PipeLine :
+
+| Schéma | Produits | Patients | % file active | Cp/patient/mois |
+| --- | --- | --- | --- | --- |
+| TLD (1ère ligne standard) | TDF/3TC/DTG | 7 850 | 61,9% | 30 cp |
+| TLE (1ère ligne ancienne) | TDF/3TC/EFV | 3 200 | 25,3% | 30 cp |
+| AZT/3TC/LPV/r (2ème ligne) | AZT+3TC+LPV/r | 1 180 | 9,3% | AZT: 60 cp, 3TC: 60 cp, LPV/r: 60 cp |
+| Autres schémas | Divers | 450 | 3,5% | Variable |
+| Total |  | 12 680 | 100% |  |
+
+
+## Slide 118
+
+Utilisation de Quantimed, PipeLine, ForLAB, QAT
+
+PipeLine
+
+Concepts clés de PipeLine
+
+Concept 3 — Le pipeline d'approvisionnement
+PipeLine modélise le stock à chaque niveau de la chaîne d'approvisionnement :
+
+Niveau 1 : Stock central (Centrale d'achat)
+        ↓
+Niveau 2 : Stock régional (Dépôts régionaux)
+        ↓
+Niveau 3 : Stock district (Dépôts de district)
+        ↓
+Niveau 4 : Stock site (Pharmacies des sites VIH)
+
+Pour chaque niveau, PipeLine calcule le stock disponible, la consommation mensuelle et le stock de sécurité nécessaire.
+
+
+## Slide 119
+
+Utilisation de Quantimed, PipeLine, ForLAB, QAT
+
+PipeLine
+
+Fonctionnement de PipeLine
+
+Étape 1 — Saisie de la file active et des projections
+
+L'utilisateur saisit :
+La file active actuelle par site et par schéma
+Le taux mensuel de nouveaux enrôlements
+Le taux d'attrition (décès + perdus de vue)
+Les projections d'évolution du programme
+
+PipeLine projette automatiquement la file active pour chaque mois de la période de planification.
+
+
+## Slide 120
+
+Utilisation de Quantimed, PipeLine, ForLAB, QAT
+
+PipeLine
+
+Fonctionnement de PipeLine
+
+Étape 2 — Calcul des besoins en ARV
+
+À partir de la file active mensuelle projetée et de la répartition par schéma, PipeLine calcule les besoins mensuels en chaque ARV.
+
+Étape 3 — Gestion du pipeline (stocks multi-niveaux)
+
+PipeLine calcule le stock total dans le pipeline à chaque niveau et identifie les niveaux en rupture ou en surstock.
+
+
+## Slide 121
+
+Utilisation de Quantimed, PipeLine, ForLAB, QAT
+
+PipeLine
+
+Fonctionnement de PipeLine
+
+Étape 4 — Calcul de la quantité à commander
+
+PipeLine calcule la quantité à commander en tenant compte du stock total dans le pipeline (pas seulement le stock central).
+
+Formule PipeLine :
+Quantité à commander = Besoins période de planification + Stock de sécurité − Stock total pipeline − Commandes en transit
+
+
+## Slide 122
+
+Utilisation de Quantimed, PipeLine, ForLAB, QAT
+
+PipeLine
+
+Forces et limites de PipeLine
+
+Forces :
+Parfaitement adapté aux programmes ARV avec gestion de file active
+Modélisation multi-niveaux du pipeline d'approvisionnement
+Détection automatique des surstocks et ruptures à chaque niveau
+Gestion des transitions entre schémas thérapeutiques
+Calcul précis prenant en compte le stock total du pipeline
+
+Limites :
+Conçu spécifiquement pour les ARV, peu adapté aux autres médicaments
+Données de file active doivent être régulièrement mises à jour
+Pas de gestion de la saisonnalité
+Interface complexe pour les non-initiés
+Support technique limité pour les versions récentes
+
+
+## Slide 123
+
+Utilisation de Quantimed, PipeLine, ForLAB, QAT
+
+ForLAB
+
+Présentation générale
+
+ForLAB (Forecasting Laboratory Commodities) est un outil développé par le CDC (Centers for Disease Control and Prevention) et l'OMS, spécifiquement pour la quantification des réactifs et consommables de laboratoire. 
+
+Dans les programmes de santé publique, les réactifs de laboratoire constituent une catégorie particulière de produits pharmaceutiques, avec des caractéristiques qui rendent les outils génériques peu adaptés : 
+les réactifs sont souvent liés à des équipements spécifiques (automates), 
+leur consommation dépend du nombre de tests réalisés et non du nombre de patients et 
+leur gestion implique des notions de calibration de contrôle qualité et de rendement par kit qui n'existent pas pour les médicaments.
+
+
+## Slide 124
+
+Utilisation de Quantimed, PipeLine, ForLAB, QAT
+
+ForLAB
+
+Spécificités des réactifs de laboratoire
+
+Caractéristique 1 — La notion de test par kit
+Un kit de réactifs ne contient pas une dose par patient. 
+Il contient un nombre défini de tests, mais ce nombre n'est jamais entièrement utilisé à cause des contrôles qualité et des calibrations.
+
+Caractéristique 2 — La dépendance aux équipements
+Chaque automate de laboratoire utilise des réactifs spécifiques et incompatibles avec d'autres marques. 
+La quantification doit donc être faite par automate et non globalement.
+
+
+## Slide 125
+
+Utilisation de Quantimed, PipeLine, ForLAB, QAT
+
+ForLAB
+
+Spécificités des réactifs de laboratoire
+
+Caractéristique 3 — La consommation liée aux tests et non aux patients
+Un même patient peut nécessiter plusieurs types de tests différents lors d'une même consultation. 
+La consommation de réactifs dépend du nombre de tests prescrits, pas du nombre de patients.
+
+
+## Slide 126
+
+Utilisation de Quantimed, PipeLine, ForLAB, QAT
+
+ForLAB
+
+Architecture et fonctionnement de ForLAB
+
+Module 1 — Configuration du laboratoire
+L'utilisateur définit : 
+Les équipements disponibles (automates) avec leur marque et modèle
+Les types de tests réalisés sur chaque équipement
+Les réactifs associés à chaque test sur chaque équipement
+
+Module 2 — Données de tests réalisés
+ForLAB collecte les données du nombre de tests effectués par type et par mois.
+
+
+## Slide 127
+
+Utilisation de Quantimed, PipeLine, ForLAB, QAT
+
+ForLAB
+
+Architecture et fonctionnement de ForLAB
+
+Module 3 — Paramètres des kits de réactifs
+Pour chaque réactif, ForLAB intègre :
+Nombre de tests théoriques par kit
+Taux de rendement (tenant compte des calibrations et contrôles qualité)
+Nombre de tests utilisables par kit = Tests théoriques × Taux de rendement.
+
+Module 4 — Calcul des besoins en réactifs
+ForLAB calcule automatiquement les besoins en kits de réactifs pour chaque type de test.
+Formule ForLAB : 
+Kits nécessaires = (Tests à réaliser × Facteur de croissance) ÷ Tests utilisables par kit
+
+
+## Slide 128
+
+Utilisation de Quantimed, PipeLine, ForLAB, QAT
+
+ForLAB
+
+Architecture et fonctionnement de ForLAB
+
+Module 5 — Rapport ForLAB
+ForLAB génère un rapport complet listant pour chaque réactif :
+Tests réalisés historiquement
+Tests projetésKits nécessaires
+Stock de sécurité
+Stock disponible
+Quantité à commander
+Valeur financière
+
+
+## Slide 129
+
+Utilisation de Quantimed, PipeLine, ForLAB, QAT
+
+ForLAB
+
+Forces et limites de ForLAB
+
+Forces :
+Seul outil spécifiquement conçu pour les réactifs de laboratoire
+Intègre les paramètres techniques des kits (calibration, contrôle qualité, rendement)
+Gestion multi-équipements et multi-réactifs
+Adapté aux programmes VIH (CD4, charge virale) et tuberculose (BK, GeneXpert)
+Support actif CDC/OMS
+
+Limites :
+Limité aux réactifs de laboratoire, ne gère pas les médicaments
+Nécessite des données techniques détaillées sur chaque automate
+Données de tests parfois difficiles à extraire des laboratoires
+Pas de gestion de la saisonnalité des tests (sauf saisonnalité du paludisme)
+
+
+## Slide 130
+
+Utilisation de Quantimed, PipeLine, ForLAB, QAT
+
+QAT (Quantification and Analytics Tool)
+
+Présentation générale
+
+QAT est l'outil le plus récent et le plus complet de la liste. Développé par USAID via Chemonics International et lancé en 2018, il a été conçu pour remplacer et intégrer les fonctionnalités de Quantimed et PipeLine dans un seul outil web moderne. 
+
+QAT est accessible depuis n'importe quel navigateur internet, ne nécessite pas d'installation, et permet la collaboration en temps réel entre plusieurs utilisateurs dans différents pays.
+
+Philosophie de l'outil :QAT est construit autour de la triangulation systématique. Pour chaque produit, il permet d'appliquer simultanément plusieurs méthodes de quantification et de les comparer côte à côte. Il intègre également des fonctions d'analyse avancées, de suivi des approvisionnements et de génération de rapports programmatiques.
+
+
+## Slide 131
+
+Utilisation de Quantimed, PipeLine, ForLAB, QAT
+
+QAT (Quantification and Analytics Tool)
+
+Architecture de QAT
+
+Section 1 — Gestion des programmes
+QAT permet de gérer plusieurs programmes de santé simultanément dans une même plateforme : 
+VIH/SIDA, 
+paludisme, 
+tuberculose, 
+santé reproductive, 
+médicaments essentiels.
+
+Pour chaque programme, l'utilisateur configure : 
+Les produits à quantifier
+Les unités et conditionnements
+Les niveaux géographiques
+Les partenaires et bailleurs de fonds
+La période de planification
+
+
+## Slide 132
+
+Utilisation de Quantimed, PipeLine, ForLAB, QAT
+
+QAT (Quantification and Analytics Tool)
+
+Architecture de QAT
+
+Section 2 — Collecte et gestion des données
+QAT dispose de fonctions avancées de collecte de données directement dans l'outil, sans passer par des fichiers Excel intermédiaires.
+
+Types de données collectées dans QAT :
+
+| Type de données | Description | Source |
+| --- | --- | --- |
+| Consommation | Sorties de stock mensuelle par produit et par site | LMIS, rapports mensuels |
+| Stock | Niveaux de stock actuels à chaque niveau | Inventaires, rapports de stock |
+| Morbidité | Données épidémiologiques par pathologie | DHIS2, rapports épidémiologiques |
+| Activités | Données de prestation de soins | Rapports d'activités |
+| Population | Données démographiques et cibles programmatiques | INSAE, projections OMS |
+| Pipeline | Commandes en transit et délais de livraison | Données d'achats |
+
+Fonctionnalité clé : 
+QAT peut importer directement les données via une connexion API, éliminant la saisie manuelle et réduisant les erreurs de transcription. 
+C'est une avancée majeure par rapport aux outils précédents.
+
+
+## Slide 133
+
+Utilisation de Quantimed, PipeLine, ForLAB, QAT
+
+QAT (Quantification and Analytics Tool)
+
+Architecture de QAT
+
+Section 3 — Quantification multi-méthodes
+C'est le cœur de QAT. 
+Pour chaque produit, l'utilisateur peut appliquer jusqu'à quatre méthodes de quantification simultanément et les comparer dans un tableau de triangulation intégré.
+
+
+## Slide 134
+
+Utilisation de Quantimed, PipeLine, ForLAB, QAT
+
+QAT (Quantification and Analytics Tool)
+
+Architecture de QAT
+
+Section 4 — Suivi des approvisionnements
+QAT intègre un module de suivi des commandes et du pipeline d'approvisionnement qui permet de visualiser en temps réel la situation des stocks à chaque niveau.
+
+Fonctionnalité avancée — Analyse de scénarios dans QAT :
+QAT permet de simuler l'impact de différentes hypothèses sur la quantification.
+
+
+## Slide 135
+
+Utilisation de Quantimed, PipeLine, ForLAB, QAT
+
+QAT (Quantification and Analytics Tool)
+
+Génération de rapports dans QAT :
+
+QAT génère automatiquement plusieurs types de rapports exportables en Excel, PDF ou Word :
+
+| Rapport | Contenu | Utilisateurs |
+| --- | --- | --- |
+| Rapport de quantification | Besoins par produit, méthode et période | Gestionnaires, planificateurs |
+| Rapport de triangulation | Comparaison des méthodes, justification | Décideurs, bailleurs |
+| Rapport budgétaire | Coût total par produit et par bailleur | Ministère des Finances, bailleurs |
+| Rapport de pipeline | Situation des stocks à chaque niveau | Gestionnaires de la chaîne |
+| Tableau de bord programmatique | KPIs du programme (couverture, ruptures) | Directeurs de programme |
+
+
+## Slide 136
+
+Utilisation de Quantimed, PipeLine, ForLAB, QAT
+
+QAT (Quantification and Analytics Tool)
+
+Forces et limites de QAT
+
+Forces :
+Outil le plus complet et le plus récent
+Accessible en ligne, pas d'installation nécessaire
+Disponible en mode off line
+Collaboration multi-utilisateurs en temps réel
+Intégration des quatre méthodes de quantification dans un seul outil
+Triangulation intégrée avec pondération ajustable
+Import depuis DHIS2 (réduction des erreurs de saisie)
+Analyse de scénarios intégrée
+Rapports standardisés de haute qualité
+Support technique actif USAID/Chemonics
+Adapté à tous les types de produits de santé
+
+
+## Slide 137
+
+Utilisation de Quantimed, PipeLine, ForLAB, QAT
+
+QAT (Quantification and Analytics Tool)
+
+Forces et limites de QAT
+
+Limites :
+Nécessite une connexion internet fiable (mode en ligne)
+Courbe d'apprentissage plus longue que les autres outils
+Interface en anglais uniquement (au moment de la rédaction)
+Certaines fonctionnalités avancées nécessitent une formation spécifique
+Dépendance à l'infrastructure internet dans les zones à faible connectivité
+
+
+## Slide 138
+
+Ajustements saisonniers et facteurs contextuels
+
+Une prévision qui ignore la saisonnalité et les facteurs contextuels est une prévision aveugle.
+
+Elle produit une demande "moyenne" qui ne correspond à la réalité d'aucun mois de l'année. 
+En mai, le gestionnaire est en rupture d'ACT pendant que son entrepôt déborde d'antihypertenseurs. 
+En janvier, il a six mois de stock d'ACT qui occupent de l'espace et immobilisent des ressources. 
+
+La saisonnalité est la réalité de terrain de tout gestionnaire pharmaceutique en zone tropicale.
+ 
+Les facteurs contextuels — politiques de santé, événements démographiques, crises, changements de protocoles — sont les perturbateurs qui déforment les tendances "normales" et que seul un regard attentif sur l'environnement permet d'anticiper. 
+
+Maîtriser ces deux dimensions transforme une quantification mécanique en une prévision intelligente, adaptée à la réalité de chaque territoire et de chaque période.
+
+
+## Slide 139
+
+Ajustements saisonniers et facteurs contextuels
+
+Les ajustements saisonniers
+
+Définition et sources de la saisonnalité pharmaceutique
+
+La saisonnalité est la variation cyclique et prévisible de la demande pharmaceutique qui se répète à intervalles réguliers, généralement sur une base annuelle. 
+
+Elle est dite "saisonnière" car elle est le plus souvent liée aux saisons climatiques, mais elle peut aussi être liée au calendrier épidémiologique, au calendrier scolaire ou aux cycles agricoles.
+
+
+## Slide 140
+
+Ajustements saisonniers et facteurs contextuels
+
+Les ajustements saisonniers
+
+Sources principales de saisonnalité en santé publique
+
+| Source | Mécanisme | Produits affectés |
+| --- | --- | --- |
+| Saison des pluies | Prolifération des moustiques → paludisme | ACT, quinine, TDR paludisme, artésunate IV |
+| Saison sèche | Poussières, vent de l'harmattan → méningite, infections respiratoires | Vaccin méningite, antibiotiques |
+| Saison froide/fraîche | Favorise la transmission des virus respiratoires | Paracétamol, amoxicilline pédiatrique, SRO |
+| Période de récolte | Déplacements de population, changements alimentaires | SRO, antipaludéens |
+| Calendrier vaccinal | Campagnes de vaccination programmées | Vaccins selon programme |
+| Saison de maternité | Légère augmentation des naissances certaines périodes | Oxytocine, fer acide folique, vitamine K |
+| Rentrée scolaire | Dépistage des troubles visuels, dentaires | Médicaments pédiatriques |
+| Ramadan | Adaptation des horaires de prise de médicaments | Médicaments chroniques (diabète, HTA) |
+
+
+## Slide 141
+
+Ajustements saisonniers et facteurs contextuels
+
+Les ajustements saisonniers
+
+Méthode de calcul des indices saisonniers
+
+L'indice saisonnier est un coefficient multiplicateur qui exprime, pour chaque mois, l'écart entre la demande de ce mois et la demande mensuelle moyenne annuelle.
+
+Formule :
+Indice saisonnier du mois M = Consommation moyenne historique du mois M ÷ CMM globale
+
+
+## Slide 142
+
+Ajustements saisonniers et facteurs contextuels
+
+Les ajustements saisonniers
+
+Méthode de calcul des indices saisonniers
+
+Pour être fiable, le calcul des indices saisonniers nécessite au minimum 3 ans de données. Avec moins de données, les variations accidentelles d'une année peuvent être confondues avec des effets saisonniers réels.
+
+Étapes du calcul :
+Étape 1 : Collecter les données mensuelles sur au minimum 3 ans
+Étape 2 : Calculer la consommation moyenne de chaque mois sur toutes les années
+Étape 3 : Calculer la CMM globale sur l'ensemble de la période
+Étape 4 : Diviser la moyenne de chaque mois par la CMM globale
+Étape 5 : Vérifier que la somme des 12 indices = 12 (contrôle de cohérence)
+
+
+## Slide 143
+
+Ajustements saisonniers et facteurs contextuels
+
+Les ajustements saisonniers
+
+Application des indices saisonniers aux prévisions
+
+Une fois les indices calculés, ils sont appliqués aux prévisions pour désaisonnaliser ou saisonnaliser les estimations.
+
+Application 1 : Prévision mensuelle saisonnalisée
+Prévision mensuelle = CMM projetée × Indice saisonnier du mois
+
+Annuellement, les totaux sont presque identiques. La différence n'est pas dans la quantité totale commandée sur l'année, mais dans le calendrier des commandes. Sans ajustement saisonnier, on commandera trop en hiver et pas assez en été, créant des surstocks inutiles en basse saison et des ruptures en haute saison.
+
+
+## Slide 144
+
+Ajustements saisonniers et facteurs contextuels
+
+Les ajustements saisonniers
+
+Application des indices saisonniers aux prévisions
+
+Application 2 — Désaisonnalisation pour identifier la tendance pure
+La désaisonnalisation permet d'éliminer l'effet saisonnier pour ne voir que la tendance structurelle de la demande, indépendamment des variations cycliques.
+
+Formule :
+Consommation désaisonnalisée = Consommation réelle ÷ Indice saisonnier
+
+
+## Slide 145
+
+Ajustements saisonniers et facteurs contextuels
+
+Les ajustements saisonniers
+
+Saisonnalité et planification des commandes
+
+L'ajustement saisonnier doit être intégré dans le calendrier des commandes, pas seulement dans les quantités.
+
+Principe de l'anticipation saisonnière : Les commandes destinées à couvrir les pics saisonniers doivent être passées suffisamment tôt pour arriver avant le début du pic, en tenant compte du délai de livraison.
+
+Formule :
+Date limite de commande = Début du pic saisonnier − Délai de livraison
+
+
+## Slide 146
+
+Ajustements saisonniers et facteurs contextuels
+
+Les ajustements saisonniers
+
+Saisonnalité de la chaîne d'approvisionnement
+
+La saisonnalité ne concerne pas uniquement la demande. Elle affecte aussi la chaîne d'approvisionnement elle-même.
+
+Perturbations saisonnières de l'approvisionnement
+
+| Période | Perturbation | Impact | Anticipation nécessaire |
+| --- | --- | --- | --- |
+| Saison des pluies | Routes impraticables dans les zones rurales | Retard de livraison aux sites périphériques | Constituer un stock avancé avant les pluies |
+| Période de fin d'année | Fermetures administratives, congés | Blocage des commandes et livraisons | Passer les commandes fin novembre |
+| Début d'année budgétaire | Délais d'approbation des nouveaux budgets | Retard de financement des commandes | Stock de sécurité renforcé en début d'année |
+| Période de haute transmission | Demande augmente chez tous les acteurs simultanément | Tensions d'approvisionnement chez les fournisseurs | Commander à l'avance, avant le pic |
+
+
+## Slide 147
+
+Ajustements saisonniers et facteurs contextuels
+
+Les facteurs contextuels
+
+Facteurs contextuels démographiques
+
+Facteur 1 — Croissance et migrations de population
+La croissance démographique génère une augmentation mécanique de la demande proportionnelle au taux de croissance. 
+Les mouvements migratoires (ruraux vers urbains, réfugiés, déplacés internes) peuvent créer des hausses brutales et localisées de la demande.
+
+Facteur 2 — Vieillissement de la population et transition épidémiologique
+Dans les pays à revenu intermédiaire et supérieur, le vieillissement de la population entraîne une montée progressive des maladies chroniques (HTA, diabète, maladies cardiovasculaires, cancer) au détriment relatif des maladies infectieuses.
+
+
+## Slide 148
+
+Ajustements saisonniers et facteurs contextuels
+
+Les facteurs contextuels
+
+Facteurs contextuels programmatiques
+
+Facteur 3 — Extension de la couverture géographique
+L'ouverture de nouveaux centres de santé ou l'extension d'un programme à de nouvelles zones génère une augmentation immédiate et parfois substantielle de la demande.
+
+Facteur 4 — Changement de protocole de traitement
+L'introduction d'un nouveau médicament ou d'une nouvelle dose modifie les besoins de façon immédiate et durable.
+
+Facteur 5 — Objectifs programmatiques ambitieux
+Les objectifs 90-90-90 et 95-95-95 de l'ONUSIDA pour le VIH (95% des séropositifs dépistés, 95% des dépistés sous traitement, 95% en succès thérapeutique) génèrent des augmentations continues et planifiées de la file active et donc de la demande en ARV.
+
+
+## Slide 149
+
+Ajustements saisonniers et facteurs contextuels
+
+Les facteurs contextuels
+
+Facteurs contextuels liés aux politiques de santé
+
+Facteur 6 — Gratuité des soins
+La suppression des barrières financières entraîne une augmentation du taux d'utilisation des services et donc de la consommation pharmaceutique.
+
+Facteur 7 — Introduction d'une assurance maladie universelle
+Similaire à la gratuité, l'assurance maladie réduit les barrières financières et augmente le taux d'utilisation des services, avec un effet particulièrement marqué sur les médicaments de prescription pour les maladies chroniques.
+
+
+## Slide 150
+
+Ajustements saisonniers et facteurs contextuels
+
+Les facteurs contextuels
+
+Facteurs contextuels liés aux épidémies et crises
+
+Facteur 8 — Épidémies imprévisibles
+Les épidémies créent des pics de demande soudains et brutaux qui ne peuvent pas être prévus précisément mais peuvent être anticipés dans leur probabilité grâce à la surveillance épidémiologique.
+
+Facteur 9 — Impact du changement climatique
+Le réchauffement climatique modifie progressivement les zones de transmission des maladies vectorielles (paludisme, dengue, leishmaniose) et augmente la fréquence des événements météorologiques extrêmes (inondations → maladies hydriques, sécheresses → malnutrition).
+
+
+## Slide 151
+
+Ajustements saisonniers et facteurs contextuels
+
+Intégration des ajustements dans un modèle de prévision complet
+
+Ce qu’il faut retenir
+
+La puissance d'une bonne prévision réside dans la capacité à intégrer simultanément tous les ajustements pertinents dans un modèle cohérent.
+
+
+## Slide 152
+
+Ajustements saisonniers et facteurs contextuels
+
+Tableau de bord des facteurs contextuels
+
+Ce qu’il faut retenir
+
+Un outil pratique pour les planificateurs est le tableau de bord des facteurs contextuels, qui liste tous les facteurs susceptibles d'influencer la demande et permet de les surveiller régulièrement.
+
+
+## Slide 153
+
+Ajustements saisonniers et facteurs contextuels
+
+Synthèse
+
+| Dimension | Points clés |
+| --- | --- |
+| Indices saisonniers | Calculés sur 3 ans minimum, contrôle de cohérence (somme = 12) |
+| Application aux prévisions | Prévision mensuelle = CMM projetée × Index saisonnier du mois |
+| Désaisonnalisation | Permet d'identifier la tendance pure indépendamment des cycles |
+| Calendrier des commandes | Commandes pré-saisonnières = Début du pic − Délai de livraison |
+| Facteurs démographiques | Croissance population, migrations, vieillissement |
+| Facteurs programmatiques | Extension couverture, changements de protocoles, objectifs 95-95-95 |
+| Facteurs politiques | Gratuité des soins, assurance maladie, nouvelles politiques |
+| Facteurs conjoncturels | Épidémies, catastrophes, crises humanitaires |
+| Facteurs environnementaux | Changement climatique, saisonnalité renforcée |
+| Tableau de bord contextuel | Outil de surveillance continue et de mise à jour des prévisions |
+
+
+## Slide 154
+
+Analyse des écarts entre prévisions et consommations réelles
+
+Une prévision n'est jamais parfaite. L'objectif n'est pas d'éliminer les écarts entre ce qui était prévu et ce qui s'est réellement passé — c'est impossible — mais de les mesurer, les comprendre et les utiliser pour améliorer continuellement la qualité des prévisions suivantes. 
+
+L'analyse des écarts est le mécanisme d'apprentissage du système de prévision. Sans elle, les mêmes erreurs se répètent indéfiniment : 
+on sous-estime systématiquement la demande en haute saison, 
+on sur-estime en basse saison, 
+on ignore les effets des politiques de santé, 
+on ne détecte pas les tendances émergentes. 
+
+Avec une analyse rigoureuse et régulière des écarts, le système de prévision s'améliore à chaque cycle, réduit progressivement ses erreurs et produit des estimations de plus en plus fiables. 
+
+C'est ce processus d'amélioration continue qui distingue un système de quantification professionnel d'un exercice ponctuel.
+
+
+## Slide 155
+
+Analyse des écarts entre prévisions et consommations réelles
+
+Définition et types d'écarts
+
+Un écart est la différence entre la consommation réelle observée et la consommation prévue pour la même période.
+
+Formule :
+Écart absolu = Consommation réelle − Consommation prévue Écart relatif (%) = (Consommation réelle − Consommation prévue) ÷ Consommation prévue × 100
+
+Un écart positif signifie que la consommation réelle a dépassé la prévision → risque de rupture de stock. Un écart négatif signifie que la consommation réelle est inférieure à la prévision → risque de surstock.
+
+
+## Slide 156
+
+Analyse des écarts entre prévisions et consommations réelles
+
+Définition et types d'écarts
+
+Classification des écarts par amplitude
+
+| Amplitude de l'écart | Classification | Niveau d'investigation requis |
+| --- | --- | --- |
+| < 5% | Écart négligeable | Aucune action requise |
+| 5% à 10% | Écart mineur | Surveiller, ajuster à la prochaine révision |
+| 10% à 20% | Écart modéré | Investigation systématique, ajustement du modèle |
+| 20% à 30% | Écart significatif | Investigation approfondie, révision des hypothèses |
+| > 30% | Écart majeur | Investigation urgente, révision complète du modèle de prévision |
+
+
+## Slide 157
+
+Analyse des écarts entre prévisions et consommations réelles
+
+Définition et types d'écarts
+
+Classification des écarts par nature
+
+Écart systématique : L'écart est toujours dans la même direction (toujours positif ou toujours négatif) sur plusieurs périodes consécutives. Cela indique un biais structurel dans le modèle de prévision, une hypothèse fondamentalement erronée ou un changement de tendance non détecté.
+
+Écart aléatoire : L'écart change de signe d'une période à l'autre, alternant entre positif et négatif sans tendance claire. C'est la variabilité inhérente à tout système complexe. Un certain niveau d'écart aléatoire est inévitable et normal.
+
+Écart ponctuel : Un écart isolé et important sur une seule période, entouré de périodes sans écart significatif. Il indique généralement un événement exceptionnel (épidémie, rupture de stock, changement brusque de protocole).
+
+
+## Slide 158
+
+Analyse des écarts entre prévisions et consommations réelles
+
+Méthodes d'analyse des écarts
+
+L'analyse visuelle par graphique
+
+Graphique 1 : Courbes superposées prévision/réel :
+Deux courbes sur le même axe temporel. Les zones où les courbes s'écartent significativement sont les zones d'investigation prioritaire.
+
+Graphique 2 : Graphique des écarts (bar chart) :
+Un graphique à barres montrant l'écart positif ou négatif pour chaque mois. Les barres vers le haut indiquent une sous-estimation, les barres vers le bas une surestimation. La taille des barres indique l'amplitude de l'erreur.
+
+Graphique 3 : Graphique de dispersion avec bandes de contrôle :
+Les écarts mensuels sont représentés en pourcentage avec des bandes de contrôle à ±10% et ±20%. Les points hors des bandes de contrôle sont les points d'alerte qui nécessitent une investigation.
+
+
+## Slide 159
+
+Analyse des écarts entre prévisions et consommations réelles
+
+Méthodes d'analyse des écarts
+
+L'analyse statistique des écarts
+
+Erreur Absolue Moyenne (EAM)
+Taux d'Erreur Absolue Moyen (MAPE)
+
+
+## Slide 160
+
+Analyse des écarts entre prévisions et consommations réelles
+
+Méthodes d'analyse des écarts
+
+Méthode des 5 Pourquoi appliquée aux écarts de prévision
+
+| Niveau | Question | Réponse |
+| --- | --- | --- |
+| Pourquoi 1 | Pourquoi la demande a-t-elle dépassé la prévision ? | Parce que la consommation réelle était supérieure aux indices saisonniers appliqués |
+| Pourquoi 2 | Pourquoi les indices saisonniers sous-estimaient-ils le pic ? | Parce qu'ils étaient calculés sur les données 2022-2024 qui incluaient une saison des pluies atypiquement faible en 2022 |
+| Pourquoi 3 | Pourquoi les données 2022 distordent-elles les indices ? | Parce que 2022 était une année avec moins de précipitations et donc moins de paludisme |
+| Pourquoi 4 | Pourquoi les indices n'ont-ils pas été corrigés pour exclure 2022 ? | Parce que l'analyse météorologique n'a pas été intégrée dans le processus de prévision |
+| Pourquoi 5 | Pourquoi l'analyse météorologique n'est-elle pas intégrée ? | Parce qu'il n'existe pas de procédure formalisée de consultation des données météorologiques dans le processus de quantification |
+
+Écart analysé : sous-estimation de la demande en ACT en mai-juin (+21% et +26%)
+
+Mesure corrective identifiée : Intégrer une consultation des prévisions saisonnières météorologiques (ANACIM ou météo nationale) dans le processus annuel de calcul des indices saisonniers. Les années avec moins ou plus d’incidence doivent être identifiées et pondérées différemment dans le calcul des indices.
+
+
+## Slide 161
+
+Analyse des écarts entre prévisions et consommations réelles
+
+Méthodes d'analyse des écarts
+
+Catalogue des causes fréquentes d'écarts :
+
+| Cause | Écart typique | Signal d'alerte |
+| --- | --- | --- |
+| Rupture de stock non corrigée dans les données historiques | Négatif | CMM sous-estimée, ruptures récurrentes |
+| Saisonnalité sous-estimée pendant le pic | Positif en haute saison | MAPE plus élevé en mai-août |
+| Saisonnalité surestimée hors pic | Négatif en basse saison | MAPE plus élevé en déc-fév |
+| Croissance de la file active/programme non intégrée | Positif croissant | Biais positif qui augmente avec le temps |
+| Changement de protocole non anticipé | Variable | Rupture de tendance brutale |
+| Épidémie non intégrée dans le scénario de base | Positif ponctuel | Pic isolé sur 1-2 mois |
+| Politique de gratuité sous-estimée | Positif persistant | Surdemande dès le début de la politique |
+| Données de base incomplètes (taux complétude faible) | Négatif | MAPE élevé sur tous les mois |
+| Périmètre de quantification différent du périmètre de consommation | Systématique | Biais constant positif ou négatif |
+
+
+## Slide 162
+
+Analyse des écarts entre prévisions et consommations réelles
+
+Processus formel d'analyse des écarts
+
+Le cycle mensuel d'analyse des écarts
+
+Fréquence : mensuelle pour les produits critiques, trimestrielle pour les autres.
+
+Processus :
+Semaine 1 du mois M+1 : Collecter les données de consommation réelle du mois M dès leur disponibilité.
+Semaine 2 du mois M+1 : Calculer les écarts par rapport aux prévisions du mois M. Identifier les écarts dépassant les seuils d'alerte (>10%).
+Semaine 3 du mois M+1 : Mener les investigations causales sur les écarts significatifs. Documenter les causes identifiées.
+Semaine 4 du mois M+1 : Mettre à jour les prévisions pour les 3 prochains mois en intégrant les enseignements de l'analyse. Ajuster les commandes si nécessaire.
+
+
+## Slide 163
+
+Analyse des écarts entre prévisions et consommations réelles
+
+Processus formel d'analyse des écarts
+
+La revue trimestrielle des prévisions
+
+| Étape | Contenu |
+| --- | --- |
+| 1. Bilan des écarts du trimestre | Présentation des statistiques d'erreur (EAM, MAPE, biais) par produit |
+| 2. Analyse des causes principales | Discussion des 3-5 causes d'écart les plus importantes |
+| 3. Révision des hypothèses | Mise à jour des facteurs contextuels (épidémies, politiques, protocoles) |
+| 4. Recalibration des indices saisonniers | Intégration des nouvelles données dans le calcul des indices |
+| 5. Mise à jour des prévisions à 12 mois | Nouvelles prévisions mensuelles révisées |
+| 6. Plan d'action | Actions correctives avec responsables et délais |
+
+
+## Slide 164
+
+Analyse des écarts entre prévisions et consommations réelles
+
+Processus formel d'analyse des écarts
+
+La revue annuelle du modèle de prévision
+
+Une fois par an, le modèle de prévision lui-même est évalué et potentiellement restructuré.
+
+Questions clés de la revue annuelle :
+Le MAPE annuel est-il en amélioration, stable ou en dégradation par rapport à l'année précédente ?
+Les biais systématiques ont-ils été corrigés ?
+La méthode de prévision utilisée est-elle toujours la plus adaptée au contexte actuel ?
+Les données sources sont-elles de meilleure qualité ?
+Y a-t-il de nouveaux facteurs contextuels à intégrer dans le modèle ?
+
+
+## Slide 165
+
+Analyse des écarts entre prévisions et consommations réelles
+
+Ajustement des prévisions basé sur l'analyse des écarts
+
+Recalibration des indices saisonniers
+Révision du biais systématique
+Révision des hypothèses clés
+
+Tableau de bord de suivi de la qualité des prévisions
+
+Un tableau de bord dédié au suivi de la qualité des prévisions permet au gestionnaire de monitorer l'amélioration de ses prévisions dans le temps.
+
+
+## Slide 166
+
+Analyse des écarts entre prévisions et consommations réelles
+
+Rapport d'analyse des écarts
+
+Résumé exécutif
+Détail des écarts par mois
+Analyse des causes
+Actions correctives mises en place
+Prévisions révisées 
+Impact financier des écarts
+Recommandations
+
+
+## Slide 167
+
+Analyse des écarts entre prévisions et consommations réelles
+
+Synthèse
+
+| Dimension | Points clés |
+| --- | --- |
+| Définition des écarts | Absolu (Réel − Prévu) et relatif (%) ; positif = sous-estimation, négatif = surestimation |
+| Classification par amplitude | Négligeable < 5%, Mineur 5-10%, Modéré 10-20%, Significatif 20-30%, Majeur > 30% |
+| Classification par nature | Systématique (même direction persistante), aléatoire (alternatif), ponctuel (isolé) |
+| Indicateurs statistiques | EAM (erreur absolue moyenne), MAPE (taux erreur absolu moyen), Biais (erreur directionnelle) |
+| Cible de précision | MAPE < 10% globalement, < 12% en haute saison |
+| Analyse causale | Méthode des 5 Pourquoi pour identifier les causes profondes |
+| Causes fréquentes | Saisonnalité mal calibrée, biais dans données historiques, facteurs contextuels non intégrés |
+| Cycle d'analyse | Mensuel (écarts), trimestriel (révision modèle), annuel (restructuration) |
+| Corrections | Recalibration indices saisonniers, correction du biais, révision des hypothèses |
+| Documentation | Rapport formel d'analyse des écarts à chaque cycle |
+| Tableau de bord qualité | Suivi de l'amélioration des prévisions dans le temps |
+
+
+## Slide 168
+
+Atelier pratique : exercices de quantification pays
+
+QUANTIFICATION DES BESOINS
+
+
+## Slide 169
+
+Gestion des approvisionnements et des stocks
+
+Plan
+
+Cet atelier est conçu pour simuler un exercice réel de quantification nationale dans un pays fictif mais réaliste. Les données utilisées sont inspirées de contextes africains réels et reflètent les complexités, les ambiguïtés et les défis auxquels font face les équipes de quantification dans la pratique. L'atelier de quantification des ARV mobilise les compétences développées dans les deux modules précédents : collecte et analyse des données de consommation, méthode morbidité basée sur la file active, utilisation des outils (PipeLine et QAT), triangulation, ajustements contextuels et analyse des écarts.
+
+Durée estimée : 3 à 4 heures
+
+Organisation : groupes de 3 à 4 participants
+
+Matériel nécessaire : calculatrices, formulaires de collecte, accès à QAT ou PipeLine (si disponible), ou tableur Excel
+
+
+## Slide 170
+
+Gestion des approvisionnements et des stocks
+
+Atelier pratique : exercices de quantification pays
+
+Atelier pratique disponible uniquement en atelier de certification
+
+
+## Slide 171
+
+Question?
+
+QUANTIFICATION DES BESOINS

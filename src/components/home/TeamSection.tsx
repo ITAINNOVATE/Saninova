@@ -13,8 +13,8 @@ export const TeamSection: React.FC = () => {
     "/images/team/hope.jpg",
     "/images/team/ghislaine.jpg", // Directrice Technique - Santé Publique
     "/images/team/mylene.png", // Directrice Technique - Digitalisation
-    "/images/team/sophie.png", // Directrice des Études (Placeholder)
-    "/images/team/sophie.png"  // Directrice Exécutive (Placeholder)
+    "/images/team/lucresse.png", // Directrice Technique chargée des Études - Dr Lucresse Agathe Corine FASSINOU
+    "/images/team/mechak.png"  // Directrice Technique chargée des Études - Dr Mechak Eurudice Mahoussi GBETCHEDJI
   ];
 
   return (
