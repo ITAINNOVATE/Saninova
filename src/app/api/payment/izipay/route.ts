@@ -49,7 +49,14 @@ export async function POST(request: Request) {
       requestedCurrencyType: 'fiat',
       currencyRequested: requestedCurrency,
       amountRequested: String(amount),
-      acceptedCoins: ["USDT.TRC20", "USDT.BEP20", "BTC", "ETH", "TRX"],
+      acceptedCoins: [
+        // USDC sur différents réseaux
+        "USDC.ERC20", "USDC.POLYGON", "USDC.BEP20", "USDC.SOL",
+        // USDT sur différents réseaux
+        "USDT.ERC20", "USDT.BEP20", "USDT.POLYGON", "USDT.SOL", "USDT.TON",
+        // Cryptos natives activées
+        "ADA", "BNB", "BTC", "DOGE", "ETH", "SOL", "TRX", "XLM", "XRP"
+      ],
       merchantReference: orderId,
       returnUrl: returnUrl,
       metadata: { 

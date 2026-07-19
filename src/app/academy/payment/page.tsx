@@ -209,6 +209,21 @@ function PaymentContent() {
     { id: "izichangepay", name: "Izichangepay", provider: "Par Cryptomonnaie", icon: <ShieldCheck className="w-8 h-8" />, color: "bg-orange" },
   ];
 
+  // Cryptos acceptées sur IziChangePay
+  const acceptedCryptos = [
+    { symbol: "USDC", name: "USD Coin", networks: ["ERC20", "POLYGON", "BEP20", "SOL"], color: "#2775CA", emoji: "🟦" },
+    { symbol: "USDT", name: "Tether", networks: ["ERC20", "BEP20", "POLYGON", "SOL", "TON"], color: "#26A17B", emoji: "🟩" },
+    { symbol: "BTC", name: "Bitcoin", networks: ["Native"], color: "#F7931A", emoji: "₿" },
+    { symbol: "ETH", name: "Ethereum", networks: ["Native"], color: "#627EEA", emoji: "🔷" },
+    { symbol: "BNB", name: "BNB", networks: ["Native"], color: "#F3BA2F", emoji: "🟡" },
+    { symbol: "SOL", name: "Solana", networks: ["Native"], color: "#9945FF", emoji: "🟪" },
+    { symbol: "XRP", name: "XRP", networks: ["Native"], color: "#346AA9", emoji: "🟦" },
+    { symbol: "ADA", name: "Cardano", networks: ["Native"], color: "#0033AD", emoji: "🟦" },
+    { symbol: "TRX", name: "TRON", networks: ["Native"], color: "#FF0013", emoji: "🔴" },
+    { symbol: "XLM", name: "Stellar", networks: ["Native"], color: "#7D00FF", emoji: "⭐" },
+    { symbol: "DOGE", name: "Dogecoin", networks: ["Native"], color: "#C2A633", emoji: "🐶" },
+  ];
+
   return (
     <>
       <PageHero 
@@ -287,6 +302,47 @@ function PaymentContent() {
                   </div>
                 </button>
               ))}
+
+              {/* Cryptos acceptées — visible uniquement si IziChangePay est sélectionné */}
+              {selectedMethod === "izichangepay" && (
+                <div className="mt-2 bg-white/5 border border-white/10 rounded-[24px] p-5">
+                  <p className="text-white/50 text-xs font-bold uppercase tracking-widest mb-4 flex items-center gap-2">
+                    <ShieldCheck className="w-4 h-4 text-accent" />
+                    Cryptomonnaies acceptées
+                  </p>
+                  <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-2">
+                    {acceptedCryptos.map((crypto) => (
+                      <div
+                        key={crypto.symbol}
+                        className="flex flex-col items-center gap-1.5 bg-white/5 hover:bg-white/10 border border-white/5 rounded-2xl p-2.5 transition-all group"
+                      >
+                        {/* Logo cercle coloré */}
+                        <div
+                          className="w-9 h-9 rounded-full flex items-center justify-center text-white font-black text-xs shadow-lg"
+                          style={{ backgroundColor: crypto.color }}
+                        >
+                          {crypto.symbol.slice(0, 2)}
+                        </div>
+                        <span className="text-white font-bold text-xs">{crypto.symbol}</span>
+                        {/* Réseaux */}
+                        <div className="flex flex-wrap justify-center gap-0.5">
+                          {crypto.networks.map((net) => (
+                            <span
+                              key={net}
+                              className="text-[8px] text-white/40 font-medium bg-white/5 px-1 py-0.5 rounded"
+                            >
+                              {net}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <p className="text-white/30 text-[10px] text-center mt-4 font-medium">
+                    Le réseau de paiement sera choisi automatiquement lors du checkout IziChangePay
+                  </p>
+                </div>
+              )}
 
               <div className="pt-8">
                 <button
