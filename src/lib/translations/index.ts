@@ -440,7 +440,7 @@ export const translations = {
           },
           {
             name: "Mylène Fatima ADIGOUN",
-            role: "Directrice Technique - Digitalisation",
+            role: "Directrice Technique - Digitalisation et Système d'information",
             desc: "Ingénieure spécialisée dans les systèmes d'information en santé, pionnière des projets e-santé à l'échelle nationale.",
           },
           {
@@ -1143,7 +1143,7 @@ export const translations = {
           },
           {
             name: "Mylène Fatima ADIGOUN",
-            role: "Technical Director - Digitalization",
+            role: "Technical Director - Digitalization & Health Information Systems",
             desc: "Engineering expert specialized in health information systems, pioneer of national-scale e-health initiatives.",
           },
           {
