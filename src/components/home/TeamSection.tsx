@@ -11,10 +11,14 @@ export const TeamSection: React.FC = () => {
   // Array mapping team photos to translated members by order
   const memberImages = [
     "/images/team/hope.jpg",
-    "/images/team/ghislaine.jpg", // Directrice Technique - Santé Publique
-    "/images/team/mylene.png", // Directrice Technique - Digitalisation
-    "/images/team/lucresse.png", // Directrice Technique chargée des Études - Dr Lucresse Agathe Corine FASSINOU
-    "/images/team/mechak.png"  // Directrice Technique chargée des Études - Dr Mechak Eurudice Mahoussi GBETCHEDJI
+    "/images/team/ghislaine.jpg",   // Directrice Technique - Santé Publique
+    "/images/team/mylene.png",     // Directrice Technique - Digitalisation
+    "/images/team/lucresse.png",   // Directrice Technique chargée des Études
+    "/images/team/mechak.png",    // Directrice Technique chargée des projets
+    "/images/team/ambroise.png",  // Conseiller en Développement Institutionnel
+    "/images/team/nicolas.png",   // Responsable Académique
+    "/images/team/arafath.png",   // Responsable IA et Innovation
+    "/images/team/afia.png",      // Comptable
   ];
 
   return (

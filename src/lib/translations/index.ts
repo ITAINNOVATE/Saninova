@@ -453,6 +453,26 @@ export const translations = {
             role: "Directrice Technique chargée des projets",
             desc: "Spécialiste en gestion et coordination de projets de santé d'envergure internationale.",
           },
+          {
+            name: "Dr Ambroise Tchando NAHINI",
+            role: "Conseiller en Développement Institutionnel",
+            desc: "Expert en renforcement institutionnel et développement organisationnel des systèmes de santé.",
+          },
+          {
+            name: "Nicolas Hamondji AMÉGAN",
+            role: "Responsable Académique",
+            desc: "Coordinateur des programmes de formation et des certifications de la SaniNova Academy.",
+          },
+          {
+            name: "Arafath IMOROU",
+            role: "Responsable IA et Innovation",
+            desc: "Expert en intelligence artificielle appliquée à la santé et en solutions innovantes pour les systèmes de santé.",
+          },
+          {
+            name: "Afia Sandrine KOUSSAHOUE",
+            role: "Comptable",
+            desc: "Responsable de la gestion financière et comptable de SaniNova Global Consulting.",
+          },
         ],
       },
     },
@@ -1155,6 +1175,26 @@ export const translations = {
             name: "Dr Mechak Eurudice Mahoussi GBETCHEDJI",
             role: "Technical Director - Project Manager",
             desc: "Specialist in the management and coordination of international health projects.",
+          },
+          {
+            name: "Dr Ambroise Tchando NAHINI",
+            role: "Advisor in Institutional Development",
+            desc: "Expert in institutional strengthening and organizational development of health systems.",
+          },
+          {
+            name: "Nicolas Hamondji AMÉGAN",
+            role: "Academic Manager",
+            desc: "Coordinator of training programs and certifications at SaniNova Academy.",
+          },
+          {
+            name: "Arafath IMOROU",
+            role: "AI & Innovation Manager",
+            desc: "Expert in artificial intelligence applied to health and innovative solutions for health systems.",
+          },
+          {
+            name: "Afia Sandrine KOUSSAHOUE",
+            role: "Accountant",
+            desc: "Responsible for financial and accounting management at SaniNova Global Consulting.",
           },
         ],
       },
