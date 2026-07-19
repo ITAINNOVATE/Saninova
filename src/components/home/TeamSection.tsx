@@ -21,6 +21,7 @@ interface SelectedMember {
 export const TeamSection: React.FC = () => {
   const { t } = useLanguage();
   const [selectedMember, setSelectedMember] = useState<SelectedMember | null>(null);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   // Close modal on Escape key
   useEffect(() => {
@@ -35,6 +36,7 @@ export const TeamSection: React.FC = () => {
   useEffect(() => {
     if (selectedMember) {
       document.body.style.overflow = "hidden";
+      setImageLoaded(false); // reset image state on each new member
     } else {
       document.body.style.overflow = "";
     }
@@ -192,13 +194,21 @@ export const TeamSection: React.FC = () => {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Photo Section */}
-            <div className="relative w-full md:w-2/5 h-64 md:h-auto flex-shrink-0 bg-primary/10">
+            <div className="relative w-full md:w-2/5 h-64 md:h-auto flex-shrink-0 bg-primary/10 overflow-hidden">
+              {/* Skeleton shimmer shown while image is loading */}
+              {!imageLoaded && (
+                <div className="absolute inset-0 z-10 bg-gradient-to-br from-slate-200 via-slate-100 to-slate-200 animate-shimmer" />
+              )}
               <Image
                 src={memberImages[selectedMember.imageIndex]}
                 alt={selectedMember.member.name}
                 fill
                 sizes="(max-width: 768px) 100vw, 40vw"
-                className="object-cover object-top"
+                className={`object-cover object-top transition-opacity duration-500 ${
+                  imageLoaded ? "opacity-100" : "opacity-0"
+                }`}
+                loading="eager"
+                onLoad={() => setImageLoaded(true)}
               />
               {/* Gradient overlay on mobile */}
               <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent md:hidden" />
@@ -279,8 +289,17 @@ export const TeamSection: React.FC = () => {
           from { opacity: 0; transform: translateY(24px) scale(0.98); }
           to { opacity: 1; transform: translateY(0) scale(1); }
         }
+        @keyframes shimmer {
+          0% { background-position: -200% 0; }
+          100% { background-position: 200% 0; }
+        }
         .animate-fadeIn { animation: fadeIn 0.2s ease-out; }
         .animate-slideUp { animation: slideUp 0.25s ease-out; }
+        .animate-shimmer {
+          background: linear-gradient(90deg, #e2e8f0 25%, #f1f5f9 50%, #e2e8f0 75%);
+          background-size: 200% 100%;
+          animation: shimmer 1.4s infinite linear;
+        }
       `}</style>
     </>
   );
