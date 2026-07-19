@@ -92,7 +92,7 @@ export const TeamSection: React.FC = () => {
       <div className="px-5 pb-5 flex justify-center">
         <button
           onClick={() => setSelectedMember({ member, imageIndex })}
-          className="inline-flex items-center gap-1.5 px-4 py-2 border border-orange text-orange text-xs font-semibold font-poppins uppercase tracking-wider hover:bg-orange hover:text-white transition-all duration-200 group/btn"
+          className="inline-flex items-center gap-1.5 px-4 py-2 border border-accent text-accent text-xs font-semibold font-poppins uppercase tracking-wider hover:bg-accent hover:text-white transition-all duration-200 group/btn"
           aria-label={`Voir le profil de ${member.name}`}
         >
           <span>{viewMoreLabel}</span>
@@ -158,7 +158,7 @@ export const TeamSection: React.FC = () => {
                     <div className="px-8 pb-8 flex justify-center">
                       <button
                         onClick={() => setSelectedMember({ member: president, imageIndex: 0 })}
-                        className="inline-flex items-center gap-2 px-6 py-2.5 border border-orange text-orange text-sm font-semibold font-poppins uppercase tracking-wider hover:bg-orange hover:text-white transition-all duration-200 group/btn"
+                        className="inline-flex items-center gap-2 px-6 py-2.5 border border-accent text-accent text-sm font-semibold font-poppins uppercase tracking-wider hover:bg-accent hover:text-white transition-all duration-200 group/btn"
                         aria-label={`Voir le profil de ${president.name}`}
                       >
                         <span>{viewMoreLabel}</span>
