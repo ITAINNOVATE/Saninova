@@ -81,15 +81,8 @@ export const TeamSection: React.FC = () => {
         </p>
       </div>
 
-      {/* Description */}
-      <div className="p-5 pt-5 text-center flex-grow flex flex-col items-center justify-start">
-        <p className="font-inter text-xs text-dark/70 leading-relaxed line-clamp-3">
-          {member.desc}
-        </p>
-      </div>
-
       {/* Voir + Button */}
-      <div className="px-5 pb-5 flex justify-center">
+      <div className="px-5 pb-5 mt-auto pt-5 flex justify-center">
         <button
           onClick={() => setSelectedMember({ member, imageIndex })}
           className="inline-flex items-center gap-1.5 px-4 py-2 border border-accent text-accent text-xs font-semibold font-poppins uppercase tracking-wider hover:bg-accent hover:text-white transition-all duration-200 group/btn"
@@ -147,15 +140,8 @@ export const TeamSection: React.FC = () => {
                       </p>
                     </div>
 
-                    {/* Description */}
-                    <div className="p-8 pt-6 text-center flex-grow flex flex-col items-center justify-start">
-                      <p className="font-inter text-base text-dark/70 leading-relaxed">
-                        {president.desc}
-                      </p>
-                    </div>
-
                     {/* Voir + Button */}
-                    <div className="px-8 pb-8 flex justify-center">
+                    <div className="px-8 pb-8 mt-auto pt-6 flex justify-center">
                       <button
                         onClick={() => setSelectedMember({ member: president, imageIndex: 0 })}
                         className="inline-flex items-center gap-2 px-6 py-2.5 border border-accent text-accent text-sm font-semibold font-poppins uppercase tracking-wider hover:bg-accent hover:text-white transition-all duration-200 group/btn"
