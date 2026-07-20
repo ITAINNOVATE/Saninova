@@ -194,7 +194,7 @@ export const TeamSection: React.FC = () => {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Photo Section */}
-            <div className="relative w-full md:w-2/5 h-64 md:h-auto flex-shrink-0 bg-primary/10 overflow-hidden">
+            <div className="relative w-full md:w-2/5 h-72 sm:h-80 md:h-auto flex-shrink-0 bg-primary/5 overflow-hidden">
               {/* Skeleton shimmer shown while image is loading */}
               {!imageLoaded && (
                 <div className="absolute inset-0 z-10 bg-gradient-to-br from-slate-200 via-slate-100 to-slate-200 animate-shimmer" />
@@ -204,14 +204,14 @@ export const TeamSection: React.FC = () => {
                 alt={selectedMember.member.name}
                 fill
                 sizes="(max-width: 768px) 100vw, 40vw"
-                className={`object-cover object-top transition-opacity duration-500 ${
+                className={`object-contain md:object-cover object-top transition-opacity duration-500 ${
                   imageLoaded ? "opacity-100" : "opacity-0"
                 }`}
                 loading="eager"
                 onLoad={() => setImageLoaded(true)}
               />
               {/* Gradient overlay on mobile */}
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent md:hidden" />
+              <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent md:hidden pointer-events-none" />
             </div>
 
             {/* Content Section */}
