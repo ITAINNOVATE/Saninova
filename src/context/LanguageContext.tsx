@@ -20,6 +20,12 @@ const deepMerge = (target: any, source: any): any => {
   const output = { ...target };
   
   for (const key of Object.keys(source)) {
+    // Forcer le code source statique pour les sections de l'équipe et du directeur
+    if (key === 'director' || key === 'leadership') {
+      output[key] = target[key];
+      continue;
+    }
+
     // If the static (target) value is an array, always prefer the static version
     // This prevents Supabase from overwriting lists (e.g. servicesPage.list)
     if (Array.isArray(target[key])) {
