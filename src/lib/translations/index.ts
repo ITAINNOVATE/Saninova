@@ -431,9 +431,9 @@ export const translations = {
         members: [
           {
             name: "Dr Hope AKOHOUVI AMOU",
-            role: "Président",
+            role: "Président Directeur Général",
             desc: "Directeur Général de SaniNova, expert international en transformation des systèmes de santé et réformes à fort impact en Afrique.",
-            details: "Dr Hope AKOHOUVI AMOU est le Directeur Général de SaniNova Global Consulting. Expert international reconnu, il conseille les gouvernements africains et les partenaires au développement sur la conception et la mise en œuvre de réformes sanitaires ambitieuses. Fort d’une expérience multidisciplinaire couvrant la gouvernance sanitaire, la supply chain pharmaceutique, la santé digitale et la sécurité sanitaire, il dirige SaniNova avec une vision stratégique claire orientée vers des systèmes de santé résilients, équitables et performants.",
+            details: "« Notre vision chez SaniNova Global Consulting est claire : transformer en profondeur les systèmes de santé en Afrique. En tant que Président Directeur Général, mon engagement est d'accompagner les gouvernements et les partenaires au développement dans la conception et la mise en œuvre de réformes sanitaires ambitieuses. En alliant notre expertise multidisciplinaire — de la gouvernance sanitaire à la santé digitale — nous œuvrons chaque jour pour bâtir des systèmes de santé plus résilients, équitables et performants pour notre continent. »",
             tags: ["Gouvernance sanitaire", "Supply Chain", "Santé digitale", "Réglementation", "Leadership stratégique"],
           },
           {
