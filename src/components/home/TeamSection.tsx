@@ -48,7 +48,7 @@ export const TeamSection: React.FC = () => {
     "/images/team/ghislaine.jpg",   // Directrice Technique - Santé Publique
     "/images/team/mylene.png",     // Directrice Technique - Digitalisation
     "/images/team/lucresse.png",   // Directrice Technique chargée des Études
-    "/images/team/mechak-new.jpeg", // Directrice Technique chargée des projets
+    "/images/team/mechak.png",    // Directrice Technique chargée des projets
     "/images/team/ambroise.png",  // Conseiller en Développement Institutionnel
     "/images/team/nicolas.png",   // Responsable Académique
     "/images/team/arafath.png",   // Responsable IA et Innovation
