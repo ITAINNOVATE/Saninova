@@ -44,7 +44,7 @@ export const TeamSection: React.FC = () => {
   }, [selectedMember]);
 
   const memberImages = [
-    "/images/team/hope.jpg",
+    "/images/team/hope2.png",
     "/images/team/ghislaine.jpg",   // Directrice Technique - Santé Publique
     "/images/team/mylene.png",     // Directrice Technique - Digitalisation
     "/images/team/lucresse.png",   // Directrice Technique chargée des Études
