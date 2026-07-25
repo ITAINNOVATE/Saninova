@@ -480,9 +480,9 @@ export const translations = {
           },
           {
             name: "Arafath IMOROU",
-            role: "Responsable IA et Innovation",
+            role: "Responsable Innovation Digitale & Impact Durable",
             desc: "Expert en intelligence artificielle appliquée à la santé et en solutions innovantes pour les systèmes de santé.",
-            details: "Arafath IMOROU est Responsable IA et Innovation à SaniNova. Il pilote le développement et l’intégration de solutions basées sur l’intelligence artificielle dans les projets de santé. Il explore et implémente des outils innovants pour améliorer l’analyse des données de santé, l’optimisation des processus logistiques et la prise de décision stratégique dans les systèmes de santé africains.",
+            details: "Arafath IMOROU est Responsable Innovation Digitale & Impact Durable à SaniNova. Il pilote le développement et l’intégration de solutions basées sur l’intelligence artificielle dans les projets de santé. Il explore et implémente des outils innovants pour améliorer l’analyse des données de santé, l’optimisation des processus logistiques et la prise de décision stratégique dans les systèmes de santé africains.",
             tags: ["Intelligence artificielle", "Innovation digitale", "Data science", "Systèmes de santé"],
           },
           {
@@ -1222,9 +1222,9 @@ export const translations = {
           },
           {
             name: "Arafath IMOROU",
-            role: "AI & Innovation Manager",
+            role: "Digital Innovation & Sustainable Impact Manager",
             desc: "Expert in artificial intelligence applied to health and innovative solutions for health systems.",
-            details: "Arafath IMOROU is AI & Innovation Manager at SaniNova. He drives the development and integration of AI-based solutions in health projects. He explores and implements innovative tools to improve health data analysis, logistics process optimization, and strategic decision-making in African health systems.",
+            details: "Arafath IMOROU is Digital Innovation & Sustainable Impact Manager at SaniNova. He drives the development and integration of AI-based solutions in health projects. He explores and implements innovative tools to improve health data analysis, logistics process optimization, and strategic decision-making in African health systems.",
             tags: ["Artificial Intelligence", "Digital Innovation", "Data Science", "Health Systems"],
           },
           {
