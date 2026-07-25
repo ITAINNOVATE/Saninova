@@ -465,6 +465,13 @@ export const translations = {
             tags: ["Gestion de projets", "Coordination internationale", "Partenaires PTF", "Pilotage opérationnel"],
           },
           {
+            name: "Afia Sandrine KOUSSAHOUE",
+            role: "Comptable",
+            desc: "Responsable de la gestion financière et comptable de SaniNova Global Consulting.",
+            details: "Afia Sandrine KOUSSAHOUE est la Comptable de SaniNova Global Consulting. Elle assure la gestion rigoureuse de la comptabilité générale, le suivi budgétaire des projets, la gestion des états financiers et la conformité aux obligations fiscales et réglementaires. Son travail garantit la transparence financière et la bonne gestion des ressources de SaniNova.",
+            tags: ["Comptabilité générale", "Gestion financière", "Suivi budgétaire", "Conformité fiscale"],
+          },
+          {
             name: "Dr Ambroise Tchando NAHINI",
             role: "Conseiller en Développement Institutionnel",
             desc: "Expert en renforcement institutionnel et développement organisationnel des systèmes de santé.",
@@ -484,13 +491,6 @@ export const translations = {
             desc: "Expert en intelligence artificielle appliquée à la santé et en solutions innovantes pour les systèmes de santé.",
             details: "Arafath IMOROU est Responsable Innovation Digitale & Impact Durable à SaniNova. Il pilote le développement et l’intégration de solutions basées sur l’intelligence artificielle dans les projets de santé. Il explore et implémente des outils innovants pour améliorer l’analyse des données de santé, l’optimisation des processus logistiques et la prise de décision stratégique dans les systèmes de santé africains.",
             tags: ["Intelligence artificielle", "Innovation digitale", "Data science", "Systèmes de santé"],
-          },
-          {
-            name: "Afia Sandrine KOUSSAHOUE",
-            role: "Comptable",
-            desc: "Responsable de la gestion financière et comptable de SaniNova Global Consulting.",
-            details: "Afia Sandrine KOUSSAHOUE est la Comptable de SaniNova Global Consulting. Elle assure la gestion rigoureuse de la comptabilité générale, le suivi budgétaire des projets, la gestion des états financiers et la conformité aux obligations fiscales et réglementaires. Son travail garantit la transparence financière et la bonne gestion des ressources de SaniNova.",
-            tags: ["Comptabilité générale", "Gestion financière", "Suivi budgétaire", "Conformité fiscale"],
           },
         ],
       },
@@ -1207,6 +1207,13 @@ export const translations = {
             tags: ["Project Management", "International Coordination", "PTF Partners", "Operational Management"],
           },
           {
+            name: "Afia Sandrine KOUSSAHOUE",
+            role: "Accountant",
+            desc: "Responsible for financial and accounting management at SaniNova Global Consulting.",
+            details: "Afia Sandrine KOUSSAHOUE is the Accountant of SaniNova Global Consulting. She ensures rigorous management of general accounting, project budget monitoring, financial statement management, and compliance with tax and regulatory obligations. Her work guarantees financial transparency and sound resource management at SaniNova.",
+            tags: ["General Accounting", "Financial Management", "Budget Monitoring", "Tax Compliance"],
+          },
+          {
             name: "Dr Ambroise Tchando NAHINI",
             role: "Advisor in Institutional Development",
             desc: "Expert in institutional strengthening and organizational development of health systems.",
@@ -1226,13 +1233,6 @@ export const translations = {
             desc: "Expert in artificial intelligence applied to health and innovative solutions for health systems.",
             details: "Arafath IMOROU is Digital Innovation & Sustainable Impact Manager at SaniNova. He drives the development and integration of AI-based solutions in health projects. He explores and implements innovative tools to improve health data analysis, logistics process optimization, and strategic decision-making in African health systems.",
             tags: ["Artificial Intelligence", "Digital Innovation", "Data Science", "Health Systems"],
-          },
-          {
-            name: "Afia Sandrine KOUSSAHOUE",
-            role: "Accountant",
-            desc: "Responsible for financial and accounting management at SaniNova Global Consulting.",
-            details: "Afia Sandrine KOUSSAHOUE is the Accountant of SaniNova Global Consulting. She ensures rigorous management of general accounting, project budget monitoring, financial statement management, and compliance with tax and regulatory obligations. Her work guarantees financial transparency and sound resource management at SaniNova.",
-            tags: ["General Accounting", "Financial Management", "Budget Monitoring", "Tax Compliance"],
           },
         ],
 
