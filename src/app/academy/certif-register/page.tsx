@@ -46,7 +46,10 @@ function CertifRegisterContent() {
     localStorage.setItem("registered_fullname", `${data.firstname} ${data.lastname}`);
     localStorage.setItem("registered_email", data.email);
     setIsSubmitting(false);
-    setIsSuccess(true);
+    
+    // Rediriger vers la page de paiement au lieu d'afficher un succès statique
+    const paymentUrl = `/academy/payment?type=certif${certificationName ? `&item=${encodeURIComponent(certificationName)}` : ""}`;
+    router.push(paymentUrl);
   };
 
   const inputClass = "w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-white placeholder-white/30 text-sm font-medium focus:outline-none focus:border-orange/60 focus:bg-white/8 transition-all";
@@ -215,7 +218,7 @@ function CertifRegisterContent() {
                     </>
                   ) : (
                     <>
-                      Soumettre ma demande <Send className="w-5 h-5" />
+                      S'INSCRIRE <Send className="w-5 h-5" />
                     </>
                   )}
                 </button>
