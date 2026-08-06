@@ -10,10 +10,11 @@ interface PageHeroProps {
   subtitle?: string;
   backgroundImages: string[];
   showAcademyActions?: boolean;
+  bgSize?: "cover" | "contain";
   children?: React.ReactNode;
 }
 
-export const PageHero: React.FC<PageHeroProps> = ({ title, subtitle, backgroundImages, showAcademyActions, children }) => {
+export const PageHero: React.FC<PageHeroProps> = ({ title, subtitle, backgroundImages, showAcademyActions, bgSize = "cover", children }) => {
   const [currentBgIndex, setCurrentBgIndex] = useState(0);
 
   useEffect(() => {
@@ -39,7 +40,7 @@ export const PageHero: React.FC<PageHeroProps> = ({ title, subtitle, backgroundI
       {backgroundImages.map((bg, idx) => (
         <div 
           key={bg}
-          className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-[1500ms] ease-in-out transform ${
+          className={`absolute inset-0 ${bgSize === "contain" ? "bg-contain" : "bg-cover"} bg-center bg-no-repeat transition-all duration-[1500ms] ease-in-out transform ${
             idx === currentBgIndex ? "opacity-100 scale-100" : "opacity-0 scale-105 pointer-events-none"
           }`}
           style={{ backgroundImage: `url('${bg}')` }}

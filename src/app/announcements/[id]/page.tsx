@@ -424,6 +424,7 @@ export default function AnnouncementDetail() {
         title={announcement.type}
         subtitle={announcement.title}
         backgroundImages={[announcement.image]}
+        bgSize="contain"
       />
       
       <div className="bg-dark pb-24 min-h-screen">
