@@ -537,10 +537,10 @@ export default function AnnouncementDetail() {
 
               {/* Formation Registration Button */}
               {announcement.type === "Formation" && (
-                <div className="mt-12 pt-8 border-t border-white/10 text-center">
+                <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-center gap-4">
                   <Link
                     href={`/academy/certif-register?certification=${encodeURIComponent(announcement.slug || id)}`}
-                    className={`px-10 py-5 rounded-2xl font-black text-sm uppercase tracking-wider transition-all inline-flex items-center gap-2 ${
+                    className={`px-8 py-4 rounded-2xl font-black text-sm uppercase tracking-wider transition-all inline-flex items-center justify-center gap-2 ${
                       isClosed
                         ? "bg-white/10 text-white/40 cursor-not-allowed border border-white/10 pointer-events-none"
                         : "bg-orange text-white shadow-xl shadow-orange/20 hover:scale-105 hover:bg-orange/90"
@@ -549,6 +549,13 @@ export default function AnnouncementDetail() {
                     {isClosed
                       ? (locale === "fr" ? "Inscriptions clôturées" : "Registrations closed")
                       : (locale === "fr" ? "S'inscrire à cette formation" : "Register for this training")}
+                  </Link>
+
+                  <Link
+                    href="/academy/portal"
+                    className="px-8 py-4 rounded-2xl font-black text-sm uppercase tracking-wider transition-all inline-flex items-center justify-center gap-2 bg-white/5 text-white border border-white/10 hover:bg-white/10 hover:scale-105"
+                  >
+                    {locale === "fr" ? "Accéder à mon interface" : "Access my interface"}
                   </Link>
                 </div>
               )}
