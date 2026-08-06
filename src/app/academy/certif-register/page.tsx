@@ -52,9 +52,9 @@ function CertifRegisterContent() {
     router.push(paymentUrl);
   };
 
-  const inputClass = "w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-white placeholder-white/30 text-sm font-medium focus:outline-none focus:border-orange/60 focus:bg-white/8 transition-all";
-  const labelClass = "block text-white/60 text-xs font-bold uppercase tracking-widest mb-2";
-  const errorClass = "text-red-400 text-xs mt-1.5 font-medium";
+  const inputClass = "w-full bg-[#1A2639]/50 hover:bg-[#1A2639]/80 border border-white/10 rounded-2xl px-5 py-4 text-white placeholder-white/40 text-sm font-medium focus:outline-none focus:border-orange/80 focus:bg-[#1A2639] focus:ring-4 focus:ring-orange/10 transition-all shadow-inner";
+  const labelClass = "flex items-center gap-2 text-white/80 text-xs font-black uppercase tracking-widest mb-2.5";
+  const errorClass = "text-red-400 text-xs mt-2 font-medium";
 
   if (isSuccess) {
     return (
@@ -124,8 +124,11 @@ function CertifRegisterContent() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-white/5 border border-white/10 rounded-[40px] p-8 md:p-12 shadow-2xl"
+            className="bg-[#0F1D33]/80 backdrop-blur-xl border border-white/10 rounded-[40px] p-8 md:p-12 shadow-2xl relative overflow-hidden"
           >
+            {/* Design Accent Top */}
+            <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-orange via-emerald-500 to-orange opacity-80" />
+            
             <h2 className="text-2xl font-montserrat font-black text-white mb-8">
               Vos informations
             </h2>
@@ -135,13 +138,15 @@ function CertifRegisterContent() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label className={labelClass}>
-                    <User className="inline w-3 h-3 mr-1" /> Nom *
+                    <User className="w-4 h-4 text-orange" /> Nom *
                   </label>
                   <input {...register("lastname")} placeholder="DUPONT" className={inputClass} />
                   {errors.lastname && <p className={errorClass}>{errors.lastname.message}</p>}
                 </div>
                 <div>
-                  <label className={labelClass}>Prénom *</label>
+                  <label className={labelClass}>
+                    <User className="w-4 h-4 text-orange opacity-0" /> Prénom *
+                  </label>
                   <input {...register("firstname")} placeholder="Jean" className={inputClass} />
                   {errors.firstname && <p className={errorClass}>{errors.firstname.message}</p>}
                 </div>
@@ -150,7 +155,7 @@ function CertifRegisterContent() {
               {/* Titre / Occupation */}
               <div>
                 <label className={labelClass}>
-                  <Briefcase className="inline w-3 h-3 mr-1" /> Titre / Occupation *
+                  <Briefcase className="w-4 h-4 text-emerald-400" /> Titre / Occupation *
                 </label>
                 <input {...register("role")} placeholder="Pharmacien, Directeur, Consultant..." className={inputClass} />
                 {errors.role && <p className={errorClass}>{errors.role.message}</p>}
@@ -159,7 +164,7 @@ function CertifRegisterContent() {
               {/* Type d'organisation */}
               <div>
                 <label className={labelClass}>
-                  <Building2 className="inline w-3 h-3 mr-1" /> Type d'organisation *
+                  <Building2 className="w-4 h-4 text-orange" /> Type d'organisation *
                 </label>
                 <select {...register("org_type")} className={inputClass + " cursor-pointer"}>
                   <option value="" className="bg-dark">Sélectionner...</option>
@@ -176,7 +181,9 @@ function CertifRegisterContent() {
 
               {/* Organisation */}
               <div>
-                <label className={labelClass}>Organisation / Structure</label>
+                <label className={labelClass}>
+                  <Building2 className="w-4 h-4 text-emerald-400 opacity-0" /> Organisation / Structure
+                </label>
                 <input {...register("organization")} placeholder="Nom de votre organisation" className={inputClass} />
               </div>
 
@@ -184,13 +191,15 @@ function CertifRegisterContent() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label className={labelClass}>
-                    <Phone className="inline w-3 h-3 mr-1" /> Téléphone *
+                    <Phone className="w-4 h-4 text-orange" /> Téléphone *
                   </label>
                   <input {...register("phone")} placeholder="+229 00 00 00 00" className={inputClass} />
                   {errors.phone && <p className={errorClass}>{errors.phone.message}</p>}
                 </div>
                 <div>
-                  <label className={labelClass}>WhatsApp</label>
+                  <label className={labelClass}>
+                    <Phone className="w-4 h-4 text-emerald-400 opacity-0" /> WhatsApp
+                  </label>
                   <input {...register("whatsapp")} placeholder="+229 00 00 00 00" className={inputClass} />
                 </div>
               </div>
@@ -198,7 +207,7 @@ function CertifRegisterContent() {
               {/* Email */}
               <div>
                 <label className={labelClass}>
-                  <Mail className="inline w-3 h-3 mr-1" /> Email *
+                  <Mail className="w-4 h-4 text-emerald-400" /> Email *
                 </label>
                 <input {...register("email")} type="email" placeholder="vous@exemple.com" className={inputClass} />
                 {errors.email && <p className={errorClass}>{errors.email.message}</p>}
