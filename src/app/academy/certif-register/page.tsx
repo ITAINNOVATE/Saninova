@@ -48,7 +48,7 @@ function CertifRegisterContent() {
     setIsSubmitting(false);
     
     // Rediriger vers la page de paiement au lieu d'afficher un succès statique
-    const paymentUrl = `/academy/payment?type=certif${certificationName ? `&item=${encodeURIComponent(certificationName)}` : ""}`;
+    const paymentUrl = `/academy/payment?type=certif${certificationName ? `&training=${encodeURIComponent(certificationName)}` : ""}`;
     router.push(paymentUrl);
   };
 

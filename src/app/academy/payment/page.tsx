@@ -60,6 +60,11 @@ function PaymentContent() {
             title: "Régulation Pharmaceutique Avancée en Afrique",
             price: "300.000",
             currency: "XOF"
+          },
+          "formation-expert-supply-chain-pharmaceutique": {
+            title: "Certificat Professionnel en Supply Chain Pharmaceutique",
+            price: "500",
+            currency: "USD"
           }
         };
 
