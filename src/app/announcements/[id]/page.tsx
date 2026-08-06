@@ -345,7 +345,14 @@ export default function AnnouncementDetail() {
         elements.push(
           <ul key={key} className="list-disc pl-6 space-y-2.5 mb-6 text-white/70 text-justify text-sm md:text-base font-poppins">
             {currentList.map((li, liIdx) => (
-              <li key={liIdx} className="leading-relaxed">{li}</li>
+              <li key={liIdx} className="leading-relaxed">
+                {li.split('\n').map((part, pIdx) => (
+                  <React.Fragment key={pIdx}>
+                    {part}
+                    {pIdx < li.split('\n').length - 1 && <br />}
+                  </React.Fragment>
+                ))}
+              </li>
             ))}
           </ul>
         );
@@ -398,6 +405,13 @@ export default function AnnouncementDetail() {
         if (isBullet) {
           const cleanLine = line.replace(/^[-•*]\s*/, "");
           currentList.push(cleanLine);
+        } else if (line.startsWith("~")) {
+          const cleanLine = line.substring(1).trim();
+          if (currentList.length > 0) {
+            currentList[currentList.length - 1] += "\n" + cleanLine;
+          } else {
+            currentList.push(cleanLine);
+          }
           if (line.endsWith(".")) {
             flushList(`list-auto-end-${i}`);
           }
