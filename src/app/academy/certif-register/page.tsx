@@ -44,6 +44,8 @@ function CertifRegisterContent() {
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1500));
     localStorage.setItem("registered_fullname", `${data.firstname} ${data.lastname}`);
+    localStorage.setItem("registered_firstname", data.firstname);
+    localStorage.setItem("registered_lastname", data.lastname);
     localStorage.setItem("registered_email", data.email);
     setIsSubmitting(false);
     

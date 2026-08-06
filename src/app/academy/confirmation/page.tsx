@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, Suspense } from "react";
-import { CheckCircle2, Calendar, FileText, Mail, ArrowRight, Share2 } from "lucide-react";
+import { CheckCircle2, Calendar, FileText, Mail, ArrowRight, Share2, Lock } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
@@ -13,6 +13,7 @@ function ConfirmationContent() {
   const reference = "SN-AC-2026-" + Math.floor(1000 + Math.random() * 9000);
 
   const [studentName, setStudentName] = useState("Cher Apprenant");
+  const [credentials, setCredentials] = useState({ username: "", password: "" });
   const [courseDetails, setCourseDetails] = useState({
     title: "Formation Générale SaniNova",
     price: "250.000",
@@ -21,11 +22,29 @@ function ConfirmationContent() {
 
   useEffect(() => {
     // Load student name from localStorage
+    const savedFirstName = localStorage.getItem("registered_firstname") || "";
+    const savedLastName = localStorage.getItem("registered_lastname") || "";
     const savedName = localStorage.getItem("registered_fullname");
-    if (savedName) {
-      // Get first name
-      const firstName = savedName.trim().split(" ")[0];
-      setStudentName(firstName);
+    
+    let firstName = savedFirstName;
+    let lastName = savedLastName;
+
+    if (!firstName && savedName) {
+      const parts = savedName.trim().split(" ");
+      firstName = parts[0];
+      lastName = parts.slice(1).join(" ");
+    }
+    
+    if (firstName || lastName) {
+      setStudentName(firstName || "Apprenant");
+      
+      // Generate credentials
+      const firstPartName = firstName.trim().split(" ")[0].toLowerCase().replace(/[^a-z]/g, "");
+      const cleanLastName = lastName.trim().toLowerCase().replace(/[^a-z]/g, "");
+      const username = `${firstPartName}${cleanLastName}`;
+      const password = `${lastName.trim().toUpperCase().replace(/[^A-Z]/g, "")}2026`;
+      
+      setCredentials({ username, password });
     }
 
     // Resolve course details
@@ -106,6 +125,29 @@ function ConfirmationContent() {
               <p className="text-accent font-black text-lg">{courseDetails.price} {courseDetails.currency}</p>
             </div>
           </div>
+
+          {/* Credentials Block */}
+          {credentials.username && (
+            <div className="bg-[#1A2639]/80 border border-orange/20 rounded-[32px] p-8 mb-12 relative overflow-hidden text-left shadow-lg">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange via-emerald-500 to-orange opacity-50" />
+              <h3 className="text-xl font-montserrat font-black text-white mb-4 flex items-center gap-3">
+                <Lock className="w-5 h-5 text-orange" /> Vos identifiants de connexion
+              </h3>
+              <p className="text-white/60 text-sm font-poppins mb-6">
+                Veuillez conserver précieusement ces identifiants. Ils vous permettront d'accéder à votre plateforme de formation en ligne.
+              </p>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="bg-[#0F1D33] rounded-2xl p-5 border border-white/5">
+                  <span className="block text-white/30 text-xs font-bold uppercase tracking-widest mb-2">Identifiant</span>
+                  <span className="text-emerald-400 font-mono font-black text-lg select-all">{credentials.username}</span>
+                </div>
+                <div className="bg-[#0F1D33] rounded-2xl p-5 border border-white/5">
+                  <span className="block text-white/30 text-xs font-bold uppercase tracking-widest mb-2">Mot de passe</span>
+                  <span className="text-orange font-mono font-black text-lg select-all">{credentials.password}</span>
+                </div>
+              </div>
+            </div>
+          )}
 
           <div className="space-y-6 mb-12">
             <div className="flex items-center gap-4 text-white/70 text-sm font-medium justify-center">
