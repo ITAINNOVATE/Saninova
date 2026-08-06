@@ -401,7 +401,7 @@ export default function AnnouncementDetail() {
         );
       } else {
         // Check if list item: ends with semicolon `;` or starts with bullet points, or matches composition items
-        const isBullet = line.startsWith("-") || line.startsWith("•") || line.startsWith("*") || line.endsWith(";") || (currentList.length > 0 && line.endsWith("."));
+        const isBullet = line.startsWith("-") || line.startsWith("•") || line.startsWith("*") || line.endsWith(";");
         if (isBullet) {
           const cleanLine = line.replace(/^[-•*]\s*/, "");
           currentList.push(cleanLine);
