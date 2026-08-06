@@ -38,13 +38,24 @@ export const PageHero: React.FC<PageHeroProps> = ({ title, subtitle, backgroundI
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden py-24">
       {/* Dynamic Sliding Background Images */}
       {backgroundImages.map((bg, idx) => (
-        <div 
-          key={bg}
-          className={`absolute inset-0 ${bgSize === "contain" ? "bg-contain" : "bg-cover"} bg-center bg-no-repeat transition-all duration-[1500ms] ease-in-out transform ${
-            idx === currentBgIndex ? "opacity-100 scale-100" : "opacity-0 scale-105 pointer-events-none"
-          }`}
-          style={{ backgroundImage: `url('${bg}')` }}
-        />
+        <React.Fragment key={bg}>
+          {/* Ambient blurred background for 'contain' mode to fill empty spaces */}
+          {bgSize === "contain" && (
+            <div 
+              className={`absolute inset-0 bg-cover bg-center bg-no-repeat blur-2xl transition-all duration-[1500ms] ease-in-out transform ${
+                idx === currentBgIndex ? "opacity-60 scale-110" : "opacity-0 scale-125 pointer-events-none"
+              }`}
+              style={{ backgroundImage: `url('${bg}')` }}
+            />
+          )}
+          
+          <div 
+            className={`absolute inset-0 ${bgSize === "contain" ? "bg-contain" : "bg-cover"} bg-center bg-no-repeat transition-all duration-[1500ms] ease-in-out transform ${
+              idx === currentBgIndex ? "opacity-100 scale-100" : "opacity-0 scale-105 pointer-events-none"
+            }`}
+            style={{ backgroundImage: `url('${bg}')` }}
+          />
+        </React.Fragment>
       ))}
 
       {/* Professional Overlays for content isolation */}
