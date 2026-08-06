@@ -134,11 +134,11 @@ export default function AcademyAnnouncements() {
               className="group bg-[#0F1D33] rounded-[40px] overflow-hidden border border-white/5 flex flex-col h-full hover:shadow-2xl transition-all duration-500"
             >
               {/* Image */}
-              <div className="relative aspect-square overflow-hidden">
+              <div className="relative aspect-square overflow-hidden bg-white/5 p-4 flex items-center justify-center">
                 <img 
                   src={announcement.image} 
                   alt={announcement.title} 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute top-4 right-4">
                   <span className="px-4 py-1.5 bg-accent text-white text-[10px] font-black uppercase tracking-widest rounded-full shadow-lg">
