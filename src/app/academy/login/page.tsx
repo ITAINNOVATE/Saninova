@@ -1,17 +1,21 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import { 
   User, Mail, Lock, ArrowLeft, ChevronRight, CheckCircle2, ShieldCheck, Sparkles 
 } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import PageHero from "../../../components/ui/PageHero";
 
-export default function AcademyLogin() {
+function LoginContent() {
   const router = useRouter();
-  const [email, setEmail] = useState("");
+  const searchParams = useSearchParams();
+  const trainingSlug = searchParams.get("training");
+  const isTrainingLogin = !!trainingSlug;
+
+  const [emailOrId, setEmailOrId] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -25,10 +29,12 @@ export default function AcademyLogin() {
 
     const savedEmail = localStorage.getItem("registered_email");
     const savedPassword = localStorage.getItem("registered_password");
+    const generatedUsername = localStorage.getItem("generated_username");
+    const generatedPassword = localStorage.getItem("generated_password");
 
     // FIX SPÉCIFIQUE pour récupérer le compte de cet utilisateur
-    const normalizedInputEmail = email.trim().toLowerCase();
-    if (normalizedInputEmail === "ahopea01@gmail.com") {
+    const normalizedInput = emailOrId.trim().toLowerCase();
+    if (normalizedInput === "ahopea01@gmail.com") {
       localStorage.setItem("registered_email", "ahopea01@gmail.com");
       localStorage.setItem("registered_password", password);
       localStorage.setItem("logged_in", "true");
@@ -45,13 +51,37 @@ export default function AcademyLogin() {
       return;
     }
 
+    if (isTrainingLogin) {
+      if (!generatedUsername) {
+        setIsSubmitting(false);
+        setError("Aucun accès trouvé pour cette formation. Veuillez vous inscrire d'abord.");
+        return;
+      }
+      
+      if (normalizedInput === generatedUsername && password === generatedPassword) {
+        localStorage.setItem("logged_in", "true");
+        // Enroll in this specific training
+        const currentEnrolled = JSON.parse(localStorage.getItem("enrolled_slugs") || "[]");
+        if (!currentEnrolled.includes(trainingSlug)) {
+          currentEnrolled.push(trainingSlug);
+          localStorage.setItem("enrolled_slugs", JSON.stringify(currentEnrolled));
+        }
+        setIsSubmitting(false);
+        router.push(`/academy/portal/course/${trainingSlug}`);
+      } else {
+        setIsSubmitting(false);
+        setError("Identifiant ou mot de passe incorrect.");
+      }
+      return;
+    }
+
     if (!savedEmail) {
       setIsSubmitting(false);
       setError("Aucun compte trouvé sur cet appareil. Veuillez créer un compte d'abord.");
       return;
     }
 
-    if (email.trim().toLowerCase() === savedEmail.trim().toLowerCase() && password === savedPassword) {
+    if (normalizedInput === savedEmail.trim().toLowerCase() && password === savedPassword) {
       localStorage.setItem("logged_in", "true");
       
       // If enrolled_slugs is empty, enroll them in their chosen training
@@ -72,8 +102,8 @@ export default function AcademyLogin() {
   return (
     <>
       <PageHero 
-        title="Connexion"
-        subtitle="Accédez à votre espace apprenant personnel SaniNova."
+        title={isTrainingLogin ? "Connexion à la formation" : "Connexion"}
+        subtitle={isTrainingLogin ? "Accédez à l'interface exclusive de votre formation." : "Accédez à votre espace apprenant personnel SaniNova."}
         backgroundImages={[
           "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80",
           "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80"
@@ -103,16 +133,22 @@ export default function AcademyLogin() {
 
             <form onSubmit={handleLogin} className="space-y-6">
               <div className="space-y-2">
-                <label className="text-xs font-bold text-white/40 uppercase tracking-wider ml-1">Email</label>
+                <label className="text-xs font-bold text-white/40 uppercase tracking-wider ml-1">
+                  {isTrainingLogin ? "Identifiant" : "Email"}
+                </label>
                 <div className="relative">
-                  <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 w-5 h-5" />
+                  {isTrainingLogin ? (
+                    <User className="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 w-5 h-5" />
+                  ) : (
+                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 w-5 h-5" />
+                  )}
                   <input 
-                    type="email" 
+                    type={isTrainingLogin ? "text" : "email"}
                     required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    value={emailOrId}
+                    onChange={(e) => setEmailOrId(e.target.value)}
                     className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white focus:border-orange/50 focus:bg-white/10 transition-all outline-none" 
-                    placeholder="jean@organisation.com" 
+                    placeholder={isTrainingLogin ? "jeandupont" : "jean@organisation.com"} 
                   />
                 </div>
               </div>
@@ -153,9 +189,17 @@ export default function AcademyLogin() {
              <div className="flex items-center gap-2 text-white text-xs font-bold">
                <CheckCircle2 className="w-4 h-4" /> Espace eLearning
              </div>
-          </div>
+           </div>
         </div>
       </div>
     </>
+  );
+}
+
+export default function AcademyLogin() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-dark flex items-center justify-center text-white">Chargement...</div>}>
+      <LoginContent />
+    </Suspense>
   );
 }

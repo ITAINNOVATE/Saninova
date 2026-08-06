@@ -552,7 +552,7 @@ export default function AnnouncementDetail() {
                   </Link>
 
                   <Link
-                    href="/academy/portal"
+                    href={`/academy/login?training=${encodeURIComponent(announcement.slug || id)}`}
                     className="px-8 py-4 rounded-2xl font-black text-sm uppercase tracking-wider transition-all inline-flex items-center justify-center gap-2 bg-white/5 text-white border border-white/10 hover:bg-white/10 hover:scale-105"
                   >
                     {locale === "fr" ? "Accéder à mon interface" : "Access my interface"}

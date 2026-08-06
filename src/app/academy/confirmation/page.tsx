@@ -45,6 +45,8 @@ function ConfirmationContent() {
       const password = `${lastName.trim().toUpperCase().replace(/[^A-Z]/g, "")}2026`;
       
       setCredentials({ username, password });
+      localStorage.setItem("generated_username", username);
+      localStorage.setItem("generated_password", password);
     }
 
     // Resolve course details
