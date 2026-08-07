@@ -17,6 +17,9 @@ function PaymentContent() {
   const trainingSlug = searchParams.get("training") || "";
   
   const [selectedMethod, setSelectedMethod] = useState("fedapay");
+  const [paymentOption, setPaymentOption] = useState<"total" | "partial">("total");
+  const [customAmount, setCustomAmount] = useState<string>("");
+  const [amountError, setAmountError] = useState<string>("");
   const [isProcessing, setIsProcessing] = useState(false);
   const [participantName, setParticipantName] = useState("Jean Dupont");
   const [courseDetails, setCourseDetails] = useState({
@@ -89,6 +92,14 @@ function PaymentContent() {
     }
   }, [trainingSlug]);
 
+  // Set default partial amount (e.g. 50% of total) when course details load
+  useEffect(() => {
+    const rawPrice = parseInt(courseDetails.price.replace(/\D/g, ""), 10) || 0;
+    if (rawPrice > 0 && !customAmount) {
+      setCustomAmount(Math.round(rawPrice / 2).toString());
+    }
+  }, [courseDetails.price]);
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       const existingScript = document.getElementById("fedapay-checkout-script");
@@ -103,25 +114,53 @@ function PaymentContent() {
   }, []);
 
   const handlePayment = async () => {
+    setAmountError("");
+    const priceValue = parseInt(courseDetails.price.replace(/\D/g, ""), 10) || 0;
+    
+    let effectiveAmount = priceValue;
+    if (paymentOption === "partial") {
+      const parsedCustom = parseFloat(customAmount);
+      if (isNaN(parsedCustom) || parsedCustom <= 0) {
+        setAmountError("Veuillez saisir un montant valide pour le paiement partiel.");
+        return;
+      }
+      if (parsedCustom > priceValue) {
+        setAmountError(`Le montant ne peut pas dépasser le prix total (${courseDetails.price} ${courseDetails.currency}).`);
+        return;
+      }
+      const minAmount = courseDetails.currency === "USD" ? 20 : 10000;
+      if (parsedCustom < minAmount) {
+        setAmountError(`Le versement minimum autorisé est de ${minAmount} ${courseDetails.currency}.`);
+        return;
+      }
+      effectiveAmount = Math.round(parsedCustom);
+    }
+
+    const remainingAmount = priceValue - effectiveAmount;
+
+    // Save payment metadata to localStorage
+    if (trainingSlug) {
+      localStorage.setItem(`paid_${trainingSlug}`, "true");
+      localStorage.setItem(`paid_type_${trainingSlug}`, paymentOption);
+      localStorage.setItem(`paid_amount_${trainingSlug}`, effectiveAmount.toString());
+      localStorage.setItem(`total_amount_${trainingSlug}`, priceValue.toString());
+      localStorage.setItem(`remaining_amount_${trainingSlug}`, remainingAmount.toString());
+      localStorage.setItem(`currency_${trainingSlug}`, courseDetails.currency);
+    }
+
     if (selectedMethod === "fedapay") {
       const FedaPay = (window as any).FedaPay;
       if (FedaPay) {
         try {
-          const priceValue = parseInt(courseDetails.price.replace(/\D/g, ""));
-          let finalAmount = priceValue;
+          let finalAmount = effectiveAmount;
           if (courseDetails.currency === "USD") {
-            finalAmount = priceValue * 600;
+            finalAmount = effectiveAmount * 600;
           }
 
           const nameParts = participantName.trim().split(" ");
           const firstname = nameParts[0] || "Participant";
           const lastname = nameParts.slice(1).join(" ") || "SaniNova";
           const savedEmail = localStorage.getItem("registered_email") || "contact@saninova.com";
-          
-          // Mark paid so the confirmation screen validates it correctly
-          if (trainingSlug) {
-            localStorage.setItem(`paid_${trainingSlug}`, "true");
-          }
           
           const widget = FedaPay.init({
             public_key: process.env.NEXT_PUBLIC_FEDAPAY_PUBLIC_KEY || "pk_live_glLmgqSBaYSt9ktutyPAmLuh",
@@ -130,7 +169,7 @@ function PaymentContent() {
               currency: {
                 iso: "XOF"
               },
-              description: `Frais d'inscription - ${courseDetails.title}`,
+              description: `Paiement ${paymentOption === "partial" ? "partiel (acompte)" : "total"} - ${courseDetails.title}`,
             },
             customer: {
               firstname: firstname,
@@ -158,7 +197,15 @@ function PaymentContent() {
         const nameParts = fullname.trim().split(" ");
         const firstname = nameParts[0] || "Apprenant";
         const lastname = nameParts.slice(1).join(" ") || "SaniNova";
-        const priceValue = parseInt(courseDetails.price.replace(/\D/g, ""));
+        const priceValue = parseInt(courseDetails.price.replace(/\D/g, ""), 10) || 0;
+        let effectiveAmount = priceValue;
+        if (paymentOption === "partial") {
+          const parsedCustom = parseFloat(customAmount);
+          if (!isNaN(parsedCustom) && parsedCustom > 0 && parsedCustom <= priceValue) {
+            effectiveAmount = Math.round(parsedCustom);
+          }
+        }
+
         const currency = courseDetails.currency || (courseDetails.price.includes("USD") || courseDetails.price.includes("$") ? "USD" : "XOF");
 
         const response = await fetch("/api/payment/izipay", {
@@ -167,7 +214,7 @@ function PaymentContent() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            amount: priceValue,
+            amount: effectiveAmount,
             currency: currency,
             firstname,
             lastname,
@@ -264,15 +311,31 @@ function PaymentContent() {
                     <p className="text-white font-bold text-sm leading-snug">{courseDetails.title}</p>
                   </div>
                   <div className="flex flex-col gap-1 pb-4 border-b border-white/5">
-                    <p className="text-white/40 text-xs font-bold uppercase tracking-widest">Participant</p>
-                    <p className="text-white font-bold text-sm">{participantName}</p>
+                    <p className="text-white/40 text-xs font-bold uppercase tracking-widest">Total Formation</p>
+                    <p className="text-white font-bold text-sm leading-snug">{courseDetails.price} {courseDetails.currency}</p>
                   </div>
-                  <div className="flex flex-col gap-1">
-                    <p className="text-white/40 text-xs font-bold uppercase tracking-widest">Total à payer</p>
-                    <p className="text-orange font-black text-3xl mt-1">
-                      {courseDetails.price} <span className="text-sm font-bold opacity-60">{courseDetails.currency}</span>
+                  <div className="flex flex-col gap-1 pb-4 border-b border-white/5">
+                    <p className="text-white/40 text-xs font-bold uppercase tracking-widest">Option choisie</p>
+                    <p className="text-emerald-400 font-bold text-xs uppercase tracking-wider">
+                      {paymentOption === "total" ? "Paiement Intégral (100%)" : "Paiement Partiel (Acompte)"}
                     </p>
                   </div>
+                  <div className="flex flex-col gap-1">
+                    <p className="text-white/40 text-xs font-bold uppercase tracking-widest">À régler maintenant</p>
+                    <p className="text-orange font-black text-3xl mt-1">
+                      {paymentOption === "total" 
+                        ? courseDetails.price 
+                        : (parseFloat(customAmount) || 0).toLocaleString('fr-FR')} <span className="text-sm font-bold opacity-60">{courseDetails.currency}</span>
+                    </p>
+                  </div>
+                  {paymentOption === "partial" && (
+                    <div className="pt-3 border-t border-white/5 flex flex-col gap-1">
+                      <p className="text-white/40 text-xs font-bold uppercase tracking-widest">Solde restant après ce vers. :</p>
+                      <p className="text-white/80 font-bold text-sm">
+                        {Math.max(0, (parseInt(courseDetails.price.replace(/\D/g, ""), 10) || 0) - (parseFloat(customAmount) || 0)).toLocaleString('fr-FR')} {courseDetails.currency}
+                      </p>
+                    </div>
+                  )}
                 </div>
                 <div className="bg-white/5 rounded-2xl p-4 flex items-start gap-3">
                   <ShieldCheck className="text-accent w-5 h-5 flex-shrink-0" />
@@ -283,9 +346,120 @@ function PaymentContent() {
               </div>
             </div>
 
-            {/* Right: Payment Methods */}
-            <div className="lg:col-span-2 space-y-4">
-              <h3 className="text-white font-black text-xl mb-6">Modes de paiement</h3>
+            {/* Right: Payment Options & Methods */}
+            <div className="lg:col-span-2 space-y-6">
+              
+              {/* Option de paiement (Total vs Partiel) */}
+              <div className="bg-[#0F1D33] border border-white/10 rounded-[32px] p-6 shadow-xl">
+                <h3 className="text-white font-black text-xl mb-4 flex items-center gap-3">
+                  <div className="w-1.5 h-6 bg-orange rounded-full" />
+                  Mode de règlement
+                </h3>
+                <p className="text-white/50 text-xs mb-6 font-poppins">
+                  Choisissez si vous préférez régler la totalité de la formation maintenant ou effectuer un paiement par tranche.
+                </p>
+
+                <div className="grid sm:grid-cols-2 gap-4 mb-6">
+                  {/* Option Paiement Total */}
+                  <div 
+                    onClick={() => {
+                      setPaymentOption("total");
+                      setAmountError("");
+                    }}
+                    className={`cursor-pointer p-5 rounded-2xl border transition-all flex flex-col justify-between ${paymentOption === "total" ? "bg-orange/10 border-orange shadow-lg shadow-orange/10" : "bg-white/5 border-white/5 hover:border-white/20"}`}
+                  >
+                    <div className="flex items-start justify-between mb-3">
+                      <span className="text-white font-black text-base">Paiement Total</span>
+                      <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${paymentOption === "total" ? "border-orange bg-orange" : "border-white/30"}`}>
+                        {paymentOption === "total" && <CheckCircle2 className="w-3.5 h-3.5 text-white" />}
+                      </div>
+                    </div>
+                    <p className="text-white/60 text-xs mb-3 font-poppins">Réglez la totalité du montant aujourd'hui.</p>
+                    <p className="text-orange font-black text-xl">{courseDetails.price} {courseDetails.currency}</p>
+                  </div>
+
+                  {/* Option Paiement Partiel */}
+                  <div 
+                    onClick={() => {
+                      setPaymentOption("partial");
+                      setAmountError("");
+                    }}
+                    className={`cursor-pointer p-5 rounded-2xl border transition-all flex flex-col justify-between ${paymentOption === "partial" ? "bg-orange/10 border-orange shadow-lg shadow-orange/10" : "bg-white/5 border-white/5 hover:border-white/20"}`}
+                  >
+                    <div className="flex items-start justify-between mb-3">
+                      <span className="text-white font-black text-base">Paiement Partiel</span>
+                      <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${paymentOption === "partial" ? "border-orange bg-orange" : "border-white/30"}`}>
+                        {paymentOption === "partial" && <CheckCircle2 className="w-3.5 h-3.5 text-white" />}
+                      </div>
+                    </div>
+                    <p className="text-white/60 text-xs mb-3 font-poppins">Versez un acompte et soldez le reste plus tard.</p>
+                    <span className="text-emerald-400 font-bold text-xs uppercase tracking-wider">Montant libre par tranche</span>
+                  </div>
+                </div>
+
+                {/* Saisie du montant si paiement partiel */}
+                {paymentOption === "partial" && (
+                  <motion.div 
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="p-5 bg-white/5 border border-white/10 rounded-2xl space-y-4"
+                  >
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                      <label className="text-xs font-bold text-white/80 uppercase tracking-widest">
+                        Saisissez le montant de votre versement ({courseDetails.currency}) *
+                      </label>
+                      
+                      {/* Presets buttons */}
+                      <div className="flex gap-2">
+                        {[25, 50, 75].map((pct) => {
+                          const priceVal = parseInt(courseDetails.price.replace(/\D/g, ""), 10) || 0;
+                          const calcVal = Math.round((priceVal * pct) / 100);
+                          return (
+                            <button
+                              key={pct}
+                              type="button"
+                              onClick={() => {
+                                setCustomAmount(calcVal.toString());
+                                setAmountError("");
+                              }}
+                              className="px-2.5 py-1 bg-white/10 hover:bg-orange/20 hover:text-orange text-white/70 text-xs font-bold rounded-lg transition-all"
+                            >
+                              {pct}% ({calcVal})
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+
+                    <div className="relative">
+                      <input 
+                        type="number"
+                        value={customAmount}
+                        onChange={(e) => {
+                          setCustomAmount(e.target.value);
+                          setAmountError("");
+                        }}
+                        placeholder={`Ex: ${Math.round((parseInt(courseDetails.price.replace(/\D/g, ""), 10) || 0) / 2)}`}
+                        className="w-full bg-[#1A2639] border border-white/10 rounded-2xl py-4 px-5 text-white font-mono font-black text-lg focus:outline-none focus:border-orange transition-all"
+                      />
+                      <span className="absolute right-5 top-1/2 -translate-y-1/2 font-black text-orange text-sm">
+                        {courseDetails.currency}
+                      </span>
+                    </div>
+
+                    {amountError && (
+                      <p className="text-red-400 text-xs font-bold font-poppins">{amountError}</p>
+                    )}
+
+                    <div className="text-xs text-white/50 space-y-1 pt-1">
+                      <p>• Prix total de la formation : <span className="font-bold text-white">{courseDetails.price} {courseDetails.currency}</span></p>
+                      <p>• Reste à solder ultérieurement : <span className="font-bold text-emerald-400">{Math.max(0, (parseInt(courseDetails.price.replace(/\D/g, ""), 10) || 0) - (parseFloat(customAmount) || 0)).toLocaleString('fr-FR')} {courseDetails.currency}</span></p>
+                    </div>
+                  </motion.div>
+                )}
+              </div>
+
+              <h3 className="text-white font-black text-xl pt-4">Modes de paiement</h3>
               
               {paymentMethods.map((method) => (
                 <button

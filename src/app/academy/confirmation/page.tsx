@@ -20,6 +20,13 @@ function ConfirmationContent() {
     currency: "XOF"
   });
 
+  const [paymentMeta, setPaymentMeta] = useState<{
+    type: string;
+    paidAmount: string;
+    remainingAmount: string;
+    currency: string;
+  } | null>(null);
+
   useEffect(() => {
     // Load student name from localStorage
     const savedFirstName = localStorage.getItem("registered_firstname") || "";
@@ -87,6 +94,21 @@ function ConfirmationContent() {
           });
         }
       }
+
+      // Check for partial payment info
+      const paidType = localStorage.getItem(`paid_type_${trainingSlug}`);
+      const paidAmount = localStorage.getItem(`paid_amount_${trainingSlug}`);
+      const remainingAmount = localStorage.getItem(`remaining_amount_${trainingSlug}`);
+      const storedCurrency = localStorage.getItem(`currency_${trainingSlug}`);
+
+      if (paidAmount) {
+        setPaymentMeta({
+          type: paidType || "total",
+          paidAmount: parseInt(paidAmount, 10).toLocaleString('fr-FR'),
+          remainingAmount: parseInt(remainingAmount || "0", 10).toLocaleString('fr-FR'),
+          currency: storedCurrency || courseDetails.currency
+        });
+      }
     }
   }, [trainingSlug]);
 
@@ -117,14 +139,32 @@ function ConfirmationContent() {
             Félicitations {studentName} ! Votre place est réservée. Vos identifiants de connexion ont été activés. Vous pouvez dès à présent accéder à votre cours dans votre portail apprenant.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-4 mb-12">
+          <div className="grid md:grid-cols-3 gap-4 mb-12">
             <div className="bg-white/5 rounded-3xl p-6 border border-white/5 text-left">
               <p className="text-white/30 text-[10px] uppercase font-bold tracking-widest mb-1">Référence</p>
               <p className="text-white font-black text-lg">{reference}</p>
             </div>
+            
             <div className="bg-white/5 rounded-3xl p-6 border border-white/5 text-left">
-              <p className="text-white/30 text-[10px] uppercase font-bold tracking-widest mb-1">Montant Payé</p>
-              <p className="text-accent font-black text-lg">{courseDetails.price} {courseDetails.currency}</p>
+              <p className="text-white/30 text-[10px] uppercase font-bold tracking-widest mb-1">
+                {paymentMeta?.type === "partial" ? "Acompte Réglé" : "Montant Payé"}
+              </p>
+              <p className="text-accent font-black text-lg">
+                {paymentMeta ? `${paymentMeta.paidAmount} ${paymentMeta.currency}` : `${courseDetails.price} ${courseDetails.currency}`}
+              </p>
+            </div>
+
+            <div className="bg-white/5 rounded-3xl p-6 border border-white/5 text-left">
+              <p className="text-white/30 text-[10px] uppercase font-bold tracking-widest mb-1">
+                {paymentMeta?.type === "partial" ? "Solde Restant" : "Statut Règlement"}
+              </p>
+              {paymentMeta?.type === "partial" ? (
+                <p className="text-orange font-black text-lg">
+                  {paymentMeta.remainingAmount} {paymentMeta.currency}
+                </p>
+              ) : (
+                <p className="text-emerald-400 font-black text-lg">Intégral (100%)</p>
+              )}
             </div>
           </div>
 
