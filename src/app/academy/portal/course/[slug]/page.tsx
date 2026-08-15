@@ -62,7 +62,8 @@ export default function CourseLMSPlayerPage({ params }: { params: Promise<{ slug
     const databasePrices: Record<string, { price: string; currency: string }> = {
       "gouvernance-sanitaire-afrique": { price: "250.000", currency: "XOF" },
       "sante-digitale-interoperabilite": { price: "350.000", currency: "XOF" },
-      "regulation-pharmaceutique-avancee": { price: "300.000", currency: "XOF" }
+      "regulation-pharmaceutique-avancee": { price: "300.000", currency: "XOF" },
+      "formation-expert-supply-chain-pharmaceutique": { price: "500", currency: "USD" }
     };
     return databasePrices[courseItem.slug] || { price: "250.000", currency: "XOF" };
   };
