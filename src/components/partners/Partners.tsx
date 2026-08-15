@@ -14,7 +14,7 @@ export const Partners: React.FC = () => {
     { name: "BHIC - Barika Health Impact Consulting", src: "/images/partners/bhic.jpg" },
     { name: "Pharmacie Du Port", src: "/images/partners/pdp.png" },
     { name: "Pharmacie Gorobani", src: "/images/partners/phcie_gorobani.jpeg" },
-    { name: "Logifroid", src: "/images/partners/logifroid.jpg" },
+    { name: "Logifroid", src: "/images/partners/logifroid.jpg", scale: "scale-[1.35]" },
   ];
 
   // Duplicate array once to support exact 50% offset looping
@@ -58,9 +58,9 @@ export const Partners: React.FC = () => {
               <Image
                 src={partner.src}
                 alt={partner.name}
-                width={220}
-                height={100}
-                className="h-20 w-auto object-contain transition-all duration-300 group-hover:scale-105"
+                width={250}
+                height={120}
+                className={`h-22 md:h-24 w-auto object-contain transition-all duration-300 group-hover:scale-105 ${partner.scale || ""}`}
               />
             </div>
           ))}
