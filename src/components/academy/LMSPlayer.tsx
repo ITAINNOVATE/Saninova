@@ -3,11 +3,12 @@
 import React, { useState, useEffect } from "react";
 import { 
   Play, BookOpen, CheckCircle, Circle, ArrowLeft, ArrowRight, 
-  Download, FileText, Video, ExternalLink, HelpCircle, Award, CheckCircle2 
+  Download, FileText, Video, ExternalLink, HelpCircle, Award, CheckCircle2, Folder 
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import QuizModule from "./QuizModule";
 import { staticModules, slugify } from "../../lib/academyHelpers";
+import { supabase } from "../../lib/supabase";
 
 const renderMarkdownText = (text: string, lightText: boolean = false) => {
   if (!text || typeof text !== 'string') return text;
@@ -320,6 +321,29 @@ Nous vous recommandons de concevoir des aides-mémoires simples (SOP) pour vos �
 
 export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onCourseCompleted }: LMSPlayerProps) {
   const [syllabus, setSyllabus] = useState<Module[]>([]);
+  const [activeTab, setActiveTab] = useState<"syllabus" | "quiz">("syllabus");
+  const [courseDocuments, setCourseDocuments] = useState<any[]>([]);
+
+  useEffect(() => {
+    const fetchCourseDocs = async () => {
+      try {
+        const { data } = await supabase
+          .from("academy_course_documents")
+          .select("*")
+          .eq("training_slug", courseSlug)
+          .order("created_at", { ascending: false });
+
+        if (data) {
+          setCourseDocuments(data);
+        }
+      } catch (err) {
+        console.error("Error fetching course documents:", err);
+      }
+    };
+    if (courseSlug) {
+      fetchCourseDocs();
+    }
+  }, [courseSlug]);
   const [activeChapterId, setActiveChapterId] = useState("");
   const [completedChapters, setCompletedChapters] = useState<Record<string, boolean>>({});
   const [showQuiz, setShowQuiz] = useState(false);
@@ -818,11 +842,50 @@ export default function LMSPlayer({ courseTitle, courseSlug, onBackToPortal, onC
                   })}
                 </div>
 
+                {/* Course Exclusive Documents Panel */}
+                {courseDocuments.length > 0 && (
+                  <div className="mb-10 bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-xl">
+                    <div className="flex items-center justify-between mb-4 pb-3 border-b border-slate-800">
+                      <h5 className="text-white font-black text-sm uppercase tracking-wider flex items-center gap-2">
+                        <Folder className="w-5 h-5 text-emerald-400" /> Documents Exclusifs de la Formation
+                      </h5>
+                      <span className="text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-full">
+                        Accès Réservé aux Inscrits
+                      </span>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-4">
+                      {courseDocuments.map((doc, dIdx) => (
+                        <div key={dIdx} className="bg-slate-950 hover:bg-slate-900 border border-slate-800 p-4 rounded-2xl flex items-center justify-between gap-4 transition-all group">
+                          <div className="flex items-center gap-3.5 min-w-0">
+                            <div className="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+                              <FileText className="w-5 h-5" />
+                            </div>
+                            <div className="min-w-0">
+                              <p className="text-xs font-bold text-white group-hover:text-emerald-400 transition-colors truncate">{doc.title}</p>
+                              <p className="text-[10px] text-slate-400 font-semibold mt-0.5">{doc.category} • {doc.file_type || "PDF"}</p>
+                            </div>
+                          </div>
+                          <a
+                            href={doc.file_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-2.5 bg-emerald-500/10 hover:bg-emerald-500 text-emerald-400 hover:text-white rounded-xl transition-all flex-shrink-0 cursor-pointer"
+                            title="Télécharger"
+                          >
+                            <Download className="w-4 h-4" />
+                          </a>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
                 {/* Resources Panel */}
                 {currentChapter.resources && currentChapter.resources.length > 0 && (
                   <div className="mb-10 bg-slate-50 border border-slate-200 rounded-2xl p-6">
                     <h5 className="text-[#0F1D33] font-bold text-xs uppercase tracking-wider mb-4 flex items-center gap-2">
-                      <Download className="w-4 h-4 text-orange" /> Ressources à télécharger
+                      <Download className="w-4 h-4 text-orange" /> Ressources du chapitre
                     </h5>
                     <div className="grid md:grid-cols-2 gap-4">
                       {currentChapter.resources.map((res, rIdx) => (
