@@ -44,7 +44,7 @@ export default function AcademyDashboardOverview() {
           announcements: aCount || 0,
           events: eCount || 0,
           applications: appCount || 0,
-          revenue: "1.250.000" // Placeholder for revenue
+          revenue: "0"
         });
       } catch (err) {
         console.error("Error fetching academy stats:", err);
@@ -165,29 +165,31 @@ export default function AcademyDashboardOverview() {
             <h3 className="text-xl font-montserrat font-black text-white flex items-center gap-3">
               <TrendingUp className="text-emerald-400" /> Performance du mois
             </h3>
-            <span className="text-xs font-bold text-slate-500 uppercase tracking-widest">Mai 2026</span>
+            <span className="text-xs font-bold text-slate-500 uppercase tracking-widest">
+              {new Date().toLocaleDateString("fr-FR", { month: "long", year: "numeric" })}
+            </span>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="p-6 rounded-3xl bg-slate-950/50 border border-slate-800">
               <p className="text-slate-500 text-xs font-bold uppercase mb-2">Revenus</p>
               <p className="text-2xl font-black text-white">{stats.revenue} <span className="text-xs text-slate-500">XOF</span></p>
-              <div className="mt-4 flex items-center gap-1 text-emerald-400 text-[10px] font-bold">
-                +12% vs mois dernier
+              <div className="mt-4 flex items-center gap-1 text-slate-400 text-[10px] font-bold">
+                0% vs mois dernier
               </div>
             </div>
             <div className="p-6 rounded-3xl bg-slate-950/50 border border-slate-800">
               <p className="text-slate-500 text-xs font-bold uppercase mb-2">Taux d'engagement</p>
-              <p className="text-2xl font-black text-white">78%</p>
-              <div className="mt-4 flex items-center gap-1 text-emerald-400 text-[10px] font-bold">
-                +5% vs mois dernier
+              <p className="text-2xl font-black text-white">0%</p>
+              <div className="mt-4 flex items-center gap-1 text-slate-400 text-[10px] font-bold">
+                0% vs mois dernier
               </div>
             </div>
             <div className="p-6 rounded-3xl bg-slate-950/50 border border-slate-800">
               <p className="text-slate-500 text-xs font-bold uppercase mb-2">Certificats émis</p>
-              <p className="text-2xl font-black text-white">124</p>
-              <div className="mt-4 flex items-center gap-1 text-emerald-400 text-[10px] font-bold">
-                +18 vs mois dernier
+              <p className="text-2xl font-black text-white">0</p>
+              <div className="mt-4 flex items-center gap-1 text-slate-400 text-[10px] font-bold">
+                0 vs mois dernier
               </div>
             </div>
           </div>
