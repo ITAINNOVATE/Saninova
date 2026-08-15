@@ -255,8 +255,9 @@ export default function AnnouncementDetail() {
     const elements: React.ReactNode[] = [];
 
     const metadataKeys = [
-      "employeur", "intitulé du poste", "type de contrat", "lieu d’affectation", 
-      "nombre de poste(s)", "date limite de dépôt", "mode de dépôt"
+      "employeur", "intitulé du poste", "type de poste", "type de contrat", 
+      "lieu d’affectation", "lieu d'affectation", "nombre de poste(s)", 
+      "disponibilité", "date limite de dépôt", "mode de dépôt"
     ];
 
     const metadata: { key: string; val: string }[] = [];
@@ -288,6 +289,15 @@ export default function AnnouncementDetail() {
       );
       
       if (matchingKey) {
+        if (line.includes(":")) {
+          const parts = line.split(":");
+          const k = parts[0].trim();
+          const v = parts.slice(1).join(":").trim();
+          if (v) {
+            metadata.push({ key: k, val: v });
+            continue;
+          }
+        }
         currentKey = line;
         isParsingMetadata = true;
         continue;
