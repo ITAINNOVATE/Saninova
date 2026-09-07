@@ -12,6 +12,7 @@ export const Partners: React.FC = () => {
     { name: "Techno Stat Group", src: "/images/partners/tsg.png" },
     { name: "ITA Innovate", src: "/images/partners/ita.jpg" },
     { name: "BHIC - Barika Health Impact Consulting", src: "/images/partners/bhic.jpg" },
+    { name: "ABMeD", src: "/images/partners/logoabmed.png" },
     { name: "Pharmacie Du Port", src: "/images/partners/pdp.png" },
     { name: "Pharmacie Gorobani", src: "/images/partners/phcie_gorobani.jpeg" },
     { name: "Logifroid", src: "/images/partners/logifroid.jpg", scale: "scale-[1.35]" },
