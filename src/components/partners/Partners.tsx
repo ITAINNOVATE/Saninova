@@ -45,7 +45,7 @@ export const Partners: React.FC = () => {
             x: {
               repeat: Infinity,
               repeatType: "loop",
-              duration: 12, // Smooth speed for smaller array
+              duration: 35, // Slower, elegant scroll speed
               ease: "linear",
             },
           }}
