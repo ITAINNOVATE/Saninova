@@ -33,6 +33,10 @@ function CertifRegisterContent() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
+  // Dynamic pricing profile for Officine Moderne training
+  const isOfficineTraining = certificationName.toLowerCase().includes("officine");
+  const [pharmacyProfile, setPharmacyProfile] = useState<"titulaire" | "assistant">("titulaire");
+
   const {
     register,
     handleSubmit,
@@ -47,10 +51,17 @@ function CertifRegisterContent() {
     localStorage.setItem("registered_firstname", data.firstname);
     localStorage.setItem("registered_lastname", data.lastname);
     localStorage.setItem("registered_email", data.email);
+
+    if (isOfficineTraining) {
+      localStorage.setItem(`registered_profile_${certificationName}`, pharmacyProfile);
+      localStorage.setItem(`registered_price_${certificationName}`, pharmacyProfile === "assistant" ? "75000" : "100000");
+    }
+
     setIsSubmitting(false);
     
-    // Rediriger vers la page de paiement au lieu d'afficher un succès statique
-    const paymentUrl = `/academy/payment?type=certif${certificationName ? `&training=${encodeURIComponent(certificationName)}` : ""}`;
+    // Rediriger vers la page de paiement avec profil sélectionné
+    const profileParam = isOfficineTraining ? `&profile=${pharmacyProfile}` : "";
+    const paymentUrl = `/academy/payment?type=certif${certificationName ? `&training=${encodeURIComponent(certificationName)}` : ""}${profileParam}`;
     router.push(paymentUrl);
   };
 
@@ -136,6 +147,52 @@ function CertifRegisterContent() {
             </h2>
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+              {/* Category selector for Officine Moderne */}
+              {isOfficineTraining && (
+                <div className="p-6 bg-white/5 border border-orange/30 rounded-3xl space-y-4">
+                  <label className="text-xs font-black uppercase tracking-widest text-orange block">
+                    Sélectionnez votre catégorie professionnelle *
+                  </label>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <button
+                      type="button"
+                      onClick={() => setPharmacyProfile("titulaire")}
+                      className={`p-4 rounded-2xl border text-left transition-all cursor-pointer flex flex-col justify-between ${
+                        pharmacyProfile === "titulaire"
+                          ? "bg-orange/20 border-orange text-white ring-2 ring-orange/30"
+                          : "bg-white/5 border-white/10 text-white/70 hover:bg-white/10"
+                      }`}
+                    >
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="font-bold text-sm text-white">Pharmacien Titulaire</span>
+                        <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${pharmacyProfile === "titulaire" ? "border-orange bg-orange" : "border-white/40"}`}>
+                          {pharmacyProfile === "titulaire" && <div className="w-1.5 h-1.5 rounded-full bg-white" />}
+                        </div>
+                      </div>
+                      <span className="text-orange font-black text-base">100.000 FCFA</span>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => setPharmacyProfile("assistant")}
+                      className={`p-4 rounded-2xl border text-left transition-all cursor-pointer flex flex-col justify-between ${
+                        pharmacyProfile === "assistant"
+                          ? "bg-orange/20 border-orange text-white ring-2 ring-orange/30"
+                          : "bg-white/5 border-white/10 text-white/70 hover:bg-white/10"
+                      }`}
+                    >
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="font-bold text-sm text-white">Pharmacien Assistant</span>
+                        <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${pharmacyProfile === "assistant" ? "border-orange bg-orange" : "border-white/40"}`}>
+                          {pharmacyProfile === "assistant" && <div className="w-1.5 h-1.5 rounded-full bg-white" />}
+                        </div>
+                      </div>
+                      <span className="text-emerald-400 font-black text-base">75.000 FCFA</span>
+                    </button>
+                  </div>
+                </div>
+              )}
               {/* Nom & Prénom */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>

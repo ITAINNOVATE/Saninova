@@ -47,7 +47,9 @@ function PaymentContent() {
           slug: staticMatch.slug
         });
       } else {
-        // Fallbacks for legacy/Supabase courses
+        const selectedProfileParam = searchParams.get("profile") || (typeof window !== "undefined" ? localStorage.getItem(`registered_profile_${trainingSlug}`) : null);
+        const isAssistant = selectedProfileParam === "assistant";
+
         const databaseCourses: Record<string, { title: string; price: string; currency: string }> = {
           "gouvernance-sanitaire-afrique": {
             title: "Gouvernance Sanitaire et Leadership en Afrique",
@@ -68,6 +70,11 @@ function PaymentContent() {
             title: "Certificat Professionnel en Supply Chain Pharmaceutique",
             price: "500",
             currency: "USD"
+          },
+          "formation-gestion-officine-moderne": {
+            title: `Formation Professionnelle : Gestion d’une Officine Moderne (${isAssistant ? "Pharmacien Assistant" : "Pharmacien Titulaire"})`,
+            price: isAssistant ? "75.000" : "100.000",
+            currency: "XOF"
           }
         };
 
@@ -83,14 +90,14 @@ function PaymentContent() {
           // General fallback
           setCourseDetails({
             title: trainingSlug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" "),
-            price: "250.000",
+            price: isAssistant ? "75.000" : "250.000",
             currency: "XOF",
             slug: trainingSlug
           });
         }
       }
     }
-  }, [trainingSlug]);
+  }, [trainingSlug, searchParams]);
 
   // Set default partial amount (e.g. 50% of total) when course details load
   useEffect(() => {
