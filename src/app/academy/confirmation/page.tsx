@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { staticModules } from "../../../lib/academyHelpers";
+import { supabase } from "../../../lib/supabase";
 
 function ConfirmationContent() {
   const searchParams = useSearchParams();
@@ -56,58 +57,107 @@ function ConfirmationContent() {
       localStorage.setItem("generated_password", password);
     }
 
-    // Resolve course details
-    if (trainingSlug) {
-      const staticMatch = staticModules.find(m => m.slug === trainingSlug);
-      if (staticMatch) {
-        setCourseDetails({
-          title: staticMatch.title,
-          price: parseInt(staticMatch.price).toLocaleString('fr-FR'),
-          currency: staticMatch.currency
-        });
-      } else {
-        // Fallbacks for legacy/Supabase courses
-        const databaseCourses: Record<string, { title: string; price: string; currency: string }> = {
-          "gouvernance-sanitaire-afrique": {
-            title: "Gouvernance Sanitaire et Leadership en Afrique",
-            price: "250.000",
-            currency: "XOF"
-          },
-          "sante-digitale-interoperabilite": {
-            title: "Santé Digitale et Interopérabilité en Afrique",
-            price: "350.000",
-            currency: "XOF"
-          },
-          "regulation-pharmaceutique-avancee": {
-            title: "Régulation Pharmaceutique Avancée en Afrique",
-            price: "300.000",
-            currency: "XOF"
+      // Resolve course details
+      if (trainingSlug) {
+        const staticMatch = staticModules.find(m => m.slug === trainingSlug);
+        if (staticMatch) {
+          setCourseDetails({
+            title: staticMatch.title,
+            price: parseInt(staticMatch.price).toLocaleString('fr-FR'),
+            currency: staticMatch.currency
+          });
+        } else {
+          // Fallbacks for legacy/Supabase courses
+          const databaseCourses: Record<string, { title: string; price: string; currency: string }> = {
+            "gouvernance-sanitaire-afrique": {
+              title: "Gouvernance Sanitaire et Leadership en Afrique",
+              price: "250.000",
+              currency: "XOF"
+            },
+            "sante-digitale-interoperabilite": {
+              title: "Santé Digitale et Interopérabilité en Afrique",
+              price: "350.000",
+              currency: "XOF"
+            },
+            "regulation-pharmaceutique-avancee": {
+              title: "Régulation Pharmaceutique Avancée en Afrique",
+              price: "300.000",
+              currency: "XOF"
+            },
+            "formation-expert-supply-chain-pharmaceutique": {
+              title: "Certificat Professionnel en Supply Chain Pharmaceutique",
+              price: "500",
+              currency: "USD"
+            },
+            "formation-gestion-officine-moderne": {
+              title: "Formation Professionnelle : Gestion d’une Officine Moderne",
+              price: "100.000",
+              currency: "XOF"
+            }
+          };
+
+          const match = databaseCourses[trainingSlug];
+          if (match) {
+            setCourseDetails({
+              title: match.title,
+              price: match.price,
+              currency: match.currency
+            });
+          }
+        }
+
+        // Check for partial payment info
+        const paidType = localStorage.getItem(`paid_type_${trainingSlug}`);
+        const paidAmount = localStorage.getItem(`paid_amount_${trainingSlug}`);
+        const remainingAmount = localStorage.getItem(`remaining_amount_${trainingSlug}`);
+        const storedCurrency = localStorage.getItem(`currency_${trainingSlug}`);
+
+        if (paidAmount) {
+          setPaymentMeta({
+            type: paidType || "total",
+            paidAmount: parseInt(paidAmount, 10).toLocaleString('fr-FR'),
+            remainingAmount: parseInt(remainingAmount || "0", 10).toLocaleString('fr-FR'),
+            currency: storedCurrency || courseDetails.currency
+          });
+        }
+
+        // Record participant registration in Supabase table for Admin Tracking
+        const recordRegistrationInSupabase = async () => {
+          try {
+            const fullname = savedName || `${savedFirstName} ${savedLastName}`.trim() || "Apprenant SaniNova";
+            const email = localStorage.getItem("registered_email") || "";
+            const phone = localStorage.getItem("registered_phone") || "";
+            const organization = localStorage.getItem("registered_organization") || "";
+            const profileRole = localStorage.getItem(`registered_profile_${trainingSlug}`) || localStorage.getItem("registered_role") || "Participant";
+            const formattedRole = profileRole === "assistant" ? "Pharmacien Assistant" : profileRole === "titulaire" ? "Pharmacien Titulaire" : profileRole;
+
+            // Match training in database
+            const { data: trainingMatch } = await supabase
+              .from("academy_trainings")
+              .select("id")
+              .eq("slug", trainingSlug)
+              .maybeSingle();
+
+            const pType = paidType || "completed";
+            const pAmt = paidAmount || courseDetails.price;
+
+            await supabase.from("academy_registrations").insert([{
+              training_id: trainingMatch ? trainingMatch.id : null,
+              fullname,
+              email,
+              phone,
+              organization,
+              role: formattedRole,
+              payment_status: pType === "partial" ? "acompte" : "completed",
+              payment_reference: reference,
+              notes: `Option: ${pType}. Montant réglé: ${pAmt}.`
+            }]);
+          } catch (err) {
+            console.error("Error recording registration in Supabase:", err);
           }
         };
 
-        const match = databaseCourses[trainingSlug];
-        if (match) {
-          setCourseDetails({
-            title: match.title,
-            price: match.price,
-            currency: match.currency
-          });
-        }
-      }
-
-      // Check for partial payment info
-      const paidType = localStorage.getItem(`paid_type_${trainingSlug}`);
-      const paidAmount = localStorage.getItem(`paid_amount_${trainingSlug}`);
-      const remainingAmount = localStorage.getItem(`remaining_amount_${trainingSlug}`);
-      const storedCurrency = localStorage.getItem(`currency_${trainingSlug}`);
-
-      if (paidAmount) {
-        setPaymentMeta({
-          type: paidType || "total",
-          paidAmount: parseInt(paidAmount, 10).toLocaleString('fr-FR'),
-          remainingAmount: parseInt(remainingAmount || "0", 10).toLocaleString('fr-FR'),
-          currency: storedCurrency || courseDetails.currency
-        });
+        recordRegistrationInSupabase();
       }
     }
   }, [trainingSlug]);
