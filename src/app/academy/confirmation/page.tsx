@@ -159,7 +159,6 @@ function ConfirmationContent() {
 
         recordRegistrationInSupabase();
       }
-    }
   }, [trainingSlug]);
 
   return (
