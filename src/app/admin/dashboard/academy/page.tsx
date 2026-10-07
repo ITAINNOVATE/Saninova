@@ -26,25 +26,40 @@ export default function AcademyDashboardOverview() {
       try {
         const [
           { count: tCount },
-          { count: rCount },
+          { data: regData },
           { count: aCount },
           { count: eCount },
           { count: appCount }
         ] = await Promise.all([
           supabase.from("academy_trainings").select("*", { count: "exact", head: true }),
-          supabase.from("academy_registrations").select("*", { count: "exact", head: true }),
+          supabase.from("academy_registrations").select("notes, payment_status"),
           supabase.from("academy_announcements").select("*", { count: "exact", head: true }),
           supabase.from("academy_events").select("*", { count: "exact", head: true }),
           supabase.from("saninova_job_applications").select("*", { count: "exact", head: true })
         ]);
 
+        let calculatedRevenue = 0;
+        if (regData) {
+          regData.forEach((r: any) => {
+            if (r.payment_status === "completed" || r.payment_status === "acompte") {
+              const match = r.notes?.match(/(\d+[\d\s.]*)\s*(?:FCFA|CFA|XOF)/i);
+              if (match) {
+                const clean = match[1].replace(/[\s.]/g, "");
+                calculatedRevenue += parseInt(clean, 10) || 75000;
+              } else {
+                calculatedRevenue += 75000;
+              }
+            }
+          });
+        }
+
         setStats({
           trainings: tCount || 0,
-          registrations: rCount || 0,
+          registrations: regData ? regData.length : 0,
           announcements: aCount || 0,
           events: eCount || 0,
           applications: appCount || 0,
-          revenue: "0"
+          revenue: calculatedRevenue.toLocaleString("fr-FR")
         });
       } catch (err) {
         console.error("Error fetching academy stats:", err);
