@@ -33,15 +33,39 @@ export default function AdminAcademyRegistrations() {
     fetchRegistrations();
   }, []);
 
+  const [fetchError, setFetchError] = useState<string | null>(null);
+
   const fetchRegistrations = async () => {
     setLoading(true);
-    const { data, error } = await supabase
-      .from("academy_registrations")
-      .select("*, academy_trainings(title)")
-      .order("created_at", { ascending: false });
+    setFetchError(null);
+    try {
+      // First try join with academy_trainings
+      const { data, error } = await supabase
+        .from("academy_registrations")
+        .select("*, academy_trainings(title)")
+        .order("created_at", { ascending: false });
 
-    if (data) setRegistrations(data);
-    setLoading(false);
+      if (error) {
+        console.warn("Join query failed, attempting simple select:", error);
+        // Fallback to simple select
+        const { data: simpleData, error: simpleErr } = await supabase
+          .from("academy_registrations")
+          .select("*")
+          .order("created_at", { ascending: false });
+
+        if (simpleErr) {
+          throw simpleErr;
+        }
+        if (simpleData) setRegistrations(simpleData);
+      } else if (data) {
+        setRegistrations(data);
+      }
+    } catch (err: any) {
+      console.error("Error fetching registrations:", err);
+      setFetchError(err.message || "Erreur de chargement des inscriptions.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleDelete = async (id: string) => {
@@ -135,6 +159,17 @@ export default function AdminAcademyRegistrations() {
     link.click();
   };
 
+  const getTrainingTitle = (r: any) => {
+    if (r.academy_trainings?.title) return r.academy_trainings.title;
+    if (r.notes && r.notes.includes("Officine")) return "Formation Professionnelle : Gestion d’une Officine Moderne";
+    if (r.notes && r.notes.includes("Supply Chain")) return "Certificat Professionnel Supply Chain Pharmaceutique";
+    if (r.notes && r.notes.includes("Formation:")) {
+      const match = r.notes.match(/Formation:\s*([^.]+)/);
+      if (match) return match[1].trim();
+    }
+    return "Formation Professionnelle";
+  };
+
   return (
     <div className="space-y-8 pb-20">
       {/* Header */}
@@ -147,27 +182,47 @@ export default function AdminAcademyRegistrations() {
             Inscriptions & Participants
           </h1>
         </div>
-        <button 
-          onClick={exportToCSV}
-          className="px-6 py-3 bg-white/5 border border-white/10 text-white rounded-xl font-bold flex items-center gap-2 hover:bg-white/10 transition-all shadow-lg"
-        >
-          <Download className="w-5 h-5" /> Exporter en CSV
-        </button>
+        <div className="flex items-center gap-3">
+          <button 
+            onClick={fetchRegistrations}
+            disabled={loading}
+            className="px-5 py-3 bg-white/5 border border-white/10 text-white rounded-xl font-bold flex items-center gap-2 hover:bg-white/10 transition-all shadow-lg text-sm"
+          >
+            {loading ? <Loader2 className="w-4 h-4 animate-spin text-emerald-400" /> : "↻"} Actualiser
+          </button>
+          <button 
+            onClick={exportToCSV}
+            className="px-6 py-3 bg-white/5 border border-white/10 text-white rounded-xl font-bold flex items-center gap-2 hover:bg-white/10 transition-all shadow-lg"
+          >
+            <Download className="w-5 h-5" /> Exporter en CSV
+          </button>
+        </div>
       </div>
+
+      {fetchError && (
+        <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-2xl text-red-400 text-sm flex items-center gap-3">
+          <AlertCircle className="w-5 h-5 flex-shrink-0" />
+          <span>{fetchError}</span>
+        </div>
+      )}
 
       {/* Stats Summary */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="p-6 rounded-3xl bg-emerald-500/10 border border-emerald-500/20">
           <div className="flex justify-between items-start">
             <UserCheck className="text-emerald-400 w-8 h-8" />
-            <span className="text-white font-black text-3xl">{registrations.filter(r => r.payment_status === 'completed').length}</span>
+            <span className="text-white font-black text-3xl">
+              {registrations.filter(r => r.payment_status === 'completed' || r.payment_status === 'acompte').length}
+            </span>
           </div>
           <p className="text-emerald-400/70 text-xs font-bold uppercase tracking-widest mt-4">Inscriptions Confirmées</p>
         </div>
         <div className="p-6 rounded-3xl bg-orange/10 border border-orange/20">
           <div className="flex justify-between items-start">
             <Clock className="text-orange w-8 h-8" />
-            <span className="text-white font-black text-3xl">{registrations.filter(r => r.payment_status === 'pending').length}</span>
+            <span className="text-white font-black text-3xl">
+              {registrations.filter(r => r.payment_status === 'pending' || !r.payment_status).length}
+            </span>
           </div>
           <p className="text-orange/70 text-xs font-bold uppercase tracking-widest mt-4">Paiements en attente</p>
         </div>
@@ -233,20 +288,24 @@ export default function AdminAcademyRegistrations() {
                       </div>
                     </td>
                     <td className="px-6 py-6">
-                      <p className="text-white/70 text-[11px] font-bold max-w-[200px] line-clamp-1">{r.academy_trainings?.title || 'Formation supprimée'}</p>
+                      <p className="text-white/70 text-[11px] font-bold max-w-[200px] line-clamp-1">{getTrainingTitle(r)}</p>
                     </td>
                     <td className="px-6 py-6">
                        {r.payment_status === 'completed' ? (
                          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-[10px] font-black uppercase tracking-widest border border-emerald-500/20">
                            <CheckCircle2 className="w-3 h-3" /> Confirmé
                          </span>
-                       ) : r.payment_status === 'pending' ? (
+                       ) : r.payment_status === 'acompte' ? (
+                         <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-[10px] font-black uppercase tracking-widest border border-blue-500/20">
+                           <CheckCircle2 className="w-3 h-3" /> Acompte réglé
+                         </span>
+                       ) : r.payment_status === 'pending' || !r.payment_status ? (
                          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange/10 text-orange text-[10px] font-black uppercase tracking-widest border border-orange/20">
                            <Clock className="w-3 h-3" /> En attente
                          </span>
                        ) : (
                          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/10 text-red-400 text-[10px] font-black uppercase tracking-widest border border-red-500/20">
-                           <XCircle className="w-3 h-3" /> Annulé
+                           <XCircle className="w-3 h-3" /> {r.payment_status}
                          </span>
                        )}
                     </td>

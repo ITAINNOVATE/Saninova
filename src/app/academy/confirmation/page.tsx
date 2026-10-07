@@ -131,15 +131,37 @@ function ConfirmationContent() {
             const profileRole = localStorage.getItem(`registered_profile_${trainingSlug}`) || localStorage.getItem("registered_role") || "Participant";
             const formattedRole = profileRole === "assistant" ? "Pharmacien Assistant" : profileRole === "titulaire" ? "Pharmacien Titulaire" : profileRole;
 
-            // Match training in database
+            const pType = paidType || "completed";
+            const pAmt = paidAmount || courseDetails.price;
+            const newPaymentStatus = pType === "partial" ? "acompte" : "completed";
+
+            // 1. Call API route to update or insert registration
+            try {
+              await fetch("/api/academy/register", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                  fullname,
+                  email,
+                  phone,
+                  organization,
+                  role: formattedRole,
+                  trainingSlug,
+                  payment_status: newPaymentStatus,
+                  payment_reference: reference,
+                  notes: `Option: ${pType}. Montant réglé: ${pAmt}. Réf: ${reference}.`
+                })
+              });
+            } catch (apiErr) {
+              console.warn("API route record fallback:", apiErr);
+            }
+
+            // 2. Direct Supabase call (if RLS is open)
             const { data: trainingMatch } = await supabase
               .from("academy_trainings")
               .select("id")
-              .eq("slug", trainingSlug)
+              .or(`slug.eq.${trainingSlug},title.ilike.%${trainingSlug}%`)
               .maybeSingle();
-
-            const pType = paidType || "completed";
-            const pAmt = paidAmount || courseDetails.price;
 
             await supabase.from("academy_registrations").insert([{
               training_id: trainingMatch ? trainingMatch.id : null,
@@ -148,7 +170,7 @@ function ConfirmationContent() {
               phone,
               organization,
               role: formattedRole,
-              payment_status: pType === "partial" ? "acompte" : "completed",
+              payment_status: newPaymentStatus,
               payment_reference: reference,
               notes: `Option: ${pType}. Montant réglé: ${pAmt}.`
             }]);

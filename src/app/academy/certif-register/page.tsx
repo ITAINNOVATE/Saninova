@@ -12,6 +12,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import PageHero from "../../../components/ui/PageHero";
+import { supabase } from "../../../lib/supabase";
 
 const certifSchema = z.object({
   lastname: z.string().min(2, "Nom requis"),
@@ -45,16 +46,53 @@ function CertifRegisterContent() {
 
   const onSubmit = async (data: CertifData) => {
     setIsSubmitting(true);
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    localStorage.setItem("registered_fullname", `${data.firstname} ${data.lastname}`);
+    const fullname = `${data.firstname} ${data.lastname}`.trim();
+    const formattedEmail = data.email.trim().toLowerCase();
+    const formattedPhone = data.phone.trim();
+    const formattedOrg = data.organization || "";
+    const formattedRole = isOfficineTraining 
+      ? (pharmacyProfile === "assistant" ? "Pharmacien Assistant" : "Pharmacien Titulaire")
+      : (data.role || "Participant");
+    const formattedPrice = isOfficineTraining 
+      ? (pharmacyProfile === "assistant" ? "75000" : "100000") 
+      : "Standard";
+
+    // Save in localStorage for subsequent pages
+    localStorage.setItem("registered_fullname", fullname);
     localStorage.setItem("registered_firstname", data.firstname);
     localStorage.setItem("registered_lastname", data.lastname);
-    localStorage.setItem("registered_email", data.email);
+    localStorage.setItem("registered_email", formattedEmail);
+    localStorage.setItem("registered_phone", formattedPhone);
+    localStorage.setItem("registered_organization", formattedOrg);
+    localStorage.setItem("registered_role", formattedRole);
 
     if (isOfficineTraining) {
       localStorage.setItem(`registered_profile_${certificationName}`, pharmacyProfile);
-      localStorage.setItem(`registered_price_${certificationName}`, pharmacyProfile === "assistant" ? "75000" : "100000");
+      localStorage.setItem(`registered_price_${certificationName}`, formattedPrice);
+    }
+
+    // Save registration to database immediately with status 'pending' (Paiement en attente)
+    try {
+      const response = await fetch("/api/academy/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullname,
+          email: formattedEmail,
+          phone: formattedPhone,
+          organization: formattedOrg,
+          role: formattedRole,
+          trainingSlug: certificationName,
+          payment_status: "pending",
+          notes: `Inscription initiée. Profil: ${formattedRole} (${isOfficineTraining ? (pharmacyProfile === "assistant" ? "75.000 FCFA" : "100.000 FCFA") : formattedPrice}).`
+        })
+      });
+      const resData = await response.json();
+      if (resData.registration?.id) {
+        localStorage.setItem(`registration_id_${certificationName}`, resData.registration.id);
+      }
+    } catch (err) {
+      console.error("Erreur enregistrement de l'inscription:", err);
     }
 
     setIsSubmitting(false);

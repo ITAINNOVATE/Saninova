@@ -91,12 +91,37 @@ function RegisterContent() {
     }
 
     // Save in localStorage
-    localStorage.setItem("registered_fullname", `${data.firstname} ${data.lastname}`);
+    const fullname = `${data.firstname} ${data.lastname}`.trim();
+    localStorage.setItem("registered_fullname", fullname);
     localStorage.setItem("registered_email", data.email);
     localStorage.setItem("registered_password", data.password);
+    localStorage.setItem("registered_phone", data.phone);
+    localStorage.setItem("registered_organization", data.organization || "");
+    localStorage.setItem("registered_role", data.role || "");
+
     if (resolvedSlug) {
       localStorage.setItem("registered_training_slug", resolvedSlug);
       localStorage.setItem("enrolled_slugs", JSON.stringify([resolvedSlug]));
+
+      // Also register participant in database with pending status
+      try {
+        await fetch("/api/academy/register", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            fullname,
+            email: data.email,
+            phone: data.phone,
+            organization: data.organization || "",
+            role: data.role,
+            trainingSlug: resolvedSlug,
+            payment_status: "pending",
+            notes: `Compte apprenant créé avec intérêt pour ${resolvedSlug}.`
+          })
+        });
+      } catch (e) {
+        console.error("Erreur enregistrement inscription academy:", e);
+      }
     } else {
       localStorage.removeItem("registered_training_slug");
     }
