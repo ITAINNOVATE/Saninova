@@ -44,17 +44,47 @@ export default function RessourcesPage() {
     }
   }, []);
 
+const DEFAULT_RESOURCES: Resource[] = [
+  {
+    id: "33f9b551-cb78-46c5-8709-ac207fee1f7f",
+    title: "Présentation générale de SaniNova",
+    description: "Découvrez la vision, l'expertise et l'offre d'accompagnement de SaniNova Global Consulting. Ce document de référence présente de manière détaillée nos domaines d'intervention stratégiques, nos valeurs et nos solutions sur mesure pour la transformation et l'optimisation des systèmes de santé en Afrique.",
+    file_type: "PDF",
+    file_url: "/documents/resources/2ws8idp802j_1782039755614.pdf",
+    is_free: true,
+    price_usd: 0,
+    created_at: "2026-06-21T11:03:44.249228+00:00"
+  },
+  {
+    id: "b8780280-8305-4bfe-a828-ecbd09891a94",
+    title: "Guide d'utilisation du Logo SaniNova (Charte Graphique)",
+    description: "Consultez les règles officielles d'utilisation de l'identité visuelle de SaniNova. Ce guide complet détaille nos normes graphiques, la palette de couleurs, la typographie ainsi que les bonnes pratiques à respecter pour garantir une image de marque cohérente et professionnelle sur tous vos supports.",
+    file_type: "PDF",
+    file_url: "/documents/resources/f6pug81li14_1782040135804.pdf",
+    is_free: true,
+    price_usd: 0,
+    created_at: "2026-06-21T11:09:09.567728+00:00"
+  }
+];
+
   const fetchResources = async () => {
     setIsLoading(true);
-    const { data, error } = await supabase
-      .from("saninova_resources")
-      .select("*")
-      .order("created_at", { ascending: false });
+    try {
+      const { data, error } = await supabase
+        .from("saninova_resources")
+        .select("*")
+        .order("created_at", { ascending: false });
 
-    if (!error && data) {
-      setResources(data);
+      if (!error && data && data.length > 0) {
+        setResources(data);
+      } else {
+        setResources(DEFAULT_RESOURCES);
+      }
+    } catch (err) {
+      setResources(DEFAULT_RESOURCES);
+    } finally {
+      setIsLoading(false);
     }
-    setIsLoading(false);
   };
 
   useEffect(() => {
