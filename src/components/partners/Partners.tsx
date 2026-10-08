@@ -18,6 +18,9 @@ export const Partners: React.FC = () => {
     { name: "Pharmacie Du Port", src: "/images/partners/pdp.png" },
     { name: "Pharmacie Gorobani", src: "/images/partners/phcie_gorobani.jpeg" },
     { name: "Logifroid", src: "/images/partners/logifroid.jpg", scale: "scale-[1.35]" },
+    { name: "D'Avenir Consulting", src: "/images/partners/davenirconsulting.png" },
+    { name: "NoeticX", src: "/images/partners/noeticx.png" },
+    { name: "Softworks", src: "/images/partners/softworks.png" },
   ];
 
   // Duplicate array once to support exact 50% offset looping
