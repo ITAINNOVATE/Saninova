@@ -7,7 +7,7 @@ import {
   CheckCircle2, XCircle, MoreHorizontal, 
   Download, Mail, Phone, ExternalLink,
   CreditCard, UserCheck, AlertCircle, Clock,
-  Edit2, Trash2, X
+  Edit2, Trash2, X, Eye, User, GraduationCap, FileText
 } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -16,6 +16,10 @@ export default function AdminAcademyRegistrations() {
   const [registrations, setRegistrations] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
+
+  // Details modal state
+  const [isDetailsModalOpen, setIsDetailsModalOpen] = useState(false);
+  const [selectedDetailsReg, setSelectedDetailsReg] = useState<any | null>(null);
 
   // Edit states
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
@@ -27,6 +31,8 @@ export default function AdminAcademyRegistrations() {
     organization: "",
     role: "",
     payment_status: "",
+    payment_reference: "",
+    notes: "",
   });
 
   useEffect(() => {
@@ -84,6 +90,11 @@ export default function AdminAcademyRegistrations() {
     }
   };
 
+  const openDetailsModal = (reg: any) => {
+    setSelectedDetailsReg(reg);
+    setIsDetailsModalOpen(true);
+  };
+
   const openEditModal = (reg: any) => {
     setEditingReg(reg);
     setEditFormData({
@@ -93,6 +104,8 @@ export default function AdminAcademyRegistrations() {
       organization: reg.organization || "",
       role: reg.role || "",
       payment_status: reg.payment_status || "pending",
+      payment_reference: reg.payment_reference || "",
+      notes: reg.notes || "",
     });
     setIsEditModalOpen(true);
   };
@@ -109,9 +122,15 @@ export default function AdminAcademyRegistrations() {
 
       if (error) throw error;
 
-      setRegistrations(registrations.map(r => 
+      const updatedList = registrations.map(r => 
         r.id === editingReg.id ? { ...r, ...editFormData } : r
-      ));
+      );
+      setRegistrations(updatedList);
+      
+      if (selectedDetailsReg && selectedDetailsReg.id === editingReg.id) {
+        setSelectedDetailsReg({ ...selectedDetailsReg, ...editFormData });
+      }
+
       setIsEditModalOpen(false);
       setEditingReg(null);
     } catch (err) {
@@ -128,7 +147,71 @@ export default function AdminAcademyRegistrations() {
     
     if (!error) {
       setRegistrations(registrations.map(r => r.id === id ? { ...r, payment_status: status } : r));
+      if (selectedDetailsReg && selectedDetailsReg.id === id) {
+        setSelectedDetailsReg({ ...selectedDetailsReg, payment_status: status });
+      }
     }
+  };
+
+  const calculateFinancials = (reg: any) => {
+    if (!reg) {
+      return {
+        totalAmount: 0,
+        paidAmount: 0,
+        remainingAmount: 0,
+        formattedTotal: "0 FCFA",
+        formattedPaid: "0 FCFA",
+        formattedRemaining: "0 FCFA",
+      };
+    }
+
+    // 1. Détermination du tarif total de la formation
+    let totalAmount = 75000;
+    
+    if (reg.role && reg.role.toLowerCase().includes("titulaire")) {
+      totalAmount = 100000;
+    } else if (reg.role && reg.role.toLowerCase().includes("assistant")) {
+      totalAmount = 75000;
+    } else if (reg.notes) {
+      const matchTarif = reg.notes.match(/Profil:.*?(\d+[\d\s.]*)\s*(?:FCFA|CFA|XOF)/i) || 
+                         reg.notes.match(/(\d+[\d\s.]*)\s*(?:FCFA|CFA|XOF)/i);
+      if (matchTarif) {
+        const parsed = parseInt(matchTarif[1].replace(/[\s.]/g, ""), 10);
+        if (parsed > 0) totalAmount = parsed;
+      }
+    }
+
+    // 2. Détermination du montant payé
+    let paidAmount = 0;
+    if (reg.payment_status === "completed") {
+      const matchPaid = reg.notes?.match(/Paiement(?:\s+total)?\s*-\s*(\d+[\d\s.]*)\s*(?:FCFA|CFA|XOF)/i);
+      if (matchPaid) {
+        paidAmount = parseInt(matchPaid[1].replace(/[\s.]/g, ""), 10) || totalAmount;
+      } else {
+        paidAmount = totalAmount;
+      }
+    } else if (reg.payment_status === "acompte") {
+      const matchAcompte = reg.notes?.match(/Acompte\s*-\s*(\d+[\d\s.]*)\s*(?:FCFA|CFA|XOF)/i);
+      if (matchAcompte) {
+        paidAmount = parseInt(matchAcompte[1].replace(/[\s.]/g, ""), 10) || Math.round(totalAmount / 2);
+      } else {
+        paidAmount = Math.round(totalAmount / 2);
+      }
+    } else {
+      paidAmount = 0;
+    }
+
+    // 3. Montant restant
+    const remainingAmount = Math.max(0, totalAmount - paidAmount);
+
+    return {
+      totalAmount,
+      paidAmount,
+      remainingAmount,
+      formattedTotal: totalAmount.toLocaleString("fr-FR") + " FCFA",
+      formattedPaid: paidAmount.toLocaleString("fr-FR") + " FCFA",
+      formattedRemaining: remainingAmount.toLocaleString("fr-FR") + " FCFA",
+    };
   };
 
   const filtered = registrations.filter(r => 
@@ -276,10 +359,17 @@ export default function AdminAcademyRegistrations() {
                 {filtered.map((r) => (
                   <tr key={r.id} className="hover:bg-slate-800/20 transition-colors group">
                     <td className="px-8 py-6">
-                      <div>
-                        <p className="text-white font-bold text-sm leading-tight group-hover:text-emerald-400 transition-colors">{r.fullname}</p>
+                      <button 
+                        onClick={() => openDetailsModal(r)}
+                        className="text-left group/btn focus:outline-none"
+                        title="Voir la fiche détaillée"
+                      >
+                        <p className="text-white font-bold text-sm leading-tight group-hover/btn:text-emerald-400 transition-colors flex items-center gap-1.5">
+                          {r.fullname}
+                          <Eye className="w-3.5 h-3.5 text-slate-500 group-hover/btn:text-emerald-400 opacity-0 group-hover/btn:opacity-100 transition-opacity" />
+                        </p>
                         <p className="text-slate-500 text-xs mt-1">{r.email}</p>
-                      </div>
+                      </button>
                     </td>
                     <td className="px-6 py-6">
                       <div className="text-slate-300 text-xs font-medium">
@@ -311,7 +401,14 @@ export default function AdminAcademyRegistrations() {
                     </td>
                     <td className="px-8 py-6 text-right">
                       <div className="flex items-center justify-end gap-2">
-                        <a href={`mailto:${r.email}`} className="p-2 rounded-lg bg-slate-800 text-slate-400 hover:text-white transition-all">
+                        <button 
+                          onClick={() => openDetailsModal(r)}
+                          className="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 hover:bg-emerald-500/20 hover:text-emerald-300 transition-all shadow-sm"
+                          title="Voir tous les détails (Montant payé, restant, etc.)"
+                        >
+                          <Eye className="w-4 h-4" />
+                        </button>
+                        <a href={`mailto:${r.email}`} className="p-2 rounded-lg bg-slate-800 text-slate-400 hover:text-white transition-all" title="Envoyer un email">
                           <Mail className="w-4 h-4" />
                         </a>
                         <button 
@@ -344,6 +441,221 @@ export default function AdminAcademyRegistrations() {
           </div>
         )}
       </div>
+
+      {/* Details Modal */}
+      {isDetailsModalOpen && selectedDetailsReg && (() => {
+        const fin = calculateFinancials(selectedDetailsReg);
+        const cleanPhone = (selectedDetailsReg.phone || "").replace(/[^\d+]/g, "");
+        const whatsappUrl = cleanPhone ? `https://wa.me/${cleanPhone.replace('+', '')}` : null;
+
+        return (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+            <div 
+              className="absolute inset-0 bg-black/80 backdrop-blur-sm" 
+              onClick={() => setIsDetailsModalOpen(false)}
+            />
+            <div className="relative bg-slate-900 border border-slate-800 rounded-3xl w-full max-w-2xl max-h-[92vh] overflow-y-auto p-6 md:p-8 shadow-2xl space-y-6">
+              {/* Header */}
+              <div className="flex justify-between items-start border-b border-slate-800/80 pb-5">
+                <div>
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="p-2 rounded-xl bg-emerald-500/10 text-emerald-400">
+                      <User className="w-5 h-5" />
+                    </span>
+                    <h3 className="text-xl font-bold font-montserrat text-white">
+                      {selectedDetailsReg.fullname}
+                    </h3>
+                  </div>
+                  <p className="text-slate-400 text-xs">
+                    Inscrit le {new Date(selectedDetailsReg.created_at).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit" })}
+                  </p>
+                </div>
+                <div className="flex items-center gap-3">
+                  {selectedDetailsReg.payment_status === 'completed' ? (
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-black uppercase tracking-wider border border-emerald-500/20">
+                      <CheckCircle2 className="w-3.5 h-3.5" /> Confirmé
+                    </span>
+                  ) : selectedDetailsReg.payment_status === 'acompte' ? (
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-black uppercase tracking-wider border border-blue-500/20">
+                      <CheckCircle2 className="w-3.5 h-3.5" /> Acompte réglé
+                    </span>
+                  ) : (
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange/10 text-orange text-xs font-black uppercase tracking-wider border border-orange/20">
+                      <Clock className="w-3.5 h-3.5" /> En attente
+                    </span>
+                  )}
+                  <button 
+                    onClick={() => setIsDetailsModalOpen(false)} 
+                    className="text-slate-400 hover:text-white p-2 rounded-xl bg-slate-800 hover:bg-slate-700 transition-colors"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
+              </div>
+
+              {/* Financial Cards */}
+              <div>
+                <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3 flex items-center gap-2">
+                  <CreditCard className="w-4 h-4 text-emerald-400" /> Bilan Financier de la Formation
+                </h4>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  {/* Total Amount */}
+                  <div className="p-4 rounded-2xl bg-slate-800/50 border border-slate-700/60">
+                    <p className="text-slate-400 text-[11px] font-bold uppercase tracking-wider mb-1">Tarif Formation</p>
+                    <p className="text-xl font-black text-white">{fin.formattedTotal}</p>
+                    <p className="text-slate-500 text-[10px] mt-1">{selectedDetailsReg.role || "Prix standard"}</p>
+                  </div>
+
+                  {/* Paid Amount */}
+                  <div className="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/20">
+                    <p className="text-emerald-400/80 text-[11px] font-bold uppercase tracking-wider mb-1">Montant Payé</p>
+                    <p className="text-xl font-black text-emerald-400">{fin.formattedPaid}</p>
+                    <p className="text-emerald-500/70 text-[10px] mt-1">
+                      {selectedDetailsReg.payment_status === 'completed' ? "100% Encaissé" : selectedDetailsReg.payment_status === 'acompte' ? "Acompte perçu" : "Aucun paiement"}
+                    </p>
+                  </div>
+
+                  {/* Remaining Amount */}
+                  <div className={`p-4 rounded-2xl border ${fin.remainingAmount === 0 ? 'bg-emerald-950/20 border-emerald-800/40' : 'bg-orange/10 border-orange/20'}`}>
+                    <p className={`text-[11px] font-bold uppercase tracking-wider mb-1 ${fin.remainingAmount === 0 ? 'text-emerald-400' : 'text-orange'}`}>
+                      Reste à Payer
+                    </p>
+                    <p className={`text-xl font-black ${fin.remainingAmount === 0 ? 'text-emerald-400' : 'text-orange'}`}>
+                      {fin.formattedRemaining}
+                    </p>
+                    <p className={`text-[10px] mt-1 ${fin.remainingAmount === 0 ? 'text-emerald-400/70' : 'text-orange/70'}`}>
+                      {fin.remainingAmount === 0 ? "✓ Solde entièrement réglé" : "⚠️ Solde à recouvrer"}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Participant Details */}
+              <div className="space-y-4">
+                <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2">
+                  <User className="w-4 h-4 text-blue-400" /> Informations Personnelles
+                </h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 bg-slate-950/50 p-4 rounded-2xl border border-slate-800">
+                  <div className="space-y-1">
+                    <p className="text-slate-500 text-[11px] font-medium">Email</p>
+                    <div className="flex items-center gap-2">
+                      <a href={`mailto:${selectedDetailsReg.email}`} className="text-white text-sm font-semibold hover:text-emerald-400 transition-colors break-all">
+                        {selectedDetailsReg.email}
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="space-y-1">
+                    <p className="text-slate-500 text-[11px] font-medium">Téléphone</p>
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <a href={`tel:${cleanPhone}`} className="text-white text-sm font-semibold hover:text-emerald-400 transition-colors">
+                        {selectedDetailsReg.phone || "Non renseigné"}
+                      </a>
+                      {whatsappUrl && (
+                        <a 
+                          href={whatsappUrl} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 text-[11px] font-bold inline-flex items-center gap-1 transition-all"
+                        >
+                          WhatsApp ↗
+                        </a>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="space-y-1">
+                    <p className="text-slate-500 text-[11px] font-medium">Organisation / Entreprise</p>
+                    <p className="text-white text-sm font-semibold">{selectedDetailsReg.organization || "Non renseignée"}</p>
+                  </div>
+
+                  <div className="space-y-1">
+                    <p className="text-slate-500 text-[11px] font-medium">Rôle / Poste</p>
+                    <p className="text-white text-sm font-semibold">{selectedDetailsReg.role || "Non renseigné"}</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Training Info */}
+              <div className="space-y-3">
+                <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2">
+                  <GraduationCap className="w-4 h-4 text-purple-400" /> Formation Choisie
+                </h4>
+                <div className="bg-slate-950/50 p-4 rounded-2xl border border-slate-800 flex items-start gap-3">
+                  <div className="p-2.5 rounded-xl bg-purple-500/10 text-purple-400 shrink-0 mt-0.5">
+                    <GraduationCap className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="text-white font-bold text-sm leading-snug">
+                      {getTrainingTitle(selectedDetailsReg)}
+                    </p>
+                    <p className="text-slate-400 text-xs mt-1">
+                      Identifiant formation : <span className="font-mono text-slate-500">{selectedDetailsReg.training_id || "N/A"}</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Payment & Transaction Info */}
+              <div className="space-y-3">
+                <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2">
+                  <FileText className="w-4 h-4 text-emerald-400" /> Données de Transaction & Reçu
+                </h4>
+                <div className="bg-slate-950/50 p-4 rounded-2xl border border-slate-800 space-y-3 text-xs">
+                  <div>
+                    <span className="text-slate-500 block mb-1 font-medium">Référence de Transaction :</span>
+                    {selectedDetailsReg.payment_reference ? (
+                      <span className="font-mono bg-slate-900 px-2.5 py-1 rounded-md text-emerald-400 border border-slate-800 select-all font-bold">
+                        {selectedDetailsReg.payment_reference}
+                      </span>
+                    ) : (
+                      <span className="text-slate-400 italic">Aucune référence de transaction (non payé en ligne)</span>
+                    )}
+                  </div>
+                  <div>
+                    <span className="text-slate-500 block mb-1 font-medium">Notes & Reçu Opérateur :</span>
+                    <p className="text-slate-300 bg-slate-900/80 p-3 rounded-xl border border-slate-800 leading-relaxed font-mono text-[11px] select-all">
+                      {selectedDetailsReg.notes || "Aucune note additionnelle."}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Modal Actions */}
+              <div className="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-slate-800/80">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <button
+                    onClick={async () => {
+                      const newStatus = selectedDetailsReg.payment_status === 'completed' ? 'pending' : 'completed';
+                      await updatePaymentStatus(selectedDetailsReg.id, newStatus);
+                    }}
+                    className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-white transition-all flex items-center gap-2"
+                  >
+                    <CreditCard className="w-3.5 h-3.5 text-emerald-400" />
+                    Basculer en {selectedDetailsReg.payment_status === 'completed' ? '« En attente »' : '« Confirmé »'}
+                  </button>
+                  <button
+                    onClick={() => {
+                      setIsDetailsModalOpen(false);
+                      openEditModal(selectedDetailsReg);
+                    }}
+                    className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-white transition-all flex items-center gap-2"
+                  >
+                    <Edit2 className="w-3.5 h-3.5 text-blue-400" />
+                    Modifier la fiche
+                  </button>
+                </div>
+                <button
+                  onClick={() => setIsDetailsModalOpen(false)}
+                  className="px-5 py-2 bg-[#00A878] hover:bg-[#00A878]/90 text-xs font-bold text-white rounded-xl transition-all"
+                >
+                  Fermer
+                </button>
+              </div>
+            </div>
+          </div>
+        );
+      })()}
 
       {/* Edit Modal */}
       {isEditModalOpen && (
@@ -415,17 +727,41 @@ export default function AdminAcademyRegistrations() {
                 </div>
               </div>
 
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-medium text-slate-400 mb-1">Statut Paiement</label>
+                  <select
+                    value={editFormData.payment_status}
+                    onChange={(e) => setEditFormData({ ...editFormData, payment_status: e.target.value })}
+                    className="w-full px-3 py-2 bg-slate-850 border border-slate-750 text-sm text-white rounded-lg focus:outline-none focus:border-[#00A878] outline-none"
+                  >
+                    <option value="pending">En attente</option>
+                    <option value="acompte">Acompte réglé</option>
+                    <option value="completed">Confirmé (Payé)</option>
+                    <option value="cancelled">Annulé</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-xs font-medium text-slate-400 mb-1">Réf. Transaction</label>
+                  <input
+                    type="text"
+                    placeholder="ex: trx_xxx ou FEDAR-xxx"
+                    value={editFormData.payment_reference || ""}
+                    onChange={(e) => setEditFormData({ ...editFormData, payment_reference: e.target.value })}
+                    className="w-full px-3 py-2 bg-slate-850 border border-slate-750 text-sm text-white rounded-lg focus:outline-none focus:border-[#00A878] outline-none"
+                  />
+                </div>
+              </div>
+
               <div>
-                <label className="block text-xs font-medium text-slate-400 mb-1">Statut Paiement</label>
-                <select
-                  value={editFormData.payment_status}
-                  onChange={(e) => setEditFormData({ ...editFormData, payment_status: e.target.value })}
+                <label className="block text-xs font-medium text-slate-400 mb-1">Notes / Détails du règlement</label>
+                <textarea
+                  rows={2}
+                  placeholder="Informations sur le paiement, opérateur, reçu..."
+                  value={editFormData.notes || ""}
+                  onChange={(e) => setEditFormData({ ...editFormData, notes: e.target.value })}
                   className="w-full px-3 py-2 bg-slate-850 border border-slate-750 text-sm text-white rounded-lg focus:outline-none focus:border-[#00A878] outline-none"
-                >
-                  <option value="pending">En attente</option>
-                  <option value="completed">Confirmé</option>
-                  <option value="cancelled">Annulé</option>
-                </select>
+                />
               </div>
 
               <div className="flex justify-end gap-3 pt-4 font-poppins">
