@@ -7,7 +7,8 @@ import {
   CheckCircle2, XCircle, MoreHorizontal, 
   Download, Mail, Phone, ExternalLink,
   CreditCard, UserCheck, AlertCircle, Clock,
-  Edit2, Trash2, X, Eye, User, GraduationCap, FileText
+  Edit2, Trash2, X, Eye, User, GraduationCap, FileText,
+  RefreshCw
 } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -15,6 +16,7 @@ import { motion } from "framer-motion";
 export default function AdminAcademyRegistrations() {
   const [registrations, setRegistrations] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+  const [syncing, setSyncing] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
 
   // Details modal state
@@ -41,10 +43,18 @@ export default function AdminAcademyRegistrations() {
 
   const [fetchError, setFetchError] = useState<string | null>(null);
 
-  const fetchRegistrations = async () => {
+  const fetchRegistrations = async (autoSync = true) => {
     setLoading(true);
     setFetchError(null);
     try {
+      if (autoSync) {
+        try {
+          await fetch("/api/academy/sync-payments");
+        } catch (e) {
+          console.warn("Auto-sync error:", e);
+        }
+      }
+
       // First try join with academy_trainings
       const { data, error } = await supabase
         .from("academy_registrations")
@@ -71,6 +81,22 @@ export default function AdminAcademyRegistrations() {
       setFetchError(err.message || "Erreur de chargement des inscriptions.");
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleSyncPayments = async () => {
+    setSyncing(true);
+    try {
+      const res = await fetch("/api/academy/sync-payments");
+      const json = await res.json();
+      if (json.success && json.syncedCount > 0) {
+        alert(`Synchronisation FedaPay réussie ! ${json.syncedCount} inscription(s) mise(s) à jour.`);
+      }
+      await fetchRegistrations(false);
+    } catch (e: any) {
+      alert("Erreur lors de la synchronisation: " + e.message);
+    } finally {
+      setSyncing(false);
     }
   };
 
@@ -267,8 +293,17 @@ export default function AdminAcademyRegistrations() {
         </div>
         <div className="flex items-center gap-3">
           <button 
-            onClick={fetchRegistrations}
-            disabled={loading}
+            onClick={handleSyncPayments}
+            disabled={syncing || loading}
+            className="px-5 py-3 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 rounded-xl font-bold flex items-center gap-2 hover:bg-emerald-500/20 transition-all shadow-lg text-sm"
+            title="Interroger FedaPay en direct pour actualiser le statut réel des paiements"
+          >
+            <RefreshCw className={`w-4 h-4 ${syncing ? "animate-spin" : ""}`} />
+            {syncing ? "Synchronisation..." : "Synchroniser FedaPay"}
+          </button>
+          <button 
+            onClick={() => fetchRegistrations(true)}
+            disabled={loading || syncing}
             className="px-5 py-3 bg-white/5 border border-white/10 text-white rounded-xl font-bold flex items-center gap-2 hover:bg-white/10 transition-all shadow-lg text-sm"
           >
             {loading ? <Loader2 className="w-4 h-4 animate-spin text-emerald-400" /> : "↻"} Actualiser
