@@ -369,27 +369,28 @@ export default function AdminCourseDocumentsPage() {
       {/* Add / Edit Modal */}
       <AnimatePresence>
         {isAddModalOpen && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/80 backdrop-blur-sm overflow-y-auto">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-slate-900 border border-slate-800 rounded-3xl p-6 md:p-8 max-w-xl w-full shadow-2xl relative"
+              className="bg-slate-900 border border-slate-800 rounded-3xl max-w-xl w-full shadow-2xl relative max-h-[92vh] flex flex-col my-auto overflow-hidden"
             >
-              <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-800">
+              <div className="flex items-center justify-between p-6 pb-4 border-b border-slate-800 flex-shrink-0">
                 <h3 className="text-xl font-montserrat font-black text-white flex items-center gap-2">
                   <Folder className="w-5 h-5 text-[#00A878]" />
                   {editingDoc ? "Modifier le Document" : "Ajouter un Document de Formation"}
                 </h3>
                 <button
                   onClick={() => setIsAddModalOpen(false)}
-                  className="p-2 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-all"
+                  className="p-2 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-all cursor-pointer"
                 >
                   <X className="w-5 h-5" />
                 </button>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="flex flex-col flex-1 overflow-hidden">
+                <div className="p-6 overflow-y-auto space-y-4 flex-1">
                 {/* Training Selector */}
                 <div>
                   <label className="text-xs font-bold text-slate-300 uppercase tracking-wider block mb-1.5">
@@ -528,9 +529,10 @@ export default function AdminCourseDocumentsPage() {
                     className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-[#00A878]"
                   />
                 </div>
+              </div>
 
                 {/* Modal Actions */}
-                <div className="pt-4 flex justify-end gap-3 border-t border-slate-800">
+                <div className="p-6 pt-4 flex justify-end gap-3 border-t border-slate-800 bg-slate-900 flex-shrink-0">
                   <button
                     type="button"
                     onClick={() => setIsAddModalOpen(false)}
