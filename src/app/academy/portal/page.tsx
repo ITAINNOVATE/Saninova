@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { 
   BookOpen, Award, Clock, ArrowRight, CheckCircle2, 
   ChevronRight, Bookmark, Sparkles, User, LogOut, ArrowLeft, Lock, Plus, Search, Filter,
-  FileText, Download, Calendar, Bell, ExternalLink, RefreshCw, FolderOpen
+  FileText, Download, Calendar, Bell, ExternalLink, RefreshCw, FolderOpen, CreditCard, Smartphone, ShieldCheck
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
@@ -25,12 +25,167 @@ export default function StudentPortal() {
   const [studentName, setStudentName] = useState("Dr. Ambroise Gbaguidi");
   const [participantSession, setParticipantSession] = useState<any>(null);
   const [enrolledSlugs, setEnrolledSlugs] = useState<string[]>([]);
-  const [activeTab, setActiveTab] = useState<"my-courses" | "documents" | "news" | "catalog">("my-courses");
+  const [activeTab, setActiveTab] = useState<"my-courses" | "billing" | "documents" | "news" | "catalog">("my-courses");
   const [documents, setDocuments] = useState<any[]>([]);
   const [loadingDocs, setLoadingDocs] = useState(false);
+  const [refreshingBilling, setRefreshingBilling] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const router = useRouter();
+
+  // Helper pour calculer le bilan financier de l'apprenant connecté
+  const calculateFinancials = (session: any) => {
+    if (!session) {
+      return {
+        totalAmount: 75000,
+        paidAmount: 75000,
+        remainingAmount: 0,
+        isCompleted: true,
+        isAcompte: false,
+        formattedTotal: "75 000 FCFA",
+        formattedPaid: "75 000 FCFA",
+        formattedRemaining: "0 FCFA",
+      };
+    }
+
+    let total = 75000;
+    if (session.role && session.role.toLowerCase().includes("titulaire")) {
+      total = 100000;
+    } else if (session.role && session.role.toLowerCase().includes("assistant")) {
+      total = 75000;
+    } else if (session.notes) {
+      const matchTarif = session.notes.match(/Profil:.*?(\d+[\d\s.]*)\s*(?:FCFA|CFA|XOF)/i) || 
+                         session.notes.match(/(\d+[\d\s.]*)\s*(?:FCFA|CFA|XOF)/i);
+      if (matchTarif) {
+        const parsed = parseInt(matchTarif[1].replace(/[\s.]/g, ""), 10);
+        if (parsed > 0) total = parsed;
+      }
+    }
+
+    let paid = 0;
+    if (session.payment_status === "completed") {
+      const matchPaid = session.notes?.match(/Paiement(?:\s+total)?\s*-\s*(\d+[\d\s.]*)\s*(?:FCFA|CFA|XOF)/i);
+      if (matchPaid) {
+        paid = parseInt(matchPaid[1].replace(/[\s.]/g, ""), 10) || total;
+      } else {
+        paid = total;
+      }
+    } else if (session.payment_status === "acompte") {
+      const matchAcompte = session.notes?.match(/Acompte\s*-\s*(\d+[\d\s.]*)\s*(?:FCFA|CFA|XOF)/i);
+      if (matchAcompte) {
+        paid = parseInt(matchAcompte[1].replace(/[\s.]/g, ""), 10) || Math.round(total / 2);
+      } else {
+        paid = Math.round(total / 2);
+      }
+    } else {
+      paid = 0;
+    }
+
+    const remaining = Math.max(0, total - paid);
+    return {
+      totalAmount: total,
+      paidAmount: paid,
+      remainingAmount: remaining,
+      isCompleted: session.payment_status === "completed" || remaining === 0,
+      isAcompte: session.payment_status === "acompte",
+      formattedTotal: total.toLocaleString("fr-FR") + " FCFA",
+      formattedPaid: paid.toLocaleString("fr-FR") + " FCFA",
+      formattedRemaining: remaining.toLocaleString("fr-FR") + " FCFA",
+    };
+  };
+
+  // Synchronisation en direct avec FedaPay et rechargement de la session depuis Supabase
+  const refreshPaymentStatus = async (showNotification = false) => {
+    setRefreshingBilling(true);
+    try {
+      // 1. Déclencher la synchronisation FedaPay
+      try {
+        await fetch("/api/academy/sync-payments");
+      } catch (e) {
+        console.warn("Sync error:", e);
+      }
+
+      // 2. Re-récupérer l'inscription de l'apprenant connecté
+      const currentEmail = localStorage.getItem("registered_email");
+      const currentId = participantSession?.id;
+
+      let query = supabase.from("academy_registrations").select("*");
+      if (currentId) {
+        query = query.eq("id", currentId);
+      } else if (currentEmail) {
+        query = query.ilike("email", currentEmail);
+      }
+
+      const { data, error } = await query.limit(1).maybeSingle();
+      if (!error && data) {
+        setParticipantSession(data);
+        localStorage.setItem("participant_session", JSON.stringify(data));
+        if (data.fullname) {
+          setStudentName(data.fullname);
+          localStorage.setItem("registered_fullname", data.fullname);
+        }
+        if (showNotification) {
+          alert("Votre statut de paiement a été synchronisé et actualisé avec succès !");
+        }
+      }
+    } catch (err) {
+      console.error("Error refreshing billing:", err);
+    } finally {
+      setRefreshingBilling(false);
+    }
+  };
+
+  // Déclencher le paiement du solde restant avec le widget FedaPay directement
+  const handlePayRemainingBalance = (remainingAmount: number) => {
+    if (remainingAmount <= 0) return;
+
+    const email = participantSession?.email || localStorage.getItem("registered_email") || "contact@saninova.org";
+    const fullname = participantSession?.fullname || studentName || "Apprenant SaniNova";
+    const nameParts = fullname.trim().split(" ");
+    const firstname = nameParts[0] || "Apprenant";
+    const lastname = nameParts.slice(1).join(" ") || "SaniNova";
+
+    if (typeof window !== "undefined" && (window as any).FedaPay) {
+      try {
+        const widget = (window as any).FedaPay.init({
+          public_key: process.env.NEXT_PUBLIC_FEDAPAY_PUBLIC_KEY || "pk_live_glLmgqSBaYSt9ktutyPAmLuh",
+          transaction: {
+            amount: remainingAmount,
+            currency: { iso: "XOF" },
+            description: `Règlement du solde restant (${remainingAmount.toLocaleString("fr-FR")} FCFA) - Formation Gestion d'une Officine Moderne`,
+          },
+          customer: {
+            firstname,
+            lastname,
+            email,
+          },
+          callback_url: `${window.location.origin}/academy/portal?payment_synced=true`
+        });
+
+        widget.open();
+        return;
+      } catch (err) {
+        console.error("FedaPay widget error:", err);
+      }
+    }
+
+    // Si le widget n'est pas prêt, rediriger vers la page de paiement avec les paramètres préremplis
+    router.push(`/academy/payment?training=formation-gestion-officine-moderne&amount=${remainingAmount}&solde=true`);
+  };
+
+  // Chargement du script FedaPay
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const existingScript = document.getElementById("fedapay-checkout-script");
+      if (!existingScript) {
+        const script = document.createElement("script");
+        script.id = "fedapay-checkout-script";
+        script.src = "https://cdn.fedapay.com/checkout.js?v=1.1.7";
+        script.async = true;
+        document.body.appendChild(script);
+      }
+    }
+  }, []);
 
   const fetchTrainingDocuments = async () => {
     setLoadingDocs(true);
@@ -73,6 +228,7 @@ export default function StudentPortal() {
     }
 
     fetchTrainingDocuments();
+    refreshPaymentStatus(false);
 
     const fetchCourses = async () => {
       setLoading(true);
@@ -322,6 +478,30 @@ export default function StudentPortal() {
                       <motion.div layoutId="tab-underline" className="absolute bottom-0 left-0 right-0 h-0.5 bg-orange" />
                     )}
                   </button>
+                  {(() => {
+                    const fin = calculateFinancials(participantSession);
+                    return (
+                      <button
+                        onClick={() => setActiveTab("billing")}
+                        className={`pb-2 px-3 text-xs md:text-sm font-black uppercase tracking-wider transition-all relative cursor-pointer flex items-center gap-2 ${activeTab === "billing" ? "text-orange" : "text-white/40 hover:text-white"}`}
+                      >
+                        <CreditCard className="w-4 h-4" /> 
+                        Mon Paiement & Solde
+                        {fin.remainingAmount > 0 ? (
+                          <span className="px-2 py-0.5 bg-orange text-white text-[10px] font-black rounded-full animate-pulse">
+                            Solde dû
+                          </span>
+                        ) : (
+                          <span className="px-2 py-0.5 bg-emerald-500/20 text-emerald-400 text-[10px] font-black rounded-full border border-emerald-500/30">
+                            Réglé
+                          </span>
+                        )}
+                        {activeTab === "billing" && (
+                          <motion.div layoutId="tab-underline" className="absolute bottom-0 left-0 right-0 h-0.5 bg-orange" />
+                        )}
+                      </button>
+                    );
+                  })()}
                   <button
                     onClick={() => setActiveTab("documents")}
                     className={`pb-2 px-3 text-xs md:text-sm font-black uppercase tracking-wider transition-all relative cursor-pointer flex items-center gap-2 ${activeTab === "documents" ? "text-orange" : "text-white/40 hover:text-white"}`}
@@ -722,6 +902,141 @@ export default function StudentPortal() {
                     })()}
                   </>
                 )}
+
+                {/* Tab: Mon Paiement & Solde */}
+                {activeTab === "billing" && (() => {
+                  const fin = calculateFinancials(participantSession);
+                  return (
+                    <div className="space-y-8">
+                      {/* En-tête de facturation */}
+                      <div className="bg-[#0F1D33] rounded-[32px] border border-white/5 p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-xl">
+                        <div className="flex items-center gap-4">
+                          <div className="w-12 h-12 rounded-2xl bg-orange/10 border border-orange/20 flex items-center justify-center text-orange">
+                            <CreditCard className="w-6 h-6" />
+                          </div>
+                          <div>
+                            <h3 className="text-lg md:text-xl font-montserrat font-bold text-white flex items-center gap-2">
+                              Situation Financière de votre Formation
+                            </h3>
+                            <p className="text-white/40 text-xs font-medium">
+                              Formation Professionnelle : Gestion d’une Officine Moderne
+                            </p>
+                          </div>
+                        </div>
+
+                        <button
+                          onClick={() => refreshPaymentStatus(true)}
+                          disabled={refreshingBilling}
+                          className="px-4 py-2.5 bg-white/5 hover:bg-white/10 text-white rounded-xl border border-white/10 text-xs font-bold transition-all flex items-center gap-2 cursor-pointer self-start md:self-auto"
+                        >
+                          <RefreshCw className={`w-3.5 h-3.5 ${refreshingBilling ? "animate-spin" : ""}`} /> 
+                          {refreshingBilling ? "Actualisation..." : "Actualiser en direct"}
+                        </button>
+                      </div>
+
+                      {/* Cartes Bilan Financier */}
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        {/* Tarif Total */}
+                        <div className="bg-[#0F1D33] rounded-[28px] border border-white/5 p-6 shadow-xl">
+                          <span className="text-[10px] font-bold text-white/40 uppercase tracking-widest block mb-2">
+                            Tarif Total Formation
+                          </span>
+                          <span className="text-2xl md:text-3xl font-montserrat font-black text-white block">
+                            {fin.formattedTotal}
+                          </span>
+                          <span className="text-xs text-white/50 mt-2 block">
+                            Profil : {participantSession?.role || "Pharmacien"}
+                          </span>
+                        </div>
+
+                        {/* Montant Déjà Payé */}
+                        <div className="bg-[#0F1D33] rounded-[28px] border border-emerald-500/20 bg-emerald-500/[0.03] p-6 shadow-xl">
+                          <span className="text-[10px] font-bold text-emerald-400 uppercase tracking-widest block mb-2 flex items-center gap-1.5">
+                            <CheckCircle2 className="w-3.5 h-3.5" /> Montant Encaissé
+                          </span>
+                          <span className="text-2xl md:text-3xl font-montserrat font-black text-emerald-400 block">
+                            {fin.formattedPaid}
+                          </span>
+                          <span className="text-xs text-emerald-400/80 mt-2 block font-medium">
+                            {fin.isCompleted ? "Paiement 100% complet" : "Acompte validé"}
+                          </span>
+                        </div>
+
+                        {/* Reste à Payer */}
+                        <div className={`rounded-[28px] border p-6 shadow-xl ${fin.remainingAmount > 0 ? "bg-orange/[0.06] border-orange/30" : "bg-[#0F1D33] border-white/5"}`}>
+                          <span className={`text-[10px] font-bold uppercase tracking-widest block mb-2 ${fin.remainingAmount > 0 ? "text-orange" : "text-white/40"}`}>
+                            Reste à Régler
+                          </span>
+                          <span className={`text-2xl md:text-3xl font-montserrat font-black block ${fin.remainingAmount > 0 ? "text-orange" : "text-emerald-400"}`}>
+                            {fin.formattedRemaining}
+                          </span>
+                          <span className={`text-xs mt-2 block font-medium ${fin.remainingAmount > 0 ? "text-orange/80" : "text-emerald-400"}`}>
+                            {fin.remainingAmount > 0 ? "Solde en attente de versement" : "✓ Aucun solde restant"}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Bloc d'action : Payer le solde si restant > 0 */}
+                      {fin.remainingAmount > 0 ? (
+                        <div className="bg-gradient-to-br from-orange/15 via-[#0F1D33] to-[#0A1629] rounded-[32px] border border-orange/30 p-8 md:p-10 shadow-2xl relative overflow-hidden">
+                          <div className="absolute top-0 right-0 w-80 h-80 bg-orange/10 rounded-full blur-3xl pointer-events-none" />
+                          
+                          <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+                            <div className="space-y-3 max-w-xl">
+                              <span className="px-3 py-1 bg-orange/20 border border-orange/40 text-orange text-[10px] font-black uppercase tracking-widest rounded-full inline-block">
+                                Solde à régulariser
+                              </span>
+                              <h4 className="text-xl md:text-2xl font-montserrat font-bold text-white">
+                                Réglez votre solde de {fin.formattedRemaining} en ligne
+                              </h4>
+                              <p className="text-white/60 text-xs md:text-sm leading-relaxed">
+                                Vous pouvez finaliser votre paiement sécurisé par Mobile Money (MTN, Moov, Flooz, Wave) ou carte bancaire. Votre statut sera instantanément mis à jour pour vous et l'administration.
+                              </p>
+                            </div>
+
+                            <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
+                              <button
+                                onClick={() => handlePayRemainingBalance(fin.remainingAmount)}
+                                className="px-8 py-4.5 bg-orange hover:bg-orange/90 text-white rounded-2xl font-black text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition-all shadow-xl shadow-orange/30 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+                              >
+                                <Smartphone className="w-4 h-4" /> Payer le solde ({fin.formattedRemaining})
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="bg-[#0F1D33] rounded-[32px] border border-emerald-500/20 p-8 text-center max-w-xl mx-auto shadow-xl">
+                          <div className="w-16 h-16 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mx-auto mb-4">
+                            <CheckCircle2 className="w-8 h-8" />
+                          </div>
+                          <h4 className="text-white font-montserrat font-bold text-lg mb-2">
+                            Paiement Intégralement Réglé
+                          </h4>
+                          <p className="text-white/50 text-xs leading-relaxed">
+                            Félicitations ! Vos frais d'inscription sont entièrement réglés. Vous bénéficiez d'un accès sans restriction à tous les modules, documents et futurs certificats de la formation.
+                          </p>
+                        </div>
+                      )}
+
+                      {/* Détails du paiement / Reçu opérateur */}
+                      {participantSession?.payment_reference && (
+                        <div className="bg-[#0A1629] rounded-[24px] border border-white/5 p-6">
+                          <span className="text-[10px] font-bold text-white/30 uppercase tracking-widest block mb-2">
+                            Référence du paiement enregistré
+                          </span>
+                          <p className="font-mono text-sm text-white/80 select-all">
+                            {participantSession.payment_reference}
+                          </p>
+                          {participantSession.notes && (
+                            <p className="text-xs text-white/40 mt-2">
+                              {participantSession.notes}
+                            </p>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })()}
 
                 {/* Tab: Documents */}
                 {activeTab === "documents" && (
