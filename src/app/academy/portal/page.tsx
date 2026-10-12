@@ -300,10 +300,10 @@ export default function StudentPortal() {
                     <span className="text-2xl font-black text-emerald-400 mt-1 block">{completedCoursesCount}</span>
                   </div>
                   <div className="bg-[#0A1629] rounded-2xl p-5 border border-white/5">
-                    <Sparkles className="w-6 h-6 text-yellow-400 mb-3" />
+                    <Sparkles className="w-6 h-6 text-emerald-400 mb-3" />
                     <span className="text-[10px] font-bold text-white/40 uppercase tracking-wider block">Statut</span>
-                    <span className="text-xs font-bold text-white mt-2 block bg-yellow-400/10 text-yellow-400 px-3 py-1 rounded-full border border-yellow-400/20 w-fit">
-                      Membre Premium
+                    <span className="text-xs font-bold text-white mt-2 block bg-emerald-400/10 text-emerald-400 px-3 py-1 rounded-full border border-emerald-400/20 w-fit">
+                      Starter
                     </span>
                   </div>
                 </div>
