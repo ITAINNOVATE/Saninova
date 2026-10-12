@@ -5,7 +5,7 @@ import { supabase } from "../../../../../lib/supabase";
 import { 
   Folder, Plus, Trash2, Edit2, Download, Search, 
   FileText, ArrowLeft, Loader2, CheckCircle2, AlertCircle, 
-  X, ExternalLink, Filter, BookOpen, Calendar
+  X, ExternalLink, Filter, BookOpen, Calendar, Upload
 } from "lucide-react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -37,9 +37,10 @@ export default function AdminCourseDocumentsPage() {
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [editingDoc, setEditingDoc] = useState<CourseDocument | null>(null);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
 
   const [formData, setFormData] = useState({
-    training_slug: "formation-expert-supply-chain-pharmaceutique",
+    training_slug: "officine-moderne",
     title: "",
     description: "",
     file_url: "",
@@ -55,13 +56,9 @@ export default function AdminCourseDocumentsPage() {
     try {
       setLoading(true);
 
-      // 1. Fetch available training courses from announcements & static list
-      const { data: annData } = await supabase
-        .from("academy_announcements")
-        .select("slug, title, type")
-        .eq("type", "Formation");
-
+      // 1. Fetch available training courses from academy_trainings & announcements
       const defaultTrainings: TrainingOption[] = [
+        { slug: "officine-moderne", title: "Formation Professionnelle : Gestion d’une Officine Moderne" },
         { slug: "formation-expert-supply-chain-pharmaceutique", title: "Certificat Professionnel en Supply Chain Pharmaceutique" },
         { slug: "gouvernance-sanitaire-afrique", title: "Gouvernance Sanitaire et Leadership en Afrique" },
         { slug: "sante-digitale-interoperabilite", title: "Santé Digitale et Interopérabilité en Afrique" },
@@ -70,10 +67,17 @@ export default function AdminCourseDocumentsPage() {
 
       const mergedMap = new Map<string, string>();
       defaultTrainings.forEach(t => mergedMap.set(t.slug, t.title));
-      if (annData) {
-        annData.forEach(a => {
-          if (a.slug) mergedMap.set(a.slug, a.title);
-        });
+
+      try {
+        const { data: trainDb } = await supabase.from("academy_trainings").select("id, title, slug");
+        if (trainDb) {
+          trainDb.forEach((t: any) => {
+            const s = t.slug || (t.title.includes("Officine") ? "officine-moderne" : t.id);
+            mergedMap.set(s, t.title);
+          });
+        }
+      } catch (e) {
+        console.warn("Could not fetch academy_trainings:", e);
       }
 
       const combinedTrainings: TrainingOption[] = Array.from(mergedMap.entries()).map(([slug, title]) => ({
@@ -83,14 +87,12 @@ export default function AdminCourseDocumentsPage() {
 
       setTrainings(combinedTrainings);
 
-      // 2. Fetch documents
-      const { data: docsData, error: docsError } = await supabase
-        .from("academy_course_documents")
-        .select("*")
-        .order("created_at", { ascending: false });
-
-      if (docsError) throw docsError;
-      setDocuments(docsData || []);
+      // 2. Fetch documents via dedicated API
+      const res = await fetch("/api/academy/documents");
+      const json = await res.json();
+      if (json.success && json.documents) {
+        setDocuments(json.documents);
+      }
     } catch (err) {
       console.error("Error fetching course documents:", err);
     } finally {
@@ -100,8 +102,9 @@ export default function AdminCourseDocumentsPage() {
 
   const handleOpenAddModal = () => {
     setEditingDoc(null);
+    setSelectedFile(null);
     setFormData({
-      training_slug: selectedSlug !== "all" ? selectedSlug : (trainings[0]?.slug || "formation-expert-supply-chain-pharmaceutique"),
+      training_slug: selectedSlug !== "all" ? selectedSlug : "officine-moderne",
       title: "",
       description: "",
       file_url: "",
@@ -113,6 +116,7 @@ export default function AdminCourseDocumentsPage() {
 
   const handleOpenEditModal = (doc: CourseDocument) => {
     setEditingDoc(doc);
+    setSelectedFile(null);
     setFormData({
       training_slug: doc.training_slug,
       title: doc.title,
@@ -126,53 +130,47 @@ export default function AdminCourseDocumentsPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.title.trim() || !formData.file_url.trim()) {
-      alert("Veuillez remplir au moins le titre et l'URL/Lien du document.");
+    if (!formData.title.trim()) {
+      alert("Veuillez remplir le titre du document.");
+      return;
+    }
+
+    if (!selectedFile && !formData.file_url.trim()) {
+      alert("Veuillez soit sélectionner un fichier à téléverser, soit renseigner un lien/URL.");
       return;
     }
 
     try {
       setIsSubmitting(true);
 
-      if (editingDoc) {
-        // Update
-        const { error } = await supabase
-          .from("academy_course_documents")
-          .update({
-            training_slug: formData.training_slug,
-            title: formData.title.trim(),
-            description: formData.description.trim() || null,
-            file_url: formData.file_url.trim(),
-            file_type: formData.file_type,
-            category: formData.category,
-          })
-          .eq("id", editingDoc.id);
-
-        if (error) throw error;
-
-        setDocuments(documents.map(d => 
-          d.id === editingDoc.id ? { ...d, ...formData } : d
-        ));
-      } else {
-        // Create
-        const { data, error } = await supabase
-          .from("academy_course_documents")
-          .insert([{
-            training_slug: formData.training_slug,
-            title: formData.title.trim(),
-            description: formData.description.trim() || null,
-            file_url: formData.file_url.trim(),
-            file_type: formData.file_type,
-            category: formData.category,
-          }])
-          .select()
-          .single();
-
-        if (error) throw error;
-        if (data) setDocuments([data, ...documents]);
+      const dataToSend = new FormData();
+      dataToSend.append("training_slug", formData.training_slug);
+      dataToSend.append("title", formData.title.trim());
+      dataToSend.append("description", formData.description.trim());
+      dataToSend.append("file_type", formData.file_type);
+      dataToSend.append("category", formData.category);
+      dataToSend.append("file_url", formData.file_url.trim());
+      if (selectedFile) {
+        dataToSend.append("file", selectedFile);
       }
 
+      const res = await fetch("/api/academy/documents", {
+        method: "POST",
+        body: dataToSend,
+      });
+
+      const json = await res.json();
+      if (!json.success) {
+        throw new Error(json.error || "Erreur d'enregistrement");
+      }
+
+      if (json.document) {
+        setDocuments([json.document, ...documents.filter(d => d.id !== json.document.id)]);
+      }
+
+      alert("Document enregistré avec succès !");
       setIsAddModalOpen(false);
+      setSelectedFile(null);
     } catch (err: any) {
       console.error("Error saving document:", err);
       alert("Erreur lors de l'enregistrement du document : " + (err.message || err));
@@ -185,12 +183,9 @@ export default function AdminCourseDocumentsPage() {
     if (!confirm("Voulez-vous vraiment supprimer ce document ?")) return;
 
     try {
-      const { error } = await supabase
-        .from("academy_course_documents")
-        .delete()
-        .eq("id", id);
-
-      if (error) throw error;
+      const res = await fetch(`/api/academy/documents?id=${id}`, { method: "DELETE" });
+      const json = await res.json();
+      if (!json.success) throw new Error(json.error);
       setDocuments(documents.filter(d => d.id !== id));
     } catch (err) {
       console.error("Error deleting document:", err);
@@ -465,21 +460,58 @@ export default function AdminCourseDocumentsPage() {
                   </div>
                 </div>
 
+                {/* File Upload Option */}
+                <div>
+                  <label className="text-xs font-bold text-slate-300 uppercase tracking-wider block mb-1.5 flex items-center justify-between">
+                    <span>Fichier du document (PDF, Word, etc.)</span>
+                    <span className="text-[10px] text-[#00A878] font-bold">Sélection directe</span>
+                  </label>
+                  <div className="relative border border-dashed border-slate-700 hover:border-[#00A878] bg-slate-950/80 rounded-xl p-4 transition-all">
+                    <input
+                      type="file"
+                      onChange={(e) => {
+                        const file = e.target.files?.[0] || null;
+                        setSelectedFile(file);
+                        if (file && !formData.title) {
+                          setFormData({ ...formData, title: file.name.replace(/\.[^/.]+$/, "") });
+                        }
+                      }}
+                      className="absolute inset-0 opacity-0 cursor-pointer w-full h-full"
+                    />
+                    <div className="flex items-center gap-3 pointer-events-none">
+                      <div className="p-2.5 bg-emerald-500/10 text-emerald-400 rounded-lg">
+                        <Upload className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold text-white">
+                          {selectedFile ? selectedFile.name : "Cliquez ou glissez un fichier depuis votre appareil"}
+                        </p>
+                        <p className="text-[11px] text-slate-400">
+                          {selectedFile ? `${(selectedFile.size / 1024 / 1024).toFixed(2)} Mo` : "PDF, Word, PPTX, etc."}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="text-center text-xs text-slate-500 uppercase tracking-widest font-bold my-1">
+                  — OU —
+                </div>
+
                 {/* File URL */}
                 <div>
                   <label className="text-xs font-bold text-slate-300 uppercase tracking-wider block mb-1.5">
-                    Lien / URL du document *
+                    Lien / URL externe du document
                   </label>
                   <input
                     type="text"
-                    required
                     value={formData.file_url}
                     onChange={(e) => setFormData({ ...formData, file_url: e.target.value })}
-                    placeholder="Ex: /documents/Agenda_Supply_Chain.pdf ou https://..."
+                    placeholder="Ex: /documents/mon-cours.pdf ou lien externe"
                     className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white text-sm font-mono focus:outline-none focus:border-[#00A878]"
                   />
                   <p className="text-[10px] text-slate-500 mt-1 font-medium">
-                    Indiquez le chemin relatif (ex: /documents/fichier.pdf) ou l'URL complète vers le document.
+                    Vous pouvez soit sélectionner un fichier ci-dessus, soit coller une URL directe.
                   </p>
                 </div>
 

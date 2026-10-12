@@ -5,7 +5,7 @@ import { supabase } from "../../../../lib/supabase";
 import { 
   GraduationCap, Users, Megaphone, Calendar, 
   Plus, ArrowRight, TrendingUp, DollarSign,
-  Briefcase, Clock, CheckCircle2, AlertCircle, ArrowLeft
+  Briefcase, Clock, CheckCircle2, AlertCircle, ArrowLeft, Folder
 } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -115,6 +115,15 @@ export default function AcademyDashboardOverview() {
       color: "text-accent",
       bgColor: "bg-accent/10 border-accent/20",
       link: "/admin/dashboard/academy/events"
+    },
+    {
+      title: "Documents",
+      desc: "Supports de cours pour les inscrits",
+      count: null,
+      icon: Folder,
+      color: "text-[#00A878]",
+      bgColor: "bg-emerald-500/10 border-emerald-500/20",
+      link: "/admin/dashboard/academy/documents"
     }
   ];
 
@@ -144,7 +153,7 @@ export default function AcademyDashboardOverview() {
       </div>
 
       {/* Main Stats Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {menuCards.map((card, i) => (
           <motion.div
             key={i}
@@ -157,7 +166,7 @@ export default function AcademyDashboardOverview() {
               <div className={`p-3 rounded-2xl bg-slate-900/50 ${card.color} border border-slate-800`}>
                 <card.icon className="w-6 h-6" />
               </div>
-              <span className="text-white font-black text-4xl">{card.count}</span>
+              <span className="text-white font-black text-4xl">{card.count !== null && card.count !== undefined ? card.count : "📁"}</span>
             </div>
             <div>
               <h3 className="text-white font-bold text-lg mb-1">{card.title}</h3>

@@ -8,7 +8,7 @@ import {
   Download, Mail, Phone, ExternalLink,
   CreditCard, UserCheck, AlertCircle, Clock,
   Edit2, Trash2, X, Eye, User, GraduationCap, FileText,
-  RefreshCw
+  RefreshCw, ShieldCheck, Copy, MessageSquare
 } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -177,6 +177,31 @@ export default function AdminAcademyRegistrations() {
         setSelectedDetailsReg({ ...selectedDetailsReg, payment_status: status });
       }
     }
+  };
+
+  const generateParticipantCredentials = (fullname: string) => {
+    if (!fullname) return { username: "PARTICIPANT", password: "User123", firstName: "Participant", lastName: "PARTICIPANT" };
+    const clean = fullname.replace(/[.,]/g, " ").trim().replace(/\s+/g, " ");
+    const parts = clean.split(" ");
+    
+    const upperParts = parts.filter(p => p.length >= 2 && p === p.toUpperCase());
+    
+    let lastName = "";
+    let firstName = "";
+    
+    if (upperParts.length > 0 && upperParts.length < parts.length) {
+      lastName = upperParts[upperParts.length - 1];
+      firstName = parts.find(p => !upperParts.includes(p)) || parts[0];
+    } else {
+      lastName = parts[parts.length - 1];
+      firstName = parts[0];
+    }
+
+    const initial = firstName.charAt(0).toUpperCase();
+    const cleanLastName = lastName.replace(/[^a-zA-Z0-9]/g, "").toUpperCase();
+    const username = `${initial}${cleanLastName}`;
+    const password = `${cleanLastName}123`;
+    return { username, password, firstName, lastName: cleanLastName };
   };
 
   const calculateFinancials = (reg: any) => {
@@ -610,6 +635,109 @@ export default function AdminAcademyRegistrations() {
                   </div>
                 </div>
               </div>
+
+              {/* Identifiants d'accès Espace Participant */}
+              {(() => {
+                const creds = generateParticipantCredentials(selectedDetailsReg.fullname);
+                return (
+                  <div className="space-y-3 bg-gradient-to-br from-emerald-950/40 via-slate-900 to-slate-950 p-5 rounded-3xl border border-emerald-500/30 shadow-xl">
+                    <div className="flex items-center justify-between">
+                      <h4 className="text-xs font-black text-emerald-400 uppercase tracking-widest flex items-center gap-2">
+                        <ShieldCheck className="w-4 h-4 text-emerald-400" /> Identifiants d'accès Espace Participant
+                      </h4>
+                      <span className="text-[10px] bg-emerald-500/20 text-emerald-300 font-bold px-2.5 py-0.5 rounded-full border border-emerald-500/30">
+                        Prêt à envoyer
+                      </span>
+                    </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                  <div className="bg-slate-950/70 p-3.5 rounded-2xl border border-slate-800 flex items-center justify-between">
+                    <div>
+                      <p className="text-slate-400 text-[10px] uppercase font-bold tracking-wider mb-0.5">Identifiant</p>
+                      <p className="font-mono text-base font-black text-white select-all">{creds.username}</p>
+                      <p className="text-[10px] text-slate-500 mt-0.5">Initiale prénom + Nom</p>
+                    </div>
+                    <button 
+                      onClick={() => {
+                        navigator.clipboard.writeText(creds.username);
+                        alert("Identifiant copié : " + creds.username);
+                      }}
+                      className="p-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl transition-colors cursor-pointer"
+                      title="Copier l'identifiant"
+                    >
+                      <Copy className="w-4 h-4" />
+                    </button>
+                  </div>
+
+                  <div className="bg-slate-950/70 p-3.5 rounded-2xl border border-slate-800 flex items-center justify-between">
+                    <div>
+                      <p className="text-slate-400 text-[10px] uppercase font-bold tracking-wider mb-0.5">Mot de passe</p>
+                      <p className="font-mono text-base font-black text-emerald-400 select-all">{creds.password}</p>
+                      <p className="text-[10px] text-slate-500 mt-0.5">Nom de famille + 123</p>
+                    </div>
+                    <button 
+                      onClick={() => {
+                        navigator.clipboard.writeText(creds.password);
+                        alert("Mot de passe copié : " + creds.password);
+                      }}
+                      className="p-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl transition-colors cursor-pointer"
+                      title="Copier le mot de passe"
+                    >
+                      <Copy className="w-4 h-4" />
+                    </button>
+                  </div>
+                </div>
+
+                <div className="bg-slate-950/70 p-3 rounded-2xl border border-slate-800 flex items-center justify-between text-xs">
+                  <div className="truncate mr-2">
+                    <span className="text-slate-500 text-[10px] uppercase font-bold block">Lien de l'espace de connexion :</span>
+                    <span className="font-mono text-emerald-300 text-xs">https://www.saninova.org/academy/login</span>
+                  </div>
+                  <a 
+                    href="/academy/login"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 rounded-xl transition-colors shrink-0"
+                    title="Ouvrir la page de connexion"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                </div>
+
+                {/* Quick send buttons */}
+                <div className="flex flex-wrap items-center gap-2 pt-1">
+                  <button
+                    onClick={() => {
+                      const msg = `Bonjour ${creds.firstName},\n\nVoici vos identifiants pour accéder à votre espace de formation SaniNova Academy (${getTrainingTitle(selectedDetailsReg)}) :\n\n🔗 Lien de connexion : https://www.saninova.org/academy/login\n👤 Identifiant : ${creds.username}\n🔑 Mot de passe : ${creds.password}\n\nVous pourrez y consulter l'ensemble des documents de cours et actualités de la formation.\n\nCordialement,\nL'équipe SaniNova`;
+                      navigator.clipboard.writeText(msg);
+                      alert("Message d'accès complet copié dans le presse-papier !");
+                    }}
+                    className="px-4 py-2 bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 rounded-xl text-xs font-bold transition-all flex items-center gap-2 cursor-pointer"
+                  >
+                    <Copy className="w-3.5 h-3.5" /> Copier le message d'accès complet
+                  </button>
+
+                  {whatsappUrl && (
+                    <a
+                      href={`${whatsappUrl}?text=${encodeURIComponent(`Bonjour ${creds.firstName},\n\nVoici vos identifiants pour accéder à votre espace de formation SaniNova Academy (${getTrainingTitle(selectedDetailsReg)}) :\n\n🔗 Lien : https://www.saninova.org/academy/login\n👤 Identifiant : ${creds.username}\n🔑 Mot de passe : ${creds.password}\n\nVous pourrez y consulter tous les documents de cours et actualités.`)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold transition-all flex items-center gap-2 shadow-sm"
+                    >
+                      <MessageSquare className="w-3.5 h-3.5" /> Envoyer par WhatsApp
+                    </a>
+                  )}
+
+                  <a
+                    href={`mailto:${selectedDetailsReg.email}?subject=${encodeURIComponent(`Vos identifiants d'accès - SaniNova Academy (${getTrainingTitle(selectedDetailsReg)})`)}&body=${encodeURIComponent(`Bonjour ${creds.firstName},\n\nVoici vos identifiants pour accéder à votre espace de formation SaniNova Academy (${getTrainingTitle(selectedDetailsReg)}) :\n\nLien de connexion : https://www.saninova.org/academy/login\nIdentifiant : ${creds.username}\nMot de passe : ${creds.password}\n\nVous pourrez y consulter tous les documents et actualités de la formation.\n\nCordialement,\nL'équipe SaniNova`)}`}
+                    className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-xl text-xs font-bold transition-all flex items-center gap-2"
+                  >
+                    <Mail className="w-3.5 h-3.5" /> Envoyer par Email
+                  </a>
+                </div>
+              </div>
+                );
+              })()}
 
               {/* Training Info */}
               <div className="space-y-3">

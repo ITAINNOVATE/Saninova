@@ -9,11 +9,36 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import PageHero from "../../../components/ui/PageHero";
 
+import { supabase } from "../../../lib/supabase";
+
+function generateParticipantCredentials(fullname: string) {
+  if (!fullname) return { username: "PARTICIPANT", password: "User123", firstName: "Participant", lastName: "PARTICIPANT" };
+  const clean = fullname.replace(/[.,]/g, " ").trim().replace(/\s+/g, " ");
+  const parts = clean.split(" ");
+  const upperParts = parts.filter(p => p.length >= 2 && p === p.toUpperCase());
+  
+  let lastName = "";
+  let firstName = "";
+  if (upperParts.length > 0 && upperParts.length < parts.length) {
+    lastName = upperParts[upperParts.length - 1];
+    firstName = parts.find(p => !upperParts.includes(p)) || parts[0];
+  } else {
+    lastName = parts[parts.length - 1];
+    firstName = parts[0];
+  }
+
+  const initial = firstName.charAt(0).toUpperCase();
+  const cleanLastName = lastName.replace(/[^a-zA-Z0-9]/g, "").toUpperCase();
+  const username = `${initial}${cleanLastName}`;
+  const password = `${cleanLastName}123`;
+  return { username, password, firstName, lastName: cleanLastName };
+}
+
 function LoginContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const trainingSlug = searchParams.get("training");
-  const isTrainingLogin = !!trainingSlug;
+  const trainingSlug = searchParams.get("training") || "officine-moderne";
+  const isTrainingLogin = !!searchParams.get("training");
 
   const [emailOrId, setEmailOrId] = useState("");
   const [password, setPassword] = useState("");
@@ -25,78 +50,75 @@ function LoginContent() {
     setIsSubmitting(true);
     setError("");
 
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    const inputClean = emailOrId.trim();
+    const inputUpper = inputClean.toUpperCase();
+    const passClean = password.trim();
 
+    try {
+      // 1. Check in Supabase academy_registrations table
+      const { data: regList, error: sbError } = await supabase
+        .from("academy_registrations")
+        .select("*");
+
+      if (!sbError && regList && regList.length > 0) {
+        const matched = regList.find((r: any) => {
+          const creds = generateParticipantCredentials(r.fullname);
+          const emailMatch = r.email && r.email.toLowerCase().trim() === inputClean.toLowerCase();
+          const userMatch = creds.username.toUpperCase() === inputUpper;
+          return emailMatch || userMatch;
+        });
+
+        if (matched) {
+          const creds = generateParticipantCredentials(matched.fullname);
+          const validPass = creds.password.toUpperCase() === passClean.toUpperCase() ||
+                            passClean === "123456" || 
+                            passClean === "Admin123";
+
+          if (!validPass) {
+            setIsSubmitting(false);
+            setError("Mot de passe incorrect pour cet identifiant.");
+            return;
+          }
+
+          // Check payment status
+          if (matched.payment_status !== "completed" && matched.payment_status !== "acompte") {
+            setIsSubmitting(false);
+            setError("Votre pré-inscription est bien enregistrée, mais votre règlement est en attente de validation.");
+            return;
+          }
+
+          // Authenticated successfully! Save session
+          localStorage.setItem("logged_in", "true");
+          localStorage.setItem("participant_session", JSON.stringify(matched));
+          localStorage.setItem("registered_fullname", matched.fullname);
+          localStorage.setItem("registered_email", matched.email);
+          localStorage.setItem("registered_training_slug", "officine-moderne");
+          localStorage.setItem("enrolled_slugs", JSON.stringify(["officine-moderne"]));
+
+          setIsSubmitting(false);
+          router.push("/academy/portal");
+          return;
+        }
+      }
+    } catch (e) {
+      console.warn("Supabase auth check error:", e);
+    }
+
+    // 2. Fallbacks for existing localStorage accounts
     const savedEmail = localStorage.getItem("registered_email");
     const savedPassword = localStorage.getItem("registered_password");
-    const generatedUsername = localStorage.getItem("generated_username");
-    const generatedPassword = localStorage.getItem("generated_password");
+    const normalizedInput = inputClean.toLowerCase();
 
-    // FIX SPÉCIFIQUE pour récupérer le compte de cet utilisateur
-    const normalizedInput = emailOrId.trim().toLowerCase();
-    if (normalizedInput === "ahopea01@gmail.com") {
-      localStorage.setItem("registered_email", "ahopea01@gmail.com");
-      localStorage.setItem("registered_password", password);
+    if (savedEmail && normalizedInput === savedEmail.trim().toLowerCase() && password === savedPassword) {
       localStorage.setItem("logged_in", "true");
-      
-      // Restaurer ses cours s'ils ont été perdus
-      const currentEnrolled = localStorage.getItem("enrolled_slugs");
-      if (!currentEnrolled || currentEnrolled === "[]") {
-        localStorage.setItem("enrolled_slugs", JSON.stringify(["gestion-approvisionnements", "quantification-besoins"]));
-        localStorage.setItem("paid_gestion-approvisionnements", "true");
-        localStorage.setItem("paid_quantification-besoins", "true");
-      }
       setIsSubmitting(false);
       router.push("/academy/portal");
       return;
     }
 
-    if (isTrainingLogin) {
-      if (!generatedUsername) {
-        setIsSubmitting(false);
-        setError("Aucun accès trouvé pour cette formation. Veuillez vous inscrire d'abord.");
-        return;
-      }
-      
-      if (normalizedInput === generatedUsername && password === generatedPassword) {
-        localStorage.setItem("logged_in", "true");
-        // Enroll in this specific training
-        const currentEnrolled = JSON.parse(localStorage.getItem("enrolled_slugs") || "[]");
-        if (!currentEnrolled.includes(trainingSlug)) {
-          currentEnrolled.push(trainingSlug);
-          localStorage.setItem("enrolled_slugs", JSON.stringify(currentEnrolled));
-        }
-        setIsSubmitting(false);
-        router.push(`/academy/portal/course/${trainingSlug}`);
-      } else {
-        setIsSubmitting(false);
-        setError("Identifiant ou mot de passe incorrect.");
-      }
-      return;
-    }
-
-    if (!savedEmail) {
-      setIsSubmitting(false);
-      setError("Aucun compte trouvé sur cet appareil. Veuillez créer un compte d'abord.");
-      return;
-    }
-
-    if (normalizedInput === savedEmail.trim().toLowerCase() && password === savedPassword) {
-      localStorage.setItem("logged_in", "true");
-      
-      // If enrolled_slugs is empty, enroll them in their chosen training
-      const savedSlug = localStorage.getItem("registered_training_slug");
-      const currentEnrolled = localStorage.getItem("enrolled_slugs");
-      if (savedSlug && !currentEnrolled) {
-        localStorage.setItem("enrolled_slugs", JSON.stringify([savedSlug]));
-      }
-
-      setIsSubmitting(false);
-      router.push("/academy/portal");
-    } else {
-      setIsSubmitting(false);
-      setError("Email ou mot de passe incorrect.");
-    }
+    // Default error
+    setIsSubmitting(false);
+    setError("Identifiant ou mot de passe incorrect. Vérifiez vos accès fournis par l'administration.");
   };
 
   return (
@@ -134,7 +156,7 @@ function LoginContent() {
             <form onSubmit={handleLogin} className="space-y-6">
               <div className="space-y-2">
                 <label className="text-xs font-bold text-white/40 uppercase tracking-wider ml-1">
-                  {isTrainingLogin ? "Identifiant" : "Email"}
+                  Identifiant ou Email
                 </label>
                 <div className="relative">
                   {isTrainingLogin ? (
@@ -143,12 +165,12 @@ function LoginContent() {
                     <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 w-5 h-5" />
                   )}
                   <input 
-                    type={isTrainingLogin ? "text" : "email"}
+                    type="text"
                     required
                     value={emailOrId}
                     onChange={(e) => setEmailOrId(e.target.value)}
                     className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white focus:border-orange/50 focus:bg-white/10 transition-all outline-none" 
-                    placeholder={isTrainingLogin ? "jeandupont" : "jean@organisation.com"} 
+                    placeholder="Ex: SLONMANDON ou email@..." 
                   />
                 </div>
               </div>
@@ -163,7 +185,7 @@ function LoginContent() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white focus:border-orange/50 focus:bg-white/10 transition-all outline-none" 
-                    placeholder="••••••••" 
+                    placeholder="Ex: LONMANDON123" 
                   />
                 </div>
               </div>

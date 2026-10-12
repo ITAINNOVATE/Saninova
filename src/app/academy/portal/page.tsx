@@ -3,7 +3,8 @@
 import React, { useState, useEffect } from "react";
 import { 
   BookOpen, Award, Clock, ArrowRight, CheckCircle2, 
-  ChevronRight, Bookmark, Sparkles, User, LogOut, ArrowLeft, Lock, Plus, Search, Filter 
+  ChevronRight, Bookmark, Sparkles, User, LogOut, ArrowLeft, Lock, Plus, Search, Filter,
+  FileText, Download, Calendar, Bell, ExternalLink, RefreshCw, FolderOpen
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
@@ -22,11 +23,29 @@ export default function StudentPortal() {
   const [progresses, setProgresses] = useState<Record<string, { percent: number; completed: any; quizPassed: boolean }>>({});
   const [paidCourses, setPaidCourses] = useState<Record<string, boolean>>({});
   const [studentName, setStudentName] = useState("Dr. Ambroise Gbaguidi");
+  const [participantSession, setParticipantSession] = useState<any>(null);
   const [enrolledSlugs, setEnrolledSlugs] = useState<string[]>([]);
-  const [activeTab, setActiveTab] = useState<"my-courses" | "catalog">("my-courses");
+  const [activeTab, setActiveTab] = useState<"my-courses" | "documents" | "news" | "catalog">("my-courses");
+  const [documents, setDocuments] = useState<any[]>([]);
+  const [loadingDocs, setLoadingDocs] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const router = useRouter();
+
+  const fetchTrainingDocuments = async () => {
+    setLoadingDocs(true);
+    try {
+      const res = await fetch("/api/academy/documents?training_slug=officine-moderne");
+      const json = await res.json();
+      if (json.success && json.documents) {
+        setDocuments(json.documents);
+      }
+    } catch (err) {
+      console.error("Error loading training documents:", err);
+    } finally {
+      setLoadingDocs(false);
+    }
+  };
 
   // Fetch courses from Supabase & load local progress/payments
   useEffect(() => {
@@ -37,11 +56,23 @@ export default function StudentPortal() {
       return;
     }
 
+    // Load participant session if available
+    const savedSession = localStorage.getItem("participant_session");
+    if (savedSession) {
+      try {
+        setParticipantSession(JSON.parse(savedSession));
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
     // Load student name from localstorage if exists
     const savedName = localStorage.getItem("registered_fullname");
     if (savedName) {
       setStudentName(savedName);
     }
+
+    fetchTrainingDocuments();
 
     const fetchCourses = async () => {
       setLoading(true);
@@ -281,10 +312,10 @@ export default function StudentPortal() {
               {/* Learning Catalog & Enrolled Courses with Tabs */}
               <div>
                 {/* Tabs Selector */}
-                <div className="flex gap-6 border-b border-white/5 pb-4 mb-8">
+                <div className="flex flex-wrap gap-4 md:gap-6 border-b border-white/5 pb-4 mb-8">
                   <button
                     onClick={() => setActiveTab("my-courses")}
-                    className={`pb-2 px-4 text-sm font-black uppercase tracking-wider transition-all relative cursor-pointer ${activeTab === "my-courses" ? "text-orange" : "text-white/40 hover:text-white"}`}
+                    className={`pb-2 px-3 text-xs md:text-sm font-black uppercase tracking-wider transition-all relative cursor-pointer ${activeTab === "my-courses" ? "text-orange" : "text-white/40 hover:text-white"}`}
                   >
                     Mes Formations ({enrolledSlugs.length})
                     {activeTab === "my-courses" && (
@@ -292,10 +323,28 @@ export default function StudentPortal() {
                     )}
                   </button>
                   <button
-                    onClick={() => setActiveTab("catalog")}
-                    className={`pb-2 px-4 text-sm font-black uppercase tracking-wider transition-all relative cursor-pointer ${activeTab === "catalog" ? "text-orange" : "text-white/40 hover:text-white"}`}
+                    onClick={() => setActiveTab("documents")}
+                    className={`pb-2 px-3 text-xs md:text-sm font-black uppercase tracking-wider transition-all relative cursor-pointer flex items-center gap-2 ${activeTab === "documents" ? "text-orange" : "text-white/40 hover:text-white"}`}
                   >
-                    Parcourir le Catalogue ({courses.length})
+                    <FolderOpen className="w-4 h-4" /> Documents & Supports ({documents.length})
+                    {activeTab === "documents" && (
+                      <motion.div layoutId="tab-underline" className="absolute bottom-0 left-0 right-0 h-0.5 bg-orange" />
+                    )}
+                  </button>
+                  <button
+                    onClick={() => setActiveTab("news")}
+                    className={`pb-2 px-3 text-xs md:text-sm font-black uppercase tracking-wider transition-all relative cursor-pointer flex items-center gap-2 ${activeTab === "news" ? "text-orange" : "text-white/40 hover:text-white"}`}
+                  >
+                    <Bell className="w-4 h-4" /> Actualités & Calendrier
+                    {activeTab === "news" && (
+                      <motion.div layoutId="tab-underline" className="absolute bottom-0 left-0 right-0 h-0.5 bg-orange" />
+                    )}
+                  </button>
+                  <button
+                    onClick={() => setActiveTab("catalog")}
+                    className={`pb-2 px-3 text-xs md:text-sm font-black uppercase tracking-wider transition-all relative cursor-pointer ${activeTab === "catalog" ? "text-orange" : "text-white/40 hover:text-white"}`}
+                  >
+                    Catalogue ({courses.length})
                     {activeTab === "catalog" && (
                       <motion.div layoutId="tab-underline" className="absolute bottom-0 left-0 right-0 h-0.5 bg-orange" />
                     )}
@@ -672,6 +721,159 @@ export default function StudentPortal() {
                       );
                     })()}
                   </>
+                )}
+
+                {/* Tab: Documents */}
+                {activeTab === "documents" && (
+                  <div className="space-y-6">
+                    <div className="bg-[#0F1D33] rounded-[32px] border border-white/5 p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-xl">
+                      <div>
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 rounded-xl bg-orange/10 border border-orange/20 flex items-center justify-center text-orange">
+                            <FolderOpen className="w-5 h-5" />
+                          </div>
+                          <div>
+                            <h3 className="text-lg md:text-xl font-montserrat font-bold text-white">
+                              Supports & Documents de Formation
+                            </h3>
+                            <p className="text-white/40 text-xs font-medium">
+                              Formation Professionnelle : Gestion d’une Officine Moderne
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <button
+                        onClick={fetchTrainingDocuments}
+                        disabled={loadingDocs}
+                        className="px-4 py-2.5 bg-white/5 hover:bg-white/10 text-white rounded-xl border border-white/10 text-xs font-bold transition-all flex items-center gap-2 cursor-pointer"
+                      >
+                        <RefreshCw className={`w-3.5 h-3.5 ${loadingDocs ? "animate-spin" : ""}`} /> Actualiser
+                      </button>
+                    </div>
+
+                    {loadingDocs ? (
+                      <div className="bg-[#0F1D33] rounded-[32px] border border-white/5 p-12 text-center">
+                        <RefreshCw className="w-8 h-8 text-orange animate-spin mx-auto mb-4" />
+                        <p className="text-white/40 text-xs uppercase font-bold tracking-widest">Chargement des documents...</p>
+                      </div>
+                    ) : documents.length === 0 ? (
+                      <div className="bg-[#0F1D33] rounded-[32px] border border-white/5 p-12 text-center max-w-xl mx-auto shadow-2xl relative overflow-hidden my-8">
+                        <FileText className="w-12 h-12 text-orange/40 mx-auto mb-4" />
+                        <h4 className="text-white font-montserrat font-bold text-lg mb-2">Aucun document chargé</h4>
+                        <p className="text-white/40 text-xs leading-relaxed max-w-sm mx-auto">
+                          Les supports pédagogiques de votre formation seront mis à disposition ici par les formateurs. Revenez bientôt !
+                        </p>
+                      </div>
+                    ) : (
+                      <div className="grid md:grid-cols-2 gap-6">
+                        {documents.map((doc) => (
+                          <div
+                            key={doc.id}
+                            className="bg-[#0F1D33] rounded-[28px] border border-white/5 p-6 hover:border-orange/20 transition-all shadow-xl flex flex-col justify-between group"
+                          >
+                            <div>
+                              <div className="flex items-center justify-between gap-4 mb-4">
+                                <span className="px-3 py-1 bg-orange/10 border border-orange/20 text-orange text-[10px] font-black uppercase tracking-widest rounded-full">
+                                  {doc.category || "Support"}
+                                </span>
+                                <span className="text-[10px] font-bold text-white/30 uppercase tracking-wider">
+                                  {doc.file_type || "Fichier"}
+                                </span>
+                              </div>
+
+                              <h4 className="text-base font-bold text-white group-hover:text-orange transition-colors mb-2 line-clamp-2">
+                                {doc.title}
+                              </h4>
+
+                              {doc.description && (
+                                <p className="text-white/50 text-xs leading-relaxed line-clamp-3 mb-6">
+                                  {doc.description}
+                                </p>
+                              )}
+                            </div>
+
+                            <div className="pt-4 border-t border-white/5 flex items-center justify-between gap-4">
+                              <span className="text-[11px] text-white/30 font-semibold">
+                                {doc.created_at ? new Date(doc.created_at).toLocaleDateString("fr-FR", { day: "numeric", month: "short", year: "numeric" }) : "Ressource"}
+                              </span>
+
+                              <a
+                                href={doc.file_url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="px-4 py-2.5 bg-orange hover:bg-orange/90 text-white rounded-xl text-xs font-black uppercase tracking-wider flex items-center gap-2 transition-all shadow-lg shadow-orange/20 cursor-pointer"
+                              >
+                                <Download className="w-3.5 h-3.5" /> Télécharger
+                              </a>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {/* Tab: News & Announcements */}
+                {activeTab === "news" && (
+                  <div className="space-y-6">
+                    <div className="bg-[#0F1D33] rounded-[32px] border border-white/5 p-6 md:p-8 flex items-center gap-4 shadow-xl">
+                      <div className="w-10 h-10 rounded-xl bg-orange/10 border border-orange/20 flex items-center justify-center text-orange">
+                        <Bell className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg md:text-xl font-montserrat font-bold text-white">
+                          Actualités & Calendrier de la Formation
+                        </h3>
+                        <p className="text-white/40 text-xs font-medium">
+                          Informations importantes, plannings des webinaires et jalons clés.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-6">
+                      {/* Announcement 1: Confirmation */}
+                      <div className="bg-[#0F1D33] rounded-[28px] border border-white/5 p-6 hover:border-orange/20 transition-all shadow-xl">
+                        <div className="flex items-center gap-3 mb-4">
+                          <span className="px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-black uppercase tracking-widest rounded-full">
+                            Inscription Validée
+                          </span>
+                          <span className="text-[10px] font-bold text-white/30 uppercase tracking-wider">
+                            Session Officine Moderne
+                          </span>
+                        </div>
+                        <h4 className="text-base font-bold text-white mb-2">
+                          Bienvenue dans la session : Gestion d’une Officine Moderne
+                        </h4>
+                        <p className="text-white/50 text-xs leading-relaxed mb-4">
+                          Votre inscription est officiellement enregistrée. Vous pouvez consulter les premiers documents de cours dans l'onglet "Documents & Supports" et préparer les prochaines sessions interactives.
+                        </p>
+                        <div className="text-[11px] text-white/30 font-semibold flex items-center gap-1.5">
+                          <Calendar className="w-3.5 h-3.5 text-orange" /> Programme en cours de déploiement
+                        </div>
+                      </div>
+
+                      {/* Announcement 2: Live Webinars */}
+                      <div className="bg-[#0F1D33] rounded-[28px] border border-white/5 p-6 hover:border-orange/20 transition-all shadow-xl">
+                        <div className="flex items-center gap-3 mb-4">
+                          <span className="px-3 py-1 bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-black uppercase tracking-widest rounded-full">
+                            Calendrier des sessions
+                          </span>
+                          <span className="text-[10px] font-bold text-white/30 uppercase tracking-wider">
+                            Webinaires Directs
+                          </span>
+                        </div>
+                        <h4 className="text-base font-bold text-white mb-2">
+                          Sessions d'échange avec les experts formateurs
+                        </h4>
+                        <p className="text-white/50 text-xs leading-relaxed mb-4">
+                          Les liens de connexion Google Meet / Zoom ainsi que les plannings précis des ateliers pratiques vous seront transmis et affichés ici avec les notifications de rappel.
+                        </p>
+                        <div className="text-[11px] text-white/30 font-semibold flex items-center gap-1.5">
+                          <Calendar className="w-3.5 h-3.5 text-blue-400" /> Notifications automatiques par WhatsApp & Email
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 )}
               </div>
             </div>
