@@ -143,20 +143,44 @@ export default function AdminCourseDocumentsPage() {
     try {
       setIsSubmitting(true);
 
-      const dataToSend = new FormData();
-      dataToSend.append("training_slug", formData.training_slug);
-      dataToSend.append("title", formData.title.trim());
-      dataToSend.append("description", formData.description.trim());
-      dataToSend.append("file_type", formData.file_type);
-      dataToSend.append("category", formData.category);
-      dataToSend.append("file_url", formData.file_url.trim());
+      let fileUrl = formData.file_url.trim();
+
+      // 1. Upload file directly to Supabase Storage (Vercel filesystem is read-only)
       if (selectedFile) {
-        dataToSend.append("file", selectedFile);
+        const safeName = selectedFile.name
+          .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+          .replace(/[^a-zA-Z0-9.-]/g, "_");
+        const filePath = `${formData.training_slug}/${Date.now()}_${safeName}`;
+
+        const { error: uploadError } = await supabase.storage
+          .from("academy-documents")
+          .upload(filePath, selectedFile, { cacheControl: "3600", upsert: false, contentType: selectedFile.type || undefined });
+
+        if (uploadError) {
+          throw new Error(
+            "Échec du téléversement vers le stockage Supabase (" + uploadError.message + "). " +
+            "Vérifiez que le bucket 'academy-documents' a bien été créé via le script SQL."
+          );
+        }
+
+        const { data: { publicUrl } } = supabase.storage
+          .from("academy-documents")
+          .getPublicUrl(filePath);
+        fileUrl = publicUrl;
       }
 
+      // 2. Save metadata through the API
       const res = await fetch("/api/academy/documents", {
         method: "POST",
-        body: dataToSend,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          training_slug: formData.training_slug,
+          title: formData.title.trim(),
+          description: formData.description.trim(),
+          file_type: formData.file_type,
+          category: formData.category,
+          file_url: fileUrl,
+        }),
       });
 
       const json = await res.json();

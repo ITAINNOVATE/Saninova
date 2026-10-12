@@ -72,88 +72,53 @@ export async function GET(req: NextRequest) {
 
 export async function POST(req: NextRequest) {
   try {
-    const contentType = req.headers.get("content-type") || "";
+    const body = await req.json();
 
-    let newDoc: any = {};
+    if (!body.title || !body.file_url) {
+      return NextResponse.json({ success: false, error: "Titre et fichier/URL requis." }, { status: 400 });
+    }
 
-    if (contentType.includes("multipart/form-data")) {
-      const formData = await req.formData();
-      const title = formData.get("title")?.toString() || "";
-      const description = formData.get("description")?.toString() || "";
-      const training_slug = formData.get("training_slug")?.toString() || "officine-moderne";
-      const category = formData.get("category")?.toString() || "Support de cours";
-      const fileType = formData.get("file_type")?.toString() || "PDF";
-      const directUrl = formData.get("file_url")?.toString() || "";
-      const file = formData.get("file") as File | null;
+    const payload = {
+      training_slug: body.training_slug || "officine-moderne",
+      title: body.title,
+      description: body.description || "",
+      file_url: body.file_url,
+      file_type: body.file_type || "PDF",
+      category: body.category || "Support de cours",
+    };
 
-      let file_url = directUrl;
+    // Supabase is the source of truth (Vercel filesystem is read-only)
+    const { data, error } = await supabase
+      .from("academy_course_documents")
+      .insert([payload])
+      .select()
+      .single();
 
-      if (file && file.size > 0) {
-        const bytes = await file.arrayBuffer();
-        const buffer = Buffer.from(bytes);
-        const fileName = `${Date.now()}_${file.name.replace(/[^a-zA-Z0-9.-]/g, "_")}`;
-        const uploadDir = path.join(process.cwd(), "public", "documents", "academy");
-        
-        if (!fs.existsSync(uploadDir)) {
-          fs.mkdirSync(uploadDir, { recursive: true });
+    if (error || !data) {
+      // Local dev fallback only (works when filesystem is writable)
+      const localDoc = { id: "doc-" + Date.now(), ...payload, created_at: new Date().toISOString() };
+      const saved = (() => {
+        try {
+          const current = getLocalDocuments();
+          saveLocalDocuments([localDoc, ...current]);
+          return fs.existsSync(FALLBACK_FILE);
+        } catch {
+          return false;
         }
-        
-        fs.writeFileSync(path.join(uploadDir, fileName), buffer);
-        file_url = `/documents/academy/${fileName}`;
+      })();
+
+      if (saved && process.env.NODE_ENV !== "production") {
+        return NextResponse.json({ success: true, document: localDoc });
       }
 
-      newDoc = {
-        id: "doc-" + Date.now(),
-        training_slug,
-        title,
-        description,
-        file_url,
-        file_type: fileType,
-        category,
-        created_at: new Date().toISOString()
-      };
-    } else {
-      const body = await req.json();
-      newDoc = {
-        id: "doc-" + Date.now(),
-        training_slug: body.training_slug || "officine-moderne",
-        title: body.title,
-        description: body.description || "",
-        file_url: body.file_url,
-        file_type: body.file_type || "PDF",
-        category: body.category || "Support de cours",
-        created_at: new Date().toISOString()
-      };
+      return NextResponse.json({
+        success: false,
+        error: "Impossible d'enregistrer dans la table Supabase 'academy_course_documents' : " +
+          (error?.message || "erreur inconnue") + ". Exécutez le script SQL de création de la table.",
+      }, { status: 500 });
     }
 
-    // Try saving to Supabase first
-    try {
-      const { data, error } = await supabase
-        .from("academy_course_documents")
-        .insert([{
-          training_slug: newDoc.training_slug,
-          title: newDoc.title,
-          description: newDoc.description,
-          file_url: newDoc.file_url,
-          file_type: newDoc.file_type,
-          category: newDoc.category,
-        }])
-        .select()
-        .single();
-
-      if (!error && data) {
-        newDoc = data;
-      }
-    } catch (sbErr) {
-      console.warn("Could not insert to Supabase, saving locally:", sbErr);
-    }
-
-    // Always keep local store in sync
-    const current = getLocalDocuments();
-    const updated = [newDoc, ...current.filter((d: any) => d.id !== newDoc.id)];
-    saveLocalDocuments(updated);
-
-    return NextResponse.json({ success: true, document: newDoc });
+    return NextResponse.json({ success: true, document: data });
   } catch (err: any) {
     console.error("Error creating course document:", err);
     return NextResponse.json({ success: false, error: err.message }, { status: 500 });
