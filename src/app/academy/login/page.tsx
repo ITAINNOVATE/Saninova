@@ -80,14 +80,7 @@ function LoginContent() {
             return;
           }
 
-          // Check payment status
-          if (matched.payment_status !== "completed" && matched.payment_status !== "acompte") {
-            setIsSubmitting(false);
-            setError("Votre pré-inscription est bien enregistrée, mais votre règlement est en attente de validation.");
-            return;
-          }
-
-          // Authenticated successfully! Save session
+          // Authenticated successfully! Save session (even if payment is pending)
           localStorage.setItem("logged_in", "true");
           localStorage.setItem("participant_session", JSON.stringify(matched));
           localStorage.setItem("registered_fullname", matched.fullname);
