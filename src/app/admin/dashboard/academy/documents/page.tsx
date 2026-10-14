@@ -18,6 +18,9 @@ interface CourseDocument {
   file_url: string;
   file_type: string;
   category: string;
+  target_audience?: "all" | "individual";
+  participant_email?: string | null;
+  participant_name?: string | null;
   created_at: string;
 }
 
@@ -26,9 +29,18 @@ interface TrainingOption {
   title: string;
 }
 
+interface ParticipantOption {
+  id: string;
+  fullname: string;
+  email: string;
+  role?: string;
+  training_id?: string;
+}
+
 export default function AdminCourseDocumentsPage() {
   const [documents, setDocuments] = useState<CourseDocument[]>([]);
   const [trainings, setTrainings] = useState<TrainingOption[]>([]);
+  const [participants, setParticipants] = useState<ParticipantOption[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedSlug, setSelectedSlug] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState("");
@@ -41,6 +53,9 @@ export default function AdminCourseDocumentsPage() {
 
   const [formData, setFormData] = useState({
     training_slug: "officine-moderne",
+    target_audience: "all" as "all" | "individual",
+    participant_email: "",
+    participant_name: "",
     title: "",
     description: "",
     file_url: "",
@@ -87,7 +102,20 @@ export default function AdminCourseDocumentsPage() {
 
       setTrainings(combinedTrainings);
 
-      // 2. Fetch documents via dedicated API
+      // 2. Fetch registered participants to allow targeting specific participants (e.g. Certificats individuels)
+      try {
+        const { data: regDb } = await supabase
+          .from("academy_registrations")
+          .select("id, fullname, email, role, training_id")
+          .order("fullname", { ascending: true });
+        if (regDb) {
+          setParticipants(regDb);
+        }
+      } catch (e) {
+        console.warn("Could not fetch participants:", e);
+      }
+
+      // 3. Fetch documents via dedicated API
       const res = await fetch("/api/academy/documents");
       const json = await res.json();
       if (json.success && json.documents) {
@@ -105,6 +133,9 @@ export default function AdminCourseDocumentsPage() {
     setSelectedFile(null);
     setFormData({
       training_slug: selectedSlug !== "all" ? selectedSlug : "officine-moderne",
+      target_audience: "all",
+      participant_email: "",
+      participant_name: "",
       title: "",
       description: "",
       file_url: "",
@@ -119,6 +150,9 @@ export default function AdminCourseDocumentsPage() {
     setSelectedFile(null);
     setFormData({
       training_slug: doc.training_slug,
+      target_audience: doc.target_audience || "all",
+      participant_email: doc.participant_email || "",
+      participant_name: doc.participant_name || "",
       title: doc.title,
       description: doc.description || "",
       file_url: doc.file_url,
@@ -137,6 +171,11 @@ export default function AdminCourseDocumentsPage() {
 
     if (!selectedFile && !formData.file_url.trim()) {
       alert("Veuillez soit sélectionner un fichier à téléverser, soit renseigner un lien/URL.");
+      return;
+    }
+
+    if (formData.target_audience === "individual" && !formData.participant_email) {
+      alert("Veuillez sélectionner le participant destinataire de ce document/certificat.");
       return;
     }
 
@@ -175,6 +214,9 @@ export default function AdminCourseDocumentsPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           training_slug: formData.training_slug,
+          target_audience: formData.target_audience,
+          participant_email: formData.target_audience === "individual" ? formData.participant_email : null,
+          participant_name: formData.target_audience === "individual" ? formData.participant_name : null,
           title: formData.title.trim(),
           description: formData.description.trim(),
           file_type: formData.file_type,
@@ -339,10 +381,21 @@ export default function AdminCourseDocumentsPage() {
                   </span>
                 </div>
 
-                {/* Course Title Badge */}
-                <p className="text-[11px] text-slate-400 font-bold mb-2 truncate" title={getTrainingTitle(doc.training_slug)}>
-                  🎓 {getTrainingTitle(doc.training_slug)}
-                </p>
+                {/* Course Title & Target Audience Badge */}
+                <div className="flex flex-wrap items-center justify-between gap-1 mb-2">
+                  <p className="text-[11px] text-slate-400 font-bold truncate max-w-[60%]" title={getTrainingTitle(doc.training_slug)}>
+                    🎓 {getTrainingTitle(doc.training_slug)}
+                  </p>
+                  {doc.target_audience === "individual" || doc.participant_email ? (
+                    <span className="px-2 py-0.5 bg-purple-500/15 text-purple-300 border border-purple-500/30 rounded-md text-[9px] font-bold" title={`Destinataire : ${doc.participant_name || doc.participant_email}`}>
+                      👤 {doc.participant_name ? doc.participant_name.split(" ")[0] : "Individuel"}
+                    </span>
+                  ) : (
+                    <span className="px-2 py-0.5 bg-slate-800 text-slate-400 rounded-md text-[9px] font-bold">
+                      👥 Tous
+                    </span>
+                  )}
+                </div>
 
                 {/* Document Title */}
                 <h4 className="text-base font-bold text-white mb-2 line-clamp-2 leading-snug group-hover:text-emerald-400 transition-colors">
@@ -433,6 +486,74 @@ export default function AdminCourseDocumentsPage() {
                   </select>
                 </div>
 
+                {/* Destinataires du document : Tous vs Spécifique (Certificats / Fichiers nominatifs) */}
+                <div className="bg-slate-950/60 p-4 rounded-2xl border border-slate-800 space-y-3">
+                  <label className="text-xs font-bold text-slate-300 uppercase tracking-wider block">
+                    Destinataires du document *
+                  </label>
+                  <div className="grid grid-cols-2 gap-3">
+                    <button
+                      type="button"
+                      onClick={() => setFormData({ ...formData, target_audience: "all", participant_email: "", participant_name: "" })}
+                      className={`p-3 rounded-xl border text-xs font-bold transition-all text-left flex items-center gap-2.5 cursor-pointer ${
+                        formData.target_audience === "all"
+                          ? "bg-[#00A878]/15 border-[#00A878] text-[#00A878]"
+                          : "bg-slate-900 border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800/50"
+                      }`}
+                    >
+                      <span className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center ${formData.target_audience === "all" ? "border-[#00A878] bg-[#00A878]" : "border-slate-600"}`}>
+                        {formData.target_audience === "all" && <span className="w-1.5 h-1.5 rounded-full bg-slate-950" />}
+                      </span>
+                      <span>👥 Tous les participants</span>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => setFormData({ ...formData, target_audience: "individual" })}
+                      className={`p-3 rounded-xl border text-xs font-bold transition-all text-left flex items-center gap-2.5 cursor-pointer ${
+                        formData.target_audience === "individual"
+                          ? "bg-purple-500/15 border-purple-500 text-purple-400"
+                          : "bg-slate-900 border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800/50"
+                      }`}
+                    >
+                      <span className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center ${formData.target_audience === "individual" ? "border-purple-400 bg-purple-400" : "border-slate-600"}`}>
+                        {formData.target_audience === "individual" && <span className="w-1.5 h-1.5 rounded-full bg-slate-950" />}
+                      </span>
+                      <span>🎓 Participant individuel</span>
+                    </button>
+                  </div>
+
+                  {formData.target_audience === "individual" && (
+                    <div className="pt-2">
+                      <label className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-1">
+                        Sélectionner le participant (pour son certificat / support nominatif) *
+                      </label>
+                      <select
+                        required
+                        value={formData.participant_email}
+                        onChange={(e) => {
+                          const chosen = participants.find(p => p.email === e.target.value);
+                          setFormData({ 
+                            ...formData, 
+                            participant_email: e.target.value,
+                            participant_name: chosen ? chosen.fullname : "",
+                            title: formData.title || (chosen ? `Certificat de Formation - ${chosen.fullname}` : ""),
+                            category: formData.category === "Support de cours" ? "Certificat" : formData.category
+                          });
+                        }}
+                        className="w-full bg-slate-900 border border-purple-500/50 rounded-xl px-4 py-2.5 text-white text-xs font-medium focus:outline-none focus:border-purple-400"
+                      >
+                        <option value="">-- Choisir un participant inscrit ({participants.length} disponibles) --</option>
+                        {participants.map(p => (
+                          <option key={p.id} value={p.email}>
+                            {p.fullname} ({p.role || "Inscrit"} - {p.email})
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  )}
+                </div>
+
                 {/* Title */}
                 <div>
                   <label className="text-xs font-bold text-slate-300 uppercase tracking-wider block mb-1.5">
@@ -459,11 +580,13 @@ export default function AdminCourseDocumentsPage() {
                       onChange={(e) => setFormData({ ...formData, category: e.target.value })}
                       className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-[#00A878]"
                     >
-                      <option value="Agenda">Agenda & Planning</option>
                       <option value="Support de cours">Support de cours (PDF/PPT)</option>
-                      <option value="Module">Module de formation</option>
+                      <option value="Agenda">Agenda & Planning</option>
+                      <option value="Certificat">Certificat officiel de formation</option>
                       <option value="Exercices">Exercices & Études de cas</option>
+                      <option value="Module">Module de formation</option>
                       <option value="Documentation">Documentation générale</option>
+                      <option value="Attestation">Reçu / Attestation</option>
                     </select>
                   </div>
 

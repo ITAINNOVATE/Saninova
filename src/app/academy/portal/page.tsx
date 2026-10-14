@@ -190,7 +190,9 @@ export default function StudentPortal() {
   const fetchTrainingDocuments = async () => {
     setLoadingDocs(true);
     try {
-      const res = await fetch("/api/academy/documents?training_slug=officine-moderne");
+      const email = participantSession?.email || localStorage.getItem("registered_email") || "";
+      const emailParam = email ? `&participant_email=${encodeURIComponent(email)}` : "";
+      const res = await fetch(`/api/academy/documents?training_slug=officine-moderne${emailParam}`);
       const json = await res.json();
       if (json.success && json.documents) {
         setDocuments(json.documents);
@@ -1088,9 +1090,20 @@ export default function StudentPortal() {
                           >
                             <div>
                               <div className="flex items-center justify-between gap-4 mb-4">
-                                <span className="px-3 py-1 bg-orange/10 border border-orange/20 text-orange text-[10px] font-black uppercase tracking-widest rounded-full">
-                                  {doc.category || "Support"}
-                                </span>
+                                <div className="flex items-center gap-2">
+                                  <span className={`px-3 py-1 text-[10px] font-black uppercase tracking-widest rounded-full ${
+                                    doc.category === "Certificat" 
+                                      ? "bg-purple-500/20 border border-purple-500/40 text-purple-300"
+                                      : "bg-orange/10 border border-orange/20 text-orange"
+                                  }`}>
+                                    {doc.category || "Support"}
+                                  </span>
+                                  {(doc.target_audience === "individual" || (doc.description && doc.description.includes("[DEST:"))) && (
+                                    <span className="px-2 py-0.5 bg-purple-500/10 border border-purple-500/20 text-purple-300 text-[9px] font-bold rounded-md">
+                                      🎓 Nominatif
+                                    </span>
+                                  )}
+                                </div>
                                 <span className="text-[10px] font-bold text-white/30 uppercase tracking-wider">
                                   {doc.file_type || "Fichier"}
                                 </span>
@@ -1102,7 +1115,7 @@ export default function StudentPortal() {
 
                               {doc.description && (
                                 <p className="text-white/50 text-xs leading-relaxed line-clamp-3 mb-6">
-                                  {doc.description}
+                                  {doc.description.replace(/\[DEST:[^\]]+\]/gi, "").replace(/\[POUR:[^\]]+\]/gi, "").trim()}
                                 </p>
                               )}
                             </div>

@@ -12,8 +12,16 @@ create table if not exists public.academy_course_documents (
   file_url text not null,
   file_type text default 'PDF',
   category text default 'Support de cours',
+  target_audience text default 'all',
+  participant_email text,
+  participant_name text,
   created_at timestamptz not null default now()
 );
+
+-- Ajout des colonnes pour les bases existantes
+alter table public.academy_course_documents add column if not exists target_audience text default 'all';
+alter table public.academy_course_documents add column if not exists participant_email text;
+alter table public.academy_course_documents add column if not exists participant_name text;
 
 alter table public.academy_course_documents enable row level security;
 

@@ -44,6 +44,7 @@ function saveLocalDocuments(docs: any[]) {
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const trainingSlug = searchParams.get("training_slug");
+  const participantEmail = searchParams.get("participant_email")?.toLowerCase().trim();
 
   try {
     const { data, error } = await supabase
@@ -52,9 +53,30 @@ export async function GET(req: NextRequest) {
       .order("created_at", { ascending: false });
 
     if (!error && data && data.length > 0) {
-      const filtered = trainingSlug && trainingSlug !== "all" 
+      let filtered = trainingSlug && trainingSlug !== "all" 
         ? data.filter((d: any) => d.training_slug === trainingSlug || d.training_slug === "officine-moderne") 
         : data;
+
+      // Si un apprenant spécifique consulte ses documents, ne lui montrer que les documents pour TOUS ou ceux qui lui sont directement adressés
+      if (participantEmail) {
+        filtered = filtered.filter((d: any) => {
+          // Document avec colonne participant_email explicite
+          if (d.target_audience === "individual" || d.participant_email) {
+            return (d.participant_email || "").toLowerCase().trim() === participantEmail;
+          }
+          // Document encodé dans description [DEST:email]
+          if (d.description && d.description.includes("[DEST:")) {
+            const match = d.description.match(/\[DEST:\s*([^\]]+)\]/i);
+            if (match) {
+              const destEmail = match[1].toLowerCase().trim();
+              return destEmail === participantEmail;
+            }
+          }
+          // Par défaut : document public pour tous les inscrits de la formation
+          return true;
+        });
+      }
+
       return NextResponse.json({ success: true, documents: filtered });
     }
   } catch (err) {
@@ -63,9 +85,24 @@ export async function GET(req: NextRequest) {
 
   // Fallback to local documents store
   const localDocs = getLocalDocuments();
-  const filtered = trainingSlug && trainingSlug !== "all"
+  let filtered = trainingSlug && trainingSlug !== "all"
     ? localDocs.filter((d: any) => d.training_slug === trainingSlug || d.training_slug === "officine-moderne")
     : localDocs;
+
+  if (participantEmail) {
+    filtered = filtered.filter((d: any) => {
+      if (d.target_audience === "individual" || d.participant_email) {
+        return (d.participant_email || "").toLowerCase().trim() === participantEmail;
+      }
+      if (d.description && d.description.includes("[DEST:")) {
+        const match = d.description.match(/\[DEST:\s*([^\]]+)\]/i);
+        if (match) {
+          return match[1].toLowerCase().trim() === participantEmail;
+        }
+      }
+      return true;
+    });
+  }
 
   return NextResponse.json({ success: true, documents: filtered });
 }
@@ -78,21 +115,51 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ success: false, error: "Titre et fichier/URL requis." }, { status: 400 });
     }
 
-    const payload = {
+    const targetAudience = body.target_audience || (body.participant_email ? "individual" : "all");
+    const participantEmail = body.participant_email ? body.participant_email.toLowerCase().trim() : null;
+    const participantName = body.participant_name || null;
+
+    // Encodage robuste dans description pour assurer la compatibilité même si les nouvelles colonnes SQL ne sont pas encore exécutées
+    let finalDescription = body.description || "";
+    if (targetAudience === "individual" && participantEmail) {
+      const tag = `[DEST:${participantEmail}]${participantName ? ` [POUR:${participantName}]` : ""}`;
+      if (!finalDescription.includes("[DEST:")) {
+        finalDescription = finalDescription ? `${finalDescription} ${tag}` : tag;
+      }
+    }
+
+    const payload: any = {
       training_slug: body.training_slug || "officine-moderne",
       title: body.title,
-      description: body.description || "",
+      description: finalDescription,
       file_url: body.file_url,
       file_type: body.file_type || "PDF",
       category: body.category || "Support de cours",
     };
 
-    // Supabase is the source of truth (Vercel filesystem is read-only)
-    const { data, error } = await supabase
+    // Tentative 1 : avec les nouvelles colonnes target_audience / participant_email / participant_name
+    let result = await supabase
       .from("academy_course_documents")
-      .insert([payload])
+      .insert([{
+        ...payload,
+        target_audience: targetAudience,
+        participant_email: participantEmail,
+        participant_name: participantName,
+      }])
       .select()
-      .single();
+      .maybeSingle();
+
+    // Si les colonnes n'existent pas encore dans Supabase, insérer avec le payload standard (l'email est dans finalDescription)
+    if (result.error && (result.error.code === "PGRST204" || result.error.message?.includes("column"))) {
+      console.warn("Columns target_audience/participant_email not yet in schema, falling back to base columns:", result.error.message);
+      result = await supabase
+        .from("academy_course_documents")
+        .insert([payload])
+        .select()
+        .maybeSingle();
+    }
+
+    const { data, error } = result;
 
     if (error || !data) {
       // Local dev fallback only (works when filesystem is writable)
