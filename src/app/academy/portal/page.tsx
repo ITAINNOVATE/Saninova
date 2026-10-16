@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { 
   BookOpen, Award, Clock, ArrowRight, CheckCircle2, 
   ChevronRight, Bookmark, Sparkles, User, LogOut, ArrowLeft, Lock, Plus, Search, Filter,
-  FileText, Download, Calendar, Bell, ExternalLink, RefreshCw, FolderOpen, CreditCard, Smartphone, ShieldCheck
+  FileText, Download, Calendar, Bell, ExternalLink, RefreshCw, FolderOpen, CreditCard, Smartphone, ShieldCheck, Star
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
@@ -13,6 +13,7 @@ import { supabase } from "../../../lib/supabase";
 import PageHero from "../../../components/ui/PageHero";
 import LMSPlayer from "../../../components/academy/LMSPlayer";
 import CertificateCard from "../../../components/academy/CertificateCard";
+import SatisfactionSurveyForm from "../../../components/academy/SatisfactionSurveyForm";
 import { staticModules } from "../../../lib/academyHelpers";
 
 export default function StudentPortal() {
@@ -25,7 +26,7 @@ export default function StudentPortal() {
   const [studentName, setStudentName] = useState("Dr. Ambroise Gbaguidi");
   const [participantSession, setParticipantSession] = useState<any>(null);
   const [enrolledSlugs, setEnrolledSlugs] = useState<string[]>([]);
-  const [activeTab, setActiveTab] = useState<"my-courses" | "billing" | "documents" | "news" | "catalog">("my-courses");
+  const [activeTab, setActiveTab] = useState<"my-courses" | "billing" | "documents" | "survey" | "news" | "catalog">("my-courses");
   const [documents, setDocuments] = useState<any[]>([]);
   const [loadingDocs, setLoadingDocs] = useState(false);
   const [refreshingBilling, setRefreshingBilling] = useState(false);
@@ -510,6 +511,15 @@ export default function StudentPortal() {
                   >
                     <FolderOpen className="w-4 h-4" /> Documents & Supports ({documents.length})
                     {activeTab === "documents" && (
+                      <motion.div layoutId="tab-underline" className="absolute bottom-0 left-0 right-0 h-0.5 bg-orange" />
+                    )}
+                  </button>
+                  <button
+                    onClick={() => setActiveTab("survey")}
+                    className={`pb-2 px-3 text-xs md:text-sm font-black uppercase tracking-wider transition-all relative cursor-pointer flex items-center gap-2 ${activeTab === "survey" ? "text-orange" : "text-white/40 hover:text-white"}`}
+                  >
+                    <Star className="w-4 h-4 text-amber-400" /> Enquête de Satisfaction
+                    {activeTab === "survey" && (
                       <motion.div layoutId="tab-underline" className="absolute bottom-0 left-0 right-0 h-0.5 bg-orange" />
                     )}
                   </button>
@@ -1138,6 +1148,18 @@ export default function StudentPortal() {
                         ))}
                       </div>
                     )}
+                  </div>
+                )}
+
+                {/* Tab: Enquête de Satisfaction */}
+                {activeTab === "survey" && (
+                  <div className="space-y-6">
+                    <SatisfactionSurveyForm
+                      participantName={participantSession?.fullname || studentName}
+                      participantEmail={participantSession?.email || (typeof window !== "undefined" ? localStorage.getItem("registered_email") || "" : "")}
+                      participantRole={participantSession?.role || ""}
+                      trainingSlug="officine-moderne"
+                    />
                   </div>
                 )}
 

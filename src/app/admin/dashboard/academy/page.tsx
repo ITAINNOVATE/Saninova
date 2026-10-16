@@ -5,7 +5,7 @@ import { supabase } from "../../../../lib/supabase";
 import { 
   GraduationCap, Users, Megaphone, Calendar, 
   Plus, ArrowRight, TrendingUp, DollarSign,
-  Briefcase, Clock, CheckCircle2, AlertCircle, ArrowLeft, Folder
+  Briefcase, Clock, CheckCircle2, AlertCircle, ArrowLeft, Folder, Star
 } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -17,6 +17,7 @@ export default function AcademyDashboardOverview() {
     announcements: 0,
     events: 0,
     applications: 0,
+    surveys: 0,
     revenue: "0"
   });
   const [loading, setLoading] = useState(true);
@@ -53,12 +54,25 @@ export default function AcademyDashboardOverview() {
           });
         }
 
+        // Fetch survey count
+        let surveyCount = 0;
+        try {
+          const res = await fetch("/api/academy/surveys?training_slug=all");
+          const json = await res.json();
+          if (json.success && json.surveys) {
+            surveyCount = json.surveys.length;
+          }
+        } catch (e) {
+          console.warn("Could not fetch survey count:", e);
+        }
+
         setStats({
           trainings: tCount || 0,
           registrations: regData ? regData.length : 0,
           announcements: aCount || 0,
           events: eCount || 0,
           applications: appCount || 0,
+          surveys: surveyCount,
           revenue: calculatedRevenue.toLocaleString("fr-FR")
         });
       } catch (err) {
@@ -124,6 +138,15 @@ export default function AcademyDashboardOverview() {
       color: "text-[#00A878]",
       bgColor: "bg-emerald-500/10 border-emerald-500/20",
       link: "/admin/dashboard/academy/documents"
+    },
+    {
+      title: "Enquêtes de Satisfaction",
+      desc: "Évaluations et retours des apprenants",
+      count: stats.surveys,
+      icon: Star,
+      color: "text-amber-400",
+      bgColor: "bg-amber-500/10 border-amber-500/20",
+      link: "/admin/dashboard/academy/surveys"
     }
   ];
 

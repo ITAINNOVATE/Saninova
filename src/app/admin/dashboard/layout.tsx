@@ -17,7 +17,8 @@ import {
   FileText,
   GraduationCap,
   Briefcase,
-  Folder
+  Folder,
+  Star
 } from "lucide-react";
 
 interface LayoutProps {
@@ -111,6 +112,11 @@ export default function DashboardLayout({ children }: LayoutProps) {
       label: "Documents de Formations",
       href: "/admin/dashboard/academy/documents",
       icon: Folder,
+    },
+    {
+      label: "Enquêtes de Satisfaction",
+      href: "/admin/dashboard/academy/surveys",
+      icon: Star,
     },
     {
       label: "SaniNova Academy",
